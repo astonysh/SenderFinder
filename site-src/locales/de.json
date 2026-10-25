@@ -94,8 +94,7 @@
   },
   "index": {
     "hero": {
-      "lead": "Sieh dir das LinkedIn-Profil an, das wahrscheinlich zum Absender gehört.",
-      "desc": "Öffne eine Nachricht in Gmail oder Outlook, um in SenderFinder ein mögliches LinkedIn-Profil der absendenden Person zu sehen. Prüfe, ob das Profil passt, und sende bei Bedarf eine Vernetzungsanfrage.",
+      "desc": "Öffne eine E-Mail, um das LinkedIn-Profil des Absenders zu finden, dich mit ihm zu vernetzen und seine Neuigkeiten zu verfolgen.",
       "install": "In 2 Minuten installieren",
       "github": "Auf GitHub ansehen",
       "fine": "Noch nicht im Chrome Web Store. Die Installationsseite führt durch die zwei Minuten für die Installation als entpackte Erweiterung.",
@@ -105,7 +104,7 @@
       "badges": [
         "Schlüssel bleiben auf deinem Gerät",
         "Verlauf bleibt auf deinem Gerät",
-        "Anonyme Nutzungszählung – ein Schalter zum Abschalten"
+        "Für Datenschutz und Datensicherheit entwickelt"
       ],
       "badge": "Kostenlos · Open Source · AGPL-3.0"
     },

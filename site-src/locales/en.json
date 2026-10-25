@@ -94,8 +94,7 @@
   },
   "index": {
     "hero": {
-      "lead": "See the likely LinkedIn profile for the sender.",
-      "desc": "Open a message in Gmail or Outlook to see the sender’s likely LinkedIn profile in SenderFinder. Review the match, then send a connection request when you’re ready.",
+      "desc": "Open an email to find the sender’s LinkedIn profile, connect with them, and follow their updates.",
       "install": "Install in 2 minutes",
       "github": "View on GitHub",
       "fine": "Not in the Chrome Web Store yet. The install page walks through the two-minute unpacked install.",
@@ -105,7 +104,7 @@
       "badges": [
         "Keys stay on your device",
         "History stays on your device",
-        "Anonymous usage counts — one switch to turn off"
+        "Designed for privacy and data security"
       ],
       "badge": "Free · Open source · AGPL-3.0"
     },

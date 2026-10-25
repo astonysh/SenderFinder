@@ -94,8 +94,7 @@
   },
   "index": {
     "hero": {
-      "lead": "Consulta el posible perfil de LinkedIn de quien te escribió.",
-      "desc": "Abre un mensaje en Gmail o Outlook para ver en SenderFinder el perfil de LinkedIn que podría corresponder al remitente. Comprueba que sea la persona correcta y, si quieres, envíale una invitación para conectar.",
+      "desc": "Abre un correo para encontrar el perfil de LinkedIn del remitente, conectar con esa persona y seguir sus novedades.",
       "install": "Instalar en 2 minutos",
       "github": "Ver en GitHub",
       "fine": "Todavía no está en Chrome Web Store. La página de instalación explica cómo cargarla descomprimida en dos minutos.",
@@ -105,7 +104,7 @@
       "badges": [
         "Las claves se quedan en tu dispositivo",
         "El historial se queda en tu dispositivo",
-        "Recuentos de uso anónimos: un interruptor para desactivarlos"
+        "Diseñado para la privacidad y la seguridad de los datos"
       ],
       "badge": "Gratis · Código abierto · AGPL-3.0"
     },

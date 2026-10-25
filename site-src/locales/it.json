@@ -94,8 +94,7 @@
   },
   "index": {
     "hero": {
-      "lead": "Visualizza il profilo LinkedIn che potrebbe corrispondere al mittente.",
-      "desc": "Apri un messaggio in Gmail o Outlook per vedere in SenderFinder il profilo LinkedIn che potrebbe corrispondere al mittente. Verifica che sia la persona giusta e, se vuoi, inviale una richiesta di collegamento.",
+      "desc": "Apri un’email per trovare il profilo LinkedIn del mittente, collegarti con questa persona e seguirne gli aggiornamenti.",
       "install": "Installa in 2 minuti",
       "github": "Vedi su GitHub",
       "fine": "Non è ancora sul Chrome Web Store. La pagina di installazione spiega l'installazione non pacchettizzata in due minuti.",
@@ -105,7 +104,7 @@
       "badges": [
         "Le chiavi restano sul tuo dispositivo",
         "La cronologia resta sul tuo dispositivo",
-        "Conteggi d'uso anonimi: un interruttore per disattivarli"
+        "Progettato per la privacy e la sicurezza dei dati"
       ],
       "badge": "Gratis · Open source · AGPL-3.0"
     },

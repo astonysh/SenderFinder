@@ -96,7 +96,7 @@ URL (`hreflang="en"`), so no link ever points at a locale-prefixed page that doe
 
 The hero headline uses `panel_slogan` from `extension/_locales/<locale>/messages.json` at build
 time, so the site and extension share the same slogan. The home page `<title>` is
-`SenderFinder — <panel_slogan>`. Supporting copy lives in `index.hero.lead` and `index.hero.desc`
+`SenderFinder — <panel_slogan>`. Supporting copy lives in `index.hero.desc`
 in the website locale files.
 
 ## Structured data (JSON-LD)

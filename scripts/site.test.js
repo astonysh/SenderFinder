@@ -104,17 +104,17 @@ test('the home page shares the extension slogan and uses localized supporting co
   for (const lang of LANGUAGES) {
     const html = pageOf(lang, PAGES[0]);
     const { slogan } = readExtensionStrings(lang.locale);
-    const lead = readLocale(lang.locale).index.hero.lead;
+    const desc = readLocale(lang.locale).index.hero.desc;
     assert.ok(html.includes(`<title>SenderFinder — ${esc(slogan)}</title>`), `${lang.locale}: title is not "SenderFinder — panel_slogan"`);
     // the headline may highlight one word with markup, so compare its text content
     const h1 = html.match(/<h1 id="hero-title"[^>]*>([\s\S]*?)<\/h1>/);
     assert.ok(h1, `${lang.locale}: no hero headline`);
     const h1Text = h1[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
     assert.equal(h1Text, slogan.replace(/\s+/g, ' ').trim(), `${lang.locale}: hero headline is not panel_slogan`);
-    const taglineHtml = html.match(/<p class="(?:lead|v2-hero-lead)">([\s\S]*?)<\/p>/);
+    const taglineHtml = html.match(/<p class="v2-hero-desc">([\s\S]*?)<\/p>/);
     assert.ok(taglineHtml, `${lang.locale}: no hero tagline`);
-    assert.equal(taglineHtml[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(), lead.replace(/\s+/g, ' ').trim(),
-      `${lang.locale}: hero supporting copy is not index.hero.lead`);
+    assert.equal(taglineHtml[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(), desc.replace(/\s+/g, ' ').trim(),
+      `${lang.locale}: hero supporting copy is not index.hero.desc`);
   }
 });
 
