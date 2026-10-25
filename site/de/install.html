@@ -26,7 +26,12 @@
   <meta property="og:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="800">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SenderFinder installieren">
+  <meta name="twitter:description" content="Zwei Minuten, fünf Schritte, ein API-Schlüssel. Installiere die Open-Source-Erweiterung aus dem Quellcode, solange es den Eintrag im Chrome Web Store noch nicht gibt.">
+  <meta name="twitter:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta name="color-scheme" content="light dark">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"de","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"]},{"@type":"BreadcrumbList","@id":"https://senderfinder.com/de/install#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://senderfinder.com/de/"},{"@type":"ListItem","position":2,"name":"Installieren","item":"https://senderfinder.com/de/install"}]},{"@type":"HowTo","@id":"https://senderfinder.com/de/install#howto","name":"SenderFinder installieren","description":"Den Eintrag im Chrome Web Store gibt es noch nicht, deshalb lädst du die Erweiterung aus dem Quellcode. Zwei Minuten, einmal pro Browser.","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"Code holen","text":"Lade das Repository als ZIP von GitHub herunter („Code“ → „Download ZIP“) und entpacke es, oder klone es, wenn du git hast: git clone https://github.com/astonysh/SenderFinder.git"},{"@type":"HowToStep","position":2,"name":"In Chrome laden","text":"Öffne chrome://extensions in einem neuen Tab. Schalte den Entwicklermodus ein (oben rechts), klicke auf Entpackte Erweiterung laden und wähle den Ordner extension/ im Repository – den Ordner, der manifest.json enthält, nicht das Stammverzeichnis des Repositories."},{"@type":"HowToStep","position":3,"name":"Einen Schlüssel holen und einfügen","text":"Die Einstellungsseite öffnet sich nach der Installation von selbst. Erstelle einen Schlüssel bei Monid (Hunter, Apollo, ContactOut) oder treg (BlitzAPI, QuickEnrich, Village); Firecrawl ist optional. Ein Schlüssel reicht. Füge ihn unter „Anbieter-Keys“ ein."},{"@type":"HowToStep","position":4,"name":"Auf „Keys testen (kostenlos)“ klicken","text":"Die Prüfung ist kostenlos: Sie prüft den Schlüssel und liest die Preisliste des Anbieters. Es wird nichts nachgeschlagen und nichts ausgegeben. Du willst „gültig“ neben deinem Schlüssel sehen."},{"@type":"HowToStep","position":5,"name":"Gmail öffnen und einmal auf das Symbol in der Symbolleiste klicken","text":"Öffne eine beliebige Nachricht in Gmail und klicke dann auf das SenderFinder-Symbol in der Symbolleiste von Chrome. Wenn du es nicht siehst, klicke auf das Puzzleteil-Symbol und hefte SenderFinder zuerst an. Die Seitenleiste öffnet sich und bleibt in diesem Tab offen; von da an folgt sie der E-Mail, die du liest."}]}]}</script>
   <script src="../assets/theme-boot.js"></script>
   <link rel="stylesheet" href="../assets/app.css">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -77,18 +82,19 @@
   <header class="v2-nav">
     <div class="v2-wrap">
       <div class="v2-nav-inner">
-        <a class="v2-brand" href="index.html" aria-current="page">
+        <a class="v2-brand" href="/de/">
           <img src="../assets/icon-128.png" alt="" width="32" height="32">
           <span>SenderFinder</span>
         </a>
 
         <nav class="v2-nav-links" aria-label="Hauptnavigation">
           <ul>
-            <li><a href="index.html#how">So funktioniert es</a></li>
-            <li><a href="index.html#privacy">Datenschutz</a></li>
-            <li><a href="index.html#cost">Preise</a></li>
-            <li><a href="install.html" aria-current="page">Installieren</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="/de/#how">So funktioniert es</a></li>
+            <li><a href="/de/#privacy">Datenschutz</a></li>
+            <li><a href="/de/#cost">Preise</a></li>
+            <li><a href="/de/install" aria-current="page">Installieren</a></li>
+            <li><a href="/de/changelog">Änderungsprotokoll</a></li>
+            <li><a href="/de/#faq">FAQ</a></li>
             <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
           </ul>
         </nav>
@@ -100,16 +106,16 @@
             <div class="lang-menu">
               <nav aria-label="Sprache">
                 <ul>
-                <li><a href="../install.html" hreflang="en" lang="en">English</a></li>
-                <li><a href="../zh-cn/install.html" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
-                <li><a href="../zh-tw/install.html" hreflang="zh-TW" lang="zh-TW">繁體中文</a></li>
-                <li><a href="../ja/install.html" hreflang="ja" lang="ja">日本語</a></li>
-                <li><a href="../ko/install.html" hreflang="ko" lang="ko">한국어</a></li>
-                <li><a href="install.html" hreflang="de" lang="de" aria-current="page">Deutsch</a></li>
-                <li><a href="../fr/install.html" hreflang="fr" lang="fr">Français</a></li>
-                <li><a href="../es/install.html" hreflang="es" lang="es">Español</a></li>
-                <li><a href="../it/install.html" hreflang="it" lang="it">Italiano</a></li>
-                <li><a href="../pt-br/install.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+                <li><a href="/install" hreflang="en" lang="en">English</a></li>
+                <li><a href="/zh-cn/install" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
+                <li><a href="/zh-tw/install" hreflang="zh-TW" lang="zh-TW">繁體中文</a></li>
+                <li><a href="/ja/install" hreflang="ja" lang="ja">日本語</a></li>
+                <li><a href="/ko/install" hreflang="ko" lang="ko">한국어</a></li>
+                <li><a href="/de/install" hreflang="de" lang="de" aria-current="page">Deutsch</a></li>
+                <li><a href="/fr/install" hreflang="fr" lang="fr">Français</a></li>
+                <li><a href="/es/install" hreflang="es" lang="es">Español</a></li>
+                <li><a href="/it/install" hreflang="it" lang="it">Italiano</a></li>
+                <li><a href="/pt-br/install" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
                 </ul>
               </nav>
               <p class="fine">SenderFinder gibt es in 10 Sprachen. Die Erweiterung folgt der Sprache deines Browsers.</p>
@@ -286,7 +292,7 @@
   <div class="v2-wrap">
     <div class="v2-cta">
       <h2>Wie es weitergeht</h2>
-      <p>Lies <a href="index.html#how">wie es funktioniert</a>, sieh dir an, <a href="index.html#cost">was eine Abfrage kostet</a>, oder berechne dein eigenes Volumen im <a href="index.html#calculator">Kostenrechner</a>. Fragen zu Daten beantwortet die <a href="privacy.html">Datenschutzerklärung</a>.</p>
+      <p>Lies <a href="/de/#how">wie es funktioniert</a>, sieh dir an, <a href="/de/#cost">was eine Abfrage kostet</a>, oder berechne dein eigenes Volumen im <a href="/de/#calculator">Kostenrechner</a>. Fragen zu Daten beantwortet die <a href="/de/privacy">Datenschutzerklärung</a>.</p>
     </div>
   </div>
 </section>
@@ -294,19 +300,31 @@
 
   <footer class="v2-foot">
     <div class="v2-wrap v2-foot-inner">
-      <a class="v2-brand" href="index.html">
+      <a class="v2-brand" href="/de/">
         <img src="../assets/icon-128.png" alt="" width="32" height="32">
         <span>SenderFinder</span>
       </a>
       <ul class="v2-foot-links">
-        <li><a href="install.html">Installieren</a></li>
-        <li><a href="privacy.html">Datenschutz</a></li>
-        <li><a href="clearbit-connect-alternative.html">Clearbit-Connect-Alternative</a></li>
-        <li><a href="rapportive-alternative.html">Rapportive-Alternative</a></li>
+        <li><a href="/de/install" aria-current="page">Installieren</a></li>
+        <li><a href="/de/privacy">Datenschutz</a></li>
+        <li><a href="/de/clearbit-connect-alternative">Clearbit-Connect-Alternative</a></li>
+        <li><a href="/de/rapportive-alternative">Rapportive-Alternative</a></li>
+        <li><a href="/de/changelog">Änderungsprotokoll</a></li>
         <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
         <li><a href="https://github.com/astonysh/SenderFinder/blob/main/LICENSE">AGPL-3.0-Lizenz</a></li>
       </ul>
-      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> Kein SenderFinder-Server im Abfrageweg. Deine Schlüssel und dein Verlauf bleiben in deinem Browser. <a href="privacy.html">Datenschutz</a></p>
+      <nav class="v2-foot-resources" aria-label="Ressourcen">
+        <p class="v2-foot-head">Ressourcen</p>
+        <ul class="v2-foot-links v2-foot-links--stack">
+          <li lang="en"><a href="/email-enrichment-api-benchmark" hreflang="en">Email enrichment benchmark</a></li>
+          <li lang="en"><a href="/linkedin-sales-navigator-gmail-alternative" hreflang="en">Sales Navigator for Gmail</a></li>
+          <li lang="en"><a href="/find-linkedin-profile-from-email" hreflang="en">Find a profile from an email</a></li>
+          <li lang="en"><a href="/outlook-linkedin-sidebar" hreflang="en">Outlook sidebar</a></li>
+          <li lang="en"><a href="/sponsors" hreflang="en">Sponsors</a></li>
+          <li lang="en"><a href="/stats" hreflang="en">Usage statistics</a></li>
+        </ul>
+      </nav>
+      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> Kein SenderFinder-Server im Abfrageweg. Deine Schlüssel und dein Verlauf bleiben in deinem Browser. <a href="/de/privacy">Datenschutz</a></p>
       <div class="v2-foot-bottom">
         <p>SenderFinder ist Open-Source-Software, veröffentlicht unter der AGPL-3.0-Lizenz.</p>
         <p>Gmail, Outlook, LinkedIn und Chrome sind Marken ihrer Inhaber.</p>
@@ -317,7 +335,7 @@
   <div class="notice" id="notice" role="region" aria-label="Cookie-Hinweis" data-consent-mode="false" hidden>
     <div class="notice-inner">
       <svg class="i i-lg" aria-hidden="true"><use href="#i-cookie"/></svg>
-      <p>Diese Webseite nutzt möglicherweise datenschutzfreundliche Analysedienste, um Besuche zu zählen. Die SenderFinder-Erweiterung ist etwas anderes: Sie sendet einmal täglich eine anonyme Nutzungszusammenfassung, solange du das in ihren Einstellungen nicht abschaltest. <a href="privacy.html#cookies">Datenschutz</a></p>
+      <p>Diese Webseite nutzt möglicherweise datenschutzfreundliche Analysedienste, um Besuche zu zählen. Die SenderFinder-Erweiterung ist etwas anderes: Sie sendet einmal täglich eine anonyme Nutzungszusammenfassung, solange du das in ihren Einstellungen nicht abschaltest. <a href="/de/privacy#cookies">Datenschutz</a></p>
       <div class="notice-actions">
         <button type="button" class="notice-btn notice-close" data-consent="ack">OK</button>
       </div>

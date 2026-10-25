@@ -26,7 +26,12 @@
   <meta property="og:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="800">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SenderFinder — Den E-Mail-Absender auf LinkedIn finden">
+  <meta name="twitter:description" content="Öffne eine E-Mail in Gmail und sieh das LinkedIn-Profil des Absenders. Open Source, eigene API-Schlüssel, kein Konto.">
+  <meta name="twitter:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta name="color-scheme" content="light dark">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"de","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"]},{"@type":"SoftwareApplication","@id":"https://senderfinder.com/#software","name":"SenderFinder","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Microsoft Edge","url":"https://senderfinder.com/","description":"Open-Source-Erweiterung für Chrome, die in Gmail und Outlook die LinkedIn-Profile von E-Mail-Absendern zeigt. Eigene Anbieterschlüssel; anonyme Nutzungszählung ist standardmäßig an und lässt sich abschalten.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"https://www.gnu.org/licenses/agpl-3.0.html","downloadUrl":"https://github.com/astonysh/SenderFinder","softwareVersion":"0.5.1","isAccessibleForFree":true,"publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"FAQPage","@id":"https://senderfinder.com/de/#faq","mainEntity":[{"@type":"Question","name":"Ist es kostenlos?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die Erweiterung ist kostenlos und Open Source unter der AGPL-3.0-Lizenz, ohne Konto und ohne Abo. Kostenpflichtige Abfragen sind optional: Der Datenanbieter, den du wählst, rechnet sie über deinen eigenen Schlüssel ab, pro Treffer, innerhalb der Obergrenzen, die du setzt. Der Signatur-Scan und der Zwischenspeicher kosten nichts."}},{"@type":"Question","name":"Brauche ich ein Konto?","acceptedAnswer":{"@type":"Answer","text":"Eine Registrierung ist nicht nötig. Abfragen gehen direkt an den Anbieter, den du konfigurierst; anonyme tägliche Nutzungszählung geht an den Statistikdienst des Projekts, und ein Schalter in den Einstellungen schaltet sie ab."}},{"@type":"Question","name":"Welchen Schlüssel sollte ich holen?","acceptedAnswer":{"@type":"Answer","text":"Ein Schlüssel von Monid oder treg reicht für den Anfang. Mit beiden, und optional Firecrawl, hat die Kette mehr Stellen zum Nachsehen. Die Installationsseite vergleicht sie."}},{"@type":"Question","name":"Wie behalte ich die Kosten im Griff?","acceptedAnswer":{"@type":"Answer","text":"Es gibt eine Obergrenze pro Abfrage (Standard $0.05) und ein Tagesbudget (Standard $2). Automatisch nachgeschlagen wird nur der Absender der geöffneten E-Mail, mit einem Tageslimit, das du festlegst. Ergebnisse werden zwischengespeichert, dieselbe Adresse wird also nie zweimal bezahlt. Der Rechner zeigt, was ein bestimmtes Volumen kostet."}},{"@type":"Question","name":"Was, wenn die falsche Person angezeigt wird?","acceptedAnswer":{"@type":"Answer","text":"Wenn der Name des Anbieters nicht zum Anzeigenamen im E-Mail-Header passt, wird das Ergebnis als „unsicher“ markiert und beide Namen werden angezeigt, damit du selbst urteilen kannst."}},{"@type":"Question","name":"Warum wird ein Absender mit gmail.com nicht nachgeschlagen?","acceptedAnswer":{"@type":"Answer","text":"Private Postfach-Domains und Funktionsadressen wie info@ passen selten zu einem Profil, deshalb werden sie standardmäßig übersprungen, um Geld zu sparen. Klicke in der Seitenleiste auf die Schaltfläche, um sie trotzdem nachzuschlagen."}}]}]}</script>
   <script src="../assets/theme-boot.js"></script>
   <link rel="stylesheet" href="../assets/app.css">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -78,18 +83,19 @@
   <header class="v2-nav">
     <div class="v2-wrap">
       <div class="v2-nav-inner">
-        <a class="v2-brand" href="index.html" aria-current="page">
+        <a class="v2-brand" href="/de/" aria-current="page">
           <img src="../assets/icon-128.png" alt="" width="32" height="32">
           <span>SenderFinder</span>
         </a>
 
         <nav class="v2-nav-links" aria-label="Hauptnavigation">
           <ul>
-            <li><a href="index.html#how">So funktioniert es</a></li>
-            <li><a href="index.html#privacy">Datenschutz</a></li>
-            <li><a href="index.html#cost">Preise</a></li>
-            <li><a href="install.html">Installieren</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="/de/#how" aria-current="page">So funktioniert es</a></li>
+            <li><a href="/de/#privacy" aria-current="page">Datenschutz</a></li>
+            <li><a href="/de/#cost" aria-current="page">Preise</a></li>
+            <li><a href="/de/install">Installieren</a></li>
+            <li><a href="/de/changelog">Änderungsprotokoll</a></li>
+            <li><a href="/de/#faq" aria-current="page">FAQ</a></li>
             <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
           </ul>
         </nav>
@@ -101,16 +107,16 @@
             <div class="lang-menu">
               <nav aria-label="Sprache">
                 <ul>
-                <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
-                <li><a href="../zh-cn/index.html" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
-                <li><a href="../zh-tw/index.html" hreflang="zh-TW" lang="zh-TW">繁體中文</a></li>
-                <li><a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a></li>
-                <li><a href="../ko/index.html" hreflang="ko" lang="ko">한국어</a></li>
-                <li><a href="index.html" hreflang="de" lang="de" aria-current="page">Deutsch</a></li>
-                <li><a href="../fr/index.html" hreflang="fr" lang="fr">Français</a></li>
-                <li><a href="../es/index.html" hreflang="es" lang="es">Español</a></li>
-                <li><a href="../it/index.html" hreflang="it" lang="it">Italiano</a></li>
-                <li><a href="../pt-br/index.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+                <li><a href="/" hreflang="en" lang="en">English</a></li>
+                <li><a href="/zh-cn/" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
+                <li><a href="/zh-tw/" hreflang="zh-TW" lang="zh-TW">繁體中文</a></li>
+                <li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li>
+                <li><a href="/ko/" hreflang="ko" lang="ko">한국어</a></li>
+                <li><a href="/de/" hreflang="de" lang="de" aria-current="page">Deutsch</a></li>
+                <li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li>
+                <li><a href="/es/" hreflang="es" lang="es">Español</a></li>
+                <li><a href="/it/" hreflang="it" lang="it">Italiano</a></li>
+                <li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
                 </ul>
               </nav>
               <p class="fine">SenderFinder gibt es in 10 Sprachen. Die Erweiterung folgt der Sprache deines Browsers.</p>
@@ -148,7 +154,7 @@
       <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder">
         <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> Auf GitHub ansehen
       </a>
-      <a class="v2-btn v2-btn--default" href="install.html" data-store-url="CWS_PLACEHOLDER">
+      <a class="v2-btn v2-btn--default" href="/de/install" data-store-url="CWS_PLACEHOLDER">
         In 2 Minuten installieren <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg>
       </a>
     </div>
@@ -290,7 +296,7 @@
       
     </div>
 
-    <p class="v2-center"><a class="v2-btn v2-btn--outline v2-btn--sm" href="privacy.html">Datenschutz im Detail <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></p>
+    <p class="v2-center"><a class="v2-btn v2-btn--outline v2-btn--sm" href="/de/privacy">Datenschutz im Detail <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></p>
   </div>
 </section>
 
@@ -321,7 +327,7 @@
         </ul>
       </div>
       <div class="v2-free-action">
-        <a class="v2-btn v2-btn--default" href="install.html">Kostenlos installieren <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="v2-btn v2-btn--default" href="/de/install">Kostenlos installieren <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
     </article>
 
@@ -477,6 +483,7 @@
       </div>
     </details>
     <p class="v2-note fine">Schätzwerte aus dem Benchmark mit 50 Adressen vom 25. Oktober 2026. Standard: $2 pro Tag und $0.05 pro Abfrage, beides in den Einstellungen änderbar.</p>
+    <p class="v2-note fine"><a href="/email-enrichment-api-benchmark">Der 50-Adressen-Benchmark: Trefferquote und Preis je Anbieter</a></p>
   </div>
 </section>
 
@@ -502,7 +509,7 @@
       
       <details>
         <summary>Welchen Schlüssel sollte ich holen?</summary>
-        <div class="v2-faq-body"><p>Ein Schlüssel von <a href="https://app.monid.ai/">Monid</a> oder <a href="https://treg.to/">treg</a> reicht für den Anfang. Mit beiden, und optional <a href="https://www.firecrawl.dev/">Firecrawl</a>, hat die Kette mehr Stellen zum Nachsehen. Die <a href="install.html#which-key">Installationsseite</a> vergleicht sie.</p></div>
+        <div class="v2-faq-body"><p>Ein Schlüssel von <a href="https://app.monid.ai/">Monid</a> oder <a href="https://treg.to/">treg</a> reicht für den Anfang. Mit beiden, und optional <a href="https://www.firecrawl.dev/">Firecrawl</a>, hat die Kette mehr Stellen zum Nachsehen. Die <a href="/de/install#which-key">Installationsseite</a> vergleicht sie.</p></div>
       </details>
       
       <details>
@@ -530,7 +537,7 @@
       <h2>Zwei Minuten, dann ist es geschafft</h2>
       <p>Der Eintrag im Chrome Web Store ist noch nicht live, deshalb lädst du die Erweiterung entpackt. Fünf Schritte, zu jedem ein Screenshot.</p>
       <div class="v2-actions">
-        <a class="v2-btn v2-btn--outline" href="install.html">Zur Installationsanleitung <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="v2-btn v2-btn--outline" href="/de/install">Zur Installationsanleitung <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
     </div>
   </div>
@@ -539,19 +546,31 @@
 
   <footer class="v2-foot">
     <div class="v2-wrap v2-foot-inner">
-      <a class="v2-brand" href="index.html">
+      <a class="v2-brand" href="/de/">
         <img src="../assets/icon-128.png" alt="" width="32" height="32">
         <span>SenderFinder</span>
       </a>
       <ul class="v2-foot-links">
-        <li><a href="install.html">Installieren</a></li>
-        <li><a href="privacy.html">Datenschutz</a></li>
-        <li><a href="clearbit-connect-alternative.html">Clearbit-Connect-Alternative</a></li>
-        <li><a href="rapportive-alternative.html">Rapportive-Alternative</a></li>
+        <li><a href="/de/install">Installieren</a></li>
+        <li><a href="/de/privacy">Datenschutz</a></li>
+        <li><a href="/de/clearbit-connect-alternative">Clearbit-Connect-Alternative</a></li>
+        <li><a href="/de/rapportive-alternative">Rapportive-Alternative</a></li>
+        <li><a href="/de/changelog">Änderungsprotokoll</a></li>
         <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
         <li><a href="https://github.com/astonysh/SenderFinder/blob/main/LICENSE">AGPL-3.0-Lizenz</a></li>
       </ul>
-      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> Kein SenderFinder-Server im Abfrageweg. Deine Schlüssel und dein Verlauf bleiben in deinem Browser. <a href="privacy.html">Datenschutz</a></p>
+      <nav class="v2-foot-resources" aria-label="Ressourcen">
+        <p class="v2-foot-head">Ressourcen</p>
+        <ul class="v2-foot-links v2-foot-links--stack">
+          <li lang="en"><a href="/email-enrichment-api-benchmark" hreflang="en">Email enrichment benchmark</a></li>
+          <li lang="en"><a href="/linkedin-sales-navigator-gmail-alternative" hreflang="en">Sales Navigator for Gmail</a></li>
+          <li lang="en"><a href="/find-linkedin-profile-from-email" hreflang="en">Find a profile from an email</a></li>
+          <li lang="en"><a href="/outlook-linkedin-sidebar" hreflang="en">Outlook sidebar</a></li>
+          <li lang="en"><a href="/sponsors" hreflang="en">Sponsors</a></li>
+          <li lang="en"><a href="/stats" hreflang="en">Usage statistics</a></li>
+        </ul>
+      </nav>
+      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> Kein SenderFinder-Server im Abfrageweg. Deine Schlüssel und dein Verlauf bleiben in deinem Browser. <a href="/de/privacy">Datenschutz</a></p>
       <div class="v2-foot-bottom">
         <p>SenderFinder ist Open-Source-Software, veröffentlicht unter der AGPL-3.0-Lizenz.</p>
         <p>Gmail, Outlook, LinkedIn und Chrome sind Marken ihrer Inhaber.</p>
@@ -562,7 +581,7 @@
   <div class="notice" id="notice" role="region" aria-label="Cookie-Hinweis" data-consent-mode="false" hidden>
     <div class="notice-inner">
       <svg class="i i-lg" aria-hidden="true"><use href="#i-cookie"/></svg>
-      <p>Diese Webseite nutzt möglicherweise datenschutzfreundliche Analysedienste, um Besuche zu zählen. Die SenderFinder-Erweiterung ist etwas anderes: Sie sendet einmal täglich eine anonyme Nutzungszusammenfassung, solange du das in ihren Einstellungen nicht abschaltest. <a href="privacy.html#cookies">Datenschutz</a></p>
+      <p>Diese Webseite nutzt möglicherweise datenschutzfreundliche Analysedienste, um Besuche zu zählen. Die SenderFinder-Erweiterung ist etwas anderes: Sie sendet einmal täglich eine anonyme Nutzungszusammenfassung, solange du das in ihren Einstellungen nicht abschaltest. <a href="/de/privacy#cookies">Datenschutz</a></p>
       <div class="notice-actions">
         <button type="button" class="notice-btn notice-close" data-consent="ack">OK</button>
       </div>

@@ -9,13 +9,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DEFAULTS, FALLBACK_VOLUMES, MODES, estimate, makeFormatters } from '../site-src/assets/calc.js';
+import { benchStats } from './bench-stats.js';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const ROOT = path.join(HERE, '..');
 export const SRC = path.join(ROOT, 'site-src');
 export const SITE_URL = 'https://senderfinder.com';
 export const CONFIG = JSON.parse(fs.readFileSync(path.join(SRC, 'site.config.json'), 'utf8'));
-export const UPDATED = '2026-10-25'; // last content change, used in sitemap.xml
+export const PKG = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
+export const UPDATED = '2026-10-25'; // last content change, used in sitemap.xml and Article JSON-LD
+export const REPO_URL = 'https://github.com/astonysh/SenderFinder';
 
 /* The ten languages of the extension (_locales in manifest.json), in this order.
    `name` is always written in its own language: that is what the language switcher shows. */
@@ -32,18 +35,34 @@ export const LANGUAGES = [
   { locale: 'pt_BR', htmlLang: 'pt-BR', hreflang: 'pt-BR', dir: 'pt-br', name: 'Português (Brasil)' },
 ];
 
-/* Pages. `path` is the canonical URL path without the .html suffix; `out` is the file on disk. */
+/* Pages. `path` is the canonical URL path without the .html suffix; `out` is the file on disk.
+   `locales` is optional: without it a page exists in every language. English-only pages set
+   `locales: ['en']` and get one hreflang pair (en + x-default), one sitemap entry, and no links
+   from the other languages' chrome. */
 export const PAGES = [
   { id: 'index', template: 'index.html', out: 'index.html', path: '/', meta: 'meta.index', ogType: 'website', sitemap: true, script: true },
-  { id: 'install', template: 'install.html', out: 'install.html', path: '/install', meta: 'meta.install', ogType: 'article', sitemap: true },
-  { id: 'privacy', template: 'privacy.html', out: 'privacy.html', path: '/privacy', meta: 'meta.privacy', ogType: 'article', sitemap: true },
-  { id: 'clearbit', template: 'clearbit-connect-alternative.html', out: 'clearbit-connect-alternative.html', path: '/clearbit-connect-alternative', meta: 'meta.clearbit', ogType: 'article', sitemap: true },
-  { id: 'rapportive', template: 'rapportive-alternative.html', out: 'rapportive-alternative.html', path: '/rapportive-alternative', meta: 'meta.rapportive', ogType: 'article', sitemap: true },
+  { id: 'install', template: 'install.html', out: 'install.html', path: '/install', meta: 'meta.install', ogType: 'article', sitemap: true, breadcrumb: 'ui.nav.install' },
+  { id: 'privacy', template: 'privacy.html', out: 'privacy.html', path: '/privacy', meta: 'meta.privacy', ogType: 'article', sitemap: true, breadcrumb: 'ui.nav.privacy' },
+  { id: 'clearbit', template: 'clearbit-connect-alternative.html', out: 'clearbit-connect-alternative.html', path: '/clearbit-connect-alternative', meta: 'meta.clearbit', ogType: 'article', sitemap: true, breadcrumb: 'ui.footer.clearbit' },
+  { id: 'rapportive', template: 'rapportive-alternative.html', out: 'rapportive-alternative.html', path: '/rapportive-alternative', meta: 'meta.rapportive', ogType: 'article', sitemap: true, breadcrumb: 'ui.footer.rapportive' },
+  { id: 'changelog', template: 'changelog.html', out: 'changelog.html', path: '/changelog', meta: 'meta.changelog', ogType: 'article', sitemap: true, breadcrumb: 'ui.nav.changelog' },
+  // English-only content pages. Copy lives in site-src/content/<id>.json; the ids are also the scope
+  // keys the templates use ({{benchmark.title}} …) and the keys of the footer resource labels.
+  { id: 'benchmark', template: 'content.html', out: 'email-enrichment-api-benchmark.html', path: '/email-enrichment-api-benchmark', meta: 'meta.benchmark', ogType: 'article', sitemap: true, locales: ['en'], content: true, resources: true, breadcrumb: 'benchmark.title' },
+  { id: 'salesnav', template: 'content.html', out: 'linkedin-sales-navigator-gmail-alternative.html', path: '/linkedin-sales-navigator-gmail-alternative', meta: 'meta.salesnav', ogType: 'article', sitemap: true, locales: ['en'], content: true, resources: true, breadcrumb: 'salesnav.title' },
+  { id: 'findByEmail', template: 'content.html', out: 'find-linkedin-profile-from-email.html', path: '/find-linkedin-profile-from-email', meta: 'meta.findByEmail', ogType: 'article', sitemap: true, locales: ['en'], content: true, resources: true, breadcrumb: 'findByEmail.title' },
+  { id: 'outlook', template: 'content.html', out: 'outlook-linkedin-sidebar.html', path: '/outlook-linkedin-sidebar', meta: 'meta.outlook', ogType: 'article', sitemap: true, locales: ['en'], content: true, resources: true, breadcrumb: 'outlook.title' },
+  { id: 'sponsors', template: 'content.html', out: 'sponsors.html', path: '/sponsors', meta: 'meta.sponsors', ogType: 'article', sitemap: true, locales: ['en'], content: true, resources: true, breadcrumb: 'sponsors.title' },
+  { id: 'stats', template: 'content.html', out: 'stats.html', path: '/stats', meta: 'meta.stats', ogType: 'article', sitemap: true, locales: ['en'], content: true, resources: true, breadcrumb: 'stats.title' },
   // 404 is English only: Cloudflare Pages serves one file for every missing path.
-  { id: '404', template: '404.html', out: '404.html', path: '/404', meta: 'meta.notFound', ogType: 'website', noindex: true },
+  { id: '404', template: '404.html', out: '404.html', path: '/404', meta: 'meta.notFound', ogType: 'website', noindex: true, locales: ['en'], breadcrumb: 'notFound.title' },
 ];
 
 export const CONTENT_PAGES = PAGES.filter(p => !p.noindex);
+
+export const pageLocales = page => page.locales || LANGUAGES.map(l => l.locale);
+export const hasPage = (page, locale) => pageLocales(page).includes(locale);
+export const localeFor = locale => LANGUAGES.find(l => l.locale === locale);
 
 /* ---------- template engine: {{key}}, {{#each list}}…{{/each}}, {{#if value}}…{{/if}} ---------- */
 
@@ -135,7 +154,19 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 export const localeDir = lang => (lang.dir ? `/${lang.dir}` : '');
 export const pagePath = (lang, page) => (page.path === '/' ? `${localeDir(lang)}/` : `${localeDir(lang)}${page.path}`);
 export const pageFile = (lang, page) => (lang.dir ? `${lang.dir}/${page.out}` : page.out);
-const relHref = (fromFile, toFile) => path.posix.relative(path.posix.dirname(fromFile), toFile) || '.';
+
+/* Canonical, root-relative URLs. The site no longer works when opened from disk: the links are the
+   URLs Cloudflare serves, not file names. `urlFor` falls back to the language's home page when a page
+   does not exist in that language. */
+export const pageUrl = (lang, page) => pagePath(lang, page);
+export function urlFor(lang, pageId) {
+  const page = PAGES.find(p => p.id === pageId);
+  if (!page) throw new Error(`url: no page "${pageId}"`);
+  if (hasPage(page, lang.locale)) return pageUrl(lang, page);
+  // An English-only page keeps its canonical English URL from every language: the resource is
+  // readable, and no locale-prefixed URL that would 404 is ever generated.
+  return pageUrl(localeFor(pageLocales(page)[0]), page);
+}
 
 const t = (data, key) => {
   const value = key.split('.').reduce((cur, part) => (cur && typeof cur === 'object' ? cur[part] : undefined), data);
@@ -149,13 +180,7 @@ const fill = (s, vars) => String(s).replace(/\{(\w+)\}/g, (m, k) => (k in vars ?
    `calc.fallbackGroups` is computed here, so the no-JS table can never drift from calc.js. */
 export function scopeFor(lang, data) {
   const fmt = makeFormatters(lang.htmlLang);
-  const url = {
-    index: 'index.html',
-    install: 'install.html',
-    privacy: 'privacy.html',
-    clearbit: 'clearbit-connect-alternative.html',
-    rapportive: 'rapportive-alternative.html',
-  };
+  const url = Object.fromEntries(PAGES.filter(p => !p.noindex).map(p => [p.id, urlFor(lang, p.id)]));
   const calc = {
     ...data.calc,
     fallbackIntro: fill(data.calc.fallbackIntro, { skip: fmt.percent(DEFAULTS.skipShare) }),
@@ -216,7 +241,7 @@ export function scopeFor(lang, data) {
       };
     }),
   };
-  const faq = { items: data.index.faq.items.slice(0, 6) };
+  const faq = Array.isArray(data.faq) ? data.faq : { items: data.index.faq.items.slice(0, 6) };
   return { ...data, ...pages, url, base: lang.dir ? '../' : '', calc, install: installScope(data.install), ext, heroSlogan, pricing, faq };
 }
 
@@ -243,12 +268,139 @@ const withIcons = (steps, icons) => steps.map((step, i) => ({ ...step, icon: ico
 
 /* ---------- page shell: head, header with the language switcher, footer ---------- */
 
+/* JSON-LD is data, not script: the CSP's script-src does not block an ld+json block, and keeping it in
+   <head> means every page describes itself once, from the same locale data the page renders. */
+const ENTITIES = { '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#39;': "'", '&apos;': "'", '&rsquo;': '’', '&lsquo;': '‘', '&ldquo;': '“', '&rdquo;': '”', '&mdash;': '—', '&ndash;': '–', '&hellip;': '…', '&nbsp;': ' ' };
+const plainText = html => String(html)
+  .replace(/<[^>]*>/g, ' ')
+  .replace(/&(?:amp|lt|gt|quot|#39|apos|rsquo|lsquo|ldquo|rdquo|mdash|ndash|hellip|nbsp);/g, m => ENTITIES[m] || m)
+  .replace(/\s+/g, ' ')
+  .replace(/\s+([,.])/g, '$1')
+  .trim();
+
+const jsonld = value => JSON.stringify(value).replace(/</g, '\\u003c');
+
+function breadcrumbName(page, data) {
+  if (!page.breadcrumb) return page.id;
+  return plainText(t(data, page.breadcrumb));
+}
+
+function structuredData(lang, page, data, scope) {
+  const url = SITE_URL + pagePath(lang, page);
+  const orgId = `${SITE_URL}/#organization`;
+  const graph = [
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: `${SITE_URL}/`,
+      name: 'SenderFinder',
+      inLanguage: lang.htmlLang,
+      publisher: { '@id': orgId },
+    },
+    {
+      '@type': 'Organization',
+      '@id': orgId,
+      name: 'SenderFinder',
+      url: `${SITE_URL}/`,
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/icon-128.png`, width: 128, height: 128 },
+      sameAs: [REPO_URL],
+    },
+  ];
+
+  if (page.id !== 'index') {
+    graph.push({
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: plainText(t(data, 'ui.breadcrumbHome')), item: SITE_URL + pagePath(lang, PAGES[0]) },
+        { '@type': 'ListItem', position: 2, name: breadcrumbName(page, data), item: url },
+      ],
+    });
+  }
+
+  if (page.id === 'index') {
+    const meta = t(data, page.meta);
+    graph.push({
+      '@type': 'SoftwareApplication',
+      '@id': `${SITE_URL}/#software`,
+      name: 'SenderFinder',
+      applicationCategory: 'BrowserApplication',
+      operatingSystem: 'Chrome, Microsoft Edge',
+      url: `${SITE_URL}/`,
+      description: plainText(meta.description),
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      license: 'https://www.gnu.org/licenses/agpl-3.0.html',
+      downloadUrl: REPO_URL,
+      softwareVersion: PKG.version,
+      isAccessibleForFree: true,
+      publisher: { '@id': orgId },
+    });
+    graph.push({
+      '@type': 'FAQPage',
+      '@id': `${url}#faq`,
+      mainEntity: (scope.faq.items || []).slice(0, 6).map(item => ({
+        '@type': 'Question',
+        name: plainText(render(item.q, [scope], 'faq')),
+        acceptedAnswer: { '@type': 'Answer', text: plainText(render(item.a, [scope], 'faq')) },
+      })),
+    });
+  }
+
+  if (page.id === 'install') {
+    graph.push({
+      '@type': 'HowTo',
+      '@id': `${url}#howto`,
+      name: plainText(data.install.title),
+      description: plainText(data.install.lead),
+      totalTime: 'PT2M',
+      step: data.install.steps.map((step, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: plainText(step.title),
+        text: plainText(render(step.body, [scope], 'install')),
+      })),
+    });
+  }
+
+  if (page.content && Array.isArray(data.faq) && data.faq.length) {
+    graph.push({
+      '@type': 'FAQPage',
+      '@id': `${url}#faq`,
+      mainEntity: data.faq.map(item => ({
+        '@type': 'Question',
+        name: plainText(render(item.q, [scope], page.id)),
+        acceptedAnswer: { '@type': 'Answer', text: plainText(render(item.a, [scope], page.id)) },
+      })),
+    });
+  }
+
+  const article = page.content ? page.id : { clearbit: 'clearbit', rapportive: 'rapportive', changelog: 'changelog' }[page.id];
+  if (article) {
+    const meta = t(data, page.meta);
+    graph.push({
+      '@type': 'Article',
+      '@id': `${url}#article`,
+      headline: plainText(data[article].title),
+      description: plainText(meta.description),
+      datePublished: UPDATED,
+      dateModified: UPDATED,
+      inLanguage: lang.htmlLang,
+      mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+      author: { '@type': 'Organization', name: 'SenderFinder', url: `${SITE_URL}/` },
+      publisher: { '@id': orgId },
+    });
+  }
+
+  return jsonld({ '@context': 'https://schema.org', '@graph': graph });
+}
+
 function head(lang, page, data, scope) {
   const url = SITE_URL + pagePath(lang, page);
   const meta = t(data, page.meta);
   // The landing page is titled after the extension's slogan; other pages keep their own title.
   const title = page.id === 'index' ? `SenderFinder — ${scope.ext.slogan}` : meta.title;
   const ogTitle = page.id === 'index' ? title : (meta.ogTitle || meta.title);
+  const ogDescription = meta.ogDescription || meta.description;
   const lines = [
     '<!doctype html>',
     `<html lang="${lang.htmlLang}">`,
@@ -260,22 +412,29 @@ function head(lang, page, data, scope) {
     `  <link rel="canonical" href="${url}">`,
   ];
   if (!page.noindex) {
-    for (const other of LANGUAGES) {
+    const locales = pageLocales(page);
+    for (const code of locales) {
+      const other = localeFor(code);
       lines.push(`  <link rel="alternate" hreflang="${other.hreflang}" href="${SITE_URL}${pagePath(other, page)}">`);
     }
-    lines.push(`  <link rel="alternate" hreflang="x-default" href="${SITE_URL}${pagePath(LANGUAGES[0], page)}">`);
+    lines.push(`  <link rel="alternate" hreflang="x-default" href="${SITE_URL}${pagePath(localeFor(locales[0]), page)}">`);
   }
   lines.push('  <!-- CWS-BUTTON: install buttons carry data-store-url="CWS_PLACEHOLDER"; see site/README.md -->');
   lines.push(`  <meta property="og:type" content="${page.ogType}">`);
   lines.push('  <meta property="og:site_name" content="SenderFinder">');
   lines.push(`  <meta property="og:title" content="${esc(ogTitle)}">`);
-  lines.push(`  <meta property="og:description" content="${esc(meta.ogDescription || meta.description)}">`);
+  lines.push(`  <meta property="og:description" content="${esc(ogDescription)}">`);
   lines.push(`  <meta property="og:url" content="${url}">`);
   lines.push(`  <meta property="og:image" content="${SITE_URL}/assets/screenshots/sender-in-gmail.png">`);
   lines.push('  <meta property="og:image:width" content="1280">');
   lines.push('  <meta property="og:image:height" content="800">');
+  lines.push('  <meta name="twitter:card" content="summary_large_image">');
+  lines.push(`  <meta name="twitter:title" content="${esc(ogTitle)}">`);
+  lines.push(`  <meta name="twitter:description" content="${esc(ogDescription)}">`);
+  lines.push(`  <meta name="twitter:image" content="${SITE_URL}/assets/screenshots/sender-in-gmail.png">`);
   if (page.noindex) lines.push('  <meta name="robots" content="noindex">');
   lines.push('  <meta name="color-scheme" content="light dark">');
+  lines.push(`  <script type="application/ld+json">${structuredData(lang, page, data, scope)}</script>`);
   lines.push(`  <script src="${scope.base}assets/theme-boot.js"></script>`);
   lines.push(`  <link rel="stylesheet" href="${scope.base}assets/app.css">`);
   lines.push(`  <link rel="icon" href="${scope.base}assets/favicon.svg" type="image/svg+xml">`);
@@ -298,91 +457,9 @@ const sprite = () => {
   return `<svg class="icon-sprite" aria-hidden="true" focusable="false" width="0" height="0" xmlns="http://www.w3.org/2000/svg">\n${symbols}\n</svg>`;
 };
 
-function header(lang, page, data, scope) {
-  const nav = [
-    { href: 'index.html#how', label: data.ui.nav.how },
-    { href: 'index.html#cost', label: data.ui.nav.cost },
-    { href: 'install.html', label: data.ui.nav.install, id: 'install' },
-    { href: 'privacy.html', label: data.ui.nav.privacy, id: 'privacy' },
-    { href: 'index.html#faq', label: data.ui.nav.faq },
-    { href: 'https://github.com/astonysh/SenderFinder', label: 'GitHub' },
-  ];
-  const items = nav.map(item => {
-    const current = item.id && item.id === page.id ? ' aria-current="page"' : '';
-    return `          <li><a href="${item.href}"${current}>${esc(item.label)}</a></li>`;
-  }).join('\n');
-
-  const languages = LANGUAGES.map(other => {
-    // The 404 page exists in English only, so its language links go to the home page of each language.
-    const href = page.noindex
-      ? relHref(pageFile(lang, page), pageFile(other, PAGES[0]))
-      : relHref(pageFile(lang, page), pageFile(other, page));
-    const current = other.locale === lang.locale ? ' aria-current="page"' : '';
-    return `              <li><a href="${href}" hreflang="${other.hreflang}" lang="${other.htmlLang}"${current}>${other.name}</a></li>`;
-  }).join('\n');
-
-  const brandCurrent = page.id === 'index' ? ' aria-current="page"' : '';
-  return `  <a class="skip-link" href="#main">${esc(data.ui.skip)}</a>
-
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="index.html"${brandCurrent}>
-        <img src="${scope.base}assets/icon-128.png" alt="" width="32" height="32">
-        <span>SenderFinder</span>
-      </a>
-      <nav class="site-nav" aria-label="${esc(data.ui.navLabel)}">
-        <ul>
-${items}
-        </ul>
-      </nav>
-      <div class="header-tools">
-        <button type="button" class="theme-switch" data-label-light="${esc(data.ui.theme.label)}: ${esc(data.ui.theme.light)}" data-label-dark="${esc(data.ui.theme.label)}: ${esc(data.ui.theme.dark)}" aria-label="${esc(data.ui.theme.label)}"><svg class="i theme-icon theme-icon-light" aria-hidden="true"><use href="#i-sun"/></svg><svg class="i theme-icon theme-icon-dark" aria-hidden="true"><use href="#i-moon"/></svg></button>
-        <details class="lang-switch">
-          <summary><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg><span class="visually-hidden">${esc(data.ui.language)}: </span>${lang.name}</summary>
-          <div class="lang-menu">
-            <nav aria-label="${esc(data.ui.language)}">
-              <ul>
-${languages}
-              </ul>
-            </nav>
-            <p class="fine">${esc(data.ui.languageHint)}</p>
-          </div>
-        </details>
-      </div>
-    </div>
-  </header>`;
-}
-
-function footer(lang, page, data, scope) {
-  const links = [
-    { href: 'https://github.com/astonysh/SenderFinder', label: 'GitHub' },
-    { href: 'install.html', label: data.ui.footer.install },
-    { href: 'privacy.html', label: data.ui.footer.privacy },
-    { href: 'clearbit-connect-alternative.html', label: data.ui.footer.clearbit, id: 'clearbit' },
-    { href: 'rapportive-alternative.html', label: data.ui.footer.rapportive, id: 'rapportive' },
-    { href: 'https://github.com/astonysh/SenderFinder/blob/main/LICENSE', label: data.ui.footer.license },
-  ].map(item => {
-    const current = item.id === page.id ? ' aria-current="page"' : '';
-    return `          <li><a href="${item.href}"${current}>${esc(item.label)}</a></li>`;
-  }).join('\n');
-  return `  <footer class="site-footer">
-    <div class="wrap">
-      <nav aria-label="${esc(data.ui.footerNavLabel)}">
-        <ul>
-${links}
-        </ul>
-      </nav>
-      <p class="footer-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> ${esc(data.ui.footer.privacyLine)} <a href="privacy.html">${esc(data.ui.footer.privacy)}</a></p>
-      <p>${esc(data.ui.footer.built)}</p>
-      <p>${esc(data.ui.footer.disclaimer)}</p>
-      <p>${esc(data.ui.footer.trademarks)}</p>
-    </div>
-  </footer>`;
-}
-
 /* Informational, not a consent banner: the site sets no cookies, so there is nothing to accept.
    Hidden by default; theme.js reveals it unless localStorage says it was dismissed. */
-function notice(data) {
+function notice(data, scope) {
   const actions = CONFIG.consentMode
     ? `<button type="button" class="notice-btn notice-accept" data-consent="granted">${esc(data.ui.notice.accept)}</button>
         <button type="button" class="notice-btn notice-reject" data-consent="denied">${esc(data.ui.notice.reject)}</button>`
@@ -390,7 +467,7 @@ function notice(data) {
   return `  <div class="notice" id="notice" role="region" aria-label="${esc(data.ui.notice.aria)}" data-consent-mode="${CONFIG.consentMode ? 'true' : 'false'}" hidden>
     <div class="notice-inner">
       <svg class="i i-lg" aria-hidden="true"><use href="#i-cookie"/></svg>
-      <p>${esc(data.ui.notice.text)} <a href="privacy.html#cookies">${esc(data.ui.notice.link)}</a></p>
+      <p>${esc(data.ui.notice.text)} <a href="${scope.url.privacy}#cookies">${esc(data.ui.notice.link)}</a></p>
       <div class="notice-actions">
         ${actions}
       </div>
@@ -398,34 +475,35 @@ function notice(data) {
   </div>`;
 }
 
-/* Marketing layout (index only for now): same controls and accessibility hooks as the default header,
-   different classes and order — brand, centred links, then the theme and language switchers. */
+/* The one header every page uses: brand, centred links, then the theme and language switchers.
+   All page links are canonical root-relative URLs; the language switcher only points at pages that
+   exist in the target language, and falls back to that language's home page. */
 function headerV2(lang, page, data, scope) {
   const nav = [
-    { href: 'index.html#how', label: data.ui.nav.how },
-    { href: 'index.html#privacy', label: data.ui.nav.privacy },
-    { href: 'index.html#cost', label: data.ui.nav.cost },
-    { href: 'install.html', label: data.ui.nav.install, id: 'install' },
-    { href: 'index.html#faq', label: data.ui.nav.faq },
-    { href: 'https://github.com/astonysh/SenderFinder', label: 'GitHub' },
+    { href: `${scope.url.index}#how`, label: data.ui.nav.how, id: 'index' },
+    { href: `${scope.url.index}#privacy`, label: data.ui.nav.privacy, id: 'index' },
+    { href: `${scope.url.index}#cost`, label: data.ui.nav.cost, id: 'index' },
+    { href: scope.url.install, label: data.ui.nav.install, id: 'install' },
+    { href: scope.url.changelog, label: data.ui.nav.changelog, id: 'changelog' },
+    { href: `${scope.url.index}#faq`, label: data.ui.nav.faq, id: 'index' },
+    { href: REPO_URL, label: 'GitHub' },
   ];
   const items = nav.map(item => {
     const current = item.id && item.id === page.id ? ' aria-current="page"' : '';
     return `            <li><a href="${item.href}"${current}>${esc(item.label)}</a></li>`;
   }).join('\n');
   const languages = LANGUAGES.map(other => {
-    // the 404 page exists in English only: its language links go to each language's home page
-    const target = page.noindex ? pageFile(other, PAGES[0]) : pageFile(other, page);
-    const href = relHref(pageFile(lang, page), target);
+    const href = pageUrl(other, hasPage(page, other.locale) ? page : PAGES[0]);
     const current = other.locale === lang.locale ? ' aria-current="page"' : '';
     return `                <li><a href="${href}" hreflang="${other.hreflang}" lang="${other.htmlLang}"${current}>${other.name}</a></li>`;
   }).join('\n');
+  const brandCurrent = page.id === 'index' ? ' aria-current="page"' : '';
   return `  <a class="skip-link" href="#main">${esc(data.ui.skip)}</a>
 
   <header class="v2-nav">
     <div class="v2-wrap">
       <div class="v2-nav-inner">
-        <a class="v2-brand" href="index.html" aria-current="page">
+        <a class="v2-brand" href="${scope.url.index}"${brandCurrent}>
           <img src="${scope.base}assets/icon-128.png" alt="" width="32" height="32">
           <span>SenderFinder</span>
         </a>
@@ -455,25 +533,38 @@ ${languages}
   </header>`;
 }
 
-function footerV2(lang, page, data) {
+function footerV2(lang, page, data, scope) {
   const links = [
-    { href: 'install.html', label: data.ui.footer.install },
-    { href: 'privacy.html', label: data.ui.footer.privacy },
-    { href: 'clearbit-connect-alternative.html', label: data.ui.footer.clearbit },
-    { href: 'rapportive-alternative.html', label: data.ui.footer.rapportive },
-    { href: 'https://github.com/astonysh/SenderFinder', label: 'GitHub' },
-    { href: 'https://github.com/astonysh/SenderFinder/blob/main/LICENSE', label: data.ui.footer.license },
-  ].map(item => `        <li><a href="${item.href}">${esc(item.label)}</a></li>`).join('\n');
+    { href: scope.url.install, label: data.ui.footer.install, id: 'install' },
+    { href: scope.url.privacy, label: data.ui.footer.privacy, id: 'privacy' },
+    { href: scope.url.clearbit, label: data.ui.footer.clearbit, id: 'clearbit' },
+    { href: scope.url.rapportive, label: data.ui.footer.rapportive, id: 'rapportive' },
+    { href: scope.url.changelog, label: data.ui.footer.changelog, id: 'changelog' },
+    { href: REPO_URL, label: 'GitHub' },
+    { href: `${REPO_URL}/blob/main/LICENSE`, label: data.ui.footer.license },
+  ].map(item => {
+    const current = item.id === page.id ? ' aria-current="page"' : '';
+    return `        <li><a href="${item.href}"${current}>${esc(item.label)}</a></li>`;
+  }).join('\n');
+  const resources = PAGES.filter(p => p.resources);
+  const resourceLinks = resources.map(resource =>
+    `          <li lang="en"><a href="${urlFor(lang, resource.id)}" hreflang="en">${esc(t(data, `ui.footer.resourcesLinks.${resource.id}`))}</a></li>`).join('\n');
   return `  <footer class="v2-foot">
     <div class="v2-wrap v2-foot-inner">
-      <a class="v2-brand" href="index.html">
-        <img src="${lang.dir ? '../' : ''}assets/icon-128.png" alt="" width="32" height="32">
+      <a class="v2-brand" href="${scope.url.index}">
+        <img src="${scope.base}assets/icon-128.png" alt="" width="32" height="32">
         <span>SenderFinder</span>
       </a>
       <ul class="v2-foot-links">
 ${links}
       </ul>
-      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> ${esc(data.ui.footer.privacyLine)} <a href="privacy.html">${esc(data.ui.footer.privacy)}</a></p>
+      <nav class="v2-foot-resources" aria-label="${esc(data.ui.footer.resources)}">
+        <p class="v2-foot-head">${esc(data.ui.footer.resources)}</p>
+        <ul class="v2-foot-links v2-foot-links--stack">
+${resourceLinks}
+        </ul>
+      </nav>
+      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> ${esc(data.ui.footer.privacyLine)} <a href="${scope.url.privacy}">${esc(data.ui.footer.privacy)}</a></p>
       <div class="v2-foot-bottom">
         <p>${esc(data.ui.footer.built)}</p>
         <p>${esc(data.ui.footer.trademarks)}</p>
@@ -486,14 +577,17 @@ function sitemap() {
   const out = ['<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'];
   for (const page of CONTENT_PAGES) {
-    for (const lang of LANGUAGES) {
+    const locales = pageLocales(page);
+    for (const code of locales) {
+      const lang = localeFor(code);
       out.push('  <url>');
       out.push(`    <loc>${SITE_URL}${pagePath(lang, page)}</loc>`);
       out.push(`    <lastmod>${UPDATED}</lastmod>`);
-      for (const other of LANGUAGES) {
+      for (const otherCode of locales) {
+        const other = localeFor(otherCode);
         out.push(`    <xhtml:link rel="alternate" hreflang="${other.hreflang}" href="${SITE_URL}${pagePath(other, page)}"/>`);
       }
-      out.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}${pagePath(LANGUAGES[0], page)}"/>`);
+      out.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}${pagePath(localeFor(locales[0]), page)}"/>`);
       out.push('  </url>');
     }
   }
@@ -524,6 +618,88 @@ export function readLocale(locale) {
   return JSON.parse(fs.readFileSync(path.join(SRC, 'locales', `${locale}.json`), 'utf8'));
 }
 
+/* English-only pages keep their copy in site-src/content/<id>.json: meta, page strings and an FAQ list.
+   The file is loaded only for English, so no other locale has to carry keys it never renders. */
+export function readContent(page) {
+  const name = typeof page.content === 'string' ? page.content : `${page.id}.json`;
+  const file = path.join(SRC, 'content', name);
+  return JSON.parse(fs.readFileSync(file, 'utf8'));
+}
+
+function dataForPage(base, page, locale) {
+  if (!page.content || locale !== 'en') return base;
+  const content = readContent(page);
+  const bench = benchStats();
+  if (page.id === 'benchmark') {
+    content.page.stats = bench.text;
+    const results = content.page.sections.find(section => section.id === 'results');
+    if (results) results.table = bench.table;
+  }
+  // Table cells carry their column label, so the phone layout (app.css) can show it as a data-label.
+  for (const section of content.page.sections || []) {
+    if (!section.table) continue;
+    section.table.rows = section.table.rows.map(row => ({ cells: row.map((value, i) => ({ label: section.table.head[i], value })) }));
+  }
+  return {
+    ...base,
+    // Other English-only pages can quote the benchmark's computed numbers with {{benchmark.stats.*}};
+    // the benchmark page itself gets the full object under its own id.
+    ...(page.id === 'benchmark' ? {} : { benchmark: { stats: bench.text } }),
+    meta: { ...base.meta, [page.id]: content.meta },
+    page: content.page,
+    [page.id]: content.page,
+    faq: content.faq || base.faq,
+  };
+}
+
+/* CHANGELOG.md is the only source of the changelog page: h2 per version, ul per bullet, rendered as
+   plain HTML. The Markdown is escaped before the few inline spans (backticks) are turned into <code>. */
+export function renderChangelog(markdown) {
+  const inline = s => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>');
+  const sections = [];
+  let current = null;
+  let block = null;
+  let inList = false;
+  const flush = () => {
+    if (!block) return;
+    if (block.type === 'ul') current.blocks.push(`<ul>${block.items.map(item => `<li>${inline(item)}</li>`).join('')}</ul>`);
+    else current.blocks.push(`<p>${inline(block.lines.join(' '))}</p>`);
+    block = null;
+  };
+  for (const raw of String(markdown).split(/\r?\n/)) {
+    const line = raw.trim();
+    if (!line) { flush(); inList = false; continue; }
+    if (line.startsWith('## ')) {
+      flush();
+      inList = false;
+      const heading = line.slice(3).trim();
+      current = { heading, id: `v${heading.split(/\s+/)[0].replace(/\./g, '-')}`, blocks: [] };
+      sections.push(current);
+      continue;
+    }
+    if (line.startsWith('# ')) continue; // the page has its own, translated h1
+    if (line.startsWith('- ')) {
+      if (!current) continue;
+      if (!block || block.type !== 'ul') { flush(); block = { type: 'ul', items: [] }; }
+      block.items.push(line.slice(2).trim());
+      inList = true;
+      continue;
+    }
+    if (inList && block && block.type === 'ul') {
+      block.items[block.items.length - 1] += ` ${line}`;
+      continue;
+    }
+    if (!block || block.type !== 'p') { flush(); block = { type: 'p', lines: [] }; }
+    block.lines.push(line);
+  }
+  flush();
+  return sections.map(section => `<h2 id="${esc(section.id)}">${inline(section.heading)}</h2>\n${section.blocks.join('\n')}`).join('\n\n');
+}
+
+export function readChangelog() {
+  return renderChangelog(fs.readFileSync(path.join(ROOT, 'CHANGELOG.md'), 'utf8'));
+}
+
 /* The hero headline and its sub-line are the extension's own strings: panel_slogan and tagline from
    extension/_locales/<locale>/messages.json. Read at build time so the two never drift apart. */
 export function readExtensionStrings(locale) {
@@ -548,11 +724,13 @@ export function buildSite(outDir, { locales = LANGUAGES.map(l => l.locale) } = {
   fs.mkdirSync(outDir, { recursive: true });
 
   let pages = 0;
+  const changelogBody = readChangelog();
   for (const lang of LANGUAGES.filter(l => locales.includes(l.locale))) {
-    const data = readLocale(lang.locale);
-    const scope = scopeFor(lang, data);
-    const pageList = lang.locale === 'en' ? PAGES : PAGES.filter(p => !p.noindex);
-    for (const page of pageList) {
+    const base = readLocale(lang.locale);
+    for (const page of PAGES.filter(p => hasPage(p, lang.locale))) {
+      let data = dataForPage(base, page, lang.locale);
+      if (page.id === 'changelog') data = { ...data, changelog: { ...data.changelog, body: changelogBody } };
+      const scope = scopeFor(lang, data);
       const main = render(template(page.template), [scope], `${lang.locale}/${page.template}`);
       const html = [
         head(lang, page, data, scope),
@@ -566,7 +744,7 @@ export function buildSite(outDir, { locales = LANGUAGES.map(l => l.locale) } = {
         '',
         footerV2(lang, page, data, scope),
         '',
-        notice(data),
+        notice(data, scope),
         '</body>',
         '</html>',
         '',
@@ -603,5 +781,5 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const langsArg = process.argv.indexOf('--langs');
   const locales = langsArg > 0 ? process.argv[langsArg + 1].split(',') : undefined;
   const { pages } = buildSite(outDir, locales ? { locales } : undefined);
-  console.log(`site: ${pages} pages in ${path.relative(ROOT, outDir) || '.'} (${LANGUAGES.length} languages × ${CONTENT_PAGES.length} pages + 404)`);
+  console.log(`site: ${pages} pages in ${path.relative(ROOT, outDir) || '.'} (${CONTENT_PAGES.length} indexable page types, English-only pages included)`);
 }

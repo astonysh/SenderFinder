@@ -3,6 +3,8 @@
     "skip": "跳至主要內容",
     "navLabel": "主要導覽",
     "footerNavLabel": "頁尾導覽",
+    "breadcrumbHome": "首頁",
+    "benchmarkLink": "查看 50 個信箱的實測基準：各供應商命中率與單價",
     "language": "語言",
     "languageHint": "SenderFinder 提供 10 種語言。擴充功能會跟隨你的瀏覽器語言。",
     "nav": {
@@ -10,6 +12,7 @@
       "cost": "價格",
       "install": "安裝",
       "privacy": "隱私權",
+      "changelog": "更新日誌",
       "faq": "常見問題"
     },
     "footer": {
@@ -17,6 +20,16 @@
       "privacy": "隱私權",
       "clearbit": "Clearbit Connect 替代方案",
       "rapportive": "Rapportive 替代方案",
+      "changelog": "更新日誌",
+      "resources": "資源",
+      "resourcesLinks": {
+        "benchmark": "Email enrichment benchmark",
+        "salesnav": "Sales Navigator for Gmail",
+        "findByEmail": "Find a profile from an email",
+        "outlook": "Outlook sidebar",
+        "sponsors": "Sponsors",
+        "stats": "Usage statistics"
+      },
       "license": "AGPL-3.0 授權",
       "built": "SenderFinder 是以 AGPL-3.0 授權釋出的開放原始碼軟體。",
       "disclaimer": "與 LinkedIn、HubSpot、Clearbit 或任何資料供應商皆無隸屬關係。產品名稱屬各自擁有者所有。",
@@ -67,6 +80,12 @@
       "description": "開放原始碼的 Rapportive 替代工具，在 Gmail 顯示寄件者的 LinkedIn 個人檔案。自備供應商 key；匿名使用統計預設開啟，可以關閉。",
       "ogTitle": "Gmail 的 Rapportive 替代方案",
       "ogDescription": "Rapportive 已經沒有了。SenderFinder 在 Gmail 裡顯示寄件者的 LinkedIn 個人檔案。開放原始碼、自備 key、不需要帳號。"
+    },
+    "changelog": {
+      "title": "更新日誌 | SenderFinder",
+      "description": "SenderFinder 擴充功能的每個版本，最新的在最前面：修正、功能與隱私變更。",
+      "ogTitle": "SenderFinder 更新日誌",
+      "ogDescription": "SenderFinder 擴充功能的每個版本，最新的在最前面。"
     },
     "notFound": {
       "title": "找不到頁面 | SenderFinder",
@@ -738,6 +757,11 @@
         ]
       }
     ]
+  },
+  "changelog": {
+    "title": "更新日誌",
+    "lead": "擴充功能的每個版本，最新的在最前面。",
+    "note": "建置時由儲存庫中的 CHANGELOG.md 產生。"
   },
   "notFound": {
     "title": "找不到頁面",

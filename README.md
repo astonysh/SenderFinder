@@ -19,11 +19,13 @@ Cheapest step first. Each provider's current catalog price is read before the ca
 | # | Step | Via | Input | Price on hit | Miss | Observed hit rate |
 |---|---|---|---|---:|---|---:|
 | 1 | `signature` | local regex over the mail body for linkedin.com/in links | body | $0 | — | — |
-| 2 | `blitzapi` | treg `blitzapi.people.email.reverse` | email | $0.0005 | free | 21 % |
-| 3 | `hunter` | Monid `hunterio /people/find` | email | $0.0049 | free (404) | 46 % |
-| 4 | `quickenrich` | treg `quickenrich.people.enrich` | email | $0.0048 | free | 11 % |
-| 5 | `apollo` | Monid `apollo /people/match` | email + name + domain | $0.026 | free; an empty stub attached to a known company is billed | — |
+| 2 | `blitzapi` | treg `blitzapi.people.email.reverse` | email | $0.0005 | free | 50 % |
+| 3 | `hunter` | Monid `hunterio /people/find` | email | $0.0049 | free (404) | 17.9 % |
+| 4 | `quickenrich` | treg `quickenrich.people.enrich` | email | $0.0048 | free | 17.4 % |
+| 5 | `apollo` | Monid `apollo /people/match` | email + name + domain | $0.026 | free; an empty stub attached to a known company is billed | 100 % (19/19) |
 | 6 | `datalegion` | Firecrawl Alexandria `datalegion people/enrich-base-no-contact` | email | 10 credits (≈ $0.008–0.032) | free | — |
+
+Observed hit rate is answered ÷ reached — the conditional chance that a step answers once the chain reaches it, measured on the 50-address run of 2026-10-25. Full table and caveats: https://senderfinder.com/email-enrichment-api-benchmark.
 
 Optional steps (tick them in settings): `village` (treg, $0.02), `contactout` (Monid, $0.02). Prices are the catalog prices on 2026-10-25; the extension re-reads them before every call.
 
@@ -43,7 +45,7 @@ No key needed for: the signature scan (local), the cache, and LinkedIn relations
 
 If the provider's name contradicts the display name in the mail header, the answer is kept only as a fallback, the next steps still run and a name-matching answer wins; if nothing matches, the result is marked "uncertain" and both names are shown. Personal-mailbox domains (gmail.com, qq.com …) and role addresses (info@, support@ …) are skipped unless you click "look up anyway".
 
-On a 50-address benchmark of verified work emails (2026-10-25): 48/50 found with a matching name, 2 uncertain, $0.011 per address on average. Details in the Chinese README.
+On a 50-address benchmark of verified work emails (2026-10-25): 48 found (47 with a matching name, 1 found without a returned profile name), 2 uncertain, $0.0111 per address on average; full table at https://senderfinder.com/email-enrichment-api-benchmark.
 
 <a name="install-from-source"></a>
 ## Install from source

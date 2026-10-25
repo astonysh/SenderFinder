@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "title": "Email → LinkedIn enrichment benchmark: hit rate and price on 50 emails | SenderFinder",
+    "description": "Fifty verified work emails, four email-to-LinkedIn providers, one day. 48 were found, the average cost was $0.0111 per address, and one provider key was enough to run the waterfall.",
+    "ogTitle": "Email → LinkedIn enrichment providers compared",
+    "ogDescription": "Hit rate and price on 50 verified work emails: 48 found, $0.0111 per address, one key enough."
+  },
+  "page": {
+    "title": "Email → LinkedIn enrichment providers compared: hit rate and price on 50 verified work emails (2026-10-25)",
+    "lead": "We ran the same 50 verified work addresses through the full SenderFinder waterfall with both provider keys, one day, no cache. This page shows what each step answered, what it charged, and what the result does — and does not — prove.",
+    "updated": "Benchmark run: 25 October 2026. Aggregates are generated from data/bench/wizleads-sample-50.results.json at build time.",
+    "cta": {
+      "install": "Install SenderFinder",
+      "github": "View the source on GitHub"
+    },
+    "sections": [
+      {
+        "id": "short-answer",
+        "title": "The short answer",
+        "blocks": [
+          "Of {{benchmark.stats.rows}} verified work addresses, the waterfall returned a LinkedIn profile for {{benchmark.stats.found}} and marked {{benchmark.stats.uncertain}} as uncertain. The run cost {{benchmark.stats.totalUsd}}: about {{benchmark.stats.perAddress}} per address. Every address produced a profile or an explicit uncertain result.",
+          "The money did not go where the volume went. The three cheap steps cost {{benchmark.stats.cheapSpend}} together; Apollo accounted for {{benchmark.stats.apolloShare}} of the spend ({{benchmark.stats.apolloSpend}}) while producing {{benchmark.stats.apolloFinal}} final matches. Cheap steps for the easy half, an expensive backstop for the rest.",
+          "One key is enough. With treg alone (BlitzAPI then QuickEnrich) {{benchmark.stats.tregAnswered}} of 50 addresses were answered — {{benchmark.stats.tregFound}} found, {{benchmark.stats.tregUncertain}} uncertain, {{benchmark.stats.tregShare}} — for {{benchmark.stats.tregPerAddress}} per address. Monid alone cannot be compared from this run because Apollo was only reached after the treg and Hunter steps."
+        ]
+      },
+      {
+        "id": "method",
+        "title": "How the benchmark was run",
+        "blocks": [
+          "The sample is 50 rows from the WizLeads 2026 public benchmark table: LinkedIn followers of Clay, with a name and an SMTP-verified work address, across 661 distinct domains. The rows were drawn with a fixed seed, so the same command produces the same subset. Files: <code>data/bench/wizleads-sample-50.csv</code> and <code>data/bench/wizleads-sample-50.results.json</code>.",
+          "The run used both provider keys and the default waterfall order, with each provider's catalog price checked before the call. The display name from the CSV was passed with the address, and a result was accepted only when the profile name matched. All 50 rows have <code>cached: false</code>.",
+          "The waterfall, cheapest first:"
+        ],
+        "list": [
+          "<strong>Signature scan</strong> — a local regex for a <code>linkedin.com/in</code> link. Free; not exercised here (the CSV has no mail bodies).",
+          "<strong>BlitzAPI</strong> (treg) — reverse email lookup, $0.0005 per hit, misses free.",
+          "<strong>Hunter</strong> (Monid) — email to profile, $0.0049 per hit, a 404 miss is free.",
+          "<strong>QuickEnrich</strong> (treg) — email enrichment, $0.0048 per hit.",
+          "<strong>Apollo</strong> (Monid) — email plus name plus domain, $0.026 per hit; a miss is free unless Apollo returns an empty stub attached to a known company, which is billed. In this run every call that reached Apollo answered.",
+          "<strong>Data Legion</strong> (Firecrawl, optional) — 10 credits; reached twice, skipped twice by the budget check."
+        ]
+      },
+      {
+        "id": "results",
+        "title": "Results by step",
+        "blocks": [
+          "Reached is the number of addresses that arrived at the step. Answered is the number of calls that returned a profile. Hit rate is answered divided by reached — the conditional rate, not a share of the whole sample. Final answer is how many addresses the step answered after the name check and after later steps could override a non-matching result.",
+          "The table is generated from the results file, not typed by hand. If the benchmark is rerun and the file changes, <code>npm run site</code> rebuilds it."
+        ],
+        "table": {
+          "head": [
+            "Step",
+            "Reached",
+            "Answered",
+            "Hit rate",
+            "Final answer",
+            "Observed price",
+            "Spend"
+          ],
+          "rows": []
+        }
+      },
+      {
+        "id": "reading",
+        "title": "Reading the table",
+        "blocks": [
+          "BlitzAPI is the cheapest step and the busiest: reached for all 50 addresses, it answered 25 and was the final answer for 24 (22 name-matched, 2 uncertain). One BlitzAPI answer did not match, so the chain continued; Apollo found a matching person and became the final answer. That is the name check working.",
+          "Hunter answered 5 of the 28 addresses that reached it (17.9 %), and QuickEnrich answered 4 of 23 (17.4 %). Those rates are conditional on the earlier step having missed: they are second and third chances, not first. Hunter's spend is slightly above five times its unit price because one <em>miss</em> was billed at $0.0049;",
+          "Apollo answered all 19 calls it served, but only 17 became final matches. The other two did not match the mail header either; those rows are marked uncertain and show both names. Apollo is why the total is not three cents.",
+          "Data Legion is listed for completeness: both calls were skipped by the per-lookup budget check, so it answered nothing and cost nothing."
+        ]
+      },
+      {
+        "id": "cost",
+        "title": "What it costs in practice",
+        "blocks": [
+          "At {{benchmark.stats.perAddress}} per address, the default $2 daily cap covers about {{benchmark.stats.dailyCapAddresses}} new addresses a day. The $0.05 per-lookup cap never came into play: the most expensive successful call was Apollo at $0.026.",
+          "treg alone is roughly twenty times cheaper per address and answers a bit more than half the sample. Monid alone puts Apollo behind Hunter and is better when a miss costs more than $0.03. Both keys gave the best coverage here for about a cent per address, which is why it is the default.",
+          "The benchmark excludes the optional Village and ContactOut steps and the two skipped Data Legion calls. Enabling those changes cost and coverage. The extension reads the current price before every call and enforces both caps, so these numbers describe one configuration."
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "What this benchmark does not prove",
+        "blocks": [
+          "A 50-row run is useful for direction and useless for precision. Treat the percentages as one sample with wide error bars, not as the provider's true hit rate. Specific caveats:"
+        ],
+        "list": [
+          "Sample size: 50 addresses from one public table of English-speaking sales and growth contacts. Recruiters, support inboxes, non-English names and enterprise address books may differ.",
+          "One day, one pass: providers change their data and prices; the run is dated 25 October 2026. There were no retries and no cache warming.",
+          "Name matching is a heuristic. A profile can be the right person with a different spelling, or the wrong person with the same name. The two uncertain rows show the second case; one found row had no returned profile name.",
+          "A LinkedIn URL does not prove the profile is current, still at that company, or the person you meant. The extension shows the provider answer plus a name check; it does not verify identity.",
+          "Spend is the run's USD ledger, including one billed Hunter miss and rounded BlitzAPI/QuickEnrich charges."
+        ]
+      },
+      {
+        "id": "reproduce",
+        "title": "Reproduce it",
+        "blocks": [
+          "Everything needed is in the repository. The benchmark writes a JSON results file; the website table is derived from it. The run costs money because it calls paid APIs — use your own keys and start small to sanity-check the flow. The page publishes aggregates only: no address, name, profile URL or mail content from the sample appears here."
+        ],
+        "ordered": [
+          "Clone <a href=\"https://github.com/astonysh/SenderFinder\">github.com/astonysh/SenderFinder</a> and run <code>npm install</code> if your checkout needs it; the project has no runtime dependencies.",
+          "Put your treg and Monid keys in <code>.env</code> (see <code>.env.example</code>), then check them for free with <code>npm run probe</code>.",
+          "Run <code>npm run bench -- data/bench/wizleads-sample-50.csv</code>. It writes the results JSON and prints the summary.",
+          "Run <code>npm run site</code> to regenerate this page's table, then <code>npm test</code>."
+        ]
+      },
+      {
+        "id": "related",
+        "title": "Related reading",
+        "list": [
+          "<a href=\"/find-linkedin-profile-from-email\">How to find a LinkedIn profile from an email address</a> — the manual methods and where the waterfall fits.",
+          "<a href=\"/linkedin-sales-navigator-gmail-alternative\">Sales Navigator for Gmail</a>.",
+          "<a href=\"/clearbit-connect-alternative\">Clearbit Connect alternative</a> and <a href=\"/rapportive-alternative\">Rapportive alternative</a>."
+        ]
+      }
+    ],
+    "faqTitle": "Questions about the benchmark",
+    "faqIntro": "Short answers to the things people ask before trusting a hit-rate table.",
+    "bottomCta": {
+      "title": "Run the same waterfall on your own inbox",
+      "body": "Bring one provider key, keep the default caps, and see the hit rate on the addresses you actually receive. The extension is open source and the benchmark above is reproducible."
+    }
+  },
+  "faq": [
+    {
+      "q": "How many emails were in the benchmark?",
+      "a": "Fifty verified work addresses, drawn with a fixed seed from the WizLeads 2026 public table. The run is dated 25 October 2026 and used both provider keys with the default waterfall and caps."
+    },
+    {
+      "q": "What did an average lookup cost?",
+      "a": "About {{benchmark.stats.perAddress}} per address, or {{benchmark.stats.totalUsd}} for all 50 including misses. The figure is the run's own provider ledger, not a price list."
+    },
+    {
+      "q": "Is one provider key really enough?",
+      "a": "Yes. With treg alone, {{benchmark.stats.tregAnswered}} of {{benchmark.stats.rows}} addresses were answered ({{benchmark.stats.tregFound}} found, {{benchmark.stats.tregUncertain}} uncertain) for about {{benchmark.stats.tregPerAddress}} per address. Monid alone cannot be measured from this sample because Apollo was only reached after the earlier steps. Both keys gave the best coverage here."
+    },
+    {
+      "q": "Does a miss cost money?",
+      "a": "On most steps a miss is free. Apollo is the exception: a miss costs nothing unless it returns an empty stub attached to a known company, which is billed. In this run one Hunter miss was billed. The extension enforces both caps before each call."
+    }
+  ]
+}

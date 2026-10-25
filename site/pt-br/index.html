@@ -26,7 +26,12 @@
   <meta property="og:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="800">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SenderFinder — Encontre o remetente do e-mail no LinkedIn">
+  <meta name="twitter:description" content="Abra um e-mail no Gmail e veja o perfil do LinkedIn do remetente. Código aberto, suas próprias chaves de API, sem conta.">
+  <meta name="twitter:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta name="color-scheme" content="light dark">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"pt-BR","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"]},{"@type":"SoftwareApplication","@id":"https://senderfinder.com/#software","name":"SenderFinder","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Microsoft Edge","url":"https://senderfinder.com/","description":"Extensão Chrome de código aberto que mostra perfis do LinkedIn de remetentes no Gmail e Outlook. Use suas próprias chaves de provedor; as contagens de uso anônimas vêm ativadas por padrão e podem ser desativadas.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"https://www.gnu.org/licenses/agpl-3.0.html","downloadUrl":"https://github.com/astonysh/SenderFinder","softwareVersion":"0.5.1","isAccessibleForFree":true,"publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"FAQPage","@id":"https://senderfinder.com/pt-br/#faq","mainEntity":[{"@type":"Question","name":"É grátis?","acceptedAnswer":{"@type":"Answer","text":"Sim. A extensão é gratuita e de código aberto sob a licença AGPL-3.0, sem conta e sem assinatura. As buscas pagas são opcionais: o provedor de dados que você escolher as cobra na sua própria chave, por acerto, dentro dos tetos que você definir. A leitura da assinatura e o cache não custam nada."}},{"@type":"Question","name":"Preciso de uma conta?","acceptedAnswer":{"@type":"Answer","text":"Não é necessário se cadastrar. As buscas vão diretamente ao provedor que você configurar; as contagens diárias de uso anônimas vão ao serviço de estatísticas do projeto, e um interruptor nas configurações as desativa."}},{"@type":"Question","name":"Qual chave eu pego?","acceptedAnswer":{"@type":"Answer","text":"Uma chave do Monid ou do treg basta para começar. Adicionar as duas, e opcionalmente o Firecrawl, dá mais lugares para a cascata procurar. A página de instalação compara as opções."}},{"@type":"Question","name":"Como mantenho os custos sob controle?","acceptedAnswer":{"@type":"Answer","text":"Há um teto por busca (padrão $0.05) e um teto diário (padrão $2). Só o remetente do e-mail aberto é buscado automaticamente, com um limite diário definido por você. Os resultados ficam em cache, então o mesmo endereço nunca é pago duas vezes. A calculadora mostra quanto custaria um determinado volume."}},{"@type":"Question","name":"E se aparecer a pessoa errada?","acceptedAnswer":{"@type":"Answer","text":"Se o nome vindo do provedor não conferir com o nome exibido no cabeçalho do e-mail, o resultado é marcado como “incerto” e mostra os dois nomes, para você julgar."}},{"@type":"Question","name":"Por que um remetente gmail.com não é buscado?","acceptedAnswer":{"@type":"Answer","text":"Domínios de e-mail pessoal e endereços genéricos como info@ raramente correspondem a um perfil, então são ignorados por padrão para economizar. Clique no botão do painel para buscá-los mesmo assim."}}]}]}</script>
   <script src="../assets/theme-boot.js"></script>
   <link rel="stylesheet" href="../assets/app.css">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -78,18 +83,19 @@
   <header class="v2-nav">
     <div class="v2-wrap">
       <div class="v2-nav-inner">
-        <a class="v2-brand" href="index.html" aria-current="page">
+        <a class="v2-brand" href="/pt-br/" aria-current="page">
           <img src="../assets/icon-128.png" alt="" width="32" height="32">
           <span>SenderFinder</span>
         </a>
 
         <nav class="v2-nav-links" aria-label="Principal">
           <ul>
-            <li><a href="index.html#how">Como funciona</a></li>
-            <li><a href="index.html#privacy">Privacidade</a></li>
-            <li><a href="index.html#cost">Preços</a></li>
-            <li><a href="install.html">Instalar</a></li>
-            <li><a href="index.html#faq">Perguntas frequentes</a></li>
+            <li><a href="/pt-br/#how" aria-current="page">Como funciona</a></li>
+            <li><a href="/pt-br/#privacy" aria-current="page">Privacidade</a></li>
+            <li><a href="/pt-br/#cost" aria-current="page">Preços</a></li>
+            <li><a href="/pt-br/install">Instalar</a></li>
+            <li><a href="/pt-br/changelog">Registro de alterações</a></li>
+            <li><a href="/pt-br/#faq" aria-current="page">Perguntas frequentes</a></li>
             <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
           </ul>
         </nav>
@@ -101,16 +107,16 @@
             <div class="lang-menu">
               <nav aria-label="Idioma">
                 <ul>
-                <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
-                <li><a href="../zh-cn/index.html" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
-                <li><a href="../zh-tw/index.html" hreflang="zh-TW" lang="zh-TW">繁體中文</a></li>
-                <li><a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a></li>
-                <li><a href="../ko/index.html" hreflang="ko" lang="ko">한국어</a></li>
-                <li><a href="../de/index.html" hreflang="de" lang="de">Deutsch</a></li>
-                <li><a href="../fr/index.html" hreflang="fr" lang="fr">Français</a></li>
-                <li><a href="../es/index.html" hreflang="es" lang="es">Español</a></li>
-                <li><a href="../it/index.html" hreflang="it" lang="it">Italiano</a></li>
-                <li><a href="index.html" hreflang="pt-BR" lang="pt-BR" aria-current="page">Português (Brasil)</a></li>
+                <li><a href="/" hreflang="en" lang="en">English</a></li>
+                <li><a href="/zh-cn/" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
+                <li><a href="/zh-tw/" hreflang="zh-TW" lang="zh-TW">繁體中文</a></li>
+                <li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li>
+                <li><a href="/ko/" hreflang="ko" lang="ko">한국어</a></li>
+                <li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li>
+                <li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li>
+                <li><a href="/es/" hreflang="es" lang="es">Español</a></li>
+                <li><a href="/it/" hreflang="it" lang="it">Italiano</a></li>
+                <li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR" aria-current="page">Português (Brasil)</a></li>
                 </ul>
               </nav>
               <p class="fine">O SenderFinder está disponível em 10 idiomas. A extensão segue o idioma do seu navegador.</p>
@@ -148,7 +154,7 @@
       <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder">
         <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> Ver no GitHub
       </a>
-      <a class="v2-btn v2-btn--default" href="install.html" data-store-url="CWS_PLACEHOLDER">
+      <a class="v2-btn v2-btn--default" href="/pt-br/install" data-store-url="CWS_PLACEHOLDER">
         Instalar em 2 minutos <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg>
       </a>
     </div>
@@ -290,7 +296,7 @@
       
     </div>
 
-    <p class="v2-center"><a class="v2-btn v2-btn--outline v2-btn--sm" href="privacy.html">Todos os detalhes de privacidade <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></p>
+    <p class="v2-center"><a class="v2-btn v2-btn--outline v2-btn--sm" href="/pt-br/privacy">Todos os detalhes de privacidade <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></p>
   </div>
 </section>
 
@@ -321,7 +327,7 @@
         </ul>
       </div>
       <div class="v2-free-action">
-        <a class="v2-btn v2-btn--default" href="install.html">Instalar grátis <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="v2-btn v2-btn--default" href="/pt-br/install">Instalar grátis <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
     </article>
 
@@ -477,6 +483,7 @@
       </div>
     </details>
     <p class="v2-note fine">Estimativas a partir do benchmark de 50 endereços de 25 de outubro de 2026. Padrões: $2 por dia e $0.05 por busca, ambos ajustáveis nas configurações.</p>
+    <p class="v2-note fine"><a href="/email-enrichment-api-benchmark">O benchmark de 50 endereços: taxa de acerto e preço por fornecedor</a></p>
   </div>
 </section>
 
@@ -502,7 +509,7 @@
       
       <details>
         <summary>Qual chave eu pego?</summary>
-        <div class="v2-faq-body"><p>Uma chave do <a href="https://app.monid.ai/">Monid</a> ou do <a href="https://treg.to/">treg</a> basta para começar. Adicionar as duas, e opcionalmente o <a href="https://www.firecrawl.dev/">Firecrawl</a>, dá mais lugares para a cascata procurar. A <a href="install.html#which-key">página de instalação</a> compara as opções.</p></div>
+        <div class="v2-faq-body"><p>Uma chave do <a href="https://app.monid.ai/">Monid</a> ou do <a href="https://treg.to/">treg</a> basta para começar. Adicionar as duas, e opcionalmente o <a href="https://www.firecrawl.dev/">Firecrawl</a>, dá mais lugares para a cascata procurar. A <a href="/pt-br/install#which-key">página de instalação</a> compara as opções.</p></div>
       </details>
       
       <details>
@@ -530,7 +537,7 @@
       <h2>Dois minutos e está pronto</h2>
       <p>A ficha na Chrome Web Store ainda não está publicada, então você carrega a extensão sem compactação. Cinco passos, uma captura de tela para cada.</p>
       <div class="v2-actions">
-        <a class="v2-btn v2-btn--outline" href="install.html">Abrir o guia de instalação <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="v2-btn v2-btn--outline" href="/pt-br/install">Abrir o guia de instalação <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
     </div>
   </div>
@@ -539,19 +546,31 @@
 
   <footer class="v2-foot">
     <div class="v2-wrap v2-foot-inner">
-      <a class="v2-brand" href="index.html">
+      <a class="v2-brand" href="/pt-br/">
         <img src="../assets/icon-128.png" alt="" width="32" height="32">
         <span>SenderFinder</span>
       </a>
       <ul class="v2-foot-links">
-        <li><a href="install.html">Instalar</a></li>
-        <li><a href="privacy.html">Privacidade</a></li>
-        <li><a href="clearbit-connect-alternative.html">Alternativa ao Clearbit Connect</a></li>
-        <li><a href="rapportive-alternative.html">Alternativa ao Rapportive</a></li>
+        <li><a href="/pt-br/install">Instalar</a></li>
+        <li><a href="/pt-br/privacy">Privacidade</a></li>
+        <li><a href="/pt-br/clearbit-connect-alternative">Alternativa ao Clearbit Connect</a></li>
+        <li><a href="/pt-br/rapportive-alternative">Alternativa ao Rapportive</a></li>
+        <li><a href="/pt-br/changelog">Registro de alterações</a></li>
         <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
         <li><a href="https://github.com/astonysh/SenderFinder/blob/main/LICENSE">Licença AGPL-3.0</a></li>
       </ul>
-      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> Nenhum servidor do SenderFinder no caminho da busca. Suas chaves e seu histórico ficam no seu navegador. <a href="privacy.html">Privacidade</a></p>
+      <nav class="v2-foot-resources" aria-label="Recursos">
+        <p class="v2-foot-head">Recursos</p>
+        <ul class="v2-foot-links v2-foot-links--stack">
+          <li lang="en"><a href="/email-enrichment-api-benchmark" hreflang="en">Email enrichment benchmark</a></li>
+          <li lang="en"><a href="/linkedin-sales-navigator-gmail-alternative" hreflang="en">Sales Navigator for Gmail</a></li>
+          <li lang="en"><a href="/find-linkedin-profile-from-email" hreflang="en">Find a profile from an email</a></li>
+          <li lang="en"><a href="/outlook-linkedin-sidebar" hreflang="en">Outlook sidebar</a></li>
+          <li lang="en"><a href="/sponsors" hreflang="en">Sponsors</a></li>
+          <li lang="en"><a href="/stats" hreflang="en">Usage statistics</a></li>
+        </ul>
+      </nav>
+      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> Nenhum servidor do SenderFinder no caminho da busca. Suas chaves e seu histórico ficam no seu navegador. <a href="/pt-br/privacy">Privacidade</a></p>
       <div class="v2-foot-bottom">
         <p>O SenderFinder é software de código aberto, publicado sob a licença AGPL-3.0.</p>
         <p>Gmail, Outlook, LinkedIn e Chrome são marcas de seus respectivos proprietários.</p>
@@ -562,7 +581,7 @@
   <div class="notice" id="notice" role="region" aria-label="Aviso de cookies" data-consent-mode="false" hidden>
     <div class="notice-inner">
       <svg class="i i-lg" aria-hidden="true"><use href="#i-cookie"/></svg>
-      <p>Este site pode usar ferramentas de análise que respeitam a privacidade para contar visitas. A extensão SenderFinder é outra coisa: ela envia um resumo diário de uso anônimo, a menos que você desative isso nas configurações dela. <a href="privacy.html#cookies">Privacidade</a></p>
+      <p>Este site pode usar ferramentas de análise que respeitam a privacidade para contar visitas. A extensão SenderFinder é outra coisa: ela envia um resumo diário de uso anônimo, a menos que você desative isso nas configurações dela. <a href="/pt-br/privacy#cookies">Privacidade</a></p>
       <div class="notice-actions">
         <button type="button" class="notice-btn notice-close" data-consent="ack">OK</button>
       </div>

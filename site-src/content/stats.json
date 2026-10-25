@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "title": "SenderFinder usage statistics: what is counted, and what is not | SenderFinder",
+    "description": "The anonymous daily usage count explained: which aggregate fields are sent, what is never sent, how to switch it off, and where the public numbers will come from.",
+    "ogTitle": "SenderFinder usage statistics",
+    "ogDescription": "One anonymous daily summary, on by default, one switch to turn it off. Here is exactly what it contains."
+  },
+  "page": {
+    "title": "Usage statistics: what is counted, and what is not",
+    "lead": "SenderFinder sends one anonymous daily summary from each installation. It is on by default, one switch turns it off, and it never contains an address, a name, a domain, a profile field, a key or message text. This page explains the counter, the switch and the numbers the project plans to publish.",
+    "updated": "Last checked: 25 October 2026.",
+    "cta": {
+      "install": "Install SenderFinder",
+      "github": "View the source on GitHub"
+    },
+    "sections": [
+      {
+        "id": "what",
+        "title": "What the daily count is",
+        "blocks": [
+          "Once a day, the extension sends a small JSON document to the project's statistics service: how many lookups ran, how they ended, which provider steps were called and how often they answered, which mail client was used, a rounded spend figure, the extension version, the UI language, the day, and a random installation ID. The receiver stores one row per installation per day in a Cloudflare D1 table.",
+          "The purpose is operational, not behavioural. The counters answer questions like: is the waterfall still finding people after a provider changed its API? Which step is erroring? Is the Outlook path failing more often than Gmail? Which language needs attention? None of those questions requires knowing who you looked up.",
+          "The <a href=\"/privacy\">privacy statement</a> is the authoritative description, including the legal basis and the data controller. This page is the readable summary."
+        ]
+      },
+      {
+        "id": "fields",
+        "title": "The fields, one by one",
+        "blocks": [
+          "The payload is deliberately flat and small. In plain words:"
+        ],
+        "list": [
+          "<strong>Counts:</strong> lookups, found, uncertain, not found, skipped and cached. These are totals for the day, not a list of events.",
+          "<strong>Provider steps:</strong> per step (for example <code>blitzapi</code> or <code>apollo</code>), the number of calls, hits and errors. No provider response is included.",
+          "<strong>Mail client:</strong> a coarse total such as Gmail or Outlook. No subject, sender, thread or message ID.",
+          "<strong>Spend:</strong> the user's own provider spend for the day, rounded. It is the same number the settings page shows, not an invoice.",
+          "<strong>Version and language:</strong> the extension version and the UI language, so a bug report can be matched to a build.",
+          "<strong>Installation ID:</strong> a random UUID created by the extension. It is not derived from your machine, your account or your browser fingerprint, and turning the switch off deletes it."
+        ]
+      },
+      {
+        "id": "never",
+        "title": "What it never contains",
+        "blocks": [
+          "The receiver does not log IP addresses or user agents, sets no cookies, and has request logging disabled. The payload has no field for any of the following:"
+        ],
+        "list": [
+          "An email address, display name, company name or domain.",
+          "A LinkedIn URL, profile field, photo URL or provider response.",
+          "A provider key, token or account identifier.",
+          "A mail subject, body, attachment, thread ID or message ID.",
+          "A list of which addresses you looked up, or when you looked them up.",
+          "A precise location, device fingerprint or advertising identifier."
+        ],
+        "blocksAfter": [
+          "The extension's own code is open source, so this is checkable rather than promised: the payload builder is in <code>extension/core/telemetry.js</code> and the receiver is in <code>telemetry/</code>."
+        ]
+      },
+      {
+        "id": "why",
+        "title": "Why count at all",
+        "blocks": [
+          "A local-first tool has a visibility problem: the maintainer cannot see whether a provider adapter broke, whether a language is usable, or whether a release made lookups slower. The daily count is the smallest signal that answers those questions without turning the product into a surveillance system.",
+          "It also makes the public claims checkable. The project would rather publish aggregate lookup and hit counts than ask readers to trust a marketing sentence. The benchmark on this site is a separate, reproducible measurement; the daily count is the operational complement.",
+          "The count is on by default because a telemetry system that almost nobody enables cannot answer any of those questions. That is a trade-off, not a hidden feature: it is disclosed on install, in the privacy statement, in the settings page and here, and one switch turns it off."
+        ]
+      },
+      {
+        "id": "off",
+        "title": "How to turn it off",
+        "blocks": [
+          "Open the extension's settings page (toolbar icon → “open settings”), find the statistics switch and turn it off. The switch deletes the installation ID and anything unsent. It does not affect lookups, keys, cache or history, and it does not require a restart.",
+          "You can preview the current payload in the settings page with the “Preview what would be sent” button before deciding. If you uninstall the extension, its storage is deleted with it.",
+          "Turning the switch back on creates a new installation ID. There is no way to link the new ID to the old one."
+        ]
+      },
+      {
+        "id": "numbers",
+        "title": "The numbers",
+        "comment": "<!-- STATS-PLACEHOLDER: the table below is intentionally empty. The Lead will wire it to aggregates from scripts/metrics-report.js (telemetry D1 query, plus GitHub/CWS/Cloudflare sources where configured). The website must never call the telemetry worker directly, and this page must not invent values. Replace the em dashes only with a dated snapshot and keep the methodology note. -->",
+        "blocks": [
+          "The public numbers are not live yet. The table is a placeholder for a dated snapshot; until it is wired, every value stays an em dash rather than a guess. The site is static and does not call the telemetry worker from a visitor's browser."
+        ],
+        "table": {
+          "head": [
+            "Metric",
+            "Last 30 days",
+            "Note"
+          ],
+          "rows": [
+            [
+              "Active installations",
+              "—",
+              "Distinct random installation IDs that sent a count"
+            ],
+            [
+              "Lookups",
+              "—",
+              "Total lookups, including cached and skipped"
+            ],
+            [
+              "Found",
+              "—",
+              "Lookups that returned a name-matching profile"
+            ],
+            [
+              "Uncertain",
+              "—",
+              "A profile came back, but the name did not match"
+            ],
+            [
+              "Not found",
+              "—",
+              "No provider answered"
+            ],
+            [
+              "Cached",
+              "—",
+              "Served from the local cache, no provider call"
+            ],
+            [
+              "Provider spend (USD)",
+              "—",
+              "Rounded sum of users' own provider spend"
+            ],
+            [
+              "Last updated",
+              "—",
+              "Date of the snapshot"
+            ]
+          ],
+          "note": "Definitions: a lookup is one attempt to resolve one address; found means a profile with a matching name; uncertain means both names are shown; cached means the answer came from IndexedDB. Active installations count only installations with the statistics switch on."
+        }
+      },
+      {
+        "id": "caveats",
+        "title": "How to read them",
+        "list": [
+          "These are counts from installations that left the switch on, not a census of all users. The default is on, but anyone can opt out.",
+          "The installation ID is random and rotates if the switch is toggled or the extension is reinstalled, so the count is a lower bound on active installs.",
+          "One installation can send at most one summary per day; a day with no lookups may still be counted, depending on the payload.",
+          "Spend is self-reported by the extension from the user's own provider ledger, rounded. It is not project revenue.",
+          "The receiver does not log IPs or user agents, so there is no geographic or device breakdown to publish.",
+          "Snapshots are dated. A number without a date is not a number."
+        ],
+        "blocks": []
+      },
+      {
+        "id": "related",
+        "title": "Related reading",
+        "list": [
+          "<a href=\"/privacy\">Privacy statement</a> — the full data model, legal basis and retention.",
+          "<a href=\"/email-enrichment-api-benchmark\">The 50-address benchmark</a> — the reproducible measurement, separate from these counters.",
+          "<a href=\"/sponsors\">Sponsors</a> — why the project asks for support instead of charging for the extension.",
+          "<a href=\"/install\">Install guide</a> — where the switch lives.",
+          "<a href=\"/clearbit-connect-alternative\">Clearbit Connect alternative</a> and <a href=\"/rapportive-alternative\">Rapportive alternative</a>."
+        ],
+        "blocks": []
+      }
+    ],
+    "faqTitle": "Questions about the counters",
+    "faqIntro": "The details people ask about before leaving the switch on.",
+    "bottomCta": {
+      "title": "You decide",
+      "body": "The count is on by default, but the switch is one click and it deletes what was collected. The extension works the same either way."
+    }
+  },
+  "faq": [
+    {
+      "q": "Are usage statistics on by default?",
+      "a": "Yes. SenderFinder sends one anonymous daily summary unless you turn the statistics switch off. Switching it off deletes the installation ID and anything unsent, and does not affect lookups."
+    },
+    {
+      "q": "Does the count include email addresses or names?",
+      "a": "No. The payload has counts, provider-step totals, mail-client totals, rounded spend, version, language, day and a random installation ID. There is no field for an address, name, domain, profile, key or message text."
+    },
+    {
+      "q": "Does the receiver log IP addresses?",
+      "a": "No. The telemetry Worker does not log IPs or user agents, sets no cookies and has request logging disabled."
+    },
+    {
+      "q": "Where can I see exactly what would be sent?",
+      "a": "The settings page has a “Preview what would be sent” button that shows the current payload. The payload builder is in extension/core/telemetry.js and the receiver is in telemetry/."
+    },
+    {
+      "q": "Why are the public numbers empty?",
+      "a": "The table is a deliberate placeholder. The project will publish a dated snapshot generated from the aggregate table; the website does not call the telemetry worker and does not invent values. Em dashes mean “not published yet”."
+    }
+  ]
+}

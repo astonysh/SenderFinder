@@ -348,6 +348,9 @@ code { background: var(--surface-2); padding: .05em .25em; border-radius: 2px; }
 .v2-foot-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 1.6rem; margin: 0; padding: 0; list-style: none; font-size: .975rem; }
 .v2-foot-links a { color: var(--v2-muted-fg); text-decoration: none; }
 .v2-foot-links a:hover { color: var(--v2-fg); }
+.v2-foot-resources { display: flex; flex-direction: column; align-items: center; gap: .35rem; }
+.v2-foot-head { margin: 0; font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--v2-muted-fg); }
+.v2-foot-links--stack { flex-direction: column; align-items: center; gap: .35rem; }
 .v2-foot-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; width: 100%; margin-top: 1.5rem; padding-top: .9rem; border-top: 1px solid var(--v2-border); font-size: .82rem; color: var(--v2-muted-fg); text-align: left; }
 .v2-foot-bottom p { margin: 0; }
 .v2-foot-privacy { display: inline-flex; align-items: center; gap: .45rem; color: var(--v2-fg); }

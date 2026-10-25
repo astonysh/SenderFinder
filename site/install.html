@@ -26,7 +26,12 @@
   <meta property="og:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="800">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Install SenderFinder">
+  <meta name="twitter:description" content="Two minutes, five steps, one API key. Install the open-source extension from source until the Chrome Web Store listing is live.">
+  <meta name="twitter:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta name="color-scheme" content="light dark">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"en","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"]},{"@type":"BreadcrumbList","@id":"https://senderfinder.com/install#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://senderfinder.com/"},{"@type":"ListItem","position":2,"name":"Install","item":"https://senderfinder.com/install"}]},{"@type":"HowTo","@id":"https://senderfinder.com/install#howto","name":"Install SenderFinder","description":"The Chrome Web Store listing isn't live yet, so you load the extension from source. Two minutes, once per browser.","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"Get the code","text":"Download the repository as a ZIP from GitHub (“Code” → “Download ZIP”) and unpack it, or clone it if you have git: git clone https://github.com/astonysh/SenderFinder.git"},{"@type":"HowToStep","position":2,"name":"Load it in Chrome","text":"Open chrome://extensions in a new tab. Switch on Developer mode (top right), click Load unpacked and pick the extension/ folder inside the repository — the folder that contains manifest.json, not the repository root."},{"@type":"HowToStep","position":3,"name":"Get one key and paste it","text":"The settings page opens by itself after installation. Create a key at Monid (Hunter, Apollo, ContactOut) or treg (BlitzAPI, QuickEnrich, Village); Firecrawl is optional. One key is enough. Paste it under “Provider keys”."},{"@type":"HowToStep","position":4,"name":"Press “Test keys (free)”","text":"The check is free: it verifies the key and reads the provider's price list. Nothing is looked up and nothing is spent. You want “valid” next to your key."},{"@type":"HowToStep","position":5,"name":"Open Gmail and click the toolbar icon once","text":"Open any message in Gmail, then click the SenderFinder icon in Chrome's toolbar. If you can't see it, click the puzzle-piece icon and pin SenderFinder first. The side panel opens and stays open in that tab; from then on it follows the email you read."}]}]}</script>
   <script src="assets/theme-boot.js"></script>
   <link rel="stylesheet" href="assets/app.css">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -77,18 +82,19 @@
   <header class="v2-nav">
     <div class="v2-wrap">
       <div class="v2-nav-inner">
-        <a class="v2-brand" href="index.html" aria-current="page">
+        <a class="v2-brand" href="/">
           <img src="assets/icon-128.png" alt="" width="32" height="32">
           <span>SenderFinder</span>
         </a>
 
         <nav class="v2-nav-links" aria-label="Main">
           <ul>
-            <li><a href="index.html#how">How it works</a></li>
-            <li><a href="index.html#privacy">Privacy</a></li>
-            <li><a href="index.html#cost">Pricing</a></li>
-            <li><a href="install.html" aria-current="page">Install</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="/#how">How it works</a></li>
+            <li><a href="/#privacy">Privacy</a></li>
+            <li><a href="/#cost">Pricing</a></li>
+            <li><a href="/install" aria-current="page">Install</a></li>
+            <li><a href="/changelog">Changelog</a></li>
+            <li><a href="/#faq">FAQ</a></li>
             <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
           </ul>
         </nav>
@@ -100,16 +106,16 @@
             <div class="lang-menu">
               <nav aria-label="Language">
                 <ul>
-                <li><a href="install.html" hreflang="en" lang="en" aria-current="page">English</a></li>
-                <li><a href="zh-cn/install.html" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
-                <li><a href="zh-tw/install.html" hreflang="zh-TW" lang="zh-TW">繁體中文</a></li>
-                <li><a href="ja/install.html" hreflang="ja" lang="ja">日本語</a></li>
-                <li><a href="ko/install.html" hreflang="ko" lang="ko">한국어</a></li>
-                <li><a href="de/install.html" hreflang="de" lang="de">Deutsch</a></li>
-                <li><a href="fr/install.html" hreflang="fr" lang="fr">Français</a></li>
-                <li><a href="es/install.html" hreflang="es" lang="es">Español</a></li>
-                <li><a href="it/install.html" hreflang="it" lang="it">Italiano</a></li>
-                <li><a href="pt-br/install.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+                <li><a href="/install" hreflang="en" lang="en" aria-current="page">English</a></li>
+                <li><a href="/zh-cn/install" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
+                <li><a href="/zh-tw/install" hreflang="zh-TW" lang="zh-TW">繁體中文</a></li>
+                <li><a href="/ja/install" hreflang="ja" lang="ja">日本語</a></li>
+                <li><a href="/ko/install" hreflang="ko" lang="ko">한국어</a></li>
+                <li><a href="/de/install" hreflang="de" lang="de">Deutsch</a></li>
+                <li><a href="/fr/install" hreflang="fr" lang="fr">Français</a></li>
+                <li><a href="/es/install" hreflang="es" lang="es">Español</a></li>
+                <li><a href="/it/install" hreflang="it" lang="it">Italiano</a></li>
+                <li><a href="/pt-br/install" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
                 </ul>
               </nav>
               <p class="fine">SenderFinder is available in 10 languages. The extension follows your browser language.</p>
@@ -286,7 +292,7 @@
   <div class="v2-wrap">
     <div class="v2-cta">
       <h2>What next</h2>
-      <p>Read <a href="index.html#how">how it works</a>, check <a href="index.html#cost">what a lookup costs</a> or work out your own volume in the <a href="index.html#calculator">cost calculator</a>. Data questions are answered in the <a href="privacy.html">privacy statement</a>.</p>
+      <p>Read <a href="/#how">how it works</a>, check <a href="/#cost">what a lookup costs</a> or work out your own volume in the <a href="/#calculator">cost calculator</a>. Data questions are answered in the <a href="/privacy">privacy statement</a>.</p>
     </div>
   </div>
 </section>
@@ -294,19 +300,31 @@
 
   <footer class="v2-foot">
     <div class="v2-wrap v2-foot-inner">
-      <a class="v2-brand" href="index.html">
+      <a class="v2-brand" href="/">
         <img src="assets/icon-128.png" alt="" width="32" height="32">
         <span>SenderFinder</span>
       </a>
       <ul class="v2-foot-links">
-        <li><a href="install.html">Install</a></li>
-        <li><a href="privacy.html">Privacy</a></li>
-        <li><a href="clearbit-connect-alternative.html">Clearbit Connect alternative</a></li>
-        <li><a href="rapportive-alternative.html">Rapportive alternative</a></li>
+        <li><a href="/install" aria-current="page">Install</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/clearbit-connect-alternative">Clearbit Connect alternative</a></li>
+        <li><a href="/rapportive-alternative">Rapportive alternative</a></li>
+        <li><a href="/changelog">Changelog</a></li>
         <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
         <li><a href="https://github.com/astonysh/SenderFinder/blob/main/LICENSE">AGPL-3.0 license</a></li>
       </ul>
-      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> No SenderFinder server in the lookup path. Your keys and history stay in your browser. <a href="privacy.html">Privacy</a></p>
+      <nav class="v2-foot-resources" aria-label="Resources">
+        <p class="v2-foot-head">Resources</p>
+        <ul class="v2-foot-links v2-foot-links--stack">
+          <li lang="en"><a href="/email-enrichment-api-benchmark" hreflang="en">Email enrichment benchmark</a></li>
+          <li lang="en"><a href="/linkedin-sales-navigator-gmail-alternative" hreflang="en">Sales Navigator for Gmail</a></li>
+          <li lang="en"><a href="/find-linkedin-profile-from-email" hreflang="en">Find a profile from an email</a></li>
+          <li lang="en"><a href="/outlook-linkedin-sidebar" hreflang="en">Outlook sidebar</a></li>
+          <li lang="en"><a href="/sponsors" hreflang="en">Sponsors</a></li>
+          <li lang="en"><a href="/stats" hreflang="en">Usage statistics</a></li>
+        </ul>
+      </nav>
+      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> No SenderFinder server in the lookup path. Your keys and history stay in your browser. <a href="/privacy">Privacy</a></p>
       <div class="v2-foot-bottom">
         <p>SenderFinder is open-source software released under the AGPL-3.0 license.</p>
         <p>Gmail, Outlook, LinkedIn and Chrome are trademarks of their owners.</p>
@@ -317,7 +335,7 @@
   <div class="notice" id="notice" role="region" aria-label="Cookie notice" data-consent-mode="false" hidden>
     <div class="notice-inner">
       <svg class="i i-lg" aria-hidden="true"><use href="#i-cookie"/></svg>
-      <p>This website may use privacy-friendly analytics to count visits. The SenderFinder extension is separate: it sends one anonymous daily usage summary unless you switch that off in its settings. <a href="privacy.html#cookies">Privacy</a></p>
+      <p>This website may use privacy-friendly analytics to count visits. The SenderFinder extension is separate: it sends one anonymous daily usage summary unless you switch that off in its settings. <a href="/privacy#cookies">Privacy</a></p>
       <div class="notice-actions">
         <button type="button" class="notice-btn notice-close" data-consent="ack">OK</button>
       </div>

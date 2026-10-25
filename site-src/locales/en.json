@@ -3,6 +3,8 @@
     "skip": "Skip to content",
     "navLabel": "Main",
     "footerNavLabel": "Footer",
+    "breadcrumbHome": "Home",
+    "benchmarkLink": "Read the 50-address benchmark: hit rate and price per provider",
     "language": "Language",
     "languageHint": "SenderFinder is available in 10 languages. The extension follows your browser language.",
     "nav": {
@@ -10,6 +12,7 @@
       "cost": "Pricing",
       "install": "Install",
       "privacy": "Privacy",
+      "changelog": "Changelog",
       "faq": "FAQ"
     },
     "footer": {
@@ -17,6 +20,16 @@
       "privacy": "Privacy",
       "clearbit": "Clearbit Connect alternative",
       "rapportive": "Rapportive alternative",
+      "changelog": "Changelog",
+      "resources": "Resources",
+      "resourcesLinks": {
+        "benchmark": "Email enrichment benchmark",
+        "salesnav": "Sales Navigator for Gmail",
+        "findByEmail": "Find a profile from an email",
+        "outlook": "Outlook sidebar",
+        "sponsors": "Sponsors",
+        "stats": "Usage statistics"
+      },
       "license": "AGPL-3.0 license",
       "built": "SenderFinder is open-source software released under the AGPL-3.0 license.",
       "disclaimer": "Not affiliated with LinkedIn, HubSpot, Clearbit or any data provider. Product names belong to their owners.",
@@ -67,6 +80,12 @@
       "description": "An open-source Rapportive alternative that shows email senders’ LinkedIn profiles in Gmail. Bring your own provider keys; anonymous usage counts are on by default and can be switched off.",
       "ogTitle": "A Rapportive alternative for Gmail",
       "ogDescription": "Rapportive is gone. SenderFinder shows the sender's LinkedIn profile in Gmail. Open source, your own keys, no account."
+    },
+    "changelog": {
+      "title": "Changelog | SenderFinder",
+      "description": "Every version of the SenderFinder extension, newest first: fixes, features and privacy changes.",
+      "ogTitle": "SenderFinder changelog",
+      "ogDescription": "Every version of the SenderFinder extension, newest first."
     },
     "notFound": {
       "title": "Page not found | SenderFinder",
@@ -738,6 +757,11 @@
         ]
       }
     ]
+  },
+  "changelog": {
+    "title": "Changelog",
+    "lead": "Every version of the extension, newest first.",
+    "note": "Generated from CHANGELOG.md in the repository at build time."
   },
   "notFound": {
     "title": "Page not found",

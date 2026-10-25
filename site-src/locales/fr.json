@@ -3,6 +3,8 @@
     "skip": "Aller au contenu",
     "navLabel": "Navigation principale",
     "footerNavLabel": "Pied de page",
+    "breadcrumbHome": "Accueil",
+    "benchmarkLink": "Le benchmark sur 50 adresses : taux de réussite et prix par fournisseur",
     "language": "Langue",
     "languageHint": "SenderFinder existe en 10 langues. L'extension suit la langue de votre navigateur.",
     "nav": {
@@ -10,6 +12,7 @@
       "cost": "Tarifs",
       "install": "Installer",
       "privacy": "Confidentialité",
+      "changelog": "Journal des modifications",
       "faq": "FAQ"
     },
     "footer": {
@@ -17,6 +20,16 @@
       "privacy": "Confidentialité",
       "clearbit": "Alternative à Clearbit Connect",
       "rapportive": "Alternative à Rapportive",
+      "changelog": "Journal des modifications",
+      "resources": "Ressources",
+      "resourcesLinks": {
+        "benchmark": "Email enrichment benchmark",
+        "salesnav": "Sales Navigator for Gmail",
+        "findByEmail": "Find a profile from an email",
+        "outlook": "Outlook sidebar",
+        "sponsors": "Sponsors",
+        "stats": "Usage statistics"
+      },
       "license": "Licence AGPL-3.0",
       "built": "SenderFinder est un logiciel open source publié sous licence AGPL-3.0.",
       "disclaimer": "Aucun lien avec LinkedIn, HubSpot, Clearbit ni aucun fournisseur de données. Les noms de produits appartiennent à leurs détenteurs.",
@@ -67,6 +80,12 @@
       "description": "Alternative open source à Rapportive pour afficher les profils LinkedIn des expéditeurs dans Gmail. Vos propres clés fournisseur ; statistiques d'utilisation anonymes activées par défaut et désactivables.",
       "ogTitle": "Une alternative à Rapportive pour Gmail",
       "ogDescription": "Rapportive n'existe plus. SenderFinder affiche le profil LinkedIn de l'expéditeur dans Gmail. Open source, vos propres clés, pas de compte."
+    },
+    "changelog": {
+      "title": "Journal des modifications | SenderFinder",
+      "description": "Toutes les versions de l’extension SenderFinder, la plus récente en premier : correctifs, fonctionnalités et changements de confidentialité.",
+      "ogTitle": "Journal des modifications de SenderFinder",
+      "ogDescription": "Toutes les versions de l’extension SenderFinder, la plus récente en premier."
     },
     "notFound": {
       "title": "Page introuvable | SenderFinder",
@@ -738,6 +757,11 @@
         ]
       }
     ]
+  },
+  "changelog": {
+    "title": "Journal des modifications",
+    "lead": "Toutes les versions de l’extension, la plus récente en premier.",
+    "note": "Généré au build depuis le fichier CHANGELOG.md du dépôt."
   },
   "notFound": {
     "title": "Page introuvable",

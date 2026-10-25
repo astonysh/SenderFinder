@@ -3,6 +3,8 @@
     "skip": "본문으로 건너뛰기",
     "navLabel": "주요 메뉴",
     "footerNavLabel": "바닥글 메뉴",
+    "breadcrumbHome": "홈",
+    "benchmarkLink": "이메일 50개 벤치마크: 공급자별 적중률과 가격",
     "language": "언어",
     "languageHint": "SenderFinder는 10개 언어로 제공됩니다. 확장 프로그램은 브라우저 언어를 따릅니다.",
     "nav": {
@@ -10,6 +12,7 @@
       "cost": "가격",
       "install": "설치",
       "privacy": "개인정보",
+      "changelog": "변경 기록",
       "faq": "자주 묻는 질문"
     },
     "footer": {
@@ -17,6 +20,16 @@
       "privacy": "개인정보",
       "clearbit": "Clearbit Connect 대안",
       "rapportive": "Rapportive 대안",
+      "changelog": "변경 기록",
+      "resources": "리소스",
+      "resourcesLinks": {
+        "benchmark": "Email enrichment benchmark",
+        "salesnav": "Sales Navigator for Gmail",
+        "findByEmail": "Find a profile from an email",
+        "outlook": "Outlook sidebar",
+        "sponsors": "Sponsors",
+        "stats": "Usage statistics"
+      },
       "license": "AGPL-3.0 라이선스",
       "built": "SenderFinder는 AGPL-3.0 라이선스로 공개된 오픈 소스 소프트웨어입니다.",
       "disclaimer": "LinkedIn, HubSpot, Clearbit 및 어떤 데이터 제공업체와도 제휴 관계가 없습니다. 제품 이름은 각 소유자의 것입니다.",
@@ -67,6 +80,12 @@
       "description": "Gmail에서 발신자의 LinkedIn 프로필을 보여 주는 Rapportive 오픈소스 대안입니다. 직접 발급한 키를 사용하며, 익명 사용 통계는 기본적으로 켜져 있고 끌 수 있습니다.",
       "ogTitle": "Gmail을 위한 Rapportive 대안",
       "ogDescription": "Rapportive는 사라졌습니다. SenderFinder는 Gmail에서 발신자의 LinkedIn 프로필을 보여 줍니다. 오픈 소스, 직접 발급한 키, 계정 없음."
+    },
+    "changelog": {
+      "title": "변경 기록 | SenderFinder",
+      "description": "SenderFinder 확장 프로그램의 모든 버전을 최신 순으로 정리했습니다. 수정, 기능, 개인정보 변경.",
+      "ogTitle": "SenderFinder 변경 기록",
+      "ogDescription": "SenderFinder 확장 프로그램의 모든 버전을 최신 순으로 정리했습니다."
     },
     "notFound": {
       "title": "페이지를 찾을 수 없음 | SenderFinder",
@@ -738,6 +757,11 @@
         ]
       }
     ]
+  },
+  "changelog": {
+    "title": "변경 기록",
+    "lead": "확장 프로그램의 모든 버전을 최신 순으로 정리했습니다.",
+    "note": "저장소의 CHANGELOG.md에서 빌드 시 생성됩니다."
   },
   "notFound": {
     "title": "페이지를 찾을 수 없습니다",

@@ -3,6 +3,8 @@
     "skip": "Zum Inhalt springen",
     "navLabel": "Hauptnavigation",
     "footerNavLabel": "Fußzeile",
+    "breadcrumbHome": "Startseite",
+    "benchmarkLink": "Der 50-Adressen-Benchmark: Trefferquote und Preis je Anbieter",
     "language": "Sprache",
     "languageHint": "SenderFinder gibt es in 10 Sprachen. Die Erweiterung folgt der Sprache deines Browsers.",
     "nav": {
@@ -10,6 +12,7 @@
       "cost": "Preise",
       "install": "Installieren",
       "privacy": "Datenschutz",
+      "changelog": "Änderungsprotokoll",
       "faq": "FAQ"
     },
     "footer": {
@@ -17,6 +20,16 @@
       "privacy": "Datenschutz",
       "clearbit": "Clearbit-Connect-Alternative",
       "rapportive": "Rapportive-Alternative",
+      "changelog": "Änderungsprotokoll",
+      "resources": "Ressourcen",
+      "resourcesLinks": {
+        "benchmark": "Email enrichment benchmark",
+        "salesnav": "Sales Navigator for Gmail",
+        "findByEmail": "Find a profile from an email",
+        "outlook": "Outlook sidebar",
+        "sponsors": "Sponsors",
+        "stats": "Usage statistics"
+      },
       "license": "AGPL-3.0-Lizenz",
       "built": "SenderFinder ist Open-Source-Software, veröffentlicht unter der AGPL-3.0-Lizenz.",
       "disclaimer": "Nicht mit LinkedIn, HubSpot, Clearbit oder einem Datenanbieter verbunden. Produktnamen gehören ihren Inhabern.",
@@ -67,6 +80,12 @@
       "description": "Eine Open-Source-Alternative zu Rapportive, die in Gmail die LinkedIn-Profile von E-Mail-Absendern zeigt. Eigene Anbieterschlüssel; anonyme Nutzungszählung ist standardmäßig an und lässt sich abschalten.",
       "ogTitle": "Eine Rapportive-Alternative für Gmail",
       "ogDescription": "Rapportive gibt es nicht mehr. SenderFinder zeigt das LinkedIn-Profil des Absenders in Gmail. Open Source, eigene Schlüssel, kein Konto."
+    },
+    "changelog": {
+      "title": "Änderungsprotokoll | SenderFinder",
+      "description": "Jede Version der SenderFinder-Erweiterung, die neueste zuerst: Fehlerbehebungen, Funktionen und Datenschutzänderungen.",
+      "ogTitle": "SenderFinder-Änderungsprotokoll",
+      "ogDescription": "Jede Version der SenderFinder-Erweiterung, die neueste zuerst."
     },
     "notFound": {
       "title": "Seite nicht gefunden | SenderFinder",
@@ -738,6 +757,11 @@
         ]
       }
     ]
+  },
+  "changelog": {
+    "title": "Änderungsprotokoll",
+    "lead": "Jede Version der Erweiterung, die neueste zuerst.",
+    "note": "Beim Build aus der CHANGELOG.md im Repository erzeugt."
   },
   "notFound": {
     "title": "Seite nicht gefunden",

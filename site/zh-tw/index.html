@@ -26,7 +26,12 @@
   <meta property="og:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="800">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SenderFinder — 在 LinkedIn 找到寄件者">
+  <meta name="twitter:description" content="在 Gmail 開啟一封郵件，就能看到寄件者的 LinkedIn 個人檔案。開放原始碼、自備 API key、不需要帳號。">
+  <meta name="twitter:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta name="color-scheme" content="light dark">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"zh-TW","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"]},{"@type":"SoftwareApplication","@id":"https://senderfinder.com/#software","name":"SenderFinder","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Microsoft Edge","url":"https://senderfinder.com/","description":"開放原始碼的 Chrome 擴充功能，在 Gmail 與 Outlook 顯示寄件者的 LinkedIn 個人檔案。自備供應商 key；匿名使用統計預設開啟，可以關閉。","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"https://www.gnu.org/licenses/agpl-3.0.html","downloadUrl":"https://github.com/astonysh/SenderFinder","softwareVersion":"0.5.1","isAccessibleForFree":true,"publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"FAQPage","@id":"https://senderfinder.com/zh-tw/#faq","mainEntity":[{"@type":"Question","name":"免費嗎？","acceptedAnswer":{"@type":"Answer","text":"是的。擴充功能免費，並以 AGPL-3.0 授權開放原始碼，不需要帳號，也不需要訂閱。付費查詢是選用的：由你選擇的資料供應商按次計費，直接記在你自己的 key 上，且不超出你設定的上限。郵件簽名檔掃描和快取都不收費。"}},{"@type":"Question","name":"需要帳號嗎？","acceptedAnswer":{"@type":"Answer","text":"不需要註冊。查詢會直接傳送給你設定的供應商；匿名每日使用統計會傳送到專案的統計服務，在設定裡用一個開關就能關閉。"}},{"@type":"Question","name":"該申請哪一組 key？","acceptedAnswer":{"@type":"Answer","text":"從 Monid 或 treg 取得一組 key 就足以開始。兩組都填，需要時再加上 Firecrawl ，能讓瀑布流程有更多地方可查。 安裝頁面 有兩者的比較。"}},{"@type":"Question","name":"如何控制費用？","acceptedAnswer":{"@type":"Answer","text":"有單次查詢上限（預設 $0.05）和每日上限（預設 $2）。只有你開啟的郵件的寄件者會自動查詢，並受你設定的每日次數限制。結果會快取，同一個地址不會付兩次錢。 費用試算 可以估算特定用量要花多少。"}},{"@type":"Question","name":"如果顯示的人不對呢？","acceptedAnswer":{"@type":"Answer","text":"如果供應商回傳的姓名與郵件標頭的顯示名稱不符，結果會標上「不確定」並同時顯示兩個姓名，讓你自己判斷。"}},{"@type":"Question","name":"為什麼 gmail.com 的寄件者不被查詢？","acceptedAnswer":{"@type":"Answer","text":"個人信箱網域和 info@ 這類職務信箱很少對應到個人檔案，所以預設略過以節省費用。點面板上的按鈕就能仍要查詢。"}}]}]}</script>
   <script src="../assets/theme-boot.js"></script>
   <link rel="stylesheet" href="../assets/app.css">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -78,18 +83,19 @@
   <header class="v2-nav">
     <div class="v2-wrap">
       <div class="v2-nav-inner">
-        <a class="v2-brand" href="index.html" aria-current="page">
+        <a class="v2-brand" href="/zh-tw/" aria-current="page">
           <img src="../assets/icon-128.png" alt="" width="32" height="32">
           <span>SenderFinder</span>
         </a>
 
         <nav class="v2-nav-links" aria-label="主要導覽">
           <ul>
-            <li><a href="index.html#how">運作方式</a></li>
-            <li><a href="index.html#privacy">隱私權</a></li>
-            <li><a href="index.html#cost">價格</a></li>
-            <li><a href="install.html">安裝</a></li>
-            <li><a href="index.html#faq">常見問題</a></li>
+            <li><a href="/zh-tw/#how" aria-current="page">運作方式</a></li>
+            <li><a href="/zh-tw/#privacy" aria-current="page">隱私權</a></li>
+            <li><a href="/zh-tw/#cost" aria-current="page">價格</a></li>
+            <li><a href="/zh-tw/install">安裝</a></li>
+            <li><a href="/zh-tw/changelog">更新日誌</a></li>
+            <li><a href="/zh-tw/#faq" aria-current="page">常見問題</a></li>
             <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
           </ul>
         </nav>
@@ -101,16 +107,16 @@
             <div class="lang-menu">
               <nav aria-label="語言">
                 <ul>
-                <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
-                <li><a href="../zh-cn/index.html" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
-                <li><a href="index.html" hreflang="zh-TW" lang="zh-TW" aria-current="page">繁體中文</a></li>
-                <li><a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a></li>
-                <li><a href="../ko/index.html" hreflang="ko" lang="ko">한국어</a></li>
-                <li><a href="../de/index.html" hreflang="de" lang="de">Deutsch</a></li>
-                <li><a href="../fr/index.html" hreflang="fr" lang="fr">Français</a></li>
-                <li><a href="../es/index.html" hreflang="es" lang="es">Español</a></li>
-                <li><a href="../it/index.html" hreflang="it" lang="it">Italiano</a></li>
-                <li><a href="../pt-br/index.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+                <li><a href="/" hreflang="en" lang="en">English</a></li>
+                <li><a href="/zh-cn/" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
+                <li><a href="/zh-tw/" hreflang="zh-TW" lang="zh-TW" aria-current="page">繁體中文</a></li>
+                <li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li>
+                <li><a href="/ko/" hreflang="ko" lang="ko">한국어</a></li>
+                <li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li>
+                <li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li>
+                <li><a href="/es/" hreflang="es" lang="es">Español</a></li>
+                <li><a href="/it/" hreflang="it" lang="it">Italiano</a></li>
+                <li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
                 </ul>
               </nav>
               <p class="fine">SenderFinder 提供 10 種語言。擴充功能會跟隨你的瀏覽器語言。</p>
@@ -148,7 +154,7 @@
       <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder">
         <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> 在 GitHub 上查看
       </a>
-      <a class="v2-btn v2-btn--default" href="install.html" data-store-url="CWS_PLACEHOLDER">
+      <a class="v2-btn v2-btn--default" href="/zh-tw/install" data-store-url="CWS_PLACEHOLDER">
         2 分鐘完成安裝 <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg>
       </a>
     </div>
@@ -290,7 +296,7 @@
       
     </div>
 
-    <p class="v2-center"><a class="v2-btn v2-btn--outline v2-btn--sm" href="privacy.html">完整隱私權說明 <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></p>
+    <p class="v2-center"><a class="v2-btn v2-btn--outline v2-btn--sm" href="/zh-tw/privacy">完整隱私權說明 <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></p>
   </div>
 </section>
 
@@ -321,7 +327,7 @@
         </ul>
       </div>
       <div class="v2-free-action">
-        <a class="v2-btn v2-btn--default" href="install.html">免費安裝 <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="v2-btn v2-btn--default" href="/zh-tw/install">免費安裝 <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
     </article>
 
@@ -477,6 +483,7 @@
       </div>
     </details>
     <p class="v2-note fine">估算來自 2026 年 10 月 25 日的 50 個地址基準測試。預設值：每天 $2、每次查詢 $0.05，兩者都能在設定中調整。</p>
+    <p class="v2-note fine"><a href="/email-enrichment-api-benchmark">查看 50 個信箱的實測基準：各供應商命中率與單價</a></p>
   </div>
 </section>
 
@@ -502,7 +509,7 @@
       
       <details>
         <summary>該申請哪一組 key？</summary>
-        <div class="v2-faq-body"><p>從 <a href="https://app.monid.ai/">Monid</a> 或 <a href="https://treg.to/">treg</a> 取得一組 key 就足以開始。兩組都填，需要時再加上 <a href="https://www.firecrawl.dev/">Firecrawl</a>，能讓瀑布流程有更多地方可查。<a href="install.html#which-key">安裝頁面</a>有兩者的比較。</p></div>
+        <div class="v2-faq-body"><p>從 <a href="https://app.monid.ai/">Monid</a> 或 <a href="https://treg.to/">treg</a> 取得一組 key 就足以開始。兩組都填，需要時再加上 <a href="https://www.firecrawl.dev/">Firecrawl</a>，能讓瀑布流程有更多地方可查。<a href="/zh-tw/install#which-key">安裝頁面</a>有兩者的比較。</p></div>
       </details>
       
       <details>
@@ -530,7 +537,7 @@
       <h2>兩分鐘，就完成了</h2>
       <p>Chrome Web Store 還沒上架，所以要以未封裝的方式載入擴充功能。五個步驟，每步一張截圖。</p>
       <div class="v2-actions">
-        <a class="v2-btn v2-btn--outline" href="install.html">開啟安裝指南 <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="v2-btn v2-btn--outline" href="/zh-tw/install">開啟安裝指南 <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
     </div>
   </div>
@@ -539,19 +546,31 @@
 
   <footer class="v2-foot">
     <div class="v2-wrap v2-foot-inner">
-      <a class="v2-brand" href="index.html">
+      <a class="v2-brand" href="/zh-tw/">
         <img src="../assets/icon-128.png" alt="" width="32" height="32">
         <span>SenderFinder</span>
       </a>
       <ul class="v2-foot-links">
-        <li><a href="install.html">安裝</a></li>
-        <li><a href="privacy.html">隱私權</a></li>
-        <li><a href="clearbit-connect-alternative.html">Clearbit Connect 替代方案</a></li>
-        <li><a href="rapportive-alternative.html">Rapportive 替代方案</a></li>
+        <li><a href="/zh-tw/install">安裝</a></li>
+        <li><a href="/zh-tw/privacy">隱私權</a></li>
+        <li><a href="/zh-tw/clearbit-connect-alternative">Clearbit Connect 替代方案</a></li>
+        <li><a href="/zh-tw/rapportive-alternative">Rapportive 替代方案</a></li>
+        <li><a href="/zh-tw/changelog">更新日誌</a></li>
         <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
         <li><a href="https://github.com/astonysh/SenderFinder/blob/main/LICENSE">AGPL-3.0 授權</a></li>
       </ul>
-      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> 查詢路徑上沒有 SenderFinder 伺服器。你的 key 和歷史記錄都留在瀏覽器裡。 <a href="privacy.html">隱私權</a></p>
+      <nav class="v2-foot-resources" aria-label="資源">
+        <p class="v2-foot-head">資源</p>
+        <ul class="v2-foot-links v2-foot-links--stack">
+          <li lang="en"><a href="/email-enrichment-api-benchmark" hreflang="en">Email enrichment benchmark</a></li>
+          <li lang="en"><a href="/linkedin-sales-navigator-gmail-alternative" hreflang="en">Sales Navigator for Gmail</a></li>
+          <li lang="en"><a href="/find-linkedin-profile-from-email" hreflang="en">Find a profile from an email</a></li>
+          <li lang="en"><a href="/outlook-linkedin-sidebar" hreflang="en">Outlook sidebar</a></li>
+          <li lang="en"><a href="/sponsors" hreflang="en">Sponsors</a></li>
+          <li lang="en"><a href="/stats" hreflang="en">Usage statistics</a></li>
+        </ul>
+      </nav>
+      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> 查詢路徑上沒有 SenderFinder 伺服器。你的 key 和歷史記錄都留在瀏覽器裡。 <a href="/zh-tw/privacy">隱私權</a></p>
       <div class="v2-foot-bottom">
         <p>SenderFinder 是以 AGPL-3.0 授權釋出的開放原始碼軟體。</p>
         <p>Gmail、Outlook、LinkedIn 和 Chrome 是各自擁有者的商標。</p>
@@ -562,7 +581,7 @@
   <div class="notice" id="notice" role="region" aria-label="Cookie 通知" data-consent-mode="false" hidden>
     <div class="notice-inner">
       <svg class="i i-lg" aria-hidden="true"><use href="#i-cookie"/></svg>
-      <p>本站可能會使用重視隱私的瀏覽統計來計數。SenderFinder 擴充功能是另一回事：除非你在它的設定裡把統計關掉，它每天會傳送一份匿名使用摘要。 <a href="privacy.html#cookies">隱私權</a></p>
+      <p>本站可能會使用重視隱私的瀏覽統計來計數。SenderFinder 擴充功能是另一回事：除非你在它的設定裡把統計關掉，它每天會傳送一份匿名使用摘要。 <a href="/zh-tw/privacy#cookies">隱私權</a></p>
       <div class="notice-actions">
         <button type="button" class="notice-btn notice-close" data-consent="ack">好</button>
       </div>

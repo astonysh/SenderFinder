@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "title": "How to find a LinkedIn profile from an email address (2026 guide) | SenderFinder",
+    "description": "Manual ways to turn an email address into a LinkedIn profile, why they fail, and how a cheapest-first enrichment waterfall answers the same question for about a cent per address.",
+    "ogTitle": "Find a LinkedIn profile from an email address",
+    "ogDescription": "Google, LinkedIn search and signature scans have limits. A waterfall of email-to-profile providers is the automated alternative."
+  },
+  "page": {
+    "title": "How to find someone's LinkedIn profile from an email address",
+    "lead": "You have an address and a name. You want the profile. There are three manual ways to do it, each with a predictable failure mode, and one automated approach that turns the same question into a small, capped lookup.",
+    "updated": "Last checked: 25 October 2026.",
+    "cta": {
+      "install": "Install SenderFinder",
+      "github": "View the source on GitHub"
+    },
+    "sections": [
+      {
+        "id": "manual",
+        "title": "The three manual ways, and where they break",
+        "blocks": [
+          "Before paying, try the free routes. They are worth a minute, and they are why SenderFinder starts with a local signature scan.",
+          "<strong>1. Web search.</strong> <code>\"name@company.com\" site:linkedin.com/in</code> relies on the address appearing on an indexed page — a speaker list, a GitHub profile, a personal site. Most profiles do not show an email, so this only works when the address leaked elsewhere.",
+          "<strong>2. LinkedIn search.</strong> Paste the display name, add the company, compare headline and location. Works for unusual names at small companies. Fails for common names, aliases, people between jobs and private profiles — and costs ten tabs of attention per email.",
+          "<strong>3. Read the signature.</strong> A search for <code>linkedin.com/in</code> in the thread is free and instant. It fails when the sender omits it, when it is an image, or when it hides behind a tracking redirect. This is the one manual method the extension automates locally."
+        ]
+      },
+      {
+        "id": "why-hard",
+        "title": "Why email → LinkedIn is not a lookup table",
+        "blocks": [
+          "There is no public API that maps an email address to a LinkedIn profile. LinkedIn's APIs are for authenticated members and partners, not arbitrary reverse lookups. Providers fill the gap with licensed data, public-web signals, company domains and their own graph; coverage and prices differ. The hard part is not finding a person with that name, but deciding whether that person is the sender. <code>j.smith@acme.com</code> narrows the company, not two Smiths, a shared mailbox or a former employee. A serious lookup constrains by company domain and compares the returned name with the mail header — which is why SenderFinder sometimes says “uncertain”."
+        ]
+      },
+      {
+        "id": "waterfall",
+        "title": "The automated way: a cheapest-first waterfall",
+        "blocks": [
+          "A waterfall runs several providers in order, cheapest first, and stops at the first answer that passes the name check. The order is the product: you do not pay Apollo prices for an address a half-cent lookup can solve, and you do not stop at an uncertain cheap answer when a costlier step can confirm it."
+        ],
+        "list": [
+          "<strong>Signature scan</strong> — local regex over the mail body for a <code>linkedin.com/in</code> link. Free, and the answer is cached if found.",
+          "<strong>BlitzAPI</strong> (treg) — reverse email lookup. Catalog price $0.0005 per hit; misses are free.",
+          "<strong>Hunter</strong> (Monid) — email to profile. $0.0049 per hit; a 404 miss is free.",
+          "<strong>QuickEnrich</strong> (treg) — email enrichment. $0.0048 per hit; misses are free.",
+          "<strong>Apollo</strong> (Monid) — email plus name plus company domain. $0.026 per hit; a miss is free unless Apollo returns an empty stub attached to a known company, which is billed. In this run every call that reached Apollo answered.",
+          "<strong>Data Legion</strong> (Firecrawl, optional) — a last-resort fallback, 10 credits, roughly $0.008–$0.032. Not recommended as a first step."
+        ]
+      },
+      {
+        "id": "cost",
+        "title": "What a lookup costs",
+        "blocks": [
+          "The <a href=\"/email-enrichment-api-benchmark\">50-address benchmark</a> measured the full waterfall at about {{benchmark.stats.perAddress}} per address: {{benchmark.stats.found}} of {{benchmark.stats.rows}} verified work addresses found, {{benchmark.stats.uncertain}} uncertain. With treg alone, {{benchmark.stats.tregAnswered}} of {{benchmark.stats.rows}} addresses were answered ({{benchmark.stats.tregFound}} found, {{benchmark.stats.tregUncertain}} uncertain) for about {{benchmark.stats.tregPerAddress}} per address. That is “one key is enough” in numbers: a cheap key gets a useful first pass; a second key buys the backstop.",
+          "Two caps keep a bad day from becoming an expensive one. The per-lookup cap (default $0.05) skips any step whose current catalog price would push a single lookup over the limit. The daily cap (default $2) stops paid calls once the day's spend reaches it. Both are editable in settings, and both are checked before the call, not after.",
+          "Caching changes the economics more than any provider choice. An address is looked up once and served from IndexedDB, pruned by default to 90 days and 5,000 entries. Repeat senders — most of an inbox — cost nothing after the first lookup. That is why the calculator asks for <em>new</em> sender addresses per day, not emails read."
+        ]
+      },
+      {
+        "id": "accuracy",
+        "title": "Accuracy: what “found” and “uncertain” mean",
+        "blocks": [
+          "A provider can return a profile whose name does not match the display name in the email. SenderFinder keeps that result only as a fallback, runs the remaining steps, and lets a matching answer win. If nothing matches, the card is marked “uncertain” and shows both names.",
+          "Personal mailbox domains (<code>gmail.com</code>, <code>outlook.com</code>, <code>qq.com</code>) and role addresses (<code>info@</code>, <code>support@</code>, <code>sales@</code>) are skipped because they rarely map to one person. A “look up anyway” button is there when you disagree.",
+          "The extension shows what the provider returned. It does not verify that the profile is current, still at that company, or canonical. Treat a match as a strong hint, not identity verification."
+        ]
+      },
+      {
+        "id": "privacy",
+        "title": "Privacy: where the address goes",
+        "blocks": [
+          "The address, display name and company domain go to the provider whose key you configured, with that key. That is the same data a manual search exposes to a search engine, minus the browser history. SenderFinder has no server in the lookup path.",
+          "The mail body is scanned locally for a LinkedIn link and is never stored or transmitted. Phone numbers and personal emails returned by a provider are discarded; only professional fields are kept. Keys, cache and history stay in browser storage.",
+          "Anonymous daily counts are on by default and one switch turns them off, deleting the installation ID and anything unsent. The <a href=\"/privacy\">privacy statement</a> has the full list."
+        ]
+      },
+      {
+        "id": "when-not",
+        "title": "When it will not work",
+        "blocks": [
+          "Even a perfect waterfall is not a person database. Expect gaps in these cases:"
+        ],
+        "list": [
+          "The person has no LinkedIn profile, or the profile is not discoverable by the providers.",
+          "The email is a shared or role address that does not belong to one person.",
+          "The address is new, personal, or on a domain the providers have not indexed.",
+          "The name in the mail header is a nickname, a localised name or a different spelling from the profile.",
+          "The person changed companies recently and the providers still return the old profile.",
+          "You are reading Outlook on the web: supported on a best-effort basis, and the sender mark can disappear when Microsoft changes the page structure."
+        ]
+      },
+      {
+        "id": "checklist",
+        "title": "A five-minute manual checklist",
+        "blocks": [
+          "When you do not want to spend a lookup, this sequence gets the most out of the free routes:"
+        ],
+        "ordered": [
+          "Search the thread for <code>linkedin.com/in</code>. If the signature has it, you are done.",
+          "Search the web for the exact address in quotes plus <code>site:linkedin.com/in</code>.",
+          "Search LinkedIn for the display name plus the company name; open the most plausible profile and compare the headline, location and tenure.",
+          "If the name is common, add the company domain, a past employer or a conference/talk title to the query."
+        ],
+        "blocksAfter": [
+          "The automated route is worth it when the same question arrives dozens of times a day, when manual searches keep failing on common names, or when you want the answer inside the inbox."
+        ]
+      },
+      {
+        "id": "related",
+        "title": "Related reading",
+        "list": [
+          "<a href=\"/email-enrichment-api-benchmark\">The 50-address benchmark</a> — measured hit rate and price per provider.",
+          "<a href=\"/linkedin-sales-navigator-gmail-alternative\">Sales Navigator for Gmail is gone</a> — what still works for sender lookup.",
+          "<a href=\"/outlook-linkedin-sidebar\">The Outlook sidebar</a> — what works on Outlook on the web and what does not.",
+          "<a href=\"/clearbit-connect-alternative\">Clearbit Connect alternative</a> and <a href=\"/rapportive-alternative\">Rapportive alternative</a>.",
+          "<a href=\"/install\">Install guide</a> — from ZIP to the first lookup in two minutes."
+        ]
+      }
+    ],
+    "faqTitle": "Questions",
+    "faqIntro": "What people ask before turning an email address into a profile lookup.",
+    "bottomCta": {
+      "title": "Skip the tab hunt",
+      "body": "Open the email, open the side panel, see the profile. One provider key and the default caps are enough to start."
+    }
+  },
+  "faq": [
+    {
+      "q": "Can I find a LinkedIn profile from an email address for free?",
+      "a": "Sometimes. Search the thread for a linkedin.com/in link, search the web for the exact address plus site:linkedin.com/in, and search LinkedIn by name and company. These are free but inconsistent."
+    },
+    {
+      "q": "Why doesn't LinkedIn offer a reverse email lookup?",
+      "a": "LinkedIn's APIs are for authenticated members and partners, not arbitrary email-to-profile lookups. Third-party providers fill the gap with licensed data, public-web signals and their own matching. Coverage and prices differ, which is why a waterfall tries several."
+    },
+    {
+      "q": "How accurate is an automated lookup?",
+      "a": "It depends on the provider and the address. SenderFinder compares the returned profile name with the display name in the mail header; a mismatch is marked uncertain and shows both names. In the 50-address benchmark, 48 were found and 2 were uncertain. Treat a match as a strong hint, not identity verification."
+    },
+    {
+      "q": "What does one lookup cost?",
+      "a": "About {{benchmark.stats.perAddress}} per address on the 50-address benchmark with both keys, and under $0.001 with treg alone. The extension caps each lookup at $0.05 and each day at $2; cached addresses are free after the first lookup."
+    }
+  ]
+}

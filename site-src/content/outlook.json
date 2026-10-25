@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "LinkedIn sidebar for Outlook on the web: what works, what doesn't | SenderFinder",
+    "description": "SenderFinder supports Outlook on the web on a best-effort basis. Here is what works in outlook.live.com and outlook.office.com, what does not, and why the label is honest.",
+    "ogTitle": "The LinkedIn sidebar for Outlook on the web",
+    "ogDescription": "Outlook web is best-effort in SenderFinder. What works, what breaks, and how to report it."
+  },
+  "page": {
+    "title": "LinkedIn sidebar for Outlook on the web: the honest status",
+    "lead": "SenderFinder was built for Gmail first. Outlook on the web (outlook.live.com and outlook.office.com) is supported on a best-effort basis — it can work, it can break when Microsoft changes the page, and it is not the same promise as Gmail.",
+    "updated": "Last checked: 25 October 2026.",
+    "cta": {
+      "install": "Install SenderFinder",
+      "github": "View the source on GitHub"
+    },
+    "sections": [
+      {
+        "id": "short-version",
+        "title": "The short version",
+        "blocks": [
+          "If your team lives in Gmail, SenderFinder is designed for your workflow. If your team lives in Outlook on the web, you can install it and use it, but you should expect occasional rough edges and report them. If your team lives in Outlook for desktop, Apple Mail or another desktop client, SenderFinder cannot help: those apps do not expose the page a browser extension can read.",
+          "This page exists because “supported” is an unhelpfully binary word. Outlook web is a different application from Gmail, with a different page structure, different update cadence and two hostnames. Pretending the experience is identical would be dishonest. The extension does the same lookup; the part that attaches it to the mail page is what varies."
+        ]
+      },
+      {
+        "id": "what-works",
+        "title": "What works in Outlook on the web",
+        "blocks": [
+          "The core of the product does not depend on the mail client. Keys, the provider waterfall, the name check, the cache, the history and the privacy model are the same in Outlook as in Gmail. What changes is how the extension finds the sender on the page.",
+          "In a normal Outlook web session, the extension can:"
+        ],
+        "list": [
+          "Show the sender's LinkedIn profile in the browser side panel when you open a message: photo, name, headline, company, location, local time and the profile link.",
+          "List the other people in the thread (other senders, To, Cc) and look one up when you click them, rather than looking everyone up automatically.",
+          "Run the free local signature scan for a <code>linkedin.com/in</code> link in the message body.",
+          "Use the same provider keys and the same per-lookup and daily caps as in Gmail.",
+          "Cache results and keep the history in your browser, so a repeat sender is never paid for twice.",
+          "Open the profile and pre-fill your Connect note. You still press Connect and Send yourself."
+        ]
+      },
+      {
+        "id": "what-does-not",
+        "title": "What does not work",
+        "blocks": [
+          "The list is shorter and more important than the list above:"
+        ],
+        "list": [
+          "<strong>Outlook for desktop.</strong> SenderFinder is a browser extension for a web page. It does not run inside the desktop client.",
+          "<strong>Apple Mail and other desktop mail apps.</strong> Same reason: no page for the extension to read.",
+          "<strong>Firefox.</strong> Not supported yet. Chrome and Chromium-based browsers, including Microsoft Edge, are the target.",
+          "<strong>Every Outlook tenant.</strong> Custom domains, security add-ins and A/B layouts can change the page enough that the sender mark does not appear. The lookup is not wrong in that case; it simply has nowhere to attach.",
+          "<strong>A guarantee across Microsoft updates.</strong> Outlook web changes its DOM regularly. When it does, the extension may need an update, and the fix is reactive rather than instant."
+        ]
+      },
+      {
+        "id": "why-best-effort",
+        "title": "Why “best-effort” is the honest label",
+        "blocks": [
+          "Gmail offers a comparatively stable set of hooks around the message header and the thread. Outlook web has two public hostnames, more layout variation between personal and work accounts, and a habit of shipping changes without a compatibility window. A content script that finds the sender by a CSS selector is always one redesign away from doing nothing.",
+          "The project could hide that behind a confident “works everywhere” badge. It would be a worse product. Instead, the README and this page say best-effort, the extension is open source so you can see the Outlook content script, and issues are handled as they are reported. If the sender mark does not appear, that is a bug worth reporting, not a reason to pretend the client is unsupported.",
+          "It is also why Gmail remains the primary target. The most reliable experience is the one the project tests most, and the Outlook path is maintained rather than guaranteed. If Outlook is mandatory for your team, try it before you standardise on it."
+        ]
+      },
+      {
+        "id": "try-it",
+        "title": "How to try it and what to report",
+        "ordered": [
+          "Install SenderFinder from the <a href=\"/install\">install guide</a>. The Chrome Web Store listing is not live yet, so this is the ZIP-and-load-unpacked route.",
+          "Create one provider key (Monid or treg) and paste it into the settings page that opens on first install. Press “Test keys (free)” before the first lookup.",
+          "Open <code>outlook.live.com</code> or <code>outlook.office.com</code> in Chrome or Edge, open a message and click the SenderFinder toolbar icon once. The panel stays open in that tab.",
+          "If the magnifier mark does not appear next to the sender, open an issue on <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> with the Outlook hostname, your browser version and the DOM of the sender block — not the email content.",
+          "If the mark appears but the lookup fails, include the step that failed (for example <code>hunter</code> or <code>apollo</code>) and the status shown in the panel. Do not paste keys or addresses."
+        ],
+        "blocksAfter": [
+          "A screenshot of the sender area with the message text covered is usually enough. If the layout changes, the DOM of the sender block is what a fix needs."
+        ]
+      },
+      {
+        "id": "privacy",
+        "title": "Privacy is identical in both clients",
+        "blocks": [
+          "Outlook does not change the data model. The address, display name and company domain go to the provider whose key you configured; the mail body is scanned locally and never sent; keys, cache and history stay in your browser. There is no SenderFinder server in the lookup path.",
+          "The anonymous daily counters are the same as in Gmail: counts, outcomes, provider-step totals, mail-client totals, rounded spend, version, language and a random installation ID. They are on by default, one switch turns them off and deletes the ID and anything unsent, and they contain no address, name, domain, profile field, key or message text. The <a href=\"/privacy\">privacy statement</a> is the full list."
+        ]
+      },
+      {
+        "id": "if-outlook-matters",
+        "title": "If Outlook is your main client",
+        "blocks": [
+          "Use the web version in Chrome or Edge and treat the extension as an assistant, not infrastructure. Keep the sender lookup as a convenience and keep a manual fallback: search the thread for a LinkedIn link, search the web for the exact address, or search LinkedIn by name and company. The <a href=\"/find-linkedin-profile-from-email\">email-to-profile guide</a> walks through those methods.",
+          "If you need a guaranteed sender sidebar in Outlook desktop, SenderFinder is the wrong tool today. A native Outlook add-in is a different product surface and is not on the roadmap. Saying so is more useful than a maybe.",
+          "If your team can choose, Gmail is the smoother path — not because the lookup is different, but because the page the extension attaches to is the one the project exercises most."
+        ]
+      },
+      {
+        "id": "related",
+        "title": "Related reading",
+        "list": [
+          "<a href=\"/find-linkedin-profile-from-email\">Find a LinkedIn profile from an email address</a> — the manual methods and their limits.",
+          "<a href=\"/email-enrichment-api-benchmark\">The 50-address benchmark</a> — what the waterfall finds and what it costs.",
+          "<a href=\"/linkedin-sales-navigator-gmail-alternative\">Sales Navigator for Gmail is gone</a> — the sender-identity use case.",
+          "<a href=\"/privacy\">Privacy statement</a> and <a href=\"/install\">install guide</a>.",
+          "<a href=\"/clearbit-connect-alternative\">Clearbit Connect alternative</a> and <a href=\"/rapportive-alternative\">Rapportive alternative</a>."
+        ]
+      }
+    ],
+    "faqTitle": "Questions about Outlook",
+    "faqIntro": "What to expect before you install.",
+    "bottomCta": {
+      "title": "Try it in the browser you already use",
+      "body": "Outlook on the web works on a best-effort basis; Gmail is the primary target. Either way, one provider key and the default caps are enough to start."
+    }
+  },
+  "faq": [
+    {
+      "q": "Does SenderFinder work in Outlook?",
+      "a": "It works in Outlook on the web (outlook.live.com and outlook.office.com) on a best-effort basis. It does not work in Outlook for desktop, Apple Mail or Firefox."
+    },
+    {
+      "q": "Why is Outlook only best-effort?",
+      "a": "The extension attaches to the mail page. Outlook web changes its page structure more often than Gmail and has more layout variation between accounts, so the sender mark can disappear after a Microsoft update. The lookup itself is the same; the attachment point is the fragile part."
+    },
+    {
+      "q": "What should I include in a bug report?",
+      "a": "The Outlook hostname, browser and version, a screenshot of the sender area with the message text covered, and the DOM of the sender block. Do not include keys, email addresses or message content."
+    },
+    {
+      "q": "Is my data handled differently in Outlook?",
+      "a": "No. The same rules apply in both clients: the address, display name and company domain go to the provider whose key you configured, the mail body is scanned locally and never sent, and there is no SenderFinder server in the lookup path."
+    }
+  ]
+}

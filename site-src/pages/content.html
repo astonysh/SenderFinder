@@ -1,0 +1,72 @@
+<div class="v2-page">
+  <div class="v2-wrap">
+    <header class="v2-page-head">
+      <h1>{{page.title}}</h1>
+      <p class="v2-lead">{{page.lead}}</p>
+      {{#if page.updated}}<p class="v2-note">{{page.updated}}</p>{{/if}}
+      <div class="v2-actions">
+        <a class="v2-btn v2-btn--default" href="{{url.install}}" data-store-url="CWS_PLACEHOLDER">{{page.cta.install}}</a>
+        <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder">
+          <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> {{page.cta.github}}
+        </a>
+      </div>
+    </header>
+
+    <article class="v2-prose">
+      {{#each page.sections}}
+      <h2{{#if id}} id="{{id}}"{{/if}}>{{title}}</h2>
+      {{#if comment}}{{comment}}{{/if}}
+      {{#if callout}}<div class="v2-summary"><p>{{callout}}</p></div>{{/if}}
+      {{#if blocks}}{{#each blocks}}<p>{{this}}</p>{{/each}}{{/if}}
+      {{#if list}}<ul>{{#each list}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+      {{#if ordered}}<ol>{{#each ordered}}<li>{{this}}</li>{{/each}}</ol>{{/if}}
+      {{#if blocksAfter}}{{#each blocksAfter}}<p>{{this}}</p>{{/each}}{{/if}}
+      {{#if table}}
+      <div class="table-wrap v2-card v2-table-card">
+        <table>
+          <thead>
+            <tr>{{#each table.head}}<th>{{this}}</th>{{/each}}</tr>
+          </thead>
+          <tbody>
+            {{#each table.rows}}<tr>{{#each cells}}<td data-label="{{label}}">{{value}}</td>{{/each}}</tr>{{/each}}
+          </tbody>
+        </table>
+      </div>
+      {{#if table.caption}}<p class="v2-note fine">{{table.caption}}</p>{{/if}}
+      {{#if table.note}}<p class="v2-note fine">{{table.note}}</p>{{/if}}
+      {{/if}}
+      {{#if note}}<p class="v2-note">{{note}}</p>{{/if}}
+      {{#if blocksEnd}}{{#each blocksEnd}}<p>{{this}}</p>{{/each}}{{/if}}
+      {{/each}}
+    </article>
+  </div>
+</div>
+
+<section class="v2-section v2-section--soft" id="faq">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <h2 class="v2-h2">{{page.faqTitle}}</h2>
+      {{#if page.faqIntro}}<p>{{page.faqIntro}}</p>{{/if}}
+    </header>
+    <div class="v2-faq">
+      {{#each faq}}
+      <details>
+        <summary>{{q}}</summary>
+        <div class="v2-faq-body"><p>{{a}}</p></div>
+      </details>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<section class="v2-section">
+  <div class="v2-wrap">
+    <div class="v2-cta">
+      <h2>{{page.bottomCta.title}}</h2>
+      <p>{{page.bottomCta.body}}</p>
+      <div class="v2-actions">
+        <a class="v2-btn v2-btn--outline" href="{{url.install}}">{{page.cta.install}} <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>

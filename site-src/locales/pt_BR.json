@@ -3,6 +3,8 @@
     "skip": "Ir para o conteúdo",
     "navLabel": "Principal",
     "footerNavLabel": "Rodapé",
+    "breadcrumbHome": "Início",
+    "benchmarkLink": "O benchmark de 50 endereços: taxa de acerto e preço por fornecedor",
     "language": "Idioma",
     "languageHint": "O SenderFinder está disponível em 10 idiomas. A extensão segue o idioma do seu navegador.",
     "nav": {
@@ -10,6 +12,7 @@
       "cost": "Preços",
       "install": "Instalar",
       "privacy": "Privacidade",
+      "changelog": "Registro de alterações",
       "faq": "Perguntas frequentes"
     },
     "footer": {
@@ -17,6 +20,16 @@
       "privacy": "Privacidade",
       "clearbit": "Alternativa ao Clearbit Connect",
       "rapportive": "Alternativa ao Rapportive",
+      "changelog": "Registro de alterações",
+      "resources": "Recursos",
+      "resourcesLinks": {
+        "benchmark": "Email enrichment benchmark",
+        "salesnav": "Sales Navigator for Gmail",
+        "findByEmail": "Find a profile from an email",
+        "outlook": "Outlook sidebar",
+        "sponsors": "Sponsors",
+        "stats": "Usage statistics"
+      },
       "license": "Licença AGPL-3.0",
       "built": "O SenderFinder é software de código aberto, publicado sob a licença AGPL-3.0.",
       "disclaimer": "Sem vínculo com o LinkedIn, o HubSpot, o Clearbit ou qualquer provedor de dados. Os nomes de produto pertencem aos seus proprietários.",
@@ -67,6 +80,12 @@
       "description": "Alternativa de código aberto ao Rapportive que mostra perfis do LinkedIn de remetentes no Gmail. Use suas próprias chaves de provedor; as contagens de uso anônimas vêm ativadas por padrão e podem ser desativadas.",
       "ogTitle": "Uma alternativa ao Rapportive para o Gmail",
       "ogDescription": "O Rapportive acabou. O SenderFinder mostra o perfil do LinkedIn do remetente no Gmail. Código aberto, suas próprias chaves, sem conta."
+    },
+    "changelog": {
+      "title": "Registro de alterações | SenderFinder",
+      "description": "Todas as versões da extensão SenderFinder, a mais recente primeiro: correções, recursos e mudanças de privacidade.",
+      "ogTitle": "Registro de alterações do SenderFinder",
+      "ogDescription": "Todas as versões da extensão SenderFinder, a mais recente primeiro."
     },
     "notFound": {
       "title": "Página não encontrada | SenderFinder",
@@ -738,6 +757,11 @@
         ]
       }
     ]
+  },
+  "changelog": {
+    "title": "Registro de alterações",
+    "lead": "Todas as versões da extensão, a mais recente primeiro.",
+    "note": "Gerado no build a partir do CHANGELOG.md no repositório."
   },
   "notFound": {
     "title": "Página não encontrada",

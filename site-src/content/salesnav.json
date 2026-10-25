@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "title": "LinkedIn retired Sales Navigator for Gmail in 2020: what still works | SenderFinder",
+    "description": "LinkedIn shut down Sales Navigator for Gmail on 18 March 2020. What the extension did, what users lost, and how SenderFinder covers the sender lookup today.",
+    "ogTitle": "Sales Navigator for Gmail ended in 2020",
+    "ogDescription": "What the retired extension did, what disappeared with it, and what SenderFinder replaces."
+  },
+  "page": {
+    "title": "LinkedIn retired Sales Navigator for Gmail in 2020. Here is what still works.",
+    "lead": "On 18 March 2020 LinkedIn shut down Sales Navigator for Gmail, the extension formerly known as Rapportive. This page covers what it did, what disappeared with it, and which part of the job SenderFinder can still do — without pretending to be Sales Navigator.",
+    "updated": "Last checked: 25 October 2026.",
+    "cta": {
+      "install": "Install SenderFinder",
+      "github": "View the source on GitHub"
+    },
+    "sections": [
+      {
+        "id": "what-it-did",
+        "title": "What the Gmail extension did",
+        "blocks": [
+          "Sales Navigator for Gmail put a slice of LinkedIn's paid sales product inside Gmail. When you opened a message it showed Sales Navigator context for the sender — profile and account information — and offered a few Sales Navigator actions without a tab switch. LinkedIn announced the shutdown in February 2020. “As a result of low adoption, we have decided to sunset the Sales Navigator for Gmail feature on March 18, 2020,” said Lindsey Edwards, product lead for Sales Solutions. The extension was turned off on 18 March 2020 (<a href=\"https://techcrunch.com/2020/02/13/linkedin-will-sunset-sales-navigator-for-gmail-formerly-known-as-rapportive-on-march-20/\">TechCrunch</a>, <a href=\"https://www.adweek.com/performance-marketing/linkedin-will-sunset-sales-navigator-for-gmail-march-18/\">Adweek</a>).",
+          "The product had an unusual history. LinkedIn acquired Rapportive in February 2012; in November 2017 it relaunched Rapportive as Sales Navigator Lite for Gmail, later renamed Sales Navigator for Gmail. <a href=\"/rapportive-alternative\">Rapportive was the same product under its earlier name</a>, which is why the comparison keeps coming up.",
+          "At shutdown LinkedIn pointed users to Outlook, where Microsoft's own sales tools could fill part of the gap. LinkedIn does not publish a Sales Navigator browser extension today.",
+          "The value was placement, not the data. A salesperson reading an email could see who the person was, which account they belonged to and whether they were already a saved lead, in the same pane as the message."
+        ]
+      },
+      {
+        "id": "what-users-lost",
+        "title": "What users lost in 2020",
+        "blocks": [
+          "For teams that used it daily, three things changed in 2020. Profile context moved back to a second tab. Saving a lead became a copy-paste-then-search task rather than a click. And checking the account before replying lost its cheapest trigger: the moment the email was already open.",
+          "What users did not lose was Sales Navigator itself — the seat, saved leads, alerts and account lists. The extension was a companion, not the product. That distinction sets the bar for an alternative: replacing the whole sales workflow is a different job from answering “who is this person?” inside the inbox."
+        ]
+      },
+      {
+        "id": "what-senderfinder-covers",
+        "title": "What SenderFinder covers",
+        "blocks": [
+          "SenderFinder is an open-source Chrome and Edge extension that answers the narrow question: who sent this email? Open a message in Gmail (or Outlook on the web, on a best-effort basis) and the browser's side panel shows the sender's LinkedIn profile — photo, name, headline, company, location, their local time and a link to the profile. Other people in the thread are listed below and looked up only when you click them.",
+          "The lookup is a waterfall. It starts with a free local scan of the mail body for a <code>linkedin.com/in</code> link. If that finds nothing, it calls the data providers you configured, cheapest first: BlitzAPI and QuickEnrich through treg, Hunter and Apollo through Monid, with Firecrawl as an optional fallback. The chain stops at the first name-matching answer and caches it, so a repeat sender costs nothing.",
+          "You bring your own provider key; there is no SenderFinder account and no server in the lookup path. One key is enough to run the flow — steps whose key is missing are skipped. A per-lookup cap (default $0.05) and a daily cap (default $2) bound the cost, and settings show what each step costs before you enable it.",
+          "The <a href=\"/email-enrichment-api-benchmark\">50-address benchmark</a> is the honest version of the coverage claim: {{benchmark.stats.found}} of {{benchmark.stats.rows}} verified work addresses found with the full waterfall, {{benchmark.stats.uncertain}} marked uncertain, about {{benchmark.stats.perAddress}} per address. Those are measurements from one day, not a promise for your inbox."
+        ]
+      },
+      {
+        "id": "what-it-does-not-do",
+        "title": "What SenderFinder does not do",
+        "blocks": [
+          "This is the part that matters if you want a drop-in Sales Navigator replacement. SenderFinder is a sender-identity tool, not a sales engagement platform:"
+        ],
+        "list": [
+          "<strong>No InMail.</strong> It cannot send InMail, buy credits or manage your Sales Navigator messaging.",
+          "<strong>No lead lists, saved searches or alerts.</strong> There is no account list, no lead feed and no Sales Navigator sync.",
+          "<strong>No sequences or CRM.</strong> It does not send follow-ups, track opens, or write to HubSpot, Salesforce or another CRM.",
+          "<strong>No bulk enrichment.</strong> It looks up the sender you open and the participants you click. It is not a CSV enrichment tool.",
+          "<strong>No automated Connect or Send.</strong> The Connect button opens the profile and can pre-fill your invitation note; you press Connect and Send yourself.",
+          "<strong>No Sales Navigator seat.</strong> You still need your own LinkedIn and Sales Navigator subscription for Sales Navigator features.",
+          "<strong>No Firefox or desktop mail apps.</strong> Gmail on the web is the primary target; Outlook on the web is best-effort; Apple Mail, Outlook for desktop and Firefox are not supported."
+        ]
+      },
+      {
+        "id": "still-paying",
+        "title": "If you still pay for Sales Navigator",
+        "blocks": [
+          "Keep it. SenderFinder does not replace account research, lead lists or InMail, and it does not integrate with Sales Navigator. The sensible split is: use Sales Navigator when you are researching an account or working a list, and use SenderFinder when an email arrives and you only need to know who sent it.",
+          "The two can coexist without conflict. SenderFinder shows a side panel, opens profile links in a new tab, and does not modify Gmail's layout beyond a small magnifier next to the sender.",
+          "If you want the LinkedIn relationship and photo, the extension can use your own LinkedIn session after you grant the optional linkedin.com permission. It reads the connection degree and photo for the selected profile and caches the result locally. That is not Sales Navigator data; it is what your own logged-in session can already see."
+        ]
+      },
+      {
+        "id": "privacy",
+        "title": "The privacy difference",
+        "blocks": [
+          "A hosted sales tool sees every lookup you run. SenderFinder does not: the request goes from your browser to the provider whose key you pasted, with that key. Keys, cache and history stay in the extension's storage and your browser's IndexedDB. The mail body is scanned locally for a profile link and is never sent."
+        ]
+      },
+      {
+        "id": "try-it",
+        "title": "How to try it",
+        "ordered": [
+          "Install the extension. The Chrome Web Store listing is not live yet, so the <a href=\"/install\">install guide</a> walks through loading the ZIP.",
+          "Create one provider key — Monid for the highest coverage, treg for the lowest price — and paste it into the settings page that opens on first install.",
+          "Press “Test keys (free)” to check the key and read the provider's price list. Nothing is looked up and nothing is spent.",
+          "Open an email in Gmail and click the SenderFinder toolbar icon once. The side panel stays open in that tab and follows the message you read.",
+          "If the sender's name is ambiguous, check the “uncertain” state before acting on the profile; it shows both names and never pretends to be sure."
+        ]
+      },
+      {
+        "id": "related",
+        "title": "Related reading",
+        "list": [
+          "<a href=\"/find-linkedin-profile-from-email\">How to find a LinkedIn profile from an email address</a> — the manual workarounds and the automated approach.",
+          "<a href=\"/email-enrichment-api-benchmark\">The 50-address enrichment benchmark</a> — hit rate and price per provider.",
+          "<a href=\"/clearbit-connect-alternative\">Clearbit Connect alternative</a> — the other discontinued tool people compare us to.",
+          "<a href=\"/rapportive-alternative\">Rapportive alternative</a> — the original LinkedIn-in-Gmail idea.",
+          "<a href=\"/privacy\">Privacy statement</a> — what leaves your browser during a lookup."
+        ]
+      }
+    ],
+    "faqTitle": "Questions",
+    "faqIntro": "The honest answers about what changed and what SenderFinder replaces.",
+    "bottomCta": {
+      "title": "Get the sender's profile back in the inbox",
+      "body": "One key, the default caps, and a side panel that answers “who is this?” without a second tab. Sales Navigator stays where it belongs."
+    }
+  },
+  "faq": [
+    {
+      "q": "Is SenderFinder a Sales Navigator replacement?",
+      "a": "No. It replaces the sender-identity part — seeing the LinkedIn profile of the person who emailed you — and deliberately does not include InMail, lead lists, saved searches, sequences or CRM sync. Keep Sales Navigator for the sales workflow."
+    },
+    {
+      "q": "When exactly did LinkedIn retire Sales Navigator for Gmail?",
+      "a": "LinkedIn announced the shutdown in February 2020 and turned Sales Navigator for Gmail off on 18 March 2020, citing low adoption. The extension was the product formerly known as Rapportive; LinkedIn acquired Rapportive in 2012."
+    },
+    {
+      "q": "Does SenderFinder use Sales Navigator data?",
+      "a": "No. It shows the LinkedIn profile returned by the data providers you configure, plus the optional relationship and photo that your own LinkedIn session can see. It has no Sales Navigator integration and no access to your Sales Navigator seat."
+    },
+    {
+      "q": "Can it still save leads or send InMail?",
+      "a": "No. There is no save-to-lead action, no InMail and no messaging. The Connect button opens the person's profile and can pre-fill your invitation note; you press Connect and Send yourself."
+    },
+    {
+      "q": "What happens to my data if I switch?",
+      "a": "Keys, cache and history stay in your browser. Lookups go directly to the provider you configured, with no SenderFinder server in the path. Anonymous daily usage counts are on by default and can be switched off in settings, which also deletes the installation ID."
+    }
+  ]
+}

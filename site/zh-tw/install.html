@@ -26,7 +26,12 @@
   <meta property="og:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="800">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="安裝 SenderFinder">
+  <meta name="twitter:description" content="兩分鐘、五個步驟、一組 API key。在 Chrome Web Store 上架之前，先從原始碼安裝這個開放原始碼擴充功能。">
+  <meta name="twitter:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta name="color-scheme" content="light dark">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"zh-TW","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"]},{"@type":"BreadcrumbList","@id":"https://senderfinder.com/zh-tw/install#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://senderfinder.com/zh-tw/"},{"@type":"ListItem","position":2,"name":"安裝","item":"https://senderfinder.com/zh-tw/install"}]},{"@type":"HowTo","@id":"https://senderfinder.com/zh-tw/install#howto","name":"安裝 SenderFinder","description":"Chrome Web Store 還沒上架，所以要先從原始碼載入擴充功能。兩分鐘，每個瀏覽器做一次。","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"取得程式碼","text":"到 GitHub 把儲存庫下載成 ZIP（「Code」→「Download ZIP」）後解壓縮；如果你有 git，也可以直接 clone： git clone https://github.com/astonysh/SenderFinder.git"},{"@type":"HowToStep","position":2,"name":"在 Chrome 載入","text":"在新分頁開啟 chrome://extensions 。開啟 開發人員模式 （右上角），點 載入未封裝項目 ，然後選擇儲存庫裡的 extension/ 資料夾 —— 也就是包含 manifest.json 的那個資料夾，不是儲存庫根目錄。"},{"@type":"HowToStep","position":3,"name":"取得一組 key 並貼上","text":"安裝完成後設定頁面會自己開啟。到 Monid （Hunter、Apollo、ContactOut）或 treg （BlitzAPI、QuickEnrich、Village）建立 key； Firecrawl 是選填。一組 key 就夠。貼到「供應商 key」欄位。"},{"@type":"HowToStep","position":4,"name":"按下「測試 key（免費）」","text":"這項檢查免費：它會驗證 key 並讀取供應商的價目表。不會查詢任何資料，也不會花錢。你要看到 key 旁邊顯示「有效」。"},{"@type":"HowToStep","position":5,"name":"開啟 Gmail，點一下工具列圖示","text":"在 Gmail 開啟任何一封郵件，然後點 Chrome 工具列上的 SenderFinder 圖示。如果看不到，先點拼圖圖示把 SenderFinder 釘選起來。側邊面板會開啟，並在這個分頁保持開啟；之後它會跟著你正在讀的郵件。"}]}]}</script>
   <script src="../assets/theme-boot.js"></script>
   <link rel="stylesheet" href="../assets/app.css">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -77,18 +82,19 @@
   <header class="v2-nav">
     <div class="v2-wrap">
       <div class="v2-nav-inner">
-        <a class="v2-brand" href="index.html" aria-current="page">
+        <a class="v2-brand" href="/zh-tw/">
           <img src="../assets/icon-128.png" alt="" width="32" height="32">
           <span>SenderFinder</span>
         </a>
 
         <nav class="v2-nav-links" aria-label="主要導覽">
           <ul>
-            <li><a href="index.html#how">運作方式</a></li>
-            <li><a href="index.html#privacy">隱私權</a></li>
-            <li><a href="index.html#cost">價格</a></li>
-            <li><a href="install.html" aria-current="page">安裝</a></li>
-            <li><a href="index.html#faq">常見問題</a></li>
+            <li><a href="/zh-tw/#how">運作方式</a></li>
+            <li><a href="/zh-tw/#privacy">隱私權</a></li>
+            <li><a href="/zh-tw/#cost">價格</a></li>
+            <li><a href="/zh-tw/install" aria-current="page">安裝</a></li>
+            <li><a href="/zh-tw/changelog">更新日誌</a></li>
+            <li><a href="/zh-tw/#faq">常見問題</a></li>
             <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
           </ul>
         </nav>
@@ -100,16 +106,16 @@
             <div class="lang-menu">
               <nav aria-label="語言">
                 <ul>
-                <li><a href="../install.html" hreflang="en" lang="en">English</a></li>
-                <li><a href="../zh-cn/install.html" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
-                <li><a href="install.html" hreflang="zh-TW" lang="zh-TW" aria-current="page">繁體中文</a></li>
-                <li><a href="../ja/install.html" hreflang="ja" lang="ja">日本語</a></li>
-                <li><a href="../ko/install.html" hreflang="ko" lang="ko">한국어</a></li>
-                <li><a href="../de/install.html" hreflang="de" lang="de">Deutsch</a></li>
-                <li><a href="../fr/install.html" hreflang="fr" lang="fr">Français</a></li>
-                <li><a href="../es/install.html" hreflang="es" lang="es">Español</a></li>
-                <li><a href="../it/install.html" hreflang="it" lang="it">Italiano</a></li>
-                <li><a href="../pt-br/install.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+                <li><a href="/install" hreflang="en" lang="en">English</a></li>
+                <li><a href="/zh-cn/install" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
+                <li><a href="/zh-tw/install" hreflang="zh-TW" lang="zh-TW" aria-current="page">繁體中文</a></li>
+                <li><a href="/ja/install" hreflang="ja" lang="ja">日本語</a></li>
+                <li><a href="/ko/install" hreflang="ko" lang="ko">한국어</a></li>
+                <li><a href="/de/install" hreflang="de" lang="de">Deutsch</a></li>
+                <li><a href="/fr/install" hreflang="fr" lang="fr">Français</a></li>
+                <li><a href="/es/install" hreflang="es" lang="es">Español</a></li>
+                <li><a href="/it/install" hreflang="it" lang="it">Italiano</a></li>
+                <li><a href="/pt-br/install" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
                 </ul>
               </nav>
               <p class="fine">SenderFinder 提供 10 種語言。擴充功能會跟隨你的瀏覽器語言。</p>
@@ -286,7 +292,7 @@
   <div class="v2-wrap">
     <div class="v2-cta">
       <h2>接下來</h2>
-      <p>閱讀<a href="index.html#how">運作方式</a>、看看<a href="index.html#cost">一次查詢要多少錢</a>，或用<a href="index.html#calculator">費用試算</a>估算你自己的用量。資料相關的問題可以在<a href="privacy.html">隱私權聲明</a>找到答案。</p>
+      <p>閱讀<a href="/zh-tw/#how">運作方式</a>、看看<a href="/zh-tw/#cost">一次查詢要多少錢</a>，或用<a href="/zh-tw/#calculator">費用試算</a>估算你自己的用量。資料相關的問題可以在<a href="/zh-tw/privacy">隱私權聲明</a>找到答案。</p>
     </div>
   </div>
 </section>
@@ -294,19 +300,31 @@
 
   <footer class="v2-foot">
     <div class="v2-wrap v2-foot-inner">
-      <a class="v2-brand" href="index.html">
+      <a class="v2-brand" href="/zh-tw/">
         <img src="../assets/icon-128.png" alt="" width="32" height="32">
         <span>SenderFinder</span>
       </a>
       <ul class="v2-foot-links">
-        <li><a href="install.html">安裝</a></li>
-        <li><a href="privacy.html">隱私權</a></li>
-        <li><a href="clearbit-connect-alternative.html">Clearbit Connect 替代方案</a></li>
-        <li><a href="rapportive-alternative.html">Rapportive 替代方案</a></li>
+        <li><a href="/zh-tw/install" aria-current="page">安裝</a></li>
+        <li><a href="/zh-tw/privacy">隱私權</a></li>
+        <li><a href="/zh-tw/clearbit-connect-alternative">Clearbit Connect 替代方案</a></li>
+        <li><a href="/zh-tw/rapportive-alternative">Rapportive 替代方案</a></li>
+        <li><a href="/zh-tw/changelog">更新日誌</a></li>
         <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
         <li><a href="https://github.com/astonysh/SenderFinder/blob/main/LICENSE">AGPL-3.0 授權</a></li>
       </ul>
-      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> 查詢路徑上沒有 SenderFinder 伺服器。你的 key 和歷史記錄都留在瀏覽器裡。 <a href="privacy.html">隱私權</a></p>
+      <nav class="v2-foot-resources" aria-label="資源">
+        <p class="v2-foot-head">資源</p>
+        <ul class="v2-foot-links v2-foot-links--stack">
+          <li lang="en"><a href="/email-enrichment-api-benchmark" hreflang="en">Email enrichment benchmark</a></li>
+          <li lang="en"><a href="/linkedin-sales-navigator-gmail-alternative" hreflang="en">Sales Navigator for Gmail</a></li>
+          <li lang="en"><a href="/find-linkedin-profile-from-email" hreflang="en">Find a profile from an email</a></li>
+          <li lang="en"><a href="/outlook-linkedin-sidebar" hreflang="en">Outlook sidebar</a></li>
+          <li lang="en"><a href="/sponsors" hreflang="en">Sponsors</a></li>
+          <li lang="en"><a href="/stats" hreflang="en">Usage statistics</a></li>
+        </ul>
+      </nav>
+      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> 查詢路徑上沒有 SenderFinder 伺服器。你的 key 和歷史記錄都留在瀏覽器裡。 <a href="/zh-tw/privacy">隱私權</a></p>
       <div class="v2-foot-bottom">
         <p>SenderFinder 是以 AGPL-3.0 授權釋出的開放原始碼軟體。</p>
         <p>Gmail、Outlook、LinkedIn 和 Chrome 是各自擁有者的商標。</p>
@@ -317,7 +335,7 @@
   <div class="notice" id="notice" role="region" aria-label="Cookie 通知" data-consent-mode="false" hidden>
     <div class="notice-inner">
       <svg class="i i-lg" aria-hidden="true"><use href="#i-cookie"/></svg>
-      <p>本站可能會使用重視隱私的瀏覽統計來計數。SenderFinder 擴充功能是另一回事：除非你在它的設定裡把統計關掉，它每天會傳送一份匿名使用摘要。 <a href="privacy.html#cookies">隱私權</a></p>
+      <p>本站可能會使用重視隱私的瀏覽統計來計數。SenderFinder 擴充功能是另一回事：除非你在它的設定裡把統計關掉，它每天會傳送一份匿名使用摘要。 <a href="/zh-tw/privacy#cookies">隱私權</a></p>
       <div class="notice-actions">
         <button type="button" class="notice-btn notice-close" data-consent="ack">好</button>
       </div>

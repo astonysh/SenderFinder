@@ -1,0 +1,150 @@
+{
+  "meta": {
+    "title": "Sponsor SenderFinder — open-source sender lookup | SenderFinder",
+    "description": "SenderFinder has no paid tier and no investor. Sponsorship pays for benchmark runs against paid provider APIs and the time that keeps ten UI languages and the provider adapters current.",
+    "ogTitle": "Sponsor SenderFinder",
+    "ogDescription": "An open-source, local-first alternative to Rapportive and Clearbit Connect. What sponsorship pays for, and what it does not buy."
+  },
+  "page": {
+    "title": "Sponsor SenderFinder",
+    "lead": "SenderFinder is free, open source and has no paid tier. Sponsorship pays for the parts that cost real money — benchmark runs against paid provider APIs and the time that keeps the adapters and translations current — without buying influence over what the product recommends.",
+    "updated": "Last checked: 25 October 2026.",
+    "cta": {
+      "install": "Install SenderFinder",
+      "github": "View the source on GitHub"
+    },
+    "sections": [
+      {
+        "id": "why",
+        "title": "Why sponsor it",
+        "blocks": [
+          "SenderFinder exists because the tools that used to answer “who is this sender?” kept disappearing. Rapportive was acquired and shut down. Clearbit Connect stopped working on 30 April 2025. The replacement is an AGPL-3.0 extension that runs in your browser, uses your own provider keys, and has no SenderFinder account or server in the lookup path.",
+          "That architecture is cheap to run and expensive to maintain. There is no subscription to fund it. The provider adapters have to follow catalog and API changes. The benchmark costs money every time it runs because it calls paid provider APIs. Ten UI languages have to be kept in step with every new string. Sponsorship is what turns “someone maintains this in their spare time” into “someone can keep maintaining it”.",
+          "Sponsorship is not a vote on the roadmap. The project's value is that it recommends the cheapest step first and says when it is uncertain; a sponsor cannot buy a different answer."
+        ]
+      },
+      {
+        "id": "what-sponsors-get",
+        "title": "What sponsors get",
+        "blocks": [
+          "Sponsorship is recognition, not advertising inventory. The current offer is deliberately small and concrete:"
+        ],
+        "list": [
+          "<strong>A logo and a link on this page</strong>, in the sponsors section, once there are sponsors to list.",
+          "<strong>A logo and a link in the repository's README.md</strong>, next to the project description.",
+          "<strong>A one-line description</strong> of what you do, if you want one, in both places.",
+          "<strong>The honest association</strong> with an open-source tool that does not collect inbox data and publishes its benchmark methodology."
+        ],
+        "blocksAfter": [
+          "What sponsorship does <strong>not</strong> buy: placement in the extension's About card (that is not offered and should not be assumed), a provider ranking, a favourable benchmark result, a roadmap commitment, access to user data, or the right to approve copy. The project has no user data to sell and no interest in inventing some."
+        ]
+      },
+      {
+        "id": "current",
+        "title": "Current sponsors",
+        "blocks": [
+          "There are none yet. This project has no sponsors and no paid tier at the time of writing. The section above describes what will be offered when there are; it is not a disguised list of existing supporters.",
+          "If that changes, the names will appear here and in the README, with the date they started. No placeholder logo is shown in the meantime."
+        ]
+      },
+      {
+        "id": "providers",
+        "title": "Provider relationships, disclosed",
+        "comment": "<!-- TODO-VERIFY: confirm referral/affiliate status for treg and Monid. The repository only documents Firecrawl's referral link (firecrawl.link/sf in CHANGELOG.md); the treg and Monid signup links are plain URLs today. Add the exact programme names only after confirming them. -->",
+        "blocks": [
+          "SenderFinder depends on three data providers. Two aggregate several sources behind one key; the third is an optional fallback. They are commercial services, and the project's relationship with them should be as legible as the lookup path.",
+          "The extension never calls a data source directly. BlitzAPI, QuickEnrich and Village are called through treg; Hunter, Apollo and ContactOut through Monid; Data Legion through Firecrawl. An Apollo API key of your own does nothing here, because the request goes through Monid. That is an architectural fact, not a sponsorship claim."
+        ],
+        "table": {
+          "head": [
+            "Provider",
+            "What it powers",
+            "Relationship"
+          ],
+          "rows": [
+            [
+              "treg",
+              "BlitzAPI, QuickEnrich, Village",
+              "No referral parameter is documented in the repository."
+            ],
+            [
+              "Monid",
+              "Hunter, Apollo, ContactOut",
+              "No referral parameter is documented in the repository."
+            ],
+            [
+              "Firecrawl",
+              "Data Legion fallback",
+              "Referral link firecrawl.link/sf, documented in CHANGELOG.md."
+            ]
+          ],
+          "note": "If you sign up through a provider link in the extension and the provider pays a referral fee, that fee goes to the project. It does not change the waterfall order, the prices shown in settings, or the benchmark. The table is updated when a relationship changes."
+        }
+      },
+      {
+        "id": "how",
+        "title": "How to sponsor",
+        "comment": "<!-- TODO-VERIFY: GitHub Sponsors URL; TODO-VERIFY: sponsor contact email. Do not publish placeholder links: the visible copy tells readers the page is being set up and points at GitHub issues in the meantime. -->",
+        "blocks": [
+          "The GitHub Sponsors page is being set up. Until it is live, the practical route is to open an issue on <a href=\"https://github.com/astonysh/SenderFinder\">github.com/astonysh/SenderFinder</a> with the subject “sponsorship” and say what you have in mind — one-time, recurring, or in kind (benchmark provider credits are especially useful). The maintainer will reply with a way to contribute.",
+          "A sponsor contact address will be published here when it exists. Until then, GitHub issues are the public, durable channel; please do not send keys, addresses or other personal data in an issue.",
+          "If you are a provider and want to donate API credits for benchmark runs, say so in the same issue. Credits are used only for the published benchmark, and the methodology and results stay public."
+        ]
+      },
+      {
+        "id": "use-of-funds",
+        "title": "Where the money goes",
+        "blocks": [
+          "Benchmark runs are the clearest cost: a 50-address run against paid provider APIs costs money every time, and reruns are how the price and hit-rate tables stay honest. The rest is maintenance time — provider adapters, the Outlook path, the ten UI languages, the install guide and the privacy statement.",
+          "When sponsorship starts, a short use-of-funds note will be published here with the same date as the sponsor list."
+        ]
+      },
+      {
+        "id": "what-we-will-not-do",
+        "title": "What we will not do",
+        "list": [
+          "Sell or share lookup data. The extension has no server in the lookup path and no inbox database.",
+          "Put a sponsor's provider first in the waterfall, or hide a cheaper step behind a sponsorship.",
+          "Publish a benchmark result a sponsor paid to change. Reruns may change the numbers; the method does not.",
+          "Add tracking to this website. The site loads no analytics script and no third-party requests.",
+          "Promise a feature that is not in the repository. The code is the roadmap."
+        ]
+      },
+      {
+        "id": "related",
+        "title": "Related reading",
+        "list": [
+          "<a href=\"/email-enrichment-api-benchmark\">The 50-address benchmark</a> — the numbers sponsorship helps keep current.",
+          "<a href=\"/stats\">Usage statistics</a> — what the project counts, and what it does not.",
+          "<a href=\"/privacy\">Privacy statement</a> — the data model in full.",
+          "<a href=\"/install\">Install guide</a> — the free product this supports.",
+          "<a href=\"/clearbit-connect-alternative\">Clearbit Connect alternative</a> and <a href=\"/rapportive-alternative\">Rapportive alternative</a>."
+        ]
+      }
+    ],
+    "faqTitle": "Questions about sponsorship",
+    "faqIntro": "The short version before you open an issue.",
+    "bottomCta": {
+      "title": "Use the product first",
+      "body": "Sponsorship should follow from the tool being useful, not the other way round. Install it, run a few lookups, and decide after that."
+    }
+  },
+  "faq": [
+    {
+      "q": "Is SenderFinder free?",
+      "a": "Yes. The extension is AGPL-3.0 open source with no account and no subscription. You pay the data provider directly, with your own key, only for the lookups you run. There is no paid tier to upgrade to."
+    },
+    {
+      "q": "Who are the current sponsors?",
+      "a": "None. At the time of writing the project has no sponsors and no paid tier. This page will list them with a start date when that changes."
+    },
+    {
+      "q": "Does sponsoring change which provider is recommended?",
+      "a": "No. The waterfall order is cheapest-first and the benchmark table is generated from the results file. A sponsor cannot buy a ranking, a favourable result or a place in the extension's About card."
+    },
+    {
+      "q": "How do I sponsor before GitHub Sponsors is live?",
+      "a": "Open an issue on GitHub with the subject “sponsorship” and describe what you have in mind. Provider credits for benchmark runs are also useful. Do not include keys, addresses or personal data in the issue."
+    }
+  ]
+}

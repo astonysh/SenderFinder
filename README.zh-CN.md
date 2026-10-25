@@ -16,14 +16,16 @@ Rapportive / Clearbit Connect 式的开源浏览器插件，支持 Chrome 和 Mi
 
 插件按"最便宜的先试"的瀑布流查找，每一步都先读供应商目录价格，超过上限就不调；有单次上限和每天总预算；命中后立刻停止并写入缓存，同一邮箱不会重复花钱。
 
-| 顺序 | 步骤 | 走哪家 | 输入 | 命中价 | 未命中 | 目录观察命中率 |
+| 顺序 | 步骤 | 走哪家 | 输入 | 命中价 | 未命中 | 条件命中率 |
 |---|---|---|---|---:|---|---:|
 | 1 | `signature` | 本地正则扫邮件签名里的 linkedin.com/in 链接 | 邮件正文 | $0 | — | — |
-| 2 | `blitzapi` | treg `blitzapi.people.email.reverse` | 邮箱 | $0.0005 | 免费 | 21 % |
-| 3 | `hunter` | Monid `hunterio /people/find` | 邮箱 | $0.0049 | 免费（404） | 46 % |
-| 4 | `quickenrich` | treg `quickenrich.people.enrich` | 邮箱 | $0.0048 | 免费 | 11 % |
-| 5 | `apollo` | Monid `apollo /people/match` | 邮箱 + 姓名 + 公司域名 | $0.026 | 免费，能挂到已知公司的空壳会计费 | — |
+| 2 | `blitzapi` | treg `blitzapi.people.email.reverse` | 邮箱 | $0.0005 | 免费 | 50 % |
+| 3 | `hunter` | Monid `hunterio /people/find` | 邮箱 | $0.0049 | 免费（404） | 17.9 % |
+| 4 | `quickenrich` | treg `quickenrich.people.enrich` | 邮箱 | $0.0048 | 免费 | 17.4 % |
+| 5 | `apollo` | Monid `apollo /people/match` | 邮箱 + 姓名 + 公司域名 | $0.026 | 免费，能挂到已知公司的空壳会计费 | 100 %（19/19） |
 | 6 | `datalegion` | Firecrawl Alexandria `datalegion people/enrich-base-no-contact` | 邮箱 | 10 credits（≈ $0.008–0.032） | 免费 | — |
+
+条件命中率 = 该步骤回答数 ÷ 到达该步骤的次数，数据来自 2026-10-25 的 50 条实测；完整表格与说明见 https://senderfinder.com/email-enrichment-api-benchmark。
 
 可选步骤（在设置页勾选即可）：`village`（treg，$0.02，专做邮箱反查）、`contactout`（Monid，$0.02）。价格为 2026-10-25 的目录价，插件每次调用前会重新读取。步骤的顺序和开关都在设置页里改。
 
@@ -51,11 +53,13 @@ Rapportive / Clearbit Connect 式的开源浏览器插件，支持 Chrome 和 Mi
 
 | 指标 | 结果 |
 |---|---|
-| 找到并姓名匹配 | 48 / 50（96 %） |
+| 找到 | 48 / 50（96 %） |
+| 其中姓名匹配 | 47 |
+| 找到但未返回资料姓名 | 1 |
 | 姓名不符（标为不确定） | 2 |
 | 未找到 | 0 |
-| 总花费 | $0.555，平均每条 $0.011 |
-| 各步骤命中率 | BlitzAPI 50 %（$0.0005）、Hunter 18 %（$0.0049）、QuickEnrich 17 %（$0.0048）、Apollo 19/19（$0.026） |
+| 总花费 | $0.5551，平均每条 $0.0111 |
+| 各步骤命中率（回答 ÷ 到达） | BlitzAPI 50 %（$0.0005）、Hunter 17.9 %（$0.0049）、QuickEnrich 17.4 %（$0.0048）、Apollo 100 %（19/19，$0.026） |
 | 回答来源 | BlitzAPI 24、Apollo 17、Hunter 5、QuickEnrich 4 |
 
 结论：一半的地址由最便宜的 BlitzAPI 解决；Apollo 作为带姓名和公司域名的兜底几乎必中，但占了总花费的近九成。这个样本偏向英语市场的销售/增长岗位，和自己的客户群分布可能不同，建议再用真实收件箱的发件人补一轮。
