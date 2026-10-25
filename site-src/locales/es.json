@@ -94,7 +94,8 @@
   },
   "index": {
     "hero": {
-      "desc": "Abre un correo en Gmail y el panel lateral muestra quién lo envía: nombre, cargo, empresa y ubicación.",
+      "lead": "Descubre quién te escribió y conecta con esa persona en LinkedIn.",
+      "desc": "Abre un mensaje en Gmail o Outlook para ver en SenderFinder el perfil de LinkedIn que podría corresponder al remitente. Comprueba que sea la persona correcta y, si quieres, envíale una invitación para conectar.",
       "install": "Instalar en 2 minutos",
       "github": "Ver en GitHub",
       "fine": "Todavía no está en Chrome Web Store. La página de instalación explica cómo cargarla descomprimida en dos minutos.",

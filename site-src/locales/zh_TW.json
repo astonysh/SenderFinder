@@ -94,7 +94,8 @@
   },
   "index": {
     "hero": {
-      "desc": "在 Gmail 開啟一封郵件，側邊面板就會顯示寄件者是誰：姓名、職稱、公司和地點。",
+      "lead": "找到寄件者，再到 LinkedIn 上建立聯繫。",
+      "desc": "在 Gmail 或 Outlook 開啟郵件，即可在 SenderFinder 中查看可能符合寄件者的 LinkedIn 個人檔案。確認對方無誤後，你可以在 LinkedIn 上發出邀請。",
       "install": "2 分鐘完成安裝",
       "github": "在 GitHub 上查看",
       "fine": "還沒上架 Chrome Web Store。安裝頁面會帶你走完兩分鐘的未封裝安裝流程。",

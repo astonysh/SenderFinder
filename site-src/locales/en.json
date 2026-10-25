@@ -94,7 +94,8 @@
   },
   "index": {
     "hero": {
-      "desc": "Open an email in Gmail and the side panel shows who sent it: name, role, company and location.",
+      "lead": "Find the person who emailed you, then connect on LinkedIn.",
+      "desc": "Open a message in Gmail or Outlook to see the sender’s likely LinkedIn profile in SenderFinder. Review the match, then send a connection request when you’re ready.",
       "install": "Install in 2 minutes",
       "github": "View on GitHub",
       "fine": "Not in the Chrome Web Store yet. The install page walks through the two-minute unpacked install.",

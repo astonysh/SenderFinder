@@ -94,7 +94,8 @@
   },
   "index": {
     "hero": {
-      "desc": "Öffne eine E-Mail in Gmail und das Seitenpanel zeigt, wer sie geschickt hat: Name, Position, Unternehmen und Ort.",
+      "lead": "Finde heraus, wer dir geschrieben hat, und vernetze dich auf LinkedIn.",
+      "desc": "Öffne eine Nachricht in Gmail oder Outlook, um in SenderFinder ein mögliches LinkedIn-Profil der absendenden Person zu sehen. Prüfe, ob das Profil passt, und sende bei Bedarf eine Vernetzungsanfrage.",
       "install": "In 2 Minuten installieren",
       "github": "Auf GitHub ansehen",
       "fine": "Noch nicht im Chrome Web Store. Die Installationsseite führt durch die zwei Minuten für die Installation als entpackte Erweiterung.",
