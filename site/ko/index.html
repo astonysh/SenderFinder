@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SenderFinder — 이메일 발신자를 LinkedIn에서 찾기</title>
+  <meta name="description" content="Gmail과 Outlook에서 발신자의 LinkedIn 프로필을 보여 주는 오픈소스 Chrome 확장 프로그램입니다. 제공업체 키는 직접 설정하며, 익명 사용 통계는 기본적으로 켜져 있고 끌 수 있습니다.">
+  <link rel="canonical" href="https://senderfinder.com/ko/">
+  <link rel="alternate" hreflang="en" href="https://senderfinder.com/">
+  <link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/">
+  <link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/">
+  <link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/">
+  <link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/">
+  <link rel="alternate" hreflang="de" href="https://senderfinder.com/de/">
+  <link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/">
+  <link rel="alternate" hreflang="es" href="https://senderfinder.com/es/">
+  <link rel="alternate" hreflang="it" href="https://senderfinder.com/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/">
+  <link rel="alternate" hreflang="x-default" href="https://senderfinder.com/">
+  <!-- CWS-BUTTON: install buttons carry data-store-url="CWS_PLACEHOLDER"; see site/README.md -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SenderFinder">
+  <meta property="og:title" content="SenderFinder — 이메일 발신자를 LinkedIn에서 찾기">
+  <meta property="og:description" content="Gmail에서 메일을 열면 발신자의 LinkedIn 프로필이 보입니다. 오픈 소스, 직접 발급한 API 키, 계정 없음.">
+  <meta property="og:url" content="https://senderfinder.com/ko/">
+  <meta property="og:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="800">
+  <meta name="color-scheme" content="light dark">
+  <script src="../assets/theme-boot.js"></script>
+  <link rel="stylesheet" href="../assets/app.css">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/icon-128.png" type="image/png" sizes="128x128">
+  <link rel="apple-touch-icon" href="../assets/icon-128.png">
+  <script type="module" src="../assets/theme.js"></script>
+  <script type="module" src="../assets/calc.js"></script>
+</head>
+<body class="v2">
+<svg class="icon-sprite" aria-hidden="true" focusable="false" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+<!-- One stroke style, 24×24, drawn for this site. Inlined into every page by scripts/build-site.js. -->
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-puzzle" viewBox="0 0 24 24"><path d="M9 4h2.2a1.8 1.8 0 1 1 3.6 0H17v3.2a1.8 1.8 0 1 0 0 3.6V14h-3.2a1.8 1.8 0 1 1-3.6 0H7v-3.2a1.8 1.8 0 1 0 0-3.6V4z"/><path d="M7 14v6h10v-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><path d="m11 11 8 8"/><path d="m15.5 15.5 2 2"/><path d="m17.5 13.5 2 2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.8 2.8L16 9.2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-mail-off" viewBox="0 0 24 24"><path d="M6.5 5H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7"/><path d="m3.5 7 8.5 6 3-2.1"/><path d="M4 20 20 4"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M16 14.5h2"/><path d="M6 6V5a2 2 0 0 1 2.4-2l8.6 2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-calculator" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 7h8"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-shield" viewBox="0 0 24 24"><path d="M12 3 19 6v6c0 4-2.9 7.2-7 9-4.1-1.8-7-5-7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/><path d="M12 14.5v2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.2 12h17.6"/><path d="M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.2 8.2 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12.5" rx="2"/><path d="M9 20h6M12 16.5V20"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.6 2.3c-.7.3-1.2 1-1.2 1.8v.4"/><path d="M12 17h.01"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-wrench" viewBox="0 0 24 24"><path d="M15.5 3.5a5 5 0 0 0-4.3 7.5L3.6 18.6l1.8 1.8L13 12.8a5 5 0 0 0 7.5-4.3l-3 3-2.3-2.3z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-cookie" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9.6" r="1.1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="8.6" r="1.1" fill="currentColor" stroke="none"/><circle cx="15.2" cy="14" r="1.1" fill="currentColor" stroke="none"/><circle cx="10.2" cy="15.2" r="1.1" fill="currentColor" stroke="none"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-browser" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M2.5 8.5h19"/><path d="M5.5 6.3h.01M8 6.3h.01"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-provider" viewBox="0 0 24 24"><path d="M7.5 18.5a4.2 4.2 0 0 1-.3-8.4 5.6 5.6 0 0 1 10.7 1.4 3.6 3.6 0 0 1-.9 7z"/><path d="M12 16v-4"/><path d="m10.2 13.3 1.8-1.8 1.8 1.8"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-server-off" viewBox="0 0 24 24"><rect x="3" y="3.5" width="18" height="6.5" rx="2"/><rect x="3" y="14" width="18" height="6.5" rx="2"/><path d="M6 6.7h.01M6 17.2h.01"/><path d="M3.5 21 20.5 2.5"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7.5" ry="3"/><path d="M4.5 6v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6"/><path d="M4.5 12v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-eye-off" viewBox="0 0 24 24"><path d="M4 4l16 16"/><path d="M9.8 5.3A9.5 9.5 0 0 1 12 5c5 0 9 4.4 9 7a11 11 0 0 1-2.3 3.3"/><path d="M6.4 7.4A13.4 13.4 0 0 0 3 12c0 2.6 4 7 9 7a9.7 9.7 0 0 0 3.7-.7"/><path d="M10.4 10.5a2.2 2.2 0 0 0 3.1 3.1"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-cursor" viewBox="0 0 24 24"><path d="M6 3.5 18.5 12l-5.2 1.2 2.9 6.3-2 1-2.9-6.4-3.6 3.6z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-link" viewBox="0 0 24 24"><path d="M9.6 14.4 14.4 9.6"/><path d="M10.8 6.9 12.4 5.2a3.8 3.8 0 0 1 5.4 5.4l-1.7 1.6"/><path d="M13.2 17.1l-1.6 1.7a3.8 3.8 0 0 1-5.4-5.4l1.7-1.6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 20v-5"/><path d="M13 20V9"/><path d="M18 20v-8"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-github" viewBox="0 0 24 24"  fill="currentColor" stroke="none"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.1c-3.2.7-3.88-1.4-3.88-1.4-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .3.21.66.8.55C20.71 21.39 24 17.08 24 12 24 5.73 18.27.5 12 .5z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-gmail" viewBox="0 0 24 24"><path d="M3 7.5 12 14l9-6.5"/><rect x="3" y="5" width="18" height="14" rx="2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-outlook" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/><circle cx="12" cy="13" r="2.6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.6 10v7"/><path d="M7.6 7.2h.01"/><path d="M11.6 17v-4a2.5 2.5 0 0 1 5 0v4"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-chrome" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.6"/><path d="M12 3.1h7.7"/><path d="m4.5 7.7 3.9 6.7"/><path d="m19.5 7.7-3.9 6.7"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v14"/><path d="m6 12.5 6 6 6-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h14"/><path d="m12.5 6 6 6-6 6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18.5 14v4.5a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2H10"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.2 20c0-3.2 2.6-5.4 5.8-5.4s5.8 2.2 5.8 5.4"/><path d="M16.2 5.6a3.2 3.2 0 0 1 0 5.8"/><path d="M18.2 20c0-2.2-.8-3.9-2.2-4.9"/></symbol>
+</svg>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+  <header class="v2-nav">
+    <div class="v2-wrap">
+      <div class="v2-nav-inner">
+        <a class="v2-brand" href="index.html" aria-current="page">
+          <img src="../assets/icon-128.png" alt="" width="32" height="32">
+          <span>SenderFinder</span>
+        </a>
+
+        <nav class="v2-nav-links" aria-label="주요 메뉴">
+          <ul>
+            <li><a href="index.html#how">작동 방식</a></li>
+            <li><a href="index.html#privacy">개인정보</a></li>
+            <li><a href="index.html#cost">가격</a></li>
+            <li><a href="install.html">설치</a></li>
+            <li><a href="index.html#faq">자주 묻는 질문</a></li>
+            <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+          </ul>
+        </nav>
+
+        <div class="v2-nav-tools header-tools">
+          <details class="theme-switch">
+            <summary><span class="visually-hidden">화면 테마: </span><svg class="i theme-icon theme-icon-monitor" aria-hidden="true"><use href="#i-monitor"/></svg><svg class="i theme-icon theme-icon-light" aria-hidden="true"><use href="#i-sun"/></svg><svg class="i theme-icon theme-icon-dark" aria-hidden="true"><use href="#i-moon"/></svg></summary>
+            <div class="theme-menu" role="group" aria-label="화면 테마">
+              <button type="button" data-theme-value="system" aria-pressed="true">시스템 설정</button>
+              <button type="button" data-theme-value="light" aria-pressed="false">라이트</button>
+              <button type="button" data-theme-value="dark" aria-pressed="false">다크</button>
+            </div>
+          </details>
+          <details class="lang-switch">
+            <summary><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg><span class="visually-hidden">언어: </span>한국어</summary>
+            <div class="lang-menu">
+              <nav aria-label="언어">
+                <ul>
+                <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+                <li><a href="../zh-cn/index.html" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
+                <li><a href="../zh-tw/index.html" hreflang="zh-TW" lang="zh-TW">繁體中文</a></li>
+                <li><a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a></li>
+                <li><a href="index.html" hreflang="ko" lang="ko" aria-current="page">한국어</a></li>
+                <li><a href="../de/index.html" hreflang="de" lang="de">Deutsch</a></li>
+                <li><a href="../fr/index.html" hreflang="fr" lang="fr">Français</a></li>
+                <li><a href="../es/index.html" hreflang="es" lang="es">Español</a></li>
+                <li><a href="../it/index.html" hreflang="it" lang="it">Italiano</a></li>
+                <li><a href="../pt-br/index.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+                </ul>
+              </nav>
+              <p class="fine">SenderFinder는 10개 언어로 제공됩니다. 확장 프로그램은 브라우저 언어를 따릅니다.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<main id="main">
+<div class="v2-hero">
+  <div class="v2-wrap">
+    <a class="v2-badge" href="https://github.com/astonysh/SenderFinder">
+      <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> 무료 · 오픈 소스 · AGPL-3.0
+    </a>
+
+    <h1 id="hero-title" class="v2-title">이메일 발신자를 <span class="v2-gradient">LinkedIn</span>에서 찾기</h1>
+
+    <p class="v2-hero-lead">오픈 소스 · 내 키 사용 · 데이터는 이 기기에만</p>
+    <p class="v2-hero-desc">Gmail에서 메일을 열면 사이드 패널에 누가 보냈는지 표시됩니다. 이름, 직책, 회사, 위치입니다.</p>
+
+    <ul class="v2-hero-meta">
+      
+      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> 키는 기기에 남습니다</li>
+      
+      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> 기록은 기기에 남습니다</li>
+      
+      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> 익명 사용 통계 — 끄는 스위치는 하나</li>
+      
+    </ul>
+
+    <div class="v2-actions">
+      <!-- CWS-BUTTON: when the store listing is live, set href="CWS_PLACEHOLDER" and change the label to "Add to Chrome". -->
+      <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder">
+        <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> GitHub에서 보기
+      </a>
+      <a class="v2-btn v2-btn--default" href="install.html" data-store-url="CWS_PLACEHOLDER">
+        2분 만에 설치 <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+      </a>
+    </div>
+    <p class="v2-hero-fine">아직 Chrome 웹 스토어에 없습니다. 설치 페이지에서 2분짜리 압축 해제 설치 과정을 안내합니다.</p>
+
+    <figure class="v2-shot">
+      <picture>
+        <source media="(max-width: 620px)" srcset="../assets/screenshots/side-panel.png" width="359" height="800">
+        <img src="../assets/screenshots/sender-in-gmail.png" alt="Gmail 옆의 SenderFinder 사이드 패널. 베를린 Acme의 파트너십 책임자 Jane Doe와 LinkedIn 링크, 1촌 맺기 버튼, 스레드의 다른 사람들이 표시되어 있습니다." width="1280" height="800" fetchpriority="high">
+      </picture>
+      <figcaption>메일을 읽는 동안의 사이드 패널. 인물과 회사는 가상입니다.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<section class="v2-section v2-section--soft v2-cloud-section">
+  <div class="v2-wrap v2-cloud">
+    <p>지원 환경</p>
+    <ul>
+      <li><svg class="i" aria-hidden="true"><use href="#i-gmail"/></svg> Gmail</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-outlook"/></svg> 웹 Outlook</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-chrome"/></svg> Chrome</li>
+    </ul>
+  </div>
+</section>
+
+<section class="v2-section" id="how">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">작동 방식</div>
+      <h2 class="v2-h2">한 번만 설정하면 받은편지함을 읽습니다</h2>
+      <p>확장 프로그램을 설치하고 제공업체 키 하나를 붙여 넣으면, 여는 메일마다 발신자가 누구인지 표시됩니다.</p>
+    </header>
+
+    <div class="v2-grid v2-grid--3">
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg></div>
+        <h3>열어 본 메일을 읽습니다</h3>
+        <hr class="v2-rule">
+        <p>발신자와 받는 사람, 참조에 있는 모든 사람입니다. 본문은 linkedin.com/in 링크를 찾기 위해서만 로컬에서 스캔합니다.</p>
+      </article>
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-wallet"/></svg></div>
+        <h3>가장 저렴한 출처부터</h3>
+        <hr class="v2-rule">
+        <p>무료 서명 스캔에서 유료 제공업체로 이어지는 연쇄 조회이며, 저렴한 순서입니다. 실패한 조회는 무료이고, 일치하면 연쇄가 멈춥니다.</p>
+      </article>
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-key"/></svg></div>
+        <h3>키 하나면 충분합니다</h3>
+        <hr class="v2-rule">
+        <p>가장 저렴한 조회는 treg, 가장 넓은 범위는 Monid입니다. 키 하나만 있어도 전체 흐름이 작동합니다.</p>
+      </article>
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></div>
+        <h3>스레드 전체</h3>
+        <hr class="v2-rule">
+        <p>다른 발신자와 받는 사람, 참조가 패널에 나열되며, 각 사람은 직접 클릭할 때만 조회합니다.</p>
+      </article>
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-link"/></svg></div>
+        <h3>LinkedIn에서 연결</h3>
+        <hr class="v2-rule">
+        <p>패널이 프로필을 열고 메모를 미리 채웁니다. 연결과 보내기는 직접 누르며, 확장 프로그램이 대신 누르지는 않습니다.</p>
+      </article>
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-database"/></svg></div>
+        <h3>캐시와 기록은 로컬에</h3>
+        <hr class="v2-rule">
+        <p>결과는 브라우저의 IndexedDB에 90일 동안 보관되며, JSON 또는 CSV로 내보내고 한 번의 클릭으로 삭제할 수 있습니다.</p>
+      </article>
+      
+    </div>
+  </div>
+</section>
+
+<section class="v2-section v2-section--soft" id="privacy">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">개인정보</div>
+      <h2 class="v2-h2">받은편지함은 사용자의 것입니다</h2>
+      <p>조회는 브라우저에서 직접 고른 제공업체로 곧바로 전송됩니다. 기기에 남는 것, 밖으로 나가는 것, 익명 집계에 포함되는 것을 정확히 정리했습니다.</p>
+    </header>
+
+    <figure class="v2-flow-card">
+      <div class="flow">
+        <div class="flow-row">
+          <div class="flow-box">
+            <svg class="i i-lg" aria-hidden="true"><use href="#i-browser"/></svg>
+            <h3>내 브라우저</h3>
+            <p>키 · 캐시 · 기록</p>
+          </div>
+          <div class="flow-mid">
+            <svg class="i i-arrow flow-arrow-down" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+            <svg class="i i-arrow flow-arrow-right" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            <p>요청한 조회</p>
+            <p class="flow-nope"><svg class="i" aria-hidden="true"><use href="#i-server-off"/></svg> <span>조회 경로에 SenderFinder 서버가 없습니다</span></p>
+          </div>
+          <div class="flow-box">
+            <svg class="i i-lg" aria-hidden="true"><use href="#i-provider"/></svg>
+            <h3>직접 고른 제공업체</h3>
+            <p>이메일 주소를 받고, Apollo 단계에서는 표시 이름과 회사 도메인도 함께 받습니다</p>
+          </div>
+        </div>
+        <p class="flow-none"><svg class="i" aria-hidden="true"><use href="#i-chart"/></svg> 익명 일일 사용 통계 → SenderFinder 통계 서비스 (기본적으로 켜져 있음, 끌 수 있음)</p>
+        <p class="visually-hidden">그림: 브라우저가 키와 캐시, 기록을 보관합니다. 밖으로 나가는 화살표는 하나뿐이며, 요청한 조회가 설정한 제공업체로 전송됩니다. 취소선 상자는 조회 경로에 없는 SenderFinder 서버를 가리키고, 옆의 설명은 익명 일일 사용 통계를 설명합니다.</p>
+      </div>
+    </figure>
+
+    <div class="v2-grid v2-grid--3 v2-grid--after">
+      
+      <article class="v2-card">
+        <h3 class="v2-card-title"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> 기기에 남는 것</h3>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>제공업체 키, 확장 프로그램 자체 스토리지에</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>캐시와 기록, IndexedDB에(90일, 5,000개 항목)</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>설정, 상한, 자동 조회 한도</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>어떤 메일을 열었는지에 대한 정보는 브라우저를 벗어나지 않습니다</span></li>
+        </ul>
+      </article>
+      
+      <article class="v2-card">
+        <h3 class="v2-card-title"><svg class="i" aria-hidden="true"><use href="#i-provider"/></svg> 직접 고른 제공업체로 전송되는 것</h3>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>사용자의 키와 함께 전송되는, 조회하는 주소</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>메일 헤더의 표시 이름</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Apollo 단계에서 쓰는 회사 도메인</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>해당 제공업체의 카탈로그 가격 조회 요청</span></li>
+        </ul>
+      </article>
+      
+      <article class="v2-card">
+        <h3 class="v2-card-title"><svg class="i" aria-hidden="true"><use href="#i-chart"/></svg> 익명 사용 집계</h3>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>기본적으로 켜져 있으며, 설정의 스위치 하나로 끕니다</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>일일 합계: 횟수, 결과, 지출, 버전, 언어</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>무작위 설치 ID이며, 집계를 끄면 삭제됩니다</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>주소, 이름, 도메인, 키, 메시지 본문은 절대 포함되지 않습니다</span></li>
+        </ul>
+      </article>
+      
+    </div>
+
+    <p class="v2-center"><a class="v2-btn v2-btn--outline v2-btn--sm" href="privacy.html">개인정보 자세히 보기 <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></p>
+  </div>
+</section>
+
+<section class="v2-section" id="pricing">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">가격</div>
+      <h2 class="v2-h2">무료입니다. 원한다면 데이터 제공업체에만 비용을 지불합니다.</h2>
+      <p>확장 프로그램은 무료입니다. 이메일 서명 단계는 무료이고, 유료 조회는 직접 고른 제공업체가 조회 건당 청구하며 설정한 상한이 적용됩니다.</p>
+    </header>
+
+    <article class="v2-free">
+      <div class="v2-free-main">
+        <h3>SenderFinder</h3>
+        <div class="v2-free-price"><strong>$0</strong><span>영구 무료</span></div>
+        <ul class="v2-free-checks">
+          
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>오픈 소스, AGPL-3.0</span></li>
+          
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>계정 없음, 구독 없음</span></li>
+          
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>브라우저에서 실행</span></li>
+          
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>서명 스캔은 무료</span></li>
+          
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>캐시되므로 같은 주소로 두 번 결제하지 않습니다</span></li>
+          
+        </ul>
+      </div>
+      <div class="v2-free-action">
+        <a class="v2-btn v2-btn--default" href="install.html">무료로 설치 <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </article>
+
+    <h3 class="v2-subhead">선택 사항: 데이터 제공업체 비용</h3>
+
+    <div class="v2-grid v2-grid--3">
+      
+      <article class="v2-price v2-price--light">
+        
+        <h3>treg만</h3>
+        <div class="v2-price-value"><strong>US$0.0007</strong></div>
+        <p class="v2-price-hit">찾은 주소당, 제공업체에 지불</p>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>추천 용도: 예산이 빠듯할 때, 사용량이 많을 때</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>BlitzAPI → QuickEnrich</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>58% 찾음</span></li>
+        </ul>
+      </article>
+      
+      <article class="v2-price v2-price--light v2-price--featured">
+        <div class="v2-price-tag">권장</div>
+        <h3>두 키 모두</h3>
+        <div class="v2-price-value"><strong>US$0.0100</strong></div>
+        <p class="v2-price-hit">찾은 주소당, 제공업체에 지불</p>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>추천 용도: 기본값. 가장 싼 단계부터, Apollo는 마지막 안전망</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>BlitzAPI → Hunter → QuickEnrich → Apollo</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>96% 찾음</span></li>
+        </ul>
+      </article>
+      
+      <article class="v2-price v2-price--light">
+        
+        <h3>Monid만</h3>
+        <div class="v2-price-value"><strong>US$0.0220</strong></div>
+        <p class="v2-price-hit">찾은 주소당, 제공업체에 지불</p>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>추천 용도: 적중률</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Hunter → Apollo</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>91% 찾음</span></li>
+        </ul>
+      </article>
+      
+    </div>
+
+    <div class="v2-calc-card">
+      <div class="calc-live" id="calc"
+           data-monthly-label="예상 월 비용"
+           data-per-label="새 주소당 비용"
+           data-hit-label="찾은 업무용 주소"
+           data-found-label="월당 찾은 주소"
+           data-usable="현재 비율이면 오늘의 $2 상한으로 주소 {n}개까지 조회할 수 있습니다."
+           data-cap-daily="2"
+           data-cap-lookup="0.05"
+           data-day-limit="30">
+        <form class="calc-form">
+          <div class="field">
+            <label for="calc-volume">하루당 새 발신자 주소</label>
+            <div class="field-row">
+              <input type="range" id="calc-volume" min="0" max="120" step="1" value="20">
+              <output for="calc-volume" id="calc-volume-out">20</output>
+            </div>
+            <p class="hint">이전에 조회한 적 없는 주소만 세세요. 다시 나타난 발신자는 캐시에서 답하므로 비용이 들지 않습니다.</p>
+          </div>
+          <div class="field">
+            <label for="calc-keys">어떤 키를 가지고 있나요?</label>
+            <select id="calc-keys">
+              <option value="both" selected>두 키 모두(기본 연쇄)</option>
+              <option value="treg">treg만(가장 저렴)</option>
+              <option value="monid">Monid만(가장 넓은 범위)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="calc-skip">개인 및 역할 주소 비율</label>
+            <div class="field-row">
+              <input type="range" id="calc-skip" min="0" max="80" step="5" value="20">
+              <output for="calc-skip" id="calc-skip-out">20 %</output>
+            </div>
+            <p class="hint">gmail.com, outlook.com, qq.com, info@, support@ 등은 기본적으로 건너뛰므로 비용이 들지 않습니다.</p>
+          </div>
+        </form>
+
+        <div class="calc-out" aria-live="polite">
+          <dl class="stats">
+            <div class="stat">
+              <dt>예상 월 비용</dt>
+              <dd><span id="calc-monthly">—</span> <small class="unit">월</small></dd>
+            </div>
+            <div class="stat"><dt>새 주소당 비용</dt><dd><span id="calc-per">—</span></dd></div>
+            <div class="stat"><dt>찾은 업무용 주소</dt><dd><span id="calc-hit">—</span></dd></div>
+            <div class="stat"><dt>월당 찾은 주소</dt><dd><span id="calc-found">—</span></dd></div>
+          </dl>
+          <p class="fine" id="calc-usable"></p>
+          <p class="fine">찾음은 이름이 일치하는 프로필이 돌아온 경우입니다. 두 키의 차이는 주로 값비싼 대체 단계가 얼마나 자주 필요한지에 있습니다.</p>
+          <p class="fine">상한은 그대로 적용됩니다. 기본값은 하루 $2, 조회당 $0.05이며 둘 다 설정에서 조정할 수 있습니다. 이 추정은 30일과 새 주소당 조회 1회를 가정합니다.</p>
+        </div>
+      </div>
+
+      <div class="calc-fallback">
+        <h3>사용량 예시</h3>
+        <p class="section-intro">JavaScript 없이 표시됩니다. 같은 모델, 같은 가격이며, 발신자의 20%는 개인 또는 역할 주소여서 건너뜁니다.</p>
+        <div class="grid-3">
+          
+          <div>
+            <h4>두 키 모두</h4>
+            <dl class="stats">
+              
+              <div class="stat"><dt>하루 10개</dt><dd>≈ US$2.39 / 월 <small>≈ 96% 찾음</small></dd></div>
+              
+              <div class="stat"><dt>하루 30개</dt><dd>≈ US$7.18 / 월 <small>≈ 96% 찾음</small></dd></div>
+              
+              <div class="stat"><dt>하루 100개</dt><dd>≈ US$23.95 / 월 <small>≈ 96% 찾음</small></dd></div>
+              
+            </dl>
+          </div>
+          
+          <div>
+            <h4>treg만</h4>
+            <dl class="stats">
+              
+              <div class="stat"><dt>하루 10개</dt><dd>≈ US$0.17 / 월 <small>≈ 58% 찾음</small></dd></div>
+              
+              <div class="stat"><dt>하루 30개</dt><dd>≈ US$0.51 / 월 <small>≈ 58% 찾음</small></dd></div>
+              
+              <div class="stat"><dt>하루 100개</dt><dd>≈ US$1.71 / 월 <small>≈ 58% 찾음</small></dd></div>
+              
+            </dl>
+          </div>
+          
+          <div>
+            <h4>Monid만</h4>
+            <dl class="stats">
+              
+              <div class="stat"><dt>하루 10개</dt><dd>≈ US$5.28 / 월 <small>≈ 91% 찾음</small></dd></div>
+              
+              <div class="stat"><dt>하루 30개</dt><dd>≈ US$15.83 / 월 <small>≈ 91% 찾음</small></dd></div>
+              
+              <div class="stat"><dt>하루 100개</dt><dd>≈ US$52.78 / 월 <small>≈ 91% 찾음</small></dd></div>
+              
+            </dl>
+          </div>
+          
+        </div>
+        <p class="fine">직접 숫자를 보려면 JavaScript를 켜세요. 위의 내용은 단순한 표이며 지출을 약속하는 값이 아닙니다.</p>
+      </div>
+    </div>
+
+    <details class="v2-details">
+      <summary>숫자의 출처</summary>
+      <div>
+        <ul><li>새 발신자 주소는 한 번 조회되고 캐시됩니다. 다시 나타난 발신자는 $0이므로 입력은 읽은 메일 수가 아니라 하루당 새 주소 수입니다.</li><li>적중당 가격은 2026년 10월 25일 제공업체 카탈로그 가격입니다. BlitzAPI $0.0005, QuickEnrich $0.0048, Hunter $0.0049, Apollo $0.026입니다. 이 단계에서는 실패해도 무료입니다.</li><li>단계별 적중률은 2026년 10월 25일 50개 주소 벤치마크에서 나왔습니다. 48 %는 BlitzAPI가 해결했고, 남은 것의 19 %를 다음 단계가, 그 나머지의 19 %를 그다음 단계가 해결했습니다. Apollo는 호출된 19개 주소 중 17개에 답했습니다.</li><li>두 키를 쓰면 업무용 주소의 약 95 %를 찾고, 측정값은 50개 중 48개(96 %)입니다. treg만 쓰면 저렴한 두 단계만, Monid만 쓰면 Hunter와 Apollo가 실행됩니다.</li><li>월 비용 = 하루당 새 주소 수 × (1 − 건너뛴 비율) × 30 × 주소당 비용. 무료 이메일 서명 스캔, 선택 단계인 Village와 ContactOut, Firecrawl은 포함되지 않습니다.</li><li>영어권 세일즈·그로스 담당자를 대상으로 한 벤치마크 하나에서 나온 추정치입니다. 실제 받은편지함에서는 다를 수 있습니다.</li></ul>
+        <p class="fine">가격과 적중률: 2026년 10월 25일. 확장 프로그램은 호출할 때마다 카탈로그 가격을 다시 읽으므로 제공업체 가격 변경이 즉시 반영됩니다.</p>
+      </div>
+    </details>
+    <p class="v2-note fine">2026년 10월 25일 50개 주소 벤치마크 기준 추정치입니다. 기본값은 일일 $2, 조회당 $0.05이며 둘 다 설정에서 변경할 수 있습니다.</p>
+  </div>
+</section>
+
+<section class="v2-section v2-section--soft" id="faq">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">질문</div>
+      <h2 class="v2-h2">짧은 답변</h2>
+      <p>더 자세한 내용은 설치 안내와 개인정보 처리방침에 있습니다.</p>
+    </header>
+
+    <div class="v2-faq">
+      
+      <details>
+        <summary>무료인가요?</summary>
+        <div class="v2-faq-body"><p>예. 확장 프로그램은 AGPL-3.0 라이선스로 공개된 무료 오픈 소스이며, 계정도 구독도 없습니다. 유료 조회는 선택 사항입니다. 직접 고른 데이터 제공업체가 직접 발급한 키로 조회 건당 청구하며, 설정한 상한 안에서 이루어집니다. 서명 스캔과 캐시는 무료입니다.</p></div>
+      </details>
+      
+      <details>
+        <summary>계정이 필요한가요?</summary>
+        <div class="v2-faq-body"><p>가입은 필요하지 않습니다. 조회는 설정한 제공업체로 직접 전송되며, 익명 일일 사용 통계는 프로젝트의 통계 서비스로 전송되는데 설정의 스위치 하나로 끌 수 있습니다.</p></div>
+      </details>
+      
+      <details>
+        <summary>어떤 키를 받아야 하나요?</summary>
+        <div class="v2-faq-body"><p><a href="https://app.monid.ai/">Monid</a> 또는 <a href="https://treg.to/">treg</a>의 키 하나면 시작할 수 있습니다. 둘 다, 그리고 원하면 <a href="https://www.firecrawl.dev/">Firecrawl</a>까지 추가하면 연쇄 조회에서 시도할 곳이 늘어납니다. <a href="install.html#which-key">설치 페이지</a>에서 비교합니다.</p></div>
+      </details>
+      
+      <details>
+        <summary>비용은 어떻게 관리하나요?</summary>
+        <div class="v2-faq-body"><p>조회당 상한(기본 $0.05)과 일일 상한(기본 $2)이 있습니다. 열어 본 메일의 발신자만 자동으로 조회되며, 여기에 설정한 하루 한도가 적용됩니다. 결과는 캐시되므로 같은 주소로 두 번 결제하지 않습니다. <a href="#calculator">계산기</a>에서 특정 사용량의 비용을 볼 수 있습니다.</p></div>
+      </details>
+      
+      <details>
+        <summary>엉뚱한 사람이 나오면요?</summary>
+        <div class="v2-faq-body"><p>제공업체가 준 이름이 메일 헤더의 표시 이름과 다르면 결과에 “불확실”이 표시되고 두 이름이 함께 나옵니다. 직접 판단할 수 있습니다.</p></div>
+      </details>
+      
+      <details>
+        <summary>gmail.com 발신자는 왜 조회하지 않나요?</summary>
+        <div class="v2-faq-body"><p>개인 메일 도메인과 info@ 같은 역할 주소는 프로필과 일치하는 경우가 드물어서, 비용을 아끼기 위해 기본적으로 건너뜁니다. 패널의 버튼을 누르면 그래도 조회할 수 있습니다.</p></div>
+      </details>
+      
+    </div>
+  </div>
+</section>
+
+<section class="v2-section">
+  <div class="v2-wrap">
+    <div class="v2-cta">
+      <h2>2분이면 끝납니다</h2>
+      <p>Chrome 웹 스토어 등록은 아직 시작되지 않아 압축 해제 방식으로 로드합니다. 다섯 단계이며 단계마다 스크린숏이 있습니다.</p>
+      <div class="v2-actions">
+        <a class="v2-btn v2-btn--outline" href="install.html">설치 안내 열기 <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+  <footer class="v2-foot">
+    <div class="v2-wrap v2-foot-inner">
+      <a class="v2-brand" href="index.html">
+        <img src="../assets/icon-128.png" alt="" width="32" height="32">
+        <span>SenderFinder</span>
+      </a>
+      <ul class="v2-foot-links">
+        <li><a href="install.html">설치</a></li>
+        <li><a href="privacy.html">개인정보</a></li>
+        <li><a href="clearbit-connect-alternative.html">Clearbit Connect 대안</a></li>
+        <li><a href="rapportive-alternative.html">Rapportive 대안</a></li>
+        <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+        <li><a href="https://github.com/astonysh/SenderFinder/blob/main/LICENSE">AGPL-3.0 라이선스</a></li>
+      </ul>
+      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> 조회 경로에 SenderFinder 서버가 없습니다. 키와 기록은 브라우저에 남습니다. <a href="privacy.html">개인정보</a></p>
+      <div class="v2-foot-bottom">
+        <p>SenderFinder는 AGPL-3.0 라이선스로 공개된 오픈 소스 소프트웨어입니다.</p>
+        <p>Gmail, Outlook, LinkedIn, Chrome은 각 소유자의 상표입니다.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="notice" id="notice" role="region" aria-label="쿠키 안내" data-consent-mode="false" hidden>
+    <div class="notice-inner">
+      <svg class="i i-lg" aria-hidden="true"><use href="#i-cookie"/></svg>
+      <p>이 웹사이트는 방문 횟수를 집계하기 위해 개인정보 친화적인 분석 도구를 사용할 수 있습니다. SenderFinder 확장 프로그램은 이와 별개이며, 설정에서 끄지 않는 한 하루에 한 번 익명 사용 통계 요약을 보냅니다. <a href="privacy.html#cookies">개인정보</a></p>
+      <div class="notice-actions">
+        <button type="button" class="notice-btn notice-close" data-consent="ack">확인</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

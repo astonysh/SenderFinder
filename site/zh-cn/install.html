@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>安装 SenderFinder（从源码，2 分钟）| SenderFinder</title>
+  <meta name="description" content="一步一步来：下载插件，在 Chrome 里加载已解压的扩展程序，填一个供应商 key，打开 Gmail。每一步都有截图，还有排错说明。">
+  <link rel="canonical" href="https://senderfinder.com/zh-cn/install">
+  <link rel="alternate" hreflang="en" href="https://senderfinder.com/install">
+  <link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install">
+  <link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/install">
+  <link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/install">
+  <link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/install">
+  <link rel="alternate" hreflang="de" href="https://senderfinder.com/de/install">
+  <link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/install">
+  <link rel="alternate" hreflang="es" href="https://senderfinder.com/es/install">
+  <link rel="alternate" hreflang="it" href="https://senderfinder.com/it/install">
+  <link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/install">
+  <link rel="alternate" hreflang="x-default" href="https://senderfinder.com/install">
+  <!-- CWS-BUTTON: install buttons carry data-store-url="CWS_PLACEHOLDER"; see site/README.md -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="SenderFinder">
+  <meta property="og:title" content="安装 SenderFinder">
+  <meta property="og:description" content="两分钟，五步，一个 API key。在 Chrome 应用商店上架前，先从源码安装这个开源插件。">
+  <meta property="og:url" content="https://senderfinder.com/zh-cn/install">
+  <meta property="og:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="800">
+  <meta name="color-scheme" content="light dark">
+  <script src="../assets/theme-boot.js"></script>
+  <link rel="stylesheet" href="../assets/app.css">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/icon-128.png" type="image/png" sizes="128x128">
+  <link rel="apple-touch-icon" href="../assets/icon-128.png">
+  <script type="module" src="../assets/theme.js"></script>
+</head>
+<body class="v2">
+<svg class="icon-sprite" aria-hidden="true" focusable="false" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+<!-- One stroke style, 24×24, drawn for this site. Inlined into every page by scripts/build-site.js. -->
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-puzzle" viewBox="0 0 24 24"><path d="M9 4h2.2a1.8 1.8 0 1 1 3.6 0H17v3.2a1.8 1.8 0 1 0 0 3.6V14h-3.2a1.8 1.8 0 1 1-3.6 0H7v-3.2a1.8 1.8 0 1 0 0-3.6V4z"/><path d="M7 14v6h10v-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><path d="m11 11 8 8"/><path d="m15.5 15.5 2 2"/><path d="m17.5 13.5 2 2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.8 2.8L16 9.2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-mail-off" viewBox="0 0 24 24"><path d="M6.5 5H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7"/><path d="m3.5 7 8.5 6 3-2.1"/><path d="M4 20 20 4"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M16 14.5h2"/><path d="M6 6V5a2 2 0 0 1 2.4-2l8.6 2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-calculator" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 7h8"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-shield" viewBox="0 0 24 24"><path d="M12 3 19 6v6c0 4-2.9 7.2-7 9-4.1-1.8-7-5-7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/><path d="M12 14.5v2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.2 12h17.6"/><path d="M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.2 8.2 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12.5" rx="2"/><path d="M9 20h6M12 16.5V20"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.6 2.3c-.7.3-1.2 1-1.2 1.8v.4"/><path d="M12 17h.01"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-wrench" viewBox="0 0 24 24"><path d="M15.5 3.5a5 5 0 0 0-4.3 7.5L3.6 18.6l1.8 1.8L13 12.8a5 5 0 0 0 7.5-4.3l-3 3-2.3-2.3z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-cookie" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9.6" r="1.1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="8.6" r="1.1" fill="currentColor" stroke="none"/><circle cx="15.2" cy="14" r="1.1" fill="currentColor" stroke="none"/><circle cx="10.2" cy="15.2" r="1.1" fill="currentColor" stroke="none"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-browser" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M2.5 8.5h19"/><path d="M5.5 6.3h.01M8 6.3h.01"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-provider" viewBox="0 0 24 24"><path d="M7.5 18.5a4.2 4.2 0 0 1-.3-8.4 5.6 5.6 0 0 1 10.7 1.4 3.6 3.6 0 0 1-.9 7z"/><path d="M12 16v-4"/><path d="m10.2 13.3 1.8-1.8 1.8 1.8"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-server-off" viewBox="0 0 24 24"><rect x="3" y="3.5" width="18" height="6.5" rx="2"/><rect x="3" y="14" width="18" height="6.5" rx="2"/><path d="M6 6.7h.01M6 17.2h.01"/><path d="M3.5 21 20.5 2.5"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7.5" ry="3"/><path d="M4.5 6v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6"/><path d="M4.5 12v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-eye-off" viewBox="0 0 24 24"><path d="M4 4l16 16"/><path d="M9.8 5.3A9.5 9.5 0 0 1 12 5c5 0 9 4.4 9 7a11 11 0 0 1-2.3 3.3"/><path d="M6.4 7.4A13.4 13.4 0 0 0 3 12c0 2.6 4 7 9 7a9.7 9.7 0 0 0 3.7-.7"/><path d="M10.4 10.5a2.2 2.2 0 0 0 3.1 3.1"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-cursor" viewBox="0 0 24 24"><path d="M6 3.5 18.5 12l-5.2 1.2 2.9 6.3-2 1-2.9-6.4-3.6 3.6z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-link" viewBox="0 0 24 24"><path d="M9.6 14.4 14.4 9.6"/><path d="M10.8 6.9 12.4 5.2a3.8 3.8 0 0 1 5.4 5.4l-1.7 1.6"/><path d="M13.2 17.1l-1.6 1.7a3.8 3.8 0 0 1-5.4-5.4l1.7-1.6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 20v-5"/><path d="M13 20V9"/><path d="M18 20v-8"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-github" viewBox="0 0 24 24"  fill="currentColor" stroke="none"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.1c-3.2.7-3.88-1.4-3.88-1.4-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .3.21.66.8.55C20.71 21.39 24 17.08 24 12 24 5.73 18.27.5 12 .5z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-gmail" viewBox="0 0 24 24"><path d="M3 7.5 12 14l9-6.5"/><rect x="3" y="5" width="18" height="14" rx="2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-outlook" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/><circle cx="12" cy="13" r="2.6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.6 10v7"/><path d="M7.6 7.2h.01"/><path d="M11.6 17v-4a2.5 2.5 0 0 1 5 0v4"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-chrome" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.6"/><path d="M12 3.1h7.7"/><path d="m4.5 7.7 3.9 6.7"/><path d="m19.5 7.7-3.9 6.7"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v14"/><path d="m6 12.5 6 6 6-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h14"/><path d="m12.5 6 6 6-6 6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18.5 14v4.5a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2H10"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.2 20c0-3.2 2.6-5.4 5.8-5.4s5.8 2.2 5.8 5.4"/><path d="M16.2 5.6a3.2 3.2 0 0 1 0 5.8"/><path d="M18.2 20c0-2.2-.8-3.9-2.2-4.9"/></symbol>
+</svg>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="v2-nav">
+    <div class="v2-wrap">
+      <div class="v2-nav-inner">
+        <a class="v2-brand" href="index.html" aria-current="page">
+          <img src="../assets/icon-128.png" alt="" width="32" height="32">
+          <span>SenderFinder</span>
+        </a>
+
+        <nav class="v2-nav-links" aria-label="主导航">
+          <ul>
+            <li><a href="index.html#how">工作原理</a></li>
+            <li><a href="index.html#privacy">隐私</a></li>
+            <li><a href="index.html#cost">价格</a></li>
+            <li><a href="install.html" aria-current="page">安装</a></li>
+            <li><a href="index.html#faq">常见问题</a></li>
+            <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+          </ul>
+        </nav>
+
+        <div class="v2-nav-tools header-tools">
+          <details class="theme-switch">
+            <summary><span class="visually-hidden">外观: </span><svg class="i theme-icon theme-icon-monitor" aria-hidden="true"><use href="#i-monitor"/></svg><svg class="i theme-icon theme-icon-light" aria-hidden="true"><use href="#i-sun"/></svg><svg class="i theme-icon theme-icon-dark" aria-hidden="true"><use href="#i-moon"/></svg></summary>
+            <div class="theme-menu" role="group" aria-label="外观">
+              <button type="button" data-theme-value="system" aria-pressed="true">跟随系统</button>
+              <button type="button" data-theme-value="light" aria-pressed="false">浅色</button>
+              <button type="button" data-theme-value="dark" aria-pressed="false">深色</button>
+            </div>
+          </details>
+          <details class="lang-switch">
+            <summary><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg><span class="visually-hidden">语言: </span>简体中文</summary>
+            <div class="lang-menu">
+              <nav aria-label="语言">
+                <ul>
+                <li><a href="../install.html" hreflang="en" lang="en">English</a></li>
+                <li><a href="install.html" hreflang="zh-CN" lang="zh-CN" aria-current="page">简体中文</a></li>
+                <li><a href="../zh-tw/install.html" hreflang="zh-TW" lang="zh-TW">繁體中文</a></li>
+                <li><a href="../ja/install.html" hreflang="ja" lang="ja">日本語</a></li>
+                <li><a href="../ko/install.html" hreflang="ko" lang="ko">한국어</a></li>
+                <li><a href="../de/install.html" hreflang="de" lang="de">Deutsch</a></li>
+                <li><a href="../fr/install.html" hreflang="fr" lang="fr">Français</a></li>
+                <li><a href="../es/install.html" hreflang="es" lang="es">Español</a></li>
+                <li><a href="../it/install.html" hreflang="it" lang="it">Italiano</a></li>
+                <li><a href="../pt-br/install.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+                </ul>
+              </nav>
+              <p class="fine">SenderFinder 提供 10 种语言。插件跟随浏览器语言。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<main id="main">
+<div class="v2-page">
+  <div class="v2-wrap">
+    <header class="v2-page-head">
+      <h1>安装 SenderFinder</h1>
+      <p class="v2-lead">Chrome 应用商店还没上架，所以要从源码加载。两分钟，每个浏览器装一次。</p>
+      <p class="v2-note">你需要在桌面版 Chrome、Edge 或其他 Chromium 浏览器上安装；手机版应用装不了插件。截图是英文的，插件本身跟随浏览器语言。</p>
+      <div class="v2-actions">
+        <!-- CWS-BUTTON: when the store listing is live, replace this block with the store button and drop the source steps. -->
+        <a class="v2-btn v2-btn--default" href="https://github.com/astonysh/SenderFinder/archive/refs/heads/main.zip" data-store-url="CWS_PLACEHOLDER">
+          下载 ZIP <svg class="i" aria-hidden="true"><use href="#i-download"/></svg>
+        </a>
+        <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder">
+          <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> 打开仓库
+        </a>
+      </div>
+    </header>
+
+    <div class="v2-card v2-privacy-note">
+      <h2 class="v2-card-title"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> 隐私一览</h2>
+      <ul>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>你粘贴的 key 保存在这台设备上插件自己的存储里，只会随你发起的查询发送给对应供应商的 API。</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>查询请求从浏览器直接发送给你配置的数据供应商——查询路径上没有 SenderFinder 服务器。匿名每日使用统计默认开启，可以在设置里关闭。</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>随时可以在设置里删掉 key——没有 key，任何付费查询都跑不了——或者卸载插件，卸载会删掉它的存储。</span></li>
+      </ul>
+    </div>
+
+    <h2 class="v2-h2 v2-steps-title">五个步骤</h2>
+    <ol class="v2-steps">
+      
+      <li class="v2-step">
+        <div class="v2-step-text">
+          <span class="v2-step-num">1</span>
+          <h2>拿到代码</h2>
+          <p>在 <a href="https://github.com/astonysh/SenderFinder">GitHub</a> 上把仓库下载成 ZIP（「Code」→「Download ZIP」）然后解压，或者有 git 的话直接 clone：<br><code>git clone https://github.com/astonysh/SenderFinder.git</code></p>
+        </div>
+        
+      </li>
+      
+      <li class="v2-step v2-step--with-shot">
+        <div class="v2-step-text">
+          <span class="v2-step-num">2</span>
+          <h2>在 Chrome 里加载</h2>
+          <p>在新标签页打开 <code>chrome://extensions</code>。开启<strong>开发者模式</strong>（右上角），点<strong>加载已解压的扩展程序</strong>，选择仓库里的 <code>extension/</code> 文件夹——是包含 <code>manifest.json</code> 的那个文件夹，不是仓库根目录。</p>
+        </div>
+        
+        <figure class="v2-step-shot">
+          <img src="../assets/screenshots/load-unpacked.png" alt="Chrome 的扩展程序页面，已开启开发者模式：「加载已解压的扩展程序」「打包扩展程序」和「更新」按钮在 SenderFinder 卡片上方。" width="1280" height="800" loading="lazy">
+          <figcaption>开发者模式已开，SenderFinder 卡片已加载。</figcaption>
+        </figure>
+        
+      </li>
+      
+      <li class="v2-step v2-step--with-shot">
+        <div class="v2-step-text">
+          <span class="v2-step-num">3</span>
+          <h2>拿一把 key 填进去</h2>
+          <p>安装完成后设置页会自己打开。在 <a href="https://app.monid.ai/">Monid</a>（Hunter、Apollo、ContactOut）或 <a href="https://treg.to/">treg</a>（BlitzAPI、QuickEnrich、Village）创建一个 key；<a href="https://firecrawl.link/sf">Firecrawl</a> 是可选的。一把就够。把它填到「供应商 key」下面。</p>
+        </div>
+        
+        <figure class="v2-step-shot">
+          <img src="../assets/screenshots/settings-keys.png" alt="SenderFinder 设置页：Monid、treg 和 Firecrawl 的供应商 key 输入框，「测试 key」按钮和查询步骤表。" width="1280" height="800" loading="lazy">
+          <figcaption>首次安装后的设置页：key 在上面，步骤和价格在下面。</figcaption>
+        </figure>
+        
+      </li>
+      
+      <li class="v2-step">
+        <div class="v2-step-text">
+          <span class="v2-step-num">4</span>
+          <h2>点「测试 key（免费）」</h2>
+          <p>这个检查是免费的：只验证 key 并读取供应商的价格表。不查任何人，也不花任何钱。key 旁边显示「有效」就对了。</p>
+        </div>
+        
+      </li>
+      
+      <li class="v2-step v2-step--with-shot">
+        <div class="v2-step-text">
+          <span class="v2-step-num">5</span>
+          <h2>打开 Gmail，点一次工具栏图标</h2>
+          <p>在 Gmail 里打开任意一封邮件，然后点 Chrome 工具栏里的 SenderFinder 图标。如果看不到，先点拼图图标把 SenderFinder 固定住。侧边栏会在那个标签页里打开并一直开着；之后它会跟着你正在读的邮件变。</p>
+        </div>
+        
+        <figure class="v2-step-shot">
+          <img src="../assets/screenshots/sender-in-gmail.png" alt="一个 Gmail 窗口，右侧打开了 SenderFinder 侧边栏，显示发件人的资料和线程里的其他人。" width="1280" height="800" loading="lazy">
+          <figcaption>第一次点击之后，侧边栏会在这个标签页里一直开着。</figcaption>
+        </figure>
+        
+      </li>
+      
+    </ol>
+    <p class="v2-note">等 Chrome 应用商店上架后，这个页面会变成一键安装；在那之前，上面的步骤是唯一的安装方式。</p>
+  </div>
+</div>
+
+<section class="v2-section v2-section--soft" id="which-key">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <h2 class="v2-h2">该选哪把 key？</h2>
+      <p>一把 key 就能把整个流程跑完：没有 key 的步骤会被静默跳过。这张表是 README 里供应商对比的精简版。</p>
+    </header>
+    <div class="table-wrap v2-card v2-table-card">
+      <table>
+        <thead>
+          <tr><th>Key</th><th>能跑的步骤</th><th>每次命中的价格</th><th>基准测试里的覆盖</th><th>适合</th></tr>
+        </thead>
+        <tbody>
+          
+          <tr><td data-label="Key"><img class="vendor-mark" src="../assets/vendors/treg.svg" alt="" width="20" height="20"> <strong>treg</strong></td><td data-label="能跑的步骤">BlitzAPI → QuickEnrich（可再开 Village）</td><td data-label="每次命中的价格">$0.0005–0.005</td><td data-label="基准测试里的覆盖">大约一半到 60 % 的工作邮箱</td><td data-label="适合">预算紧、量大</td></tr>
+          
+          <tr><td data-label="Key"><img class="vendor-mark" src="../assets/vendors/monid.svg" alt="" width="20" height="20"> <strong>Monid</strong></td><td data-label="能跑的步骤">Hunter → Apollo（可再开 ContactOut）</td><td data-label="每次命中的价格">$0.005–0.026</td><td data-label="基准测试里的覆盖">Apollo 19 次调用全部匹配</td><td data-label="适合">要命中率</td></tr>
+          
+          <tr><td data-label="Key"><strong>两把都有</strong></td><td data-label="能跑的步骤">整条链：BlitzAPI → Hunter → QuickEnrich → Apollo</td><td data-label="每次命中的价格">平均 $0.011 每个地址</td><td data-label="基准测试里的覆盖">48 / 50（96 %）</td><td data-label="适合">默认选项；最便宜的步骤先试，Apollo 兜底</td></tr>
+          
+          <tr><td data-label="Key"><img class="vendor-mark" src="../assets/vendors/firecrawl.png" alt="" width="20" height="20"> Firecrawl <small class="fine">（可选）</small></td><td data-label="能跑的步骤">只有 Data Legion</td><td data-label="每次命中的价格">10 credits（≈ $0.008–0.032）</td><td data-label="基准测试里的覆盖">没有命中率数据</td><td data-label="适合">不建议单独用，只做兜底</td></tr>
+          
+        </tbody>
+      </table>
+    </div>
+    <p class="v2-note">Apollo、Hunter 和 ContactOut 都是经 Monid 调用的；BlitzAPI、QuickEnrich 和 Village 经 treg。直接拿这些数据源自己的 API key 填进来是没用的。</p>
+  </div>
+</section>
+
+<section class="v2-section">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <h2 class="v2-h2">如果有地方不对劲</h2>
+    </header>
+    <div class="v2-faq">
+      
+      <details>
+        <summary>侧边栏打不开</summary>
+        <div class="v2-faq-body"><p>先固定 SenderFinder：工具栏里的拼图图标 → 固定。然后在有 Gmail 标签页打开时点一次它的图标。侧边栏不会自己弹出来，而且是每个标签页各自一个。</p></div>
+      </details>
+      
+      <details>
+        <summary>侧边栏说「未设置 key」</summary>
+        <div class="v2-faq-body"><p>在插件设置里填一把 key。一把就够：没有 key 的供应商对应的步骤会被跳过，不报错。</p></div>
+      </details>
+      
+      <details>
+        <summary>在 Outlook 里没反应</summary>
+        <div class="v2-faq-body"><p>Outlook 网页版是尽力支持，它的页面结构经常变。如果发件人旁边的小标记没出现，开一个 issue 并贴上发件人那行的 HTML。</p></div>
+      </details>
+      
+      <details>
+        <summary>gmail.com 或 info@ 的地址不查</summary>
+        <div class="v2-faq-body"><p>个人邮箱域名和职能邮箱默认跳过，因为它们很少能对应到资料。侧边栏里有「仍然查询」按钮。</p></div>
+      </details>
+      
+      <details>
+        <summary>今天忽然不查人了</summary>
+        <div class="v2-faq-body"><p>要么用完了每天上限（默认 $2），要么到了自动查询次数上限（每天 30 次）。两个都能在设置里改；计数器第二天重置。</p></div>
+      </details>
+      
+      <details>
+        <summary>以后怎么更新</summary>
+        <div class="v2-faq-body"><p>把新文件放进同一个文件夹，然后在 chrome://extensions 里点卡片上的刷新箭头。插件 id 固定写在 manifest 里，所以 key、缓存和历史都不会丢。</p></div>
+      </details>
+      
+    </div>
+  </div>
+</section>
+
+<section class="v2-section">
+  <div class="v2-wrap">
+    <div class="v2-cta">
+      <h2>接下来</h2>
+      <p>读一读<a href="index.html#how">工作原理</a>，看看<a href="index.html#cost">一次查询要多少钱</a>，或者在<a href="index.html#calculator">费用计算器</a>里算算你自己的量级。数据方面的问题在<a href="privacy.html">隐私说明</a>里回答。</p>
+    </div>
+  </div>
+</section>
+</main>
+
+  <footer class="v2-foot">
+    <div class="v2-wrap v2-foot-inner">
+      <a class="v2-brand" href="index.html">
+        <img src="../assets/icon-128.png" alt="" width="32" height="32">
+        <span>SenderFinder</span>
+      </a>
+      <ul class="v2-foot-links">
+        <li><a href="install.html">安装</a></li>
+        <li><a href="privacy.html">隐私</a></li>
+        <li><a href="clearbit-connect-alternative.html">Clearbit Connect 替代方案</a></li>
+        <li><a href="rapportive-alternative.html">Rapportive 替代方案</a></li>
+        <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+        <li><a href="https://github.com/astonysh/SenderFinder/blob/main/LICENSE">AGPL-3.0 许可证</a></li>
+      </ul>
+      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> 查询路径上没有 SenderFinder 服务器。你的 key 和历史都留在你的浏览器里。 <a href="privacy.html">隐私</a></p>
+      <div class="v2-foot-bottom">
+        <p>SenderFinder 是以 AGPL-3.0 许可证发布的开源软件。</p>
+        <p>Gmail、Outlook、LinkedIn 和 Chrome 是各自所有者的商标。</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="notice" id="notice" role="region" aria-label="Cookie 提示" data-consent-mode="false" hidden>
+    <div class="notice-inner">
+      <svg class="i i-lg" aria-hidden="true"><use href="#i-cookie"/></svg>
+      <p>本站可能会使用注重隐私的访问统计来计数。SenderFinder 插件是另一回事：它每天发送一次匿名使用汇总，除非你在插件设置里关掉。 <a href="privacy.html#cookies">隐私</a></p>
+      <div class="notice-actions">
+        <button type="button" class="notice-btn notice-close" data-consent="ack">好</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

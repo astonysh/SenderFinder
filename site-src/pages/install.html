@@ -1,0 +1,92 @@
+<div class="v2-page">
+  <div class="v2-wrap">
+    <header class="v2-page-head">
+      <h1>{{install.title}}</h1>
+      <p class="v2-lead">{{install.lead}}</p>
+      <p class="v2-note">{{install.note}}</p>
+      <div class="v2-actions">
+        <!-- CWS-BUTTON: when the store listing is live, replace this block with the store button and drop the source steps. -->
+        <a class="v2-btn v2-btn--default" href="https://github.com/astonysh/SenderFinder/archive/refs/heads/main.zip" data-store-url="CWS_PLACEHOLDER">
+          {{install.downloadLabel}} <svg class="i" aria-hidden="true"><use href="#i-download"/></svg>
+        </a>
+        <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder">
+          <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> {{install.githubLabel}}
+        </a>
+      </div>
+    </header>
+
+    <div class="v2-card v2-privacy-note">
+      <h2 class="v2-card-title"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> {{install.privacy.title}}</h2>
+      <ul>
+        {{#each install.privacy.points}}<li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>{{this}}</span></li>{{/each}}
+      </ul>
+    </div>
+
+    <h2 class="v2-h2 v2-steps-title">{{install.stepsTitle}}</h2>
+    <ol class="v2-steps">
+      {{#each install.steps}}
+      <li class="v2-step{{#if alt}} v2-step--with-shot{{/if}}">
+        <div class="v2-step-text">
+          <span class="v2-step-num">{{number}}</span>
+          <h2>{{title}}</h2>
+          <p>{{body}}</p>
+        </div>
+        {{#if alt}}
+        <figure class="v2-step-shot">
+          <img src="{{base}}assets/screenshots/{{image}}" alt="{{alt}}" width="1280" height="800" loading="lazy">
+          <figcaption>{{caption}}</figcaption>
+        </figure>
+        {{/if}}
+      </li>
+      {{/each}}
+    </ol>
+    <p class="v2-note">{{install.fine}}</p>
+  </div>
+</div>
+
+<section class="v2-section v2-section--soft" id="which-key">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <h2 class="v2-h2">{{install.whichKeyTitle}}</h2>
+      <p>{{install.whichKeyIntro}}</p>
+    </header>
+    <div class="table-wrap v2-card v2-table-card">
+      <table>
+        <thead>
+          <tr>{{#each install.whichKeyHead}}<th>{{this}}</th>{{/each}}</tr>
+        </thead>
+        <tbody>
+          {{#each install.whichKeyRows}}
+          <tr>{{#each cells}}<td data-label="{{label}}">{{#if logo}}<img class="vendor-mark" src="{{base}}assets/vendors/{{logo}}" alt="" width="20" height="20"> {{/if}}{{value}}</td>{{/each}}</tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    <p class="v2-note">{{install.whichKeyNote}}</p>
+  </div>
+</section>
+
+<section class="v2-section">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <h2 class="v2-h2">{{install.troubleTitle}}</h2>
+    </header>
+    <div class="v2-faq">
+      {{#each install.trouble}}
+      <details>
+        <summary>{{q}}</summary>
+        <div class="v2-faq-body"><p>{{a}}</p></div>
+      </details>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<section class="v2-section">
+  <div class="v2-wrap">
+    <div class="v2-cta">
+      <h2>{{install.nextTitle}}</h2>
+      <p>{{install.next}}</p>
+    </div>
+  </div>
+</section>

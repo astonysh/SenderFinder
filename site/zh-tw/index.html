@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SenderFinder — 在 LinkedIn 找到寄件者</title>
+  <meta name="description" content="開放原始碼的 Chrome 擴充功能，在 Gmail 與 Outlook 顯示寄件者的 LinkedIn 個人檔案。自備供應商 key；匿名使用統計預設開啟，可以關閉。">
+  <link rel="canonical" href="https://senderfinder.com/zh-tw/">
+  <link rel="alternate" hreflang="en" href="https://senderfinder.com/">
+  <link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/">
+  <link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/">
+  <link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/">
+  <link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/">
+  <link rel="alternate" hreflang="de" href="https://senderfinder.com/de/">
+  <link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/">
+  <link rel="alternate" hreflang="es" href="https://senderfinder.com/es/">
+  <link rel="alternate" hreflang="it" href="https://senderfinder.com/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/">
+  <link rel="alternate" hreflang="x-default" href="https://senderfinder.com/">
+  <!-- CWS-BUTTON: install buttons carry data-store-url="CWS_PLACEHOLDER"; see site/README.md -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SenderFinder">
+  <meta property="og:title" content="SenderFinder — 在 LinkedIn 找到寄件者">
+  <meta property="og:description" content="在 Gmail 開啟一封郵件，就能看到寄件者的 LinkedIn 個人檔案。開放原始碼、自備 API key、不需要帳號。">
+  <meta property="og:url" content="https://senderfinder.com/zh-tw/">
+  <meta property="og:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="800">
+  <meta name="color-scheme" content="light dark">
+  <script src="../assets/theme-boot.js"></script>
+  <link rel="stylesheet" href="../assets/app.css">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/icon-128.png" type="image/png" sizes="128x128">
+  <link rel="apple-touch-icon" href="../assets/icon-128.png">
+  <script type="module" src="../assets/theme.js"></script>
+  <script type="module" src="../assets/calc.js"></script>
+</head>
+<body class="v2">
+<svg class="icon-sprite" aria-hidden="true" focusable="false" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+<!-- One stroke style, 24×24, drawn for this site. Inlined into every page by scripts/build-site.js. -->
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-puzzle" viewBox="0 0 24 24"><path d="M9 4h2.2a1.8 1.8 0 1 1 3.6 0H17v3.2a1.8 1.8 0 1 0 0 3.6V14h-3.2a1.8 1.8 0 1 1-3.6 0H7v-3.2a1.8 1.8 0 1 0 0-3.6V4z"/><path d="M7 14v6h10v-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><path d="m11 11 8 8"/><path d="m15.5 15.5 2 2"/><path d="m17.5 13.5 2 2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.8 2.8L16 9.2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-mail-off" viewBox="0 0 24 24"><path d="M6.5 5H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7"/><path d="m3.5 7 8.5 6 3-2.1"/><path d="M4 20 20 4"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M16 14.5h2"/><path d="M6 6V5a2 2 0 0 1 2.4-2l8.6 2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-calculator" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 7h8"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-shield" viewBox="0 0 24 24"><path d="M12 3 19 6v6c0 4-2.9 7.2-7 9-4.1-1.8-7-5-7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/><path d="M12 14.5v2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.2 12h17.6"/><path d="M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.2 8.2 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12.5" rx="2"/><path d="M9 20h6M12 16.5V20"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.6 2.3c-.7.3-1.2 1-1.2 1.8v.4"/><path d="M12 17h.01"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-wrench" viewBox="0 0 24 24"><path d="M15.5 3.5a5 5 0 0 0-4.3 7.5L3.6 18.6l1.8 1.8L13 12.8a5 5 0 0 0 7.5-4.3l-3 3-2.3-2.3z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-cookie" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9.6" r="1.1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="8.6" r="1.1" fill="currentColor" stroke="none"/><circle cx="15.2" cy="14" r="1.1" fill="currentColor" stroke="none"/><circle cx="10.2" cy="15.2" r="1.1" fill="currentColor" stroke="none"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-browser" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M2.5 8.5h19"/><path d="M5.5 6.3h.01M8 6.3h.01"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-provider" viewBox="0 0 24 24"><path d="M7.5 18.5a4.2 4.2 0 0 1-.3-8.4 5.6 5.6 0 0 1 10.7 1.4 3.6 3.6 0 0 1-.9 7z"/><path d="M12 16v-4"/><path d="m10.2 13.3 1.8-1.8 1.8 1.8"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-server-off" viewBox="0 0 24 24"><rect x="3" y="3.5" width="18" height="6.5" rx="2"/><rect x="3" y="14" width="18" height="6.5" rx="2"/><path d="M6 6.7h.01M6 17.2h.01"/><path d="M3.5 21 20.5 2.5"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7.5" ry="3"/><path d="M4.5 6v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6"/><path d="M4.5 12v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-eye-off" viewBox="0 0 24 24"><path d="M4 4l16 16"/><path d="M9.8 5.3A9.5 9.5 0 0 1 12 5c5 0 9 4.4 9 7a11 11 0 0 1-2.3 3.3"/><path d="M6.4 7.4A13.4 13.4 0 0 0 3 12c0 2.6 4 7 9 7a9.7 9.7 0 0 0 3.7-.7"/><path d="M10.4 10.5a2.2 2.2 0 0 0 3.1 3.1"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-cursor" viewBox="0 0 24 24"><path d="M6 3.5 18.5 12l-5.2 1.2 2.9 6.3-2 1-2.9-6.4-3.6 3.6z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-link" viewBox="0 0 24 24"><path d="M9.6 14.4 14.4 9.6"/><path d="M10.8 6.9 12.4 5.2a3.8 3.8 0 0 1 5.4 5.4l-1.7 1.6"/><path d="M13.2 17.1l-1.6 1.7a3.8 3.8 0 0 1-5.4-5.4l1.7-1.6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 20v-5"/><path d="M13 20V9"/><path d="M18 20v-8"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-github" viewBox="0 0 24 24"  fill="currentColor" stroke="none"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.1c-3.2.7-3.88-1.4-3.88-1.4-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .3.21.66.8.55C20.71 21.39 24 17.08 24 12 24 5.73 18.27.5 12 .5z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-gmail" viewBox="0 0 24 24"><path d="M3 7.5 12 14l9-6.5"/><rect x="3" y="5" width="18" height="14" rx="2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-outlook" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/><circle cx="12" cy="13" r="2.6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.6 10v7"/><path d="M7.6 7.2h.01"/><path d="M11.6 17v-4a2.5 2.5 0 0 1 5 0v4"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-chrome" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.6"/><path d="M12 3.1h7.7"/><path d="m4.5 7.7 3.9 6.7"/><path d="m19.5 7.7-3.9 6.7"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v14"/><path d="m6 12.5 6 6 6-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h14"/><path d="m12.5 6 6 6-6 6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18.5 14v4.5a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2H10"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.2 20c0-3.2 2.6-5.4 5.8-5.4s5.8 2.2 5.8 5.4"/><path d="M16.2 5.6a3.2 3.2 0 0 1 0 5.8"/><path d="M18.2 20c0-2.2-.8-3.9-2.2-4.9"/></symbol>
+</svg>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+
+  <header class="v2-nav">
+    <div class="v2-wrap">
+      <div class="v2-nav-inner">
+        <a class="v2-brand" href="index.html" aria-current="page">
+          <img src="../assets/icon-128.png" alt="" width="32" height="32">
+          <span>SenderFinder</span>
+        </a>
+
+        <nav class="v2-nav-links" aria-label="主要導覽">
+          <ul>
+            <li><a href="index.html#how">運作方式</a></li>
+            <li><a href="index.html#privacy">隱私權</a></li>
+            <li><a href="index.html#cost">價格</a></li>
+            <li><a href="install.html">安裝</a></li>
+            <li><a href="index.html#faq">常見問題</a></li>
+            <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+          </ul>
+        </nav>
+
+        <div class="v2-nav-tools header-tools">
+          <details class="theme-switch">
+            <summary><span class="visually-hidden">外觀: </span><svg class="i theme-icon theme-icon-monitor" aria-hidden="true"><use href="#i-monitor"/></svg><svg class="i theme-icon theme-icon-light" aria-hidden="true"><use href="#i-sun"/></svg><svg class="i theme-icon theme-icon-dark" aria-hidden="true"><use href="#i-moon"/></svg></summary>
+            <div class="theme-menu" role="group" aria-label="外觀">
+              <button type="button" data-theme-value="system" aria-pressed="true">跟隨系統</button>
+              <button type="button" data-theme-value="light" aria-pressed="false">淺色</button>
+              <button type="button" data-theme-value="dark" aria-pressed="false">深色</button>
+            </div>
+          </details>
+          <details class="lang-switch">
+            <summary><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg><span class="visually-hidden">語言: </span>繁體中文</summary>
+            <div class="lang-menu">
+              <nav aria-label="語言">
+                <ul>
+                <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+                <li><a href="../zh-cn/index.html" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
+                <li><a href="index.html" hreflang="zh-TW" lang="zh-TW" aria-current="page">繁體中文</a></li>
+                <li><a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a></li>
+                <li><a href="../ko/index.html" hreflang="ko" lang="ko">한국어</a></li>
+                <li><a href="../de/index.html" hreflang="de" lang="de">Deutsch</a></li>
+                <li><a href="../fr/index.html" hreflang="fr" lang="fr">Français</a></li>
+                <li><a href="../es/index.html" hreflang="es" lang="es">Español</a></li>
+                <li><a href="../it/index.html" hreflang="it" lang="it">Italiano</a></li>
+                <li><a href="../pt-br/index.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+                </ul>
+              </nav>
+              <p class="fine">SenderFinder 提供 10 種語言。擴充功能會跟隨你的瀏覽器語言。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<main id="main">
+<div class="v2-hero">
+  <div class="v2-wrap">
+    <a class="v2-badge" href="https://github.com/astonysh/SenderFinder">
+      <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> 免費 · 開放原始碼 · AGPL-3.0
+    </a>
+
+    <h1 id="hero-title" class="v2-title">在 <span class="v2-gradient">LinkedIn</span> 找到寄件者</h1>
+
+    <p class="v2-hero-lead">開源 · 自備 key · 資料只留在本機</p>
+    <p class="v2-hero-desc">在 Gmail 開啟一封郵件，側邊面板就會顯示寄件者是誰：姓名、職稱、公司和地點。</p>
+
+    <ul class="v2-hero-meta">
+      
+      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> key 留在你的裝置上</li>
+      
+      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> 歷史記錄留在你的裝置上</li>
+      
+      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> 匿名使用統計 —— 一個開關就能關閉</li>
+      
+    </ul>
+
+    <div class="v2-actions">
+      <!-- CWS-BUTTON: when the store listing is live, set href="CWS_PLACEHOLDER" and change the label to "Add to Chrome". -->
+      <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder">
+        <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> 在 GitHub 上查看
+      </a>
+      <a class="v2-btn v2-btn--default" href="install.html" data-store-url="CWS_PLACEHOLDER">
+        2 分鐘完成安裝 <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+      </a>
+    </div>
+    <p class="v2-hero-fine">還沒上架 Chrome Web Store。安裝頁面會帶你走完兩分鐘的未封裝安裝流程。</p>
+
+    <figure class="v2-shot">
+      <picture>
+        <source media="(max-width: 620px)" srcset="../assets/screenshots/side-panel.png" width="359" height="800">
+        <img src="../assets/screenshots/sender-in-gmail.png" alt="Gmail 旁邊的 SenderFinder 側邊面板，顯示 Jane Doe（柏林 Acme 的合作夥伴關係主管），以及她的 LinkedIn 連結、加入人脈按鈕和對話串中的其他人。" width="1280" height="800" fetchpriority="high">
+      </picture>
+      <figcaption>閱讀郵件時的側邊面板。人物與公司均為虛構。</figcaption>
+    </figure>
+  </div>
+</div>
+
+<section class="v2-section v2-section--soft v2-cloud-section">
+  <div class="v2-wrap v2-cloud">
+    <p>支援</p>
+    <ul>
+      <li><svg class="i" aria-hidden="true"><use href="#i-gmail"/></svg> Gmail</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-outlook"/></svg> 網頁版 Outlook</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-chrome"/></svg> Chrome</li>
+    </ul>
+  </div>
+</section>
+
+<section class="v2-section" id="how">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">運作方式</div>
+      <h2 class="v2-h2">設定一次，之後它會自己讀你的收件匣</h2>
+      <p>安裝擴充功能、貼上一組供應商 key，之後你開啟的每封郵件都會顯示背後是誰。</p>
+    </header>
+
+    <div class="v2-grid v2-grid--3">
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg></div>
+        <h3>讀取目前開啟的郵件</h3>
+        <hr class="v2-rule">
+        <p>寄件者，以及收件者和副本中的每一個人。郵件內容只會在本機掃描，尋找 linkedin.com/in 連結。</p>
+      </article>
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-wallet"/></svg></div>
+        <h3>最便宜的先試</h3>
+        <hr class="v2-rule">
+        <p>從免費的郵件簽名檔掃描開始，依序嘗試付費供應商，由便宜到貴。沒命中不收費，命中就停止。</p>
+      </article>
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-key"/></svg></div>
+        <h3>一組 key 就夠</h3>
+        <hr class="v2-rule">
+        <p>treg 最便宜，Monid 涵蓋範圍最廣。任何一組 key 都能跑完整個流程。</p>
+      </article>
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></div>
+        <h3>整條對話串</h3>
+        <hr class="v2-rule">
+        <p>其他寄件者、收件者和副本都會列在面板上，每個人只有在你點選時才會查詢。</p>
+      </article>
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-link"/></svg></div>
+        <h3>在 LinkedIn 建立連結</h3>
+        <hr class="v2-rule">
+        <p>面板會開啟對方個人檔案並填入你的邀請訊息。Connect 和 Send 都由你自己點，擴充功能絕不代勞。</p>
+      </article>
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-database"/></svg></div>
+        <h3>快取與歷史記錄，都在本機</h3>
+        <hr class="v2-rule">
+        <p>結果會留在瀏覽器的 IndexedDB 中 90 天，可匯出為 JSON 或 CSV，也能一鍵刪除。</p>
+      </article>
+      
+    </div>
+  </div>
+</section>
+
+<section class="v2-section v2-section--soft" id="privacy">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">隱私權</div>
+      <h2 class="v2-h2">你的收件匣始終屬於你</h2>
+      <p>查詢會從你的瀏覽器直接送到你選擇的供應商。以下說明哪些資料留在本機、哪些會送出，以及匿名統計包含哪些內容。</p>
+    </header>
+
+    <figure class="v2-flow-card">
+      <div class="flow">
+        <div class="flow-row">
+          <div class="flow-box">
+            <svg class="i i-lg" aria-hidden="true"><use href="#i-browser"/></svg>
+            <h3>你的瀏覽器</h3>
+            <p>key · 快取 · 歷史記錄</p>
+          </div>
+          <div class="flow-mid">
+            <svg class="i i-arrow flow-arrow-down" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+            <svg class="i i-arrow flow-arrow-right" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            <p>你主動發起的那次查詢</p>
+            <p class="flow-nope"><svg class="i" aria-hidden="true"><use href="#i-server-off"/></svg> <span>查詢路徑上沒有 SenderFinder 伺服器</span></p>
+          </div>
+          <div class="flow-box">
+            <svg class="i i-lg" aria-hidden="true"><use href="#i-provider"/></svg>
+            <h3>你選擇的供應商</h3>
+            <p>會收到電子郵件地址，以及 Apollo 步驟會用到的顯示名稱和公司網域</p>
+          </div>
+        </div>
+        <p class="flow-none"><svg class="i" aria-hidden="true"><use href="#i-chart"/></svg> 匿名每日使用統計 → SenderFinder 統計服務（預設開啟，可以關閉）</p>
+        <p class="visually-hidden">示意圖：你的瀏覽器存放 key、快取和歷史記錄。只有一個箭頭離開瀏覽器：你主動發起的那次查詢，送往你設定的供應商。一個打叉的方塊標示不在這條路徑上的 SenderFinder 伺服器，旁邊的註記說明匿名每日使用統計。</p>
+      </div>
+    </figure>
+
+    <div class="v2-grid v2-grid--3 v2-grid--after">
+      
+      <article class="v2-card">
+        <h3 class="v2-card-title"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> 留在你的裝置上</h3>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>你的供應商 key，存在擴充功能自己的儲存空間</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>快取與歷史記錄，在 IndexedDB 中（90 天、5,000 筆）</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>設定、上限與自動查詢次數限制</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>你讀過哪些郵件：這件事不會離開瀏覽器</span></li>
+        </ul>
+      </article>
+      
+      <article class="v2-card">
+        <h3 class="v2-card-title"><svg class="i" aria-hidden="true"><use href="#i-provider"/></svg> 送到你選擇的供應商</h3>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>你查詢的地址，連同你的 key</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>郵件標頭中的顯示名稱</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>公司網域，供 Apollo 步驟使用</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>讀取該供應商目錄價格的請求</span></li>
+        </ul>
+      </article>
+      
+      <article class="v2-card">
+        <h3 class="v2-card-title"><svg class="i" aria-hidden="true"><use href="#i-chart"/></svg> 匿名使用統計</h3>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>預設開啟；在設定中用一個開關就能關閉</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>每日彙總：次數、結果、花費、版本、語言</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>隨機的安裝 ID，關閉統計時會一併刪除</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>絕不包含地址、姓名、網域、key 或郵件內容</span></li>
+        </ul>
+      </article>
+      
+    </div>
+
+    <p class="v2-center"><a class="v2-btn v2-btn--outline v2-btn--sm" href="privacy.html">完整隱私權說明 <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></p>
+  </div>
+</section>
+
+<section class="v2-section" id="pricing">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">價格</div>
+      <h2 class="v2-h2">免費。只有你願意時，才需要付費給資料供應商。</h2>
+      <p>擴充功能本身不收費。郵件簽名檔這一步免費；付費查詢由你選擇的供應商按次計費，上限由你設定。</p>
+    </header>
+
+    <article class="v2-free">
+      <div class="v2-free-main">
+        <h3>SenderFinder</h3>
+        <div class="v2-free-price"><strong>$0</strong><span>永久免費</span></div>
+        <ul class="v2-free-checks">
+          
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>開放原始碼，AGPL-3.0</span></li>
+          
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>不需要帳號，也不需要訂閱</span></li>
+          
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>在你的瀏覽器中執行</span></li>
+          
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>郵件簽名檔掃描免費</span></li>
+          
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>有快取，同一個地址不會付兩次錢</span></li>
+          
+        </ul>
+      </div>
+      <div class="v2-free-action">
+        <a class="v2-btn v2-btn--default" href="install.html">免費安裝 <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </article>
+
+    <h3 class="v2-subhead">選用：資料供應商費用</h3>
+
+    <div class="v2-grid v2-grid--3">
+      
+      <article class="v2-price v2-price--light">
+        
+        <h3>只有 treg</h3>
+        <div class="v2-price-value"><strong>US$0.0007</strong></div>
+        <p class="v2-price-hit">每個找到的地址，付給供應商</p>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>適合: 預算緊、量大</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>BlitzAPI → QuickEnrich</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>58% 找到</span></li>
+        </ul>
+      </article>
+      
+      <article class="v2-price v2-price--light v2-price--featured">
+        <div class="v2-price-tag">推薦</div>
+        <h3>兩組 key</h3>
+        <div class="v2-price-value"><strong>US$0.0100</strong></div>
+        <p class="v2-price-hit">每個找到的地址，付給供應商</p>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>適合: 預設組合；先試最便宜的步驟，Apollo 當後盾</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>BlitzAPI → Hunter → QuickEnrich → Apollo</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>96% 找到</span></li>
+        </ul>
+      </article>
+      
+      <article class="v2-price v2-price--light">
+        
+        <h3>只有 Monid</h3>
+        <div class="v2-price-value"><strong>US$0.0220</strong></div>
+        <p class="v2-price-hit">每個找到的地址，付給供應商</p>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>適合: 命中率</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Hunter → Apollo</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>91% 找到</span></li>
+        </ul>
+      </article>
+      
+    </div>
+
+    <div class="v2-calc-card">
+      <div class="calc-live" id="calc"
+           data-monthly-label="預估每月費用"
+           data-per-label="每個新地址的費用"
+           data-hit-label="找到的公司信箱"
+           data-found-label="每月找到數量"
+           data-usable="以這個速率，今天 $2 的上限大約可查 {n} 個地址。"
+           data-cap-daily="2"
+           data-cap-lookup="0.05"
+           data-day-limit="30">
+        <form class="calc-form">
+          <div class="field">
+            <label for="calc-volume">每天新的寄件者地址數</label>
+            <div class="field-row">
+              <input type="range" id="calc-volume" min="0" max="120" step="1" value="20">
+              <output for="calc-volume" id="calc-volume-out">20</output>
+            </div>
+            <p class="hint">只算你之前沒查過的地址。重複出現的寄件者由快取回答，不產生費用。</p>
+          </div>
+          <div class="field">
+            <label for="calc-keys">你手上有哪一組 key？</label>
+            <select id="calc-keys">
+              <option value="both" selected>兩組都有（預設瀑布流程）</option>
+              <option value="treg">只有 treg（最便宜）</option>
+              <option value="monid">只有 Monid（涵蓋最廣）</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="calc-skip">個人與職務信箱的比例</label>
+            <div class="field-row">
+              <input type="range" id="calc-skip" min="0" max="80" step="5" value="20">
+              <output for="calc-skip" id="calc-skip-out">20 %</output>
+            </div>
+            <p class="hint">gmail.com、outlook.com、qq.com、info@、support@ 等預設略過，所以不產生費用。</p>
+          </div>
+        </form>
+
+        <div class="calc-out" aria-live="polite">
+          <dl class="stats">
+            <div class="stat">
+              <dt>預估每月費用</dt>
+              <dd><span id="calc-monthly">—</span> <small class="unit">月</small></dd>
+            </div>
+            <div class="stat"><dt>每個新地址的費用</dt><dd><span id="calc-per">—</span></dd></div>
+            <div class="stat"><dt>找到的公司信箱</dt><dd><span id="calc-hit">—</span></dd></div>
+            <div class="stat"><dt>每月找到數量</dt><dd><span id="calc-found">—</span></dd></div>
+          </dl>
+          <p class="fine" id="calc-usable"></p>
+          <p class="fine">「找到」表示供應商回傳的個人檔案姓名相符。兩組 key 的差別，主要在於多常需要動用較貴的備援步驟。</p>
+          <p class="fine">上限仍然有效：預設每天 $2、每次查詢 $0.05，兩者都可以在設定裡調整。這項估算假設每月 30 天，且每個新地址查詢一次。</p>
+        </div>
+      </div>
+
+      <div class="calc-fallback">
+        <h3>範例用量</h3>
+        <p class="section-intro">未啟用 JavaScript 時顯示。同樣的模型、同樣的價格：20% 的寄件者是個人或職務信箱，會被略過。</p>
+        <div class="grid-3">
+          
+          <div>
+            <h4>兩組 key</h4>
+            <dl class="stats">
+              
+              <div class="stat"><dt>每天 10 個</dt><dd>≈ US$2.39 / 月 <small>找到 ≈ 96%</small></dd></div>
+              
+              <div class="stat"><dt>每天 30 個</dt><dd>≈ US$7.18 / 月 <small>找到 ≈ 96%</small></dd></div>
+              
+              <div class="stat"><dt>每天 100 個</dt><dd>≈ US$23.95 / 月 <small>找到 ≈ 96%</small></dd></div>
+              
+            </dl>
+          </div>
+          
+          <div>
+            <h4>只有 treg</h4>
+            <dl class="stats">
+              
+              <div class="stat"><dt>每天 10 個</dt><dd>≈ US$0.17 / 月 <small>找到 ≈ 58%</small></dd></div>
+              
+              <div class="stat"><dt>每天 30 個</dt><dd>≈ US$0.51 / 月 <small>找到 ≈ 58%</small></dd></div>
+              
+              <div class="stat"><dt>每天 100 個</dt><dd>≈ US$1.71 / 月 <small>找到 ≈ 58%</small></dd></div>
+              
+            </dl>
+          </div>
+          
+          <div>
+            <h4>只有 Monid</h4>
+            <dl class="stats">
+              
+              <div class="stat"><dt>每天 10 個</dt><dd>≈ US$5.28 / 月 <small>找到 ≈ 91%</small></dd></div>
+              
+              <div class="stat"><dt>每天 30 個</dt><dd>≈ US$15.83 / 月 <small>找到 ≈ 91%</small></dd></div>
+              
+              <div class="stat"><dt>每天 100 個</dt><dd>≈ US$52.78 / 月 <small>找到 ≈ 91%</small></dd></div>
+              
+            </dl>
+          </div>
+          
+        </div>
+        <p class="fine">開啟 JavaScript 就能看到你自己的數字。以上只是單純的表格，不是花費承諾。</p>
+      </div>
+    </div>
+
+    <details class="v2-details">
+      <summary>數字從哪裡來</summary>
+      <div>
+        <ul><li>每個新的寄件者地址只查一次並快取。重複的寄件者花費 $0，所以輸入的是每天的新地址數，不是讀了幾封郵件。</li><li>每次命中的價格是供應商在 2026 年 10 月 25 日的目錄價：BlitzAPI $0.0005、QuickEnrich $0.0048、Hunter $0.0049、Apollo $0.026。這些步驟沒命中不收費。</li><li>各步驟的命中率來自 2026 年 10 月 25 日 50 個地址的基準測試：48 % 由 BlitzAPI 解決，剩下部分中的 19 % 由下一步解決，再剩下的 19 % 由再下一步解決。Apollo 在被呼叫的 19 個地址中比對到 17 個。</li><li>兩組 key 都使用時，大約 95 % 的公司信箱能查到，實測則是 48 of 50（96 %）。只用 treg 時只會跑兩個便宜步驟，只用 Monid 時則跑 Hunter 和 Apollo。</li><li>每月費用 = 每天新地址數 ×（1 − 略過比例）× 30 × 每個地址的費用。免費的郵件簽名檔掃描、選填的 Village 與 ContactOut 步驟，以及 Firecrawl 都沒有計入。</li><li>這些是來自一次英語系業務與成長聯絡人基準測試的估算。你自己的信箱結果可能不一樣。</li></ul>
+        <p class="fine">價格與命中率：2026 年 10 月 25 日。擴充功能在每次呼叫前都會重新讀取目錄價格，所以供應商調價會立刻反映。</p>
+      </div>
+    </details>
+    <p class="v2-note fine">估算來自 2026 年 10 月 25 日的 50 個地址基準測試。預設值：每天 $2、每次查詢 $0.05，兩者都能在設定中調整。</p>
+  </div>
+</section>
+
+<section class="v2-section v2-section--soft" id="faq">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">常見問題</div>
+      <h2 class="v2-h2">簡短的回答</h2>
+      <p>更長的答案在安裝指南和隱私權聲明中。</p>
+    </header>
+
+    <div class="v2-faq">
+      
+      <details>
+        <summary>免費嗎？</summary>
+        <div class="v2-faq-body"><p>是的。擴充功能免費，並以 AGPL-3.0 授權開放原始碼，不需要帳號，也不需要訂閱。付費查詢是選用的：由你選擇的資料供應商按次計費，直接記在你自己的 key 上，且不超出你設定的上限。郵件簽名檔掃描和快取都不收費。</p></div>
+      </details>
+      
+      <details>
+        <summary>需要帳號嗎？</summary>
+        <div class="v2-faq-body"><p>不需要註冊。查詢會直接傳送給你設定的供應商；匿名每日使用統計會傳送到專案的統計服務，在設定裡用一個開關就能關閉。</p></div>
+      </details>
+      
+      <details>
+        <summary>該申請哪一組 key？</summary>
+        <div class="v2-faq-body"><p>從 <a href="https://app.monid.ai/">Monid</a> 或 <a href="https://treg.to/">treg</a> 取得一組 key 就足以開始。兩組都填，需要時再加上 <a href="https://www.firecrawl.dev/">Firecrawl</a>，能讓瀑布流程有更多地方可查。<a href="install.html#which-key">安裝頁面</a>有兩者的比較。</p></div>
+      </details>
+      
+      <details>
+        <summary>如何控制費用？</summary>
+        <div class="v2-faq-body"><p>有單次查詢上限（預設 $0.05）和每日上限（預設 $2）。只有你開啟的郵件的寄件者會自動查詢，並受你設定的每日次數限制。結果會快取，同一個地址不會付兩次錢。<a href="#calculator">費用試算</a>可以估算特定用量要花多少。</p></div>
+      </details>
+      
+      <details>
+        <summary>如果顯示的人不對呢？</summary>
+        <div class="v2-faq-body"><p>如果供應商回傳的姓名與郵件標頭的顯示名稱不符，結果會標上「不確定」並同時顯示兩個姓名，讓你自己判斷。</p></div>
+      </details>
+      
+      <details>
+        <summary>為什麼 gmail.com 的寄件者不被查詢？</summary>
+        <div class="v2-faq-body"><p>個人信箱網域和 info@ 這類職務信箱很少對應到個人檔案，所以預設略過以節省費用。點面板上的按鈕就能仍要查詢。</p></div>
+      </details>
+      
+    </div>
+  </div>
+</section>
+
+<section class="v2-section">
+  <div class="v2-wrap">
+    <div class="v2-cta">
+      <h2>兩分鐘，就完成了</h2>
+      <p>Chrome Web Store 還沒上架，所以要以未封裝的方式載入擴充功能。五個步驟，每步一張截圖。</p>
+      <div class="v2-actions">
+        <a class="v2-btn v2-btn--outline" href="install.html">開啟安裝指南 <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+  <footer class="v2-foot">
+    <div class="v2-wrap v2-foot-inner">
+      <a class="v2-brand" href="index.html">
+        <img src="../assets/icon-128.png" alt="" width="32" height="32">
+        <span>SenderFinder</span>
+      </a>
+      <ul class="v2-foot-links">
+        <li><a href="install.html">安裝</a></li>
+        <li><a href="privacy.html">隱私權</a></li>
+        <li><a href="clearbit-connect-alternative.html">Clearbit Connect 替代方案</a></li>
+        <li><a href="rapportive-alternative.html">Rapportive 替代方案</a></li>
+        <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+        <li><a href="https://github.com/astonysh/SenderFinder/blob/main/LICENSE">AGPL-3.0 授權</a></li>
+      </ul>
+      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> 查詢路徑上沒有 SenderFinder 伺服器。你的 key 和歷史記錄都留在瀏覽器裡。 <a href="privacy.html">隱私權</a></p>
+      <div class="v2-foot-bottom">
+        <p>SenderFinder 是以 AGPL-3.0 授權釋出的開放原始碼軟體。</p>
+        <p>Gmail、Outlook、LinkedIn 和 Chrome 是各自擁有者的商標。</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="notice" id="notice" role="region" aria-label="Cookie 通知" data-consent-mode="false" hidden>
+    <div class="notice-inner">
+      <svg class="i i-lg" aria-hidden="true"><use href="#i-cookie"/></svg>
+      <p>本站可能會使用重視隱私的瀏覽統計來計數。SenderFinder 擴充功能是另一回事：除非你在它的設定裡把統計關掉，它每天會傳送一份匿名使用摘要。 <a href="privacy.html#cookies">隱私權</a></p>
+      <div class="notice-actions">
+        <button type="button" class="notice-btn notice-close" data-consent="ack">好</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

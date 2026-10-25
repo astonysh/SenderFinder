@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>隱私權 | SenderFinder</title>
+  <meta name="description" content="SenderFinder 在 Gmail 與 Outlook 讀取哪些內容、哪些資料會送到你選擇的供應商、LinkedIn 功能怎麼運作，以及匿名每日使用統計包含哪些內容。">
+  <link rel="canonical" href="https://senderfinder.com/zh-tw/privacy">
+  <link rel="alternate" hreflang="en" href="https://senderfinder.com/privacy">
+  <link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/privacy">
+  <link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/privacy">
+  <link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/privacy">
+  <link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/privacy">
+  <link rel="alternate" hreflang="de" href="https://senderfinder.com/de/privacy">
+  <link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/privacy">
+  <link rel="alternate" hreflang="es" href="https://senderfinder.com/es/privacy">
+  <link rel="alternate" hreflang="it" href="https://senderfinder.com/it/privacy">
+  <link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/privacy">
+  <link rel="alternate" hreflang="x-default" href="https://senderfinder.com/privacy">
+  <!-- CWS-BUTTON: install buttons carry data-store-url="CWS_PLACEHOLDER"; see site/README.md -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="SenderFinder">
+  <meta property="og:title" content="隱私權 | SenderFinder">
+  <meta property="og:description" content="SenderFinder 在 Gmail 與 Outlook 讀取哪些內容、哪些資料會送到你選擇的供應商、LinkedIn 功能怎麼運作，以及匿名每日使用統計包含哪些內容。">
+  <meta property="og:url" content="https://senderfinder.com/zh-tw/privacy">
+  <meta property="og:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="800">
+  <meta name="color-scheme" content="light dark">
+  <script src="../assets/theme-boot.js"></script>
+  <link rel="stylesheet" href="../assets/app.css">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/icon-128.png" type="image/png" sizes="128x128">
+  <link rel="apple-touch-icon" href="../assets/icon-128.png">
+  <script type="module" src="../assets/theme.js"></script>
+</head>
+<body class="v2">
+<svg class="icon-sprite" aria-hidden="true" focusable="false" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+<!-- One stroke style, 24×24, drawn for this site. Inlined into every page by scripts/build-site.js. -->
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-puzzle" viewBox="0 0 24 24"><path d="M9 4h2.2a1.8 1.8 0 1 1 3.6 0H17v3.2a1.8 1.8 0 1 0 0 3.6V14h-3.2a1.8 1.8 0 1 1-3.6 0H7v-3.2a1.8 1.8 0 1 0 0-3.6V4z"/><path d="M7 14v6h10v-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><path d="m11 11 8 8"/><path d="m15.5 15.5 2 2"/><path d="m17.5 13.5 2 2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.8 2.8L16 9.2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-mail-off" viewBox="0 0 24 24"><path d="M6.5 5H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7"/><path d="m3.5 7 8.5 6 3-2.1"/><path d="M4 20 20 4"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M16 14.5h2"/><path d="M6 6V5a2 2 0 0 1 2.4-2l8.6 2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-calculator" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 7h8"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-shield" viewBox="0 0 24 24"><path d="M12 3 19 6v6c0 4-2.9 7.2-7 9-4.1-1.8-7-5-7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/><path d="M12 14.5v2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.2 12h17.6"/><path d="M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.2 8.2 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12.5" rx="2"/><path d="M9 20h6M12 16.5V20"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.6 2.3c-.7.3-1.2 1-1.2 1.8v.4"/><path d="M12 17h.01"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-wrench" viewBox="0 0 24 24"><path d="M15.5 3.5a5 5 0 0 0-4.3 7.5L3.6 18.6l1.8 1.8L13 12.8a5 5 0 0 0 7.5-4.3l-3 3-2.3-2.3z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-cookie" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9.6" r="1.1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="8.6" r="1.1" fill="currentColor" stroke="none"/><circle cx="15.2" cy="14" r="1.1" fill="currentColor" stroke="none"/><circle cx="10.2" cy="15.2" r="1.1" fill="currentColor" stroke="none"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-browser" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M2.5 8.5h19"/><path d="M5.5 6.3h.01M8 6.3h.01"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-provider" viewBox="0 0 24 24"><path d="M7.5 18.5a4.2 4.2 0 0 1-.3-8.4 5.6 5.6 0 0 1 10.7 1.4 3.6 3.6 0 0 1-.9 7z"/><path d="M12 16v-4"/><path d="m10.2 13.3 1.8-1.8 1.8 1.8"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-server-off" viewBox="0 0 24 24"><rect x="3" y="3.5" width="18" height="6.5" rx="2"/><rect x="3" y="14" width="18" height="6.5" rx="2"/><path d="M6 6.7h.01M6 17.2h.01"/><path d="M3.5 21 20.5 2.5"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7.5" ry="3"/><path d="M4.5 6v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6"/><path d="M4.5 12v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-eye-off" viewBox="0 0 24 24"><path d="M4 4l16 16"/><path d="M9.8 5.3A9.5 9.5 0 0 1 12 5c5 0 9 4.4 9 7a11 11 0 0 1-2.3 3.3"/><path d="M6.4 7.4A13.4 13.4 0 0 0 3 12c0 2.6 4 7 9 7a9.7 9.7 0 0 0 3.7-.7"/><path d="M10.4 10.5a2.2 2.2 0 0 0 3.1 3.1"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-cursor" viewBox="0 0 24 24"><path d="M6 3.5 18.5 12l-5.2 1.2 2.9 6.3-2 1-2.9-6.4-3.6 3.6z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-link" viewBox="0 0 24 24"><path d="M9.6 14.4 14.4 9.6"/><path d="M10.8 6.9 12.4 5.2a3.8 3.8 0 0 1 5.4 5.4l-1.7 1.6"/><path d="M13.2 17.1l-1.6 1.7a3.8 3.8 0 0 1-5.4-5.4l1.7-1.6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 20v-5"/><path d="M13 20V9"/><path d="M18 20v-8"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-github" viewBox="0 0 24 24"  fill="currentColor" stroke="none"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.1c-3.2.7-3.88-1.4-3.88-1.4-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .3.21.66.8.55C20.71 21.39 24 17.08 24 12 24 5.73 18.27.5 12 .5z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-gmail" viewBox="0 0 24 24"><path d="M3 7.5 12 14l9-6.5"/><rect x="3" y="5" width="18" height="14" rx="2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-outlook" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/><circle cx="12" cy="13" r="2.6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.6 10v7"/><path d="M7.6 7.2h.01"/><path d="M11.6 17v-4a2.5 2.5 0 0 1 5 0v4"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-chrome" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.6"/><path d="M12 3.1h7.7"/><path d="m4.5 7.7 3.9 6.7"/><path d="m19.5 7.7-3.9 6.7"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v14"/><path d="m6 12.5 6 6 6-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h14"/><path d="m12.5 6 6 6-6 6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18.5 14v4.5a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2H10"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.2 20c0-3.2 2.6-5.4 5.8-5.4s5.8 2.2 5.8 5.4"/><path d="M16.2 5.6a3.2 3.2 0 0 1 0 5.8"/><path d="M18.2 20c0-2.2-.8-3.9-2.2-4.9"/></symbol>
+</svg>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+
+  <header class="v2-nav">
+    <div class="v2-wrap">
+      <div class="v2-nav-inner">
+        <a class="v2-brand" href="index.html" aria-current="page">
+          <img src="../assets/icon-128.png" alt="" width="32" height="32">
+          <span>SenderFinder</span>
+        </a>
+
+        <nav class="v2-nav-links" aria-label="主要導覽">
+          <ul>
+            <li><a href="index.html#how">運作方式</a></li>
+            <li><a href="index.html#privacy">隱私權</a></li>
+            <li><a href="index.html#cost">價格</a></li>
+            <li><a href="install.html">安裝</a></li>
+            <li><a href="index.html#faq">常見問題</a></li>
+            <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+          </ul>
+        </nav>
+
+        <div class="v2-nav-tools header-tools">
+          <details class="theme-switch">
+            <summary><span class="visually-hidden">外觀: </span><svg class="i theme-icon theme-icon-monitor" aria-hidden="true"><use href="#i-monitor"/></svg><svg class="i theme-icon theme-icon-light" aria-hidden="true"><use href="#i-sun"/></svg><svg class="i theme-icon theme-icon-dark" aria-hidden="true"><use href="#i-moon"/></svg></summary>
+            <div class="theme-menu" role="group" aria-label="外觀">
+              <button type="button" data-theme-value="system" aria-pressed="true">跟隨系統</button>
+              <button type="button" data-theme-value="light" aria-pressed="false">淺色</button>
+              <button type="button" data-theme-value="dark" aria-pressed="false">深色</button>
+            </div>
+          </details>
+          <details class="lang-switch">
+            <summary><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg><span class="visually-hidden">語言: </span>繁體中文</summary>
+            <div class="lang-menu">
+              <nav aria-label="語言">
+                <ul>
+                <li><a href="../privacy.html" hreflang="en" lang="en">English</a></li>
+                <li><a href="../zh-cn/privacy.html" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
+                <li><a href="privacy.html" hreflang="zh-TW" lang="zh-TW" aria-current="page">繁體中文</a></li>
+                <li><a href="../ja/privacy.html" hreflang="ja" lang="ja">日本語</a></li>
+                <li><a href="../ko/privacy.html" hreflang="ko" lang="ko">한국어</a></li>
+                <li><a href="../de/privacy.html" hreflang="de" lang="de">Deutsch</a></li>
+                <li><a href="../fr/privacy.html" hreflang="fr" lang="fr">Français</a></li>
+                <li><a href="../es/privacy.html" hreflang="es" lang="es">Español</a></li>
+                <li><a href="../it/privacy.html" hreflang="it" lang="it">Italiano</a></li>
+                <li><a href="../pt-br/privacy.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+                </ul>
+              </nav>
+              <p class="fine">SenderFinder 提供 10 種語言。擴充功能會跟隨你的瀏覽器語言。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<main id="main">
+<div class="v2-page">
+  <div class="v2-wrap">
+    <header class="v2-page-head">
+      <h1>隱私權</h1>
+      <p class="v2-note">最後更新：2026 年 10 月 25 日</p>
+      <p class="v2-note">本文為英文版隱私權政策的翻譯，若與英文版本有出入，以英文版本為準。</p>
+      <p class="v2-lead">SenderFinder 會讀取目前郵件的寄件者和參與者，並在本機掃描本文以尋找 LinkedIn 個人檔案連結。若你啟用 LinkedIn 功能，它會用你自己的 LinkedIn 工作階段讀取關係程度、是否有待處理的邀請、照片和關聯公司連結。「建立連結」輔助功能會在邀請對話框中點一次「Add a note」並填入備註供你檢查。查詢欄位會直接傳送給你設定的供應商。匿名使用統計預設開啟；在設定裡用一個開關就能關閉。</p>
+    </header>
+
+    <article class="v2-prose">
+      <div class="v2-summary">
+        <h2><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg> 30 秒看完</h2>
+        <ul>
+          <li>查詢會從你的瀏覽器直接傳送給你設定的供應商 —— 查詢路徑上沒有 SenderFinder 伺服器。</li><li>key、快取和歷史記錄留在這個裝置上，也就是擴充功能的儲存空間和瀏覽器的 IndexedDB。你可以匯出，或一鍵全部清除。</li><li>供應商會收到你查詢的地址、郵件標頭裡的顯示名稱和公司網域，沒有別的。</li><li>郵件本文絕不會離開你的瀏覽器：簽名檔掃描是在本機執行。</li><li>使用統計預設開啟：每天一份匿名摘要，包含次數、結果、花費、版本和語言，加上一組隨機安裝 ID，傳送到專案的統計服務。在設定裡用一個開關就能關閉，並刪除安裝 ID。絕不會有電子郵件地址、姓名、網域、個人檔案欄位、key 或郵件內容。</li><li>你決定設定哪些供應商、查詢哪些人。你可以關閉統計、撤銷 LinkedIn 權限，並匯出或刪除本機資料；下文會分別說明各項功能讀取的內容和資料去向。</li>
+        </ul>
+      </div>
+
+      
+      <h2>誰經營 SenderFinder</h2>
+      <p>SenderFinder 是開放原始碼的 Chrome 擴充功能。查詢請求會從你的瀏覽器直接傳送給你設定的資料供應商；查詢路徑上沒有 SenderFinder 伺服器。另有一項獨立的統計服務會收到每天一份匿名摘要，預設開啟，可在設定頁關閉。這些統計資料的控管者是 GitHub 專案 <a href="https://github.com/astonysh/SenderFinder">astonysh/SenderFinder</a> 維護者 Tony Li。隱私權相關請求請聯絡 <a href="mailto:tony@senderfinder.com">tony@senderfinder.com</a>。</p>
+      
+      
+      
+      <h2>擴充功能會讀取和保存什麼</h2>
+      <p>在 Gmail 或網頁版 Outlook 中，擴充功能會讀取目前開啟郵件的寄件者和參與者。它會在本機掃描郵件本文，找出 LinkedIn 個人檔案網址，例如簽名檔裡的連結。郵件本文不會被儲存，也不會被傳送。查詢歷史記錄、結果、設定和供應商 key 都存放在本機的擴充功能或瀏覽器中。快取結果預設 90 天後過期，上限 5,000 筆；你可以在設定裡匯出或刪除。</p>
+      
+      
+      
+      <h2>資料供應商會收到什麼</h2>
+      <p>查詢執行時，所選對象的電子郵件地址、顯示名稱和公司網域，會使用該供應商的 API key 直接送到你設定的供應商。有些供應商是聚合服務，可能會把請求轉送給它們列出的下游服務；適用它們自己的條款和隱私權政策。SenderFinder 不會收到查詢的地址或供應商回傳的結果。供應商回傳的職業相關個人檔案欄位會保存在本機；電話號碼和個人電子郵件地址則會丟棄。</p>
+      
+      
+      
+      <h2>匿名使用統計</h2>
+      <p>使用統計預設開啟。擴充功能每天會傳送一份前一天的摘要到我們的 Cloudflare Worker，由它儲存在 Cloudflare D1。摘要包含日期、擴充功能版本、介面語言、查詢總數與結果、各供應商步驟的次數、各郵件用戶端的次數、四捨五入後的花費，以及一組隨機安裝 ID。這個 ID 辨識的是一次安裝，不是一個人。在設定頁用一個開關就能關閉摘要，並刪除安裝 ID 和尚未傳送的資料；旁邊的預覽按鈕會顯示實際會傳送的內容。</p><p>摘要不含任何電子郵件地址、姓名、公司網域、LinkedIn 網址、個人檔案欄位、供應商 key 或郵件內容。你可以在設定裡預覽實際會傳送的內容。關閉統計後會停止之後的傳送，並刪除本機的安裝 ID 和尚未傳送的摘要。若要要求刪除先前已收到的摘要，請寫信到 <a href="mailto:tony@senderfinder.com">tony@senderfinder.com</a>，並附上預覽中顯示的安裝 ID。</p>
+      
+      
+      
+      <h2>LinkedIn</h2>
+      <p>若你啟用 LinkedIn 功能，擴充功能會在首次使用時要求選用的 linkedin.com 權限；你隨時可以在設定中撤銷，而且它只適用於擴充功能自己開啟的分頁。取得權限後，擴充功能會用你自己的 LinkedIn 工作階段，針對你正在閱讀的個人檔案讀取關係程度、是否有待處理的邀請、個人檔案照片和關聯公司連結。它會在本機讀取 JSESSIONID 驗證 Cookie，作為這些請求的 CSRF 值；Cookie 只會傳給 LinkedIn，絕不會傳給 SenderFinder 或資料補全供應商。結果會快取在你的裝置上，不會傳送給任何人。你選擇「建立連結」時，擴充功能會開啟所選的個人檔案，並在邀請對話框中點一次「Add a note」，填入可編輯的範本。它絕不會點擊「建立連結」或「傳送」。</p>
+      
+      
+      
+      <h2>你的選擇與 Chrome Web Store 政策</h2>
+      <p>要設定哪些資料供應商和 API key、要查詢哪些人，都由你決定。你可以移除 key、關閉統計、撤銷 LinkedIn 存取權、匯出或清除本機歷史記錄，或解除安裝擴充功能。SenderFinder 只會為了顯示和執行你要求的查詢而使用信箱資料。郵件本文只在本機處理，用來尋找 LinkedIn 個人檔案連結；不會用於廣告，也不會傳送給 SenderFinder 或供應商。</p>
+      
+      
+      
+      <h2 id="cookies">Cookie 與本機儲存空間</h2>
+      <p>本節說明 SenderFinder 網站，而不是擴充功能。擴充功能每天會傳送一份匿名使用摘要，預設開啟，可在它的設定裡關閉。網站本身使用的瀏覽器本機儲存空間如下所述。</p><p>目前本站不設定 Cookie。瀏覽器 localStorage 裡有兩項，都是因為你主動用過才存在的：<code>el-theme</code> 記住你在頁首選的淺色或深色，<code>sf-notice</code> 記住你關掉了頁面底部的提示。它們從不傳往任何地方，清除瀏覽器裡的網站資料就會一併刪除。</p><p><!-- ANALYTICS-PLACEHOLDER --> <strong>網站瀏覽統計。</strong>如果以後給本站加上瀏覽統計，這一段會寫明用的是哪個工具、統計什麼、怎麼退出，頁面底部的提示也會在法律要求時徵求同意。在那之前，這裡不載入任何第三方的統計腳本、字型或圖片。</p><p>本站託管在 Cloudflare Workers Static Assets 上。Cloudflare 會依它自己的隱私條款處理請求的技術資料（例如 IP 位址），用來把頁面送達並防止濫用。</p><p>本站沒有開啟 Cloudflare Web Analytics、Zaraz 等注入功能。如果以後開啟，這一節也會跟著改。</p>
+      
+      
+      
+      <h2>這個網站與聯絡方式</h2>
+      <p>這個網站是靜態的，不設定 Cookie，也沒有分析工具。如有疑問或隱私權相關請求，請寫信到 <a href="mailto:tony@senderfinder.com">tony@senderfinder.com</a>，或在 <a href="https://github.com/astonysh/SenderFinder">GitHub</a> 開一個 issue。</p>
+      
+      
+      
+    </article>
+  </div>
+</div>
+</main>
+
+  <footer class="v2-foot">
+    <div class="v2-wrap v2-foot-inner">
+      <a class="v2-brand" href="index.html">
+        <img src="../assets/icon-128.png" alt="" width="32" height="32">
+        <span>SenderFinder</span>
+      </a>
+      <ul class="v2-foot-links">
+        <li><a href="install.html">安裝</a></li>
+        <li><a href="privacy.html">隱私權</a></li>
+        <li><a href="clearbit-connect-alternative.html">Clearbit Connect 替代方案</a></li>
+        <li><a href="rapportive-alternative.html">Rapportive 替代方案</a></li>
+        <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+        <li><a href="https://github.com/astonysh/SenderFinder/blob/main/LICENSE">AGPL-3.0 授權</a></li>
+      </ul>
+      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> 查詢路徑上沒有 SenderFinder 伺服器。你的 key 和歷史記錄都留在瀏覽器裡。 <a href="privacy.html">隱私權</a></p>
+      <div class="v2-foot-bottom">
+        <p>SenderFinder 是以 AGPL-3.0 授權釋出的開放原始碼軟體。</p>
+        <p>Gmail、Outlook、LinkedIn 和 Chrome 是各自擁有者的商標。</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="notice" id="notice" role="region" aria-label="Cookie 通知" data-consent-mode="false" hidden>
+    <div class="notice-inner">
+      <svg class="i i-lg" aria-hidden="true"><use href="#i-cookie"/></svg>
+      <p>本站可能會使用重視隱私的瀏覽統計來計數。SenderFinder 擴充功能是另一回事：除非你在它的設定裡把統計關掉，它每天會傳送一份匿名使用摘要。 <a href="privacy.html#cookies">隱私權</a></p>
+      <div class="notice-actions">
+        <button type="button" class="notice-btn notice-close" data-consent="ack">好</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,755 @@
+{
+  "ui": {
+    "skip": "跳到正文",
+    "navLabel": "主导航",
+    "footerNavLabel": "页脚导航",
+    "language": "语言",
+    "languageHint": "SenderFinder 提供 10 种语言。插件跟随浏览器语言。",
+    "nav": {
+      "how": "工作原理",
+      "cost": "价格",
+      "install": "安装",
+      "privacy": "隐私",
+      "faq": "常见问题"
+    },
+    "footer": {
+      "install": "安装",
+      "privacy": "隐私",
+      "clearbit": "Clearbit Connect 替代方案",
+      "rapportive": "Rapportive 替代方案",
+      "license": "AGPL-3.0 许可证",
+      "built": "SenderFinder 是以 AGPL-3.0 许可证发布的开源软件。",
+      "disclaimer": "与 LinkedIn、HubSpot、Clearbit 及任何数据供应商均无关联。产品名称归各自所有者所有。",
+      "privacyLine": "查询路径上没有 SenderFinder 服务器。你的 key 和历史都留在你的浏览器里。",
+      "trademarks": "Gmail、Outlook、LinkedIn 和 Chrome 是各自所有者的商标。"
+    },
+    "backHome": "回到首页",
+    "theme": {
+      "label": "外观",
+      "system": "跟随系统",
+      "light": "浅色",
+      "dark": "深色"
+    },
+    "notice": {
+      "aria": "Cookie 提示",
+      "text": "本站可能会使用注重隐私的访问统计来计数。SenderFinder 插件是另一回事：它每天发送一次匿名使用汇总，除非你在插件设置里关掉。",
+      "link": "隐私",
+      "ok": "好",
+      "accept": "接受",
+      "reject": "拒绝"
+    }
+  },
+  "meta": {
+    "index": {
+      "description": "开源 Chrome 插件：在 Gmail 和 Outlook 网页版显示邮件发件人的 LinkedIn 资料。自带供应商 key；匿名使用统计默认开启，可以在设置里关闭。",
+      "ogDescription": "在 Gmail 打开一封邮件，就能看到发件人的 LinkedIn 资料。开源，用你自己的 API key，没有账号。"
+    },
+    "install": {
+      "title": "安装 SenderFinder（从源码，2 分钟）| SenderFinder",
+      "description": "一步一步来：下载插件，在 Chrome 里加载已解压的扩展程序，填一个供应商 key，打开 Gmail。每一步都有截图，还有排错说明。",
+      "ogTitle": "安装 SenderFinder",
+      "ogDescription": "两分钟，五步，一个 API key。在 Chrome 应用商店上架前，先从源码安装这个开源插件。"
+    },
+    "privacy": {
+      "title": "隐私 | SenderFinder",
+      "description": "说明 SenderFinder 在 Gmail 和 Outlook 里读取什么、什么会发给你选择的供应商、LinkedIn 功能如何工作，以及匿名每日使用统计包含哪些内容。",
+      "ogTitle": "隐私 | SenderFinder",
+      "ogDescription": "说明 SenderFinder 在 Gmail 和 Outlook 里读取什么、什么会发给你选择的供应商、LinkedIn 功能如何工作，以及匿名每日使用统计包含哪些内容。"
+    },
+    "clearbit": {
+      "title": "Clearbit Connect 替代方案：开源，用你自己的 key | SenderFinder",
+      "description": "Clearbit Connect 已于 2025 年 4 月 30 日停止服务。SenderFinder 是一个开源 Chrome 插件，用你自己的 API key、不需要账号，在 Gmail 里显示是谁在给你发邮件。",
+      "ogTitle": "Gmail 的 Clearbit Connect 替代方案",
+      "ogDescription": "Clearbit Connect 已经没了。SenderFinder 在 Gmail 里显示发件人的 LinkedIn 资料。开源，用你自己的 key，没有账号。"
+    },
+    "rapportive": {
+      "title": "Rapportive 替代方案：在 Gmail 里看 LinkedIn 资料 | SenderFinder",
+      "description": "开源的 Rapportive 替代插件，在 Gmail 里显示发件人的 LinkedIn 资料。自带供应商 key；匿名使用统计默认开启，可以在设置里关闭。",
+      "ogTitle": "Gmail 的 Rapportive 替代方案",
+      "ogDescription": "Rapportive 已经没了。SenderFinder 在 Gmail 里显示发件人的 LinkedIn 资料。开源，用你自己的 key，没有账号。"
+    },
+    "notFound": {
+      "title": "页面不存在 | SenderFinder",
+      "description": "这个页面不存在。"
+    }
+  },
+  "index": {
+    "hero": {
+      "desc": "在 Gmail 打开一封邮件，侧边栏就会显示发件人是谁：姓名、职位、公司和地点。",
+      "install": "2 分钟装好",
+      "github": "在 GitHub 上查看",
+      "fine": "还没上 Chrome 应用商店。安装页会带你走完这两分钟的已解压安装。",
+      "alt": "Gmail 旁边的 SenderFinder 侧边栏，显示示例发件人资料和邮件线程中的其他联系人。",
+      "caption": "读邮件时的侧边栏。人物和公司均为虚构。",
+      "privacyLine": "查询请求从浏览器直接发送给你配置的数据供应商——查询路径上没有 SenderFinder 服务器。",
+      "badges": [
+        "key 留在你的设备上",
+        "历史留在你的设备上",
+        "匿名使用统计——一个开关就能关掉"
+      ],
+      "badge": "免费 · 开源 · AGPL-3.0"
+    },
+    "how": {
+      "title": "工作原理",
+      "intro": "三步。除了你选择的数据供应商，哪里都不用注册。",
+      "steps": [
+        {
+          "title": "安装插件",
+          "body": "Chrome 应用商店还没上架，所以要从源码加载：下载仓库，打开 <code>chrome://extensions</code>，开启开发者模式，选择 <code>extension/</code> 文件夹。这里有<a href=\"{{url.install}}\">带截图的详细步骤</a>。"
+        },
+        {
+          "title": "拿一个 API key",
+          "body": "在 <a href=\"https://app.monid.ai/\">Monid</a> 或 <a href=\"https://treg.to/\">treg</a> 创建一个 key。两个里有一个就够开始用了。"
+        },
+        {
+          "title": "填进设置里",
+          "body": "设置页会在首次安装后自动打开。粘贴 key，点「测试 key（免费）」，然后在 Gmail 里打开任意一封邮件，点一次工具栏图标。"
+        }
+      ],
+      "seeTitle": "你会看到",
+      "see": [
+        "侧边栏显示姓名、职位、公司、地点、对方当地时间，以及资料链接。邮件页面本身只在发件人名字旁边多一个很小的标记。",
+        "线程里的其他人（其他发件人、收件人、抄送）列在侧边栏里，点一下才查。",
+        "供应商返回的姓名和邮件显示名对不上时，结果标为「不确定」，并同时显示两个名字。",
+        "一个「加好友」按钮：打开对方资料页并预填邀请语。发送由你自己点。"
+      ],
+      "whereTitle": "在哪能用",
+      "where": [
+        "Gmail 网页版。",
+        "Outlook 网页版，尽力支持。",
+        "不支持：Apple Mail、Outlook 桌面版这类桌面邮件客户端，以及 Firefox（暂不支持）。"
+      ],
+      "shotAlt": "一个 Gmail 窗口，右边是 SenderFinder 侧边栏：Jane Doe 的资料，以及线程里另外三个人，其中两个还没查过。",
+      "shotCaption": "左边是 Gmail，右边是侧边栏。合成邮箱，人物虚构。"
+    },
+    "cost": {
+      "title": "最便宜的先试，然后停。",
+      "intro": "你用自己的 key 直接付钱给数据供应商。插件先试免费的那一步，再按从便宜到贵依次试付费供应商，命中就停。",
+      "waterfall": [
+        {
+          "title": "扫邮件签名",
+          "body": "免费。签名里有 linkedin.com/in 链接，那就是答案。"
+        },
+        {
+          "title": "最便宜的付费供应商",
+          "body": "先读当前的目录价。如果高于你的单次上限，这一步就跳过。"
+        },
+        {
+          "title": "没命中才换下一家",
+          "body": "大多数供应商没命中不收费。"
+        },
+        {
+          "title": "命中就停",
+          "body": "结果缓存在你的浏览器里。同一个地址不会花第二次钱。"
+        }
+      ],
+      "stats": [
+        {
+          "term": "典型的一次成功查询",
+          "value": "$0.0005–$0.03",
+          "note": "通常远低于一美分，取决于第几步命中。"
+        },
+        {
+          "term": "50 个工作邮箱实测",
+          "value": "$0.011 每条",
+          "note": "50 个邮箱的基准测试，2026 年 10 月 25 日，两把 key 都用。"
+        },
+        {
+          "term": "单次查询上限",
+          "value": "$0.05",
+          "note": "默认值。可以改。"
+        },
+        {
+          "term": "每天上限",
+          "value": "$2",
+          "note": "默认值。可以改。"
+        }
+      ],
+      "blocks": [
+        {
+          "title": "只自动查发件人",
+          "body": "打开一封邮件时，只有这封的发件人会被自动查询。自动查询有每天次数上限（默认 30 次）。线程里其他人都等你点。"
+        },
+        {
+          "title": "走不通的路不花钱",
+          "body": "个人邮箱域名（gmail.com、outlook.com、qq.com 等）和职能邮箱（info@、support@ 等）默认跳过。侧边栏里有按钮可以仍然查询。"
+        }
+      ],
+      "shotAlt": "SenderFinder 设置页：各查询步骤及其价格和命中率，以及单次上限、每天上限和自动查询次数的预算输入框。",
+      "shotCaption": "设置页：步骤顺序、价格、上限。每个数字都能改。"
+    },
+    "providers": {
+      "title": "支持的供应商",
+      "intro": "插件从你的浏览器直接调用这些服务，用的是你填进设置里的 key。",
+      "items": [
+        {
+          "title": "<a href=\"https://app.monid.ai/\">Monid</a>",
+          "body": "一个 API 聚合网关。一把 key 就能用 Hunter.io、Apollo 和 ContactOut。"
+        },
+        {
+          "title": "<a href=\"https://treg.to/\">treg</a>",
+          "body": "BlitzAPI、QuickEnrich 和 Village 的聚合网关。"
+        },
+        {
+          "title": "<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> <small class=\"fine\">（可选）</small>",
+          "body": "可选的兜底，对应 Data Legion。"
+        },
+        {
+          "title": "顺序和上限由你定",
+          "body": "在设置里可以开关供应商、调整顺序、设置两个上限。设置页还会显示你的历史和花费。"
+        }
+      ]
+    },
+    "faq": {
+      "title": "常见问题",
+      "items": [
+        {
+          "q": "免费吗？",
+          "a": "是的。插件免费，以 AGPL-3.0 许可证开源，无需账号，也无需订阅。付费查询是可选的：由你选择的供应商按次计费，记在你自己的 key 上，在你设定的上限之内。签名扫描和缓存都不花钱。"
+        },
+        {
+          "q": "需要注册账号吗？",
+          "a": "无需注册。查询从浏览器直接发送给你配置的供应商；匿名每日使用统计会发送到项目统计服务，在设置里一个开关就能关掉。"
+        },
+        {
+          "q": "该拿哪个 key？",
+          "a": "在 <a href=\"https://app.monid.ai/\">Monid</a> 或 <a href=\"https://treg.to/\">treg</a> 拿一把就够开始用了。两个都填，再可选加上 <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>，瀑布流就有更多地方可查。<a href=\"{{url.install}}#which-key\">安装页</a>有对比。"
+        },
+        {
+          "q": "怎么把花费管住？",
+          "a": "有单次上限（默认 $0.05）和每天上限（默认 $2）。只有当前打开邮件的发件人会被自动查询，每天的次数上限由你设。结果会缓存，同一个地址不会付两次钱。<a href=\"#calculator\">计算器</a>能算出某个量级大约要花多少。"
+        },
+        {
+          "q": "如果显示的不是本人呢？",
+          "a": "如果供应商返回的姓名和邮件头里的显示名对不上，结果会标为「不确定」并同时显示两个名字，由你自己判断。"
+        },
+        {
+          "q": "为什么 gmail.com 的发件人不查？",
+          "a": "个人邮箱域名和 info@ 这类职能邮箱很少能对应到资料，所以默认跳过以省钱。点侧边栏里的按钮可以仍然查询。"
+        },
+        {
+          "q": "能在 Outlook、Apple Mail 或 Firefox 里用吗？",
+          "a": "Outlook 网页版是尽力支持。Apple Mail、Outlook 桌面版这类桌面邮件客户端不支持。Firefox 暂不支持。"
+        },
+        {
+          "q": "我的数据存在哪？",
+          "a": "在你的设备上。key 存在插件自己的存储里。历史和缓存存在浏览器的 IndexedDB 里。可以在设置页导出或清空。见<a href=\"{{url.privacy}}\">隐私说明</a>。"
+        },
+        {
+          "q": "它能替代 Rapportive 或 Clearbit Connect 吗？",
+          "a": "它们以前做的事它都能做：显示一个邮箱地址背后是谁。更多可以看 <a href=\"{{url.clearbit}}\">Clearbit Connect 替代方案</a> 和 <a href=\"{{url.rapportive}}\">Rapportive 替代方案</a>。"
+        }
+      ]
+    },
+    "privacy": {
+      "title": "你的收件箱还是你的",
+      "intro": "SenderFinder 在你的浏览器里运行。查询从你的浏览器直接发给你选择的供应商——查询路径上没有 SenderFinder 服务器。",
+      "diagramAlt": "示意图：你的浏览器里放着 key、缓存和历史。只有一支箭头伸出去，就是你发起的那次查询，发送给你配置的供应商。一个打了叉的方框代表不在这条查询路径上的 SenderFinder 服务器，旁边一则旁注说明匿名每日使用统计。",
+      "flow": {
+        "browser": "你的浏览器",
+        "browserSub": "key · 缓存 · 历史",
+        "arrow": "你发起的那次查询",
+        "provider": "你选择的供应商",
+        "providerSub": "会收到邮箱地址，以及 Apollo 这一步用到的显示名和公司域名",
+        "none": "匿名每日使用统计 → SenderFinder 统计服务（默认开启，可以关闭）",
+        "noServer": "查询路径上没有 SenderFinder 服务器"
+      },
+      "staysTitle": "什么留在你的设备上",
+      "stays": [
+        "<strong>你的 key。</strong>保存在这台设备上插件自己的存储里（<code>chrome.storage.local</code>），只会发送给它所属供应商的 API。",
+        "<strong>缓存和历史。</strong>在浏览器的 IndexedDB 里，默认自动清理到 90 天和 5,000 条，可以导出成 JSON 或 CSV，也能一键删除。",
+        "<strong>设置。</strong>供应商顺序、各种上限和自动查询次数上限，全都在本机。",
+        "<strong>你的阅读习惯。</strong>你打开过哪些邮件，除了那份本地历史，没有任何地方记录。"
+      ],
+      "leavesTitle": "什么会离开你的设备，发给谁",
+      "leaves": [
+        "<strong>你查询的地址</strong>、邮件头里的显示名和公司域名，会在查询执行时连同你的 key 一起发送给你配置的供应商。 部分供应商会聚合查询服务，并可能按其披露的条款将请求转发给下游供应商。请查看各供应商条款。",
+        "<strong>目录价。</strong>付费步骤执行前，插件会读取该供应商当前的价目表。这个请求里没有任何个人数据。",
+        "<strong>资料照片。</strong>如果供应商返回了照片链接，你的浏览器会从供应商的服务器加载这张图片，和网页上的任何图片一样。",
+        "<strong>邮件正文永远不会离开。</strong>签名扫描在你自己的浏览器里查找 linkedin.com/in 链接；只有结果会被用到，而且只在本机。",
+        "匿名每日使用统计默认开启。插件每天向项目统计服务发送一次汇总，包含查询次数和结果、各供应商步骤和邮箱客户端的计数、取整后的花费、版本、语言，以及随机生成的安装 ID。在设置里关掉这个开关，就会删除安装 ID 和尚未发送的数据。汇总里绝不会有邮箱地址、姓名、域名、资料字段、key 或邮件正文。",
+        "LinkedIn 功能：在你授予可选的 linkedin.com 权限后，插件会用你自己的 LinkedIn 登录会话，请求该资料的关系度、是否有待处理的邀请、资料头像以及关联的公司链接。插件在本机读取 JSESSIONID 作为 CSRF 值；该 Cookie 只发送给 LinkedIn，结果缓存在你的设备上，不会发给任何人。你选择「加好友」时，插件会打开对方资料页，点一次「Add a note」并填入你的备注模板；发送由你自己点。插件不会自己点击 Connect 或 Send。"
+      ],
+      "factsTitle": "把细节说清楚",
+      "facts": [
+        "供应商返回的电话号码和个人邮箱地址在适配层就被丢弃；只保存职业相关的字段。",
+        "个人邮箱域名（gmail.com、outlook.com、qq.com 等）和职能邮箱（info@、support@ 等）默认跳过，永远不会发出。",
+        "AGPL-3.0 开源，所以这些你都可以在<a href=\"https://github.com/astonysh/SenderFinder/tree/main/extension\">代码</a>里核对：<code>core/store.js</code>、<code>core/providers/profile.js</code>、<code>core/telemetry.js</code>。"
+      ],
+      "link": "阅读隐私说明"
+    },
+    "sections": {
+      "how": {
+        "subtitle": "工作原理",
+        "title": "装一次，之后它自己读你的收件箱",
+        "description": "装好插件，粘贴一把供应商 key，之后你打开的每封邮件都会显示发件人是谁。",
+        "items": [
+          {
+            "icon": "mail",
+            "title": "读取当前打开的邮件",
+            "body": "发件人，以及收件人和抄送里的每一个人。正文只在本机扫描，找 linkedin.com/in 链接。"
+          },
+          {
+            "icon": "wallet",
+            "title": "最便宜的先试",
+            "body": "从免费的邮件签名扫描开始，按从便宜到贵依次试付费供应商。没命中不收费，命中就停。"
+          },
+          {
+            "icon": "key",
+            "title": "一把 key 就够",
+            "body": "treg 最便宜，Monid 覆盖最全。任意一把 key 都能跑完整个流程。"
+          },
+          {
+            "icon": "users",
+            "title": "整条邮件线程",
+            "body": "其他发件人、收件人和抄送都列在侧边栏里，每个人只有你点一下才会去查。"
+          },
+          {
+            "icon": "link",
+            "title": "在 LinkedIn 加好友",
+            "body": "侧边栏会打开对方资料页并填入你的邀请语。Connect 和 Send 都由你自己点，插件不会代劳。"
+          },
+          {
+            "icon": "database",
+            "title": "缓存和历史，都在本机",
+            "body": "结果在浏览器的 IndexedDB 里保留 90 天，可以导出成 JSON 或 CSV，也能一键删除。"
+          }
+        ]
+      },
+      "privacy": {
+        "subtitle": "隐私",
+        "title": "你的收件箱还是你的",
+        "description": "查询从你的浏览器直接发给你选择的供应商。下面说清楚什么留在这里、什么会发出去，以及匿名统计里到底有什么。",
+        "cards": [
+          {
+            "icon": "lock",
+            "title": "留在你的设备上",
+            "items": [
+              "你的供应商 key，存在插件自己的存储里",
+              "缓存和历史，在 IndexedDB 里（90 天、5,000 条）",
+              "设置、各种上限和自动查询次数上限",
+              "你读过哪些邮件：这件事不会离开浏览器"
+            ]
+          },
+          {
+            "icon": "provider",
+            "title": "发给你选择的供应商",
+            "items": [
+              "你查询的地址，连同你的 key",
+              "邮件头里的显示名",
+              "公司域名，供 Apollo 这一步使用",
+              "读取该供应商目录价的请求"
+            ]
+          },
+          {
+            "icon": "chart",
+            "title": "匿名使用统计",
+            "items": [
+              "默认开启；设置里一个开关就能关掉",
+              "每天汇总：次数、结果、花费、版本、语言",
+              "随机生成的安装 ID，关掉开关就会删除",
+              "绝不会有邮箱地址、姓名、域名、key 或邮件正文"
+            ]
+          }
+        ],
+        "link": "完整隐私说明"
+      },
+      "pricing": {
+        "subtitle": "价格",
+        "title": "免费。只有你愿意时，才需要付钱给数据供应商。",
+        "description": "插件本身不花钱。邮件签名这一步免费；付费查询由你选择的供应商按次计费，上限由你设定。",
+        "freeTitle": "SenderFinder",
+        "freePrice": "$0",
+        "freePriceNote": "永久免费",
+        "freeChecks": [
+          "开源，AGPL-3.0",
+          "无需账号，无需订阅",
+          "在你的浏览器里运行",
+          "邮件签名扫描免费",
+          "有缓存，同一个地址不会付两次钱"
+        ],
+        "freeCta": "免费安装",
+        "optionalTitle": "可选：数据供应商费用",
+        "perAddress": "每个找到的地址，付给供应商",
+        "found": "找到",
+        "bestFor": "适合",
+        "recommended": "推荐",
+        "footnote": "估算来自 2026 年 10 月 25 日 50 个邮箱的基准测试。默认值：每天 $2、单次 $0.05，都可以在设置里改。"
+      },
+      "faq": {
+        "subtitle": "常见问题",
+        "title": "简短的回答",
+        "description": "更详细的答案在安装指南和隐私说明里。"
+      },
+      "cta": {
+        "title": "两分钟，就装好了",
+        "description": "Chrome 应用商店还没上架，所以要以已解压方式加载插件。五个步骤，每步一张截图。",
+        "button": "打开安装指南"
+      }
+    }
+  },
+  "calc": {
+    "title": "你要花多少钱？",
+    "intro": "拖动滑块。每个数字都由供应商价格和下面 50 个邮箱基准测试里的命中率推出来，没有别的来源。",
+    "volumeLabel": "每天新出现的发件人地址",
+    "volumeHint": "只算之前没查过的地址。重复的发件人直接从缓存回答，不花钱。",
+    "keysLabel": "你有哪把 key？",
+    "keysBoth": "两把都有（默认瀑布流）",
+    "keysTreg": "只有 treg（最便宜）",
+    "keysMonid": "只有 Monid（覆盖最全）",
+    "skipLabel": "个人邮箱和职能邮箱的比例",
+    "skipHint": "gmail.com、outlook.com、qq.com、info@、support@ 等默认跳过，所以不花钱。",
+    "monthlyLabel": "预估每月花费",
+    "perLabel": "每个新地址的花费",
+    "hitLabel": "工作邮箱命中率",
+    "foundLabel": "每月找到",
+    "monthlyUnit": "月",
+    "usableLabel": "按这个速度，今天 $2 的上限大约能覆盖 {n} 个地址。",
+    "hitNote": "找到，指的是返回的资料姓名和邮件里的名字一致。两把 key 的主要差别在于多经常要用到那个贵的兜底。",
+    "capNote": "上限依然生效：默认每天 $2、单次 $0.05，都可以在设置里改。估算按 30 天、每个新地址查一次计算。",
+    "fallbackTitle": "几个示例量级",
+    "fallbackIntro": "没有 JavaScript 时的显示。同一个模型、同样的价格：发件人里有 {skip} 是个人邮箱或职能邮箱，会被跳过。",
+    "fallbackNote": "打开 JavaScript 看你自己的数字。上面这些都只是普通表格，不是花费承诺。",
+    "modeBoth": "两把 key",
+    "modeTreg": "只有 treg",
+    "modeMonid": "只有 Monid",
+    "perDay": "每天 {n}",
+    "assumptionsTitle": "数字是怎么来的",
+    "assumptions": [
+      "每个新发件人地址只查一次并缓存。重复的发件人花 $0，所以输入是每天的新地址数，不是读了多少封邮件。",
+      "单次命中价格是 2026 年 10 月 25 日的供应商目录价：BlitzAPI $0.0005、QuickEnrich $0.0048、Hunter $0.0049、Apollo $0.026。这些步骤没命中不收费。",
+      "各步骤的命中率来自 2026 年 10 月 25 日 50 个邮箱的基准测试：BlitzAPI 解决 48 %，剩下部分里下一步解决 19 %，再剩下的部分里再下一步解决 19 %。Apollo 被调用了 19 次，答上 17 次。",
+      "两把 key 都用时，工作邮箱的找到率约为 95 %，实测是 48 / 50（96 %）。只用 treg 就只有两个便宜的步骤在跑，只用 Monid 则是 Hunter 和 Apollo 在跑。",
+      "每月花费 = 每天新地址数 ×（1 − 跳过比例）× 30 × 每个地址的花费。免费的邮件签名扫描、可选的 Village 和 ContactOut 步骤以及 Firecrawl 都不计入。",
+      "这些是基于一批英语市场销售和增长岗位联系人的基准测试所得出的估算。你自己的收件箱可能不一样。"
+    ],
+    "priceDate": "价格和命中率：2026 年 10 月 25 日。插件每次调用前都会重新读取目录价，供应商调价会立刻反映出来。",
+    "fallbackHit": "≈ 命中 {hit}",
+    "fallbackCost": "≈ {cost} / 月"
+  },
+  "install": {
+    "title": "安装 SenderFinder",
+    "lead": "Chrome 应用商店还没上架，所以要从源码加载。两分钟，每个浏览器装一次。",
+    "note": "你需要在桌面版 Chrome、Edge 或其他 Chromium 浏览器上安装；手机版应用装不了插件。截图是英文的，插件本身跟随浏览器语言。",
+    "downloadLabel": "下载 ZIP",
+    "githubLabel": "打开仓库",
+    "stepsTitle": "五个步骤",
+    "steps": [
+      {
+        "title": "拿到代码",
+        "body": "在 <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> 上把仓库下载成 ZIP（「Code」→「Download ZIP」）然后解压，或者有 git 的话直接 clone：<br><code>git clone https://github.com/astonysh/SenderFinder.git</code>"
+      },
+      {
+        "title": "在 Chrome 里加载",
+        "body": "在新标签页打开 <code>chrome://extensions</code>。开启<strong>开发者模式</strong>（右上角），点<strong>加载已解压的扩展程序</strong>，选择仓库里的 <code>extension/</code> 文件夹——是包含 <code>manifest.json</code> 的那个文件夹，不是仓库根目录。",
+        "image": "load-unpacked.png",
+        "alt": "Chrome 的扩展程序页面，已开启开发者模式：「加载已解压的扩展程序」「打包扩展程序」和「更新」按钮在 SenderFinder 卡片上方。",
+        "caption": "开发者模式已开，SenderFinder 卡片已加载。"
+      },
+      {
+        "title": "拿一把 key 填进去",
+        "body": "安装完成后设置页会自己打开。在 <a href=\"https://app.monid.ai/\">Monid</a>（Hunter、Apollo、ContactOut）或 <a href=\"https://treg.to/\">treg</a>（BlitzAPI、QuickEnrich、Village）创建一个 key；<a href=\"https://firecrawl.link/sf\">Firecrawl</a> 是可选的。一把就够。把它填到「供应商 key」下面。",
+        "image": "settings-keys.png",
+        "alt": "SenderFinder 设置页：Monid、treg 和 Firecrawl 的供应商 key 输入框，「测试 key」按钮和查询步骤表。",
+        "caption": "首次安装后的设置页：key 在上面，步骤和价格在下面。"
+      },
+      {
+        "title": "点「测试 key（免费）」",
+        "body": "这个检查是免费的：只验证 key 并读取供应商的价格表。不查任何人，也不花任何钱。key 旁边显示「有效」就对了。"
+      },
+      {
+        "title": "打开 Gmail，点一次工具栏图标",
+        "body": "在 Gmail 里打开任意一封邮件，然后点 Chrome 工具栏里的 SenderFinder 图标。如果看不到，先点拼图图标把 SenderFinder 固定住。侧边栏会在那个标签页里打开并一直开着；之后它会跟着你正在读的邮件变。",
+        "image": "sender-in-gmail.png",
+        "alt": "一个 Gmail 窗口，右侧打开了 SenderFinder 侧边栏，显示发件人的资料和线程里的其他人。",
+        "caption": "第一次点击之后，侧边栏会在这个标签页里一直开着。"
+      }
+    ],
+    "whichKeyTitle": "该选哪把 key？",
+    "whichKeyIntro": "一把 key 就能把整个流程跑完：没有 key 的步骤会被静默跳过。这张表是 README 里供应商对比的精简版。",
+    "whichKeyHead": [
+      "Key",
+      "能跑的步骤",
+      "每次命中的价格",
+      "基准测试里的覆盖",
+      "适合"
+    ],
+    "whichKeyRows": [
+      [
+        "<strong>treg</strong>",
+        "BlitzAPI → QuickEnrich（可再开 Village）",
+        "$0.0005–0.005",
+        "大约一半到 60 % 的工作邮箱",
+        "预算紧、量大"
+      ],
+      [
+        "<strong>Monid</strong>",
+        "Hunter → Apollo（可再开 ContactOut）",
+        "$0.005–0.026",
+        "Apollo 19 次调用全部匹配",
+        "要命中率"
+      ],
+      [
+        "<strong>两把都有</strong>",
+        "整条链：BlitzAPI → Hunter → QuickEnrich → Apollo",
+        "平均 $0.011 每个地址",
+        "48 / 50（96 %）",
+        "默认选项；最便宜的步骤先试，Apollo 兜底"
+      ],
+      [
+        "Firecrawl <small class=\"fine\">（可选）</small>",
+        "只有 Data Legion",
+        "10 credits（≈ $0.008–0.032）",
+        "没有命中率数据",
+        "不建议单独用，只做兜底"
+      ]
+    ],
+    "whichKeyNote": "Apollo、Hunter 和 ContactOut 都是经 Monid 调用的；BlitzAPI、QuickEnrich 和 Village 经 treg。直接拿这些数据源自己的 API key 填进来是没用的。",
+    "troubleTitle": "如果有地方不对劲",
+    "trouble": [
+      {
+        "q": "侧边栏打不开",
+        "a": "先固定 SenderFinder：工具栏里的拼图图标 → 固定。然后在有 Gmail 标签页打开时点一次它的图标。侧边栏不会自己弹出来，而且是每个标签页各自一个。"
+      },
+      {
+        "q": "侧边栏说「未设置 key」",
+        "a": "在插件设置里填一把 key。一把就够：没有 key 的供应商对应的步骤会被跳过，不报错。"
+      },
+      {
+        "q": "在 Outlook 里没反应",
+        "a": "Outlook 网页版是尽力支持，它的页面结构经常变。如果发件人旁边的小标记没出现，开一个 issue 并贴上发件人那行的 HTML。"
+      },
+      {
+        "q": "gmail.com 或 info@ 的地址不查",
+        "a": "个人邮箱域名和职能邮箱默认跳过，因为它们很少能对应到资料。侧边栏里有「仍然查询」按钮。"
+      },
+      {
+        "q": "今天忽然不查人了",
+        "a": "要么用完了每天上限（默认 $2），要么到了自动查询次数上限（每天 30 次）。两个都能在设置里改；计数器第二天重置。"
+      },
+      {
+        "q": "以后怎么更新",
+        "a": "把新文件放进同一个文件夹，然后在 chrome://extensions 里点卡片上的刷新箭头。插件 id 固定写在 manifest 里，所以 key、缓存和历史都不会丢。"
+      }
+    ],
+    "nextTitle": "接下来",
+    "next": "读一读<a href=\"{{url.index}}#how\">工作原理</a>，看看<a href=\"{{url.index}}#cost\">一次查询要多少钱</a>，或者在<a href=\"{{url.index}}#calculator\">费用计算器</a>里算算你自己的量级。数据方面的问题在<a href=\"{{url.privacy}}\">隐私说明</a>里回答。",
+    "fine": "等 Chrome 应用商店上架后，这个页面会变成一键安装；在那之前，上面的步骤是唯一的安装方式。",
+    "privacy": {
+      "title": "隐私一览",
+      "points": [
+        "你粘贴的 key 保存在这台设备上插件自己的存储里，只会随你发起的查询发送给对应供应商的 API。",
+        "查询请求从浏览器直接发送给你配置的数据供应商——查询路径上没有 SenderFinder 服务器。匿名每日使用统计默认开启，可以在设置里关闭。",
+        "随时可以在设置里删掉 key——没有 key，任何付费查询都跑不了——或者卸载插件，卸载会删掉它的存储。"
+      ]
+    }
+  },
+  "privacy": {
+    "title": "隐私",
+    "updated": "最后更新：2026 年 10 月 25 日",
+    "prevails": "本文档是英文原文的翻译，如与英文版本有出入，以英文版本为准。",
+    "lead": "SenderFinder 会读取当前邮件的发件人和参与者，并在本机扫描正文以查找 LinkedIn 资料链接。你开启 LinkedIn 功能后，插件会用你自己的 LinkedIn 登录会话读取关系度、是否有待处理的邀请、资料头像和关联的公司链接。「加好友」辅助会在邀请对话框里点一次「Add a note」并填入备注，由你自己检查。查询字段会直接发送给你配置的数据供应商。匿名使用统计默认开启，在设置里一个开关就能关掉。",
+    "sections": [
+      {
+        "title": "SenderFinder 的运营者",
+        "blocks": [
+          "SenderFinder 是开源 Chrome 插件。查询请求从浏览器直接发送给你配置的数据供应商；查询路径上没有 SenderFinder 服务器。另有一个独立的统计服务，会接收一份匿名每日汇总，默认开启，可以在设置页关闭。该统计数据的控制者是 <a href=\"https://github.com/astonysh/SenderFinder\">astonysh/SenderFinder</a> 仓库的维护者 Tony Li。隐私请求请联系 <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>。"
+        ]
+      },
+      {
+        "title": "插件会读取和保存什么",
+        "blocks": [
+          "在 Gmail 或 Outlook 网页版中，插件会读取当前邮件的发件人和参与者，并在本机扫描正文以查找 LinkedIn 资料链接（例如邮件签名中的链接）。正文不会被保存或传输。查询历史、结果、设置和供应商 key 保存在插件或浏览器的本地存储中。缓存默认 90 天后过期，最多保存 5,000 条；你可以在设置中导出或删除这些数据。"
+        ]
+      },
+      {
+        "title": "数据供应商会收到什么",
+        "blocks": [
+          "执行查询时，被查询者的邮箱地址、显示名和公司域名会使用对应的 API key，直接发送给你配置的数据供应商。部分供应商是聚合服务，可能会把请求转发给其列出的下游服务；应以这些服务各自的条款和隐私政策为准。SenderFinder 不会收到查询地址或供应商返回结果。供应商返回的职业资料保存在本机；电话号码和个人邮箱会被丢弃。"
+        ]
+      },
+      {
+        "title": "匿名使用统计",
+        "blocks": [
+          "使用统计默认开启。插件每天向我们的 Cloudflare Worker 发送一次前一天的汇总，Worker 将其存入 Cloudflare D1。汇总包含日期、插件版本、界面语言、查询次数和结果、各供应商步骤的计数、邮箱客户端的计数、取整后的花费，以及随机生成的安装 ID。该 ID 用于区分安装，不代表某个人。在设置页关掉这个开关，就会停止发送，并删除安装 ID 和尚未发送的数据；旁边的预览按钮会显示将要发送的确切内容。",
+          "汇总不包含邮箱地址、姓名、公司域名、LinkedIn 链接、资料字段、供应商 key 或邮件正文。你可以在设置中预览将要发送的确切内容。关闭统计后，之后不会再发送，并会删除本机安装 ID 和尚未发送的汇总。如需删除服务器已收到的历史汇总，请联系 <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>，并提供预览中显示的安装 ID。"
+        ]
+      },
+      {
+        "title": "LinkedIn",
+        "blocks": [
+          "你开启某个 LinkedIn 功能时，插件会在首次使用时请求可选的 linkedin.com 权限；你随时可以在设置里撤销，而且该权限只作用于插件自己打开的标签页。有了它，插件会用你自己的 LinkedIn 登录会话，请求你正在查看的那个资料的关系度、是否有待处理的邀请、资料头像以及关联的公司链接。插件在本机读取 JSESSIONID 认证 Cookie 作为这些请求的 CSRF 值；该 Cookie 只发送给 LinkedIn，绝不发给 SenderFinder 或资料查询供应商。结果缓存在你的设备上，不会发给任何人。你选择「加好友」时，插件会打开所选资料，在邀请对话框里点一次「Add a note」并填入你的可编辑模板。插件不会替你点击 Connect 或 Send。"
+        ]
+      },
+      {
+        "title": "你的选择与 Chrome 应用商店政策",
+        "blocks": [
+          "你可以自行选择要配置的数据供应商和 API key，也可以决定查询哪些人。你可以删除 key、关闭使用统计、撤销 LinkedIn 权限、导出或清空本地历史，或卸载插件。SenderFinder 只会为展示资料和执行你发起的查询而使用邮箱数据。邮件正文只在本机处理，用于寻找 LinkedIn 资料链接；不会用于广告，也不会发给 SenderFinder 或供应商。"
+        ]
+      },
+      {
+        "id": "cookies",
+        "title": "Cookie 与本地存储",
+        "blocks": [
+          "本节说明的是 SenderFinder 网站，而不是插件。插件每天发送一份匿名使用汇总，默认开启，可在插件设置里关闭。网站本身使用的浏览器本地存储见下文。",
+          "目前本站不设置 Cookie。浏览器 localStorage 里有两项，都是因为你主动用过才存在的：<code>el-theme</code> 记住你在页头选的浅色或深色，<code>sf-notice</code> 记住你关掉了页面底部的提示。它们从不发往任何地方，清除浏览器里的站点数据就会一并删除。",
+          "<!-- ANALYTICS-PLACEHOLDER --> <strong>网站访问统计。</strong>如果以后给本站加上访问统计，这一段会写明用的是哪个工具、统计什么、怎么退出，页面底部的提示也会在法律要求时征求同意。在那之前，这里不加载任何第三方的统计脚本、字体或图片。",
+          "本站托管在 Cloudflare Workers Static Assets 上。Cloudflare 会按它自己的隐私条款处理请求的技术数据（例如 IP 地址），用来把页面送达并防止滥用。",
+          "本站没有开启 Cloudflare Web Analytics、Zaraz 等注入功能。如果以后开启，这一节也会跟着改。"
+        ]
+      },
+      {
+        "title": "本网站与联系方式",
+        "blocks": [
+          "本站是静态页面，不设置 Cookie，也没有访问统计。隐私方面的问题或请求，请写信到 <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>，或在 <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> 上开一个 issue。"
+        ]
+      }
+    ],
+    "summaryTitle": "30 秒读完",
+    "summary": [
+      "查询请求从浏览器直接发送给你配置的数据供应商——查询路径上没有 SenderFinder 服务器。",
+      "key、缓存和历史都留在这台设备上，在插件的存储和浏览器的 IndexedDB 里。你可以导出，也可以一键清空。",
+      "供应商会收到你查询的地址、邮件头里的显示名和公司域名。没有别的。",
+      "邮件正文从不离开你的浏览器：签名扫描在本机完成。",
+      "使用统计默认开启：每天向项目统计服务发送一份匿名汇总，包含查询次数、结果、花费、版本和语言，以及随机生成的安装 ID。在设置里关掉开关就会停止发送，并删除安装 ID。绝不包含邮箱地址、姓名、域名、资料字段、key 或邮件正文。",
+      "你决定配置哪些供应商、查询哪些人。你可以关闭统计、撤销 LinkedIn 权限，并导出或删除本地数据；下文会分别说明各功能读取什么以及数据去向。"
+    ]
+  },
+  "clearbit": {
+    "title": "Clearbit Connect 已经没了。这里有一个开源替代方案。",
+    "lead": "SenderFinder 在 Gmail 里就能显示是谁在给你发邮件。开源，用你自己的 API key，不需要账号。",
+    "ctaInstall": "2 分钟装好",
+    "ctaHow": "工作原理",
+    "shotAlt": "Gmail 窗口右侧是 SenderFinder 侧边栏：Jane Doe 的资料（柏林 Acme 的合作伙伴关系主管），以及线程里的其他人。",
+    "shotCaption": "合成邮箱，人物虚构。",
+    "sections": [
+      {
+        "title": "Clearbit Connect 是什么",
+        "blocks": [
+          "Clearbit Connect 是一个免费的 Gmail 和 Outlook 插件。你读邮件时，它会显示发件人的信息，比如职位和公司。",
+          "HubSpot 收购 Clearbit 之后，Clearbit Connect 被停止运营。它在 2025 年 4 月 30 日停止工作。"
+        ]
+      },
+      {
+        "title": "SenderFinder 做什么",
+        "blocks": [
+          "在 Gmail 里打开一封邮件。浏览器侧边栏会显示这个人的 LinkedIn 资料：姓名、职位、公司、地点和资料链接。线程里的其他人列在下面，点一下就能查询。",
+          "Outlook 网页版为尽力支持。"
+        ]
+      },
+      {
+        "title": "有哪些不同",
+        "list": [
+          "<strong>开源。</strong>代码在 <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> 上，采用 AGPL-3.0 许可证。你可以看清它到底做了什么。",
+          "<strong>用你自己的 key。</strong>插件从你的浏览器直接调用数据供应商，用的是你填进设置里的 key。支持 <a href=\"https://app.monid.ai/\">Monid</a> 和 <a href=\"https://treg.to/\">treg</a>，<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> 作为可选兜底。",
+          "<strong>无需注册。</strong>查询请求从浏览器直接发送给你配置的数据供应商；查询路径上没有 SenderFinder 服务器。匿名每日使用统计默认开启，可以在设置里关闭。",
+          "<strong>不被 CRM 绑住。</strong>结果留在你的浏览器里。历史可以导出为 JSON 或 CSV，带到哪里都行。",
+          "<strong>费用可预期。</strong>先试最便宜的来源，命中就停。单次上限和每天上限让花费受控。结果会缓存，同一个地址不会花第二次钱。"
+        ]
+      },
+      {
+        "title": "说清楚的局限",
+        "list": [
+          "<strong>你需要一个供应商 key。</strong>Monid 或 treg 的一把 key 就够开始用了，但得你自己去创建。",
+          "<strong>每次查询不是免费的。</strong>一次成功的查询通常花 $0.0005 到 $0.03，一般远低于一美分。大多数供应商没命中不收费。",
+          "<strong>还没有 Firefox。</strong>它跑在 Chrome 里。Apple Mail、Outlook 桌面版这类桌面邮件客户端不支持。",
+          "<strong>结果取决于供应商的覆盖。</strong>有些人是查不到的。供应商给的姓名和邮件里的显示名对不上时，结果会标为「不确定」并同时显示两个名字。"
+        ]
+      },
+      {
+        "title": "数据去了哪里",
+        "blocks": [
+          "Clearbit Connect 是一个托管服务：查询在 Clearbit 的服务器上运行，你需要登录 Clearbit 账号。",
+          "SenderFinder 是开源 Chrome 插件。查询请求从浏览器直接发送给你配置的数据供应商；查询路径上没有 SenderFinder 服务器。另有一个独立的统计服务，会接收一份匿名每日汇总，默认开启，可以在设置页关闭。该统计数据的控制者是 <a href=\"https://github.com/astonysh/SenderFinder\">astonysh/SenderFinder</a> 仓库的维护者 Tony Li。隐私请求请联系 <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>。",
+          "在<a href=\"{{url.privacy}}\">隐私说明</a>里逐条写明了什么会发送、什么会保存、什么会被丢弃。"
+        ]
+      },
+      {
+        "title": "换过来只要几分钟",
+        "ordered": [
+          "安装插件。Chrome 应用商店上架前，先<a href=\"{{url.install}}\">从源码安装</a>。",
+          "在 Monid 或 treg 创建一个 API key。",
+          "把它填进插件设置，然后在 Gmail 里打开一封邮件。"
+        ],
+        "blocksAfter": [
+          "有数据方面的问题？读<a href=\"{{url.privacy}}\">隐私说明</a>。在找更早的那个工具？看<a href=\"{{url.rapportive}}\">Rapportive 替代方案</a>页面。"
+        ]
+      }
+    ]
+  },
+  "rapportive": {
+    "title": "Rapportive 已经没了。思路还在。",
+    "lead": "SenderFinder 把 Rapportive 里最简单的那部分带回来了：在 Gmail 打开一封邮件，就能看到是谁发的。开源，用你自己的 API key，没有账号。",
+    "ctaInstall": "2 分钟装好",
+    "ctaHow": "工作原理",
+    "shotAlt": "Gmail 窗口右侧是 SenderFinder 侧边栏：线程里的其他人列在下面，每个人旁边都有查询按钮。",
+    "shotCaption": "合成邮箱，人物虚构。",
+    "sections": [
+      {
+        "title": "Rapportive 是什么",
+        "blocks": [
+          "Rapportive 是一个 Gmail 插件，会在邮件旁边显示你正在通信的那个人的 LinkedIn 资料。LinkedIn 在 2012 年收购了它，后来把它关停了。"
+        ]
+      },
+      {
+        "title": "SenderFinder 做什么",
+        "blocks": [
+          "你在 Gmail 里打开一封邮件时，浏览器侧边栏会显示发件人的姓名、职位、公司、地点，以及他的 LinkedIn 资料链接。线程里的其他人（其他发件人、收件人、抄送）列在下面，只有你点他们时才查询。邮件本身只在发件人旁边多一个小标记。",
+          "Outlook 网页版为尽力支持。"
+        ]
+      },
+      {
+        "title": "有哪些不同",
+        "list": [
+          "<strong>开源。</strong>采用 AGPL-3.0 许可证，代码在 <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> 上。没有哪家公司能替你把它关掉。",
+          "<strong>用你自己的 key。</strong>资料来自你自己选的数据供应商：<a href=\"https://app.monid.ai/\">Monid</a> 或 <a href=\"https://treg.to/\">treg</a>，<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> 作为可选兜底。插件从你的浏览器直接调用它们。",
+          "<strong>无需注册。</strong>查询请求从浏览器直接发送给你配置的数据供应商；查询路径上没有 SenderFinder 服务器。匿名每日使用统计默认开启，可以在设置里关闭。",
+          "<strong>不被 CRM 绑住。</strong>历史留在你的浏览器里。想什么时候导出成 JSON 或 CSV 都行。",
+          "<strong>姓名核对。</strong>如果供应商给的姓名和邮件里的显示名对不上，结果会标为「不确定」并显示两个名字。"
+        ]
+      },
+      {
+        "title": "说清楚的局限",
+        "list": [
+          "<strong>你需要一个供应商 key。</strong>Monid 或 treg 的一把 key 就够开始用了。",
+          "<strong>查询要花一点钱。</strong>一次成功的查询通常花 $0.0005 到 $0.03，一般远低于一美分。大多数供应商没命中不收费，结果会缓存，同一个地址不会花第二次钱。",
+          "<strong>花费有你自己设的上限。</strong>有单次上限（默认 $0.05）和每天上限（默认 $2）。只有你打开的这封邮件的发件人会被自动查询。",
+          "<strong>还没有 Firefox。</strong>它跑在 Chrome 里。桌面邮件客户端不支持。",
+          "<strong>覆盖范围因人而异。</strong>不是每个人都能查到，gmail.com 这类个人邮箱地址默认跳过。侧边栏里有按钮，可以仍然查询。"
+        ]
+      },
+      {
+        "title": "数据去了哪里",
+        "blocks": [
+          "Rapportive 也是一个托管服务：资料查询在它的服务器上运行，和你的 Rapportive 账号绑在一起。",
+          "SenderFinder 是开源 Chrome 插件。查询请求从浏览器直接发送给你配置的数据供应商；查询路径上没有 SenderFinder 服务器。另有一个独立的统计服务，会接收一份匿名每日汇总，默认开启，可以在设置页关闭。该统计数据的控制者是 <a href=\"https://github.com/astonysh/SenderFinder\">astonysh/SenderFinder</a> 仓库的维护者 Tony Li。隐私请求请联系 <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>。",
+          "在<a href=\"{{url.privacy}}\">隐私说明</a>里逐条写明了什么会发送、什么会保存、什么会被丢弃。"
+        ]
+      },
+      {
+        "title": "开始用",
+        "ordered": [
+          "安装插件。Chrome 应用商店上架前，先<a href=\"{{url.install}}\">从源码安装</a>。",
+          "在 Monid 或 treg 创建一个 API key。",
+          "把它填进插件设置，然后在 Gmail 里打开一封邮件。"
+        ],
+        "blocksAfter": [
+          "数据怎么处理，见<a href=\"{{url.privacy}}\">隐私说明</a>。从 Clearbit 过来的？看<a href=\"{{url.clearbit}}\">Clearbit Connect 替代方案</a>页面。"
+        ]
+      }
+    ]
+  },
+  "notFound": {
+    "title": "页面不存在",
+    "lead": "这个页面不存在。可能已经挪到别处了。",
+    "home": "回到首页",
+    "install": "安装 SenderFinder"
+  },
+  "works": {
+    "label": "支持",
+    "gmail": "Gmail",
+    "outlook": "Outlook 网页版",
+    "linkedin": "LinkedIn",
+    "chrome": "Chrome"
+  }
+}

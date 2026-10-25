@@ -1,0 +1,755 @@
+{
+  "ui": {
+    "skip": "본문으로 건너뛰기",
+    "navLabel": "주요 메뉴",
+    "footerNavLabel": "바닥글 메뉴",
+    "language": "언어",
+    "languageHint": "SenderFinder는 10개 언어로 제공됩니다. 확장 프로그램은 브라우저 언어를 따릅니다.",
+    "nav": {
+      "how": "작동 방식",
+      "cost": "가격",
+      "install": "설치",
+      "privacy": "개인정보",
+      "faq": "자주 묻는 질문"
+    },
+    "footer": {
+      "install": "설치",
+      "privacy": "개인정보",
+      "clearbit": "Clearbit Connect 대안",
+      "rapportive": "Rapportive 대안",
+      "license": "AGPL-3.0 라이선스",
+      "built": "SenderFinder는 AGPL-3.0 라이선스로 공개된 오픈 소스 소프트웨어입니다.",
+      "disclaimer": "LinkedIn, HubSpot, Clearbit 및 어떤 데이터 제공업체와도 제휴 관계가 없습니다. 제품 이름은 각 소유자의 것입니다.",
+      "privacyLine": "조회 경로에 SenderFinder 서버가 없습니다. 키와 기록은 브라우저에 남습니다.",
+      "trademarks": "Gmail, Outlook, LinkedIn, Chrome은 각 소유자의 상표입니다."
+    },
+    "backHome": "홈 페이지로 이동",
+    "theme": {
+      "label": "화면 테마",
+      "system": "시스템 설정",
+      "light": "라이트",
+      "dark": "다크"
+    },
+    "notice": {
+      "aria": "쿠키 안내",
+      "text": "이 웹사이트는 방문 횟수를 집계하기 위해 개인정보 친화적인 분석 도구를 사용할 수 있습니다. SenderFinder 확장 프로그램은 이와 별개이며, 설정에서 끄지 않는 한 하루에 한 번 익명 사용 통계 요약을 보냅니다.",
+      "link": "개인정보",
+      "ok": "확인",
+      "accept": "동의",
+      "reject": "거부"
+    }
+  },
+  "meta": {
+    "index": {
+      "description": "Gmail과 Outlook에서 발신자의 LinkedIn 프로필을 보여 주는 오픈소스 Chrome 확장 프로그램입니다. 제공업체 키는 직접 설정하며, 익명 사용 통계는 기본적으로 켜져 있고 끌 수 있습니다.",
+      "ogDescription": "Gmail에서 메일을 열면 발신자의 LinkedIn 프로필이 보입니다. 오픈 소스, 직접 발급한 API 키, 계정 없음."
+    },
+    "install": {
+      "title": "SenderFinder 설치(소스에서 2분) | SenderFinder",
+      "description": "단계별 안내: 확장 프로그램을 내려받아 Chrome에 압축 해제된 상태로 로드하고, 제공업체 키 하나를 붙여 넣은 뒤 Gmail을 엽니다. 단계마다 스크린숏과 문제 해결 안내가 있습니다.",
+      "ogTitle": "SenderFinder 설치",
+      "ogDescription": "2분, 다섯 단계, API 키 하나. Chrome 웹 스토어 등록이 시작되기 전까지는 소스에서 오픈 소스 확장 프로그램을 설치합니다."
+    },
+    "privacy": {
+      "title": "개인정보 | SenderFinder",
+      "description": "SenderFinder가 Gmail과 Outlook에서 읽는 내용, 직접 고른 제공업체로 전송되는 내용, LinkedIn 기능의 작동 방식, 익명 일일 사용 통계에 포함되는 내용을 설명합니다.",
+      "ogTitle": "개인정보 | SenderFinder",
+      "ogDescription": "SenderFinder가 Gmail과 Outlook에서 읽는 내용, 직접 고른 제공업체로 전송되는 내용, LinkedIn 기능의 작동 방식, 익명 일일 사용 통계에 포함되는 내용을 설명합니다."
+    },
+    "clearbit": {
+      "title": "Clearbit Connect 대안: 오픈 소스, 직접 발급한 키 | SenderFinder",
+      "description": "Clearbit Connect는 2025년 4월 30일 서비스를 종료했습니다. SenderFinder는 직접 발급한 API 키와 계정 없이 Gmail에서 누가 메일을 보냈는지 보여 주는 오픈 소스 Chrome 확장 프로그램입니다.",
+      "ogTitle": "Gmail을 위한 Clearbit Connect 대안",
+      "ogDescription": "Clearbit Connect는 사라졌습니다. SenderFinder는 Gmail에서 발신자의 LinkedIn 프로필을 보여 줍니다. 오픈 소스, 직접 발급한 키, 계정 없음."
+    },
+    "rapportive": {
+      "title": "Rapportive 대안: Gmail에서 LinkedIn 프로필 | SenderFinder",
+      "description": "Gmail에서 발신자의 LinkedIn 프로필을 보여 주는 Rapportive 오픈소스 대안입니다. 직접 발급한 키를 사용하며, 익명 사용 통계는 기본적으로 켜져 있고 끌 수 있습니다.",
+      "ogTitle": "Gmail을 위한 Rapportive 대안",
+      "ogDescription": "Rapportive는 사라졌습니다. SenderFinder는 Gmail에서 발신자의 LinkedIn 프로필을 보여 줍니다. 오픈 소스, 직접 발급한 키, 계정 없음."
+    },
+    "notFound": {
+      "title": "페이지를 찾을 수 없음 | SenderFinder",
+      "description": "이 페이지는 존재하지 않습니다."
+    }
+  },
+  "index": {
+    "hero": {
+      "desc": "Gmail에서 메일을 열면 사이드 패널에 누가 보냈는지 표시됩니다. 이름, 직책, 회사, 위치입니다.",
+      "install": "2분 만에 설치",
+      "github": "GitHub에서 보기",
+      "fine": "아직 Chrome 웹 스토어에 없습니다. 설치 페이지에서 2분짜리 압축 해제 설치 과정을 안내합니다.",
+      "alt": "Gmail 옆의 SenderFinder 사이드 패널. 베를린 Acme의 파트너십 책임자 Jane Doe와 LinkedIn 링크, 1촌 맺기 버튼, 스레드의 다른 사람들이 표시되어 있습니다.",
+      "caption": "메일을 읽는 동안의 사이드 패널. 인물과 회사는 가상입니다.",
+      "privacyLine": "조회는 브라우저에서 설정한 제공업체로 직접 전송되며, 조회 경로에 SenderFinder 서버가 없습니다.",
+      "badges": [
+        "키는 기기에 남습니다",
+        "기록은 기기에 남습니다",
+        "익명 사용 통계 — 끄는 스위치는 하나"
+      ],
+      "badge": "무료 · 오픈 소스 · AGPL-3.0"
+    },
+    "how": {
+      "title": "작동 방식",
+      "intro": "세 단계입니다. 직접 선택한 데이터 제공업체 외에는 어디에도 가입하지 않습니다.",
+      "steps": [
+        {
+          "title": "확장 프로그램 설치",
+          "body": "Chrome 웹 스토어 등록 전이라 압축 해제 방식으로 로드합니다. 저장소를 내려받아 <code>chrome://extensions</code>를 열고 개발자 모드를 켠 뒤 <code>extension/</code> 폴더를 선택합니다. <a href=\"{{url.install}}\">스크린숏이 포함된 단계별 안내</a>가 있습니다."
+        },
+        {
+          "title": "API 키 하나 발급",
+          "body": "<a href=\"https://app.monid.ai/\">Monid</a> 또는 <a href=\"https://treg.to/\">treg</a>에서 키를 만듭니다. 둘 중 하나면 시작할 수 있습니다."
+        },
+        {
+          "title": "설정에 붙여 넣기",
+          "body": "설정 페이지는 처음 설치할 때 자동으로 열립니다. 키를 붙여 넣고 “키 테스트(무료)”를 누른 다음, Gmail에서 아무 메일이나 열고 도구 모음 아이콘을 한 번 클릭합니다."
+        }
+      ],
+      "seeTitle": "표시되는 내용",
+      "see": [
+        "이름, 한 줄 소개, 회사, 위치, 현지 시간, 프로필 링크가 담긴 사이드 패널. 메일 본문에는 발신자 옆에 작은 표시만 붙습니다.",
+        "스레드의 다른 사람(다른 발신자, 받는 사람, 참조)이 패널에 나열됩니다. 이들은 클릭할 때만 조회합니다.",
+        "제공업체가 준 이름이 메일 헤더의 이름과 다르면 “불확실” 표시가 붙고 두 이름이 함께 표시됩니다.",
+        "프로필을 열고 초대 메모를 미리 채워 주는 1촌 맺기 버튼. 보내기는 직접 누릅니다."
+      ],
+      "whereTitle": "지원 환경",
+      "where": [
+        "웹 Gmail.",
+        "웹 Outlook(가능한 범위 내 지원).",
+        "지원하지 않음: Apple Mail이나 데스크톱용 Outlook 같은 데스크톱 메일 앱, Firefox(아직)."
+      ],
+      "shotAlt": "오른쪽에 SenderFinder 사이드 패널이 열린 Gmail 창. Jane Doe의 프로필과 스레드의 다른 세 사람이 보이고, 그중 두 사람은 아직 조회하지 않았습니다.",
+      "shotCaption": "왼쪽은 Gmail, 오른쪽은 사이드 패널. 합성 메일함이며 인물은 가상입니다."
+    },
+    "cost": {
+      "title": "가장 싼 단계부터. 그러다 멈춥니다.",
+      "intro": "데이터 제공업체에는 직접 발급한 키로 직접 결제합니다. 확장 프로그램은 무료 옵션을 먼저 시도하고, 그다음 유료 제공업체를 저렴한 순서대로 시도하며 처음 일치하는 곳에서 멈춥니다.",
+      "waterfall": [
+        {
+          "title": "이메일 서명 스캔",
+          "body": "무료. 서명에 linkedin.com/in 링크가 있으면 그것이 답입니다."
+        },
+        {
+          "title": "가장 저렴한 유료 제공업체",
+          "body": "현재 카탈로그 가격을 먼저 읽습니다. 조회당 상한보다 비싸면 그 단계는 건너뜁니다."
+        },
+        {
+          "title": "다음 제공업체, 실패했을 때만",
+          "body": "대부분의 제공업체는 실패해도 무료입니다."
+        },
+        {
+          "title": "일치하면 연쇄 중단",
+          "body": "결과는 브라우저에 캐시됩니다. 같은 주소로 두 번 결제하는 일은 없습니다."
+        }
+      ],
+      "stats": [
+        {
+          "term": "일반적인 조회 성공",
+          "value": "$0.0005–$0.03",
+          "note": "어느 단계에서 걸리느냐에 따라 보통 1센트를 크게 밑돕니다."
+        },
+        {
+          "term": "업무용 주소 50개로 측정",
+          "value": "주소당 $0.011",
+          "note": "50개 주소 벤치마크, 2026년 10월 25일, 두 키 모두 사용."
+        },
+        {
+          "term": "조회당 상한",
+          "value": "$0.05",
+          "note": "기본값입니다. 변경할 수 있습니다."
+        },
+        {
+          "term": "일일 상한",
+          "value": "$2",
+          "note": "기본값입니다. 변경할 수 있습니다."
+        }
+      ],
+      "blocks": [
+        {
+          "title": "자동 조회는 발신자만",
+          "body": "열어 본 메일의 발신자만 자동으로 조회됩니다. 자동 조회에는 하루 한도(기본 30회)를 설정합니다. 스레드의 다른 사람은 클릭을 기다립니다."
+        },
+        {
+          "title": "헛된 시도에 돈을 쓰지 않습니다",
+          "body": "개인 메일 도메인(gmail.com, outlook.com, qq.com 등)과 역할 주소(info@, support@ 등)는 기본적으로 건너뜁니다. 버튼을 누르면 그래도 조회할 수 있습니다."
+        }
+      ],
+      "shotAlt": "SenderFinder 설정 페이지. 조회 단계별 가격과 적중률, 조회당 상한과 일일 상한, 자동 조회 한도를 입력하는 예산 항목이 보입니다.",
+      "shotCaption": "설정: 단계 순서, 가격, 상한. 모든 숫자를 바꿀 수 있습니다."
+    },
+    "providers": {
+      "title": "지원하는 제공업체",
+      "intro": "확장 프로그램은 설정에 붙여 넣은 키로 이 서비스들을 브라우저에서 직접 호출합니다.",
+      "items": [
+        {
+          "title": "<a href=\"https://app.monid.ai/\">Monid</a>",
+          "body": "API 집계 서비스입니다. 키 하나로 Hunter.io, Apollo, ContactOut을 사용할 수 있습니다."
+        },
+        {
+          "title": "<a href=\"https://treg.to/\">treg</a>",
+          "body": "BlitzAPI, QuickEnrich, Village를 위한 집계 서비스입니다."
+        },
+        {
+          "title": "<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> <small class=\"fine\">(선택)</small>",
+          "body": "Data Legion을 위한 선택적 대체 수단입니다."
+        },
+        {
+          "title": "순서도 상한도 직접",
+          "body": "설정에서 제공업체를 켜고 끄고, 순서를 바꾸고, 두 상한을 모두 정할 수 있습니다. 설정에서는 기록과 지출도 확인할 수 있습니다."
+        }
+      ]
+    },
+    "faq": {
+      "title": "질문",
+      "items": [
+        {
+          "q": "무료인가요?",
+          "a": "예. 확장 프로그램은 AGPL-3.0 라이선스로 공개된 무료 오픈 소스이며, 계정도 구독도 없습니다. 유료 조회는 선택 사항입니다. 직접 고른 데이터 제공업체가 직접 발급한 키로 조회 건당 청구하며, 설정한 상한 안에서 이루어집니다. 서명 스캔과 캐시는 무료입니다."
+        },
+        {
+          "q": "계정이 필요한가요?",
+          "a": "가입은 필요하지 않습니다. 조회는 설정한 제공업체로 직접 전송되며, 익명 일일 사용 통계는 프로젝트의 통계 서비스로 전송되는데 설정의 스위치 하나로 끌 수 있습니다."
+        },
+        {
+          "q": "어떤 키를 받아야 하나요?",
+          "a": "<a href=\"https://app.monid.ai/\">Monid</a> 또는 <a href=\"https://treg.to/\">treg</a>의 키 하나면 시작할 수 있습니다. 둘 다, 그리고 원하면 <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>까지 추가하면 연쇄 조회에서 시도할 곳이 늘어납니다. <a href=\"{{url.install}}#which-key\">설치 페이지</a>에서 비교합니다."
+        },
+        {
+          "q": "비용은 어떻게 관리하나요?",
+          "a": "조회당 상한(기본 $0.05)과 일일 상한(기본 $2)이 있습니다. 열어 본 메일의 발신자만 자동으로 조회되며, 여기에 설정한 하루 한도가 적용됩니다. 결과는 캐시되므로 같은 주소로 두 번 결제하지 않습니다. <a href=\"#calculator\">계산기</a>에서 특정 사용량의 비용을 볼 수 있습니다."
+        },
+        {
+          "q": "엉뚱한 사람이 나오면요?",
+          "a": "제공업체가 준 이름이 메일 헤더의 표시 이름과 다르면 결과에 “불확실”이 표시되고 두 이름이 함께 나옵니다. 직접 판단할 수 있습니다."
+        },
+        {
+          "q": "gmail.com 발신자는 왜 조회하지 않나요?",
+          "a": "개인 메일 도메인과 info@ 같은 역할 주소는 프로필과 일치하는 경우가 드물어서, 비용을 아끼기 위해 기본적으로 건너뜁니다. 패널의 버튼을 누르면 그래도 조회할 수 있습니다."
+        },
+        {
+          "q": "Outlook, Apple Mail, Firefox에서도 되나요?",
+          "a": "웹 Outlook은 가능한 범위 내에서 지원합니다. Apple Mail과 데스크톱용 Outlook 같은 데스크톱 메일 앱은 지원하지 않습니다. Firefox는 아직 지원하지 않습니다."
+        },
+        {
+          "q": "데이터는 어디에 저장되나요?",
+          "a": "사용자의 기기에 저장됩니다. 키는 확장 프로그램의 스토리지에, 기록과 캐시는 브라우저의 IndexedDB에 보관됩니다. 설정 페이지에서 내보내거나 삭제할 수 있습니다. <a href=\"{{url.privacy}}\">개인정보 처리방침</a>을 참고하세요."
+        },
+        {
+          "q": "Rapportive나 Clearbit Connect를 대체하나요?",
+          "a": "예전에 그들이 하던 일, 즉 어떤 사람이 이메일 주소 뒤에 있는지 보여 주는 일을 합니다. <a href=\"{{url.clearbit}}\">Clearbit Connect 대안</a>과 <a href=\"{{url.rapportive}}\">Rapportive 대안</a>에서 더 읽어 보세요."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "받은편지함은 사용자의 것입니다",
+      "intro": "SenderFinder는 브라우저에서 실행됩니다. 조회는 직접 고른 제공업체로 곧바로 전송되며, 조회 경로에 SenderFinder 서버가 없습니다.",
+      "diagramAlt": "그림: 브라우저가 키와 캐시, 기록을 보관합니다. 밖으로 나가는 화살표는 하나뿐이며, 요청한 조회가 설정한 제공업체로 전송됩니다. 취소선 상자는 조회 경로에 없는 SenderFinder 서버를 가리키고, 옆의 설명은 익명 일일 사용 통계를 설명합니다.",
+      "flow": {
+        "browser": "내 브라우저",
+        "browserSub": "키 · 캐시 · 기록",
+        "arrow": "요청한 조회",
+        "provider": "직접 고른 제공업체",
+        "providerSub": "이메일 주소를 받고, Apollo 단계에서는 표시 이름과 회사 도메인도 함께 받습니다",
+        "none": "익명 일일 사용 통계 → SenderFinder 통계 서비스 (기본적으로 켜져 있음, 끌 수 있음)",
+        "noServer": "조회 경로에 SenderFinder 서버가 없습니다"
+      },
+      "staysTitle": "기기에 남는 것",
+      "stays": [
+        "<strong>키.</strong> 이 기기에서 확장 프로그램 자체 스토리지(<code>chrome.storage.local</code>)에 저장되며, 해당 키의 제공업체 API로만 전송됩니다.",
+        "<strong>캐시와 기록.</strong> 브라우저의 IndexedDB에 저장되고, 기본적으로 90일과 5,000개 항목으로 자동 정리되며, JSON 또는 CSV로 내보내거나 한 번의 클릭으로 삭제할 수 있습니다.",
+        "<strong>설정.</strong> 제공업체 순서, 상한, 자동 조회 한도까지 모두 로컬에 있습니다.",
+        "<strong>읽는 습관.</strong> 어떤 메일을 열었는지는 그 로컬 기록 외에는 어디에도 남지 않습니다."
+      ],
+      "leavesTitle": "기기를 벗어나는 것과 그 대상",
+      "leaves": [
+        "조회가 실행되면 <strong>조회하는 주소</strong>, 메일 헤더의 표시 이름, 회사 도메인이 사용자의 키와 함께 직접 설정한 제공업체로 전송됩니다. 일부 제공업체는 조회 서비스를 집계하며 공개한 하위 제공업체로 요청을 전달할 수 있습니다. 해당 약관을 확인하세요.",
+        "<strong>카탈로그 가격.</strong> 유료 단계가 실행되기 전에 확장 프로그램이 해당 제공업체의 현재 가격표를 읽어 옵니다. 그 요청에는 개인정보가 없습니다.",
+        "<strong>프로필 사진.</strong> 제공업체가 사진 URL을 반환하면 브라우저가 웹 페이지의 다른 이미지처럼 제공업체 서버에서 이미지를 불러옵니다.",
+        "<strong>메일 본문은 절대 아닙니다.</strong> 서명 스캔은 브라우저 안에서 linkedin.com/in 링크를 찾고, 그 결과만 로컬에서 사용됩니다.",
+        "익명 일일 사용 통계는 기본적으로 켜져 있습니다. 하루에 한 번 프로젝트의 통계 서비스가 조회 횟수와 결과, 제공업체 단계별 및 메일 클라이언트별 합계, 반올림한 지출, 버전, 언어, 무작위 설치 ID를 받습니다. 설정의 스위치 하나를 끄면 전송이 중단되고 설치 ID와 미전송 데이터가 삭제됩니다. 주소, 이름, 도메인, 프로필 항목, 키, 메시지 본문은 절대 포함되지 않습니다.",
+        "LinkedIn 기능의 경우 확장 프로그램은 선택적인 linkedin.com 권한을 허용한 뒤 사용자의 LinkedIn 세션으로 인맥 정도, 대기 중인 초대, 프로필 사진, 연결된 회사 링크를 요청합니다. JSESSIONID는 CSRF 값으로 로컬에서 읽으며, 쿠키는 LinkedIn에만 전송됩니다. 결과는 기기에 캐시되고 어디에도 전송되지 않습니다. Connect를 선택하면 프로필을 열고 “Add a note”를 한 번 클릭해 템플릿을 채웁니다. 전송은 직접 누릅니다. Connect나 Send를 스스로 클릭하지 않습니다."
+      ],
+      "factsTitle": "자세한 내용, 쉬운 말로",
+      "facts": [
+        "제공업체가 반환한 전화번호와 개인 이메일 주소는 어댑터에서 버립니다. 업무용 항목만 저장됩니다.",
+        "개인 메일 도메인(gmail.com, outlook.com, qq.com …)과 역할 주소(info@, support@ …)는 기본적으로 건너뛰며 전송되지 않습니다.",
+        "AGPL-3.0 오픈 소스이므로 <a href=\"https://github.com/astonysh/SenderFinder/tree/main/extension\">코드</a>에서 이 모든 것을 확인할 수 있습니다: <code>core/store.js</code>, <code>core/providers/profile.js</code>, <code>core/telemetry.js</code>."
+      ],
+      "link": "개인정보 처리방침 전문 읽기"
+    },
+    "sections": {
+      "how": {
+        "subtitle": "작동 방식",
+        "title": "한 번만 설정하면 받은편지함을 읽습니다",
+        "description": "확장 프로그램을 설치하고 제공업체 키 하나를 붙여 넣으면, 여는 메일마다 발신자가 누구인지 표시됩니다.",
+        "items": [
+          {
+            "icon": "mail",
+            "title": "열어 본 메일을 읽습니다",
+            "body": "발신자와 받는 사람, 참조에 있는 모든 사람입니다. 본문은 linkedin.com/in 링크를 찾기 위해서만 로컬에서 스캔합니다."
+          },
+          {
+            "icon": "wallet",
+            "title": "가장 저렴한 출처부터",
+            "body": "무료 서명 스캔에서 유료 제공업체로 이어지는 연쇄 조회이며, 저렴한 순서입니다. 실패한 조회는 무료이고, 일치하면 연쇄가 멈춥니다."
+          },
+          {
+            "icon": "key",
+            "title": "키 하나면 충분합니다",
+            "body": "가장 저렴한 조회는 treg, 가장 넓은 범위는 Monid입니다. 키 하나만 있어도 전체 흐름이 작동합니다."
+          },
+          {
+            "icon": "users",
+            "title": "스레드 전체",
+            "body": "다른 발신자와 받는 사람, 참조가 패널에 나열되며, 각 사람은 직접 클릭할 때만 조회합니다."
+          },
+          {
+            "icon": "link",
+            "title": "LinkedIn에서 연결",
+            "body": "패널이 프로필을 열고 메모를 미리 채웁니다. 연결과 보내기는 직접 누르며, 확장 프로그램이 대신 누르지는 않습니다."
+          },
+          {
+            "icon": "database",
+            "title": "캐시와 기록은 로컬에",
+            "body": "결과는 브라우저의 IndexedDB에 90일 동안 보관되며, JSON 또는 CSV로 내보내고 한 번의 클릭으로 삭제할 수 있습니다."
+          }
+        ]
+      },
+      "privacy": {
+        "subtitle": "개인정보",
+        "title": "받은편지함은 사용자의 것입니다",
+        "description": "조회는 브라우저에서 직접 고른 제공업체로 곧바로 전송됩니다. 기기에 남는 것, 밖으로 나가는 것, 익명 집계에 포함되는 것을 정확히 정리했습니다.",
+        "cards": [
+          {
+            "icon": "lock",
+            "title": "기기에 남는 것",
+            "items": [
+              "제공업체 키, 확장 프로그램 자체 스토리지에",
+              "캐시와 기록, IndexedDB에(90일, 5,000개 항목)",
+              "설정, 상한, 자동 조회 한도",
+              "어떤 메일을 열었는지에 대한 정보는 브라우저를 벗어나지 않습니다"
+            ]
+          },
+          {
+            "icon": "provider",
+            "title": "직접 고른 제공업체로 전송되는 것",
+            "items": [
+              "사용자의 키와 함께 전송되는, 조회하는 주소",
+              "메일 헤더의 표시 이름",
+              "Apollo 단계에서 쓰는 회사 도메인",
+              "해당 제공업체의 카탈로그 가격 조회 요청"
+            ]
+          },
+          {
+            "icon": "chart",
+            "title": "익명 사용 집계",
+            "items": [
+              "기본적으로 켜져 있으며, 설정의 스위치 하나로 끕니다",
+              "일일 합계: 횟수, 결과, 지출, 버전, 언어",
+              "무작위 설치 ID이며, 집계를 끄면 삭제됩니다",
+              "주소, 이름, 도메인, 키, 메시지 본문은 절대 포함되지 않습니다"
+            ]
+          }
+        ],
+        "link": "개인정보 자세히 보기"
+      },
+      "pricing": {
+        "subtitle": "가격",
+        "title": "무료입니다. 원한다면 데이터 제공업체에만 비용을 지불합니다.",
+        "description": "확장 프로그램은 무료입니다. 이메일 서명 단계는 무료이고, 유료 조회는 직접 고른 제공업체가 조회 건당 청구하며 설정한 상한이 적용됩니다.",
+        "freeTitle": "SenderFinder",
+        "freePrice": "$0",
+        "freePriceNote": "영구 무료",
+        "freeChecks": [
+          "오픈 소스, AGPL-3.0",
+          "계정 없음, 구독 없음",
+          "브라우저에서 실행",
+          "서명 스캔은 무료",
+          "캐시되므로 같은 주소로 두 번 결제하지 않습니다"
+        ],
+        "freeCta": "무료로 설치",
+        "optionalTitle": "선택 사항: 데이터 제공업체 비용",
+        "perAddress": "찾은 주소당, 제공업체에 지불",
+        "found": "찾음",
+        "bestFor": "추천 용도",
+        "recommended": "권장",
+        "footnote": "2026년 10월 25일 50개 주소 벤치마크 기준 추정치입니다. 기본값은 일일 $2, 조회당 $0.05이며 둘 다 설정에서 변경할 수 있습니다."
+      },
+      "faq": {
+        "subtitle": "질문",
+        "title": "짧은 답변",
+        "description": "더 자세한 내용은 설치 안내와 개인정보 처리방침에 있습니다."
+      },
+      "cta": {
+        "title": "2분이면 끝납니다",
+        "description": "Chrome 웹 스토어 등록은 아직 시작되지 않아 압축 해제 방식으로 로드합니다. 다섯 단계이며 단계마다 스크린숏이 있습니다.",
+        "button": "설치 안내 열기"
+      }
+    }
+  },
+  "calc": {
+    "title": "비용은 얼마나 들까요?",
+    "intro": "슬라이더를 움직여 보세요. 모든 수치는 아래 50개 주소 벤치마크의 제공업체 가격과 적중률에서만 계산합니다.",
+    "volumeLabel": "하루당 새 발신자 주소",
+    "volumeHint": "이전에 조회한 적 없는 주소만 세세요. 다시 나타난 발신자는 캐시에서 답하므로 비용이 들지 않습니다.",
+    "keysLabel": "어떤 키를 가지고 있나요?",
+    "keysBoth": "두 키 모두(기본 연쇄)",
+    "keysTreg": "treg만(가장 저렴)",
+    "keysMonid": "Monid만(가장 넓은 범위)",
+    "skipLabel": "개인 및 역할 주소 비율",
+    "skipHint": "gmail.com, outlook.com, qq.com, info@, support@ 등은 기본적으로 건너뛰므로 비용이 들지 않습니다.",
+    "monthlyLabel": "예상 월 비용",
+    "perLabel": "새 주소당 비용",
+    "hitLabel": "찾은 업무용 주소",
+    "foundLabel": "월당 찾은 주소",
+    "monthlyUnit": "월",
+    "usableLabel": "현재 비율이면 오늘의 $2 상한으로 주소 {n}개까지 조회할 수 있습니다.",
+    "hitNote": "찾음은 이름이 일치하는 프로필이 돌아온 경우입니다. 두 키의 차이는 주로 값비싼 대체 단계가 얼마나 자주 필요한지에 있습니다.",
+    "capNote": "상한은 그대로 적용됩니다. 기본값은 하루 $2, 조회당 $0.05이며 둘 다 설정에서 조정할 수 있습니다. 이 추정은 30일과 새 주소당 조회 1회를 가정합니다.",
+    "fallbackTitle": "사용량 예시",
+    "fallbackIntro": "JavaScript 없이 표시됩니다. 같은 모델, 같은 가격이며, 발신자의 {skip}는 개인 또는 역할 주소여서 건너뜁니다.",
+    "fallbackNote": "직접 숫자를 보려면 JavaScript를 켜세요. 위의 내용은 단순한 표이며 지출을 약속하는 값이 아닙니다.",
+    "modeBoth": "두 키 모두",
+    "modeTreg": "treg만",
+    "modeMonid": "Monid만",
+    "perDay": "하루 {n}개",
+    "assumptionsTitle": "숫자의 출처",
+    "assumptions": [
+      "새 발신자 주소는 한 번 조회되고 캐시됩니다. 다시 나타난 발신자는 $0이므로 입력은 읽은 메일 수가 아니라 하루당 새 주소 수입니다.",
+      "적중당 가격은 2026년 10월 25일 제공업체 카탈로그 가격입니다. BlitzAPI $0.0005, QuickEnrich $0.0048, Hunter $0.0049, Apollo $0.026입니다. 이 단계에서는 실패해도 무료입니다.",
+      "단계별 적중률은 2026년 10월 25일 50개 주소 벤치마크에서 나왔습니다. 48 %는 BlitzAPI가 해결했고, 남은 것의 19 %를 다음 단계가, 그 나머지의 19 %를 그다음 단계가 해결했습니다. Apollo는 호출된 19개 주소 중 17개에 답했습니다.",
+      "두 키를 쓰면 업무용 주소의 약 95 %를 찾고, 측정값은 50개 중 48개(96 %)입니다. treg만 쓰면 저렴한 두 단계만, Monid만 쓰면 Hunter와 Apollo가 실행됩니다.",
+      "월 비용 = 하루당 새 주소 수 × (1 − 건너뛴 비율) × 30 × 주소당 비용. 무료 이메일 서명 스캔, 선택 단계인 Village와 ContactOut, Firecrawl은 포함되지 않습니다.",
+      "영어권 세일즈·그로스 담당자를 대상으로 한 벤치마크 하나에서 나온 추정치입니다. 실제 받은편지함에서는 다를 수 있습니다."
+    ],
+    "priceDate": "가격과 적중률: 2026년 10월 25일. 확장 프로그램은 호출할 때마다 카탈로그 가격을 다시 읽으므로 제공업체 가격 변경이 즉시 반영됩니다.",
+    "fallbackHit": "≈ {hit} 찾음",
+    "fallbackCost": "≈ {cost} / 월"
+  },
+  "install": {
+    "title": "SenderFinder 설치",
+    "lead": "Chrome 웹 스토어 등록 전이라 소스에서 확장 프로그램을 로드합니다. 브라우저마다 한 번, 2분이면 됩니다.",
+    "note": "데스크톱의 Chrome, Edge 또는 다른 Chromium 브라우저가 필요합니다. 모바일 앱에는 확장 프로그램을 추가할 수 없습니다. 스크린숏은 영어로 되어 있지만, 확장 프로그램 자체는 브라우저 언어를 따릅니다.",
+    "downloadLabel": "ZIP 내려받기",
+    "githubLabel": "저장소 열기",
+    "stepsTitle": "다섯 단계",
+    "steps": [
+      {
+        "title": "코드 받기",
+        "body": "<a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a>에서 저장소를 ZIP으로 내려받아(“Code” → “Download ZIP”) 압축을 풉니다. git이 있으면 클론해도 됩니다:<br><code>git clone https://github.com/astonysh/SenderFinder.git</code>"
+      },
+      {
+        "title": "Chrome에 로드",
+        "body": "새 탭에서 <code>chrome://extensions</code>를 엽니다. 오른쪽 위의 <strong>개발자 모드</strong>를 켜고 <strong>압축해제된 확장 프로그램을 로드</strong>를 눌러 저장소 안의 <code>extension/</code> 폴더, 즉 <code>manifest.json</code>이 들어 있는 폴더를 선택합니다. 저장소 최상위 폴더가 아닙니다.",
+        "image": "load-unpacked.png",
+        "alt": "개발자 모드가 켜진 Chrome 확장 프로그램 페이지. SenderFinder 카드 위에 압축해제된 확장 프로그램을 로드, 확장 프로그램 팩, 업데이트 버튼이 보입니다.",
+        "caption": "개발자 모드를 켜고 SenderFinder 카드를 로드한 상태."
+      },
+      {
+        "title": "키 하나를 받아 붙여 넣기",
+        "body": "설치 후 설정 페이지가 자동으로 열립니다. <a href=\"https://app.monid.ai/\">Monid</a>(Hunter, Apollo, ContactOut) 또는 <a href=\"https://treg.to/\">treg</a>(BlitzAPI, QuickEnrich, Village)에서 키를 만들고, <a href=\"https://firecrawl.link/sf\">Firecrawl</a>은 선택 사항입니다. 키 하나면 충분합니다. “제공업체 키” 항목에 붙여 넣으세요.",
+        "image": "settings-keys.png",
+        "alt": "SenderFinder 설정 페이지. Monid, treg, Firecrawl의 제공업체 키 입력란과 키 테스트 버튼, 조회 단계 표가 보입니다.",
+        "caption": "처음 설치한 뒤의 설정 화면. 위에는 키, 아래에는 단계와 가격."
+      },
+      {
+        "title": "“키 테스트(무료)” 누르기",
+        "body": "이 확인은 무료입니다. 키가 유효한지 확인하고 제공업체의 가격표를 읽어 옵니다. 조회도 결제도 일어나지 않습니다. 키 옆에 “유효함”이 표시되어야 합니다."
+      },
+      {
+        "title": "Gmail을 열고 도구 모음 아이콘을 한 번 클릭",
+        "body": "Gmail에서 아무 메일이나 연 다음 Chrome 도구 모음의 SenderFinder 아이콘을 클릭합니다. 아이콘이 보이지 않으면 퍼즐 조각 아이콘을 눌러 SenderFinder를 먼저 고정하세요. 사이드 패널이 열리고 그 탭에서 계속 열린 상태로 유지되며, 이후로는 읽는 메일을 따라갑니다.",
+        "image": "sender-in-gmail.png",
+        "alt": "오른쪽에 SenderFinder 사이드 패널이 열린 Gmail 창. 발신자의 프로필과 스레드의 다른 사람들이 보입니다.",
+        "caption": "한 번 클릭하면 이 탭에서는 패널이 열린 채로 유지됩니다."
+      }
+    ],
+    "whichKeyTitle": "어떤 키를 골라야 하나요?",
+    "whichKeyIntro": "키 하나로 전체 흐름이 돌아갑니다. 키가 없는 단계는 조용히 건너뜁니다. 이 표는 README의 제공업체 비교를 줄인 것입니다.",
+    "whichKeyHead": [
+      "키",
+      "실행되는 단계",
+      "적중당 가격",
+      "벤치마크 범위",
+      "적합한 경우"
+    ],
+    "whichKeyRows": [
+      [
+        "<strong>treg</strong>",
+        "BlitzAPI → QuickEnrich (선택: Village)",
+        "$0.0005–0.005",
+        "업무용 주소의 대략 절반에서 60 %",
+        "예산이 빠듯할 때, 사용량이 많을 때"
+      ],
+      [
+        "<strong>Monid</strong>",
+        "Hunter → Apollo (선택: ContactOut)",
+        "$0.005–0.026",
+        "Apollo가 19회 호출 중 19회 일치",
+        "적중률"
+      ],
+      [
+        "<strong>둘 다</strong>",
+        "전체 연쇄: BlitzAPI → Hunter → QuickEnrich → Apollo",
+        "주소당 평균 $0.011",
+        "50개 중 48개(96 %)",
+        "기본값. 가장 싼 단계부터, Apollo는 마지막 안전망"
+      ],
+      [
+        "Firecrawl <small class=\"fine\">(선택)</small>",
+        "Data Legion만",
+        "10 크레딧(≈ $0.008–0.032)",
+        "적중률 데이터 없음",
+        "단독 사용은 권장하지 않음, 대체 수단으로만"
+      ]
+    ],
+    "whichKeyNote": "Apollo, Hunter, ContactOut은 Monid를 통해, BlitzAPI, QuickEnrich, Village는 treg를 통해 호출합니다. 이 데이터 소스에서 직접 발급한 API 키로는 여기서 아무것도 되지 않습니다.",
+    "troubleTitle": "잘 되지 않을 때",
+    "trouble": [
+      {
+        "q": "사이드 패널이 열리지 않습니다",
+        "a": "먼저 SenderFinder를 고정하세요. 도구 모음의 퍼즐 조각 아이콘 → 고정. 그다음 Gmail 탭이 열린 상태에서 아이콘을 한 번 클릭합니다. 패널은 스스로 열리지 않으며 탭마다 따로 동작합니다."
+      },
+      {
+        "q": "패널에 “키 미설정”이라고 나옵니다",
+        "a": "확장 프로그램 설정에서 키를 하나 붙여 넣으세요. 하나면 충분합니다. 해당 제공업체의 키가 없는 단계는 오류 없이 건너뜁니다."
+      },
+      {
+        "q": "Outlook에서 아무 일도 일어나지 않습니다",
+        "a": "웹 Outlook은 가능한 범위 내에서 지원하며 마크업이 자주 바뀝니다. 발신자 옆의 작은 표시가 나타나지 않으면 발신자 줄의 HTML과 함께 이슈를 열어 주세요."
+      },
+      {
+        "q": "gmail.com이나 info@ 주소가 조회되지 않습니다",
+        "a": "개인 메일 도메인과 역할 주소는 프로필로 이어지는 경우가 드물어 기본적으로 건너뜁니다. 패널에 그런 주소를 위한 “그래도 조회” 버튼이 있습니다."
+      },
+      {
+        "q": "오늘은 더 이상 조회하지 않습니다",
+        "a": "일일 상한(기본 $2)이나 자동 조회 한도(하루 30회)에 도달했습니다. 둘 다 설정에서 조정할 수 있고, 카운터는 다음 날 초기화됩니다."
+      },
+      {
+        "q": "나중에 업데이트하려면",
+        "a": "새 파일을 같은 폴더에 넣고 chrome://extensions의 카드에서 새로고침 화살표를 클릭합니다. 확장 프로그램 ID는 manifest에 고정되어 있어서 키, 캐시, 기록이 그대로 유지됩니다."
+      }
+    ],
+    "nextTitle": "다음 단계",
+    "next": "<a href=\"{{url.index}}#how\">작동 방식</a>을 읽고, <a href=\"{{url.index}}#cost\">조회 비용</a>을 확인하거나 <a href=\"{{url.index}}#calculator\">비용 계산기</a>에서 직접 사용량을 계산해 보세요. 데이터 관련 질문은 <a href=\"{{url.privacy}}\">개인정보 처리방침</a>에서 다룹니다.",
+    "fine": "Chrome 웹 스토어 등록이 시작되면 이 페이지는 한 번의 클릭으로 설치하는 페이지가 됩니다. 그때까지는 위 단계가 유일한 설치 방법입니다.",
+    "privacy": {
+      "title": "개인정보 한눈에 보기",
+      "points": [
+        "붙여 넣은 키는 이 기기의 확장 프로그램 자체 스토리지에 저장되며, 조회할 때 해당 제공업체 API로만 전송됩니다.",
+        "조회는 브라우저에서 설정한 제공업체로 직접 전송되며, 조회 경로에 SenderFinder 서버가 없습니다. 익명 일일 사용 통계는 기본적으로 켜져 있고 설정에서 끌 수 있습니다.",
+        "설정에서 언제든지 키를 삭제할 수 있고(키가 없으면 유료 조회는 실행되지 않습니다), 확장 프로그램을 제거하면 스토리지도 함께 삭제됩니다."
+      ]
+    }
+  },
+  "privacy": {
+    "title": "개인정보 처리방침",
+    "updated": "최종 업데이트: 2026년 10월 25일",
+    "prevails": "이 문서는 번역본이며, 내용이 다를 경우 영어 원문이 우선합니다.",
+    "lead": "SenderFinder는 열린 이메일의 발신자와 참여자를 읽고, 본문을 로컬에서 스캔해 LinkedIn 프로필 링크를 찾습니다. LinkedIn 기능을 켜면 사용자의 LinkedIn 세션으로 인맥 정도, 대기 중인 초대, 사진, 연결된 회사 링크를 읽습니다. Connect 도우미는 “Add a note”를 한 번 클릭하고 검토할 메모를 채웁니다. 조회 항목은 설정한 제공업체로 직접 전송됩니다. 익명 사용 통계는 기본적으로 켜져 있으며, 설정의 스위치 하나로 끕니다.",
+    "sections": [
+      {
+        "title": "SenderFinder를 운영하는 주체",
+        "blocks": [
+          "SenderFinder는 오픈소스 Chrome 확장 프로그램입니다. 조회 요청은 브라우저에서 설정한 데이터 제공업체로 직접 전송되며, 조회 경로에 SenderFinder 서버가 없습니다. 별도의 통계 서비스가 익명 일일 요약을 하나 받는데, 기본적으로 켜져 있고 설정 페이지에서 끌 수 있습니다. 통계의 데이터 관리자는 <a href=\"https://github.com/astonysh/SenderFinder\">astonysh/SenderFinder</a> 관리자인 Tony Li입니다. 개인정보 관련 요청은 <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>으로 보내 주세요."
+        ]
+      },
+      {
+        "title": "확장 프로그램이 읽고 보관하는 것",
+        "blocks": [
+          "웹 Gmail 또는 웹 Outlook에서 확장 프로그램은 열린 메시지의 발신자와 참여자를 읽습니다. LinkedIn 프로필 URL, 예를 들어 서명에 있는 링크를 찾기 위해 메시지 본문을 로컬에서 스캔합니다. 본문은 저장되지 않고 전송되지도 않습니다. 조회 기록, 결과, 설정, 제공업체 키는 확장 프로그램이나 브라우저에 로컬로 저장됩니다. 캐시된 결과는 기본적으로 90일 후 만료되며 항목 수 상한은 5,000개입니다. 설정에서 내보내거나 삭제할 수 있습니다."
+        ]
+      },
+      {
+        "title": "데이터 제공업체가 받는 것",
+        "blocks": [
+          "조회가 실행되면 선택한 사람의 이메일 주소, 표시 이름, 회사 도메인이 해당 제공업체의 API 키를 사용해 직접 설정한 제공업체로 곧바로 전송됩니다. 일부 제공업체는 집계 서비스이며 요청을 자사가 나열한 하위 서비스로 전달할 수 있고, 이때는 해당 서비스의 약관과 개인정보 처리방침이 적용됩니다. SenderFinder는 조회 주소나 제공업체의 결과를 받지 않습니다. 제공업체가 반환한 업무용 프로필 항목은 로컬에 보관하고, 전화번호와 개인 이메일 주소는 버립니다."
+        ]
+      },
+      {
+        "title": "익명 사용 통계",
+        "blocks": [
+          "사용 통계는 기본적으로 켜져 있습니다. 확장 프로그램은 하루에 한 번 전날의 요약을 Cloudflare Worker로 보내고, Worker는 이를 Cloudflare D1에 저장합니다. 요약에는 날짜, 확장 프로그램 버전, 인터페이스 언어, 조회 총계와 결과, 제공업체 단계별 횟수, 메일 클라이언트별 합계, 반올림한 지출, 무작위 설치 ID가 포함됩니다. 이 ID는 사람이 아니라 설치를 식별합니다. 설정 페이지의 스위치 하나를 끄면 요약 전송이 중단되고 설치 ID와 미전송 데이터가 삭제되며, 옆의 미리보기 버튼은 전송될 내용을 그대로 보여 줍니다.",
+          "요약에는 이메일 주소, 이름, 회사 도메인, LinkedIn URL, 프로필 항목, 제공업체 키, 메시지 본문이 포함되지 않습니다. 설정에서 전송될 내용을 그대로 미리 볼 수 있습니다. 통계를 끄면 앞으로의 전송이 중단되고 로컬 설치 ID와 미전송 요약이 삭제됩니다. 이전에 받은 요약의 삭제를 요청하려면 미리보기에 표시되는 설치 ID와 함께 <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>으로 연락하세요."
+        ]
+      },
+      {
+        "title": "LinkedIn",
+        "blocks": [
+          "LinkedIn 기능을 켜면 확장 프로그램은 처음 사용할 때 선택적인 linkedin.com 권한을 요청합니다. 이 권한은 설정에서 언제든 취소할 수 있고, 확장 프로그램이 직접 연 탭에만 적용됩니다. 이를 허용하면 확장 프로그램은 사용자의 LinkedIn 세션으로 읽고 있는 프로필의 인맥 정도, 대기 중인 초대, 프로필 사진, 연결된 회사 링크를 요청합니다. 인증 쿠키인 JSESSIONID는 이 요청의 CSRF 값으로 로컬에서 읽으며, 쿠키는 LinkedIn에만 전송되고 SenderFinder나 데이터 보강 제공업체에는 전송되지 않습니다. 결과는 기기에 캐시되고 어디에도 전송되지 않습니다. Connect를 선택하면 확장 프로그램이 선택한 프로필을 열고 초대 창에서 “Add a note”를 한 번 클릭해 편집 가능한 템플릿을 채웁니다. Connect나 Send를 클릭하지는 않습니다."
+        ]
+      },
+      {
+        "title": "사용자의 선택과 Chrome Web Store 정책",
+        "blocks": [
+          "어떤 데이터 제공업체와 API 키를 설정할지, 누구를 조회할지는 사용자가 정합니다. 키를 삭제하고, 통계를 끄고, LinkedIn 액세스를 취소하고, 로컬 기록을 내보내거나 지우고, 확장 프로그램을 제거할 수 있습니다. SenderFinder는 사용자가 요청한 조회를 표시하고 수행하는 데에만 메일함 데이터를 사용합니다. 메일 본문 텍스트는 LinkedIn 프로필 링크를 찾기 위해서만 로컬에서 처리되며, 광고에 사용되지 않고 SenderFinder나 제공업체로 전송되지 않습니다."
+        ]
+      },
+      {
+        "id": "cookies",
+        "title": "쿠키와 로컬 스토리지",
+        "blocks": [
+          "이 절은 확장 프로그램이 아니라 SenderFinder 웹사이트를 설명합니다. 확장 프로그램은 익명 일일 사용 통계 요약을 하나 보내며, 기본적으로 켜져 있고 확장 프로그램 설정에서 끌 수 있습니다. 웹사이트 자체는 아래에 설명된 브라우저 로컬 저장소를 사용합니다.",
+          "현재 이 웹사이트는 쿠키를 설정하지 않습니다. 브라우저의 localStorage에는 두 개의 항목이 사용되며, 둘 다 사용자가 요청한 경우에만 쓰입니다. <code>el-theme</code>은 헤더에서 고른 라이트 또는 다크 선택을 기억하고, <code>sf-notice</code>는 페이지 하단의 안내를 닫았다는 사실을 기억합니다. 어느 것도 어디로도 전송되지 않으며, 브라우저에서 사이트 데이터를 지우면 둘 다 삭제됩니다.",
+          "<!-- ANALYTICS-PLACEHOLDER --> <strong>웹사이트 분석.</strong> 이 사이트에 분석 도구가 추가되면 이 단락에서 도구 이름, 집계 항목, 거부 방법을 밝히고, 법에서 요구하는 경우 페이지 하단 안내에서 동의를 받습니다. 그때까지 이곳에서는 외부의 분석 스크립트, 폰트, 이미지를 전혀 불러오지 않습니다.",
+          "이 사이트는 Cloudflare Workers Static Assets에서 호스팅됩니다. Cloudflare는 페이지를 전달하고 서비스를 남용으로부터 보호하기 위해 IP 주소 같은 요청의 기술적 데이터를 자체 개인정보 약관에 따라 처리합니다.",
+          "이 사이트에서는 Cloudflare Web Analytics, Zaraz 및 이와 유사한 삽입 기능을 활성화하지 않았습니다. 이 점이 바뀌면 이 절도 함께 바뀝니다."
+        ]
+      },
+      {
+        "title": "이 웹사이트와 연락처",
+        "blocks": [
+          "이 웹사이트는 정적이며 쿠키나 분석 도구를 사용하지 않습니다. 질문이나 개인정보 관련 요청은 <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>으로 연락하거나 <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a>에 이슈를 열어 주세요."
+        ]
+      }
+    ],
+    "summaryTitle": "30초 요약",
+    "summary": [
+      "조회는 브라우저에서 설정한 제공업체로 직접 전송되며, 조회 경로에 SenderFinder 서버가 없습니다.",
+      "키, 캐시, 기록은 이 기기의 확장 프로그램 스토리지와 브라우저 IndexedDB에 남습니다. 한 번의 클릭으로 내보내거나 지울 수 있습니다.",
+      "제공업체는 조회하는 주소, 메일 헤더의 표시 이름, 회사 도메인을 받습니다. 그 밖에는 없습니다.",
+      "메일 본문은 브라우저를 벗어나지 않습니다. 서명 스캔은 로컬에서 실행됩니다.",
+      "사용 통계는 기본적으로 켜져 있습니다. 조회 횟수와 결과, 지출, 버전, 언어에 무작위 설치 ID를 더한 익명 일일 요약이 하루에 한 번 프로젝트의 통계 서비스로 전송됩니다. 설정의 스위치 하나를 끄면 전송이 중단되고 설치 ID가 삭제됩니다. 주소, 이름, 도메인, 프로필 항목, 키, 메시지 본문은 절대 포함되지 않습니다.",
+      "사용할 제공업체와 조회 대상은 사용자가 선택합니다. 통계를 끄고 LinkedIn 권한을 취소하며 로컬 데이터를 내보내거나 삭제할 수 있습니다. 각 기능의 데이터 처리 방식은 아래 설명을 참고하세요."
+    ]
+  },
+  "clearbit": {
+    "title": "Clearbit Connect는 사라졌습니다. 오픈 소스 대안은 여기 있습니다.",
+    "lead": "SenderFinder는 Gmail 안에서 누가 메일을 보냈는지 보여 줍니다. 오픈 소스이고 직접 발급한 API 키로 동작하며 계정이 필요 없습니다.",
+    "ctaInstall": "2분 만에 설치",
+    "ctaHow": "작동 방식",
+    "shotAlt": "SenderFinder 사이드 패널이 열린 Gmail. 베를린 Acme의 파트너십 책임자 Jane Doe의 프로필과 스레드의 다른 사람들이 보입니다.",
+    "shotCaption": "합성 메일함, 가상의 인물.",
+    "sections": [
+      {
+        "title": "Clearbit Connect란 무엇이었나",
+        "blocks": [
+          "Clearbit Connect는 Gmail과 Outlook용 무료 확장 프로그램이었습니다. 메일을 읽을 때 발신자의 직책과 회사 같은 정보를 보여 주었습니다.",
+          "HubSpot이 Clearbit을 인수한 뒤 Clearbit Connect는 서비스가 종료되었습니다. 2025년 4월 30일부터 작동하지 않습니다."
+        ]
+      },
+      {
+        "title": "SenderFinder가 하는 일",
+        "blocks": [
+          "Gmail에서 메일을 엽니다. 브라우저 사이드 패널에 그 사람의 LinkedIn 프로필이 표시됩니다. 이름, 한 줄 소개, 회사, 위치, 프로필 링크까지. 스레드의 다른 사람은 아래에 나열되며 클릭 한 번으로 조회할 수 있습니다.",
+          "웹 Outlook은 가능한 범위 내에서 지원합니다."
+        ]
+      },
+      {
+        "title": "무엇이 다른가",
+        "list": [
+          "<strong>오픈 소스.</strong> 코드는 AGPL-3.0 라이선스로 <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a>에 있습니다. 무엇을 하는지 직접 확인할 수 있습니다.",
+          "<strong>직접 발급한 키.</strong> 확장 프로그램은 설정에 붙여 넣은 키로 브라우저에서 데이터 제공업체를 직접 호출합니다. 지원: <a href=\"https://app.monid.ai/\">Monid</a>와 <a href=\"https://treg.to/\">treg</a>, 선택적 대체 수단으로 <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>.",
+          "<strong>가입 불필요.</strong> 조회는 브라우저에서 설정한 제공업체로 직접 전송되며, 조회 경로에 SenderFinder 서버가 없습니다. 익명 일일 사용 통계는 기본적으로 켜져 있고 설정에서 끌 수 있습니다.",
+          "<strong>CRM에 묶이지 않습니다.</strong> 결과는 브라우저에 남습니다. 기록을 JSON이나 CSV로 내보내 원하는 곳에 가져갈 수 있습니다.",
+          "<strong>예측 가능한 비용.</strong> 가장 저렴한 곳을 먼저 시도하고, 처음 일치하는 곳에서 연쇄를 멈춥니다. 조회당 상한과 일일 상한이 지출을 관리합니다. 결과는 캐시되므로 같은 주소로 두 번 결제하는 일은 없습니다."
+        ]
+      },
+      {
+        "title": "솔직한 한계",
+        "list": [
+          "<strong>제공업체 키가 필요합니다.</strong> Monid 또는 treg 키 하나면 시작할 수 있지만 직접 발급해야 합니다.",
+          "<strong>조회마다 무료는 아닙니다.</strong> 조회 성공 시 보통 $0.0005에서 $0.03 사이이며, 대개 1센트를 크게 밑돕니다. 대부분의 제공업체는 실패해도 무료입니다.",
+          "<strong>Firefox는 아직 없습니다.</strong> Chrome에서 동작합니다. Apple Mail이나 데스크톱용 Outlook 같은 데스크톱 메일 앱은 지원하지 않습니다.",
+          "<strong>결과는 제공업체의 범위에 달려 있습니다.</strong> 찾지 못하는 사람도 있습니다. 제공업체가 준 이름이 메일에 적힌 이름과 다르면 결과에 “불확실”이 표시되고 두 이름이 함께 나옵니다."
+        ]
+      },
+      {
+        "title": "데이터가 가는 곳",
+        "blocks": [
+          "Clearbit Connect는 호스팅 서비스였습니다. 조회는 Clearbit 서버에서 실행되었고 Clearbit 계정으로 로그인해야 했습니다.",
+          "SenderFinder는 오픈소스 Chrome 확장 프로그램입니다. 조회 요청은 브라우저에서 설정한 데이터 제공업체로 직접 전송되며, 조회 경로에 SenderFinder 서버가 없습니다. 별도의 통계 서비스가 익명 일일 요약을 하나 받는데, 기본적으로 켜져 있고 설정 페이지에서 끌 수 있습니다. 통계의 데이터 관리자는 <a href=\"https://github.com/astonysh/SenderFinder\">astonysh/SenderFinder</a> 관리자인 Tony Li입니다. 개인정보 관련 요청은 <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>으로 보내 주세요.",
+          "<a href=\"{{url.privacy}}\">개인정보 처리방침</a>에 무엇이 전송되고, 무엇이 보관되며, 무엇이 버려지는지 정확히 나와 있습니다."
+        ]
+      },
+      {
+        "title": "전환은 몇 분이면 됩니다",
+        "ordered": [
+          "확장 프로그램을 설치합니다. Chrome 웹 스토어 등록 전까지는 <a href=\"{{url.install}}\">소스에서 설치</a>합니다.",
+          "Monid 또는 treg에서 API 키를 만듭니다.",
+          "확장 프로그램 설정에 붙여 넣고 Gmail에서 메일을 엽니다."
+        ],
+        "blocksAfter": [
+          "데이터가 궁금하면 <a href=\"{{url.privacy}}\">개인정보 처리방침</a>을 읽어 보세요. 예전 도구를 찾고 있다면 <a href=\"{{url.rapportive}}\">Rapportive 대안</a> 페이지를 보세요."
+        ]
+      }
+    ]
+  },
+  "rapportive": {
+    "title": "Rapportive는 사라졌습니다. 아이디어는 여전히 통합니다.",
+    "lead": "SenderFinder는 Rapportive의 단순한 부분을 되살립니다. Gmail에서 메일을 열면 누가 보냈는지 볼 수 있습니다. 오픈 소스, 직접 발급한 API 키, 계정 없음.",
+    "ctaInstall": "2분 만에 설치",
+    "ctaHow": "작동 방식",
+    "shotAlt": "SenderFinder 사이드 패널이 열린 Gmail. 스레드의 다른 사람들이 각자의 조회 버튼과 함께 나열되어 있습니다.",
+    "shotCaption": "합성 메일함, 가상의 인물.",
+    "sections": [
+      {
+        "title": "Rapportive란 무엇이었나",
+        "blocks": [
+          "Rapportive는 메일을 주고받는 상대의 LinkedIn 프로필을 메시지 옆에 보여 주는 Gmail 부가 기능이었습니다. LinkedIn이 2012년에 인수했고, 이후 서비스를 종료했습니다."
+        ]
+      },
+      {
+        "title": "SenderFinder가 하는 일",
+        "blocks": [
+          "Gmail에서 메일을 열면 브라우저 사이드 패널에 발신자의 이름, 한 줄 소개, 회사, 위치, LinkedIn 프로필 링크가 표시됩니다. 스레드의 다른 사람(다른 발신자, 받는 사람, 참조)은 아래에 나열되며 클릭할 때만 조회합니다. 메일 본문에는 발신자 옆에 작은 표시만 붙습니다.",
+          "웹 Outlook은 가능한 범위 내에서 지원합니다."
+        ]
+      },
+      {
+        "title": "무엇이 다른가",
+        "list": [
+          "<strong>오픈 소스.</strong> AGPL-3.0 라이선스이며 코드는 <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a>에 있습니다. 어떤 회사도 임의로 끌 수 없습니다.",
+          "<strong>직접 발급한 키.</strong> 프로필은 직접 선택한 데이터 제공업체에서 가져옵니다: <a href=\"https://app.monid.ai/\">Monid</a> 또는 <a href=\"https://treg.to/\">treg</a>, 선택적 대체 수단으로 <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>. 확장 프로그램은 브라우저에서 이들을 직접 호출합니다.",
+          "<strong>가입 불필요.</strong> 조회는 브라우저에서 설정한 제공업체로 직접 전송되며, 조회 경로에 SenderFinder 서버가 없습니다. 익명 일일 사용 통계는 기본적으로 켜져 있고 설정에서 끌 수 있습니다.",
+          "<strong>CRM에 묶이지 않습니다.</strong> 기록은 브라우저에 남습니다. 원할 때 언제든 JSON이나 CSV로 내보낼 수 있습니다.",
+          "<strong>이름 확인.</strong> 제공업체가 준 이름이 메일의 표시 이름과 다르면 결과에 “불확실”이 표시되고 두 이름이 함께 나옵니다."
+        ]
+      },
+      {
+        "title": "솔직한 한계",
+        "list": [
+          "<strong>제공업체 키가 필요합니다.</strong> Monid 또는 treg 키 하나면 시작할 수 있습니다.",
+          "<strong>조회에는 약간의 비용이 듭니다.</strong> 조회 성공 시 보통 $0.0005에서 $0.03 사이이며, 대개 1센트를 크게 밑돕니다. 대부분의 제공업체는 실패해도 무료이고, 결과는 캐시되므로 같은 주소로 두 번 결제하는 일은 없습니다.",
+          "<strong>지출에는 직접 정한 한도가 있습니다.</strong> 조회당 상한(기본 $0.05)과 일일 상한(기본 $2)이 적용됩니다. 열어 본 메일의 발신자만 자동으로 조회합니다.",
+          "<strong>Firefox는 아직 없습니다.</strong> Chrome에서 동작합니다. 데스크톱 메일 앱은 지원하지 않습니다.",
+          "<strong>범위는 상황에 따라 다릅니다.</strong> 모든 사람을 찾지는 못하며, gmail.com 같은 개인 주소는 기본적으로 건너뜁니다. 버튼을 누르면 그래도 조회할 수 있습니다."
+        ]
+      },
+      {
+        "title": "데이터가 가는 곳",
+        "blocks": [
+          "Rapportive도 호스팅 서비스였습니다. 프로필 조회는 Rapportive 계정에 묶여 그 서버에서 실행되었습니다.",
+          "SenderFinder는 오픈소스 Chrome 확장 프로그램입니다. 조회 요청은 브라우저에서 설정한 데이터 제공업체로 직접 전송되며, 조회 경로에 SenderFinder 서버가 없습니다. 별도의 통계 서비스가 익명 일일 요약을 하나 받는데, 기본적으로 켜져 있고 설정 페이지에서 끌 수 있습니다. 통계의 데이터 관리자는 <a href=\"https://github.com/astonysh/SenderFinder\">astonysh/SenderFinder</a> 관리자인 Tony Li입니다. 개인정보 관련 요청은 <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>으로 보내 주세요.",
+          "<a href=\"{{url.privacy}}\">개인정보 처리방침</a>에 무엇이 전송되고, 무엇이 보관되며, 무엇이 버려지는지 정확히 나와 있습니다."
+        ]
+      },
+      {
+        "title": "시작하기",
+        "ordered": [
+          "확장 프로그램을 설치합니다. Chrome 웹 스토어 등록 전까지는 <a href=\"{{url.install}}\">소스에서 설치</a>합니다.",
+          "Monid 또는 treg에서 API 키를 만듭니다.",
+          "확장 프로그램 설정에 붙여 넣고 Gmail에서 메일을 엽니다."
+        ],
+        "blocksAfter": [
+          "데이터가 어떻게 처리되는지는 <a href=\"{{url.privacy}}\">개인정보 처리방침</a>에서 확인하세요. Clearbit에서 오셨나요? <a href=\"{{url.clearbit}}\">Clearbit Connect 대안</a> 페이지를 보세요."
+        ]
+      }
+    ]
+  },
+  "notFound": {
+    "title": "페이지를 찾을 수 없습니다",
+    "lead": "이 페이지는 존재하지 않습니다. 주소가 바뀌었을 수 있습니다.",
+    "home": "홈 페이지로 이동",
+    "install": "SenderFinder 설치"
+  },
+  "works": {
+    "label": "지원 환경",
+    "gmail": "Gmail",
+    "outlook": "웹 Outlook",
+    "linkedin": "LinkedIn",
+    "chrome": "Chrome"
+  }
+}

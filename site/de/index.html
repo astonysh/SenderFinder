@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SenderFinder — Den E-Mail-Absender auf LinkedIn finden</title>
+  <meta name="description" content="Open-Source-Erweiterung für Chrome, die in Gmail und Outlook die LinkedIn-Profile von E-Mail-Absendern zeigt. Eigene Anbieterschlüssel; anonyme Nutzungszählung ist standardmäßig an und lässt sich abschalten.">
+  <link rel="canonical" href="https://senderfinder.com/de/">
+  <link rel="alternate" hreflang="en" href="https://senderfinder.com/">
+  <link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/">
+  <link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/">
+  <link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/">
+  <link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/">
+  <link rel="alternate" hreflang="de" href="https://senderfinder.com/de/">
+  <link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/">
+  <link rel="alternate" hreflang="es" href="https://senderfinder.com/es/">
+  <link rel="alternate" hreflang="it" href="https://senderfinder.com/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/">
+  <link rel="alternate" hreflang="x-default" href="https://senderfinder.com/">
+  <!-- CWS-BUTTON: install buttons carry data-store-url="CWS_PLACEHOLDER"; see site/README.md -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SenderFinder">
+  <meta property="og:title" content="SenderFinder — Den E-Mail-Absender auf LinkedIn finden">
+  <meta property="og:description" content="Öffne eine E-Mail in Gmail und sieh das LinkedIn-Profil des Absenders. Open Source, eigene API-Schlüssel, kein Konto.">
+  <meta property="og:url" content="https://senderfinder.com/de/">
+  <meta property="og:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="800">
+  <meta name="color-scheme" content="light dark">
+  <script src="../assets/theme-boot.js"></script>
+  <link rel="stylesheet" href="../assets/app.css">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/icon-128.png" type="image/png" sizes="128x128">
+  <link rel="apple-touch-icon" href="../assets/icon-128.png">
+  <script type="module" src="../assets/theme.js"></script>
+  <script type="module" src="../assets/calc.js"></script>
+</head>
+<body class="v2">
+<svg class="icon-sprite" aria-hidden="true" focusable="false" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+<!-- One stroke style, 24×24, drawn for this site. Inlined into every page by scripts/build-site.js. -->
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-puzzle" viewBox="0 0 24 24"><path d="M9 4h2.2a1.8 1.8 0 1 1 3.6 0H17v3.2a1.8 1.8 0 1 0 0 3.6V14h-3.2a1.8 1.8 0 1 1-3.6 0H7v-3.2a1.8 1.8 0 1 0 0-3.6V4z"/><path d="M7 14v6h10v-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><path d="m11 11 8 8"/><path d="m15.5 15.5 2 2"/><path d="m17.5 13.5 2 2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.8 2.8L16 9.2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-mail-off" viewBox="0 0 24 24"><path d="M6.5 5H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7"/><path d="m3.5 7 8.5 6 3-2.1"/><path d="M4 20 20 4"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M16 14.5h2"/><path d="M6 6V5a2 2 0 0 1 2.4-2l8.6 2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-calculator" viewBox="0 0 24 24"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 7h8"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-shield" viewBox="0 0 24 24"><path d="M12 3 19 6v6c0 4-2.9 7.2-7 9-4.1-1.8-7-5-7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/><path d="M12 14.5v2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.2 12h17.6"/><path d="M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.2 8.2 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12.5" rx="2"/><path d="M9 20h6M12 16.5V20"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.6 2.3c-.7.3-1.2 1-1.2 1.8v.4"/><path d="M12 17h.01"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-wrench" viewBox="0 0 24 24"><path d="M15.5 3.5a5 5 0 0 0-4.3 7.5L3.6 18.6l1.8 1.8L13 12.8a5 5 0 0 0 7.5-4.3l-3 3-2.3-2.3z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-cookie" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9.6" r="1.1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="8.6" r="1.1" fill="currentColor" stroke="none"/><circle cx="15.2" cy="14" r="1.1" fill="currentColor" stroke="none"/><circle cx="10.2" cy="15.2" r="1.1" fill="currentColor" stroke="none"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-browser" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M2.5 8.5h19"/><path d="M5.5 6.3h.01M8 6.3h.01"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-provider" viewBox="0 0 24 24"><path d="M7.5 18.5a4.2 4.2 0 0 1-.3-8.4 5.6 5.6 0 0 1 10.7 1.4 3.6 3.6 0 0 1-.9 7z"/><path d="M12 16v-4"/><path d="m10.2 13.3 1.8-1.8 1.8 1.8"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-server-off" viewBox="0 0 24 24"><rect x="3" y="3.5" width="18" height="6.5" rx="2"/><rect x="3" y="14" width="18" height="6.5" rx="2"/><path d="M6 6.7h.01M6 17.2h.01"/><path d="M3.5 21 20.5 2.5"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7.5" ry="3"/><path d="M4.5 6v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6"/><path d="M4.5 12v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-eye-off" viewBox="0 0 24 24"><path d="M4 4l16 16"/><path d="M9.8 5.3A9.5 9.5 0 0 1 12 5c5 0 9 4.4 9 7a11 11 0 0 1-2.3 3.3"/><path d="M6.4 7.4A13.4 13.4 0 0 0 3 12c0 2.6 4 7 9 7a9.7 9.7 0 0 0 3.7-.7"/><path d="M10.4 10.5a2.2 2.2 0 0 0 3.1 3.1"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-cursor" viewBox="0 0 24 24"><path d="M6 3.5 18.5 12l-5.2 1.2 2.9 6.3-2 1-2.9-6.4-3.6 3.6z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-link" viewBox="0 0 24 24"><path d="M9.6 14.4 14.4 9.6"/><path d="M10.8 6.9 12.4 5.2a3.8 3.8 0 0 1 5.4 5.4l-1.7 1.6"/><path d="M13.2 17.1l-1.6 1.7a3.8 3.8 0 0 1-5.4-5.4l1.7-1.6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 20v-5"/><path d="M13 20V9"/><path d="M18 20v-8"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-github" viewBox="0 0 24 24"  fill="currentColor" stroke="none"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.1c-3.2.7-3.88-1.4-3.88-1.4-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .3.21.66.8.55C20.71 21.39 24 17.08 24 12 24 5.73 18.27.5 12 .5z"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-gmail" viewBox="0 0 24 24"><path d="M3 7.5 12 14l9-6.5"/><rect x="3" y="5" width="18" height="14" rx="2"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-outlook" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/><circle cx="12" cy="13" r="2.6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.6 10v7"/><path d="M7.6 7.2h.01"/><path d="M11.6 17v-4a2.5 2.5 0 0 1 5 0v4"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-chrome" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.6"/><path d="M12 3.1h7.7"/><path d="m4.5 7.7 3.9 6.7"/><path d="m19.5 7.7-3.9 6.7"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v14"/><path d="m6 12.5 6 6 6-6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h14"/><path d="m12.5 6 6 6-6 6"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18.5 14v4.5a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2H10"/></symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.2 20c0-3.2 2.6-5.4 5.8-5.4s5.8 2.2 5.8 5.4"/><path d="M16.2 5.6a3.2 3.2 0 0 1 0 5.8"/><path d="M18.2 20c0-2.2-.8-3.9-2.2-4.9"/></symbol>
+</svg>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="v2-nav">
+    <div class="v2-wrap">
+      <div class="v2-nav-inner">
+        <a class="v2-brand" href="index.html" aria-current="page">
+          <img src="../assets/icon-128.png" alt="" width="32" height="32">
+          <span>SenderFinder</span>
+        </a>
+
+        <nav class="v2-nav-links" aria-label="Hauptnavigation">
+          <ul>
+            <li><a href="index.html#how">So funktioniert es</a></li>
+            <li><a href="index.html#privacy">Datenschutz</a></li>
+            <li><a href="index.html#cost">Preise</a></li>
+            <li><a href="install.html">Installieren</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+          </ul>
+        </nav>
+
+        <div class="v2-nav-tools header-tools">
+          <details class="theme-switch">
+            <summary><span class="visually-hidden">Darstellung: </span><svg class="i theme-icon theme-icon-monitor" aria-hidden="true"><use href="#i-monitor"/></svg><svg class="i theme-icon theme-icon-light" aria-hidden="true"><use href="#i-sun"/></svg><svg class="i theme-icon theme-icon-dark" aria-hidden="true"><use href="#i-moon"/></svg></summary>
+            <div class="theme-menu" role="group" aria-label="Darstellung">
+              <button type="button" data-theme-value="system" aria-pressed="true">System</button>
+              <button type="button" data-theme-value="light" aria-pressed="false">Hell</button>
+              <button type="button" data-theme-value="dark" aria-pressed="false">Dunkel</button>
+            </div>
+          </details>
+          <details class="lang-switch">
+            <summary><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg><span class="visually-hidden">Sprache: </span>Deutsch</summary>
+            <div class="lang-menu">
+              <nav aria-label="Sprache">
+                <ul>
+                <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+                <li><a href="../zh-cn/index.html" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
+                <li><a href="../zh-tw/index.html" hreflang="zh-TW" lang="zh-TW">繁體中文</a></li>
+                <li><a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a></li>
+                <li><a href="../ko/index.html" hreflang="ko" lang="ko">한국어</a></li>
+                <li><a href="index.html" hreflang="de" lang="de" aria-current="page">Deutsch</a></li>
+                <li><a href="../fr/index.html" hreflang="fr" lang="fr">Français</a></li>
+                <li><a href="../es/index.html" hreflang="es" lang="es">Español</a></li>
+                <li><a href="../it/index.html" hreflang="it" lang="it">Italiano</a></li>
+                <li><a href="../pt-br/index.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+                </ul>
+              </nav>
+              <p class="fine">SenderFinder gibt es in 10 Sprachen. Die Erweiterung folgt der Sprache deines Browsers.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<main id="main">
+<div class="v2-hero">
+  <div class="v2-wrap">
+    <a class="v2-badge" href="https://github.com/astonysh/SenderFinder">
+      <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> Kostenlos · Open Source · AGPL-3.0
+    </a>
+
+    <h1 id="hero-title" class="v2-title">Den E-Mail-Absender auf <span class="v2-gradient">LinkedIn</span> finden</h1>
+
+    <p class="v2-hero-lead">Open Source · eigene Keys · Daten bleiben auf diesem Gerät</p>
+    <p class="v2-hero-desc">Öffne eine E-Mail in Gmail und das Seitenpanel zeigt, wer sie geschickt hat: Name, Position, Unternehmen und Ort.</p>
+
+    <ul class="v2-hero-meta">
+      
+      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> Schlüssel bleiben auf deinem Gerät</li>
+      
+      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> Verlauf bleibt auf deinem Gerät</li>
+      
+      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> Anonyme Nutzungszählung – ein Schalter zum Abschalten</li>
+      
+    </ul>
+
+    <div class="v2-actions">
+      <!-- CWS-BUTTON: when the store listing is live, set href="CWS_PLACEHOLDER" and change the label to "Add to Chrome". -->
+      <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder">
+        <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> Auf GitHub ansehen
+      </a>
+      <a class="v2-btn v2-btn--default" href="install.html" data-store-url="CWS_PLACEHOLDER">
+        In 2 Minuten installieren <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+      </a>
+    </div>
+    <p class="v2-hero-fine">Noch nicht im Chrome Web Store. Die Installationsseite führt durch die zwei Minuten für die Installation als entpackte Erweiterung.</p>
+
+    <figure class="v2-shot">
+      <picture>
+        <source media="(max-width: 620px)" srcset="../assets/screenshots/side-panel.png" width="359" height="800">
+        <img src="../assets/screenshots/sender-in-gmail.png" alt="Die SenderFinder-Seitenleiste neben Gmail: Jane Doe, Head of Partnerships bei Acme in Berlin, mit ihrem LinkedIn-Link, einer Schaltfläche „Vernetzen“ und den anderen Personen in der Konversation." width="1280" height="800" fetchpriority="high">
+      </picture>
+      <figcaption>Die Seitenleiste beim Lesen einer E-Mail. Personen und Unternehmen sind fiktiv.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<section class="v2-section v2-section--soft v2-cloud-section">
+  <div class="v2-wrap v2-cloud">
+    <p>Funktioniert mit</p>
+    <ul>
+      <li><svg class="i" aria-hidden="true"><use href="#i-gmail"/></svg> Gmail</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-outlook"/></svg> Outlook im Web</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-chrome"/></svg> Chrome</li>
+    </ul>
+  </div>
+</section>
+
+<section class="v2-section" id="how">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">So funktioniert es</div>
+      <h2 class="v2-h2">Einmal einrichten, dann liest sie dein Postfach</h2>
+      <p>Erweiterung installieren, einen Anbieterschlüssel einfügen, und jede E-Mail, die du öffnest, zeigt, wer dahintersteckt.</p>
+    </header>
+
+    <div class="v2-grid v2-grid--3">
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg></div>
+        <h3>Liest die geöffnete E-Mail</h3>
+        <hr class="v2-rule">
+        <p>Den Absender und alle in An und Cc. Der Text wird nur lokal nach einem linkedin.com/in-Link durchsucht.</p>
+      </article>
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-wallet"/></svg></div>
+        <h3>Zuerst die günstigste Quelle</h3>
+        <hr class="v2-rule">
+        <p>Eine Kette vom kostenlosen Signatur-Scan bis zu kostenpflichtigen Anbietern, günstigste zuerst. Fehlschläge kosten nichts, ein Treffer stoppt die Kette.</p>
+      </article>
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-key"/></svg></div>
+        <h3>Ein Schlüssel reicht</h3>
+        <hr class="v2-rule">
+        <p>treg für die günstigsten Abfragen, Monid für die beste Abdeckung. Jeder einzelne Schlüssel bringt den ganzen Ablauf zum Laufen.</p>
+      </article>
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></div>
+        <h3>Die ganze Konversation</h3>
+        <hr class="v2-rule">
+        <p>Andere Absender, An und Cc werden im Panel aufgeführt, und jede Person wird erst nachgeschlagen, wenn du sie anklickst.</p>
+      </article>
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-link"/></svg></div>
+        <h3>Auf LinkedIn vernetzen</h3>
+        <hr class="v2-rule">
+        <p>Das Panel öffnet das Profil und füllt deine Notiz aus. Auf „Vernetzen“ und „Senden“ klickst du selbst; die Erweiterung tut das nie.</p>
+      </article>
+      
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-database"/></svg></div>
+        <h3>Zwischenspeicher und Verlauf, lokal</h3>
+        <hr class="v2-rule">
+        <p>Ergebnisse bleiben 90 Tage in der IndexedDB deines Browsers, als JSON oder CSV exportierbar und mit einem Klick löschbar.</p>
+      </article>
+      
+    </div>
+  </div>
+</section>
+
+<section class="v2-section v2-section--soft" id="privacy">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">Datenschutz</div>
+      <h2 class="v2-h2">Dein Postfach bleibt deins</h2>
+      <p>Eine Abfrage geht von deinem Browser direkt an den Anbieter, den du gewählt hast. Hier steht genau, was hier bleibt, was hinausgeht und was die anonymen Zählungen enthalten.</p>
+    </header>
+
+    <figure class="v2-flow-card">
+      <div class="flow">
+        <div class="flow-row">
+          <div class="flow-box">
+            <svg class="i i-lg" aria-hidden="true"><use href="#i-browser"/></svg>
+            <h3>Dein Browser</h3>
+            <p>Schlüssel · Cache · Verlauf</p>
+          </div>
+          <div class="flow-mid">
+            <svg class="i i-arrow flow-arrow-down" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+            <svg class="i i-arrow flow-arrow-right" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            <p>die Abfrage, die du ausgelöst hast</p>
+            <p class="flow-nope"><svg class="i" aria-hidden="true"><use href="#i-server-off"/></svg> <span>Kein SenderFinder-Server im Abfrageweg</span></p>
+          </div>
+          <div class="flow-box">
+            <svg class="i i-lg" aria-hidden="true"><use href="#i-provider"/></svg>
+            <h3>Der Anbieter, den du gewählt hast</h3>
+            <p>erhält die E-Mail-Adresse, dazu den Anzeigenamen und die Unternehmensdomain für den Apollo-Schritt</p>
+          </div>
+        </div>
+        <p class="flow-none"><svg class="i" aria-hidden="true"><use href="#i-chart"/></svg> Anonyme tägliche Nutzungszählung → Statistikdienst von SenderFinder (standardmäßig an, abschaltbar)</p>
+        <p class="visually-hidden">Schaubild: Dein Browser hält die Schlüssel, den Cache und den Verlauf. Ein Pfeil führt hinaus: die Abfrage, die du ausgelöst hast, gesendet an den Anbieter, den du konfiguriert hast. Ein durchgestrichenes Feld markiert den SenderFinder-Server, der nicht im Abfrageweg liegt, und eine Randnotiz erklärt die anonyme tägliche Nutzungszählung.</p>
+      </div>
+    </figure>
+
+    <div class="v2-grid v2-grid--3 v2-grid--after">
+      
+      <article class="v2-card">
+        <h3 class="v2-card-title"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> Bleibt auf deinem Gerät</h3>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Deine Anbieterschlüssel, im eigenen Speicher der Erweiterung</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Zwischenspeicher und Verlauf, in IndexedDB (90 Tage, 5.000 Einträge)</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Einstellungen, Obergrenzen und das Limit für automatische Abfragen</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Welche E-Mails du liest: nichts davon verlässt den Browser</span></li>
+        </ul>
+      </article>
+      
+      <article class="v2-card">
+        <h3 class="v2-card-title"><svg class="i" aria-hidden="true"><use href="#i-provider"/></svg> Geht an den Anbieter, den du gewählt hast</h3>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Die Adresse, die du nachschlägst, mit deinem Schlüssel</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Der Anzeigename aus dem E-Mail-Header</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Die Unternehmensdomain, für den Apollo-Schritt</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Die Katalogpreis-Abfrage dieses Anbieters</span></li>
+        </ul>
+      </article>
+      
+      <article class="v2-card">
+        <h3 class="v2-card-title"><svg class="i" aria-hidden="true"><use href="#i-chart"/></svg> Anonyme Nutzungszählung</h3>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Standardmäßig an; ein Schalter in den Einstellungen schaltet sie ab</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Tägliche Summen: Zählungen, Ergebnisse, Ausgaben, Version, Sprache</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Eine zufällige Installations-ID, gelöscht, wenn du sie abschaltest</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Nie eine Adresse, einen Namen, eine Domain, einen Schlüssel oder Nachrichtentext</span></li>
+        </ul>
+      </article>
+      
+    </div>
+
+    <p class="v2-center"><a class="v2-btn v2-btn--outline v2-btn--sm" href="privacy.html">Datenschutz im Detail <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></p>
+  </div>
+</section>
+
+<section class="v2-section" id="pricing">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">Preise</div>
+      <h2 class="v2-h2">Kostenlos. Du zahlst nur den Datenanbieter, wenn du willst.</h2>
+      <p>Die Erweiterung kostet nichts. Der Schritt mit der E-Mail-Signatur ist kostenlos, und kostenpflichtige Abfragen rechnet der Anbieter ab, den du wählst – pro Treffer, innerhalb der Obergrenzen, die du setzt.</p>
+    </header>
+
+    <article class="v2-free">
+      <div class="v2-free-main">
+        <h3>SenderFinder</h3>
+        <div class="v2-free-price"><strong>$0</strong><span>für immer kostenlos</span></div>
+        <ul class="v2-free-checks">
+          
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Open Source, AGPL-3.0</span></li>
+          
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Kein Konto, kein Abo</span></li>
+          
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Läuft in deinem Browser</span></li>
+          
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Der Signatur-Scan ist kostenlos</span></li>
+          
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Zwischengespeichert, eine Adresse wird nie zweimal bezahlt</span></li>
+          
+        </ul>
+      </div>
+      <div class="v2-free-action">
+        <a class="v2-btn v2-btn--default" href="install.html">Kostenlos installieren <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </article>
+
+    <h3 class="v2-subhead">Optional: Kosten der Datenanbieter</h3>
+
+    <div class="v2-grid v2-grid--3">
+      
+      <article class="v2-price v2-price--light">
+        
+        <h3>Nur treg</h3>
+        <div class="v2-price-value"><strong>0,0007 $</strong></div>
+        <p class="v2-price-hit">pro gefundener Adresse, an den Anbieter gezahlt</p>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Am besten für: knappe Budgets, hohes Volumen</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>BlitzAPI → QuickEnrich</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>58 % gefunden</span></li>
+        </ul>
+      </article>
+      
+      <article class="v2-price v2-price--light v2-price--featured">
+        <div class="v2-price-tag">Empfohlen</div>
+        <h3>Beide Schlüssel</h3>
+        <div class="v2-price-value"><strong>0,0100 $</strong></div>
+        <p class="v2-price-hit">pro gefundener Adresse, an den Anbieter gezahlt</p>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Am besten für: der Standard; günstigster Schritt zuerst, Apollo als Rückfall</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>BlitzAPI → Hunter → QuickEnrich → Apollo</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>96 % gefunden</span></li>
+        </ul>
+      </article>
+      
+      <article class="v2-price v2-price--light">
+        
+        <h3>Nur Monid</h3>
+        <div class="v2-price-value"><strong>0,0220 $</strong></div>
+        <p class="v2-price-hit">pro gefundener Adresse, an den Anbieter gezahlt</p>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Am besten für: Trefferquote</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>Hunter → Apollo</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>91 % gefunden</span></li>
+        </ul>
+      </article>
+      
+    </div>
+
+    <div class="v2-calc-card">
+      <div class="calc-live" id="calc"
+           data-monthly-label="Geschätzte Kosten pro Monat"
+           data-per-label="Kosten pro neuer Adresse"
+           data-hit-label="Gefundene geschäftliche Adressen"
+           data-found-label="Funde pro Monat"
+           data-usable="Das heutige Tagesbudget von $2 würde bei dieser Rate etwa {n} Adressen abdecken."
+           data-cap-daily="2"
+           data-cap-lookup="0.05"
+           data-day-limit="30">
+        <form class="calc-form">
+          <div class="field">
+            <label for="calc-volume">Neue Absenderadressen pro Tag</label>
+            <div class="field-row">
+              <input type="range" id="calc-volume" min="0" max="120" step="1" value="20">
+              <output for="calc-volume" id="calc-volume-out">20</output>
+            </div>
+            <p class="hint">Zähle nur Adressen, die du noch nicht nachgeschlagen hast. Ein wiederholter Absender wird aus dem Cache beantwortet und kostet nichts.</p>
+          </div>
+          <div class="field">
+            <label for="calc-keys">Welchen Schlüssel hast du?</label>
+            <select id="calc-keys">
+              <option value="both" selected>Beide Schlüssel (Standard-Kette)</option>
+              <option value="treg">Nur treg (am günstigsten)</option>
+              <option value="monid">Nur Monid (beste Abdeckung)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="calc-skip">Anteil privater Adressen und Funktionsadressen</label>
+            <div class="field-row">
+              <input type="range" id="calc-skip" min="0" max="80" step="5" value="20">
+              <output for="calc-skip" id="calc-skip-out">20 %</output>
+            </div>
+            <p class="hint">gmail.com, outlook.com, qq.com, info@, support@ und ähnliche werden standardmäßig übersprungen, kosten also nichts.</p>
+          </div>
+        </form>
+
+        <div class="calc-out" aria-live="polite">
+          <dl class="stats">
+            <div class="stat">
+              <dt>Geschätzte Kosten pro Monat</dt>
+              <dd><span id="calc-monthly">—</span> <small class="unit">Monat</small></dd>
+            </div>
+            <div class="stat"><dt>Kosten pro neuer Adresse</dt><dd><span id="calc-per">—</span></dd></div>
+            <div class="stat"><dt>Gefundene geschäftliche Adressen</dt><dd><span id="calc-hit">—</span></dd></div>
+            <div class="stat"><dt>Funde pro Monat</dt><dd><span id="calc-found">—</span></dd></div>
+          </dl>
+          <p class="fine" id="calc-usable"></p>
+          <p class="fine">„Gefunden“ heißt, dass ein Profil mit passendem Namen zurückkam. Die beiden Schlüssel unterscheiden sich vor allem darin, wie oft der teure Fallback gebraucht wird.</p>
+          <p class="fine">Die Obergrenzen gelten weiter: $2 pro Tag und $0.05 pro Abfrage als Standard, beides in den Einstellungen änderbar. Die Schätzung geht von 30 Tagen und einer Abfrage pro neuer Adresse aus.</p>
+        </div>
+      </div>
+
+      <div class="calc-fallback">
+        <h3>Beispielvolumen</h3>
+        <p class="section-intro">Angezeigt ohne JavaScript. Gleiches Modell, gleiche Preise: 20 % der Absender sind private Adressen oder Funktionsadressen und werden übersprungen.</p>
+        <div class="grid-3">
+          
+          <div>
+            <h4>Beide Schlüssel</h4>
+            <dl class="stats">
+              
+              <div class="stat"><dt>10 pro Tag</dt><dd>≈ 2,39 $ / Monat <small>≈ 96 % gefunden</small></dd></div>
+              
+              <div class="stat"><dt>30 pro Tag</dt><dd>≈ 7,18 $ / Monat <small>≈ 96 % gefunden</small></dd></div>
+              
+              <div class="stat"><dt>100 pro Tag</dt><dd>≈ 23,95 $ / Monat <small>≈ 96 % gefunden</small></dd></div>
+              
+            </dl>
+          </div>
+          
+          <div>
+            <h4>Nur treg</h4>
+            <dl class="stats">
+              
+              <div class="stat"><dt>10 pro Tag</dt><dd>≈ 0,17 $ / Monat <small>≈ 58 % gefunden</small></dd></div>
+              
+              <div class="stat"><dt>30 pro Tag</dt><dd>≈ 0,51 $ / Monat <small>≈ 58 % gefunden</small></dd></div>
+              
+              <div class="stat"><dt>100 pro Tag</dt><dd>≈ 1,71 $ / Monat <small>≈ 58 % gefunden</small></dd></div>
+              
+            </dl>
+          </div>
+          
+          <div>
+            <h4>Nur Monid</h4>
+            <dl class="stats">
+              
+              <div class="stat"><dt>10 pro Tag</dt><dd>≈ 5,28 $ / Monat <small>≈ 91 % gefunden</small></dd></div>
+              
+              <div class="stat"><dt>30 pro Tag</dt><dd>≈ 15,83 $ / Monat <small>≈ 91 % gefunden</small></dd></div>
+              
+              <div class="stat"><dt>100 pro Tag</dt><dd>≈ 52,78 $ / Monat <small>≈ 91 % gefunden</small></dd></div>
+              
+            </dl>
+          </div>
+          
+        </div>
+        <p class="fine">Schalte JavaScript ein für deine eigenen Zahlen. Alles oben ist eine schlichte Tabelle, kein Versprechen über Ausgaben.</p>
+      </div>
+    </div>
+
+    <details class="v2-details">
+      <summary>Woher die Zahlen kommen</summary>
+      <div>
+        <ul><li>Jede neue Absenderadresse wird einmal nachgeschlagen und zwischengespeichert. Wiederholte Absender kosten $0, deshalb ist die Eingabe neue Adressen pro Tag, nicht gelesene E-Mails.</li><li>Die Preise pro Treffer sind die Katalogpreise der Anbieter am 25. Oktober 2026: BlitzAPI $0.0005, QuickEnrich $0.0048, Hunter $0.0049, Apollo $0.026. Ein Fehlschlag ist bei diesen Schritten kostenlos.</li><li>Die Trefferquoten pro Schritt stammen aus dem Benchmark mit 50 Adressen vom 25. Oktober 2026: 48 % wurden von BlitzAPI gelöst, danach 19 % des Restes vom nächsten Schritt, 19 % des verbleibenden Restes vom Schritt danach. Apollo beantwortete 17 der 19 Adressen, für die es aufgerufen wurde.</li><li>Mit beiden Schlüsseln werden so etwa 95 % der geschäftlichen Adressen gefunden, gemessen waren es 48 von 50 (96 %). Mit treg allein laufen nur die beiden günstigen Schritte, mit Monid allein Hunter und Apollo.</li><li>Monatliche Kosten = neue Adressen pro Tag × (1 − übersprungener Anteil) × 30 × Kosten pro Adresse. Der kostenlose Scan der E-Mail-Signatur, die optionalen Schritte Village und ContactOut und Firecrawl sind nicht enthalten.</li><li>Das sind Schätzungen aus einem Benchmark mit englischsprachigen Vertriebs- und Growth-Kontakten. Dein eigenes Postfach kann sich anders verhalten.</li></ul>
+        <p class="fine">Preise und Trefferquoten: 25. Oktober 2026. Die Erweiterung liest den Katalogpreis vor jedem Aufruf neu, eine Preisänderung beim Anbieter ist also sofort sichtbar.</p>
+      </div>
+    </details>
+    <p class="v2-note fine">Schätzwerte aus dem Benchmark mit 50 Adressen vom 25. Oktober 2026. Standard: $2 pro Tag und $0.05 pro Abfrage, beides in den Einstellungen änderbar.</p>
+  </div>
+</section>
+
+<section class="v2-section v2-section--soft" id="faq">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">Fragen</div>
+      <h2 class="v2-h2">Die kurzen Antworten</h2>
+      <p>Ausführlichere stehen in der Installationsanleitung und in der Datenschutzerklärung.</p>
+    </header>
+
+    <div class="v2-faq">
+      
+      <details>
+        <summary>Ist es kostenlos?</summary>
+        <div class="v2-faq-body"><p>Ja. Die Erweiterung ist kostenlos und Open Source unter der AGPL-3.0-Lizenz, ohne Konto und ohne Abo. Kostenpflichtige Abfragen sind optional: Der Datenanbieter, den du wählst, rechnet sie über deinen eigenen Schlüssel ab, pro Treffer, innerhalb der Obergrenzen, die du setzt. Der Signatur-Scan und der Zwischenspeicher kosten nichts.</p></div>
+      </details>
+      
+      <details>
+        <summary>Brauche ich ein Konto?</summary>
+        <div class="v2-faq-body"><p>Eine Registrierung ist nicht nötig. Abfragen gehen direkt an den Anbieter, den du konfigurierst; anonyme tägliche Nutzungszählung geht an den Statistikdienst des Projekts, und ein Schalter in den Einstellungen schaltet sie ab.</p></div>
+      </details>
+      
+      <details>
+        <summary>Welchen Schlüssel sollte ich holen?</summary>
+        <div class="v2-faq-body"><p>Ein Schlüssel von <a href="https://app.monid.ai/">Monid</a> oder <a href="https://treg.to/">treg</a> reicht für den Anfang. Mit beiden, und optional <a href="https://www.firecrawl.dev/">Firecrawl</a>, hat die Kette mehr Stellen zum Nachsehen. Die <a href="install.html#which-key">Installationsseite</a> vergleicht sie.</p></div>
+      </details>
+      
+      <details>
+        <summary>Wie behalte ich die Kosten im Griff?</summary>
+        <div class="v2-faq-body"><p>Es gibt eine Obergrenze pro Abfrage (Standard $0.05) und ein Tagesbudget (Standard $2). Automatisch nachgeschlagen wird nur der Absender der geöffneten E-Mail, mit einem Tageslimit, das du festlegst. Ergebnisse werden zwischengespeichert, dieselbe Adresse wird also nie zweimal bezahlt. Der <a href="#calculator">Rechner</a> zeigt, was ein bestimmtes Volumen kostet.</p></div>
+      </details>
+      
+      <details>
+        <summary>Was, wenn die falsche Person angezeigt wird?</summary>
+        <div class="v2-faq-body"><p>Wenn der Name des Anbieters nicht zum Anzeigenamen im E-Mail-Header passt, wird das Ergebnis als „unsicher“ markiert und beide Namen werden angezeigt, damit du selbst urteilen kannst.</p></div>
+      </details>
+      
+      <details>
+        <summary>Warum wird ein Absender mit gmail.com nicht nachgeschlagen?</summary>
+        <div class="v2-faq-body"><p>Private Postfach-Domains und Funktionsadressen wie info@ passen selten zu einem Profil, deshalb werden sie standardmäßig übersprungen, um Geld zu sparen. Klicke in der Seitenleiste auf die Schaltfläche, um sie trotzdem nachzuschlagen.</p></div>
+      </details>
+      
+    </div>
+  </div>
+</section>
+
+<section class="v2-section">
+  <div class="v2-wrap">
+    <div class="v2-cta">
+      <h2>Zwei Minuten, dann ist es geschafft</h2>
+      <p>Der Eintrag im Chrome Web Store ist noch nicht live, deshalb lädst du die Erweiterung entpackt. Fünf Schritte, zu jedem ein Screenshot.</p>
+      <div class="v2-actions">
+        <a class="v2-btn v2-btn--outline" href="install.html">Zur Installationsanleitung <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+  <footer class="v2-foot">
+    <div class="v2-wrap v2-foot-inner">
+      <a class="v2-brand" href="index.html">
+        <img src="../assets/icon-128.png" alt="" width="32" height="32">
+        <span>SenderFinder</span>
+      </a>
+      <ul class="v2-foot-links">
+        <li><a href="install.html">Installieren</a></li>
+        <li><a href="privacy.html">Datenschutz</a></li>
+        <li><a href="clearbit-connect-alternative.html">Clearbit-Connect-Alternative</a></li>
+        <li><a href="rapportive-alternative.html">Rapportive-Alternative</a></li>
+        <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+        <li><a href="https://github.com/astonysh/SenderFinder/blob/main/LICENSE">AGPL-3.0-Lizenz</a></li>
+      </ul>
+      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> Kein SenderFinder-Server im Abfrageweg. Deine Schlüssel und dein Verlauf bleiben in deinem Browser. <a href="privacy.html">Datenschutz</a></p>
+      <div class="v2-foot-bottom">
+        <p>SenderFinder ist Open-Source-Software, veröffentlicht unter der AGPL-3.0-Lizenz.</p>
+        <p>Gmail, Outlook, LinkedIn und Chrome sind Marken ihrer Inhaber.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="notice" id="notice" role="region" aria-label="Cookie-Hinweis" data-consent-mode="false" hidden>
+    <div class="notice-inner">
+      <svg class="i i-lg" aria-hidden="true"><use href="#i-cookie"/></svg>
+      <p>Diese Webseite nutzt möglicherweise datenschutzfreundliche Analysedienste, um Besuche zu zählen. Die SenderFinder-Erweiterung ist etwas anderes: Sie sendet einmal täglich eine anonyme Nutzungszusammenfassung, solange du das in ihren Einstellungen nicht abschaltest. <a href="privacy.html#cookies">Datenschutz</a></p>
+      <div class="notice-actions">
+        <button type="button" class="notice-btn notice-close" data-consent="ack">OK</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<div class="v2-page">
+  <div class="v2-wrap">
+    <header class="v2-page-head">
+      <h1>{{privacy.title}}</h1>
+      <p class="v2-note">{{privacy.updated}}</p>
+      {{#if privacy.prevails}}<p class="v2-note">{{privacy.prevails}}</p>{{/if}}
+      <p class="v2-lead">{{privacy.lead}}</p>
+    </header>
+
+    <article class="v2-prose">
+      <div class="v2-summary">
+        <h2><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg> {{privacy.summaryTitle}}</h2>
+        <ul>
+          {{#each privacy.summary}}<li>{{this}}</li>{{/each}}
+        </ul>
+      </div>
+
+      {{#each privacy.sections}}
+      <h2{{#if id}} id="{{id}}"{{/if}}>{{title}}</h2>
+      {{#if blocks}}{{#each blocks}}<p>{{this}}</p>{{/each}}{{/if}}
+      {{#if list}}<ul>{{#each list}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+      {{#if blocksAfter}}{{#each blocksAfter}}<p>{{this}}</p>{{/each}}{{/if}}
+      {{/each}}
+    </article>
+  </div>
+</div>

@@ -6,3 +6,6 @@ output/
 .DS_Store
 extension/*.zip
 extension-key.pem
+
+# wrangler local cache (account id)
+.wrangler/

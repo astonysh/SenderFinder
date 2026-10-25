@@ -1,0 +1,28 @@
+<!-- CWS-BUTTON: when the store listing is live, set href="CWS_PLACEHOLDER" and change the label to "Add to Chrome". -->
+<div class="v2-page">
+  <div class="v2-wrap">
+    <header class="v2-page-head">
+      <h1>{{rapportive.title}}</h1>
+      <p class="v2-lead">{{rapportive.lead}}</p>
+      <div class="v2-actions">
+        <a class="v2-btn v2-btn--default" href="{{url.install}}" data-store-url="CWS_PLACEHOLDER">{{rapportive.ctaInstall}}</a>
+        <a class="v2-btn v2-btn--outline" href="{{url.index}}#how">{{rapportive.ctaHow}}</a>
+      </div>
+    </header>
+
+    <article class="v2-prose">
+      {{#each rapportive.sections}}
+      <h2>{{title}}</h2>
+      {{#if blocks}}{{#each blocks}}<p>{{this}}</p>{{/each}}{{/if}}
+      {{#if list}}<ul class="checklist">{{#each list}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+      {{#if ordered}}<ol>{{#each ordered}}<li>{{this}}</li>{{/each}}</ol>{{/if}}
+      {{#if blocksAfter}}{{#each blocksAfter}}<p>{{this}}</p>{{/each}}{{/if}}
+      {{/each}}
+
+      <figure class="v2-shot">
+        <img src="{{base}}assets/screenshots/thread.png" alt="{{rapportive.shotAlt}}" width="1280" height="800" loading="lazy">
+        <figcaption>{{rapportive.shotCaption}}</figcaption>
+      </figure>
+    </article>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img">
+  <title>Illustrated avatar</title>
+  <defs><clipPath id="peter"><circle cx="48" cy="48" r="48"/></clipPath></defs>
+  <g clip-path="url(#peter)">
+    <rect width="96" height="96" fill="#EBF1E9"/>
+    <path d="M21 96c3-15 13-23 27-23s24 8 27 23z" fill="#4B6A57"/>
+    <circle cx="48" cy="44" r="17" fill="#E7B893"/>
+    <path d="M31 41c1-11 8-16 17-16s16 5 17 16c-4-5-9-7-17-7s-13 2-17 7z" fill="#31343B"/>
+    <circle cx="42" cy="45" r="1.9" fill="#2B2E33"/><circle cx="54" cy="45" r="1.9" fill="#2B2E33"/>
+    <path d="M43 52c1.8 1.8 6.2 1.8 8 0" stroke="#9C6B52" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>

@@ -1,0 +1,755 @@
+{
+  "ui": {
+    "skip": "Saltar al contenido",
+    "navLabel": "Principal",
+    "footerNavLabel": "Pie de página",
+    "language": "Idioma",
+    "languageHint": "SenderFinder está disponible en 10 idiomas. La extensión sigue el idioma de tu navegador.",
+    "nav": {
+      "how": "Cómo funciona",
+      "cost": "Precios",
+      "install": "Instalar",
+      "privacy": "Privacidad",
+      "faq": "Preguntas frecuentes"
+    },
+    "footer": {
+      "install": "Instalar",
+      "privacy": "Privacidad",
+      "clearbit": "Alternativa a Clearbit Connect",
+      "rapportive": "Alternativa a Rapportive",
+      "license": "Licencia AGPL-3.0",
+      "built": "SenderFinder es software de código abierto publicado con licencia AGPL-3.0.",
+      "disclaimer": "Sin relación con LinkedIn, HubSpot, Clearbit ni ningún proveedor de datos. Los nombres de producto pertenecen a sus propietarios.",
+      "privacyLine": "Ningún servidor de SenderFinder en el camino de la búsqueda. Tus claves y tu historial se quedan en tu navegador.",
+      "trademarks": "Gmail, Outlook, LinkedIn y Chrome son marcas de sus propietarios."
+    },
+    "backHome": "Ir a la página de inicio",
+    "theme": {
+      "label": "Apariencia",
+      "system": "Sistema",
+      "light": "Claro",
+      "dark": "Oscuro"
+    },
+    "notice": {
+      "aria": "Aviso de cookies",
+      "text": "Este sitio web puede usar analítica respetuosa con la privacidad para contar las visitas. La extensión de SenderFinder es otra cosa: envía un resumen diario de uso anónimo salvo que lo desactives en su configuración.",
+      "link": "Privacidad",
+      "ok": "OK",
+      "accept": "Aceptar",
+      "reject": "Rechazar"
+    }
+  },
+  "meta": {
+    "index": {
+      "description": "Extensión de Chrome de código abierto que muestra los perfiles de LinkedIn de los remitentes en Gmail y Outlook. Usa tus propias claves de proveedor; los recuentos de uso anónimos están activados por defecto y se pueden desactivar.",
+      "ogDescription": "Abre un correo en Gmail y ve el perfil de LinkedIn del remitente. Código abierto, tus propias claves de API, sin cuenta."
+    },
+    "install": {
+      "title": "Instalar SenderFinder (2 minutos, desde el código fuente) | SenderFinder",
+      "description": "Paso a paso: descarga la extensión, cárgala descomprimida en Chrome, pega una clave de proveedor y abre Gmail. Capturas de cada paso y solución de problemas.",
+      "ogTitle": "Instalar SenderFinder",
+      "ogDescription": "Dos minutos, cinco pasos, una clave de API. Instala la extensión de código abierto desde el código fuente hasta que la ficha de Chrome Web Store esté publicada."
+    },
+    "privacy": {
+      "title": "Privacidad | SenderFinder",
+      "description": "Qué lee SenderFinder en Gmail y Outlook, qué se envía a los proveedores que elijas, cómo funcionan las funciones de LinkedIn y qué contienen los recuentos de uso anónimos diarios.",
+      "ogTitle": "Privacidad | SenderFinder",
+      "ogDescription": "Qué lee SenderFinder en Gmail y Outlook, qué se envía a los proveedores que elijas, cómo funcionan las funciones de LinkedIn y qué contienen los recuentos de uso anónimos diarios."
+    },
+    "clearbit": {
+      "title": "Alternativa a Clearbit Connect: código abierto y tus propias claves | SenderFinder",
+      "description": "Clearbit Connect dejó de existir el 30 de abril de 2025. SenderFinder es una extensión de Chrome de código abierto que muestra en Gmail quién te escribe, con tus propias claves de API y sin cuenta.",
+      "ogTitle": "Una alternativa a Clearbit Connect para Gmail",
+      "ogDescription": "Clearbit Connect ya no existe. SenderFinder muestra el perfil de LinkedIn del remitente en Gmail. Código abierto, tus propias claves, sin cuenta."
+    },
+    "rapportive": {
+      "title": "Alternativa a Rapportive: perfiles de LinkedIn en Gmail | SenderFinder",
+      "description": "Una alternativa de código abierto a Rapportive que muestra los perfiles de LinkedIn de los remitentes en Gmail. Usa tus propias claves de proveedor; los recuentos de uso anónimos están activados por defecto y se pueden desactivar.",
+      "ogTitle": "Una alternativa a Rapportive para Gmail",
+      "ogDescription": "Rapportive ya no existe. SenderFinder muestra el perfil de LinkedIn del remitente en Gmail. Código abierto, tus propias claves, sin cuenta."
+    },
+    "notFound": {
+      "title": "Página no encontrada | SenderFinder",
+      "description": "Esta página no existe."
+    }
+  },
+  "index": {
+    "hero": {
+      "desc": "Abre un correo en Gmail y el panel lateral muestra quién lo envía: nombre, cargo, empresa y ubicación.",
+      "install": "Instalar en 2 minutos",
+      "github": "Ver en GitHub",
+      "fine": "Todavía no está en Chrome Web Store. La página de instalación explica cómo cargarla descomprimida en dos minutos.",
+      "alt": "El panel lateral de SenderFinder junto a Gmail, mostrando a Jane Doe, responsable de alianzas en Acme, en Berlín, con el enlace a su LinkedIn, un botón Conectar y las demás personas de la conversación.",
+      "caption": "El panel lateral mientras lees un correo. Las personas y la empresa son ficticias.",
+      "privacyLine": "Las consultas van directamente desde tu navegador al proveedor que configures: ningún servidor de SenderFinder en el camino de la búsqueda.",
+      "badges": [
+        "Las claves se quedan en tu dispositivo",
+        "El historial se queda en tu dispositivo",
+        "Recuentos de uso anónimos: un interruptor para desactivarlos"
+      ],
+      "badge": "Gratis · Código abierto · AGPL-3.0"
+    },
+    "how": {
+      "title": "Cómo funciona",
+      "intro": "Tres pasos. No hay que registrarse en ningún sitio salvo en el proveedor de datos que elijas.",
+      "steps": [
+        {
+          "title": "Instala la extensión",
+          "body": "La ficha de Chrome Web Store aún no está publicada, así que tienes que cargarla descomprimida: descarga el repositorio, abre <code>chrome://extensions</code>, activa el modo de desarrollador y elige la carpeta <code>extension/</code>. Hay una <a href=\"{{url.install}}\">guía paso a paso con capturas</a>."
+        },
+        {
+          "title": "Consigue una clave de API",
+          "body": "Crea una clave en <a href=\"https://app.monid.ai/\">Monid</a> o en <a href=\"https://treg.to/\">treg</a>. Con una de las dos basta para empezar."
+        },
+        {
+          "title": "Pégala en la configuración",
+          "body": "La página de configuración se abre en la primera instalación. Pega la clave, pulsa «Probar claves (gratis)» y luego abre cualquier correo en Gmail y haz clic una vez en el icono de la barra de herramientas."
+        }
+      ],
+      "seeTitle": "Qué ves",
+      "see": [
+        "Un panel lateral con el nombre, el titular, la empresa, la ubicación, su hora local y un enlace al perfil. El correo en sí solo recibe una pequeña marca junto al remitente.",
+        "Las demás personas de la conversación (otros remitentes, Para, Cc) aparecen en el panel. Solo se buscan cuando haces clic en ellas.",
+        "Una marca de «incierto» cuando el nombre del proveedor no coincide con el nombre de la cabecera del correo. Se muestran los dos nombres.",
+        "Un botón Conectar que abre el perfil y rellena tu nota de invitación. El envío lo pulsas tú."
+      ],
+      "whereTitle": "Dónde funciona",
+      "where": [
+        "Gmail en la web.",
+        "Outlook en la web, en la medida de lo posible.",
+        "No compatible: aplicaciones de correo de escritorio como Apple Mail u Outlook para escritorio, ni Firefox (todavía no)."
+      ],
+      "shotAlt": "Una ventana de Gmail con el panel lateral de SenderFinder a la derecha: el perfil de Jane Doe y las otras tres personas de la conversación, dos de ellas aún sin buscar.",
+      "shotCaption": "Gmail a la izquierda, el panel lateral a la derecha. Buzón sintético, personas ficticias."
+    },
+    "cost": {
+      "title": "Primero lo más barato. Luego se detiene.",
+      "intro": "Pagas directamente a los proveedores de datos, con tu propia clave. La extensión prueba primero la opción gratuita, luego los proveedores de pago de más barato a más caro, y se detiene en la primera coincidencia.",
+      "waterfall": [
+        {
+          "title": "Análisis de la firma del correo",
+          "body": "Gratis. Si la firma contiene un enlace linkedin.com/in, esa es la respuesta."
+        },
+        {
+          "title": "El proveedor de pago más barato",
+          "body": "Primero se lee el precio de catálogo actual. Si supera tu tope por búsqueda, el paso se omite."
+        },
+        {
+          "title": "Siguiente proveedor, solo si no hay acierto",
+          "body": "Los fallos en la mayoría de los proveedores son gratuitos."
+        },
+        {
+          "title": "Coincidencia encontrada, la cadena se detiene",
+          "body": "El resultado se guarda en la caché de tu navegador. Una misma dirección nunca cuesta dinero dos veces."
+        }
+      ],
+      "stats": [
+        {
+          "term": "Búsqueda con éxito habitual",
+          "value": "$0.0005–$0.03",
+          "note": "Normalmente bastante menos de un céntimo, según qué paso acierte."
+        },
+        {
+          "term": "Medido en 50 direcciones de trabajo",
+          "value": "$0.011 cada una",
+          "note": "Referencia de 50 direcciones, 25 de octubre de 2026, con las dos claves."
+        },
+        {
+          "term": "Tope por búsqueda",
+          "value": "$0.05",
+          "note": "Predeterminado. Puedes cambiarlo."
+        },
+        {
+          "term": "Tope diario",
+          "value": "$2",
+          "note": "Predeterminado. Puedes cambiarlo."
+        }
+      ],
+      "blocks": [
+        {
+          "title": "Solo el remitente, y de forma automática",
+          "body": "Solo se busca por su cuenta el remitente del correo que abres. Tú fijas un límite diario de búsquedas automáticas (30 de forma predeterminada). Todas las demás personas de la conversación esperan a un clic."
+        },
+        {
+          "title": "Nada de dinero en callejones sin salida",
+          "body": "Los dominios de correo personal (gmail.com, outlook.com, qq.com y similares) y las direcciones genéricas (info@, support@ y similares) se omiten de forma predeterminada. Un botón te permite buscarlas de todos modos."
+        }
+      ],
+      "shotAlt": "La página de configuración de SenderFinder: los pasos de búsqueda con sus precios y tasas de aciertos, y los campos de presupuesto para el tope por búsqueda, el tope diario y el límite de búsquedas automáticas.",
+      "shotCaption": "Configuración: orden de los pasos, precios y topes. Todos los números se pueden cambiar."
+    },
+    "providers": {
+      "title": "Proveedores compatibles",
+      "intro": "La extensión llama a estos servicios directamente desde tu navegador, con las claves que pegas en su configuración.",
+      "items": [
+        {
+          "title": "<a href=\"https://app.monid.ai/\">Monid</a>",
+          "body": "Un agregador de API. Una clave da acceso a Hunter.io, Apollo y ContactOut."
+        },
+        {
+          "title": "<a href=\"https://treg.to/\">treg</a>",
+          "body": "Un agregador de BlitzAPI, QuickEnrich y Village."
+        },
+        {
+          "title": "<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> <small class=\"fine\">(opcional)</small>",
+          "body": "Un respaldo opcional, para Data Legion."
+        },
+        {
+          "title": "Tu orden, tus límites",
+          "body": "En la configuración puedes activar o desactivar proveedores, cambiar su orden y fijar los dos topes. La configuración también muestra tu historial y tu gasto."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": [
+        {
+          "q": "¿Es gratis?",
+          "a": "Sí. La extensión es gratuita y de código abierto con licencia AGPL-3.0, sin cuenta y sin suscripción. Las búsquedas de pago son opcionales: el proveedor de datos que elijas las factura a tu propia clave, por acierto, dentro de los topes que fijes. El análisis de la firma y la caché no cuestan nada."
+        },
+        {
+          "q": "¿Necesito una cuenta?",
+          "a": "No hace falta registrarse. Las búsquedas van directamente al proveedor que configures; los recuentos de uso anónimos diarios van al servicio estadístico del proyecto, y un interruptor en la configuración los desactiva."
+        },
+        {
+          "q": "¿Qué clave debería conseguir?",
+          "a": "Con una clave de <a href=\"https://app.monid.ai/\">Monid</a> o de <a href=\"https://treg.to/\">treg</a> basta para empezar. Si añades las dos, y opcionalmente <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>, la cascada tiene más sitios donde buscar. La <a href=\"{{url.install}}#which-key\">página de instalación</a> las compara."
+        },
+        {
+          "q": "¿Cómo mantengo los costes bajo control?",
+          "a": "Hay un tope por búsqueda ($0.05 de forma predeterminada) y un tope diario ($2 de forma predeterminada). Solo se busca de forma automática el remitente del correo abierto, con un límite diario que fijas tú. Los resultados se guardan en caché, así que nunca se paga dos veces por la misma dirección. La <a href=\"#calculator\">calculadora</a> muestra cuánto costaría un volumen determinado."
+        },
+        {
+          "q": "¿Y si muestra a la persona equivocada?",
+          "a": "Si el nombre del proveedor no coincide con el nombre mostrado en la cabecera del correo, el resultado se marca como «incierto» y muestra los dos nombres, para que juzgues tú."
+        },
+        {
+          "q": "¿Por qué no se busca un remitente de gmail.com?",
+          "a": "Los dominios de correo personal y las direcciones genéricas como info@ rara vez coinciden con un perfil, así que se omiten de forma predeterminada para ahorrar dinero. Haz clic en el botón del panel para buscarlas de todos modos."
+        },
+        {
+          "q": "¿Funciona en Outlook, Apple Mail o Firefox?",
+          "a": "Outlook en la web es compatible en la medida de lo posible. Las aplicaciones de correo de escritorio como Apple Mail y Outlook para escritorio no son compatibles. Firefox todavía no es compatible."
+        },
+        {
+          "q": "¿Dónde se guardan mis datos?",
+          "a": "En tu dispositivo. Las claves se guardan en el almacenamiento de la extensión. El historial y la caché se guardan en el IndexedDB de tu navegador. Puedes exportarlos o borrarlos desde la página de configuración. Consulta la <a href=\"{{url.privacy}}\">declaración de privacidad</a>."
+        },
+        {
+          "q": "¿Sustituye esto a Rapportive o a Clearbit Connect?",
+          "a": "Hace el trabajo que hacían: mostrar quién está detrás de una dirección de correo. Lee más sobre la <a href=\"{{url.clearbit}}\">alternativa a Clearbit Connect</a> y la <a href=\"{{url.rapportive}}\">alternativa a Rapportive</a>."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Tu bandeja de entrada sigue siendo tuya",
+      "intro": "SenderFinder se ejecuta en tu navegador. Las consultas van directamente al proveedor que elijas: no hay ningún servidor de SenderFinder en el camino de la búsqueda.",
+      "diagramAlt": "Diagrama: tu navegador guarda las claves, la caché y el historial. De él sale una sola flecha: la búsqueda que has pedido, enviada al proveedor que has configurado. Una caja tachada indica que no hay ningún servidor de SenderFinder en el camino de la búsqueda, y una nota al margen explica los recuentos de uso anónimos diarios.",
+      "flow": {
+        "browser": "Tu navegador",
+        "browserSub": "claves · caché · historial",
+        "arrow": "la búsqueda que has pedido",
+        "provider": "El proveedor que has elegido",
+        "providerSub": "recibe la dirección de correo, además del nombre para mostrar y el dominio de la empresa para el paso de Apollo",
+        "none": "Recuentos de uso anónimos diarios → servicio estadístico de SenderFinder (activados por defecto, se pueden desactivar)",
+        "noServer": "Ningún servidor de SenderFinder en el camino de la búsqueda"
+      },
+      "staysTitle": "Lo que se queda en tu dispositivo",
+      "stays": [
+        "<strong>Tus claves.</strong> Se guardan en el almacenamiento propio de la extensión en este dispositivo (<code>chrome.storage.local</code>) y solo se envían a la API del proveedor al que pertenecen.",
+        "<strong>Caché e historial.</strong> En el IndexedDB de tu navegador, depurados automáticamente a 90 días y 5.000 entradas de forma predeterminada, exportables como JSON o CSV y borrables con un clic.",
+        "<strong>La configuración.</strong> El orden de los proveedores, los topes y el límite de búsquedas automáticas, todo local.",
+        "<strong>Tus hábitos de lectura.</strong> Nada sobre qué correos abres se registra en ningún sitio salvo en ese historial local."
+      ],
+      "leavesTitle": "Lo que sale de tu dispositivo, y a quién",
+      "leaves": [
+        "<strong>La dirección que buscas</strong>, el nombre para mostrar de la cabecera del correo y el dominio de la empresa van al proveedor que hayas configurado, con tu clave, cuando se ejecuta una búsqueda. Algunos proveedores agregan servicios de búsqueda y pueden reenviar solicitudes a proveedores posteriores que declaran. Consulta sus condiciones.",
+        "<strong>Los precios de catálogo.</strong> Antes de ejecutar un paso de pago, la extensión lee la lista de precios actual de ese proveedor. En esa petición no hay ningún dato personal.",
+        "<strong>Las fotos de perfil.</strong> Si un proveedor devuelve la URL de una foto, tu navegador carga la imagen desde el servidor del proveedor, como cualquier imagen de una página web.",
+        "<strong>Nunca el cuerpo del correo.</strong> El análisis de la firma busca un enlace linkedin.com/in dentro de tu navegador; solo se usa el resultado, de forma local.",
+        "Los recuentos de uso anónimos están activados por defecto. Una vez al día, el servicio estadístico del proyecto recibe recuentos y resultados, totales por paso del proveedor y por cliente de correo, gasto redondeado, versión, idioma y un identificador de instalación aleatorio. Un interruptor en la configuración los desactiva y elimina el identificador de instalación y todo lo que no se haya enviado. Nunca contiene una dirección, un nombre, un dominio, un campo de perfil, una clave ni el texto de un mensaje.",
+        "Para las funciones de LinkedIn, la extensión usa tu propia sesión de LinkedIn, después de que concedas el permiso opcional para linkedin.com, para solicitar el grado de conexión, cualquier invitación pendiente, la foto del perfil y los enlaces a empresas asociadas. Lee JSESSIONID localmente como valor CSRF; la cookie solo se envía a LinkedIn, y el resultado se guarda en la caché de tu dispositivo y no se envía a nadie. Cuando eliges Connect, abre el perfil, pulsa una vez «Add a note» y rellena tu plantilla; el envío lo pulsas tú. Nunca pulsa Connect ni Send por su cuenta."
+      ],
+      "factsTitle": "Los detalles, en palabras sencillas",
+      "facts": [
+        "Los números de teléfono y las direcciones de correo personales que devuelve un proveedor se descartan en el adaptador; solo se guardan los campos profesionales.",
+        "Los dominios de correo personal (gmail.com, outlook.com, qq.com …) y las direcciones genéricas (info@, support@ …) se omiten de forma predeterminada y nunca se envían.",
+        "Código abierto con licencia AGPL-3.0, así que puedes comprobar todo esto en <a href=\"https://github.com/astonysh/SenderFinder/tree/main/extension\">el código</a>: <code>core/store.js</code>, <code>core/providers/profile.js</code>, <code>core/telemetry.js</code>."
+      ],
+      "link": "Leer la declaración de privacidad"
+    },
+    "sections": {
+      "how": {
+        "subtitle": "Cómo funciona",
+        "title": "Se configura una vez y luego lee tu bandeja de entrada",
+        "description": "Instala la extensión, pega una clave del proveedor y cada correo que abras te mostrará quién está detrás.",
+        "items": [
+          {
+            "icon": "mail",
+            "title": "Lee el correo abierto",
+            "body": "El remitente y todas las personas en Para y Cc. El cuerpo solo se analiza localmente para buscar un enlace linkedin.com/in."
+          },
+          {
+            "icon": "wallet",
+            "title": "Primero la fuente más barata",
+            "body": "Una cascada desde el análisis gratuito de la firma hasta los proveedores de pago, de más barato a más caro. Los fallos son gratuitos y un acierto detiene la cadena."
+          },
+          {
+            "icon": "key",
+            "title": "Con una clave basta",
+            "body": "treg para las búsquedas más baratas, Monid para la mejor cobertura. Cualquier clave sirve para todo el flujo."
+          },
+          {
+            "icon": "users",
+            "title": "Todo el hilo",
+            "body": "Los demás remitentes, Para y Cc aparecen en el panel, y cada persona solo se busca cuando haces clic en ella."
+          },
+          {
+            "icon": "link",
+            "title": "Conecta en LinkedIn",
+            "body": "El panel abre el perfil y rellena tu nota. Los clics en Conectar y Enviar los haces tú; la extensión nunca lo hace."
+          },
+          {
+            "icon": "database",
+            "title": "Caché e historial, en local",
+            "body": "Los resultados se quedan en el IndexedDB de tu navegador durante 90 días, se pueden exportar como JSON o CSV y se borran con un clic."
+          }
+        ]
+      },
+      "privacy": {
+        "subtitle": "Privacidad",
+        "title": "Tu bandeja de entrada sigue siendo tuya",
+        "description": "Una búsqueda va de tu navegador directamente al proveedor que hayas elegido. Esto es exactamente lo que se queda aquí, lo que sale y lo que contienen los recuentos anónimos.",
+        "cards": [
+          {
+            "icon": "lock",
+            "title": "Se queda en tu dispositivo",
+            "items": [
+              "Tus claves de proveedor, en el almacenamiento propio de la extensión",
+              "La caché y el historial, en IndexedDB (90 días, 5.000 entradas)",
+              "La configuración, los topes y el límite de búsquedas automáticas",
+              "Qué correos lees: nada de eso sale del navegador"
+            ]
+          },
+          {
+            "icon": "provider",
+            "title": "Va al proveedor que elegiste",
+            "items": [
+              "La dirección que buscas, con tu clave",
+              "El nombre para mostrar de la cabecera del correo",
+              "El dominio de la empresa, para el paso de Apollo",
+              "La consulta del precio de catálogo de ese proveedor"
+            ]
+          },
+          {
+            "icon": "chart",
+            "title": "Recuentos de uso anónimos",
+            "items": [
+              "Activados por defecto; un interruptor en la configuración los desactiva",
+              "Totales diarios: recuentos, resultados, gasto, versión, idioma",
+              "Un identificador de instalación aleatorio, que se elimina al desactivarlos",
+              "Nunca una dirección, un nombre, un dominio, una clave ni el texto de un mensaje"
+            ]
+          }
+        ],
+        "link": "Todos los detalles de privacidad"
+      },
+      "pricing": {
+        "subtitle": "Precios",
+        "title": "Gratis. Solo pagas al proveedor de datos, y solo si quieres.",
+        "description": "La extensión no cuesta nada. El paso de la firma del correo es gratuito, y las búsquedas de pago las factura el proveedor que elijas, por acierto, con los topes que fijes.",
+        "freeTitle": "SenderFinder",
+        "freePrice": "$0",
+        "freePriceNote": "gratis para siempre",
+        "freeChecks": [
+          "Código abierto, AGPL-3.0",
+          "Sin cuenta y sin suscripción",
+          "Funciona en tu navegador",
+          "El análisis de la firma es gratuito",
+          "Con caché, así que una dirección nunca se paga dos veces"
+        ],
+        "freeCta": "Instalar gratis",
+        "optionalTitle": "Opcional: costes del proveedor de datos",
+        "perAddress": "por dirección encontrada, pagado al proveedor",
+        "found": "encontradas",
+        "bestFor": "Mejor para",
+        "recommended": "Recomendado",
+        "footnote": "Estimaciones de la prueba de referencia de 50 direcciones del 25 de octubre de 2026. Valores predeterminados: $2 al día y $0.05 por búsqueda, ambos ajustables en la configuración."
+      },
+      "faq": {
+        "subtitle": "Preguntas",
+        "title": "Las respuestas cortas",
+        "description": "Las largas están en la guía de instalación y en la declaración de privacidad."
+      },
+      "cta": {
+        "title": "Dos minutos y listo",
+        "description": "La ficha de Chrome Web Store aún no está publicada, así que cargas la extensión descomprimida. Cinco pasos, con una captura cada uno.",
+        "button": "Abrir la guía de instalación"
+      }
+    }
+  },
+  "calc": {
+    "title": "¿Cuánto te costaría?",
+    "intro": "Mueve los controles. Cada cifra sale de los precios de los proveedores y de las tasas de aciertos de la referencia de 50 direcciones de abajo, y de nada más.",
+    "volumeLabel": "Direcciones de remitente nuevas al día",
+    "volumeHint": "Cuenta solo las direcciones que no hayas buscado antes. A un remitente repetido se le responde desde la caché y no cuesta nada.",
+    "keysLabel": "¿Qué clave tienes?",
+    "keysBoth": "Las dos claves (cascada predeterminada)",
+    "keysTreg": "Solo treg (la más barata)",
+    "keysMonid": "Solo Monid (mejor cobertura)",
+    "skipLabel": "Proporción de direcciones personales y genéricas",
+    "skipHint": "gmail.com, outlook.com, qq.com, info@, support@ y similares se omiten de forma predeterminada, así que no cuestan nada.",
+    "monthlyLabel": "Coste mensual estimado",
+    "perLabel": "Coste por dirección nueva",
+    "hitLabel": "Direcciones de trabajo encontradas",
+    "foundLabel": "Encontradas al mes",
+    "monthlyUnit": "mes",
+    "usableLabel": "Con el tope de $2 de hoy saldrían unas {n} direcciones a este ritmo.",
+    "hitNote": "Encontrada significa que volvió un perfil con un nombre coincidente. Las dos claves se diferencian sobre todo en la frecuencia con que hace falta el respaldo caro.",
+    "capNote": "Los topes siguen aplicándose: $2 al día y $0.05 por búsqueda de forma predeterminada, ambos ajustables en la configuración. La estimación supone 30 días y una búsqueda por dirección nueva.",
+    "fallbackTitle": "Volúmenes de ejemplo",
+    "fallbackIntro": "Se muestra sin JavaScript. Mismo modelo, mismos precios: el {skip} de los remitentes son direcciones personales o genéricas y se omiten.",
+    "fallbackNote": "Activa JavaScript para ver tus propios números. Todo lo de arriba es una tabla simple, no una promesa de gasto.",
+    "modeBoth": "Las dos claves",
+    "modeTreg": "Solo treg",
+    "modeMonid": "Solo Monid",
+    "perDay": "{n} al día",
+    "assumptionsTitle": "De dónde salen los números",
+    "assumptions": [
+      "Cada dirección de remitente nueva se busca una vez y se guarda en caché. Los remitentes repetidos cuestan $0, así que la entrada son direcciones nuevas al día, no correos leídos.",
+      "Los precios por acierto son los precios de catálogo de los proveedores el 25 de octubre de 2026: BlitzAPI $0.0005, QuickEnrich $0.0048, Hunter $0.0049, Apollo $0.026. Los fallos son gratuitos en estos pasos.",
+      "Las tasas de aciertos por paso vienen de la referencia de 50 direcciones del 25 de octubre de 2026: el 48 % resuelto por BlitzAPI, luego el 19 % de lo que quedaba por el paso siguiente y el 19 % del resto por el paso posterior. Apollo respondió a 17 de las 19 direcciones para las que se llamó.",
+      "Con las dos claves eso da alrededor del 95 % de las direcciones de trabajo encontradas, frente a 48 de 50 (96 %) medidas. Con treg solo se ejecutan los dos pasos baratos; con Monid solo se ejecutan Hunter y Apollo.",
+      "Coste mensual = direcciones nuevas al día × (1 − proporción omitida) × 30 × coste por dirección. No se incluyen el análisis gratuito de la firma del correo, los pasos opcionales de Village y ContactOut ni Firecrawl.",
+      "Son estimaciones de una única referencia de contactos de ventas y crecimiento de habla inglesa. Tu propio buzón puede comportarse de otra manera."
+    ],
+    "priceDate": "Precios y tasas de aciertos: 25 de octubre de 2026. La extensión vuelve a leer el precio de catálogo antes de cada llamada, así que un cambio de precio del proveedor se nota de inmediato.",
+    "fallbackHit": "≈ {hit} encontradas",
+    "fallbackCost": "≈ {cost} / mes"
+  },
+  "install": {
+    "title": "Instalar SenderFinder",
+    "lead": "La ficha de Chrome Web Store aún no está publicada, así que cargas la extensión desde el código fuente. Dos minutos, una vez por navegador.",
+    "note": "Necesitas Chrome, Edge u otro navegador basado en Chromium en un ordenador; las extensiones no se pueden añadir a las aplicaciones móviles. Las capturas están en inglés; la extensión sigue el idioma de tu navegador.",
+    "downloadLabel": "Descargar el ZIP",
+    "githubLabel": "Abrir el repositorio",
+    "stepsTitle": "Cinco pasos",
+    "steps": [
+      {
+        "title": "Consigue el código",
+        "body": "Descarga el repositorio como ZIP desde <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> («Code» → «Download ZIP») y descomprímelo, o clónalo si tienes git:<br><code>git clone https://github.com/astonysh/SenderFinder.git</code>"
+      },
+      {
+        "title": "Cárgala en Chrome",
+        "body": "Abre <code>chrome://extensions</code> en una pestaña nueva. Activa el <strong>modo de desarrollador</strong> (arriba a la derecha), haz clic en <strong>Cargar descomprimida</strong> y elige la carpeta <code>extension/</code> dentro del repositorio: la carpeta que contiene <code>manifest.json</code>, no la raíz del repositorio.",
+        "image": "load-unpacked.png",
+        "alt": "La página de extensiones de Chrome con el modo de desarrollador activado: los botones Cargar descomprimida, Empaquetar extensión y Actualizar encima de la tarjeta de SenderFinder.",
+        "caption": "Modo de desarrollador activado, la tarjeta de SenderFinder cargada."
+      },
+      {
+        "title": "Consigue una clave y pégala",
+        "body": "La página de configuración se abre sola después de la instalación. Crea una clave en <a href=\"https://app.monid.ai/\">Monid</a> (Hunter, Apollo, ContactOut) o en <a href=\"https://treg.to/\">treg</a> (BlitzAPI, QuickEnrich, Village); <a href=\"https://firecrawl.link/sf\">Firecrawl</a> es opcional. Con una clave basta. Pégala en «Claves de proveedores».",
+        "image": "settings-keys.png",
+        "alt": "La página de configuración de SenderFinder: los campos de clave de proveedor para Monid, treg y Firecrawl, el botón Probar claves y la tabla de pasos de búsqueda.",
+        "caption": "La configuración en la primera instalación: las claves arriba, los pasos y los precios debajo."
+      },
+      {
+        "title": "Pulsa «Probar claves (gratis)»",
+        "body": "La comprobación es gratuita: verifica la clave y lee la lista de precios del proveedor. No se busca nada y no se gasta nada. Lo que quieres ver es «válida» junto a tu clave."
+      },
+      {
+        "title": "Abre Gmail y haz clic una vez en el icono de la barra de herramientas",
+        "body": "Abre cualquier mensaje en Gmail y haz clic en el icono de SenderFinder en la barra de herramientas de Chrome. Si no lo ves, haz clic primero en el icono de pieza de puzle y fija SenderFinder. El panel lateral se abre y se queda abierto en esa pestaña; a partir de ahí sigue el correo que lees.",
+        "image": "sender-in-gmail.png",
+        "alt": "Una ventana de Gmail con el panel lateral de SenderFinder abierto a la derecha, mostrando el perfil del remitente y las demás personas de la conversación.",
+        "caption": "Después del primer clic el panel se queda abierto en esta pestaña."
+      }
+    ],
+    "whichKeyTitle": "¿Qué clave debería elegir?",
+    "whichKeyIntro": "Con una sola clave funciona todo el flujo: los pasos sin clave se omiten sin aviso. Esta tabla es la versión corta de la comparación de proveedores del README.",
+    "whichKeyHead": [
+      "Clave",
+      "Pasos que se ejecutan",
+      "Precio por acierto",
+      "Cobertura en la referencia",
+      "Adecuada para"
+    ],
+    "whichKeyRows": [
+      [
+        "<strong>treg</strong>",
+        "BlitzAPI → QuickEnrich (opcionalmente Village)",
+        "$0.0005–0.005",
+        "aproximadamente de la mitad al 60 % de las direcciones de trabajo",
+        "presupuestos ajustados, mucho volumen"
+      ],
+      [
+        "<strong>Monid</strong>",
+        "Hunter → Apollo (opcionalmente ContactOut)",
+        "$0.005–0.026",
+        "Apollo acertó 19 de 19 llamadas",
+        "tasa de aciertos"
+      ],
+      [
+        "<strong>Las dos</strong>",
+        "la cadena completa: BlitzAPI → Hunter → QuickEnrich → Apollo",
+        "una media de $0.011 por dirección",
+        "48 de 50 (96 %)",
+        "la opción predeterminada; el paso más barato primero, Apollo como red de seguridad"
+      ],
+      [
+        "Firecrawl <small class=\"fine\">(opcional)</small>",
+        "solo Data Legion",
+        "10 créditos (≈ $0.008–0.032)",
+        "sin datos de tasa de aciertos",
+        "no se recomienda por sí sola, solo como respaldo"
+      ]
+    ],
+    "whichKeyNote": "Apollo, Hunter y ContactOut se llaman a través de Monid; BlitzAPI, QuickEnrich y Village, a través de treg. Una clave de API directa de esas fuentes de datos no sirve de nada aquí.",
+    "troubleTitle": "Si algo no funciona",
+    "trouble": [
+      {
+        "q": "El panel lateral no se abre",
+        "a": "Fija SenderFinder primero: icono de pieza de puzle en la barra de herramientas → fijar. Luego haz clic una vez en su icono con una pestaña de Gmail abierta. El panel nunca se abre solo, y es por pestaña."
+      },
+      {
+        "q": "El panel dice «Sin clave configurada»",
+        "a": "Pega una clave en la configuración de la extensión. Con una basta: los pasos cuyo proveedor no tiene clave se omiten sin dar error."
+      },
+      {
+        "q": "En Outlook no pasa nada",
+        "a": "Outlook en la web funciona en la medida de lo posible y su marcado cambia a menudo. Si no aparece la pequeña marca junto al remitente, abre una incidencia con el HTML de la línea del remitente."
+      },
+      {
+        "q": "No se busca una dirección de gmail.com o info@",
+        "a": "Los dominios de correo personal y las direcciones genéricas se omiten de forma predeterminada, porque rara vez llevan a un perfil. El panel tiene un botón «Buscar de todos modos» para esas."
+      },
+      {
+        "q": "Hoy ha dejado de buscar personas",
+        "a": "O se alcanzó el tope diario ($2 de forma predeterminada) o el límite de búsquedas automáticas (30 al día). Ambos se ajustan en la configuración; los contadores se reinician al día siguiente."
+      },
+      {
+        "q": "Cómo lo actualizo más adelante",
+        "a": "Pon los archivos nuevos en la misma carpeta y haz clic en la flecha de recarga de la tarjeta en chrome://extensions. El id de la extensión está fijado en el manifiesto, así que las claves, la caché y el historial se conservan."
+      }
+    ],
+    "nextTitle": "Qué hacer ahora",
+    "next": "Lee <a href=\"{{url.index}}#how\">cómo funciona</a>, mira <a href=\"{{url.index}}#cost\">cuánto cuesta una búsqueda</a> o calcula tu propio volumen en la <a href=\"{{url.index}}#calculator\">calculadora de costes</a>. Las dudas sobre datos se responden en la <a href=\"{{url.privacy}}\">declaración de privacidad</a>.",
+    "fine": "Cuando la ficha de Chrome Web Store esté publicada, esta página será una instalación en un clic; hasta entonces, los pasos de arriba son la única forma de entrar.",
+    "privacy": {
+      "title": "La privacidad de un vistazo",
+      "points": [
+        "La clave que pegas se guarda en el almacenamiento propio de la extensión en este dispositivo y solo se envía a la API de ese proveedor, con las búsquedas que ejecutas.",
+        "Las consultas van directamente desde tu navegador al proveedor que configures: ningún servidor de SenderFinder en el camino de la búsqueda. Los recuentos de uso anónimos están activados por defecto y se pueden desactivar en la configuración.",
+        "Quita la clave en la configuración cuando quieras —sin clave no se puede ejecutar ninguna búsqueda de pago— o desinstala la extensión, lo que borra su almacenamiento."
+      ]
+    }
+  },
+  "privacy": {
+    "title": "Privacidad",
+    "updated": "Última actualización: 25 de octubre de 2026",
+    "prevails": "Esta página es una traducción; si hay diferencias, prevalece la versión en inglés.",
+    "lead": "SenderFinder lee el remitente y los participantes del correo abierto y analiza su cuerpo localmente para encontrar un enlace a un perfil de LinkedIn. Si usas las funciones de LinkedIn, la extensión usa tu propia sesión de LinkedIn para leer el grado de conexión, una invitación pendiente, la foto y los enlaces a empresas asociadas. La ayuda para conectar pulsa una vez «Add a note» y rellena una nota para que la revises. Los datos de búsqueda se envían directamente al proveedor que configures. Los recuentos de uso anónimos están activados por defecto; un interruptor en la configuración los desactiva.",
+    "sections": [
+      {
+        "title": "Quién mantiene SenderFinder",
+        "blocks": [
+          "SenderFinder es una extensión de Chrome de código abierto. Las consultas van directamente desde tu navegador al proveedor de datos que configures; ningún servidor de SenderFinder en el camino de la búsqueda. Un servicio estadístico independiente recibe un resumen diario anónimo, activado por defecto y desactivable en la página de configuración. El responsable de esas estadísticas es Tony Li, mantenedor de <a href=\"https://github.com/astonysh/SenderFinder\">astonysh/SenderFinder</a>. Para solicitudes de privacidad, escribe a <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>."
+        ]
+      },
+      {
+        "title": "Qué lee y qué guarda la extensión",
+        "blocks": [
+          "En Gmail o en Outlook en la web, la extensión lee el remitente y los participantes del mensaje abierto. Analiza el cuerpo del mensaje localmente para encontrar una URL de perfil de LinkedIn, por ejemplo en una firma. El cuerpo no se guarda ni se transmite. El historial de búsquedas, los resultados, la configuración y las claves de proveedores se almacenan localmente en la extensión o en el navegador. Los resultados en caché caducan a los 90 días por defecto, con un límite de 5.000 entradas; puedes exportarlos o eliminarlos en Configuración."
+        ]
+      },
+      {
+        "title": "Qué datos reciben los proveedores de datos",
+        "blocks": [
+          "Cuando se ejecuta una búsqueda, la dirección de correo de la persona seleccionada, el nombre para mostrar y el dominio de la empresa se envían directamente al proveedor que hayas configurado, con la clave de API de ese proveedor. Algunos proveedores son agregadores y pueden reenviar la solicitud a los servicios posteriores que tienen listados; se aplican sus condiciones y sus políticas de privacidad. SenderFinder no recibe las direcciones consultadas ni los resultados de los proveedores. Los campos del perfil profesional que devuelve un proveedor se guardan localmente; los números de teléfono y las direcciones de correo personales se descartan."
+        ]
+      },
+      {
+        "title": "Estadísticas de uso anónimas",
+        "blocks": [
+          "Las estadísticas de uso están activadas por defecto. Una vez al día la extensión envía un resumen del día anterior a nuestro Cloudflare Worker, que lo almacena en Cloudflare D1. El resumen incluye la fecha, la versión de la extensión, el idioma de la interfaz, los totales de búsquedas y sus resultados, los recuentos de pasos por proveedor, los totales por cliente de correo, el gasto redondeado y un identificador de instalación aleatorio. El identificador identifica una instalación, no a una persona. Un interruptor de la página de configuración desactiva el resumen y elimina el identificador de instalación y todo lo que no se haya enviado; el botón de vista previa que hay al lado muestra exactamente qué se enviaría.",
+          "El resumen no contiene ninguna dirección de correo, nombre, dominio de empresa, URL de LinkedIn, campo de perfil, clave de proveedor ni texto de mensaje. Puedes ver la carga útil exacta en Configuración. Desactivar las estadísticas detiene los envíos futuros y elimina el identificador de instalación local y los resúmenes sin enviar. Para solicitar la eliminación de resúmenes recibidos anteriormente, escribe a <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a> con el identificador de instalación que aparece en la vista previa."
+        ]
+      },
+      {
+        "title": "LinkedIn",
+        "blocks": [
+          "Si usas una función de LinkedIn, la extensión solicita el permiso opcional para linkedin.com la primera vez que se usa; puedes revocarlo en la configuración en cualquier momento, y solo se aplica a las pestañas que abre la propia extensión. Con él, la extensión usa tu propia sesión de LinkedIn para solicitar el grado de conexión, cualquier invitación pendiente, la foto del perfil y los enlaces a empresas asociadas del perfil que estás leyendo. Lee localmente la cookie de autenticación JSESSIONID como valor CSRF para esas solicitudes; la cookie solo se envía a LinkedIn, nunca a SenderFinder ni a un proveedor de enriquecimiento. Los resultados se guardan en la caché de tu dispositivo y no se envían a nadie. Cuando eliges Connect, la extensión abre el perfil seleccionado y, en el cuadro de invitación, pulsa una vez «Add a note» y rellena tu plantilla editable. Nunca pulsa Connect ni Send."
+        ]
+      },
+      {
+        "title": "Tus opciones y la política de Chrome Web Store",
+        "blocks": [
+          "Tú eliges qué proveedores de datos y qué claves de API configurar, y a qué personas buscar. Puedes eliminar claves, desactivar las estadísticas, revocar el acceso a LinkedIn, exportar o borrar el historial local, o desinstalar la extensión. SenderFinder usa los datos del buzón solo para mostrar y realizar la búsqueda que solicitas. El texto del cuerpo del correo se procesa localmente solo para encontrar un enlace a un perfil de LinkedIn; no se usa para publicidad y no se envía a SenderFinder ni a ningún proveedor."
+        ]
+      },
+      {
+        "id": "cookies",
+        "title": "Cookies y almacenamiento local",
+        "blocks": [
+          "Esta sección describe el sitio web de SenderFinder, no la extensión. La extensión envía un resumen diario de uso anónimo, activado por defecto y desactivable en su configuración. El sitio web utiliza el almacenamiento local del navegador descrito abajo.",
+          "Hoy este sitio web no instala cookies. Se usan dos entradas del localStorage de tu navegador, y ambas solo porque tú lo has pedido: <code>el-theme</code> recuerda la elección de Claro u Oscuro de la cabecera, y <code>sf-notice</code> recuerda que cerraste el aviso de la parte inferior de la página. Ninguna se envía nunca a ningún sitio, y si borras los datos del sitio en tu navegador desaparecen las dos.",
+          "<!-- ANALYTICS-PLACEHOLDER --> <strong>Analítica del sitio web.</strong> Si se añade analítica a este sitio, este párrafo indicará la herramienta, qué cuenta y cómo darse de baja, y el aviso de la parte inferior de la página pedirá consentimiento donde la ley lo exija. Hasta entonces aquí no se carga ningún script de analítica, ni fuentes ni imágenes de terceros.",
+          "El sitio está alojado en Cloudflare Workers Static Assets. Cloudflare trata los datos técnicos de una petición, como la dirección IP, para entregar las páginas y proteger el servicio frente a abusos, conforme a sus propios términos de privacidad.",
+          "Cloudflare Web Analytics, Zaraz y funciones similares de inyección no están activadas en este sitio. Si eso cambia, esta sección cambiará con ello."
+        ]
+      },
+      {
+        "title": "Este sitio web y contacto",
+        "blocks": [
+          "Este sitio web es estático y no usa cookies ni analíticas. Para preguntas o solicitudes de privacidad, escribe a <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a> o abre una incidencia en <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a>."
+        ]
+      }
+    ],
+    "summaryTitle": "En 30 segundos",
+    "summary": [
+      "Las consultas van directamente desde tu navegador al proveedor que configures: no hay ningún servidor de SenderFinder en el camino de la búsqueda.",
+      "Las claves, la caché y el historial se quedan en este dispositivo, en el almacenamiento de la extensión y en la IndexedDB de tu navegador. Puedes exportarlos o borrarlos con un clic.",
+      "El proveedor recibe la dirección que buscas, el nombre para mostrar de la cabecera del correo y el dominio de la empresa. Nada más.",
+      "El cuerpo del correo nunca sale de tu navegador: el análisis de la firma se ejecuta localmente.",
+      "Los recuentos de uso están activados por defecto: un resumen diario anónimo con recuentos, resultados, gasto, versión e idioma, además de un identificador de instalación aleatorio, enviado al servicio estadístico del proyecto. Un interruptor en la configuración lo desactiva y elimina el identificador de instalación. Nunca una dirección, un nombre, un dominio, un campo de perfil, una clave ni el texto de un mensaje.",
+      "Tú eliges los proveedores y a quién consultar. Puedes desactivar las estadísticas, revocar el acceso a LinkedIn y exportar o borrar los datos locales; las secciones siguientes explican cada lectura y envío."
+    ]
+  },
+  "clearbit": {
+    "title": "Clearbit Connect ya no existe. Aquí tienes una alternativa de código abierto.",
+    "lead": "SenderFinder muestra quién te escribe, directamente dentro de Gmail. Es de código abierto, funciona con tus propias claves de API y no necesita cuenta.",
+    "ctaInstall": "Instalar en 2 minutos",
+    "ctaHow": "Cómo funciona",
+    "shotAlt": "Gmail con el panel lateral de SenderFinder: el perfil de Jane Doe, responsable de alianzas en Acme, en Berlín, y las demás personas de la conversación.",
+    "shotCaption": "Buzón sintético, personas ficticias.",
+    "sections": [
+      {
+        "title": "Qué era Clearbit Connect",
+        "blocks": [
+          "Clearbit Connect era una extensión gratuita para Gmail y Outlook. Cuando leías un correo, mostraba información sobre el remitente, como su cargo y su empresa.",
+          "Después de que HubSpot adquiriera Clearbit, Clearbit Connect dejó de existir. Dejó de funcionar el 30 de abril de 2025."
+        ]
+      },
+      {
+        "title": "Qué hace SenderFinder",
+        "blocks": [
+          "Abre un correo en Gmail. El panel lateral del navegador muestra el perfil de LinkedIn de esa persona: nombre, titular, empresa, ubicación y un enlace al perfil. Las demás personas de la conversación aparecen debajo, y puedes buscarlas con un clic.",
+          "Outlook en la web es compatible en la medida de lo posible."
+        ]
+      },
+      {
+        "title": "En qué se diferencia",
+        "list": [
+          "<strong>Código abierto.</strong> El código está en <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> con licencia AGPL-3.0. Puedes leer exactamente qué hace.",
+          "<strong>Tus propias claves.</strong> La extensión llama a los proveedores de datos directamente desde tu navegador, con claves que pegas en su configuración. Compatibles: <a href=\"https://app.monid.ai/\">Monid</a> y <a href=\"https://treg.to/\">treg</a>, con <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> como respaldo opcional.",
+          "<strong>Sin registro.</strong> Las búsquedas van directamente desde tu navegador al proveedor que configures; no hay ningún servidor de SenderFinder en el camino de la búsqueda. Los recuentos de uso anónimos están activados por defecto y se pueden desactivar en la configuración.",
+          "<strong>Sin ataduras a un CRM.</strong> Los resultados se quedan en tu navegador. Puedes exportar el historial como JSON o CSV y llevártelo donde quieras.",
+          "<strong>Coste predecible.</strong> Primero se prueba la fuente más barata y la cadena se detiene en la primera coincidencia. Un tope por búsqueda y un tope diario mantienen el gasto bajo control. Los resultados se guardan en caché, así que nunca se paga dos veces por una misma dirección."
+        ]
+      },
+      {
+        "title": "Limitaciones honestas",
+        "list": [
+          "<strong>Necesitas una clave de proveedor.</strong> Con una clave de Monid o de treg basta para empezar, pero tienes que crearla tú.",
+          "<strong>No es gratis por búsqueda.</strong> Una búsqueda con éxito suele costar entre $0.0005 y $0.03, normalmente bastante menos de un céntimo. Los fallos en la mayoría de los proveedores son gratuitos.",
+          "<strong>Todavía no hay Firefox.</strong> Funciona en Chrome. Las aplicaciones de correo de escritorio como Apple Mail y Outlook para escritorio no son compatibles.",
+          "<strong>Los resultados dependen de la cobertura del proveedor.</strong> No se encontrará a todo el mundo. Cuando el nombre de un proveedor no coincide con el nombre del correo, el resultado indica «incierto» y muestra los dos."
+        ]
+      },
+      {
+        "title": "Adónde van los datos",
+        "blocks": [
+          "Clearbit Connect era un servicio alojado: las búsquedas se ejecutaban en los servidores de Clearbit y se iniciaba sesión con una cuenta de Clearbit.",
+          "SenderFinder es una extensión de Chrome de código abierto. Las consultas van directamente desde tu navegador al proveedor de datos que configures; ningún servidor de SenderFinder en el camino de la búsqueda. Un servicio estadístico independiente recibe un resumen diario anónimo, activado por defecto y desactivable en la página de configuración. El responsable de esas estadísticas es Tony Li, mantenedor de <a href=\"https://github.com/astonysh/SenderFinder\">astonysh/SenderFinder</a>. Para solicitudes de privacidad, escribe a <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>.",
+          "La <a href=\"{{url.privacy}}\">declaración de privacidad</a> indica exactamente qué se envía, qué se conserva y qué se descarta."
+        ]
+      },
+      {
+        "title": "Cambiar lleva unos minutos",
+        "ordered": [
+          "Instala la extensión. Hasta que la ficha de Chrome Web Store esté publicada, <a href=\"{{url.install}}\">instálala desde el código fuente</a>.",
+          "Crea una clave de API en Monid o en treg.",
+          "Pégala en la configuración de la extensión y abre un correo en Gmail."
+        ],
+        "blocksAfter": [
+          "¿Dudas sobre los datos? Lee la <a href=\"{{url.privacy}}\">declaración de privacidad</a>. ¿Buscas la herramienta anterior? Consulta la página de la <a href=\"{{url.rapportive}}\">alternativa a Rapportive</a>."
+        ]
+      }
+    ]
+  },
+  "rapportive": {
+    "title": "Rapportive ya no existe. La idea sigue funcionando.",
+    "lead": "SenderFinder recupera la parte sencilla de Rapportive: abre un correo en Gmail y ve quién lo envió. Código abierto, tus propias claves de API, sin cuenta.",
+    "ctaInstall": "Instalar en 2 minutos",
+    "ctaHow": "Cómo funciona",
+    "shotAlt": "Gmail con el panel lateral de SenderFinder: las demás personas de una conversación aparecen con el botón de búsqueda junto a cada una.",
+    "shotCaption": "Buzón sintético, personas ficticias.",
+    "sections": [
+      {
+        "title": "Qué era Rapportive",
+        "blocks": [
+          "Rapportive era un complemento de Gmail que mostraba el perfil de LinkedIn de la persona a la que escribías, junto al mensaje. LinkedIn lo adquirió en 2012 y más tarde lo cerró."
+        ]
+      },
+      {
+        "title": "Qué hace SenderFinder",
+        "blocks": [
+          "Cuando abres un correo en Gmail, el panel lateral del navegador muestra el nombre del remitente, su titular, su empresa, su ubicación y un enlace a su perfil de LinkedIn. Las demás personas de la conversación (otros remitentes, Para, Cc) aparecen debajo y solo se buscan cuando haces clic en ellas. El correo en sí solo recibe una pequeña marca junto al remitente.",
+          "Outlook en la web es compatible en la medida de lo posible."
+        ]
+      },
+      {
+        "title": "En qué se diferencia",
+        "list": [
+          "<strong>Código abierto.</strong> Con licencia AGPL-3.0 y el código en <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a>. Ninguna empresa puede apagarlo por ti.",
+          "<strong>Tus propias claves.</strong> Los perfiles vienen de los proveedores de datos que elijas: <a href=\"https://app.monid.ai/\">Monid</a> o <a href=\"https://treg.to/\">treg</a>, con <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> como respaldo opcional. La extensión los llama directamente desde tu navegador.",
+          "<strong>Sin registro.</strong> Las búsquedas van directamente desde tu navegador al proveedor que configures; no hay ningún servidor de SenderFinder en el camino de la búsqueda. Los recuentos de uso anónimos están activados por defecto y se pueden desactivar en la configuración.",
+          "<strong>Sin ataduras a un CRM.</strong> El historial se queda en tu navegador. Expórtalo como JSON o CSV cuando quieras.",
+          "<strong>Comprobación del nombre.</strong> Si el nombre del proveedor no coincide con el nombre mostrado en el correo, el resultado se marca como «incierto» y muestra los dos nombres."
+        ]
+      },
+      {
+        "title": "Limitaciones honestas",
+        "list": [
+          "<strong>Necesitas una clave de proveedor.</strong> Con una clave de Monid o de treg basta para empezar.",
+          "<strong>Las búsquedas cuestan un poco.</strong> Una búsqueda con éxito suele costar entre $0.0005 y $0.03, normalmente bastante menos de un céntimo. Los fallos en la mayoría de los proveedores son gratuitos, y los resultados se guardan en caché, así que nunca se paga dos veces por una misma dirección.",
+          "<strong>El gasto tiene límites que fijas tú.</strong> Se aplican un tope por búsqueda ($0.05 de forma predeterminada) y un tope diario ($2 de forma predeterminada). Solo se busca de forma automática el remitente del correo abierto.",
+          "<strong>Todavía no hay Firefox.</strong> Funciona en Chrome. Las aplicaciones de correo de escritorio no son compatibles.",
+          "<strong>La cobertura varía.</strong> No se encontrará a todo el mundo, y las direcciones personales como gmail.com se omiten de forma predeterminada. Un botón te permite buscarlas de todos modos."
+        ]
+      },
+      {
+        "title": "Adónde van los datos",
+        "blocks": [
+          "Rapportive también era un servicio alojado: la búsqueda del perfil se ejecutaba en sus servidores, ligada a tu cuenta de Rapportive.",
+          "SenderFinder es una extensión de Chrome de código abierto. Las consultas van directamente desde tu navegador al proveedor de datos que configures; ningún servidor de SenderFinder en el camino de la búsqueda. Un servicio estadístico independiente recibe un resumen diario anónimo, activado por defecto y desactivable en la página de configuración. El responsable de esas estadísticas es Tony Li, mantenedor de <a href=\"https://github.com/astonysh/SenderFinder\">astonysh/SenderFinder</a>. Para solicitudes de privacidad, escribe a <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>.",
+          "La <a href=\"{{url.privacy}}\">declaración de privacidad</a> indica exactamente qué se envía, qué se conserva y qué se descarta."
+        ]
+      },
+      {
+        "title": "Empezar",
+        "ordered": [
+          "Instala la extensión. Hasta que la ficha de Chrome Web Store esté publicada, <a href=\"{{url.install}}\">instálala desde el código fuente</a>.",
+          "Crea una clave de API en Monid o en treg.",
+          "Pégala en la configuración de la extensión y abre un correo en Gmail."
+        ],
+        "blocksAfter": [
+          "Lee cómo se tratan tus datos en la <a href=\"{{url.privacy}}\">declaración de privacidad</a>. ¿Vienes de Clearbit? Consulta la página de la <a href=\"{{url.clearbit}}\">alternativa a Clearbit Connect</a>."
+        ]
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "lead": "Esta página no existe. Puede que se haya movido.",
+    "home": "Ir a la página de inicio",
+    "install": "Instalar SenderFinder"
+  },
+  "works": {
+    "label": "Compatible con",
+    "gmail": "Gmail",
+    "outlook": "Outlook en la web",
+    "linkedin": "LinkedIn",
+    "chrome": "Chrome"
+  }
+}

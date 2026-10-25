@@ -1,7 +1,753 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://senderfinder.com/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://senderfinder.com/clearbit-connect-alternative</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://senderfinder.com/rapportive-alternative</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://senderfinder.com/privacy</loc><lastmod>2026-10-25</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://senderfinder.com/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/zh-cn/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/zh-tw/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/ja/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/ko/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/de/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/fr/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/es/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/it/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/pt-br/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/install</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/install"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/install"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/install"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/install"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/install"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/install"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/install"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/install"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/install"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/zh-cn/install</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/install"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/install"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/install"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/install"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/install"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/install"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/install"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/install"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/install"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/zh-tw/install</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/install"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/install"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/install"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/install"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/install"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/install"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/install"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/install"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/install"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/ja/install</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/install"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/install"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/install"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/install"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/install"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/install"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/install"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/install"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/install"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/ko/install</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/install"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/install"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/install"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/install"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/install"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/install"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/install"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/install"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/install"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/de/install</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/install"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/install"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/install"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/install"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/install"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/install"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/install"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/install"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/install"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/fr/install</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/install"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/install"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/install"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/install"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/install"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/install"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/install"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/install"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/install"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/es/install</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/install"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/install"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/install"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/install"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/install"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/install"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/install"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/install"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/install"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/it/install</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/install"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/install"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/install"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/install"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/install"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/install"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/install"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/install"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/install"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/pt-br/install</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/install"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/install"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/install"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/install"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/install"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/install"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/install"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/install"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/install"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/privacy</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/zh-cn/privacy</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/zh-tw/privacy</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/ja/privacy</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/ko/privacy</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/de/privacy</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/fr/privacy</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/es/privacy</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/it/privacy</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/pt-br/privacy</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/clearbit-connect-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/clearbit-connect-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/zh-cn/clearbit-connect-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/clearbit-connect-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/zh-tw/clearbit-connect-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/clearbit-connect-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/ja/clearbit-connect-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/clearbit-connect-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/ko/clearbit-connect-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/clearbit-connect-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/de/clearbit-connect-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/clearbit-connect-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/fr/clearbit-connect-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/clearbit-connect-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/es/clearbit-connect-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/clearbit-connect-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/it/clearbit-connect-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/clearbit-connect-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/pt-br/clearbit-connect-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/clearbit-connect-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/clearbit-connect-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/rapportive-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/rapportive-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/zh-cn/rapportive-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/rapportive-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/zh-tw/rapportive-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/rapportive-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/ja/rapportive-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/rapportive-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/ko/rapportive-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/rapportive-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/de/rapportive-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/rapportive-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/fr/rapportive-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/rapportive-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/es/rapportive-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/rapportive-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/it/rapportive-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/rapportive-alternative"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/pt-br/rapportive-alternative</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://senderfinder.com/zh-tw/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://senderfinder.com/ja/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://senderfinder.com/ko/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://senderfinder.com/de/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://senderfinder.com/fr/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://senderfinder.com/es/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://senderfinder.com/it/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/rapportive-alternative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/rapportive-alternative"/>
+  </url>
 </urlset>

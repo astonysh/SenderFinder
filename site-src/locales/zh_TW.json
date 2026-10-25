@@ -1,0 +1,755 @@
+{
+  "ui": {
+    "skip": "跳至主要內容",
+    "navLabel": "主要導覽",
+    "footerNavLabel": "頁尾導覽",
+    "language": "語言",
+    "languageHint": "SenderFinder 提供 10 種語言。擴充功能會跟隨你的瀏覽器語言。",
+    "nav": {
+      "how": "運作方式",
+      "cost": "價格",
+      "install": "安裝",
+      "privacy": "隱私權",
+      "faq": "常見問題"
+    },
+    "footer": {
+      "install": "安裝",
+      "privacy": "隱私權",
+      "clearbit": "Clearbit Connect 替代方案",
+      "rapportive": "Rapportive 替代方案",
+      "license": "AGPL-3.0 授權",
+      "built": "SenderFinder 是以 AGPL-3.0 授權釋出的開放原始碼軟體。",
+      "disclaimer": "與 LinkedIn、HubSpot、Clearbit 或任何資料供應商皆無隸屬關係。產品名稱屬各自擁有者所有。",
+      "privacyLine": "查詢路徑上沒有 SenderFinder 伺服器。你的 key 和歷史記錄都留在瀏覽器裡。",
+      "trademarks": "Gmail、Outlook、LinkedIn 和 Chrome 是各自擁有者的商標。"
+    },
+    "backHome": "回到首頁",
+    "theme": {
+      "label": "外觀",
+      "system": "跟隨系統",
+      "light": "淺色",
+      "dark": "深色"
+    },
+    "notice": {
+      "aria": "Cookie 通知",
+      "text": "本站可能會使用重視隱私的瀏覽統計來計數。SenderFinder 擴充功能是另一回事：除非你在它的設定裡把統計關掉，它每天會傳送一份匿名使用摘要。",
+      "link": "隱私權",
+      "ok": "好",
+      "accept": "接受",
+      "reject": "拒絕"
+    }
+  },
+  "meta": {
+    "index": {
+      "description": "開放原始碼的 Chrome 擴充功能，在 Gmail 與 Outlook 顯示寄件者的 LinkedIn 個人檔案。自備供應商 key；匿名使用統計預設開啟，可以關閉。",
+      "ogDescription": "在 Gmail 開啟一封郵件，就能看到寄件者的 LinkedIn 個人檔案。開放原始碼、自備 API key、不需要帳號。"
+    },
+    "install": {
+      "title": "安裝 SenderFinder（2 分鐘，從原始碼開始）| SenderFinder",
+      "description": "一步一步來：下載擴充功能、在 Chrome 載入未封裝的版本、貼上一組供應商 key，然後開啟 Gmail。每個步驟都有截圖，另外還有疑難排解。",
+      "ogTitle": "安裝 SenderFinder",
+      "ogDescription": "兩分鐘、五個步驟、一組 API key。在 Chrome Web Store 上架之前，先從原始碼安裝這個開放原始碼擴充功能。"
+    },
+    "privacy": {
+      "title": "隱私權 | SenderFinder",
+      "description": "SenderFinder 在 Gmail 與 Outlook 讀取哪些內容、哪些資料會送到你選擇的供應商、LinkedIn 功能怎麼運作，以及匿名每日使用統計包含哪些內容。",
+      "ogTitle": "隱私權 | SenderFinder",
+      "ogDescription": "SenderFinder 在 Gmail 與 Outlook 讀取哪些內容、哪些資料會送到你選擇的供應商、LinkedIn 功能怎麼運作，以及匿名每日使用統計包含哪些內容。"
+    },
+    "clearbit": {
+      "title": "Clearbit Connect 替代方案：開放原始碼、自備 key | SenderFinder",
+      "description": "Clearbit Connect 已於 2025 年 4 月 30 日停止服務。SenderFinder 是一款開放原始碼的 Chrome 擴充功能，讓你在 Gmail 裡看到寄件者是誰，使用你自己的 API key，不需要帳號。",
+      "ogTitle": "Gmail 的 Clearbit Connect 替代方案",
+      "ogDescription": "Clearbit Connect 已經沒有了。SenderFinder 在 Gmail 裡顯示寄件者的 LinkedIn 個人檔案。開放原始碼、自備 key、不需要帳號。"
+    },
+    "rapportive": {
+      "title": "Rapportive 替代方案：Gmail 裡的 LinkedIn 個人檔案 | SenderFinder",
+      "description": "開放原始碼的 Rapportive 替代工具，在 Gmail 顯示寄件者的 LinkedIn 個人檔案。自備供應商 key；匿名使用統計預設開啟，可以關閉。",
+      "ogTitle": "Gmail 的 Rapportive 替代方案",
+      "ogDescription": "Rapportive 已經沒有了。SenderFinder 在 Gmail 裡顯示寄件者的 LinkedIn 個人檔案。開放原始碼、自備 key、不需要帳號。"
+    },
+    "notFound": {
+      "title": "找不到頁面 | SenderFinder",
+      "description": "這個頁面不存在。"
+    }
+  },
+  "index": {
+    "hero": {
+      "desc": "在 Gmail 開啟一封郵件，側邊面板就會顯示寄件者是誰：姓名、職稱、公司和地點。",
+      "install": "2 分鐘完成安裝",
+      "github": "在 GitHub 上查看",
+      "fine": "還沒上架 Chrome Web Store。安裝頁面會帶你走完兩分鐘的未封裝安裝流程。",
+      "alt": "Gmail 旁邊的 SenderFinder 側邊面板，顯示 Jane Doe（柏林 Acme 的合作夥伴關係主管），以及她的 LinkedIn 連結、加入人脈按鈕和對話串中的其他人。",
+      "caption": "閱讀郵件時的側邊面板。人物與公司均為虛構。",
+      "privacyLine": "查詢會從你的瀏覽器直接傳送給你設定的供應商 —— 查詢路徑上沒有 SenderFinder 伺服器。",
+      "badges": [
+        "key 留在你的裝置上",
+        "歷史記錄留在你的裝置上",
+        "匿名使用統計 —— 一個開關就能關閉"
+      ],
+      "badge": "免費 · 開放原始碼 · AGPL-3.0"
+    },
+    "how": {
+      "title": "運作方式",
+      "intro": "三個步驟。除了你選擇的資料供應商之外，不需要在任何地方註冊。",
+      "steps": [
+        {
+          "title": "安裝擴充功能",
+          "body": "Chrome Web Store 還沒上架，所以要手動載入未封裝的版本：下載儲存庫、開啟 <code>chrome://extensions</code>、打開開發人員模式，然後選擇 <code>extension/</code> 資料夾。這裡有<a href=\"{{url.install}}\">附截圖的逐步說明</a>。"
+        },
+        {
+          "title": "取得一組 API key",
+          "body": "在 <a href=\"https://app.monid.ai/\">Monid</a> 或 <a href=\"https://treg.to/\">treg</a> 建立 key。兩者擇一就能開始。"
+        },
+        {
+          "title": "在設定裡貼上 key",
+          "body": "首次安裝後會自動開啟設定頁面。貼上 key、按下「測試 key（免費）」，然後在 Gmail 開啟任何一封郵件，並點一下工具列圖示。"
+        }
+      ],
+      "seeTitle": "你會看到什麼",
+      "see": [
+        "側邊面板顯示姓名、職稱、公司、地點、對方當地時間，以及個人檔案連結。郵件本身只會在寄件者旁邊多一個小標記。",
+        "對話串中的其他人（其他寄件者、收件者、副本）也會列在面板上。只有你點擊時才會查詢。",
+        "供應商回傳的姓名與郵件標頭的顯示名稱不符時，會標上「不確定」，並同時顯示兩個姓名。",
+        "「加入人脈」按鈕會開啟個人檔案並預先填好你的邀請訊息。傳送由你自己按下。"
+      ],
+      "whereTitle": "支援範圍",
+      "where": [
+        "網頁版 Gmail。",
+        "網頁版 Outlook，盡力支援。",
+        "不支援：Apple Mail、桌面版 Outlook 等桌面郵件程式，以及 Firefox（尚未支援）。"
+      ],
+      "shotAlt": "Gmail 視窗，右側是 SenderFinder 側邊面板：Jane Doe 的個人檔案，以及對話串中另外三個人，其中兩位還沒查詢。",
+      "shotCaption": "左邊是 Gmail，右邊是側邊面板。模擬信箱，人物均為虛構。"
+    },
+    "cost": {
+      "title": "先試最便宜的，命中就停。",
+      "intro": "你直接用自備的 key 付費給資料供應商。擴充功能會先試免費選項，再依價格由低到高試付費供應商，第一次命中就停止。",
+      "waterfall": [
+        {
+          "title": "掃描郵件簽名檔",
+          "body": "免費。如果簽名檔裡有 linkedin.com/in 連結，答案就是它。"
+        },
+        {
+          "title": "最便宜的付費供應商",
+          "body": "會先讀取目前的目錄價格。如果高於你設定的單次查詢上限，就跳過這個步驟。"
+        },
+        {
+          "title": "沒命中才試下一個供應商",
+          "body": "大多數供應商沒命中不收費。"
+        },
+        {
+          "title": "命中後就停止",
+          "body": "結果會快取在你的瀏覽器裡。同一個地址永遠不會付兩次錢。"
+        }
+      ],
+      "stats": [
+        {
+          "term": "典型成功查詢",
+          "value": "$0.0005–$0.03",
+          "note": "通常遠低於一分錢，視命中在哪個步驟而定。"
+        },
+        {
+          "term": "以 50 個公司信箱實測",
+          "value": "每個 $0.011",
+          "note": "50 個地址的基準測試，2026 年 10 月 25 日，兩組 key 都使用。"
+        },
+        {
+          "term": "單次查詢上限",
+          "value": "$0.05",
+          "note": "預設值，可以修改。"
+        },
+        {
+          "term": "每日上限",
+          "value": "$2",
+          "note": "預設值，可以修改。"
+        }
+      ],
+      "blocks": [
+        {
+          "title": "只自動查詢寄件者",
+          "body": "只有你開啟的郵件的寄件者會自動查詢。自動查詢設有每日上限（預設 30 次）。對話串中的其他人要等你點擊。"
+        },
+        {
+          "title": "不會把錢花在死路",
+          "body": "個人信箱網域（gmail.com、outlook.com、qq.com 等）和職務信箱（info@、support@ 等）預設會略過。面板上有按鈕可以仍要查詢。"
+        }
+      ],
+      "shotAlt": "SenderFinder 設定頁面：查詢步驟與各自的價格、命中率，以及單次查詢上限、每日上限和自動查詢次數的預算欄位。",
+      "shotCaption": "設定頁：步驟順序、價格、上限。每個數字都可以修改。"
+    },
+    "providers": {
+      "title": "支援的供應商",
+      "intro": "擴充功能會用你貼進設定裡的 key，直接從你的瀏覽器呼叫這些服務。",
+      "items": [
+        {
+          "title": "<a href=\"https://app.monid.ai/\">Monid</a>",
+          "body": "API 聚合服務。一組 key 就能使用 Hunter.io、Apollo 和 ContactOut。"
+        },
+        {
+          "title": "<a href=\"https://treg.to/\">treg</a>",
+          "body": "BlitzAPI、QuickEnrich 和 Village 的聚合服務。"
+        },
+        {
+          "title": "<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> <small class=\"fine\">（選填）</small>",
+          "body": "選填的最後備援，用於 Data Legion。"
+        },
+        {
+          "title": "順序與上限由你決定",
+          "body": "在設定裡你可以開關供應商、調整順序，並設定兩種上限。設定頁也會顯示你的歷史記錄和花費。"
+        }
+      ]
+    },
+    "faq": {
+      "title": "常見問題",
+      "items": [
+        {
+          "q": "免費嗎？",
+          "a": "是的。擴充功能免費，並以 AGPL-3.0 授權開放原始碼，不需要帳號，也不需要訂閱。付費查詢是選用的：由你選擇的資料供應商按次計費，直接記在你自己的 key 上，且不超出你設定的上限。郵件簽名檔掃描和快取都不收費。"
+        },
+        {
+          "q": "需要帳號嗎？",
+          "a": "不需要註冊。查詢會直接傳送給你設定的供應商；匿名每日使用統計會傳送到專案的統計服務，在設定裡用一個開關就能關閉。"
+        },
+        {
+          "q": "該申請哪一組 key？",
+          "a": "從 <a href=\"https://app.monid.ai/\">Monid</a> 或 <a href=\"https://treg.to/\">treg</a> 取得一組 key 就足以開始。兩組都填，需要時再加上 <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>，能讓瀑布流程有更多地方可查。<a href=\"{{url.install}}#which-key\">安裝頁面</a>有兩者的比較。"
+        },
+        {
+          "q": "如何控制費用？",
+          "a": "有單次查詢上限（預設 $0.05）和每日上限（預設 $2）。只有你開啟的郵件的寄件者會自動查詢，並受你設定的每日次數限制。結果會快取，同一個地址不會付兩次錢。<a href=\"#calculator\">費用試算</a>可以估算特定用量要花多少。"
+        },
+        {
+          "q": "如果顯示的人不對呢？",
+          "a": "如果供應商回傳的姓名與郵件標頭的顯示名稱不符，結果會標上「不確定」並同時顯示兩個姓名，讓你自己判斷。"
+        },
+        {
+          "q": "為什麼 gmail.com 的寄件者不被查詢？",
+          "a": "個人信箱網域和 info@ 這類職務信箱很少對應到個人檔案，所以預設略過以節省費用。點面板上的按鈕就能仍要查詢。"
+        },
+        {
+          "q": "支援 Outlook、Apple Mail 或 Firefox 嗎？",
+          "a": "網頁版 Outlook 為盡力支援。Apple Mail、桌面版 Outlook 等桌面郵件程式不支援。Firefox 目前也還不支援。"
+        },
+        {
+          "q": "我的資料存在哪裡？",
+          "a": "在你的裝置上。key 存放在擴充功能的儲存空間，歷史記錄和快取存放在瀏覽器的 IndexedDB。你可以從設定頁匯出或清除。詳見<a href=\"{{url.privacy}}\">隱私權聲明</a>。"
+        },
+        {
+          "q": "這是 Rapportive 或 Clearbit Connect 的替代品嗎？",
+          "a": "它做的正是它們以前做的事：顯示某個電子郵件地址背後是誰。更多說明請看 <a href=\"{{url.clearbit}}\">Clearbit Connect 替代方案</a>和 <a href=\"{{url.rapportive}}\">Rapportive 替代方案</a>。"
+        }
+      ]
+    },
+    "privacy": {
+      "title": "你的信箱還是你的",
+      "intro": "SenderFinder 在你的瀏覽器裡執行。查詢會直接送給你選擇的供應商 —— 查詢路徑上沒有 SenderFinder 伺服器。",
+      "diagramAlt": "示意圖：你的瀏覽器存放 key、快取和歷史記錄。只有一個箭頭離開瀏覽器：你主動發起的那次查詢，送往你設定的供應商。一個打叉的方塊標示不在這條路徑上的 SenderFinder 伺服器，旁邊的註記說明匿名每日使用統計。",
+      "flow": {
+        "browser": "你的瀏覽器",
+        "browserSub": "key · 快取 · 歷史記錄",
+        "arrow": "你主動發起的那次查詢",
+        "provider": "你選擇的供應商",
+        "providerSub": "會收到電子郵件地址，以及 Apollo 步驟會用到的顯示名稱和公司網域",
+        "none": "匿名每日使用統計 → SenderFinder 統計服務（預設開啟，可以關閉）",
+        "noServer": "查詢路徑上沒有 SenderFinder 伺服器"
+      },
+      "staysTitle": "哪些東西留在你的裝置上",
+      "stays": [
+        "<strong>你的 key。</strong>存放在這個裝置上擴充功能自己的儲存空間（<code>chrome.storage.local</code>），而且只會傳送給它所屬供應商的 API。",
+        "<strong>快取和歷史記錄。</strong>存放在瀏覽器的 IndexedDB 裡，預設自動清理為 90 天和 5,000 筆，可匯出成 JSON 或 CSV，也能一鍵刪除。",
+        "<strong>設定。</strong>供應商順序、上限和自動查詢次數上限，全部都在本機。",
+        "<strong>你的閱讀習慣。</strong>你開過哪些郵件，除了那份本機歷史記錄之外，不會被記錄在任何地方。"
+      ],
+      "leavesTitle": "哪些東西會離開你的裝置，又去了哪裡",
+      "leaves": [
+        "<strong>你查詢的地址</strong>、郵件標頭裡的顯示名稱和公司網域，會在查詢執行時連同你的 key 一起送到你設定的供應商。 部分供應商會彙整查詢服務，並可能依其揭露條款將請求轉送至下游供應商。請查看各供應商條款。",
+        "<strong>目錄價格。</strong>付費步驟執行前，擴充功能會讀取該供應商目前的價目表。那個請求不含任何個人資料。",
+        "<strong>個人檔案照片。</strong>供應商回傳照片網址時，你的瀏覽器會像載入網頁上任何圖片一樣，從供應商的伺服器載入這張圖。",
+        "<strong>絕不會是郵件本文。</strong>簽名檔掃描是在你的瀏覽器裡尋找 linkedin.com/in 連結；只有結果會在本機被使用。",
+        "匿名使用統計預設開啟。每天一次，專案的統計服務會收到查詢次數與結果、各供應商步驟和郵件用戶端的計數、四捨五入後的花費、版本、語言，以及一組隨機安裝 ID。在設定裡用一個開關就能關閉，並刪除安裝 ID 和尚未傳送的資料。其中絕不會有電子郵件地址、姓名、網域、個人檔案欄位、key 或郵件內容。",
+        "LinkedIn 功能會在取得選用的 linkedin.com 權限後，用你自己的 LinkedIn 工作階段讀取關係程度、是否有待處理的邀請、個人檔案照片和關聯公司連結。擴充功能會在本機讀取 JSESSIONID 作為 CSRF 值；Cookie 只會傳給 LinkedIn，結果快取在你的裝置上，不會傳送給任何人。你選擇「建立連結」時，它會開啟個人檔案，在邀請對話框中點一次「Add a note」並填入你的範本；送出的動作由你自己按下。它絕不會自己點擊「建立連結」或「傳送」。"
+      ],
+      "factsTitle": "白話說明細節",
+      "facts": [
+        "供應商回傳的電話號碼和個人電子郵件地址會在轉接層丟棄；只會儲存職業相關欄位。",
+        "個人信箱網域（gmail.com、outlook.com、qq.com 等）和職務信箱（info@、support@ 等）預設會略過，也絕不會送出。",
+        "AGPL-3.0 開放原始碼，所以你可以直接在<a href=\"https://github.com/astonysh/SenderFinder/tree/main/extension\">程式碼</a>裡核對這一切：<code>core/store.js</code>、<code>core/providers/profile.js</code>、<code>core/telemetry.js</code>。"
+      ],
+      "link": "閱讀隱私權聲明"
+    },
+    "sections": {
+      "how": {
+        "subtitle": "運作方式",
+        "title": "設定一次，之後它會自己讀你的收件匣",
+        "description": "安裝擴充功能、貼上一組供應商 key，之後你開啟的每封郵件都會顯示背後是誰。",
+        "items": [
+          {
+            "icon": "mail",
+            "title": "讀取目前開啟的郵件",
+            "body": "寄件者，以及收件者和副本中的每一個人。郵件內容只會在本機掃描，尋找 linkedin.com/in 連結。"
+          },
+          {
+            "icon": "wallet",
+            "title": "最便宜的先試",
+            "body": "從免費的郵件簽名檔掃描開始，依序嘗試付費供應商，由便宜到貴。沒命中不收費，命中就停止。"
+          },
+          {
+            "icon": "key",
+            "title": "一組 key 就夠",
+            "body": "treg 最便宜，Monid 涵蓋範圍最廣。任何一組 key 都能跑完整個流程。"
+          },
+          {
+            "icon": "users",
+            "title": "整條對話串",
+            "body": "其他寄件者、收件者和副本都會列在面板上，每個人只有在你點選時才會查詢。"
+          },
+          {
+            "icon": "link",
+            "title": "在 LinkedIn 建立連結",
+            "body": "面板會開啟對方個人檔案並填入你的邀請訊息。Connect 和 Send 都由你自己點，擴充功能絕不代勞。"
+          },
+          {
+            "icon": "database",
+            "title": "快取與歷史記錄，都在本機",
+            "body": "結果會留在瀏覽器的 IndexedDB 中 90 天，可匯出為 JSON 或 CSV，也能一鍵刪除。"
+          }
+        ]
+      },
+      "privacy": {
+        "subtitle": "隱私權",
+        "title": "你的收件匣始終屬於你",
+        "description": "查詢會從你的瀏覽器直接送到你選擇的供應商。以下說明哪些資料留在本機、哪些會送出，以及匿名統計包含哪些內容。",
+        "cards": [
+          {
+            "icon": "lock",
+            "title": "留在你的裝置上",
+            "items": [
+              "你的供應商 key，存在擴充功能自己的儲存空間",
+              "快取與歷史記錄，在 IndexedDB 中（90 天、5,000 筆）",
+              "設定、上限與自動查詢次數限制",
+              "你讀過哪些郵件：這件事不會離開瀏覽器"
+            ]
+          },
+          {
+            "icon": "provider",
+            "title": "送到你選擇的供應商",
+            "items": [
+              "你查詢的地址，連同你的 key",
+              "郵件標頭中的顯示名稱",
+              "公司網域，供 Apollo 步驟使用",
+              "讀取該供應商目錄價格的請求"
+            ]
+          },
+          {
+            "icon": "chart",
+            "title": "匿名使用統計",
+            "items": [
+              "預設開啟；在設定中用一個開關就能關閉",
+              "每日彙總：次數、結果、花費、版本、語言",
+              "隨機的安裝 ID，關閉統計時會一併刪除",
+              "絕不包含地址、姓名、網域、key 或郵件內容"
+            ]
+          }
+        ],
+        "link": "完整隱私權說明"
+      },
+      "pricing": {
+        "subtitle": "價格",
+        "title": "免費。只有你願意時，才需要付費給資料供應商。",
+        "description": "擴充功能本身不收費。郵件簽名檔這一步免費；付費查詢由你選擇的供應商按次計費，上限由你設定。",
+        "freeTitle": "SenderFinder",
+        "freePrice": "$0",
+        "freePriceNote": "永久免費",
+        "freeChecks": [
+          "開放原始碼，AGPL-3.0",
+          "不需要帳號，也不需要訂閱",
+          "在你的瀏覽器中執行",
+          "郵件簽名檔掃描免費",
+          "有快取，同一個地址不會付兩次錢"
+        ],
+        "freeCta": "免費安裝",
+        "optionalTitle": "選用：資料供應商費用",
+        "perAddress": "每個找到的地址，付給供應商",
+        "found": "找到",
+        "bestFor": "適合",
+        "recommended": "推薦",
+        "footnote": "估算來自 2026 年 10 月 25 日的 50 個地址基準測試。預設值：每天 $2、每次查詢 $0.05，兩者都能在設定中調整。"
+      },
+      "faq": {
+        "subtitle": "常見問題",
+        "title": "簡短的回答",
+        "description": "更長的答案在安裝指南和隱私權聲明中。"
+      },
+      "cta": {
+        "title": "兩分鐘，就完成了",
+        "description": "Chrome Web Store 還沒上架，所以要以未封裝的方式載入擴充功能。五個步驟，每步一張截圖。",
+        "button": "開啟安裝指南"
+      }
+    }
+  },
+  "calc": {
+    "title": "這樣要花多少錢？",
+    "intro": "拖動滑桿即可。每個數字都只根據下方 50 個地址基準測試中的供應商價格和命中率推算，沒有其他來源。",
+    "volumeLabel": "每天新的寄件者地址數",
+    "volumeHint": "只算你之前沒查過的地址。重複出現的寄件者由快取回答，不產生費用。",
+    "keysLabel": "你手上有哪一組 key？",
+    "keysBoth": "兩組都有（預設瀑布流程）",
+    "keysTreg": "只有 treg（最便宜）",
+    "keysMonid": "只有 Monid（涵蓋最廣）",
+    "skipLabel": "個人與職務信箱的比例",
+    "skipHint": "gmail.com、outlook.com、qq.com、info@、support@ 等預設略過，所以不產生費用。",
+    "monthlyLabel": "預估每月費用",
+    "perLabel": "每個新地址的費用",
+    "hitLabel": "找到的公司信箱",
+    "foundLabel": "每月找到數量",
+    "monthlyUnit": "月",
+    "usableLabel": "以這個速率，今天 $2 的上限大約可查 {n} 個地址。",
+    "hitNote": "「找到」表示供應商回傳的個人檔案姓名相符。兩組 key 的差別，主要在於多常需要動用較貴的備援步驟。",
+    "capNote": "上限仍然有效：預設每天 $2、每次查詢 $0.05，兩者都可以在設定裡調整。這項估算假設每月 30 天，且每個新地址查詢一次。",
+    "fallbackTitle": "範例用量",
+    "fallbackIntro": "未啟用 JavaScript 時顯示。同樣的模型、同樣的價格：{skip} 的寄件者是個人或職務信箱，會被略過。",
+    "fallbackNote": "開啟 JavaScript 就能看到你自己的數字。以上只是單純的表格，不是花費承諾。",
+    "modeBoth": "兩組 key",
+    "modeTreg": "只有 treg",
+    "modeMonid": "只有 Monid",
+    "perDay": "每天 {n} 個",
+    "assumptionsTitle": "數字從哪裡來",
+    "assumptions": [
+      "每個新的寄件者地址只查一次並快取。重複的寄件者花費 $0，所以輸入的是每天的新地址數，不是讀了幾封郵件。",
+      "每次命中的價格是供應商在 2026 年 10 月 25 日的目錄價：BlitzAPI $0.0005、QuickEnrich $0.0048、Hunter $0.0049、Apollo $0.026。這些步驟沒命中不收費。",
+      "各步驟的命中率來自 2026 年 10 月 25 日 50 個地址的基準測試：48 % 由 BlitzAPI 解決，剩下部分中的 19 % 由下一步解決，再剩下的 19 % 由再下一步解決。Apollo 在被呼叫的 19 個地址中比對到 17 個。",
+      "兩組 key 都使用時，大約 95 % 的公司信箱能查到，實測則是 48 of 50（96 %）。只用 treg 時只會跑兩個便宜步驟，只用 Monid 時則跑 Hunter 和 Apollo。",
+      "每月費用 = 每天新地址數 ×（1 − 略過比例）× 30 × 每個地址的費用。免費的郵件簽名檔掃描、選填的 Village 與 ContactOut 步驟，以及 Firecrawl 都沒有計入。",
+      "這些是來自一次英語系業務與成長聯絡人基準測試的估算。你自己的信箱結果可能不一樣。"
+    ],
+    "priceDate": "價格與命中率：2026 年 10 月 25 日。擴充功能在每次呼叫前都會重新讀取目錄價格，所以供應商調價會立刻反映。",
+    "fallbackHit": "找到 ≈ {hit}",
+    "fallbackCost": "≈ {cost} / 月"
+  },
+  "install": {
+    "title": "安裝 SenderFinder",
+    "lead": "Chrome Web Store 還沒上架，所以要先從原始碼載入擴充功能。兩分鐘，每個瀏覽器做一次。",
+    "note": "你需要在桌機上使用 Chrome、Edge 或其他 Chromium 瀏覽器；擴充功能無法加到行動版 App。截圖是英文版，擴充功能本身會跟隨你的瀏覽器語言。",
+    "downloadLabel": "下載 ZIP",
+    "githubLabel": "開啟儲存庫",
+    "stepsTitle": "五個步驟",
+    "steps": [
+      {
+        "title": "取得程式碼",
+        "body": "到 <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> 把儲存庫下載成 ZIP（「Code」→「Download ZIP」）後解壓縮；如果你有 git，也可以直接 clone：<br><code>git clone https://github.com/astonysh/SenderFinder.git</code>"
+      },
+      {
+        "title": "在 Chrome 載入",
+        "body": "在新分頁開啟 <code>chrome://extensions</code>。開啟<strong>開發人員模式</strong>（右上角），點<strong>載入未封裝項目</strong>，然後選擇儲存庫裡的 <code>extension/</code> 資料夾 —— 也就是包含 <code>manifest.json</code> 的那個資料夾，不是儲存庫根目錄。",
+        "image": "load-unpacked.png",
+        "alt": "Chrome 的擴充功能頁面，已開啟開發人員模式：SenderFinder 卡片上方有「載入未封裝項目」、「打包擴充功能」和「更新」按鈕。",
+        "caption": "開發人員模式已開啟，SenderFinder 卡片已載入。"
+      },
+      {
+        "title": "取得一組 key 並貼上",
+        "body": "安裝完成後設定頁面會自己開啟。到 <a href=\"https://app.monid.ai/\">Monid</a>（Hunter、Apollo、ContactOut）或 <a href=\"https://treg.to/\">treg</a>（BlitzAPI、QuickEnrich、Village）建立 key；<a href=\"https://firecrawl.link/sf\">Firecrawl</a> 是選填。一組 key 就夠。貼到「供應商 key」欄位。",
+        "image": "settings-keys.png",
+        "alt": "SenderFinder 設定頁面：Monid、treg 和 Firecrawl 的供應商 key 欄位、測試 key 按鈕，以及查詢步驟表。",
+        "caption": "首次安裝後的設定頁：上方是 key，下方是步驟與價格。"
+      },
+      {
+        "title": "按下「測試 key（免費）」",
+        "body": "這項檢查免費：它會驗證 key 並讀取供應商的價目表。不會查詢任何資料，也不會花錢。你要看到 key 旁邊顯示「有效」。"
+      },
+      {
+        "title": "開啟 Gmail，點一下工具列圖示",
+        "body": "在 Gmail 開啟任何一封郵件，然後點 Chrome 工具列上的 SenderFinder 圖示。如果看不到，先點拼圖圖示把 SenderFinder 釘選起來。側邊面板會開啟，並在這個分頁保持開啟；之後它會跟著你正在讀的郵件。",
+        "image": "sender-in-gmail.png",
+        "alt": "Gmail 視窗，右側開著 SenderFinder 側邊面板，顯示寄件者的個人檔案和對話串中的其他人。",
+        "caption": "第一次點擊之後，面板會在這個分頁保持開啟。"
+      }
+    ],
+    "whichKeyTitle": "該選哪一組 key？",
+    "whichKeyIntro": "一組 key 就能跑完整流程：沒有 key 的步驟會直接略過，不會報錯。這張表是 README 中供應商比較的摘要版。",
+    "whichKeyHead": [
+      "key",
+      "執行的步驟",
+      "每次命中的價格",
+      "基準測試中的涵蓋率",
+      "適合"
+    ],
+    "whichKeyRows": [
+      [
+        "<strong>treg</strong>",
+        "BlitzAPI → QuickEnrich（可選 Village）",
+        "$0.0005–0.005",
+        "大約一半到 60 % 的公司信箱",
+        "預算緊、量大"
+      ],
+      [
+        "<strong>Monid</strong>",
+        "Hunter → Apollo（可選 ContactOut）",
+        "$0.005–0.026",
+        "Apollo 比對到 19 of 19 次呼叫",
+        "命中率"
+      ],
+      [
+        "<strong>兩組都有</strong>",
+        "完整鏈路：BlitzAPI → Hunter → QuickEnrich → Apollo",
+        "平均每個地址 $0.011",
+        "48 of 50（96 %）",
+        "預設組合；先試最便宜的步驟，Apollo 當後盾"
+      ],
+      [
+        "Firecrawl <small class=\"fine\">（選填）</small>",
+        "只用 Data Legion",
+        "10 個 credit（≈ $0.008–0.032）",
+        "沒有命中率資料",
+        "不建議單獨使用，僅作備援"
+      ]
+    ],
+    "whichKeyNote": "Apollo、Hunter 和 ContactOut 是透過 Monid 呼叫；BlitzAPI、QuickEnrich 和 Village 則是透過 treg。直接使用這些資料來源的 API key 在這裡沒有作用。",
+    "troubleTitle": "如果遇到問題",
+    "trouble": [
+      {
+        "q": "側邊面板打不開",
+        "a": "先把 SenderFinder 釘選起來：工具列上的拼圖圖示 → 釘選。然後在開著 Gmail 分頁時點一下它的圖示。面板不會自己開啟，而且是每個分頁各自獨立。"
+      },
+      {
+        "q": "面板顯示「未設定 key」",
+        "a": "在擴充功能設定裡貼上一組 key。一組就夠：供應商沒有 key 的步驟會被直接略過，不會報錯。"
+      },
+      {
+        "q": "在 Outlook 沒有反應",
+        "a": "網頁版 Outlook 是盡力支援，它的頁面結構經常變動。如果寄件者旁邊沒有出現小標記，請帶著寄件者那一行的 HTML 開一個 issue。"
+      },
+      {
+        "q": "gmail.com 或 info@ 的地址沒有被查詢",
+        "a": "個人信箱網域和職務信箱很少能查到個人檔案，所以預設略過。面板上有「仍要查詢」按鈕可以處理這些地址。"
+      },
+      {
+        "q": "今天突然不查了",
+        "a": "可能是達到每日上限（預設 $2）或自動查詢次數上限（每天 30 次）。兩者都可以在設定裡調整，計數器會在隔天重置。"
+      },
+      {
+        "q": "之後要怎麼更新",
+        "a": "把新檔案放進同一個資料夾，然後在 chrome://extensions 的卡片上點重新載入的箭頭。擴充功能 ID 固定在 manifest 裡，所以 key、快取和歷史記錄都會保留。"
+      }
+    ],
+    "nextTitle": "接下來",
+    "next": "閱讀<a href=\"{{url.index}}#how\">運作方式</a>、看看<a href=\"{{url.index}}#cost\">一次查詢要多少錢</a>，或用<a href=\"{{url.index}}#calculator\">費用試算</a>估算你自己的用量。資料相關的問題可以在<a href=\"{{url.privacy}}\">隱私權聲明</a>找到答案。",
+    "fine": "等 Chrome Web Store 上架後，這個頁面就會變成按一下即安裝；在那之前，上面的步驟是唯一的安裝方式。",
+    "privacy": {
+      "title": "隱私權一眼看懂",
+      "points": [
+        "你貼上的 key 會存放在這個裝置上擴充功能自己的儲存空間，只會在你查詢時傳送給該供應商的 API。",
+        "查詢請求會從你的瀏覽器直接傳送給你設定的供應商 —— 查詢路徑上沒有 SenderFinder 伺服器。匿名使用統計預設開啟，可以在設定裡關閉。",
+        "你隨時可以在設定裡移除 key —— 沒有 key 就無法執行任何付費查詢 —— 或者直接解除安裝擴充功能，這會刪除它的儲存資料。"
+      ]
+    }
+  },
+  "privacy": {
+    "title": "隱私權",
+    "updated": "最後更新：2026 年 10 月 25 日",
+    "prevails": "本文為英文版隱私權政策的翻譯，若與英文版本有出入，以英文版本為準。",
+    "lead": "SenderFinder 會讀取目前郵件的寄件者和參與者，並在本機掃描本文以尋找 LinkedIn 個人檔案連結。若你啟用 LinkedIn 功能，它會用你自己的 LinkedIn 工作階段讀取關係程度、是否有待處理的邀請、照片和關聯公司連結。「建立連結」輔助功能會在邀請對話框中點一次「Add a note」並填入備註供你檢查。查詢欄位會直接傳送給你設定的供應商。匿名使用統計預設開啟；在設定裡用一個開關就能關閉。",
+    "sections": [
+      {
+        "title": "誰經營 SenderFinder",
+        "blocks": [
+          "SenderFinder 是開放原始碼的 Chrome 擴充功能。查詢請求會從你的瀏覽器直接傳送給你設定的資料供應商；查詢路徑上沒有 SenderFinder 伺服器。另有一項獨立的統計服務會收到每天一份匿名摘要，預設開啟，可在設定頁關閉。這些統計資料的控管者是 GitHub 專案 <a href=\"https://github.com/astonysh/SenderFinder\">astonysh/SenderFinder</a> 維護者 Tony Li。隱私權相關請求請聯絡 <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>。"
+        ]
+      },
+      {
+        "title": "擴充功能會讀取和保存什麼",
+        "blocks": [
+          "在 Gmail 或網頁版 Outlook 中，擴充功能會讀取目前開啟郵件的寄件者和參與者。它會在本機掃描郵件本文，找出 LinkedIn 個人檔案網址，例如簽名檔裡的連結。郵件本文不會被儲存，也不會被傳送。查詢歷史記錄、結果、設定和供應商 key 都存放在本機的擴充功能或瀏覽器中。快取結果預設 90 天後過期，上限 5,000 筆；你可以在設定裡匯出或刪除。"
+        ]
+      },
+      {
+        "title": "資料供應商會收到什麼",
+        "blocks": [
+          "查詢執行時，所選對象的電子郵件地址、顯示名稱和公司網域，會使用該供應商的 API key 直接送到你設定的供應商。有些供應商是聚合服務，可能會把請求轉送給它們列出的下游服務；適用它們自己的條款和隱私權政策。SenderFinder 不會收到查詢的地址或供應商回傳的結果。供應商回傳的職業相關個人檔案欄位會保存在本機；電話號碼和個人電子郵件地址則會丟棄。"
+        ]
+      },
+      {
+        "title": "匿名使用統計",
+        "blocks": [
+          "使用統計預設開啟。擴充功能每天會傳送一份前一天的摘要到我們的 Cloudflare Worker，由它儲存在 Cloudflare D1。摘要包含日期、擴充功能版本、介面語言、查詢總數與結果、各供應商步驟的次數、各郵件用戶端的次數、四捨五入後的花費，以及一組隨機安裝 ID。這個 ID 辨識的是一次安裝，不是一個人。在設定頁用一個開關就能關閉摘要，並刪除安裝 ID 和尚未傳送的資料；旁邊的預覽按鈕會顯示實際會傳送的內容。",
+          "摘要不含任何電子郵件地址、姓名、公司網域、LinkedIn 網址、個人檔案欄位、供應商 key 或郵件內容。你可以在設定裡預覽實際會傳送的內容。關閉統計後會停止之後的傳送，並刪除本機的安裝 ID 和尚未傳送的摘要。若要要求刪除先前已收到的摘要，請寫信到 <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>，並附上預覽中顯示的安裝 ID。"
+        ]
+      },
+      {
+        "title": "LinkedIn",
+        "blocks": [
+          "若你啟用 LinkedIn 功能，擴充功能會在首次使用時要求選用的 linkedin.com 權限；你隨時可以在設定中撤銷，而且它只適用於擴充功能自己開啟的分頁。取得權限後，擴充功能會用你自己的 LinkedIn 工作階段，針對你正在閱讀的個人檔案讀取關係程度、是否有待處理的邀請、個人檔案照片和關聯公司連結。它會在本機讀取 JSESSIONID 驗證 Cookie，作為這些請求的 CSRF 值；Cookie 只會傳給 LinkedIn，絕不會傳給 SenderFinder 或資料補全供應商。結果會快取在你的裝置上，不會傳送給任何人。你選擇「建立連結」時，擴充功能會開啟所選的個人檔案，並在邀請對話框中點一次「Add a note」，填入可編輯的範本。它絕不會點擊「建立連結」或「傳送」。"
+        ]
+      },
+      {
+        "title": "你的選擇與 Chrome Web Store 政策",
+        "blocks": [
+          "要設定哪些資料供應商和 API key、要查詢哪些人，都由你決定。你可以移除 key、關閉統計、撤銷 LinkedIn 存取權、匯出或清除本機歷史記錄，或解除安裝擴充功能。SenderFinder 只會為了顯示和執行你要求的查詢而使用信箱資料。郵件本文只在本機處理，用來尋找 LinkedIn 個人檔案連結；不會用於廣告，也不會傳送給 SenderFinder 或供應商。"
+        ]
+      },
+      {
+        "id": "cookies",
+        "title": "Cookie 與本機儲存空間",
+        "blocks": [
+          "本節說明 SenderFinder 網站，而不是擴充功能。擴充功能每天會傳送一份匿名使用摘要，預設開啟，可在它的設定裡關閉。網站本身使用的瀏覽器本機儲存空間如下所述。",
+          "目前本站不設定 Cookie。瀏覽器 localStorage 裡有兩項，都是因為你主動用過才存在的：<code>el-theme</code> 記住你在頁首選的淺色或深色，<code>sf-notice</code> 記住你關掉了頁面底部的提示。它們從不傳往任何地方，清除瀏覽器裡的網站資料就會一併刪除。",
+          "<!-- ANALYTICS-PLACEHOLDER --> <strong>網站瀏覽統計。</strong>如果以後給本站加上瀏覽統計，這一段會寫明用的是哪個工具、統計什麼、怎麼退出，頁面底部的提示也會在法律要求時徵求同意。在那之前，這裡不載入任何第三方的統計腳本、字型或圖片。",
+          "本站託管在 Cloudflare Workers Static Assets 上。Cloudflare 會依它自己的隱私條款處理請求的技術資料（例如 IP 位址），用來把頁面送達並防止濫用。",
+          "本站沒有開啟 Cloudflare Web Analytics、Zaraz 等注入功能。如果以後開啟，這一節也會跟著改。"
+        ]
+      },
+      {
+        "title": "這個網站與聯絡方式",
+        "blocks": [
+          "這個網站是靜態的，不設定 Cookie，也沒有分析工具。如有疑問或隱私權相關請求，請寫信到 <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>，或在 <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> 開一個 issue。"
+        ]
+      }
+    ],
+    "summaryTitle": "30 秒看完",
+    "summary": [
+      "查詢會從你的瀏覽器直接傳送給你設定的供應商 —— 查詢路徑上沒有 SenderFinder 伺服器。",
+      "key、快取和歷史記錄留在這個裝置上，也就是擴充功能的儲存空間和瀏覽器的 IndexedDB。你可以匯出，或一鍵全部清除。",
+      "供應商會收到你查詢的地址、郵件標頭裡的顯示名稱和公司網域，沒有別的。",
+      "郵件本文絕不會離開你的瀏覽器：簽名檔掃描是在本機執行。",
+      "使用統計預設開啟：每天一份匿名摘要，包含次數、結果、花費、版本和語言，加上一組隨機安裝 ID，傳送到專案的統計服務。在設定裡用一個開關就能關閉，並刪除安裝 ID。絕不會有電子郵件地址、姓名、網域、個人檔案欄位、key 或郵件內容。",
+      "你決定設定哪些供應商、查詢哪些人。你可以關閉統計、撤銷 LinkedIn 權限，並匯出或刪除本機資料；下文會分別說明各項功能讀取的內容和資料去向。"
+    ]
+  },
+  "clearbit": {
+    "title": "Clearbit Connect 已經結束了。這裡有一個開放原始碼的替代方案。",
+    "lead": "SenderFinder 讓你在 Gmail 裡直接看到寄件者是誰。它是開放原始碼、使用你自己的 API key，而且不需要帳號。",
+    "ctaInstall": "2 分鐘完成安裝",
+    "ctaHow": "運作方式",
+    "shotAlt": "Gmail 搭配 SenderFinder 側邊面板：Jane Doe 的個人檔案（柏林 Acme 的合作夥伴關係主管），以及對話串中的其他人。",
+    "shotCaption": "模擬信箱，人物均為虛構。",
+    "sections": [
+      {
+        "title": "Clearbit Connect 是什麼",
+        "blocks": [
+          "Clearbit Connect 是 Gmail 和 Outlook 的免費擴充功能。你讀一封郵件時，它會顯示寄件者的資訊，例如職稱和公司。",
+          "HubSpot 收購 Clearbit 之後，Clearbit Connect 停止服務，並在 2025 年 4 月 30 日無法再使用。"
+        ]
+      },
+      {
+        "title": "SenderFinder 做什麼",
+        "blocks": [
+          "在 Gmail 開啟一封郵件，瀏覽器的側邊面板就會顯示那個人的 LinkedIn 個人檔案：姓名、職稱、公司、地點，以及個人檔案連結。對話串中的其他人列在下方，點一下就能查詢。",
+          "網頁版 Outlook 為盡力支援。"
+        ]
+      },
+      {
+        "title": "哪裡不一樣",
+        "list": [
+          "<strong>開放原始碼。</strong>程式碼在 <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> 上，以 AGPL-3.0 授權釋出。你可以直接讀懂它到底做了什麼。",
+          "<strong>你自己的 key。</strong>擴充功能會用你貼進設定裡的 key，直接從你的瀏覽器呼叫資料供應商。支援 <a href=\"https://app.monid.ai/\">Monid</a> 和 <a href=\"https://treg.to/\">treg</a>，<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> 為選填的最後備援。",
+          "<strong>不需註冊。</strong>查詢會從你的瀏覽器直接傳送給你設定的供應商；查詢路徑上沒有 SenderFinder 伺服器。匿名使用統計預設開啟，可以在設定裡關閉。",
+          "<strong>不會被 CRM 綁住。</strong>結果留在你的瀏覽器裡。你可以把歷史記錄匯出成 JSON 或 CSV，帶到任何地方。",
+          "<strong>花費可預期。</strong>會先試最便宜的來源，命中就停止。單次上限和每日上限讓花費受到控制。結果會快取，同一個地址永遠不會付兩次錢。"
+        ]
+      },
+      {
+        "title": "老實說明的限制",
+        "list": [
+          "<strong>你需要一組供應商 key。</strong>Monid 或 treg 的一組 key 就足以開始，但要你自己去申請。",
+          "<strong>每次查詢不是免費的。</strong>一次成功查詢通常花 $0.0005 到 $0.03，多半遠低於一分錢。大多數供應商沒命中不收費。",
+          "<strong>還沒有 Firefox。</strong>它在 Chrome 上執行。Apple Mail、桌面版 Outlook 等桌面郵件程式不支援。",
+          "<strong>結果取決於供應商的涵蓋範圍。</strong>有些人查不到。供應商回傳的姓名與郵件裡的顯示名稱不符時，結果會標上「不確定」，並同時顯示兩個姓名。"
+        ]
+      },
+      {
+        "title": "資料去了哪裡",
+        "blocks": [
+          "Clearbit Connect 是託管服務：查詢在 Clearbit 的伺服器上執行，而且要登入 Clearbit 帳號。",
+          "SenderFinder 是開放原始碼的 Chrome 擴充功能。查詢請求會從你的瀏覽器直接傳送給你設定的資料供應商；查詢路徑上沒有 SenderFinder 伺服器。另有一項獨立的統計服務會收到每天一份匿名摘要，預設開啟，可在設定頁關閉。這些統計資料的控管者是 GitHub 專案 <a href=\"https://github.com/astonysh/SenderFinder\">astonysh/SenderFinder</a> 維護者 Tony Li。隱私權相關請求請聯絡 <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>。",
+          "<a href=\"{{url.privacy}}\">隱私權聲明</a>會列出哪些資料會被送出、哪些會保留、哪些會丟棄。"
+        ]
+      },
+      {
+        "title": "轉換只要幾分鐘",
+        "ordered": [
+          "安裝擴充功能。Chrome Web Store 還沒上架前，請<a href=\"{{url.install}}\">從原始碼安裝</a>。",
+          "在 Monid 或 treg 建立一組 API key。",
+          "把它貼進擴充功能的設定，然後在 Gmail 開啟一封郵件。"
+        ],
+        "blocksAfter": [
+          "對資料有疑問？請看<a href=\"{{url.privacy}}\">隱私權聲明</a>。在找舊的工具？請看 <a href=\"{{url.rapportive}}\">Rapportive 替代方案</a>頁面。"
+        ]
+      }
+    ]
+  },
+  "rapportive": {
+    "title": "Rapportive 已經結束了，但這個想法依然可行。",
+    "lead": "SenderFinder 把 Rapportive 最簡單的那一部分帶回來：在 Gmail 開啟郵件，就能看到寄件者是誰。開放原始碼、自備 API key、不需要帳號。",
+    "ctaInstall": "2 分鐘完成安裝",
+    "ctaHow": "運作方式",
+    "shotAlt": "Gmail 搭配 SenderFinder 側邊面板：對話串中的其他人列在面板上，每個人旁邊都有查詢按鈕。",
+    "shotCaption": "模擬信箱，人物均為虛構。",
+    "sections": [
+      {
+        "title": "Rapportive 是什麼",
+        "blocks": [
+          "Rapportive 是 Gmail 的附加元件，會把你正在寫信對象的 LinkedIn 個人檔案顯示在郵件旁邊。LinkedIn 在 2012 年收購它，之後將它關閉。"
+        ]
+      },
+      {
+        "title": "SenderFinder 做什麼",
+        "blocks": [
+          "你在 Gmail 開啟一封郵件時，瀏覽器的側邊面板會顯示寄件者的姓名、職稱、公司、地點，以及對方 LinkedIn 個人檔案的連結。對話串中的其他人（其他寄件者、收件者、副本）列在下方，只有你點擊時才會查詢。郵件本身只會在寄件者旁邊多一個小標記。",
+          "網頁版 Outlook 為盡力支援。"
+        ]
+      },
+      {
+        "title": "哪裡不一樣",
+        "list": [
+          "<strong>開放原始碼。</strong>以 AGPL-3.0 授權，程式碼在 <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> 上。沒有公司可以替你把它關掉。",
+          "<strong>你自己的 key。</strong>個人檔案來自由你選擇的資料供應商：<a href=\"https://app.monid.ai/\">Monid</a> 或 <a href=\"https://treg.to/\">treg</a>，<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> 為選填的最後備援。擴充功能會直接從你的瀏覽器呼叫它們。",
+          "<strong>不需註冊。</strong>查詢會從你的瀏覽器直接傳送給你設定的供應商；查詢路徑上沒有 SenderFinder 伺服器。匿名使用統計預設開啟，可以在設定裡關閉。",
+          "<strong>不會被 CRM 綁住。</strong>歷史記錄留在你的瀏覽器裡。想匯出成 JSON 或 CSV，隨時都可以。",
+          "<strong>姓名比對。</strong>供應商回傳的姓名與郵件裡的顯示名稱不符時，結果會標上「不確定」，並同時顯示兩個姓名。"
+        ]
+      },
+      {
+        "title": "老實說明的限制",
+        "list": [
+          "<strong>你需要一組供應商 key。</strong>Monid 或 treg 的一組 key 就足以開始。",
+          "<strong>查詢要花一點錢。</strong>一次成功查詢通常花 $0.0005 到 $0.03，多半遠低於一分錢。大多數供應商沒命中不收費，結果也會快取，同一個地址永遠不會付兩次錢。",
+          "<strong>花費有你自己設定的上限。</strong>會有單次上限（預設 $0.05）和每日上限（預設 $2）。只有你開啟的郵件的寄件者會自動查詢。",
+          "<strong>還沒有 Firefox。</strong>它在 Chrome 上執行。桌面郵件程式不支援。",
+          "<strong>涵蓋範圍不一。</strong>不是每個人都查得到，gmail.com 這類個人信箱地址預設會略過。面板上有按鈕可以仍要查詢。"
+        ]
+      },
+      {
+        "title": "資料去了哪裡",
+        "blocks": [
+          "Rapportive 也是託管服務：個人檔案的查詢在它的伺服器上執行，並綁定你的 Rapportive 帳號。",
+          "SenderFinder 是開放原始碼的 Chrome 擴充功能。查詢請求會從你的瀏覽器直接傳送給你設定的資料供應商；查詢路徑上沒有 SenderFinder 伺服器。另有一項獨立的統計服務會收到每天一份匿名摘要，預設開啟，可在設定頁關閉。這些統計資料的控管者是 GitHub 專案 <a href=\"https://github.com/astonysh/SenderFinder\">astonysh/SenderFinder</a> 維護者 Tony Li。隱私權相關請求請聯絡 <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>。",
+          "<a href=\"{{url.privacy}}\">隱私權聲明</a>會列出哪些資料會被送出、哪些會保留、哪些會丟棄。"
+        ]
+      },
+      {
+        "title": "開始使用",
+        "ordered": [
+          "安裝擴充功能。Chrome Web Store 還沒上架前，請<a href=\"{{url.install}}\">從原始碼安裝</a>。",
+          "在 Monid 或 treg 建立一組 API key。",
+          "把它貼進擴充功能的設定，然後在 Gmail 開啟一封郵件。"
+        ],
+        "blocksAfter": [
+          "想知道你的資料怎麼處理，請看<a href=\"{{url.privacy}}\">隱私權聲明</a>。從 Clearbit 過來？請看 <a href=\"{{url.clearbit}}\">Clearbit Connect 替代方案</a>頁面。"
+        ]
+      }
+    ]
+  },
+  "notFound": {
+    "title": "找不到頁面",
+    "lead": "這個頁面不存在，可能已經搬家了。",
+    "home": "回到首頁",
+    "install": "安裝 SenderFinder"
+  },
+  "works": {
+    "label": "支援",
+    "gmail": "Gmail",
+    "outlook": "網頁版 Outlook",
+    "linkedin": "LinkedIn",
+    "chrome": "Chrome"
+  }
+}

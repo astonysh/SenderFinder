@@ -1,0 +1,28 @@
+<!-- CWS-BUTTON: when the store listing is live, set href="CWS_PLACEHOLDER" and change the label to "Add to Chrome". -->
+<div class="v2-page">
+  <div class="v2-wrap">
+    <header class="v2-page-head">
+      <h1>{{clearbit.title}}</h1>
+      <p class="v2-lead">{{clearbit.lead}}</p>
+      <div class="v2-actions">
+        <a class="v2-btn v2-btn--default" href="{{url.install}}" data-store-url="CWS_PLACEHOLDER">{{clearbit.ctaInstall}}</a>
+        <a class="v2-btn v2-btn--outline" href="{{url.index}}#how">{{clearbit.ctaHow}}</a>
+      </div>
+    </header>
+
+    <article class="v2-prose">
+      {{#each clearbit.sections}}
+      <h2>{{title}}</h2>
+      {{#if blocks}}{{#each blocks}}<p>{{this}}</p>{{/each}}{{/if}}
+      {{#if list}}<ul class="checklist">{{#each list}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+      {{#if ordered}}<ol>{{#each ordered}}<li>{{this}}</li>{{/each}}</ol>{{/if}}
+      {{#if blocksAfter}}{{#each blocksAfter}}<p>{{this}}</p>{{/each}}{{/if}}
+      {{/each}}
+
+      <figure class="v2-shot">
+        <img src="{{base}}assets/screenshots/sender-in-gmail.png" alt="{{clearbit.shotAlt}}" width="1280" height="800" loading="lazy">
+        <figcaption>{{clearbit.shotCaption}}</figcaption>
+      </figure>
+    </article>
+  </div>
+</div>

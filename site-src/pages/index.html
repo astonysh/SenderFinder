@@ -1,0 +1,273 @@
+<div class="v2-hero">
+  <div class="v2-wrap">
+    <a class="v2-badge" href="https://github.com/astonysh/SenderFinder">
+      <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> {{index.hero.badge}}
+    </a>
+
+    <h1 id="hero-title" class="v2-title">{{heroSlogan.before}}<span class="v2-gradient">LinkedIn</span>{{heroSlogan.after}}</h1>
+
+    <p class="v2-hero-lead">{{ext.tagline}}</p>
+    <p class="v2-hero-desc">{{index.hero.desc}}</p>
+
+    <ul class="v2-hero-meta">
+      {{#each index.hero.badges}}
+      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> {{this}}</li>
+      {{/each}}
+    </ul>
+
+    <div class="v2-actions">
+      <!-- CWS-BUTTON: when the store listing is live, set href="CWS_PLACEHOLDER" and change the label to "Add to Chrome". -->
+      <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder">
+        <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> {{index.hero.github}}
+      </a>
+      <a class="v2-btn v2-btn--default" href="{{url.install}}" data-store-url="CWS_PLACEHOLDER">
+        {{index.hero.install}} <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+      </a>
+    </div>
+    <p class="v2-hero-fine">{{index.hero.fine}}</p>
+
+    <figure class="v2-shot">
+      <picture>
+        <source media="(max-width: 620px)" srcset="{{base}}assets/screenshots/side-panel.png" width="359" height="800">
+        <img src="{{base}}assets/screenshots/sender-in-gmail.png" alt="{{index.hero.alt}}" width="1280" height="800" fetchpriority="high">
+      </picture>
+      <figcaption>{{index.hero.caption}}</figcaption>
+    </figure>
+  </div>
+</div>
+
+<section class="v2-section v2-section--soft v2-cloud-section">
+  <div class="v2-wrap v2-cloud">
+    <p>{{works.label}}</p>
+    <ul>
+      <li><svg class="i" aria-hidden="true"><use href="#i-gmail"/></svg> {{works.gmail}}</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-outlook"/></svg> {{works.outlook}}</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg> {{works.linkedin}}</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-chrome"/></svg> {{works.chrome}}</li>
+    </ul>
+  </div>
+</section>
+
+<section class="v2-section" id="how">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">{{index.sections.how.subtitle}}</div>
+      <h2 class="v2-h2">{{index.sections.how.title}}</h2>
+      <p>{{index.sections.how.description}}</p>
+    </header>
+
+    <div class="v2-grid v2-grid--3">
+      {{#each index.sections.how.items}}
+      <article class="v2-card">
+        <div class="v2-icon"><svg class="i" aria-hidden="true"><use href="#i-{{icon}}"/></svg></div>
+        <h3>{{title}}</h3>
+        <hr class="v2-rule">
+        <p>{{body}}</p>
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<section class="v2-section v2-section--soft" id="privacy">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">{{index.sections.privacy.subtitle}}</div>
+      <h2 class="v2-h2">{{index.sections.privacy.title}}</h2>
+      <p>{{index.sections.privacy.description}}</p>
+    </header>
+
+    <figure class="v2-flow-card">
+      <div class="flow">
+        <div class="flow-row">
+          <div class="flow-box">
+            <svg class="i i-lg" aria-hidden="true"><use href="#i-browser"/></svg>
+            <h3>{{index.privacy.flow.browser}}</h3>
+            <p>{{index.privacy.flow.browserSub}}</p>
+          </div>
+          <div class="flow-mid">
+            <svg class="i i-arrow flow-arrow-down" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+            <svg class="i i-arrow flow-arrow-right" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            <p>{{index.privacy.flow.arrow}}</p>
+            <p class="flow-nope"><svg class="i" aria-hidden="true"><use href="#i-server-off"/></svg> <span>{{index.privacy.flow.noServer}}</span></p>
+          </div>
+          <div class="flow-box">
+            <svg class="i i-lg" aria-hidden="true"><use href="#i-provider"/></svg>
+            <h3>{{index.privacy.flow.provider}}</h3>
+            <p>{{index.privacy.flow.providerSub}}</p>
+          </div>
+        </div>
+        <p class="flow-none"><svg class="i" aria-hidden="true"><use href="#i-chart"/></svg> {{index.privacy.flow.none}}</p>
+        <p class="visually-hidden">{{index.privacy.diagramAlt}}</p>
+      </div>
+    </figure>
+
+    <div class="v2-grid v2-grid--3 v2-grid--after">
+      {{#each index.sections.privacy.cards}}
+      <article class="v2-card">
+        <h3 class="v2-card-title"><svg class="i" aria-hidden="true"><use href="#i-{{icon}}"/></svg> {{title}}</h3>
+        <ul>
+          {{#each items}}<li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>{{this}}</span></li>{{/each}}
+        </ul>
+      </article>
+      {{/each}}
+    </div>
+
+    <p class="v2-center"><a class="v2-btn v2-btn--outline v2-btn--sm" href="{{url.privacy}}">{{index.sections.privacy.link}} <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></p>
+  </div>
+</section>
+
+<section class="v2-section" id="pricing">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">{{index.sections.pricing.subtitle}}</div>
+      <h2 class="v2-h2">{{index.sections.pricing.title}}</h2>
+      <p>{{index.sections.pricing.description}}</p>
+    </header>
+
+    <article class="v2-free">
+      <div class="v2-free-main">
+        <h3>{{index.sections.pricing.freeTitle}}</h3>
+        <div class="v2-free-price"><strong>{{index.sections.pricing.freePrice}}</strong><span>{{index.sections.pricing.freePriceNote}}</span></div>
+        <ul class="v2-free-checks">
+          {{#each index.sections.pricing.freeChecks}}
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>{{this}}</span></li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="v2-free-action">
+        <a class="v2-btn v2-btn--default" href="{{url.install}}">{{index.sections.pricing.freeCta}} <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </article>
+
+    <h3 class="v2-subhead">{{index.sections.pricing.optionalTitle}}</h3>
+
+    <div class="v2-grid v2-grid--3">
+      {{#each pricing.cards}}
+      <article class="v2-price v2-price--light{{#if recommended}} v2-price--featured{{/if}}">
+        {{#if recommended}}<div class="v2-price-tag">{{index.sections.pricing.recommended}}</div>{{/if}}
+        <h3>{{name}}</h3>
+        <div class="v2-price-value"><strong>{{price}}</strong></div>
+        <p class="v2-price-hit">{{index.sections.pricing.perAddress}}</p>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>{{index.sections.pricing.bestFor}}: {{best}}</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>{{steps}}</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> <span>{{hit}} {{index.sections.pricing.found}}</span></li>
+        </ul>
+      </article>
+      {{/each}}
+    </div>
+
+    <div class="v2-calc-card">
+      <div class="calc-live" id="calc"
+           data-monthly-label="{{calc.monthlyLabel}}"
+           data-per-label="{{calc.perLabel}}"
+           data-hit-label="{{calc.hitLabel}}"
+           data-found-label="{{calc.foundLabel}}"
+           data-usable="{{calc.usableLabel}}"
+           data-cap-daily="2"
+           data-cap-lookup="0.05"
+           data-day-limit="30">
+        <form class="calc-form">
+          <div class="field">
+            <label for="calc-volume">{{calc.volumeLabel}}</label>
+            <div class="field-row">
+              <input type="range" id="calc-volume" min="0" max="120" step="1" value="20">
+              <output for="calc-volume" id="calc-volume-out">20</output>
+            </div>
+            <p class="hint">{{calc.volumeHint}}</p>
+          </div>
+          <div class="field">
+            <label for="calc-keys">{{calc.keysLabel}}</label>
+            <select id="calc-keys">
+              <option value="both" selected>{{calc.keysBoth}}</option>
+              <option value="treg">{{calc.keysTreg}}</option>
+              <option value="monid">{{calc.keysMonid}}</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="calc-skip">{{calc.skipLabel}}</label>
+            <div class="field-row">
+              <input type="range" id="calc-skip" min="0" max="80" step="5" value="20">
+              <output for="calc-skip" id="calc-skip-out">20 %</output>
+            </div>
+            <p class="hint">{{calc.skipHint}}</p>
+          </div>
+        </form>
+
+        <div class="calc-out" aria-live="polite">
+          <dl class="stats">
+            <div class="stat">
+              <dt>{{calc.monthlyLabel}}</dt>
+              <dd><span id="calc-monthly">—</span> <small class="unit">{{calc.monthlyUnit}}</small></dd>
+            </div>
+            <div class="stat"><dt>{{calc.perLabel}}</dt><dd><span id="calc-per">—</span></dd></div>
+            <div class="stat"><dt>{{calc.hitLabel}}</dt><dd><span id="calc-hit">—</span></dd></div>
+            <div class="stat"><dt>{{calc.foundLabel}}</dt><dd><span id="calc-found">—</span></dd></div>
+          </dl>
+          <p class="fine" id="calc-usable"></p>
+          <p class="fine">{{calc.hitNote}}</p>
+          <p class="fine">{{calc.capNote}}</p>
+        </div>
+      </div>
+
+      <div class="calc-fallback">
+        <h3>{{calc.fallbackTitle}}</h3>
+        <p class="section-intro">{{calc.fallbackIntro}}</p>
+        <div class="grid-3">
+          {{#each calc.fallbackGroups}}
+          <div>
+            <h4>{{title}}</h4>
+            <dl class="stats">
+              {{#each rows}}
+              <div class="stat"><dt>{{volume}}</dt><dd>{{cost}} <small>{{hit}}</small></dd></div>
+              {{/each}}
+            </dl>
+          </div>
+          {{/each}}
+        </div>
+        <p class="fine">{{calc.fallbackNote}}</p>
+      </div>
+    </div>
+
+    <details class="v2-details">
+      <summary>{{calc.assumptionsTitle}}</summary>
+      <div>
+        <ul>{{#each calc.assumptions}}<li>{{this}}</li>{{/each}}</ul>
+        <p class="fine">{{calc.priceDate}}</p>
+      </div>
+    </details>
+    <p class="v2-note fine">{{index.sections.pricing.footnote}}</p>
+  </div>
+</section>
+
+<section class="v2-section v2-section--soft" id="faq">
+  <div class="v2-wrap">
+    <header class="v2-head">
+      <div class="v2-eyebrow">{{index.sections.faq.subtitle}}</div>
+      <h2 class="v2-h2">{{index.sections.faq.title}}</h2>
+      <p>{{index.sections.faq.description}}</p>
+    </header>
+
+    <div class="v2-faq">
+      {{#each faq.items}}
+      <details>
+        <summary>{{q}}</summary>
+        <div class="v2-faq-body"><p>{{a}}</p></div>
+      </details>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<section class="v2-section">
+  <div class="v2-wrap">
+    <div class="v2-cta">
+      <h2>{{index.sections.cta.title}}</h2>
+      <p>{{index.sections.cta.description}}</p>
+      <div class="v2-actions">
+        <a class="v2-btn v2-btn--outline" href="{{url.install}}">{{index.sections.cta.button}} <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>

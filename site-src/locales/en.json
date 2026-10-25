@@ -1,0 +1,755 @@
+{
+  "ui": {
+    "skip": "Skip to content",
+    "navLabel": "Main",
+    "footerNavLabel": "Footer",
+    "language": "Language",
+    "languageHint": "SenderFinder is available in 10 languages. The extension follows your browser language.",
+    "nav": {
+      "how": "How it works",
+      "cost": "Pricing",
+      "install": "Install",
+      "privacy": "Privacy",
+      "faq": "FAQ"
+    },
+    "footer": {
+      "install": "Install",
+      "privacy": "Privacy",
+      "clearbit": "Clearbit Connect alternative",
+      "rapportive": "Rapportive alternative",
+      "license": "AGPL-3.0 license",
+      "built": "SenderFinder is open-source software released under the AGPL-3.0 license.",
+      "disclaimer": "Not affiliated with LinkedIn, HubSpot, Clearbit or any data provider. Product names belong to their owners.",
+      "privacyLine": "No SenderFinder server in the lookup path. Your keys and history stay in your browser.",
+      "trademarks": "Gmail, Outlook, LinkedIn and Chrome are trademarks of their owners."
+    },
+    "backHome": "Go to the home page",
+    "theme": {
+      "label": "Appearance",
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "notice": {
+      "aria": "Cookie notice",
+      "text": "This website may use privacy-friendly analytics to count visits. The SenderFinder extension is separate: it sends one anonymous daily usage summary unless you switch that off in its settings.",
+      "link": "Privacy",
+      "ok": "OK",
+      "accept": "Accept",
+      "reject": "Reject"
+    }
+  },
+  "meta": {
+    "index": {
+      "description": "Open-source Chrome extension that shows email senders’ LinkedIn profiles in Gmail and Outlook. Bring your own provider keys; anonymous usage counts are on by default and can be switched off.",
+      "ogDescription": "Open an email in Gmail and see the sender's LinkedIn profile. Open source, your own API keys, no account."
+    },
+    "install": {
+      "title": "Install SenderFinder (2 minutes, from source) | SenderFinder",
+      "description": "Step-by-step: download the extension, load it unpacked in Chrome, paste one provider key and open Gmail. Screenshots for every step, plus troubleshooting.",
+      "ogTitle": "Install SenderFinder",
+      "ogDescription": "Two minutes, five steps, one API key. Install the open-source extension from source until the Chrome Web Store listing is live."
+    },
+    "privacy": {
+      "title": "Privacy | SenderFinder",
+      "description": "What SenderFinder reads in Gmail and Outlook, what goes to your chosen providers, how the LinkedIn features work, and what the anonymous daily usage counts contain.",
+      "ogTitle": "Privacy | SenderFinder",
+      "ogDescription": "What SenderFinder reads in Gmail and Outlook, what goes to your chosen providers, how the LinkedIn features work, and what the anonymous daily usage counts contain."
+    },
+    "clearbit": {
+      "title": "Clearbit Connect alternative: open source, your own keys | SenderFinder",
+      "description": "Clearbit Connect was discontinued on 30 April 2025. SenderFinder is an open-source Chrome extension that shows who is emailing you in Gmail, using your own API keys and no account.",
+      "ogTitle": "A Clearbit Connect alternative for Gmail",
+      "ogDescription": "Clearbit Connect is gone. SenderFinder shows the sender's LinkedIn profile in Gmail. Open source, your own keys, no account."
+    },
+    "rapportive": {
+      "title": "Rapportive alternative: LinkedIn profiles in Gmail | SenderFinder",
+      "description": "An open-source Rapportive alternative that shows email senders’ LinkedIn profiles in Gmail. Bring your own provider keys; anonymous usage counts are on by default and can be switched off.",
+      "ogTitle": "A Rapportive alternative for Gmail",
+      "ogDescription": "Rapportive is gone. SenderFinder shows the sender's LinkedIn profile in Gmail. Open source, your own keys, no account."
+    },
+    "notFound": {
+      "title": "Page not found | SenderFinder",
+      "description": "This page does not exist."
+    }
+  },
+  "index": {
+    "hero": {
+      "desc": "Open an email in Gmail and the side panel shows who sent it: name, role, company and location.",
+      "install": "Install in 2 minutes",
+      "github": "View on GitHub",
+      "fine": "Not in the Chrome Web Store yet. The install page walks through the two-minute unpacked install.",
+      "alt": "SenderFinder side panel beside Gmail showing a sample sender profile and other people in the email thread.",
+      "caption": "The side panel while reading an email. The people and company are fictional.",
+      "privacyLine": "Lookups go directly from your browser to the provider you configure — no SenderFinder server in the lookup path.",
+      "badges": [
+        "Keys stay on your device",
+        "History stays on your device",
+        "Anonymous usage counts — one switch to turn off"
+      ],
+      "badge": "Free · Open source · AGPL-3.0"
+    },
+    "how": {
+      "title": "How it works",
+      "intro": "Three steps. No signup anywhere except with the data provider you choose.",
+      "steps": [
+        {
+          "title": "Install the extension",
+          "body": "The Chrome Web Store listing isn't live yet, so you load it unpacked: download the repository, open <code>chrome://extensions</code>, switch on developer mode and pick the <code>extension/</code> folder. There is a <a href=\"{{url.install}}\">step-by-step guide with screenshots</a>."
+        },
+        {
+          "title": "Get one API key",
+          "body": "Create a key at <a href=\"https://app.monid.ai/\">Monid</a> or <a href=\"https://treg.to/\">treg</a>. One of the two is enough to start."
+        },
+        {
+          "title": "Paste it in settings",
+          "body": "The settings page opens on first install. Paste the key, press “Test keys (free)”, then open any email in Gmail and click the toolbar icon once."
+        }
+      ],
+      "seeTitle": "What you see",
+      "see": [
+        "A side panel with name, headline, company, location, their local time and a link to the profile. The email itself only gets a small mark next to the sender.",
+        "Other people in the thread (other senders, To, Cc) listed in the panel. They are looked up only when you click them.",
+        "An “uncertain” mark when the provider's name doesn't match the name in the email header. Both names are shown.",
+        "A Connect button that opens the profile and pre-fills your invitation note. You press Send yourself."
+      ],
+      "whereTitle": "Where it works",
+      "where": [
+        "Gmail on the web.",
+        "Outlook on the web, on a best-effort basis.",
+        "Not supported: desktop mail apps such as Apple Mail or Outlook for desktop, and Firefox (not yet)."
+      ],
+      "shotAlt": "A Gmail window with the SenderFinder side panel on the right: the profile of Jane Doe and the other three people in the thread, two of them not looked up yet.",
+      "shotCaption": "Gmail on the left, the side panel on the right. Synthetic mailbox, fictional people."
+    },
+    "cost": {
+      "title": "Cheapest first. Then it stops.",
+      "intro": "You pay the data providers directly, with your own key. The extension tries the free option first, then paid providers from cheapest to most expensive, and stops at the first match.",
+      "waterfall": [
+        {
+          "title": "Email signature scan",
+          "body": "Free. If the signature contains a linkedin.com/in link, that's the answer."
+        },
+        {
+          "title": "Cheapest paid provider",
+          "body": "The current catalog price is read first. If it's above your per-lookup cap, the step is skipped."
+        },
+        {
+          "title": "Next provider, only on a miss",
+          "body": "Misses on most providers are free."
+        },
+        {
+          "title": "Match found, chain stops",
+          "body": "The result is cached in your browser. The same address never costs money twice."
+        }
+      ],
+      "stats": [
+        {
+          "term": "Typical successful lookup",
+          "value": "$0.0005–$0.03",
+          "note": "Usually well under a cent, depending on which step hits."
+        },
+        {
+          "term": "Measured on 50 work addresses",
+          "value": "$0.011 each",
+          "note": "50-address benchmark, 25 October 2026, both keys."
+        },
+        {
+          "term": "Per-lookup cap",
+          "value": "$0.05",
+          "note": "Default. You can change it."
+        },
+        {
+          "term": "Daily cap",
+          "value": "$2",
+          "note": "Default. You can change it."
+        }
+      ],
+      "blocks": [
+        {
+          "title": "Only the sender, automatically",
+          "body": "Only the sender of the email you open is looked up on its own. You set a daily limit on automatic lookups (30 by default). Everyone else in the thread waits for a click."
+        },
+        {
+          "title": "No money spent on dead ends",
+          "body": "Personal mailbox domains (gmail.com, outlook.com, qq.com and similar) and role addresses (info@, support@ and similar) are skipped by default. A button lets you look them up anyway."
+        }
+      ],
+      "shotAlt": "The SenderFinder settings page: the lookup steps with their prices and hit rates, and the budget fields for the per-lookup cap, the daily cap and the automatic lookup limit.",
+      "shotCaption": "Settings: step order, prices, caps. Every number can be changed."
+    },
+    "providers": {
+      "title": "Supported providers",
+      "intro": "The extension calls these services directly from your browser, using keys you paste into its settings.",
+      "items": [
+        {
+          "title": "<a href=\"https://app.monid.ai/\">Monid</a>",
+          "body": "An API aggregator. One key gives access to Hunter.io, Apollo and ContactOut."
+        },
+        {
+          "title": "<a href=\"https://treg.to/\">treg</a>",
+          "body": "An aggregator for BlitzAPI, QuickEnrich and Village."
+        },
+        {
+          "title": "<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> <small class=\"fine\">(optional)</small>",
+          "body": "An optional fallback, for Data Legion."
+        },
+        {
+          "title": "Your order, your limits",
+          "body": "In settings you can switch providers on or off, change their order, and set both caps. Settings also show your history and spending."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Questions",
+      "items": [
+        {
+          "q": "Is it free?",
+          "a": "Yes. The extension is free and open source under the AGPL-3.0 license, with no account and no subscription. Paid lookups are optional: the data provider you choose bills them to your own key, per hit, within the caps you set. The signature scan and the cache cost nothing."
+        },
+        {
+          "q": "Do I need an account?",
+          "a": "No signup is needed. Lookups go directly to the provider you configure; anonymous daily usage counts go to the project&rsquo;s statistics service, and one switch in settings turns them off."
+        },
+        {
+          "q": "Which key should I get?",
+          "a": "One key from either <a href=\"https://app.monid.ai/\">Monid</a> or <a href=\"https://treg.to/\">treg</a> is enough to start. Adding both, and optionally <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>, gives the waterfall more places to look. The <a href=\"{{url.install}}#which-key\">install page</a> compares them."
+        },
+        {
+          "q": "How do I keep costs under control?",
+          "a": "There is a per-lookup cap (default $0.05) and a daily cap (default $2). Only the sender of the opened email is looked up automatically, with a daily limit you set. Results are cached, so the same address is never paid for twice. The <a href=\"#calculator\">calculator</a> shows what a given volume would cost."
+        },
+        {
+          "q": "What if it shows the wrong person?",
+          "a": "If the name from the provider doesn't match the display name in the email header, the result is marked “uncertain” and shows both names, so you can judge for yourself."
+        },
+        {
+          "q": "Why is a gmail.com sender not looked up?",
+          "a": "Personal mailbox domains and role addresses like info@ rarely match a profile, so they are skipped by default to save money. Click the button in the panel to look them up anyway."
+        },
+        {
+          "q": "Does it work in Outlook, Apple Mail or Firefox?",
+          "a": "Outlook on the web is supported on a best-effort basis. Desktop mail apps such as Apple Mail and Outlook for desktop are not supported. Firefox is not supported yet."
+        },
+        {
+          "q": "Where is my data stored?",
+          "a": "On your device. Keys are kept in the extension's storage. History and cache are kept in your browser's IndexedDB. You can export or wipe them from the settings page. See the <a href=\"{{url.privacy}}\">privacy statement</a>."
+        },
+        {
+          "q": "Is this a replacement for Rapportive or Clearbit Connect?",
+          "a": "It does the job they used to do: show who is behind an email address. Read more about the <a href=\"{{url.clearbit}}\">Clearbit Connect alternative</a> and the <a href=\"{{url.rapportive}}\">Rapportive alternative</a>."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Your inbox stays yours",
+      "intro": "SenderFinder runs in your browser. Lookups go straight to the provider you chose — there is no SenderFinder server in the lookup path.",
+      "diagramAlt": "Diagram: your browser holds the keys, the cache and the history. One arrow leaves it: the lookup you asked for, sent to the provider you configured. A crossed-out box marks the SenderFinder server that is not in that path, and a side note explains the anonymous daily usage counts.",
+      "flow": {
+        "browser": "Your browser",
+        "browserSub": "keys · cache · history",
+        "arrow": "the lookup you asked for",
+        "provider": "The provider you chose",
+        "providerSub": "receives the email address, plus the display name and company domain for the Apollo step",
+        "none": "Anonymous daily usage counts → SenderFinder statistics service (on by default, can be switched off)",
+        "noServer": "No SenderFinder server in the lookup path"
+      },
+      "staysTitle": "What stays on your device",
+      "stays": [
+        "<strong>Your keys.</strong> They are stored in the extension's own storage on this device (<code>chrome.storage.local</code>) and only ever sent to the API of the provider they belong to.",
+        "<strong>Cache and history.</strong> In your browser's IndexedDB, pruned automatically to 90 days and 5,000 entries by default, exportable as JSON or CSV and deletable in one click.",
+        "<strong>Settings.</strong> Provider order, caps and the automatic-lookup limit, all local.",
+        "<strong>Your reading habits.</strong> Nothing about which emails you open is recorded anywhere except in that local history."
+      ],
+      "leavesTitle": "What leaves your device, and to whom",
+      "leaves": [
+        "<strong>The address you look up</strong>, the display name from the mail header and the company domain go to the provider you configured, with your key, when a lookup runs. Some providers aggregate lookup services and may forward the request to downstream providers they disclose. Check their terms.",
+        "<strong>Catalog prices.</strong> Before a paid step runs, the extension reads that provider's current price list. No personal data is in that request.",
+        "<strong>Profile photos.</strong> If a provider returns a photo URL, your browser loads the image from the provider's server, like any image on a web page.",
+        "<strong>Never the mail body.</strong> The signature scan looks for a linkedin.com/in link inside your browser; only the result is used, locally.",
+        "Anonymous daily usage counts are on by default. Once a day the project&rsquo;s statistics service receives counts and outcomes, provider-step and mail-client totals, rounded spend, version, language and a random installation ID. One switch in settings turns them off and deletes the installation ID and anything unsent. It never contains an address, name, domain, profile field, key or message text.",
+        "For LinkedIn features the extension uses your own LinkedIn session, after you grant the optional linkedin.com permission, to request the connection degree, any pending invitation, the profile photo and associated company links. It reads JSESSIONID locally as the CSRF value; the cookie is sent only to LinkedIn, and the result is cached on your device and sent to no one. When you choose Connect it opens the profile, clicks “Add a note” once and fills your template; you press Send yourself. It never clicks Connect or Send on its own."
+      ],
+      "factsTitle": "The details, in plain words",
+      "facts": [
+        "Phone numbers and personal email addresses returned by a provider are discarded in the adapter; only professional fields are stored.",
+        "Personal mailbox domains (gmail.com, outlook.com, qq.com …) and role addresses (info@, support@ …) are skipped by default and never sent.",
+        "AGPL-3.0 open source, so you can check all of this in <a href=\"https://github.com/astonysh/SenderFinder/tree/main/extension\">the code</a>: <code>core/store.js</code>, <code>core/providers/profile.js</code>, <code>core/telemetry.js</code>."
+      ],
+      "link": "Read the privacy statement"
+    },
+    "sections": {
+      "how": {
+        "subtitle": "How it works",
+        "title": "One setup, then it reads your inbox",
+        "description": "Install the extension, paste one provider key, and every email you open shows who is behind it.",
+        "items": [
+          {
+            "icon": "mail",
+            "title": "Reads the open email",
+            "body": "The sender and everyone in To and Cc. The body is only scanned locally for a linkedin.com/in link."
+          },
+          {
+            "icon": "wallet",
+            "title": "Cheapest source first",
+            "body": "A waterfall from a free signature scan to paid providers, cheapest first. Misses are free and a hit stops the chain."
+          },
+          {
+            "icon": "key",
+            "title": "One key is enough",
+            "body": "treg for the cheapest lookups, Monid for the best coverage. Any single key runs the whole flow."
+          },
+          {
+            "icon": "users",
+            "title": "The whole thread",
+            "body": "Other senders, To and Cc are listed in the panel, and each person is looked up only when you click them."
+          },
+          {
+            "icon": "link",
+            "title": "Connect on LinkedIn",
+            "body": "The panel opens the profile and fills in your note. You click Connect and Send yourself; the extension never does."
+          },
+          {
+            "icon": "database",
+            "title": "Cache and history, locally",
+            "body": "Results stay in your browser’s IndexedDB for 90 days, exportable as JSON or CSV and removable in one click."
+          }
+        ]
+      },
+      "privacy": {
+        "subtitle": "Privacy",
+        "title": "Your inbox stays yours",
+        "description": "A lookup goes from your browser straight to the provider you chose. This is exactly what stays here, what leaves, and what the anonymous counts contain.",
+        "cards": [
+          {
+            "icon": "lock",
+            "title": "Stays on your device",
+            "items": [
+              "Your provider keys, in the extension’s own storage",
+              "Cache and history, in IndexedDB (90 days, 5,000 entries)",
+              "Settings, caps and the automatic-lookup limit",
+              "Which emails you read: nothing about it leaves the browser"
+            ]
+          },
+          {
+            "icon": "provider",
+            "title": "Goes to the provider you chose",
+            "items": [
+              "The address you look up, with your key",
+              "The display name from the mail header",
+              "The company domain, for the Apollo step",
+              "That provider’s catalog price request"
+            ]
+          },
+          {
+            "icon": "chart",
+            "title": "Anonymous usage counts",
+            "items": [
+              "On by default; one switch in settings turns them off",
+              "Daily totals: counts, outcomes, spend, version, language",
+              "A random installation ID, deleted when you switch them off",
+              "Never an address, name, domain, key or message text"
+            ]
+          }
+        ],
+        "link": "Full privacy details"
+      },
+      "pricing": {
+        "subtitle": "Pricing",
+        "title": "Free. You only pay the data provider, if you want to.",
+        "description": "The extension costs nothing. The email-signature step is free, and paid lookups are billed by the provider you choose, per hit, with caps you set.",
+        "freeTitle": "SenderFinder",
+        "freePrice": "$0",
+        "freePriceNote": "free forever",
+        "freeChecks": [
+          "Open source, AGPL-3.0",
+          "No account, no subscription",
+          "Runs in your browser",
+          "The signature scan is free",
+          "Cached, so an address is never paid twice"
+        ],
+        "freeCta": "Install free",
+        "optionalTitle": "Optional: data provider costs",
+        "perAddress": "per found address, paid to the provider",
+        "found": "found",
+        "bestFor": "Best for",
+        "recommended": "Recommended",
+        "footnote": "Estimates from the 50-address benchmark of 25 October 2026. Defaults: $2 per day and $0.05 per lookup, both adjustable in settings."
+      },
+      "faq": {
+        "subtitle": "Questions",
+        "title": "The short answers",
+        "description": "Longer ones live in the install guide and the privacy statement."
+      },
+      "cta": {
+        "title": "Two minutes, then it is done",
+        "description": "The Chrome Web Store listing is not live yet, so you load the extension unpacked. Five steps, a screenshot for each.",
+        "button": "Open the install guide"
+      }
+    }
+  },
+  "calc": {
+    "title": "What would it cost you?",
+    "intro": "Move the sliders. Each figure is derived from the provider prices and the hit rates in the 50-address benchmark below, nothing else.",
+    "volumeLabel": "New sender addresses per day",
+    "volumeHint": "Count only addresses you haven't looked up before. A repeat sender is answered from the cache and costs nothing.",
+    "keysLabel": "Which key do you have?",
+    "keysBoth": "Both keys (default waterfall)",
+    "keysTreg": "treg only (cheapest)",
+    "keysMonid": "Monid only (best coverage)",
+    "skipLabel": "Share of personal and role addresses",
+    "skipHint": "gmail.com, outlook.com, qq.com, info@, support@ and similar are skipped by default, so they cost nothing.",
+    "monthlyLabel": "Estimated monthly cost",
+    "perLabel": "Cost per new address",
+    "hitLabel": "Work addresses found",
+    "foundLabel": "Found per month",
+    "monthlyUnit": "month",
+    "usableLabel": "Today's $2 cap would cover about {n} addresses at this rate.",
+    "hitNote": "Found means a profile came back with a matching name. The two keys differ mainly in how often the expensive fallback is needed.",
+    "capNote": "Caps still apply: $2 per day and $0.05 per lookup by default, both adjustable in settings. The estimate assumes 30 days and one lookup per new address.",
+    "fallbackTitle": "Example volumes",
+    "fallbackIntro": "Shown without JavaScript. Same model, same prices: {skip} of the senders are personal or role addresses and are skipped.",
+    "fallbackNote": "Turn on JavaScript for your own numbers. Everything above is a plain table, not a promise of spend.",
+    "modeBoth": "Both keys",
+    "modeTreg": "treg only",
+    "modeMonid": "Monid only",
+    "perDay": "{n} a day",
+    "assumptionsTitle": "Where the numbers come from",
+    "assumptions": [
+      "Every new sender address is looked up once and cached. Repeat senders cost $0, so the input is new addresses per day, not emails read.",
+      "Per-hit prices are the provider catalog prices on 25 October 2026: BlitzAPI $0.0005, QuickEnrich $0.0048, Hunter $0.0049, Apollo $0.026. Misses are free on these steps.",
+      "Per-step hit rates come from the 50-address benchmark of 25 October 2026: 48 % solved by BlitzAPI, then 19 % of what was left by the next step, 19 % of the remainder by the step after that. Apollo answered 17 of the 19 addresses it was called for.",
+      "With both keys that gives about 95 % of work addresses found, against 48 of 50 (96 %) measured. With treg alone only the two cheap steps run, with Monid alone Hunter and Apollo run.",
+      "Monthly cost = new addresses per day × (1 − skipped share) × 30 × cost per address. The free email-signature scan, the optional Village and ContactOut steps and Firecrawl are not included.",
+      "These are estimates from one benchmark of English-speaking sales and growth contacts. Your own inbox may behave differently."
+    ],
+    "priceDate": "Prices and hit rates: 25 October 2026. The extension re-reads the catalog price before every call, so a provider price change shows up immediately.",
+    "fallbackHit": "≈ {hit} found",
+    "fallbackCost": "≈ {cost} / month"
+  },
+  "install": {
+    "title": "Install SenderFinder",
+    "lead": "The Chrome Web Store listing isn't live yet, so you load the extension from source. Two minutes, once per browser.",
+    "note": "You need Chrome, Edge or another Chromium browser on a desktop; extensions can't be added to the mobile apps. The screenshots are in English, the extension itself follows your browser language.",
+    "downloadLabel": "Download the ZIP",
+    "githubLabel": "Open the repository",
+    "stepsTitle": "Five steps",
+    "steps": [
+      {
+        "title": "Get the code",
+        "body": "Download the repository as a ZIP from <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> (“Code” → “Download ZIP”) and unpack it, or clone it if you have git:<br><code>git clone https://github.com/astonysh/SenderFinder.git</code>"
+      },
+      {
+        "title": "Load it in Chrome",
+        "body": "Open <code>chrome://extensions</code> in a new tab. Switch on <strong>Developer mode</strong> (top right), click <strong>Load unpacked</strong> and pick the <code>extension/</code> folder inside the repository — the folder that contains <code>manifest.json</code>, not the repository root.",
+        "image": "load-unpacked.png",
+        "alt": "Chrome's extensions page with developer mode switched on: the Load unpacked, Pack extension and Update buttons above the SenderFinder card.",
+        "caption": "Developer mode on, the SenderFinder card loaded."
+      },
+      {
+        "title": "Get one key and paste it",
+        "body": "The settings page opens by itself after installation. Create a key at <a href=\"https://app.monid.ai/\">Monid</a> (Hunter, Apollo, ContactOut) or <a href=\"https://treg.to/\">treg</a> (BlitzAPI, QuickEnrich, Village); <a href=\"https://firecrawl.link/sf\">Firecrawl</a> is optional. One key is enough. Paste it under “Provider keys”.",
+        "image": "settings-keys.png",
+        "alt": "The SenderFinder settings page: provider key fields for Monid, treg and Firecrawl, the Test keys button and the lookup steps table.",
+        "caption": "Settings on first install: keys at the top, steps and prices below."
+      },
+      {
+        "title": "Press “Test keys (free)”",
+        "body": "The check is free: it verifies the key and reads the provider's price list. Nothing is looked up and nothing is spent. You want “valid” next to your key."
+      },
+      {
+        "title": "Open Gmail and click the toolbar icon once",
+        "body": "Open any message in Gmail, then click the SenderFinder icon in Chrome's toolbar. If you can't see it, click the puzzle-piece icon and pin SenderFinder first. The side panel opens and stays open in that tab; from then on it follows the email you read.",
+        "image": "sender-in-gmail.png",
+        "alt": "A Gmail window with the SenderFinder side panel open on the right, showing the profile of the sender and the other people in the thread.",
+        "caption": "After the first click the panel stays open in this tab."
+      }
+    ],
+    "whichKeyTitle": "Which key should I pick?",
+    "whichKeyIntro": "One key runs the whole flow: steps without a key are skipped silently. This table is the short version of the provider comparison in the README.",
+    "whichKeyHead": [
+      "Key",
+      "Steps that run",
+      "Price per hit",
+      "Coverage in the benchmark",
+      "Good for"
+    ],
+    "whichKeyRows": [
+      [
+        "<strong>treg</strong>",
+        "BlitzAPI → QuickEnrich (optionally Village)",
+        "$0.0005–0.005",
+        "roughly half to 60 % of work addresses",
+        "tight budgets, high volume"
+      ],
+      [
+        "<strong>Monid</strong>",
+        "Hunter → Apollo (optionally ContactOut)",
+        "$0.005–0.026",
+        "Apollo matched 19 of 19 calls",
+        "hit rate"
+      ],
+      [
+        "<strong>Both</strong>",
+        "the full chain: BlitzAPI → Hunter → QuickEnrich → Apollo",
+        "averaged $0.011 per address",
+        "48 of 50 (96 %)",
+        "the default; cheapest step first, Apollo as backstop"
+      ],
+      [
+        "Firecrawl <small class=\"fine\">(optional)</small>",
+        "Data Legion only",
+        "10 credits (≈ $0.008–0.032)",
+        "no hit-rate data",
+        "not recommended on its own, fallback only"
+      ]
+    ],
+    "whichKeyNote": "Apollo, Hunter and ContactOut are called through Monid; BlitzAPI, QuickEnrich and Village through treg. An API key from those data sources directly does nothing here.",
+    "troubleTitle": "If something doesn't work",
+    "trouble": [
+      {
+        "q": "The side panel doesn't open",
+        "a": "Pin SenderFinder first: puzzle-piece icon in the toolbar → pin. Then click its icon once while a Gmail tab is open. The panel never opens by itself, and it is per tab."
+      },
+      {
+        "q": "The panel says “No key set”",
+        "a": "Paste one key in the extension settings. One is enough: the steps whose provider has no key are skipped without an error."
+      },
+      {
+        "q": "Nothing happens in Outlook",
+        "a": "Outlook on the web is best-effort and its markup changes often. If the small mark next to the sender doesn't appear, open an issue with the sender line's HTML."
+      },
+      {
+        "q": "A gmail.com or info@ address isn't looked up",
+        "a": "Personal mailbox domains and role addresses are skipped by default, because they rarely lead to a profile. The panel has a “Look up anyway” button for those."
+      },
+      {
+        "q": "It stopped looking people up today",
+        "a": "Either the daily cap ($2 by default) or the automatic-lookup limit (30 per day) was reached. Both are adjustable in settings; the counters reset the next day."
+      },
+      {
+        "q": "How do I update it later",
+        "a": "Put the new files in the same folder and click the reload arrow on the card in chrome://extensions. The extension id is pinned in the manifest, so keys, cache and history survive."
+      }
+    ],
+    "nextTitle": "What next",
+    "next": "Read <a href=\"{{url.index}}#how\">how it works</a>, check <a href=\"{{url.index}}#cost\">what a lookup costs</a> or work out your own volume in the <a href=\"{{url.index}}#calculator\">cost calculator</a>. Data questions are answered in the <a href=\"{{url.privacy}}\">privacy statement</a>.",
+    "fine": "When the Chrome Web Store listing is live, this page becomes a one-click install; until then the steps above are the only way in.",
+    "privacy": {
+      "title": "Privacy at a glance",
+      "points": [
+        "The key you paste is stored in the extension's own storage on this device and is sent only to that provider's API, with the lookups you run.",
+        "Lookups go directly from your browser to the provider you configure — no SenderFinder server in the lookup path. Anonymous daily usage counts are on by default and can be switched off in settings.",
+        "Remove the key in settings at any time — without a key no paid lookup can run — or uninstall the extension, which deletes its storage."
+      ]
+    }
+  },
+  "privacy": {
+    "title": "Privacy",
+    "updated": "Last updated: 25 October 2026",
+    "prevails": "",
+    "lead": "SenderFinder reads the sender and participants of the open email and scans its body locally for a LinkedIn profile link. If you enable LinkedIn features, it uses your own LinkedIn session to read the connection degree, a pending invitation, the photo and associated company links. The Connect helper clicks “Add a note” once and fills a note for you to review. Lookup fields go directly to the provider you configure. Anonymous usage counts are on by default; one switch in settings turns them off.",
+    "sections": [
+      {
+        "title": "Who runs SenderFinder",
+        "blocks": [
+          "SenderFinder is an open-source Chrome extension. Lookup requests go directly from your browser to the data provider you configure; there is no SenderFinder server in the lookup path. A separate statistics service receives one anonymous daily summary, on by default and switchable off in the settings page. The data controller for those statistics is Tony Li, maintainer of <a href=\"https://github.com/astonysh/SenderFinder\">astonysh/SenderFinder</a>. For privacy requests, contact <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>."
+        ]
+      },
+      {
+        "title": "What the extension reads and keeps",
+        "blocks": [
+          "In Gmail or Outlook on the web, the extension reads the open message’s sender and participants. It scans the message body locally to find a LinkedIn profile URL, for example in a signature. The body is not stored and is not transmitted. Lookup history, results, settings and provider keys are stored locally in the extension or browser. Cached results expire after 90 days by default, with a limit of 5,000 entries; you can export or delete them in Settings."
+        ]
+      },
+      {
+        "title": "What data providers receive",
+        "blocks": [
+          "When a lookup runs, the selected person’s email address, display name and company domain are sent directly to the provider you configured, using that provider’s API key. Some providers are aggregators and may forward the request to their listed downstream services; their terms and privacy policies apply. SenderFinder does not receive lookup addresses or provider results. Professional profile fields returned by a provider are kept locally; phone numbers and personal email addresses are discarded."
+        ]
+      },
+      {
+        "title": "Anonymous usage statistics",
+        "blocks": [
+          "Usage statistics are on by default. Once a day the extension posts one summary of the previous day to our Cloudflare Worker, which stores it in Cloudflare D1. The summary includes the date, extension version, interface language, lookup totals and outcomes, provider-step counts, mail-client totals, rounded spend and a random installation ID. The ID identifies an installation, not a person. One switch in the settings page turns the summary off and deletes the installation ID and anything unsent; the preview button next to it shows exactly what would be sent.",
+          "The summary contains no email address, name, company domain, LinkedIn URL, profile field, provider key or message text. You can preview the exact payload in Settings. Turning statistics off stops future sends and deletes the local installation ID and unsent summaries. To request deletion of previously received summaries, contact <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a> with the installation ID shown in the preview."
+        ]
+      },
+      {
+        "title": "LinkedIn",
+        "blocks": [
+          "If you enable a LinkedIn feature, the extension asks for the optional linkedin.com permission on first use; you can revoke it in settings at any time, and it only applies to tabs the extension opens itself. With it, the extension uses your own LinkedIn session to request the connection degree, any pending invitation, the profile photo and the associated company links for the profile you are reading. It reads the JSESSIONID authentication cookie locally as the CSRF value for those requests; the cookie is sent only to LinkedIn, never to SenderFinder or an enrichment provider. Results are cached on your device and sent to no one. When you choose Connect, the extension opens the selected profile and, in the invitation dialog, clicks “Add a note” once and fills your editable template. It never clicks Connect or Send."
+        ]
+      },
+      {
+        "title": "Your choices and Chrome Web Store policy",
+        "blocks": [
+          "You choose which data providers and API keys to configure, and which people to look up. You can remove keys, switch statistics off, revoke LinkedIn access, export or clear local history, or uninstall the extension. SenderFinder uses mailbox data only to display and perform the lookup you request. Email body text is processed locally only to find a LinkedIn profile link; it is not used for advertising and is not sent to SenderFinder or a provider."
+        ]
+      },
+      {
+        "id": "cookies",
+        "title": "Cookies and local storage",
+        "blocks": [
+          "This section describes the SenderFinder website, not the extension. The extension sends one anonymous daily usage summary, on by default and switchable off in its settings. The website itself uses local browser storage as described below.",
+          "Today this website sets no cookies. Two entries in your browser's localStorage are used, both only because you asked for them: <code>el-theme</code> remembers the Light or Dark choice from the header, and <code>sf-notice</code> remembers that you closed the notice at the bottom of the page. Neither is ever sent anywhere, and clearing site data in your browser removes both.",
+          "<!-- ANALYTICS-PLACEHOLDER --> <strong>Website analytics.</strong> If analytics is added to this site, this paragraph will name the tool, say what it counts and how to opt out, and the notice at the bottom of the page will ask for consent where the law requires it. Until then no analytics script, font or image from a third party is loaded here.",
+          "The site is hosted on Cloudflare Workers Static Assets. Cloudflare processes the technical data of a request, such as the IP address, to deliver pages and to protect the service against abuse, under its own privacy terms.",
+          "Cloudflare Web Analytics, Zaraz and similar injection features are not enabled for this site. If that changes, this section changes with it."
+        ]
+      },
+      {
+        "title": "This website and contact",
+        "blocks": [
+          "This website is static and sets no cookies or analytics. For questions or privacy requests, contact <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a> or open an issue at <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a>."
+        ]
+      }
+    ],
+    "summaryTitle": "In 30 seconds",
+    "summary": [
+      "Lookups go directly from your browser to the provider you configure — there is no SenderFinder server in the lookup path.",
+      "Keys, cache and history stay on this device, in the extension's storage and your browser's IndexedDB. You can export them or wipe them in one click.",
+      "A provider receives the address you look up, the display name from the mail header and the company domain. Nothing else.",
+      "The mail body never leaves your browser: the signature scan runs locally.",
+      "Usage counts are on by default: one anonymous daily summary of counts, outcomes, spend, version and language plus a random installation ID, sent to the project&rsquo;s statistics service. One switch in settings turns it off and deletes the installation ID. Never an address, name, domain, profile field, key or message text.",
+      "You control which providers to configure and which people to look up. You can disable statistics, revoke LinkedIn access, and export or delete local data; the policy below explains what each feature reads and where it goes."
+    ]
+  },
+  "clearbit": {
+    "title": "Clearbit Connect is gone. Here is an open-source alternative.",
+    "lead": "SenderFinder shows who is emailing you, right inside Gmail. It is open source, runs on your own API keys and needs no account.",
+    "ctaInstall": "Install in 2 minutes",
+    "ctaHow": "How it works",
+    "shotAlt": "Gmail with the SenderFinder side panel: the profile of Jane Doe, Head of Partnerships at Acme in Berlin, and the other people in the thread.",
+    "shotCaption": "Synthetic mailbox, fictional people.",
+    "sections": [
+      {
+        "title": "What Clearbit Connect was",
+        "blocks": [
+          "Clearbit Connect was a free extension for Gmail and Outlook. When you read an email, it showed information about the sender, such as their role and company.",
+          "After HubSpot acquired Clearbit, Clearbit Connect was discontinued. It stopped working on 30 April 2025."
+        ]
+      },
+      {
+        "title": "What SenderFinder does",
+        "blocks": [
+          "Open an email in Gmail. The browser's side panel shows that person's LinkedIn profile: name, headline, company, location and a link to the profile. Other people in the thread are listed below, and you can look them up with a click.",
+          "Outlook on the web is supported on a best-effort basis."
+        ]
+      },
+      {
+        "title": "What is different",
+        "list": [
+          "<strong>Open source.</strong> The code is on <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> under the AGPL-3.0 license. You can read exactly what it does.",
+          "<strong>Your own keys.</strong> The extension calls data providers directly from your browser, using keys you paste into its settings. Supported: <a href=\"https://app.monid.ai/\">Monid</a> and <a href=\"https://treg.to/\">treg</a>, with <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> as an optional fallback.",
+          "<strong>No signup.</strong> Lookups go directly from your browser to the provider you configure; there is no SenderFinder server in the lookup path. Anonymous daily usage counts are on by default and can be switched off in settings.",
+          "<strong>No CRM lock-in.</strong> Results stay in your browser. You can export history as JSON or CSV and take it wherever you like.",
+          "<strong>Predictable cost.</strong> The cheapest source is tried first, and the chain stops at the first match. A per-lookup cap and a daily cap keep spending in check. Results are cached, so an address is never paid for twice."
+        ]
+      },
+      {
+        "title": "Honest limitations",
+        "list": [
+          "<strong>You need a provider key.</strong> One key from Monid or treg is enough to start, but you have to create it yourself.",
+          "<strong>It isn't free per lookup.</strong> A successful lookup typically costs between $0.0005 and $0.03, usually well under a cent. Misses on most providers are free.",
+          "<strong>No Firefox yet.</strong> It runs in Chrome. Desktop mail apps such as Apple Mail and Outlook for desktop are not supported.",
+          "<strong>Results depend on provider coverage.</strong> Some people won't be found. When a provider's name doesn't match the name in the email, the result says “uncertain” and shows both."
+        ]
+      },
+      {
+        "title": "Where the data goes",
+        "blocks": [
+          "Clearbit Connect was a hosted service: lookups ran on Clearbit's servers and you signed in with a Clearbit account.",
+          "SenderFinder is an open-source Chrome extension. Lookup requests go directly from your browser to the data provider you configure; there is no SenderFinder server in the lookup path. A separate statistics service receives one anonymous daily summary, on by default and switchable off in the settings page. The data controller for those statistics is Tony Li, maintainer of <a href=\"https://github.com/astonysh/SenderFinder\">astonysh/SenderFinder</a>. For privacy requests, contact <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>.",
+          "The <a href=\"{{url.privacy}}\">privacy statement</a> lists exactly what is sent, what is kept and what is discarded."
+        ]
+      },
+      {
+        "title": "Switching takes a few minutes",
+        "ordered": [
+          "Install the extension. Until the Chrome Web Store listing is live, <a href=\"{{url.install}}\">install it from source</a>.",
+          "Create an API key at Monid or treg.",
+          "Paste it into the extension's settings and open an email in Gmail."
+        ],
+        "blocksAfter": [
+          "Questions about data? Read the <a href=\"{{url.privacy}}\">privacy statement</a>. Looking for the older tool? See the <a href=\"{{url.rapportive}}\">Rapportive alternative</a> page."
+        ]
+      }
+    ]
+  },
+  "rapportive": {
+    "title": "Rapportive is gone. The idea still works.",
+    "lead": "SenderFinder brings back the simple part of Rapportive: open an email in Gmail and see who sent it. Open source, your own API keys, no account.",
+    "ctaInstall": "Install in 2 minutes",
+    "ctaHow": "How it works",
+    "shotAlt": "Gmail with the SenderFinder side panel: the other people in a thread are listed with the lookup button next to each of them.",
+    "shotCaption": "Synthetic mailbox, fictional people.",
+    "sections": [
+      {
+        "title": "What Rapportive was",
+        "blocks": [
+          "Rapportive was a Gmail add-on that showed the LinkedIn profile of the person you were emailing, next to the message. LinkedIn acquired it in 2012 and later shut it down."
+        ]
+      },
+      {
+        "title": "What SenderFinder does",
+        "blocks": [
+          "When you open an email in Gmail, the browser's side panel shows the sender's name, headline, company, location and a link to their LinkedIn profile. Other people in the thread (other senders, To, Cc) are listed below and looked up only when you click them. The email itself only gets a small mark next to the sender.",
+          "Outlook on the web is supported on a best-effort basis."
+        ]
+      },
+      {
+        "title": "What is different",
+        "list": [
+          "<strong>Open source.</strong> AGPL-3.0 licensed, with the code on <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a>. No company can switch it off for you.",
+          "<strong>Your own keys.</strong> Profiles come from data providers you choose: <a href=\"https://app.monid.ai/\">Monid</a> or <a href=\"https://treg.to/\">treg</a>, with <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> as an optional fallback. The extension calls them directly from your browser.",
+          "<strong>No signup.</strong> Lookups go directly from your browser to the provider you configure; there is no SenderFinder server in the lookup path. Anonymous daily usage counts are on by default and can be switched off in settings.",
+          "<strong>No CRM lock-in.</strong> History stays in your browser. Export it as JSON or CSV whenever you want.",
+          "<strong>A name check.</strong> If the provider's name doesn't match the display name in the email, the result is marked “uncertain” and shows both names."
+        ]
+      },
+      {
+        "title": "Honest limitations",
+        "list": [
+          "<strong>You need a provider key.</strong> One key from Monid or treg is enough to start.",
+          "<strong>Lookups cost a little.</strong> A successful lookup typically costs between $0.0005 and $0.03, usually well under a cent. Misses on most providers are free, and results are cached so an address is never paid for twice.",
+          "<strong>Spending has limits you set.</strong> A per-lookup cap (default $0.05) and a daily cap (default $2) apply. Only the sender of the opened email is looked up automatically.",
+          "<strong>No Firefox yet.</strong> It runs in Chrome. Desktop mail apps are not supported.",
+          "<strong>Coverage varies.</strong> Not everyone will be found, and personal addresses such as gmail.com are skipped by default. A button lets you look them up anyway."
+        ]
+      },
+      {
+        "title": "Where the data goes",
+        "blocks": [
+          "Rapportive was a hosted service too: the profile lookup ran on its servers, tied to your Rapportive account.",
+          "SenderFinder is an open-source Chrome extension. Lookup requests go directly from your browser to the data provider you configure; there is no SenderFinder server in the lookup path. A separate statistics service receives one anonymous daily summary, on by default and switchable off in the settings page. The data controller for those statistics is Tony Li, maintainer of <a href=\"https://github.com/astonysh/SenderFinder\">astonysh/SenderFinder</a>. For privacy requests, contact <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>.",
+          "The <a href=\"{{url.privacy}}\">privacy statement</a> lists exactly what is sent, what is kept and what is discarded."
+        ]
+      },
+      {
+        "title": "Get started",
+        "ordered": [
+          "Install the extension. Until the Chrome Web Store listing is live, <a href=\"{{url.install}}\">install it from source</a>.",
+          "Create an API key at Monid or treg.",
+          "Paste it into the extension's settings and open an email in Gmail."
+        ],
+        "blocksAfter": [
+          "Read how your data is handled in the <a href=\"{{url.privacy}}\">privacy statement</a>. Coming from Clearbit? See the <a href=\"{{url.clearbit}}\">Clearbit Connect alternative</a> page."
+        ]
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Page not found",
+    "lead": "This page doesn't exist. It may have moved.",
+    "home": "Go to the home page",
+    "install": "Install SenderFinder"
+  },
+  "works": {
+    "label": "Works with",
+    "gmail": "Gmail",
+    "outlook": "Outlook on the web",
+    "linkedin": "LinkedIn",
+    "chrome": "Chrome"
+  }
+}
