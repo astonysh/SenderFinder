@@ -68,10 +68,18 @@ chrome.runtime.onMessage.addListener(msg => { if (msg && msg.type === 'panel:sta
 chrome.storage.onChanged.addListener((c, area) => { if (area === 'local' && c.settings) loadFooter(); });
 // Re-read the shown relationships in place (old values stay on screen until the new ones arrive: no flicker).
 let refreshing = false;
+const relKey = r => JSON.stringify([r.relation, r.pending, r.connected, r.distance, r.photoUrl, r.missing, r.companies || null]);
 async function refreshRels() {
   if (refreshing || !liGranted || !rels.size) return; refreshing = true;
-  try { await Promise.all([...rels.keys()].map(url => send({ type: 'li:relation', linkedinUrl: url }).then(r => { if (r && r.ok) rels.set(url, r); }, () => {}))); }
-  finally { refreshing = false; render(); }
+  let changed = false;   // re-render only when a relationship really changed: the focus that precedes a click must not rebuild the buttons
+  try {
+    await Promise.all([...rels.keys()].map(url => send({ type: 'li:relation', linkedinUrl: url }).then(r => {
+      if (!r || !r.ok) return;
+      const old = rels.get(url);
+      if (!old || old.loading || old.error || relKey(old) !== relKey(r)) changed = true;
+      rels.set(url, r);
+    }, () => {})));
+  } finally { refreshing = false; if (changed) render(); }
 }
 chrome.runtime.onMessage.addListener(msg => { if (msg && msg.type === 'li:changed') refreshRels(); });
 // Back from the LinkedIn tab: re-read relationships (cached ones come back instantly; just-invited people are re-checked).
@@ -190,7 +198,8 @@ function primary(p, r) {
     if (showCost && r.cost) meta.append(h('span', {}, t('cost', usd(r.cost.usd))));
     meta.append(h('span', {}, h('button', { class: 'tlink', onclick: () => lookup(p, true) }, t('lookup_again'))));
     card.append(meta);
-    if (!liGranted) card.append(h('button', { class: 'grant', type: 'button', title: t('li_grant_title'), 'data-act': 'li-grant', onclick: e => grantLinkedIn(e.currentTarget) }, icon('li', 'ic-li'), h('span', {}, t('li_grant'))));
+    if (!liGranted) card.append(h('p', { class: 'li-disclosure' }, t('li_grant_disclosure')),
+      h('button', { class: 'grant', type: 'button', title: t('li_grant_title'), 'data-act': 'li-grant', onclick: e => grantLinkedIn(e.currentTarget) }, icon('li', 'ic-li'), h('span', {}, t('li_grant'))));
     else if (rel && rel.error === 'LI_SIGNED_OUT') card.append(h('div', { class: 'meta' }, h('span', {}, t('li_signed_out'))));
   }
   return card;
@@ -220,7 +229,18 @@ function row(p, r) {
 // Make a participant the main card (nothing is spent; a cached result is reused).
 const focus = p => send({ type: 'panel:focus', tabId, email: p.email, name: p.name }).catch(() => {});
 
+// A render between pointerdown and pointerup replaces the pressed button with a new element, and Chrome then drops
+// the click (down and up must hit the same element). The panel's window focus, a relationship refresh or a state push
+// from the mail page could all land in that window, so the first click sometimes did nothing. Hold renders while a
+// pointer is down and flush once it is released.
+let pressing = false, renderPending = false, pressTimer = null;
+const release = () => { clearTimeout(pressTimer); if (!pressing) return; pressing = false; if (renderPending) { renderPending = false; render(); } };
+document.addEventListener('pointerdown', () => { pressing = true; clearTimeout(pressTimer); pressTimer = setTimeout(release, 1500); }, true);
+document.addEventListener('pointerup', release, true);
+document.addEventListener('pointercancel', release, true);
+window.addEventListener('blur', release);
 function render() {
+  if (pressing) { renderPending = true; return; }
   const main = $('main'); main.replaceChildren();
   if (!state || state.empty || !state.subject) { main.append(h('div', { class: 'empty' }, h('h2', {}, t('panel_empty_title')), h('p', { class: 'muted' }, t('panel_empty_hint')))); return; }
   const { subject, participants = [], results = {} } = state;

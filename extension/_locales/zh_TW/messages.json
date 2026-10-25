@@ -507,7 +507,7 @@
   "message": "關於"
  },
  "about_text": {
-  "message": "開放原始碼（AGPL-3.0）。沒有任何伺服器：查詢從你的瀏覽器直接送到你填入 key 的供應商，結果只儲存在本機。"
+  "message": "開放原始碼（AGPL-3.0）。查詢從你的瀏覽器直接送到你填入 key 的供應商，結果只儲存在本機。唯一會傳給我們的是匿名的每日使用計數，可一鍵關閉。"
  },
  "about_gdpr": {
   "message": "查詢由你發起、由你負責：只傳送信箱、顯示名稱和公司網域，結果只存在本機（預設 90 天），可在「歷史」和「資料」分頁刪除。"
@@ -594,7 +594,7 @@
   "message": "一次性授權存取 linkedin.com"
  },
  "connect_intro": {
-  "message": "為了幫你填入邀請訊息，擴充功能需要存取由它自己開啟的 linkedin.com 頁面。只需授權一次。"
+  "message": "選用的 LinkedIn 權限允許擴充功能使用你自己的工作階段。它可讀取關係程度和照片；「加好友」時會開啟個人檔案、點擊一次「Add a note」並填入備註。使用前由你授權。 也會讀取所選個人檔案關聯的公司名稱和公司連結。"
  },
  "connect_what_title": {
   "message": "按下「繼續」後會發生的事："
@@ -603,10 +603,10 @@
   "message": "在新分頁開啟對方的 LinkedIn 個人檔案。"
  },
  "connect_step2": {
-  "message": "你在 LinkedIn 上按「Connect」和「Add a note」。備註欄一出現，擴充功能就會把下面這段填進去。"
+  "message": "LinkedIn 上的「Connect」由你自行點擊。進入邀請對話框後，擴充功能會點擊一次「Add a note」並填入備註。"
  },
  "connect_step3": {
-  "message": "你看過之後自行按「Send」。擴充功能絕不會自己按 Connect 或 Send，也不會在你自己開啟的 LinkedIn 頁面上執行。"
+  "message": "請檢查備註並自行點擊「Send」。擴充功能不會替你點擊 Connect 或 Send，只在它自行開啟的 LinkedIn 分頁中執行。"
  },
  "connect_limit_hint": {
   "message": "LinkedIn 限制備註最多 300 個字元，免費帳號每月只有少量可附訊息的邀請。你可以在擴充功能設定裡修改範本。"
@@ -633,7 +633,7 @@
   "message": "在 LinkedIn 加入人脈"
  },
  "opt_connect_intro": {
-  "message": "面板上的「加入人脈」按鈕會開啟對方的個人檔案；你在 LinkedIn 上按 Connect 和 Add a note 後，下面的邀請訊息會自動填入，由你自己按傳送。可用變數：{first} 名字、{name} 全名、{company} 公司。"
+  "message": "LinkedIn 功能會使用你自己的工作階段讀取關係程度和照片。你選擇「加好友」後，擴充功能開啟個人檔案、點擊一次「Add a note」並填入範本。「建立連結」和「傳送」由你自行點擊。 也會讀取所選個人檔案關聯的公司名稱和公司連結。"
  },
  "opt_connect_note": {
   "message": "邀請訊息範本"
@@ -744,10 +744,10 @@
   "message": "已複製"
  },
  "li_instructions": {
-  "message": "按「Connect」，再按「Add a note」，邀請訊息就會自動填入。也可以複製後自己貼上。"
+  "message": "擴充功能會開啟個人檔案。你點擊「Connect」後，擴充功能會點擊一次「Add a note」並填好備註；「Send」由你自行點擊。"
  },
  "li_add_note": {
-  "message": "邀請視窗已開啟。按「Add a note」，備註就會自動填入。"
+  "message": "邀請對話框已開啟。SenderFinder 會點擊一次「Add a note」並填入備註。"
  },
  "li_copy_note": {
   "message": "複製邀請訊息"
@@ -777,7 +777,7 @@
   "message": "顯示大頭貼和你們在 LinkedIn 上的關係"
  },
  "li_grant_title": {
-  "message": "用你在這個瀏覽器登入的 LinkedIn 帳號，每份個人檔案只讀取一次，不會發布任何內容。"
+  "message": "使用你自己的 LinkedIn 工作階段讀取一次此個人檔案；不會送出邀請或訊息。"
  },
  "li_signed_out": {
   "message": "在這個瀏覽器登入 LinkedIn 後即可顯示關係"
@@ -820,5 +820,8 @@
  },
  "step_off": {
   "message": "停用"
+ },
+ "li_grant_disclosure": {
+  "message": "繼續後，SenderFinder 會使用你自己的 LinkedIn 工作階段讀取此個人檔案的關係程度和照片。資料留在目前瀏覽器；不會送出邀請。 也會讀取所選個人檔案關聯的公司名稱和公司連結。"
  }
 }

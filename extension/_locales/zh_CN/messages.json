@@ -507,7 +507,7 @@
   "message": "关于"
  },
  "about_text": {
-  "message": "开源（AGPL-3.0）。没有任何服务端：查询从你的浏览器直接发给你填了 key 的供应商，结果只存在本机。"
+  "message": "开源（AGPL-3.0）。查询从你的浏览器直接发给你填了 key 的供应商，结果只存在本机。唯一发给我们的是匿名的每日使用计数，可一键关闭。"
  },
  "about_gdpr": {
   "message": "查询由你发起、由你负责：只发送邮箱、显示名和公司域名，结果只存在本机（默认 90 天），可在「历史」和「数据」页删除。"
@@ -594,7 +594,7 @@
   "message": "一次性授权访问 linkedin.com"
  },
  "connect_intro": {
-  "message": "为了帮你填写邀请语，插件需要访问它自己打开的 linkedin.com 页面。只需授权一次。"
+  "message": "可选的 LinkedIn 权限允许插件使用你自己的登录会话。插件可读取关系度和头像；「加好友」时会打开资料页、点击一次「Add a note」并填入备注。使用前由你授予权限。 还会读取所选资料关联的公司名称和公司链接。"
  },
  "connect_what_title": {
   "message": "点「继续」之后会发生什么："
@@ -603,10 +603,10 @@
   "message": "在新标签页打开对方的 LinkedIn 主页。"
  },
  "connect_step2": {
-  "message": "你在 LinkedIn 上点 \"Connect\" 和 \"Add a note\"。备注框一出现，插件就把下面这段填进去。"
+  "message": "你自己点击 LinkedIn 上的「Connect」。进入邀请对话框后，插件会点击一次「Add a note」并填入备注。"
  },
  "connect_step3": {
-  "message": "你看一遍，自己按 \"Send\"。插件从不替你点 Connect 或 Send，也不会在你自己打开的 LinkedIn 页面上运行。"
+  "message": "请检查备注并自己点击「Send」。插件不会替你点击 Connect 或 Send，只在它自己打开的 LinkedIn 标签页中运行。"
  },
  "connect_limit_hint": {
   "message": "LinkedIn 限制备注 300 字符，免费账号每月只有少量带备注的邀请。模板可以在插件设置里修改。"
@@ -633,7 +633,7 @@
   "message": "LinkedIn 加好友"
  },
  "opt_connect_intro": {
-  "message": "侧边栏的 \"Connect\" 按钮打开这个人的资料页；你在 LinkedIn 上点 Connect 和 Add a note 后，下面的邀请语会自动填好，发送由你自己点。占位符：{first} 名、{name} 全名、{company} 公司。"
+  "message": "LinkedIn 功能会使用你自己的登录会话读取关系度和头像。你选择「加好友」后，插件打开资料页、点击一次「Add a note」并填入模板。「建立联系」和「发送」由你自己点击。 还会读取所选资料关联的公司名称和公司链接。"
  },
  "opt_connect_note": {
   "message": "邀请备注模板"
@@ -744,10 +744,10 @@
   "message": "已复制"
  },
  "li_instructions": {
-  "message": "点 \"Connect\"，再点 \"Add a note\"，邀请语会自动填好。也可以复制后自己粘贴。"
+  "message": "插件会打开资料页。你点击「Connect」后，插件会点击一次「Add a note」并填好备注；「Send」由你自己点击。"
  },
  "li_add_note": {
-  "message": "邀请弹窗已打开。点 \"Add a note\"，备注会自动填入。"
+  "message": "邀请对话框已打开。SenderFinder 会点击一次「Add a note」并填入备注。"
  },
  "li_copy_note": {
   "message": "复制邀请语"
@@ -777,7 +777,7 @@
   "message": "显示头像和你们在 LinkedIn 上的关系"
  },
  "li_grant_title": {
-  "message": "用这个浏览器里你自己的 LinkedIn 登录，每个人只读一次，不会发布或发送任何东西。"
+  "message": "使用你自己的 LinkedIn 登录会话读取一次此资料；不会发送邀请或消息。"
  },
  "li_signed_out": {
   "message": "在这个浏览器登录 LinkedIn 后可显示关系"
@@ -820,5 +820,8 @@
  },
  "step_off": {
   "message": "未启用"
+ },
+ "li_grant_disclosure": {
+  "message": "继续后，SenderFinder 会使用你自己的 LinkedIn 登录会话读取此资料的关系度和头像。数据留在当前浏览器；不会发送邀请。 还会读取所选资料关联的公司名称和公司链接。"
  }
 }

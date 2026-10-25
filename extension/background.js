@@ -254,6 +254,12 @@ async function threadUpdate(tabId, msg) {
 }
 // A chip was clicked: that person becomes the subject (cached result only, nothing is spent) and the panel opens.
 async function panelFocus(tabId, msg) {
+  // Open first, before anything is awaited: the user gesture that arrives with the content-script message is only
+  // valid for a moment, and after a cold service-worker start the storage / IndexedDB reads below outlived it, so
+  // open() threw ("may only be called in response to a user gesture") and the chip needed a second click.
+  const opening = chrome.sidePanel && chrome.sidePanel.open
+    ? chrome.sidePanel.open({ tabId }).then(() => true, e => { console.warn('[senderfinder] side panel open failed:', e && e.message); return false; })
+    : Promise.resolve(false);
   const email = normalizeEmail(msg.email);
   const st = await getPanel(tabId);
   if (st && email && email !== st.subject.email) {
@@ -262,10 +268,7 @@ async function panelFocus(tabId, msg) {
     if (!st.results[email]) { const { store } = await service(); const c = await cachedFor(store, email); if (c) st.results[email] = c; }
     await pushPanel(tabId);
   }
-  let opened = false;
-  try { if (chrome.sidePanel && chrome.sidePanel.open) { await chrome.sidePanel.open({ tabId }); opened = true; } }
-  catch (e) { console.warn('[senderfinder] side panel open failed:', e && e.message); }
-  return { ok: true, opened };
+  return { ok: true, opened: await opening };
 }
 async function panelLookup(tabId, msg) {
   const st = await getPanel(tabId);

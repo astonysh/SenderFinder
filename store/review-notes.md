@@ -1,25 +1,13 @@
-# Notes for the Chrome Web Store reviewer (paste into "Notes for reviewers" / test instructions)
+# Notes for the Chrome Web Store reviewer
 
-SenderFinder has no account and no server of its own. It shows, in Chrome's side panel, the LinkedIn profile of the
-sender of the email open in Gmail or Outlook on the web. Lookups use third-party data providers with API keys the user
-pastes into the settings page; without a key the extension still works on the free path.
+No signup or paid provider key is required to test the free path.
 
-How to test without any key (no paid provider is called):
-1. Install, open https://mail.google.com and open any message whose signature contains a linkedin.com/in link
-   (or send yourself one: a few lines of text followed by https://www.linkedin.com/in/<any-public-slug>).
-2. Click the extension icon to open the side panel. The sender card shows the LinkedIn link found in the signature
-   ("Source: email signature", cost $0). Other people in the thread are listed below with a "Look up" button.
-3. Settings (gear icon) → Provider keys: each provider box shows "missing key"; the lookup steps that need a key are
-   skipped, which is also what the row says when you click "Look up" on someone without a signature link ("No key set").
+1. Install the extension and open https://mail.google.com. Open a message whose body/signature includes a public `linkedin.com/in/...` profile URL (or send yourself one).
+2. Click the extension icon to open the side panel. The sender card should show the link found in the message, marked as an email-signature result at $0. Other people in the thread appear below with a Look up action.
+3. Open Settings → Provider keys. With no key configured, paid-provider steps are skipped. A lookup from a message without a profile URL will show that no provider key is set; the reviewer will not be charged.
 
-Optional, to see a paid lookup: create a free account at https://treg.to, paste the token in Settings → treg; opening a
-message from a work address then fills the card from the provider (typically $0.0005 per hit, billed to that account).
+LinkedIn features are optional. When the reviewer chooses “Show photos and your LinkedIn relationship” or “Connect”, Chrome asks for optional LinkedIn access. The extension uses the reviewer's own LinkedIn session to read connection degree, profile photo and associated company links for the selected profile. For Connect, it opens the profile; in the invitation dialog it clicks “Add a note” once and fills the note template. It never clicks Connect or Send. No LinkedIn permission is requested until the reviewer starts one of these features.
 
-"Connect on LinkedIn": clicking Connect on a found person first shows a page asking for the optional linkedin.com
-permission (Chrome's prompt follows). After granting, the profile opens in a new tab; the extension only pre-fills the
-note once the user has clicked "Connect" and "Add a note" on LinkedIn themselves, and never clicks Send.
+Anonymous usage statistics are on by default: Settings → "Anonymous usage statistics" → "Preview what would be sent" shows the exact document (daily counts and a random installation ID only; never an address, name or profile). One switch turns them off and deletes the ID and anything unsent. The receiving code is in the repository (telemetry/).
 
-Anonymous usage statistics: Settings → "Anonymous usage statistics" → "Preview what would be sent" shows the exact
-document (daily counts only). The receiving code is in the repository (telemetry/).
-
-Source code: https://github.com/astonysh/SenderFinder — the zip is built from `extension/` with `npm run zip -- --store`.
+Source: https://github.com/astonysh/SenderFinder. The upload archive is built with `npm run zip -- --store`; it contains all extension features and no private signing key.

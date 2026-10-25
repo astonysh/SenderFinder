@@ -507,7 +507,7 @@
   "message": "Sobre"
  },
  "about_text": {
-  "message": "Código aberto (AGPL-3.0). Não há servidor: as buscas vão do seu navegador direto aos provedores cujas chaves você informou, e os resultados ficam apenas neste dispositivo."
+  "message": "Código aberto (AGPL-3.0). As buscas vão do seu navegador direto aos provedores cujas chaves você informou, e os resultados ficam apenas neste dispositivo. A única coisa enviada a nós é uma contagem diária anônima de uso, que você pode desligar com um único botão."
  },
  "about_gdpr": {
   "message": "Você é o responsável pelas buscas que executa: só são enviados o endereço de e-mail, o nome exibido e o domínio da empresa; os resultados ficam neste dispositivo (90 dias por padrão) e podem ser apagados nas abas Histórico e Dados."
@@ -594,7 +594,7 @@
   "message": "Permissão única para linkedin.com"
  },
  "connect_intro": {
-  "message": "Para preencher a nota do convite, a extensão precisa de acesso às páginas do linkedin.com que ela mesma abre. Você concede isso uma única vez."
+  "message": "O acesso opcional ao LinkedIn permite usar sua sessão. A extensão pode ler o grau de conexão e a foto; em Connect, abre o perfil, clica uma vez em “Add a note” e preenche sua nota. Você concede o acesso antes do uso. Ela também lê nomes e links das empresas associadas ao perfil selecionado."
  },
  "connect_what_title": {
   "message": "O que acontece depois que você continuar:"
@@ -603,10 +603,10 @@
   "message": "O perfil da pessoa no LinkedIn abre em uma nova guia."
  },
  "connect_step2": {
-  "message": "Você clica em \"Conectar\" e \"Adicionar nota\" no LinkedIn. A extensão preenche a nota abaixo assim que a caixa de nota aparecer."
+  "message": "Você clica em “Connect” no LinkedIn. Na janela do convite, a extensão clica uma vez em “Add a note” e preenche a nota."
  },
  "connect_step3": {
-  "message": "Você lê e clica em \"Enviar\" você mesmo. A extensão nunca clica em Conectar ou Enviar por conta própria e nunca roda em páginas do LinkedIn que você mesmo abre."
+  "message": "Revise a nota e clique em “Send” você mesmo. A extensão nunca clica em Connect ou Send e só funciona na aba do LinkedIn que abriu."
  },
  "connect_limit_hint": {
   "message": "O LinkedIn limita as notas a 300 caracteres, e contas gratuitas têm só alguns convites com nota por mês. Você pode editar o modelo nas configurações da extensão."
@@ -633,7 +633,7 @@
   "message": "Conectar no LinkedIn"
  },
  "opt_connect_intro": {
-  "message": "O botão \"Conectar\" no painel abre o perfil da pessoa; quando você clica em Conectar e Adicionar nota no LinkedIn, a nota de convite abaixo é preenchida para você e você clica em Enviar. Marcadores: {first} primeiro nome, {name} nome completo, {company} empresa."
+  "message": "Os recursos do LinkedIn usam sua sessão para ler o grau de conexão e a foto. Ao escolher Connect, a extensão abre o perfil, clica uma vez em “Add a note” e preenche seu modelo. Você clica em Connect e Send. Ela também lê nomes e links das empresas associadas ao perfil selecionado."
  },
  "opt_connect_note": {
   "message": "Modelo da nota de convite"
@@ -744,10 +744,10 @@
   "message": "Copiado"
  },
  "li_instructions": {
-  "message": "Clique em \"Conectar\" e depois em \"Adicionar nota\": a nota do convite será preenchida para você. Ou copie e cole você mesmo."
+  "message": "A extensão abre o perfil. Você clica em “Connect”; ela clica uma vez em “Add a note” e preenche sua nota. Você clica em Send."
  },
  "li_add_note": {
-  "message": "A janela de convite está aberta. Clique em \"Adicionar nota\" e a nota será preenchida."
+  "message": "A janela do convite está aberta. O SenderFinder clica uma vez em “Add a note” e preenche sua nota."
  },
  "li_copy_note": {
   "message": "Copiar nota"
@@ -777,7 +777,7 @@
   "message": "Mostrar fotos e sua relação no LinkedIn"
  },
  "li_grant_title": {
-  "message": "Lê cada perfil uma vez com seu próprio login do LinkedIn neste navegador. Nada é publicado."
+  "message": "Lê este perfil uma vez usando sua sessão do LinkedIn. Não envia convites nem mensagens."
  },
  "li_signed_out": {
   "message": "Entre no LinkedIn neste navegador para ver a relação"
@@ -820,5 +820,8 @@
  },
  "step_off": {
   "message": "desativado"
+ },
+ "li_grant_disclosure": {
+  "message": "Ao continuar, o SenderFinder usa sua sessão do LinkedIn para ler o grau de conexão e a foto deste perfil. Os dados ficam neste navegador; nenhum convite é enviado. Ela também lê nomes e links das empresas associadas ao perfil selecionado."
  }
 }

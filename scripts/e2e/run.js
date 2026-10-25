@@ -68,7 +68,26 @@ assert((await primary.locator('.avatar.ini').innerText()) === 'JD', 'no provider
 assert((await chips.nth(0).evaluate(e => e.shadowRoot.querySelector('.dot').className)) === 'dot found', 'the chip in the mail page turns green');
 await panel.screenshot({ path: path.join(OUT, 'sidepanel-2-found.png'), fullPage: true });
 // Peter's chip → Peter is the subject, Jane moves to the others list WITH her cached result and the same actions as the main card.
+// Two "first click does nothing" regressions ride on this click:
+//  (b) the worker must ask the side panel to open BEFORE it awaits anything, or the user gesture has expired after a cold
+//      start: slow down chrome.storage.session.set in the worker and time the open() call against the chip click;
+//  (a) the panel:state push that this click produces must not rebuild a panel button while it is pressed.
+await sw.evaluate(() => {
+  const ss = chrome.storage.session, origSet = ss.set.bind(ss);
+  globalThis.__e2e = { origSet, origOpen: chrome.sidePanel && chrome.sidePanel.open, opens: [] };
+  ss.set = async (...a) => { await new Promise(r => setTimeout(r, 400)); return origSet(...a); };
+  if (chrome.sidePanel) chrome.sidePanel.open = async () => { globalThis.__e2e.opens.push(Date.now()); throw new Error('headless: no side panel'); };
+});
+await panel.evaluate(() => { const b = document.querySelector('.person.primary button[data-act=connect]'); window.__held = b; b.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true })); });
+const chipT0 = Date.now();
 await chips.nth(1).locator('button').click();
+await panel.waitForTimeout(700);
+const held = await panel.evaluate(() => ({ same: document.querySelector('.person.primary button[data-act=connect]') === window.__held, email: document.querySelector('.person.primary').dataset.email }));
+assert(held.same && held.email === 'jane.doe@acme-test.invalid', 'a state push while a panel button is pressed does not rebuild the button under the pointer');
+await panel.evaluate(() => window.__held.dispatchEvent(new PointerEvent('pointerup', { bubbles: true })));
+const opens = await sw.evaluate(() => globalThis.__e2e.opens);
+assert(opens.length === 1 && opens[0] - chipT0 < 300, 'side panel open() is requested before the worker awaits anything (' + (opens.length ? opens[0] - chipT0 : 'never') + ' ms after the chip click)');
+await sw.evaluate(() => { chrome.storage.session.set = globalThis.__e2e.origSet; if (chrome.sidePanel) chrome.sidePanel.open = globalThis.__e2e.origOpen; });
 await panel.waitForFunction(() => { const p = document.querySelector('.person.primary'); return p && p.dataset.email === 'peter.miller@globex-test.invalid'; }, null, { timeout: 8000 });
 const janeRow = panel.locator('.others .row[data-email="jane.doe@acme-test.invalid"]');
 const janeRowText = await janeRow.innerText(); console.log('jane row:', janeRowText.replace(/\s+/g, ' '));

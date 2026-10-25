@@ -507,7 +507,7 @@
   "message": "À propos"
  },
  "about_text": {
-  "message": "Open source (AGPL-3.0). Il n'y a aucun serveur : les recherches partent de votre navigateur directement vers les fournisseurs dont vous avez saisi les clés, et les résultats ne sont stockés que sur cet appareil."
+  "message": "Open source (AGPL-3.0). Les recherches partent de votre navigateur directement vers les fournisseurs dont vous avez saisi les clés, et les résultats ne sont stockés que sur cet appareil. La seule chose qui nous est envoyée est un comptage d'utilisation quotidien anonyme, que vous pouvez désactiver d'un seul interrupteur."
  },
  "about_gdpr": {
   "message": "Vous êtes responsable des recherches que vous lancez : seuls l'adresse e-mail, le nom affiché et le domaine de l'entreprise sont envoyés ; les résultats restent sur cet appareil (90 jours par défaut) et peuvent être supprimés dans les onglets Historique et Données."
@@ -594,7 +594,7 @@
   "message": "Autorisation unique pour linkedin.com"
  },
  "connect_intro": {
-  "message": "Pour remplir la note d'invitation, l'extension doit accéder aux pages linkedin.com qu'elle ouvre elle-même. Vous l'autorisez une seule fois."
+  "message": "L’accès LinkedIn facultatif permet à l’extension d’utiliser votre session. Elle peut lire le degré de relation et la photo ; pour Connect, elle ouvre le profil et remplit votre note après avoir cliqué une fois sur « Add a note ». Vous accordez l’accès avant utilisation. Elle lit aussi les noms et liens des entreprises associées au profil sélectionné."
  },
  "connect_what_title": {
   "message": "Ce qui se passe ensuite :"
@@ -603,10 +603,10 @@
   "message": "Le profil LinkedIn de la personne s'ouvre dans un nouvel onglet."
  },
  "connect_step2": {
-  "message": "Vous cliquez sur « Se connecter » puis « Ajouter une note » sur LinkedIn. L'extension remplit la note ci-dessous dès que le champ apparaît."
+  "message": "Vous cliquez sur « Connect » sur LinkedIn. Dans la fenêtre d’invitation, l’extension clique une fois sur « Add a note » et remplit la note."
  },
  "connect_step3": {
-  "message": "Vous la relisez et appuyez vous-même sur « Envoyer ». L'extension ne clique jamais seule sur Se connecter ni sur Envoyer, et ne s'exécute jamais sur les pages LinkedIn que vous ouvrez vous-même."
+  "message": "Relisez la note et cliquez vous-même sur « Send ». L’extension ne clique jamais sur Connect ni Send et ne fonctionne que dans l’onglet LinkedIn qu’elle a ouvert."
  },
  "connect_limit_hint": {
   "message": "LinkedIn limite les notes à 300 caractères, et les comptes gratuits n'ont droit qu'à quelques invitations avec note par mois. Vous pouvez modifier le modèle dans les paramètres de l'extension."
@@ -633,7 +633,7 @@
   "message": "Se connecter sur LinkedIn"
  },
  "opt_connect_intro": {
-  "message": "Le bouton « Se connecter » du panneau ouvre le profil de la personne ; lorsque vous cliquez sur Se connecter puis Ajouter une note sur LinkedIn, la note d'invitation ci-dessous est remplie pour vous et vous appuyez sur Envoyer. Variables : {first} prénom, {name} nom complet, {company} entreprise."
+  "message": "Les fonctions LinkedIn utilisent votre session pour lire le degré de relation et la photo. Si vous choisissez Connect, l’extension ouvre le profil, clique une fois sur « Add a note » et remplit votre modèle. Vous cliquez vous-même sur Connect et Send. Elle lit aussi les noms et liens des entreprises associées au profil sélectionné."
  },
  "opt_connect_note": {
   "message": "Modèle de note d'invitation"
@@ -744,10 +744,10 @@
   "message": "Copié"
  },
  "li_instructions": {
-  "message": "Cliquez sur « Se connecter », puis sur « Ajouter une note » : la note d'invitation sera remplie pour vous. Ou copiez-la et collez-la vous-même."
+  "message": "L’extension ouvre le profil. Vous cliquez sur « Connect » ; elle clique une fois sur « Add a note » et remplit votre note. Vous cliquez vous-même sur Send."
  },
  "li_add_note": {
-  "message": "La fenêtre d'invitation est ouverte. Cliquez sur « Ajouter une note » et la note sera remplie."
+  "message": "La fenêtre d’invitation est ouverte. SenderFinder clique une fois sur « Add a note » et remplit votre note."
  },
  "li_copy_note": {
   "message": "Copier la note"
@@ -777,7 +777,7 @@
   "message": "Afficher les photos et votre relation LinkedIn"
  },
  "li_grant_title": {
-  "message": "Lit chaque profil une seule fois avec votre propre session LinkedIn dans ce navigateur. Rien n'est publié."
+  "message": "Lit ce profil une fois avec votre session LinkedIn. N’envoie aucune invitation ni aucun message."
  },
  "li_signed_out": {
   "message": "Connectez-vous à LinkedIn dans ce navigateur pour voir la relation"
@@ -820,5 +820,8 @@
  },
  "step_off": {
   "message": "désactivé"
+ },
+ "li_grant_disclosure": {
+  "message": "Si vous continuez, SenderFinder utilise votre session LinkedIn pour lire le degré de relation et la photo de ce profil. Les données restent dans ce navigateur ; aucune invitation n’est envoyée. Elle lit aussi les noms et liens des entreprises associées au profil sélectionné."
  }
 }

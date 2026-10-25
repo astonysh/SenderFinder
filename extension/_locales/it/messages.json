@@ -507,7 +507,7 @@
   "message": "Informazioni"
  },
  "about_text": {
-  "message": "Open source (AGPL-3.0). Non c'è alcun server: le ricerche vanno dal tuo browser direttamente ai provider di cui hai inserito le chiavi e i risultati sono salvati solo su questo dispositivo."
+  "message": "Open source (AGPL-3.0). Le ricerche vanno dal tuo browser direttamente ai provider di cui hai inserito le chiavi e i risultati sono salvati solo su questo dispositivo. L'unica cosa inviata a noi è un conteggio giornaliero anonimo dell'uso, che puoi disattivare con un solo interruttore."
  },
  "about_gdpr": {
   "message": "Sei tu il titolare delle ricerche che esegui: vengono inviati solo indirizzo email, nome visualizzato e dominio aziendale; i risultati restano su questo dispositivo (90 giorni per impostazione predefinita) e si possono eliminare nelle schede Cronologia e Dati."
@@ -594,7 +594,7 @@
   "message": "Autorizzazione una tantum per linkedin.com"
  },
  "connect_intro": {
-  "message": "Per compilare la nota di invito, l'estensione ha bisogno di accedere alle pagine di linkedin.com che apre lei stessa. Lo autorizzi una sola volta."
+  "message": "L’accesso LinkedIn facoltativo consente all’estensione di usare la tua sessione. Può leggere grado di collegamento e foto; per Connect apre il profilo e compila la nota dopo aver cliccato una volta “Add a note”. Concedi l’accesso prima dell’uso. Legge anche i nomi e i link delle aziende associate al profilo selezionato."
  },
  "connect_what_title": {
   "message": "Cosa succede dopo aver continuato:"
@@ -603,10 +603,10 @@
   "message": "Il profilo LinkedIn della persona si apre in una nuova scheda."
  },
  "connect_step2": {
-  "message": "Clicchi \"Collegati\" e \"Aggiungi una nota\" su LinkedIn. L'estensione compila la nota qui sotto non appena compare il campo della nota."
+  "message": "Tu clicchi “Connect” su LinkedIn. Nella finestra d’invito, l’estensione clicca una volta “Add a note” e compila la nota."
  },
  "connect_step3": {
-  "message": "La leggi e premi tu \"Invia\". L'estensione non clicca mai Collegati o Invia da sola e non viene mai eseguita sulle pagine LinkedIn che apri tu."
+  "message": "Controlla la nota e clicca tu “Send”. L’estensione non clicca mai Connect o Send e opera solo nella scheda LinkedIn che ha aperto."
  },
  "connect_limit_hint": {
   "message": "LinkedIn limita le note a 300 caratteri e gli account gratuiti hanno solo pochi inviti con nota al mese. Puoi modificare il modello nelle impostazioni dell'estensione."
@@ -633,7 +633,7 @@
   "message": "Collegati su LinkedIn"
  },
  "opt_connect_intro": {
-  "message": "Il pulsante \"Collegati\" nel pannello apre il profilo della persona; quando clicchi Collegati e Aggiungi una nota su LinkedIn, la nota di invito qui sotto viene compilata per te e premi tu Invia. Segnaposto: {first} nome, {name} nome completo, {company} azienda."
+  "message": "Le funzioni LinkedIn usano la tua sessione per leggere grado di collegamento e foto. Se scegli Connect, l’estensione apre il profilo, clicca una volta su “Add a note” e compila il tuo modello. Connect e Send li clicchi tu. Legge anche i nomi e i link delle aziende associate al profilo selezionato."
  },
  "opt_connect_note": {
   "message": "Modello della nota di invito"
@@ -744,10 +744,10 @@
   "message": "Copiato"
  },
  "li_instructions": {
-  "message": "Clicca \"Collegati\", poi \"Aggiungi una nota\": la nota di invito verrà compilata per te. Oppure copiala e incollala tu."
+  "message": "L’estensione apre il profilo. Tu clicchi “Connect”; lei clicca una volta “Add a note” e compila la nota. Send lo clicchi tu."
  },
  "li_add_note": {
-  "message": "La finestra di invito è aperta. Clicca \"Aggiungi una nota\" e la nota verrà compilata."
+  "message": "La finestra d’invito è aperta. SenderFinder clicca una volta “Add a note” e compila la nota."
  },
  "li_copy_note": {
   "message": "Copia nota"
@@ -777,7 +777,7 @@
   "message": "Mostra le foto e il grado di collegamento su LinkedIn"
  },
  "li_grant_title": {
-  "message": "Legge ogni profilo una sola volta con il tuo accesso LinkedIn in questo browser. Non pubblica nulla."
+  "message": "Legge questo profilo una volta con la tua sessione LinkedIn. Non invia inviti o messaggi."
  },
  "li_signed_out": {
   "message": "Accedi a LinkedIn in questo browser per vedere il grado di collegamento"
@@ -820,5 +820,8 @@
  },
  "step_off": {
   "message": "disattivato"
+ },
+ "li_grant_disclosure": {
+  "message": "Se continui, SenderFinder usa la tua sessione LinkedIn per leggere grado di collegamento e foto del profilo. I dati restano in questo browser; non viene inviata alcuna richiesta. Legge anche i nomi e i link delle aziende associate al profilo selezionato."
  }
 }

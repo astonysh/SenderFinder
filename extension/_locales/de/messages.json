@@ -507,7 +507,7 @@
   "message": "Info"
  },
  "about_text": {
-  "message": "Open Source (AGPL-3.0). Es gibt keinen Server: Abfragen gehen direkt aus Ihrem Browser an die Anbieter, für die Sie Keys hinterlegt haben, und Ergebnisse werden nur auf diesem Gerät gespeichert."
+  "message": "Open Source (AGPL-3.0). Abfragen gehen direkt aus Ihrem Browser an die Anbieter, für die Sie Keys hinterlegt haben, und Ergebnisse werden nur auf diesem Gerät gespeichert. An uns geht nur eine anonyme tägliche Nutzungszählung, die Sie mit einem Schalter abschalten können."
  },
  "about_gdpr": {
   "message": "Für Ihre Abfragen sind Sie verantwortlich: Gesendet werden nur E-Mail-Adresse, Anzeigename und Firmendomain, Ergebnisse bleiben auf diesem Gerät (standardmäßig 90 Tage) und lassen sich unter Verlauf und Daten löschen."
@@ -594,7 +594,7 @@
   "message": "Einmalige Berechtigung für linkedin.com"
  },
  "connect_intro": {
-  "message": "Um die Einladungsnotiz auszufüllen, braucht die Erweiterung Zugriff auf linkedin.com-Seiten, die sie selbst öffnet. Sie erteilen das einmalig."
+  "message": "Der optionale LinkedIn-Zugriff erlaubt der Erweiterung, deine Sitzung zu nutzen. Sie kann Beziehungsgrad und Foto lesen; bei Connect öffnet sie das Profil und füllt nach einem Klick auf „Add a note“ deine Notiz aus. Du erteilst den Zugriff vor der Nutzung. Außerdem liest sie zugehörige Firmennamen und Firmenlinks des ausgewählten Profils."
  },
  "connect_what_title": {
   "message": "Das passiert, wenn Sie fortfahren:"
@@ -603,10 +603,10 @@
   "message": "Das LinkedIn-Profil der Person öffnet sich in einem neuen Tab."
  },
  "connect_step2": {
-  "message": "Sie klicken auf LinkedIn auf „Vernetzen“ und „Notiz hinzufügen“. Die Erweiterung füllt die untenstehende Notiz ein, sobald das Notizfeld erscheint."
+  "message": "Du klickst auf LinkedIn auf „Connect“. Im Einladungsdialog klickt die Erweiterung einmal auf „Add a note“ und füllt die Notiz aus."
  },
  "connect_step3": {
-  "message": "Sie lesen sie und klicken selbst auf „Senden“. Die Erweiterung klickt nie von sich aus auf „Vernetzen“ oder „Senden“ und läuft nie auf LinkedIn-Seiten, die Sie selbst öffnen."
+  "message": "Prüfe die Notiz und klicke selbst auf „Send“. Die Erweiterung klickt weder Connect noch Send und läuft nur im von ihr geöffneten LinkedIn-Tab."
  },
  "connect_limit_hint": {
   "message": "LinkedIn begrenzt Notizen auf 300 Zeichen, und kostenlose Konten haben nur wenige Einladungen mit Notiz pro Monat. Die Vorlage können Sie in den Einstellungen der Erweiterung bearbeiten."
@@ -633,7 +633,7 @@
   "message": "Auf LinkedIn vernetzen"
  },
  "opt_connect_intro": {
-  "message": "Die Schaltfläche „Vernetzen“ im Panel öffnet das Profil der Person; wenn Sie auf LinkedIn auf „Vernetzen“ und „Notiz hinzufügen“ klicken, wird die untenstehende Einladungsnotiz für Sie ausgefüllt, und Sie klicken auf „Senden“. Platzhalter: {first} Vorname, {name} vollständiger Name, {company} Unternehmen."
+  "message": "LinkedIn-Funktionen nutzen deine Sitzung, um Beziehungsgrad und Profilfoto zu lesen. Bei Connect öffnet die Erweiterung das Profil, klickt einmal auf „Add a note“ und füllt deine Vorlage aus. Connect und Send klickst du selbst. Außerdem liest sie zugehörige Firmennamen und Firmenlinks des ausgewählten Profils."
  },
  "opt_connect_note": {
   "message": "Vorlage für die Einladungsnotiz"
@@ -744,10 +744,10 @@
   "message": "Kopiert"
  },
  "li_instructions": {
-  "message": "Klicken Sie auf „Vernetzen“, dann auf „Notiz hinzufügen“: Die Einladungsnotiz wird für Sie ausgefüllt. Oder kopieren Sie sie und fügen Sie sie selbst ein."
+  "message": "Die Erweiterung öffnet das Profil. Du klickst auf „Connect“; sie klickt einmal auf „Add a note“ und füllt deine Notiz aus. Send klickst du selbst."
  },
  "li_add_note": {
-  "message": "Der Einladungsdialog ist offen. Klicken Sie auf „Notiz hinzufügen“, dann wird die Notiz ausgefüllt."
+  "message": "Der Einladungsdialog ist geöffnet. SenderFinder klickt einmal auf „Add a note“ und füllt deine Notiz aus."
  },
  "li_copy_note": {
   "message": "Notiz kopieren"
@@ -777,7 +777,7 @@
   "message": "Fotos und Ihren LinkedIn-Kontaktgrad anzeigen"
  },
  "li_grant_title": {
-  "message": "Liest jedes Profil einmal mit Ihrem eigenen LinkedIn-Login in diesem Browser. Es wird nichts gepostet."
+  "message": "Liest dieses Profil einmal mit deiner LinkedIn-Sitzung. Es wird keine Einladung oder Nachricht gesendet."
  },
  "li_signed_out": {
   "message": "Melden Sie sich in diesem Browser bei LinkedIn an, um den Kontaktgrad zu sehen"
@@ -820,5 +820,8 @@
  },
  "step_off": {
   "message": "aus"
+ },
+ "li_grant_disclosure": {
+  "message": "Wenn du fortfährst, nutzt SenderFinder deine LinkedIn-Sitzung, um Beziehungsgrad und Foto dieses Profils zu lesen. Die Daten bleiben in diesem Browser; es wird keine Einladung gesendet. Außerdem liest sie zugehörige Firmennamen und Firmenlinks des ausgewählten Profils."
  }
 }

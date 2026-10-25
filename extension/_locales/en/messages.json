@@ -507,7 +507,7 @@
   "message": "About"
  },
  "about_text": {
-  "message": "Open source (AGPL-3.0). There is no server: lookups go from your browser straight to the providers you entered keys for, and results are stored only on this device."
+  "message": "Open source (AGPL-3.0). Lookups go from your browser straight to the providers you entered keys for, and results are stored only on this device. The only thing sent to us is an anonymous daily usage count, which one switch turns off."
  },
  "about_gdpr": {
   "message": "You are the controller of the lookups you run: only the email address, display name and company domain are sent, results stay on this device (90 days by default) and can be deleted on the History and Data tabs."
@@ -594,7 +594,7 @@
   "message": "One-time permission for linkedin.com"
  },
  "connect_intro": {
-  "message": "To fill in the invitation note, the extension needs access to linkedin.com pages that it opens itself. You grant this once."
+  "message": "The optional LinkedIn access lets the extension use your session. It can read connection degree and photo; for Connect it opens a profile and fills your invitation note after clicking “Add a note” once. You grant access before use. It also reads associated company names and company-page links for the selected profile."
  },
  "connect_what_title": {
   "message": "What happens after you continue:"
@@ -603,10 +603,10 @@
   "message": "The person's LinkedIn profile opens in a new tab."
  },
  "connect_step2": {
-  "message": "You click \"Connect\" and \"Add a note\" on LinkedIn. The extension fills in the note below the moment the note box appears."
+  "message": "You click “Connect” on LinkedIn. In the invitation dialog, the extension clicks “Add a note” once and fills in the note below."
  },
  "connect_step3": {
-  "message": "You read it and press \"Send\" yourself. The extension never clicks Connect or Send on its own and never runs on LinkedIn pages you open yourself."
+  "message": "Review the note and press “Send” yourself. The extension never clicks Connect or Send, and only runs in the LinkedIn tab it opened."
  },
  "connect_limit_hint": {
   "message": "LinkedIn limits notes to 300 characters, and free accounts get only a few invitations with a note per month. You can edit the template in the extension settings."
@@ -633,7 +633,7 @@
   "message": "Connect on LinkedIn"
  },
  "opt_connect_intro": {
-  "message": "The \"Connect\" button in the panel opens the person's profile; when you click Connect and Add a note on LinkedIn, the invitation note below is filled in for you and you press Send. Placeholders: {first} first name, {name} full name, {company} company."
+  "message": "LinkedIn features use your own LinkedIn session to read connection degree and profile photo. When you choose Connect, the extension opens the profile, clicks “Add a note” once and fills your template. You click Connect and Send yourself. It also reads associated company names and company-page links for the selected profile."
  },
  "opt_connect_note": {
   "message": "Invitation note template"
@@ -744,10 +744,10 @@
   "message": "Copied"
  },
  "li_instructions": {
-  "message": "Click \"Connect\", then \"Add a note\": the invitation note will be filled in for you. Or copy it and paste it yourself."
+  "message": "The extension opens the profile. You click “Connect”; it clicks “Add a note” once and fills your note. You press Send yourself."
  },
  "li_add_note": {
-  "message": "The invitation dialog is open. Click \"Add a note\" and the note will be filled in."
+  "message": "The invitation dialog is open. SenderFinder clicks “Add a note” once and fills in your note."
  },
  "li_copy_note": {
   "message": "Copy note"
@@ -777,7 +777,7 @@
   "message": "Show photos and your LinkedIn relationship"
  },
  "li_grant_title": {
-  "message": "Reads each profile once with your own LinkedIn login in this browser. Nothing is posted."
+  "message": "Uses your LinkedIn session to read this profile once. It never sends an invitation or message."
  },
  "li_signed_out": {
   "message": "Sign in to LinkedIn in this browser to see the relationship"
@@ -820,5 +820,8 @@
  },
  "step_off": {
   "message": "off"
+ },
+ "li_grant_disclosure": {
+  "message": "If you continue, SenderFinder uses your LinkedIn session to read this profile’s connection degree and photo. The data stays in this browser; no invitation is sent. It also reads associated company names and company-page links for the selected profile."
  }
 }

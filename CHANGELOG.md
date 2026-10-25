@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.1 (2026-10-25)
+
+- Fix: buttons sometimes needed a second click. The side panel no longer re-renders while a pointer is pressed (a focus, relationship refresh or state push used to replace the pressed button and Chrome dropped the click), and the magnifier chip asks the side panel to open before the worker awaits anything, so the user gesture no longer expires after a cold start.
+
 ## 0.5.0 (2026-10-25)
 
 - Fix: people you are already connected with showed a Connect button instead of "Connected". LinkedIn retired the `networkinfo` endpoint (410) and now returns a 1st-degree relationship as a URN link (`"*connection"`) rather than an inline object; the parser understands both, and also finds the relationship entity by member id when the profile does not link to it (TopCardSupplementary). Cached relationships are read again once (cache version 5).
