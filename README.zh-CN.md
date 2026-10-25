@@ -1,6 +1,6 @@
 # SenderFinder
 
-[English](README.md)
+[English](README.md) · [赞助 SenderFinder](https://senderfinder.com/sponsors)
 
 Rapportive / Clearbit Connect 式的开源浏览器插件，支持 Chrome 和 Microsoft Edge 桌面版：在 Gmail（Outlook 网页版尽力支持）打开一封邮件，浏览器右侧的侧边栏显示发件人的 LinkedIn 资料：头像、姓名、职位、公司、地点、对方当地时间、资料链接，有的话还有 X / Twitter 链接。线程里的其他人（其他发件人、收件人、抄送）列在下面，点一下才查。邮件页面本身只在发件人名字旁边多一个很小的放大镜标记，不改动 Gmail 的布局；点标记可以切换侧边栏显示的人。
 
@@ -166,6 +166,14 @@ v0.1 的服务端 + 网页版保留在 git tag `v0.1-server`。
 插件设置页里有一个"发送匿名使用统计"的开关，安装后默认开启，介意的话一键关闭。开启时每天发送一份前一天的汇总计数（查询次数、各状态数量、各步骤调用与命中次数、来源、花费合计、插件版本、界面语言、一个随机安装 ID），永远不含邮箱、姓名、域名、LinkedIn 链接、资料字段、key 或邮件内容。设置页的"查看将发送的数据"按钮显示完整文档；关闭开关会删除安装 ID 和未发送的数据。接收端是 `telemetry/` 里的一个 Cloudflare Worker + D1 表，不记录 IP，部署步骤见 `telemetry/README.md`。
 
 项目指标（stars、商店用户数、匿名统计、网站访问）用 `node scripts/metrics-report.js` 汇总并追加到 `docs/metrics/LOG.md`，配置项见脚本头部注释。
+
+## 赞助 SenderFinder
+
+我做 SenderFinder，首先是因为自己需要，也希望它能帮到其他人。另外还有一个很个人的目标：**我想买一辆特斯拉 Model Y。** 原本看中的优惠结束了，所以我给自己设了一个挑战：做一个有用的项目，通过赞助收入攒购车款。
+
+目前的目标是**每月约 500 美元的赞助收入**。赞助是在支持我这个维护者，包括持续开发维护项目，以及为 Model Y 存钱。
+
+完整故事和资金用途见[赞助说明](https://senderfinder.com/sponsors#use-of-funds)。有意赞助，可以联系 [tony@senderfinder.com](mailto:tony@senderfinder.com)。
 
 ## 协议
 

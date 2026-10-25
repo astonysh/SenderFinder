@@ -1,6 +1,6 @@
 # SenderFinder
 
-[中文](README.zh-CN.md)
+[中文](README.zh-CN.md) · [Sponsor SenderFinder](https://senderfinder.com/sponsors)
 
 An open-source browser extension in the spirit of Rapportive and Clearbit Connect, available for Chrome and desktop Microsoft Edge: open an email in Gmail (Outlook on the web is best-effort) and the browser's side panel shows the sender's LinkedIn profile: photo, name, title, company, location, their local time, the profile link and, when known, an X / Twitter link. Other people in the thread (other senders, To, Cc) are listed below and looked up only when you click them. The mail page itself only gets a tiny magnifier mark next to the sender's name, so Gmail's layout is untouched; clicking the mark switches the panel to that person.
 
@@ -138,6 +138,14 @@ The v0.1 server + web app lives on the git tag `v0.1-server`.
 ## Anonymous usage statistics (on by default, one switch to turn off)
 
 The settings page has a switch called "Send anonymous usage statistics". It is on after installation; turn it off if you prefer. While on, once a day the extension posts one summary of the previous day (lookup counts and outcomes, per-step calls and hits, mail client, rounded total spend, extension version, UI language, a random installation id) and never any email address, name, domain, LinkedIn URL, profile field, key or message content. The "Preview what would be sent" button shows the exact document; switching off deletes the installation id and anything unsent. The receiving side is a Cloudflare Worker + D1 table in `telemetry/`; it does not log IP addresses.
+
+## Sponsor SenderFinder
+
+I built SenderFinder because I needed it myself, and I hope it is useful to you too. There is also a personal goal behind the project: **I want to buy a Tesla Model Y.** The offer I had been looking at ended, so I set myself a challenge: build something useful and let sponsorship help pay for the car.
+
+My target is **about $500 a month in sponsorship income**. Sponsorship supports me as the maintainer, including my Model Y savings goal and the ongoing work on the project.
+
+Read the [sponsorship details and where the money goes](https://senderfinder.com/sponsors#use-of-funds). To discuss sponsorship, email [tony@senderfinder.com](mailto:tony@senderfinder.com).
 
 ## License
 
