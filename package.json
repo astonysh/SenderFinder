@@ -16,6 +16,8 @@
     "e2e": "node scripts/e2e/run.js",
     "e2e:locales": "node scripts/e2e/locales.js",
     "store:assets": "node scripts/store/shots.js",
+    "site:deploy": "wrangler deploy",
+    "telemetry:deploy": "cd telemetry && wrangler deploy",
     "zip": "node scripts/zip-extension.js",
     "bench": "node scripts/bench.js",
     "bump": "node scripts/bump.js"

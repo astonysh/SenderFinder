@@ -1,0 +1,22 @@
+# senderfinder.com — the static site in site/, served by Cloudflare Workers Static Assets (the successor of Pages).
+# Deploy: npx wrangler deploy        (from the repository root; see site/README.md)
+# The telemetry receiver is a separate Worker with its own config in telemetry/.
+name = "senderfinder-com"
+compatibility_date = "2026-10-01"
+
+[assets]
+directory = "./site"
+html_handling = "auto-trailing-slash"   # /privacy serves privacy.html; /privacy.html redirects to /privacy
+not_found_handling = "404-page"         # site/404.html
+
+# No request logs for the website either.
+[observability]
+enabled = false
+
+[[routes]]
+pattern = "senderfinder.com"
+custom_domain = true
+
+[[routes]]
+pattern = "www.senderfinder.com"
+custom_domain = true

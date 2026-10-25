@@ -17,20 +17,20 @@ There is no build step, no framework, no npm packages and no external requests.
 | `robots.txt`, `sitemap.xml` | Crawling |
 | `_headers` | Cloudflare Pages response headers (strict Content-Security-Policy: same-origin only) |
 
-## Deploy to Cloudflare Pages
+## Deploy (Cloudflare Workers Static Assets)
 
-1. Cloudflare dashboard → Workers & Pages → Create → Pages → connect the Git repository.
-2. Build settings:
-   - Framework preset: **None**
-   - Build command: **(leave empty)**
-   - Build output directory: **`site`**
-3. Save and deploy. Add a custom domain under the project's Custom domains tab if you want one.
+The site is served by a Cloudflare Worker that only hosts static assets (Cloudflare's successor to Pages; the
+`wrangler pages` commands now redirect to this flow). The config is `wrangler.toml` in the repository root:
+`assets.directory = "./site"`, both custom domains (`senderfinder.com`, `www.senderfinder.com`), request logging off.
 
-Cloudflare Pages serves `/privacy.html` at `/privacy` (it redirects `.html` URLs to the extensionless form).
-Canonical URLs and `sitemap.xml` therefore use extensionless paths. Internal links keep `.html` so the pages
-also work when opened straight from disk.
+```bash
+npm run site:deploy        # = npx wrangler deploy, from the repository root; needs `npx wrangler login` once
+```
 
-Direct upload works too: `npx wrangler pages deploy site` (run from the repository root).
+What the platform does for us: `_headers` is applied, `/privacy.html` redirects to `/privacy` and `/privacy` serves
+`privacy.html` (`html_handling = "auto-trailing-slash"`), unknown paths get `404.html`, and files listed in
+`.assetsignore` (this README) are not uploaded. Canonical URLs and `sitemap.xml` use the extensionless paths;
+internal links keep `.html` so the pages also work when opened straight from disk.
 
 ## Placeholders
 
