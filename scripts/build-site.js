@@ -485,11 +485,8 @@ function notice(data, scope) {
 function headerV2(lang, page, data, scope) {
   const nav = [
     { href: `${scope.url.index}#how`, label: data.ui.nav.how },
-    { href: `${scope.url.index}#privacy`, label: data.ui.nav.privacy },
     { href: `${scope.url.index}#cost`, label: data.ui.nav.cost },
     { href: scope.url.install, label: data.ui.nav.install, id: 'install' },
-    { href: scope.url.changelog, label: data.ui.nav.changelog, id: 'changelog' },
-    { href: `${scope.url.index}#faq`, label: data.ui.nav.faq },
     { href: REPO_URL, label: 'GitHub' },
   ];
   const items = nav.map(item => {
@@ -544,6 +541,7 @@ function footerV2(lang, page, data, scope) {
     { href: scope.url.clearbit, label: data.ui.footer.clearbit, id: 'clearbit' },
     { href: scope.url.rapportive, label: data.ui.footer.rapportive, id: 'rapportive' },
     { href: scope.url.changelog, label: data.ui.footer.changelog, id: 'changelog' },
+    { href: `${scope.url.index}#faq`, label: data.ui.nav.faq },
     { href: REPO_URL, label: 'GitHub' },
     { href: `${REPO_URL}/blob/main/LICENSE`, label: data.ui.footer.license },
   ].map(item => {

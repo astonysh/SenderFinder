@@ -8,7 +8,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  CONTENT_PAGES, LANGUAGES, PAGES, PKG, ROOT, SITE_URL, UPDATED, buildSite, hasPage, pageLocales, pagePath, readExtensionStrings, readLocale,
+  CONTENT_PAGES, LANGUAGES, PAGES, PKG, REPO_URL, ROOT, SITE_URL, UPDATED, buildSite, hasPage, pageLocales, pagePath, readExtensionStrings, readLocale,
 } from './build-site.js';
 import { benchStats } from './bench-stats.js';
 
@@ -272,6 +272,25 @@ test('every local link, script and image resolves to a file in site/', () => {
     }
   }
   assert.deepEqual([...new Set(broken)], []);
+});
+
+test('every page keeps primary links in the header and informational links in the footer', () => {
+  for (const lang of LANGUAGES) {
+    const home = pagePath(lang, PAGES[0]);
+    const route = id => pagePath(lang, PAGES.find(page => page.id === id));
+    for (const page of PAGES.filter(page => hasPage(page, lang.locale))) {
+      const html = pageOf(lang, page);
+      const header = html.match(/<nav class="v2-nav-links"[^>]*>([\s\S]*?)<\/nav>/);
+      const footer = html.match(/<footer class="v2-foot">([\s\S]*?)<\/footer>/);
+      assert.ok(header && footer, `${lang.locale}/${page.id}: shared navigation missing`);
+      const hrefs = markup => [...markup.matchAll(/<a href="([^"]+)"/g)].map(match => match[1]);
+      assert.deepEqual(hrefs(header[1]), [`${home}#how`, `${home}#cost`, route('install'), REPO_URL],
+        `${lang.locale}/${page.id}: unexpected primary navigation`);
+      for (const href of [route('privacy'), route('changelog'), `${home}#faq`]) {
+        assert.ok(hrefs(footer[1]).includes(href), `${lang.locale}/${page.id}: footer missing ${href}`);
+      }
+    }
+  }
 });
 
 test('internal links use canonical extensionless URLs, never .html files', () => {
