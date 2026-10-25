@@ -1,13 +1,13 @@
 {
   "meta": {
     "title": "Sponsor SenderFinder — open-source sender lookup | SenderFinder",
-    "description": "SenderFinder has no paid tier and no investor. Sponsorship pays for benchmark runs against paid provider APIs and the time that keeps ten UI languages and the provider adapters current.",
+    "description": "Support the maintainer behind SenderFinder. The goal is about $500 a month in sponsorship income to keep building the project and save toward a Tesla Model Y.",
     "ogTitle": "Sponsor SenderFinder",
-    "ogDescription": "An open-source, local-first alternative to Rapportive and Clearbit Connect. What sponsorship pays for, and what it does not buy."
+    "ogDescription": "Support the person behind SenderFinder: ongoing development, an open-source tool, and a personal goal of saving for a Tesla Model Y."
   },
   "page": {
     "title": "Sponsor SenderFinder",
-    "lead": "SenderFinder is free, open source and has no paid tier. Sponsorship pays for the parts that cost real money — benchmark runs against paid provider APIs and the time that keeps the adapters and translations current — without buying influence over what the product recommends.",
+    "lead": "SenderFinder is free, open source and has no paid tier. Sponsorship supports me as the person building and maintaining it. My current goal is about $500 a month in sponsorship income, helping me keep working on the project and save for a Tesla Model Y.",
     "updated": "Last checked: 25 October 2026.",
     "cta": {
       "install": "Install SenderFinder",
@@ -19,7 +19,7 @@
         "title": "Why sponsor it",
         "blocks": [
           "SenderFinder exists because the tools that used to answer “who is this sender?” kept disappearing. Rapportive was acquired and shut down. Clearbit Connect stopped working on 30 April 2025. The replacement is an AGPL-3.0 extension that runs in your browser, uses your own provider keys, and has no SenderFinder account or server in the lookup path.",
-          "That architecture is cheap to run and expensive to maintain. There is no subscription to fund it. The provider adapters have to follow catalog and API changes. The benchmark costs money every time it runs because it calls paid provider APIs. Ten UI languages have to be kept in step with every new string. Sponsorship is what turns “someone maintains this in their spare time” into “someone can keep maintaining it”.",
+          "The direct running costs are small, but there is ongoing work. The provider adapters have to follow catalog and API changes. The benchmark costs money every time it runs because it calls paid provider APIs. Ten UI languages have to be kept in step with every new string. Recurring sponsorship supports my time on this work and the personal goal described below.",
           "Sponsorship is not a vote on the roadmap. The project's value is that it recommends the cheapest step first and says when it is uncertain; a sponsor cannot buy a different answer."
         ]
       },
@@ -95,8 +95,9 @@
         "id": "use-of-funds",
         "title": "Where the money goes",
         "blocks": [
-          "Benchmark runs are the clearest cost: a 50-address run against paid provider APIs costs money every time, and reruns are how the price and hit-rate tables stay honest. The rest is maintenance time — provider adapters, the Outlook path, the ten UI languages, the install guide and the privacy statement.",
-          "When sponsorship starts, a short use-of-funds note will be published here with the same date as the sponsor list."
+          "I started SenderFinder because I needed it myself. Finding the person behind an email and connecting on LinkedIn felt like a real need worth building for, and I hoped other people would find it useful too.",
+          "There is also a personal reason: <strong>I want to buy a Tesla Model Y.</strong> By the time I decided to go for it, the offer I had been looking at had ended. I was not keen to pay the higher price entirely out of pocket, so I gave myself a challenge: build something useful and let sponsorship help pay for the car.",
+          "My target is <strong>about $500 a month in sponsorship income</strong>. Sponsorship supports me as the person building and maintaining SenderFinder, and helps me put money aside for the Model Y. If this tool is useful to you and you choose to sponsor it, you are helping both the project and the person behind it."
         ]
       },
       {
