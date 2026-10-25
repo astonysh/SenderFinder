@@ -1,6 +1,5 @@
-'use strict';
 // Synthetic provider clients for tests. No network, no real data.
-function fakeTreg({ answers = {}, prices = {} } = {}) {
+export function fakeTreg({ answers = {}, prices = {} } = {}) {
   const calls = [];
   return {
     calls,
@@ -17,7 +16,7 @@ function fakeTreg({ answers = {}, prices = {} } = {}) {
     },
   };
 }
-function fakeMonid({ answers = {}, prices = {} } = {}) {
+export function fakeMonid({ answers = {}, prices = {} } = {}) {
   const calls = [];
   return {
     calls,
@@ -34,7 +33,7 @@ function fakeMonid({ answers = {}, prices = {} } = {}) {
     },
   };
 }
-function fakeFirecrawl({ answers = {} } = {}) {
+export function fakeFirecrawl({ answers = {} } = {}) {
   const calls = [];
   return {
     calls, usdPerCredit: 0.0032,
@@ -47,6 +46,5 @@ function fakeFirecrawl({ answers = {} } = {}) {
     },
   };
 }
-const notConfigured = () => ({ isConfigured: () => false, calls: [], async call() { throw new Error('not configured'); }, async run() { throw new Error('not configured'); } });
+export const notConfigured = () => ({ isConfigured: () => false, calls: [], async call() { throw new Error('not configured'); }, async run() { throw new Error('not configured'); } });
 
-module.exports = { fakeTreg, fakeMonid, fakeFirecrawl, notConfigured };

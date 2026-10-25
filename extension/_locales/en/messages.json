@@ -1,0 +1,824 @@
+{
+ "ext_name": {
+  "message": "SenderFinder"
+ },
+ "ext_description": {
+  "message": "Shows the LinkedIn profile of the sender in Gmail / Outlook web. Open source, your own provider keys, data stays in your browser."
+ },
+ "lookup_btn": {
+  "message": "Find on LinkedIn"
+ },
+ "looking_up": {
+  "message": "Looking up $1 …"
+ },
+ "retry": {
+  "message": "Retry"
+ },
+ "open_settings": {
+  "message": "Open settings"
+ },
+ "name_match": {
+  "message": "Name matches"
+ },
+ "name_mismatch": {
+  "message": "Name differs, please check"
+ },
+ "from_signature": {
+  "message": "From the email signature"
+ },
+ "by_email": {
+  "message": "Matched by email"
+ },
+ "cached": {
+  "message": "cached"
+ },
+ "header_name_vs_profile": {
+  "message": "Name in the email: $1 · name on the profile: $2"
+ },
+ "unknown": {
+  "message": "unknown"
+ },
+ "skip_free_mail": {
+  "message": "Personal mailbox domain, skipped by default"
+ },
+ "skip_role": {
+  "message": "Shared / role address, skipped by default"
+ },
+ "skipped_generic": {
+  "message": "Skipped: $1"
+ },
+ "lookup_anyway": {
+  "message": "Look up anyway"
+ },
+ "not_found_for": {
+  "message": "No LinkedIn profile found for $1"
+ },
+ "lookup_again": {
+  "message": "Look up again"
+ },
+ "source": {
+  "message": "Source: $1"
+ },
+ "source_signature": {
+  "message": "email signature"
+ },
+ "cost": {
+  "message": "Cost: $1"
+ },
+ "lookup_short": {
+  "message": "Look up"
+ },
+ "personal_mail": {
+  "message": "personal mailbox"
+ },
+ "role_mail": {
+  "message": "role address"
+ },
+ "not_found_short": {
+  "message": "not found"
+ },
+ "err_generic": {
+  "message": "Error"
+ },
+ "err_no_keys_short": {
+  "message": "No key set"
+ },
+ "err_auto_limit_short": {
+  "message": "Auto-lookup limit reached"
+ },
+ "err_unauthorized_short": {
+  "message": "Invalid key"
+ },
+ "err_invalid_email": {
+  "message": "Unrecognised email address"
+ },
+ "err_no_keys": {
+  "message": "No provider key yet. One is enough: treg (cheapest) or Monid (best coverage). Open the extension settings."
+ },
+ "err_auto_limit": {
+  "message": "Automatic lookups reached today's limit of $1. Click to look up manually."
+ },
+ "popup_cannot_read": {
+  "message": "Cannot read settings"
+ },
+ "popup_no_keys": {
+  "message": "No provider key yet. One is enough: treg (cheapest) or Monid (best coverage). Open settings."
+ },
+ "popup_configured": {
+  "message": "Configured: $1 · steps: $2"
+ },
+ "popup_today_lookups": {
+  "message": "Lookups today"
+ },
+ "popup_today_spent": {
+  "message": "Spent today"
+ },
+ "popup_today_auto": {
+  "message": "Auto lookups today"
+ },
+ "popup_cache": {
+  "message": "Cached entries"
+ },
+ "popup_found_n": {
+  "message": "$1 (found $2)"
+ },
+ "opt_auto_lookup": {
+  "message": "Look up the sender automatically when a message opens"
+ },
+ "opt_show_cost": {
+  "message": "Show the cost"
+ },
+ "popup_open_settings": {
+  "message": "Open settings & history"
+ },
+ "popup_hint": {
+  "message": "Keys, cache and history stay in this browser."
+ },
+ "options_title": {
+  "message": "SenderFinder · Settings"
+ },
+ "tagline": {
+  "message": "Open source · your own keys · data stays on this device"
+ },
+ "tab_settings": {
+  "message": "Settings"
+ },
+ "tab_history": {
+  "message": "History"
+ },
+ "tab_stats": {
+  "message": "Statistics"
+ },
+ "tab_data": {
+  "message": "Data"
+ },
+ "keys_title": {
+  "message": "Provider keys"
+ },
+ "keys_probe": {
+  "message": "Test keys (free)"
+ },
+ "keys_intro": {
+  "message": "One key is enough. treg is the cheapest (email only, roughly half of work addresses); Monid has the best coverage (Apollo matches on name + company domain, dearer); Firecrawl is an optional last fallback. Keys stay in this browser and are sent only to their own provider."
+ },
+ "key_monid": {
+  "message": "Monid API key"
+ },
+ "key_treg": {
+  "message": "treg token"
+ },
+ "key_firecrawl": {
+  "message": "Firecrawl API key"
+ },
+ "get_key": {
+  "message": "Get one ↗"
+ },
+ "optional_fallback": {
+  "message": "optional fallback"
+ },
+ "firecrawl_usd_per_credit": {
+  "message": "Firecrawl price per credit (USD)"
+ },
+ "per_your_plan": {
+  "message": "per your plan"
+ },
+ "show_keys": {
+  "message": "Show keys"
+ },
+ "probe_running": {
+  "message": "Checking (free)…"
+ },
+ "probe_failed": {
+  "message": "Check failed"
+ },
+ "probe_not_set": {
+  "message": "$1: not set"
+ },
+ "probe_valid": {
+  "message": "$1: valid"
+ },
+ "probe_invalid": {
+  "message": "$1: invalid"
+ },
+ "hit_rate": {
+  "message": "hit rate"
+ },
+ "steps_title": {
+  "message": "Lookup steps"
+ },
+ "steps_intro": {
+  "message": "Tried top to bottom, stops at the first hit. The price is the catalog price cap accepted for that step."
+ },
+ "col_step": {
+  "message": "Step"
+ },
+ "col_provider": {
+  "message": "Provider"
+ },
+ "col_price_cap": {
+  "message": "Price cap"
+ },
+ "col_status": {
+  "message": "Status"
+ },
+ "local": {
+  "message": "local"
+ },
+ "free": {
+  "message": "free"
+ },
+ "always_on": {
+  "message": "always available"
+ },
+ "configured": {
+  "message": "configured"
+ },
+ "missing_key": {
+  "message": "missing key"
+ },
+ "move_up": {
+  "message": "Move up"
+ },
+ "move_down": {
+  "message": "Move down"
+ },
+ "step_signature": {
+  "message": "LinkedIn link in the email signature"
+ },
+ "step_blitzapi": {
+  "message": "BlitzAPI reverse email (treg)"
+ },
+ "step_quickenrich": {
+  "message": "QuickEnrich reverse email (treg)"
+ },
+ "step_hunter": {
+  "message": "Hunter.io reverse email (Monid)"
+ },
+ "step_village": {
+  "message": "Village reverse email (treg)"
+ },
+ "step_apollo": {
+  "message": "Apollo match (Monid)"
+ },
+ "step_datalegion": {
+  "message": "Data Legion reverse email (Firecrawl)"
+ },
+ "step_contactout": {
+  "message": "ContactOut match (Monid)"
+ },
+ "budget_title": {
+  "message": "Budget & behaviour"
+ },
+ "lookup_max_usd": {
+  "message": "Per-lookup cap (USD)"
+ },
+ "daily_cap_usd": {
+  "message": "Daily cap (USD)"
+ },
+ "daily_cap_hint": {
+  "message": "0 = no paid calls at all"
+ },
+ "auto_daily_limit": {
+  "message": "Automatic lookups per day"
+ },
+ "auto_daily_hint": {
+  "message": "beyond that, manual only"
+ },
+ "cache_max_age": {
+  "message": "Cache retention (days)"
+ },
+ "opt_skip_free_mail": {
+  "message": "Skip personal mailbox domains (gmail.com, qq.com …)"
+ },
+ "single_lookup_title": {
+  "message": "Look up one address"
+ },
+ "name_optional": {
+  "message": "Display name (optional)"
+ },
+ "force_lookup": {
+  "message": "Ignore cache / force lookup"
+ },
+ "lookup_go": {
+  "message": "Look up"
+ },
+ "looking_up_short": {
+  "message": "Looking up…"
+ },
+ "history_title": {
+  "message": "History"
+ },
+ "search_placeholder": {
+  "message": "Search email / name / company"
+ },
+ "all_statuses": {
+  "message": "All statuses"
+ },
+ "status_found": {
+  "message": "Found"
+ },
+ "status_uncertain": {
+  "message": "Uncertain"
+ },
+ "status_not_found": {
+  "message": "Not found"
+ },
+ "status_skipped": {
+  "message": "Skipped"
+ },
+ "export_csv": {
+  "message": "Export CSV"
+ },
+ "col_email": {
+  "message": "Email"
+ },
+ "col_name": {
+  "message": "Display name"
+ },
+ "col_linkedin": {
+  "message": "LinkedIn"
+ },
+ "col_source": {
+  "message": "Source"
+ },
+ "col_cost": {
+  "message": "Cost"
+ },
+ "col_time": {
+  "message": "Time"
+ },
+ "col_result": {
+  "message": "Result"
+ },
+ "col_duration": {
+  "message": "Duration"
+ },
+ "load_more": {
+  "message": "Load more"
+ },
+ "history_count": {
+  "message": "$1 entries, showing $2"
+ },
+ "history_empty": {
+  "message": "No entries yet"
+ },
+ "relookup": {
+  "message": "Look up again"
+ },
+ "relookup_title": {
+  "message": "Ignore the cache and look up again (may cost money)"
+ },
+ "delete": {
+  "message": "Delete"
+ },
+ "reason_daily_budget": {
+  "message": "daily budget used up"
+ },
+ "reason_invalid_email": {
+  "message": "invalid email"
+ },
+ "match_source": {
+  "message": "Source $1 · name $2"
+ },
+ "name_matched": {
+  "message": "matches"
+ },
+ "name_differs": {
+  "message": "differs ($1 vs $2)"
+ },
+ "name_not_compared": {
+  "message": "not compared"
+ },
+ "cost_label": {
+  "message": "cost $1"
+ },
+ "stats_today": {
+  "message": "Today"
+ },
+ "stats_month": {
+  "message": "This month"
+ },
+ "stats_all": {
+  "message": "All time"
+ },
+ "stats_budget": {
+  "message": "Today's budget"
+ },
+ "n_lookups": {
+  "message": "$1 lookups"
+ },
+ "found_n_usd": {
+  "message": "found $1 · $2"
+ },
+ "found_n_usd_cache": {
+  "message": "found $1 · $2 · $3 cached"
+ },
+ "auto_n_cap": {
+  "message": "auto lookups $1 / $2 · per-lookup cap $3"
+ },
+ "last_30_days": {
+  "message": "Last 30 days"
+ },
+ "chart_aria": {
+  "message": "Daily lookups and spend, last 30 days"
+ },
+ "chart_legend": {
+  "message": "Bar height = lookups that day (max $1)"
+ },
+ "chart_tip": {
+  "message": "$1: $2 lookups, found $3, $4"
+ },
+ "by_provider": {
+  "message": "By provider"
+ },
+ "col_calls": {
+  "message": "Calls"
+ },
+ "col_hits": {
+  "message": "Hits"
+ },
+ "col_hit_rate": {
+  "message": "Hit rate"
+ },
+ "col_errors": {
+  "message": "Errors"
+ },
+ "col_spend": {
+  "message": "Spend"
+ },
+ "col_avg_ms": {
+  "message": "Avg. time"
+ },
+ "no_paid_calls": {
+  "message": "No paid calls yet"
+ },
+ "export_import_title": {
+  "message": "Export / import"
+ },
+ "data_intro": {
+  "message": "Cache, history and the spend ledger live in this browser's IndexedDB. Export before switching computers or clearing browser data. On import, newer records win. Exports never contain keys."
+ },
+ "export_json": {
+  "message": "Export JSON"
+ },
+ "import_json_merge": {
+  "message": "Import JSON (merge)"
+ },
+ "import_json_replace": {
+  "message": "Import JSON (replace all)"
+ },
+ "import_confirm_replace": {
+  "message": "This clears the cache, history and ledger on this device, then imports the file. Continue?"
+ },
+ "import_bad_json": {
+  "message": "The file is not valid JSON"
+ },
+ "import_done": {
+  "message": "Imported $1 records"
+ },
+ "import_failed": {
+  "message": "Import failed: $1"
+ },
+ "cleanup_title": {
+  "message": "Clean up"
+ },
+ "prune_btn": {
+  "message": "Remove expired cache entries"
+ },
+ "prune_done": {
+  "message": "Removed $1 expired entries"
+ },
+ "prune_failed": {
+  "message": "Clean-up failed"
+ },
+ "clear_btn": {
+  "message": "Clear all cache and history"
+ },
+ "clear_confirm": {
+  "message": "Clear all cache, history and ledger? This cannot be undone; previously looked-up addresses will cost money again."
+ },
+ "cleared": {
+  "message": "Cleared"
+ },
+ "failed": {
+  "message": "Failed"
+ },
+ "about_title": {
+  "message": "About"
+ },
+ "about_text": {
+  "message": "Open source (AGPL-3.0). There is no server: lookups go from your browser straight to the providers you entered keys for, and results are stored only on this device."
+ },
+ "about_gdpr": {
+  "message": "You are the controller of the lookups you run: only the email address, display name and company domain are sent, results stay on this device (90 days by default) and can be deleted on the History and Data tabs."
+ },
+ "about_privacy_link": {
+  "message": "Privacy policy and GDPR notes ↗"
+ },
+ "saved": {
+  "message": "Saved"
+ },
+ "save_failed": {
+  "message": "Save failed"
+ },
+ "tele_title": {
+  "message": "Anonymous usage statistics"
+ },
+ "tele_switch": {
+  "message": "Send anonymous usage statistics"
+ },
+ "tele_intro": {
+  "message": "On by default; switch it off here if you prefer. When on, once a day the extension posts one summary of the previous day: how many lookups ran and how they ended, which steps were called and how often they hit, which mail client they came from, and the rounded total spend. Never any email address, name, domain, LinkedIn URL, profile field, key or message content. Switching it off deletes the installation id and anything unsent."
+ },
+ "tele_preview": {
+  "message": "Preview what would be sent"
+ },
+ "tele_on_toast": {
+  "message": "Anonymous statistics on"
+ },
+ "tele_off_toast": {
+  "message": "Off. Installation id and unsent data deleted"
+ },
+ "tele_status": {
+  "message": "$1 · sent to $2"
+ },
+ "on": {
+  "message": "On"
+ },
+ "off": {
+  "message": "Off"
+ },
+ "tele_pending": {
+  "message": "$1 days pending"
+ },
+ "connect_btn": {
+  "message": "Connect"
+ },
+ "connect_opening": {
+  "message": "Opened LinkedIn"
+ },
+ "connect_title_attr": {
+  "message": "Open this person's LinkedIn profile. When you click Connect and Add a note there, the invitation note is filled in for you; you press Send."
+ },
+ "local_time": {
+  "message": "Local time $1"
+ },
+ "local_time_title": {
+  "message": "Time zone guessed from the profile location: $1"
+ },
+ "connect_note_default": {
+  "message": "Hi {first}, we were just in touch by email and I'd like to stay connected here too."
+ },
+ "connect_signature": {
+  "message": "— sent via SenderFinder"
+ },
+ "li_filled": {
+  "message": "The note is filled in. Review it and press Send yourself; the extension never sends."
+ },
+ "li_pending": {
+  "message": "An invitation to this person is already pending."
+ },
+ "li_login": {
+  "message": "Please sign in to LinkedIn, then click Connect on the email card again."
+ },
+ "li_note_limit": {
+  "message": "LinkedIn says your personalised invitations for this month are used up. You can still send without a note."
+ },
+ "li_close": {
+  "message": "Close"
+ },
+ "connect_title": {
+  "message": "Connect on LinkedIn"
+ },
+ "connect_heading": {
+  "message": "One-time permission for linkedin.com"
+ },
+ "connect_intro": {
+  "message": "To fill in the invitation note, the extension needs access to linkedin.com pages that it opens itself. You grant this once."
+ },
+ "connect_what_title": {
+  "message": "What happens after you continue:"
+ },
+ "connect_step1": {
+  "message": "The person's LinkedIn profile opens in a new tab."
+ },
+ "connect_step2": {
+  "message": "You click \"Connect\" and \"Add a note\" on LinkedIn. The extension fills in the note below the moment the note box appears."
+ },
+ "connect_step3": {
+  "message": "You read it and press \"Send\" yourself. The extension never clicks Connect or Send on its own and never runs on LinkedIn pages you open yourself."
+ },
+ "connect_limit_hint": {
+  "message": "LinkedIn limits notes to 300 characters, and free accounts get only a few invitations with a note per month. You can edit the template in the extension settings."
+ },
+ "connect_note_preview": {
+  "message": "Note to prefill"
+ },
+ "connect_grant_btn": {
+  "message": "Allow linkedin.com and continue"
+ },
+ "connect_cancel": {
+  "message": "Cancel"
+ },
+ "connect_nothing_pending": {
+  "message": "Nothing pending. Go back to the email and click Connect again."
+ },
+ "connect_denied": {
+  "message": "Permission not granted, so the note cannot be filled in for you. You can still copy it from the preview above and paste it on LinkedIn."
+ },
+ "connect_granted_opening": {
+  "message": "Granted, opening LinkedIn…"
+ },
+ "opt_connect_title": {
+  "message": "Connect on LinkedIn"
+ },
+ "opt_connect_intro": {
+  "message": "The \"Connect\" button in the panel opens the person's profile; when you click Connect and Add a note on LinkedIn, the invitation note below is filled in for you and you press Send. Placeholders: {first} first name, {name} full name, {company} company."
+ },
+ "opt_connect_note": {
+  "message": "Invitation note template"
+ },
+ "opt_connect_note_placeholder": {
+  "message": "Leave empty for the default template"
+ },
+ "opt_connect_signature": {
+  "message": "Append the \"sent via SenderFinder\" line to the note"
+ },
+ "opt_connect_preview": {
+  "message": "Preview (sample name)"
+ },
+ "opt_connect_chars": {
+  "message": "$1 / 300 characters"
+ },
+ "opt_connect_perm_granted": {
+  "message": "linkedin.com access granted"
+ },
+ "opt_connect_perm_none": {
+  "message": "linkedin.com not yet granted (asked the first time you click Connect)"
+ },
+ "opt_connect_revoke": {
+  "message": "Revoke"
+ },
+ "panel_empty_title": {
+  "message": "No email open"
+ },
+ "panel_empty_hint": {
+  "message": "Open a message in Gmail or Outlook on the web. The sender's LinkedIn profile appears here."
+ },
+ "view_profile": {
+  "message": "View LinkedIn profile ↗"
+ },
+ "others_in_thread": {
+  "message": "Others in this thread ($1)"
+ },
+ "current_roles": {
+  "message": "Current roles"
+ },
+ "settings_history": {
+  "message": "Settings & history"
+ },
+ "chip_title": {
+  "message": "Show the LinkedIn profile in the side panel"
+ },
+ "chip_open_fallback": {
+  "message": "Click the extension icon in the toolbar to open the side panel"
+ },
+ "hint_auto_off": {
+  "message": "Automatic lookup is off"
+ },
+ "hint_noisy": {
+  "message": "Notification-style address, not looked up automatically"
+ },
+ "hint_me": {
+  "message": "This is you"
+ },
+ "hint_manual": {
+  "message": "Not looked up yet"
+ },
+ "today_line": {
+  "message": "Today: $1 lookups · $2 / $3 · auto $4 / $5"
+ },
+ "show_details": {
+  "message": "Details"
+ },
+ "history_count_all": {
+  "message": "$1 entries"
+ },
+ "history_count_one": {
+  "message": "1 entry"
+ },
+ "via_step": {
+  "message": "via $1"
+ },
+ "trace_title": {
+  "message": "Steps tried"
+ },
+ "li_profile": {
+  "message": "LinkedIn profile"
+ },
+ "theme_toggle": {
+  "message": "Switch light / dark"
+ },
+ "theme_label": {
+  "message": "Appearance"
+ },
+ "theme_system": {
+  "message": "Match the system"
+ },
+ "theme_light": {
+  "message": "Light"
+ },
+ "theme_dark": {
+  "message": "Dark"
+ },
+ "today_short": {
+  "message": "Today $1 lookups · $2 / $3"
+ },
+ "lookup_again_short": {
+  "message": "Refresh"
+ },
+ "li_copy_debug": {
+  "message": "Copy details for a bug report"
+ },
+ "li_copied": {
+  "message": "Copied"
+ },
+ "li_instructions": {
+  "message": "Click \"Connect\", then \"Add a note\": the invitation note will be filled in for you. Or copy it and paste it yourself."
+ },
+ "li_add_note": {
+  "message": "The invitation dialog is open. Click \"Add a note\" and the note will be filled in."
+ },
+ "li_copy_note": {
+  "message": "Copy note"
+ },
+ "rel_connected": {
+  "message": "1st"
+ },
+ "rel_connected_long": {
+  "message": "1st-degree connection"
+ },
+ "rel_pending": {
+  "message": "Invitation pending"
+ },
+ "rel_degree2": {
+  "message": "2nd"
+ },
+ "rel_degree3": {
+  "message": "3rd"
+ },
+ "rel_out": {
+  "message": "Out of network"
+ },
+ "rel_self": {
+  "message": "You"
+ },
+ "li_grant": {
+  "message": "Show photos and your LinkedIn relationship"
+ },
+ "li_grant_title": {
+  "message": "Reads each profile once with your own LinkedIn login in this browser. Nothing is posted."
+ },
+ "li_signed_out": {
+  "message": "Sign in to LinkedIn in this browser to see the relationship"
+ },
+ "li_rel_denied": {
+  "message": "Permission not granted"
+ },
+ "panel_slogan": {
+  "message": "Find the email sender on LinkedIn"
+ },
+ "li_link_broken": {
+  "message": "This LinkedIn link does not open: the data provider gave a wrong address."
+ },
+ "li_link_broken_short": {
+  "message": "LinkedIn link does not work"
+ },
+ "li_search_person": {
+  "message": "Search LinkedIn for this person"
+ },
+ "li_relookup_hint": {
+  "message": "Asks the providers again (a paid lookup)"
+ },
+ "company_search_title": {
+  "message": "Search LinkedIn for this company"
+ },
+ "company_li_title": {
+  "message": "Company page on LinkedIn"
+ },
+ "keys_need_one": {
+  "message": "Nothing is configured yet. Add at least one key: treg (cheapest) or Monid (best coverage). Firecrawl alone is not recommended."
+ },
+ "vendor_treg_tagline": {
+  "message": "Cheapest. Email-only reverse lookups, from $$0.0005 per hit."
+ },
+ "vendor_monid_tagline": {
+  "message": "Best coverage. Hunter by email, Apollo by email + name + company domain (about $$0.03)."
+ },
+ "vendor_firecrawl_tagline": {
+  "message": "Optional last fallback (Data Legion). Billed in credits."
+ },
+ "step_off": {
+  "message": "off"
+ }
+}

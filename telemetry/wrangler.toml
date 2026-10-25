@@ -1,0 +1,18 @@
+name = "senderfinder-telemetry"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+# No request logs: the point of this Worker is to store daily counts, not visits.
+[observability]
+enabled = false
+
+# Create the database first: `npx wrangler d1 create senderfinder-telemetry`, then paste the id below.
+[[d1_databases]]
+binding = "DB"
+database_name = "senderfinder-telemetry"
+database_id = "cb9d4ad1-30cf-4fde-9e2e-64a761908972"
+
+# Custom domain (optional). Must match TELEMETRY_ENDPOINT in extension/core/telemetry.js.
+[[routes]]
+pattern = "telemetry.senderfinder.com"
+custom_domain = true

@@ -1,16 +1,76 @@
 {
   "manifest_version": 3,
-  "name": "Email → LinkedIn",
-  "version": "0.1.0",
-  "description": "在 Gmail / Outlook 网页版里显示发件人的 LinkedIn 资料（Rapportive 式）。查找由你自己的 Email-Linkedin 服务完成。",
-  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
-  "permissions": ["storage"],
-  "host_permissions": ["https://mail.google.com/*", "https://outlook.live.com/*", "https://outlook.office.com/*", "https://outlook.office365.com/*", "http://127.0.0.1/*", "http://localhost/*"],
-  "optional_host_permissions": ["https://*/*"],
-  "background": { "service_worker": "background.js" },
-  "action": { "default_title": "Email → LinkedIn 设置", "default_popup": "popup.html", "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png" } },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwKba7VMTLoRE1fj+TYj7dHPx9ikjHyjYC/Xz+Qo52LijSIm48jFIVEyWR/O94RwM1QzhXKQAJM96awZR1ZNSwHYTSMZQCvmCv7aJAfReXt02jkYgipTIWM4INT+vc78jaCAZklID/ELvXXq9vM9SE/NpoDNmjpmO/vbv9NJ/4rOyzHUeUnndvrO1guSs3jO+Lhc5pWSX+m4k/OfsRO8rxnS8SGDOygxsFkByNlrp7Oqe8ghssuiOJ+Um/GFQJTgX7qM9yrFKcnimqre+0XjlxWjlkfdzdCKs8IwjVKT6QLtnaRVoG5VlsVgj8O713YN+7M10y7Zvq3yeX0nWRHr4bwIDAQAB",
+  "name": "__MSG_ext_name__",
+  "version": "0.5.0",
+  "description": "__MSG_ext_description__",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "scripting",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://outlook.live.com/*",
+    "https://outlook.office.com/*",
+    "https://outlook.office365.com/*",
+    "https://api.monid.ai/*",
+    "https://treg.to/*",
+    "https://api.firecrawl.dev/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_title": "__MSG_ext_name__",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  },
   "content_scripts": [
-    { "matches": ["https://mail.google.com/*"], "js": ["content/card.js", "content/gmail.js"], "run_at": "document_idle" },
-    { "matches": ["https://outlook.live.com/*", "https://outlook.office.com/*", "https://outlook.office365.com/*"], "js": ["content/card.js", "content/outlook.js"], "run_at": "document_idle" }
-  ]
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "content/chip.js",
+        "content/gmail.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://outlook.live.com/*",
+        "https://outlook.office.com/*",
+        "https://outlook.office365.com/*"
+      ],
+      "js": [
+        "content/chip.js",
+        "content/outlook.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "default_locale": "en",
+  "optional_permissions": [
+    "cookies"
+  ],
+  "optional_host_permissions": [
+    "https://www.linkedin.com/*"
+  ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  }
 }

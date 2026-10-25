@@ -1,18 +1,24 @@
 {
-  "name": "email-linkedin",
-  "version": "0.1.0",
+  "name": "senderfinder",
+  "version": "0.5.0",
   "private": true,
-  "description": "Rapportive-style lookup: the LinkedIn profile behind an email address, shown in Gmail/Outlook and a web app. Providers via MonID, treg and Firecrawl.",
-  "type": "commonjs",
-  "engines": { "node": ">=22.13" },
-  "scripts": {
-    "start": "node --no-warnings=ExperimentalWarning server/index.js",
-    "dev": "node --no-warnings=ExperimentalWarning --watch server/index.js",
-    "test": "node --no-warnings=ExperimentalWarning --test \"scripts/*.test.js\"",
-    "probe": "node --no-warnings=ExperimentalWarning scripts/probe-live.js",
-    "lookup": "node --no-warnings=ExperimentalWarning scripts/lookup-cli.js",
-    "bench": "node --no-warnings=ExperimentalWarning scripts/bench.js",
-    "token": "node -e \"console.log(require('crypto').randomBytes(24).toString('base64url'))\""
+  "description": "Open-source Chrome extension: the LinkedIn profile behind an email address, shown in Gmail / Outlook on the web. Bring your own provider keys; nothing leaves your browser except the calls to the providers you configured.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
   },
-  "license": "UNLICENSED"
+  "scripts": {
+    "test": "node --test \"scripts/*.test.js\"",
+    "probe": "node scripts/probe-live.js",
+    "lookup": "node scripts/lookup-cli.js",
+    "icons": "node scripts/make-icons.js",
+    "migrate:sqlite": "node scripts/export-sqlite.js",
+    "e2e": "node scripts/e2e/run.js",
+    "e2e:locales": "node scripts/e2e/locales.js",
+    "store:assets": "node scripts/store/shots.js",
+    "zip": "node scripts/zip-extension.js",
+    "bench": "node scripts/bench.js",
+    "bump": "node scripts/bump.js"
+  },
+  "license": "AGPL-3.0-only"
 }

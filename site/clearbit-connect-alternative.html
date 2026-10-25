@@ -1,0 +1,107 @@
+<!doctype html>
+<!--
+  ============================== PLACEHOLDERS ==============================
+  Replace these across all files in site/ with one search-and-replace:
+    CWS_PLACEHOLDER     Chrome Web Store listing URL (install button, see "CWS-BUTTON")
+  ==========================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clearbit Connect alternative: open source, your own keys | SenderFinder</title>
+  <meta name="description" content="Clearbit Connect was discontinued on 30 April 2025. SenderFinder is an open-source Chrome extension that shows who is emailing you in Gmail, using your own API keys and no account.">
+  <link rel="canonical" href="https://senderfinder.com/clearbit-connect-alternative">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="SenderFinder">
+  <meta property="og:title" content="A Clearbit Connect alternative for Gmail">
+  <meta property="og:description" content="Clearbit Connect is gone. SenderFinder shows the sender's LinkedIn profile in Gmail. Open source, your own keys, no account.">
+  <meta property="og:url" content="https://senderfinder.com/clearbit-connect-alternative">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="" width="28" height="28">
+        <span>SenderFinder</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#how">How it works</a></li>
+          <li><a href="index.html#cost">Cost</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="prose">
+    <article class="wrap narrow">
+      <h1>Clearbit Connect is gone. Here is an open-source alternative.</h1>
+      <p class="lead">SenderFinder shows who is emailing you, right inside Gmail. It is open source, runs on your own API keys and needs no account.</p>
+
+      <div class="actions">
+        <!-- CWS-BUTTON: when the store listing is live, set href="CWS_PLACEHOLDER" and change the label to "Add to Chrome". -->
+        <a class="button button-primary" href="https://github.com/astonysh/SenderFinder#install-from-source" data-store-url="CWS_PLACEHOLDER">Coming to the Chrome Web Store</a>
+        <a class="button button-secondary" href="index.html">How it works</a>
+      </div>
+
+      <h2>What Clearbit Connect was</h2>
+      <p>Clearbit Connect was a free extension for Gmail and Outlook. When you read an email, it showed information about the sender, such as their role and company.</p>
+      <p>After HubSpot acquired Clearbit, Clearbit Connect was discontinued. It stopped working on 30 April 2025.</p>
+
+      <h2>What SenderFinder does</h2>
+      <p>Open an email in Gmail. The browser's side panel shows that person's LinkedIn profile: name, headline, company, location and a link to the profile. Other people in the thread are listed below, and you can look them up with a click.</p>
+      <p>Outlook on the web is supported on a best-effort basis.</p>
+
+      <h2>What is different</h2>
+      <ul class="checklist">
+        <li><strong>Open source.</strong> The code is on <a href="https://github.com/astonysh/SenderFinder">GitHub</a> under the AGPL-3.0 license. You can read exactly what it does.</li>
+        <li><strong>Your own keys.</strong> The extension calls data providers directly from your browser, using keys you paste into its settings. Supported: <a href="https://app.monid.ai/">Monid</a> and <a href="https://treg.to/">treg</a>, with <a href="https://www.firecrawl.dev/">Firecrawl</a> as an optional fallback.</li>
+        <li><strong>No account.</strong> There is no signup and no server in the lookup path. The only thing sent to us is a daily anonymous usage count, which you can switch off.</li>
+        <li><strong>No CRM lock-in.</strong> Results stay in your browser. You can export history as JSON or CSV and take it wherever you like.</li>
+        <li><strong>Predictable cost.</strong> The cheapest source is tried first, and the chain stops at the first match. A per-lookup cap and a daily cap keep spending in check. Results are cached, so an address is never paid for twice.</li>
+      </ul>
+
+      <h2>Honest limitations</h2>
+      <ul>
+        <li><strong>You need a provider key.</strong> One key from Monid or treg is enough to start, but you have to create it yourself.</li>
+        <li><strong>It isn't free per lookup.</strong> A successful lookup typically costs between $0.0005 and $0.03, usually well under a cent. Misses on most providers are free.</li>
+        <li><strong>No Firefox yet.</strong> It runs in Chrome. Desktop mail apps such as Apple Mail and Outlook for desktop are not supported.</li>
+        <li><strong>Results depend on provider coverage.</strong> Some people won't be found. When a provider's name doesn't match the name in the email, the result says "uncertain" and shows both.</li>
+      </ul>
+
+      <h2>Switching takes a few minutes</h2>
+      <ol>
+        <li>Install the extension. Until the Chrome Web Store listing is live, <a href="https://github.com/astonysh/SenderFinder#install-from-source">install it from source</a>.</li>
+        <li>Create an API key at Monid or treg.</li>
+        <li>Paste it into the extension's settings and open an email in Gmail.</li>
+      </ol>
+      <p>Questions about data? Read the <a href="privacy.html">privacy statement</a>. Looking for the older tool? See the <a href="rapportive-alternative.html">Rapportive alternative</a> page.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="clearbit-connect-alternative.html" aria-current="page">Clearbit Connect alternative</a></li>
+          <li><a href="rapportive-alternative.html">Rapportive alternative</a></li>
+          <li><a href="https://github.com/astonysh/SenderFinder/blob/main/LICENSE">AGPL-3.0 License</a></li>
+        </ul>
+      </nav>
+      <p>SenderFinder is open-source software released under the AGPL-3.0 license.</p>
+      <p>Not affiliated with LinkedIn, HubSpot, Clearbit or any data provider. Product names belong to their owners.</p>
+    </div>
+  </footer>
+</body>
+</html>

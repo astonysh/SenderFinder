@@ -1,0 +1,824 @@
+{
+ "ext_name": {
+  "message": "SenderFinder"
+ },
+ "ext_description": {
+  "message": "在 Gmail / Outlook 网页版里显示发件人的 LinkedIn 资料。开源，自带供应商 key，数据只在你的浏览器和你选择的供应商之间流动。"
+ },
+ "lookup_btn": {
+  "message": "查 LinkedIn"
+ },
+ "looking_up": {
+  "message": "正在查找 $1 …"
+ },
+ "retry": {
+  "message": "重试"
+ },
+ "open_settings": {
+  "message": "打开设置"
+ },
+ "name_match": {
+  "message": "姓名匹配"
+ },
+ "name_mismatch": {
+  "message": "姓名不符，请核对"
+ },
+ "from_signature": {
+  "message": "来自邮件签名"
+ },
+ "by_email": {
+  "message": "按邮箱匹配"
+ },
+ "cached": {
+  "message": "缓存"
+ },
+ "header_name_vs_profile": {
+  "message": "邮件显示名：$1，资料姓名：$2"
+ },
+ "unknown": {
+  "message": "未知"
+ },
+ "skip_free_mail": {
+  "message": "个人邮箱域名，默认不查"
+ },
+ "skip_role": {
+  "message": "公共/职能邮箱，默认不查"
+ },
+ "skipped_generic": {
+  "message": "已跳过：$1"
+ },
+ "lookup_anyway": {
+  "message": "仍然查询"
+ },
+ "not_found_for": {
+  "message": "未找到 $1 的 LinkedIn 资料"
+ },
+ "lookup_again": {
+  "message": "重新查询"
+ },
+ "source": {
+  "message": "来源：$1"
+ },
+ "source_signature": {
+  "message": "邮件签名"
+ },
+ "cost": {
+  "message": "费用：$1"
+ },
+ "lookup_short": {
+  "message": "查"
+ },
+ "personal_mail": {
+  "message": "个人邮箱"
+ },
+ "role_mail": {
+  "message": "职能邮箱"
+ },
+ "not_found_short": {
+  "message": "未找到"
+ },
+ "err_generic": {
+  "message": "出错"
+ },
+ "err_no_keys_short": {
+  "message": "未设置 key"
+ },
+ "err_auto_limit_short": {
+  "message": "自动查找已达上限"
+ },
+ "err_unauthorized_short": {
+  "message": "key 无效"
+ },
+ "err_invalid_email": {
+  "message": "无法识别邮箱地址"
+ },
+ "err_no_keys": {
+  "message": "还没有填写供应商 key。填一个就够：treg（最便宜）或 Monid（覆盖最全）。请打开插件设置。"
+ },
+ "err_auto_limit": {
+  "message": "今日自动查找已达 $1 次上限，点击可手动查询。"
+ },
+ "popup_cannot_read": {
+  "message": "无法读取设置"
+ },
+ "popup_no_keys": {
+  "message": "还没有填写供应商 key。填一个就够：treg（最便宜）或 Monid（覆盖最全）。先打开设置。"
+ },
+ "popup_configured": {
+  "message": "已配置：$1 · 步骤：$2"
+ },
+ "popup_today_lookups": {
+  "message": "今日查询"
+ },
+ "popup_today_spent": {
+  "message": "今日花费"
+ },
+ "popup_today_auto": {
+  "message": "今日自动查找"
+ },
+ "popup_cache": {
+  "message": "缓存条目"
+ },
+ "popup_found_n": {
+  "message": "$1（命中 $2）"
+ },
+ "opt_auto_lookup": {
+  "message": "打开邮件时自动查找发件人"
+ },
+ "opt_show_cost": {
+  "message": "显示费用"
+ },
+ "popup_open_settings": {
+  "message": "打开设置与历史"
+ },
+ "popup_hint": {
+  "message": "key、缓存和历史都只保存在本机浏览器里。"
+ },
+ "options_title": {
+  "message": "SenderFinder · 设置"
+ },
+ "tagline": {
+  "message": "开源 · 自带 key · 数据只在本机"
+ },
+ "tab_settings": {
+  "message": "设置"
+ },
+ "tab_history": {
+  "message": "历史"
+ },
+ "tab_stats": {
+  "message": "统计"
+ },
+ "tab_data": {
+  "message": "数据"
+ },
+ "keys_title": {
+  "message": "供应商 key"
+ },
+ "keys_probe": {
+  "message": "测试 key（免费）"
+ },
+ "keys_intro": {
+  "message": "填一个就能用。treg 最便宜（只靠邮箱，约一半工作邮箱能查到）；Monid 覆盖最全（Apollo 用邮箱 + 姓名 + 公司域名匹配，单价较高）；Firecrawl 是可选的最后兜底。key 只保存在本机浏览器里，只发给它自己的供应商。"
+ },
+ "key_monid": {
+  "message": "Monid API key"
+ },
+ "key_treg": {
+  "message": "treg token"
+ },
+ "key_firecrawl": {
+  "message": "Firecrawl API key"
+ },
+ "get_key": {
+  "message": "获取 ↗"
+ },
+ "optional_fallback": {
+  "message": "可选兜底"
+ },
+ "firecrawl_usd_per_credit": {
+  "message": "Firecrawl 每 credit 价格（USD）"
+ },
+ "per_your_plan": {
+  "message": "按你的套餐填"
+ },
+ "show_keys": {
+  "message": "显示 key"
+ },
+ "probe_running": {
+  "message": "正在检查（不花钱）…"
+ },
+ "probe_failed": {
+  "message": "检查失败"
+ },
+ "probe_not_set": {
+  "message": "$1：未填"
+ },
+ "probe_valid": {
+  "message": "$1：有效"
+ },
+ "probe_invalid": {
+  "message": "$1：无效"
+ },
+ "hit_rate": {
+  "message": "命中率"
+ },
+ "steps_title": {
+  "message": "查询步骤"
+ },
+ "steps_intro": {
+  "message": "从上到下依次尝试，命中即停。价格为该步骤接受的目录价上限。"
+ },
+ "col_step": {
+  "message": "步骤"
+ },
+ "col_provider": {
+  "message": "供应商"
+ },
+ "col_price_cap": {
+  "message": "价格上限"
+ },
+ "col_status": {
+  "message": "状态"
+ },
+ "local": {
+  "message": "本地"
+ },
+ "free": {
+  "message": "免费"
+ },
+ "always_on": {
+  "message": "始终可用"
+ },
+ "configured": {
+  "message": "已配置"
+ },
+ "missing_key": {
+  "message": "缺少 key"
+ },
+ "move_up": {
+  "message": "上移"
+ },
+ "move_down": {
+  "message": "下移"
+ },
+ "step_signature": {
+  "message": "邮件签名里的 LinkedIn 链接"
+ },
+ "step_blitzapi": {
+  "message": "BlitzAPI 邮箱反查（treg）"
+ },
+ "step_quickenrich": {
+  "message": "QuickEnrich 邮箱反查（treg）"
+ },
+ "step_hunter": {
+  "message": "Hunter.io 邮箱反查（Monid）"
+ },
+ "step_village": {
+  "message": "Village 邮箱反查（treg）"
+ },
+ "step_apollo": {
+  "message": "Apollo 匹配（Monid）"
+ },
+ "step_datalegion": {
+  "message": "Data Legion 邮箱反查（Firecrawl）"
+ },
+ "step_contactout": {
+  "message": "ContactOut 匹配（Monid）"
+ },
+ "budget_title": {
+  "message": "预算与行为"
+ },
+ "lookup_max_usd": {
+  "message": "单次查询上限（USD）"
+ },
+ "daily_cap_usd": {
+  "message": "每天上限（USD）"
+ },
+ "daily_cap_hint": {
+  "message": "0 = 关闭所有付费调用"
+ },
+ "auto_daily_limit": {
+  "message": "每天自动查找次数上限"
+ },
+ "auto_daily_hint": {
+  "message": "超过后只能手动点"
+ },
+ "cache_max_age": {
+  "message": "缓存保留天数"
+ },
+ "opt_skip_free_mail": {
+  "message": "跳过个人邮箱域名（gmail.com、qq.com …）"
+ },
+ "single_lookup_title": {
+  "message": "查一个邮箱"
+ },
+ "name_optional": {
+  "message": "显示名（可选）"
+ },
+ "force_lookup": {
+  "message": "忽略缓存 / 强制查询"
+ },
+ "lookup_go": {
+  "message": "查询"
+ },
+ "looking_up_short": {
+  "message": "正在查找…"
+ },
+ "history_title": {
+  "message": "历史"
+ },
+ "search_placeholder": {
+  "message": "搜索邮箱 / 姓名 / 公司"
+ },
+ "all_statuses": {
+  "message": "全部状态"
+ },
+ "status_found": {
+  "message": "已找到"
+ },
+ "status_uncertain": {
+  "message": "不确定"
+ },
+ "status_not_found": {
+  "message": "未找到"
+ },
+ "status_skipped": {
+  "message": "已跳过"
+ },
+ "export_csv": {
+  "message": "导出 CSV"
+ },
+ "col_email": {
+  "message": "邮箱"
+ },
+ "col_name": {
+  "message": "显示名"
+ },
+ "col_linkedin": {
+  "message": "LinkedIn"
+ },
+ "col_source": {
+  "message": "来源"
+ },
+ "col_cost": {
+  "message": "费用"
+ },
+ "col_time": {
+  "message": "时间"
+ },
+ "col_result": {
+  "message": "结果"
+ },
+ "col_duration": {
+  "message": "耗时"
+ },
+ "load_more": {
+  "message": "加载更多"
+ },
+ "history_count": {
+  "message": "共 $1 条，已显示 $2"
+ },
+ "history_empty": {
+  "message": "还没有记录"
+ },
+ "relookup": {
+  "message": "重查"
+ },
+ "relookup_title": {
+  "message": "忽略缓存重新查询（会花钱）"
+ },
+ "delete": {
+  "message": "删除"
+ },
+ "reason_daily_budget": {
+  "message": "今日预算用完"
+ },
+ "reason_invalid_email": {
+  "message": "邮箱无效"
+ },
+ "match_source": {
+  "message": "来源 $1 · 姓名$2"
+ },
+ "name_matched": {
+  "message": "匹配"
+ },
+ "name_differs": {
+  "message": "不符（$1 vs $2）"
+ },
+ "name_not_compared": {
+  "message": "未比对"
+ },
+ "cost_label": {
+  "message": "费用 $1"
+ },
+ "stats_today": {
+  "message": "今天"
+ },
+ "stats_month": {
+  "message": "本月"
+ },
+ "stats_all": {
+  "message": "累计"
+ },
+ "stats_budget": {
+  "message": "今日预算"
+ },
+ "n_lookups": {
+  "message": "$1 次"
+ },
+ "found_n_usd": {
+  "message": "命中 $1 · $2"
+ },
+ "found_n_usd_cache": {
+  "message": "命中 $1 · $2 · 缓存 $3 条"
+ },
+ "auto_n_cap": {
+  "message": "自动查找 $1 / $2 · 单次上限 $3"
+ },
+ "last_30_days": {
+  "message": "最近 30 天"
+ },
+ "chart_aria": {
+  "message": "最近 30 天每日查询和花费"
+ },
+ "chart_legend": {
+  "message": "柱高 = 当天查询次数（最高 $1）"
+ },
+ "chart_tip": {
+  "message": "$1：$2 次，命中 $3，$4"
+ },
+ "by_provider": {
+  "message": "按供应商"
+ },
+ "col_calls": {
+  "message": "调用"
+ },
+ "col_hits": {
+  "message": "命中"
+ },
+ "col_hit_rate": {
+  "message": "命中率"
+ },
+ "col_errors": {
+  "message": "错误"
+ },
+ "col_spend": {
+  "message": "花费"
+ },
+ "col_avg_ms": {
+  "message": "平均耗时"
+ },
+ "no_paid_calls": {
+  "message": "还没有付费调用"
+ },
+ "export_import_title": {
+  "message": "导出 / 导入"
+ },
+ "data_intro": {
+  "message": "缓存、历史和账本都在本机浏览器的 IndexedDB 里。换电脑或清理浏览器数据前先导出。导入时较新的记录覆盖较旧的。导出文件不包含 key。"
+ },
+ "export_json": {
+  "message": "导出 JSON"
+ },
+ "import_json_merge": {
+  "message": "导入 JSON（合并）"
+ },
+ "import_json_replace": {
+  "message": "导入 JSON（替换全部）"
+ },
+ "import_confirm_replace": {
+  "message": "将清空本机现有缓存、历史和账本，再导入该文件。继续？"
+ },
+ "import_bad_json": {
+  "message": "文件不是有效的 JSON"
+ },
+ "import_done": {
+  "message": "已导入 $1 条记录"
+ },
+ "import_failed": {
+  "message": "导入失败：$1"
+ },
+ "cleanup_title": {
+  "message": "清理"
+ },
+ "prune_btn": {
+  "message": "按保留规则清理过期缓存"
+ },
+ "prune_done": {
+  "message": "已清理 $1 条过期缓存"
+ },
+ "prune_failed": {
+  "message": "清理失败"
+ },
+ "clear_btn": {
+  "message": "清空全部缓存与历史"
+ },
+ "clear_confirm": {
+  "message": "确定清空全部缓存、历史和账本？此操作不可撤销，之前查过的邮箱会重新花钱。"
+ },
+ "cleared": {
+  "message": "已清空"
+ },
+ "failed": {
+  "message": "失败"
+ },
+ "about_title": {
+  "message": "关于"
+ },
+ "about_text": {
+  "message": "开源（AGPL-3.0）。没有任何服务端：查询从你的浏览器直接发给你填了 key 的供应商，结果只存在本机。"
+ },
+ "about_gdpr": {
+  "message": "查询由你发起、由你负责：只发送邮箱、显示名和公司域名，结果只存在本机（默认 90 天），可在「历史」和「数据」页删除。"
+ },
+ "about_privacy_link": {
+  "message": "隐私政策与 GDPR 说明 ↗"
+ },
+ "saved": {
+  "message": "已保存"
+ },
+ "save_failed": {
+  "message": "保存失败"
+ },
+ "tele_title": {
+  "message": "匿名使用统计"
+ },
+ "tele_switch": {
+  "message": "发送匿名使用统计"
+ },
+ "tele_intro": {
+  "message": "默认开启，介意的话在这里关掉即可。开启时，插件每天发送一次前一天的汇总：查询次数和结果分布、各步骤的调用和命中次数、来自哪个邮箱客户端、四舍五入后的总花费。绝不包含邮箱地址、姓名、域名、LinkedIn 链接、资料字段、key 或邮件内容。关闭即删除安装 ID 和尚未发送的数据。"
+ },
+ "tele_preview": {
+  "message": "预览会发送的内容"
+ },
+ "tele_on_toast": {
+  "message": "已打开匿名统计"
+ },
+ "tele_off_toast": {
+  "message": "已关闭，安装 ID 和未发送的数据已删除"
+ },
+ "tele_status": {
+  "message": "$1 · 发送到 $2"
+ },
+ "on": {
+  "message": "已打开"
+ },
+ "off": {
+  "message": "已关闭"
+ },
+ "tele_pending": {
+  "message": "待发送 $1 天"
+ },
+ "connect_btn": {
+  "message": "加好友"
+ },
+ "connect_opening": {
+  "message": "已打开 LinkedIn"
+ },
+ "connect_title_attr": {
+  "message": "打开这个人的 LinkedIn 资料页。你在页面上点 Connect 和 Add a note 后，邀请语会自动填好；发送由你自己点。"
+ },
+ "local_time": {
+  "message": "当地时间 $1"
+ },
+ "local_time_title": {
+  "message": "按资料地点推测的时区：$1"
+ },
+ "connect_note_default": {
+  "message": "你好 {first}，刚通过邮件和你联系过，想在 LinkedIn 上也保持联系。"
+ },
+ "connect_signature": {
+  "message": "—— 通过 SenderFinder 发出"
+ },
+ "li_filled": {
+  "message": "备注已填好，请检查后自己点「发送」。插件不会替你发送。"
+ },
+ "li_pending": {
+  "message": "已经向这个人发过邀请，正在等待对方接受。"
+ },
+ "li_login": {
+  "message": "请先登录 LinkedIn，然后回到邮件重新点「加好友」。"
+ },
+ "li_note_limit": {
+  "message": "LinkedIn 提示本月带备注的邀请已用完，可以不带备注发送。"
+ },
+ "li_close": {
+  "message": "关闭"
+ },
+ "connect_title": {
+  "message": "在 LinkedIn 上加好友"
+ },
+ "connect_heading": {
+  "message": "一次性授权访问 linkedin.com"
+ },
+ "connect_intro": {
+  "message": "为了帮你填写邀请语，插件需要访问它自己打开的 linkedin.com 页面。只需授权一次。"
+ },
+ "connect_what_title": {
+  "message": "点「继续」之后会发生什么："
+ },
+ "connect_step1": {
+  "message": "在新标签页打开对方的 LinkedIn 主页。"
+ },
+ "connect_step2": {
+  "message": "你在 LinkedIn 上点 \"Connect\" 和 \"Add a note\"。备注框一出现，插件就把下面这段填进去。"
+ },
+ "connect_step3": {
+  "message": "你看一遍，自己按 \"Send\"。插件从不替你点 Connect 或 Send，也不会在你自己打开的 LinkedIn 页面上运行。"
+ },
+ "connect_limit_hint": {
+  "message": "LinkedIn 限制备注 300 字符，免费账号每月只有少量带备注的邀请。模板可以在插件设置里修改。"
+ },
+ "connect_note_preview": {
+  "message": "将填入的备注"
+ },
+ "connect_grant_btn": {
+  "message": "授权 linkedin.com 并继续"
+ },
+ "connect_cancel": {
+  "message": "取消"
+ },
+ "connect_nothing_pending": {
+  "message": "没有待处理的邀请，请回到邮件重新点「加好友」。"
+ },
+ "connect_denied": {
+  "message": "未授权，插件无法帮你填写。你可以从上面的预览里复制，到 LinkedIn 上自己粘贴。"
+ },
+ "connect_granted_opening": {
+  "message": "已授权，正在打开 LinkedIn…"
+ },
+ "opt_connect_title": {
+  "message": "LinkedIn 加好友"
+ },
+ "opt_connect_intro": {
+  "message": "侧边栏的 \"Connect\" 按钮打开这个人的资料页；你在 LinkedIn 上点 Connect 和 Add a note 后，下面的邀请语会自动填好，发送由你自己点。占位符：{first} 名、{name} 全名、{company} 公司。"
+ },
+ "opt_connect_note": {
+  "message": "邀请备注模板"
+ },
+ "opt_connect_note_placeholder": {
+  "message": "留空使用默认模板"
+ },
+ "opt_connect_signature": {
+  "message": "在备注末尾附上「通过 SenderFinder 发出」署名"
+ },
+ "opt_connect_preview": {
+  "message": "预览（示例人名）"
+ },
+ "opt_connect_chars": {
+  "message": "$1 / 300 字符"
+ },
+ "opt_connect_perm_granted": {
+  "message": "已授权访问 linkedin.com"
+ },
+ "opt_connect_perm_none": {
+  "message": "尚未授权 linkedin.com（第一次点「加好友」时会询问）"
+ },
+ "opt_connect_revoke": {
+  "message": "撤销授权"
+ },
+ "panel_empty_title": {
+  "message": "还没有打开邮件"
+ },
+ "panel_empty_hint": {
+  "message": "在 Gmail 或 Outlook 网页版打开一封邮件，发件人的 LinkedIn 资料会显示在这里。"
+ },
+ "view_profile": {
+  "message": "查看 LinkedIn 资料 ↗"
+ },
+ "others_in_thread": {
+  "message": "线程里的其他人（$1）"
+ },
+ "current_roles": {
+  "message": "当前职位"
+ },
+ "settings_history": {
+  "message": "设置与历史"
+ },
+ "chip_title": {
+  "message": "在侧边栏查看 LinkedIn 资料"
+ },
+ "chip_open_fallback": {
+  "message": "点一下工具栏里的插件图标打开侧边栏"
+ },
+ "hint_auto_off": {
+  "message": "自动查找已关闭"
+ },
+ "hint_noisy": {
+  "message": "通知类地址，不自动查找"
+ },
+ "hint_me": {
+  "message": "这是你自己"
+ },
+ "hint_manual": {
+  "message": "尚未查询"
+ },
+ "today_line": {
+  "message": "今天：查询 $1 次 · 花费 $2 / $3 · 自动 $4 / $5"
+ },
+ "show_details": {
+  "message": "详情"
+ },
+ "history_count_all": {
+  "message": "共 $1 条"
+ },
+ "history_count_one": {
+  "message": "共 1 条"
+ },
+ "via_step": {
+  "message": "来自 $1"
+ },
+ "trace_title": {
+  "message": "尝试过的步骤"
+ },
+ "li_profile": {
+  "message": "LinkedIn 资料"
+ },
+ "theme_toggle": {
+  "message": "切换白色 / 深色"
+ },
+ "theme_label": {
+  "message": "外观"
+ },
+ "theme_system": {
+  "message": "跟随系统"
+ },
+ "theme_light": {
+  "message": "白色"
+ },
+ "theme_dark": {
+  "message": "深色"
+ },
+ "today_short": {
+  "message": "今天查询 $1 次 · $2 / $3"
+ },
+ "lookup_again_short": {
+  "message": "重新查询"
+ },
+ "li_copy_debug": {
+  "message": "复制诊断信息"
+ },
+ "li_copied": {
+  "message": "已复制"
+ },
+ "li_instructions": {
+  "message": "点 \"Connect\"，再点 \"Add a note\"，邀请语会自动填好。也可以复制后自己粘贴。"
+ },
+ "li_add_note": {
+  "message": "邀请弹窗已打开。点 \"Add a note\"，备注会自动填入。"
+ },
+ "li_copy_note": {
+  "message": "复制邀请语"
+ },
+ "rel_connected": {
+  "message": "一度"
+ },
+ "rel_connected_long": {
+  "message": "已是一度联系人"
+ },
+ "rel_pending": {
+  "message": "邀请待处理"
+ },
+ "rel_degree2": {
+  "message": "二度"
+ },
+ "rel_degree3": {
+  "message": "三度"
+ },
+ "rel_out": {
+  "message": "不在人脉圈"
+ },
+ "rel_self": {
+  "message": "你自己"
+ },
+ "li_grant": {
+  "message": "显示头像和你们在 LinkedIn 上的关系"
+ },
+ "li_grant_title": {
+  "message": "用这个浏览器里你自己的 LinkedIn 登录，每个人只读一次，不会发布或发送任何东西。"
+ },
+ "li_signed_out": {
+  "message": "在这个浏览器登录 LinkedIn 后可显示关系"
+ },
+ "li_rel_denied": {
+  "message": "未授权"
+ },
+ "panel_slogan": {
+  "message": "找到发件人的 LinkedIn"
+ },
+ "li_link_broken": {
+  "message": "这个 LinkedIn 链接打不开：数据商给的地址不对。"
+ },
+ "li_link_broken_short": {
+  "message": "LinkedIn 链接无效"
+ },
+ "li_search_person": {
+  "message": "在 LinkedIn 搜索这个人"
+ },
+ "li_relookup_hint": {
+  "message": "重新问一遍数据商（会产生查询费用）"
+ },
+ "company_search_title": {
+  "message": "在 LinkedIn 搜索这家公司"
+ },
+ "company_li_title": {
+  "message": "LinkedIn 公司主页"
+ },
+ "keys_need_one": {
+  "message": "还没有任何 key。至少填一个：treg（最便宜）或 Monid（覆盖最全）。不建议只填 Firecrawl。"
+ },
+ "vendor_treg_tagline": {
+  "message": "最便宜。只靠邮箱反查，命中一次最低 $$0.0005。"
+ },
+ "vendor_monid_tagline": {
+  "message": "覆盖最全。Hunter 按邮箱查，Apollo 按邮箱 + 姓名 + 公司域名查（约 $$0.03）。"
+ },
+ "vendor_firecrawl_tagline": {
+  "message": "可选的最后兜底（Data Legion），按 credit 计费。"
+ },
+ "step_off": {
+  "message": "未启用"
+ }
+}

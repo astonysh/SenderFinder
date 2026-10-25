@@ -1,0 +1,824 @@
+{
+ "ext_name": {
+  "message": "SenderFinder"
+ },
+ "ext_description": {
+  "message": "Mostra il profilo LinkedIn del mittente in Gmail / Outlook web. Open source, chiavi dei tuoi provider, i dati restano nel browser."
+ },
+ "lookup_btn": {
+  "message": "Trova su LinkedIn"
+ },
+ "looking_up": {
+  "message": "Ricerca di $1 …"
+ },
+ "retry": {
+  "message": "Riprova"
+ },
+ "open_settings": {
+  "message": "Apri le impostazioni"
+ },
+ "name_match": {
+  "message": "Il nome corrisponde"
+ },
+ "name_mismatch": {
+  "message": "Nome diverso, verifica"
+ },
+ "from_signature": {
+  "message": "Dalla firma dell'email"
+ },
+ "by_email": {
+  "message": "Trovato tramite email"
+ },
+ "cached": {
+  "message": "in cache"
+ },
+ "header_name_vs_profile": {
+  "message": "Nome nell'email: $1 · nome sul profilo: $2"
+ },
+ "unknown": {
+  "message": "sconosciuto"
+ },
+ "skip_free_mail": {
+  "message": "Dominio email personale, ignorato di default"
+ },
+ "skip_role": {
+  "message": "Indirizzo condiviso / di servizio, ignorato di default"
+ },
+ "skipped_generic": {
+  "message": "Ignorato: $1"
+ },
+ "lookup_anyway": {
+  "message": "Cerca comunque"
+ },
+ "not_found_for": {
+  "message": "Nessun profilo LinkedIn trovato per $1"
+ },
+ "lookup_again": {
+  "message": "Cerca di nuovo"
+ },
+ "source": {
+  "message": "Fonte: $1"
+ },
+ "source_signature": {
+  "message": "firma dell'email"
+ },
+ "cost": {
+  "message": "Costo: $1"
+ },
+ "lookup_short": {
+  "message": "Cerca"
+ },
+ "personal_mail": {
+  "message": "email personale"
+ },
+ "role_mail": {
+  "message": "indirizzo di servizio"
+ },
+ "not_found_short": {
+  "message": "non trovato"
+ },
+ "err_generic": {
+  "message": "Errore"
+ },
+ "err_no_keys_short": {
+  "message": "Nessuna chiave"
+ },
+ "err_auto_limit_short": {
+  "message": "Limite ricerche automatiche raggiunto"
+ },
+ "err_unauthorized_short": {
+  "message": "Chiave non valida"
+ },
+ "err_invalid_email": {
+  "message": "Indirizzo email non riconosciuto"
+ },
+ "err_no_keys": {
+  "message": "Nessuna chiave provider configurata. Ne basta una: treg (più economico) o Monid (copertura migliore). Apri le impostazioni dell'estensione."
+ },
+ "err_auto_limit": {
+  "message": "Le ricerche automatiche hanno raggiunto il limite giornaliero di $1. Clicca per cercare manualmente."
+ },
+ "popup_cannot_read": {
+  "message": "Impossibile leggere le impostazioni"
+ },
+ "popup_no_keys": {
+  "message": "Nessuna chiave provider configurata. Ne basta una: treg (più economico) o Monid (copertura migliore). Apri le impostazioni."
+ },
+ "popup_configured": {
+  "message": "Configurati: $1 · passaggi: $2"
+ },
+ "popup_today_lookups": {
+  "message": "Ricerche oggi"
+ },
+ "popup_today_spent": {
+  "message": "Spesa oggi"
+ },
+ "popup_today_auto": {
+  "message": "Ricerche automatiche oggi"
+ },
+ "popup_cache": {
+  "message": "Voci in cache"
+ },
+ "popup_found_n": {
+  "message": "$1 (trovati $2)"
+ },
+ "opt_auto_lookup": {
+  "message": "Cerca automaticamente il mittente all'apertura di un messaggio"
+ },
+ "opt_show_cost": {
+  "message": "Mostra il costo"
+ },
+ "popup_open_settings": {
+  "message": "Apri impostazioni e cronologia"
+ },
+ "popup_hint": {
+  "message": "Chiavi, cache e cronologia restano in questo browser."
+ },
+ "options_title": {
+  "message": "SenderFinder · Impostazioni"
+ },
+ "tagline": {
+  "message": "Open source · le tue chiavi · i dati restano su questo dispositivo"
+ },
+ "tab_settings": {
+  "message": "Impostazioni"
+ },
+ "tab_history": {
+  "message": "Cronologia"
+ },
+ "tab_stats": {
+  "message": "Statistiche"
+ },
+ "tab_data": {
+  "message": "Dati"
+ },
+ "keys_title": {
+  "message": "Chiavi dei provider"
+ },
+ "keys_probe": {
+  "message": "Verifica chiavi (gratis)"
+ },
+ "keys_intro": {
+  "message": "Basta una chiave. treg è il più economico (solo email, circa metà degli indirizzi di lavoro); Monid ha la copertura migliore (Apollo abbina nome + dominio aziendale, più caro); Firecrawl è un ultimo fallback opzionale. Le chiavi restano in questo browser e vengono inviate solo al rispettivo provider."
+ },
+ "key_monid": {
+  "message": "Chiave API Monid"
+ },
+ "key_treg": {
+  "message": "Token treg"
+ },
+ "key_firecrawl": {
+  "message": "Chiave API Firecrawl"
+ },
+ "get_key": {
+  "message": "Ottienila ↗"
+ },
+ "optional_fallback": {
+  "message": "fallback opzionale"
+ },
+ "firecrawl_usd_per_credit": {
+  "message": "Prezzo Firecrawl per credito (USD)"
+ },
+ "per_your_plan": {
+  "message": "secondo il tuo piano"
+ },
+ "show_keys": {
+  "message": "Mostra chiavi"
+ },
+ "probe_running": {
+  "message": "Verifica in corso (gratis)…"
+ },
+ "probe_failed": {
+  "message": "Verifica non riuscita"
+ },
+ "probe_not_set": {
+  "message": "$1: non impostata"
+ },
+ "probe_valid": {
+  "message": "$1: valida"
+ },
+ "probe_invalid": {
+  "message": "$1: non valida"
+ },
+ "hit_rate": {
+  "message": "tasso di successo"
+ },
+ "steps_title": {
+  "message": "Passaggi di ricerca"
+ },
+ "steps_intro": {
+  "message": "Provati dall'alto verso il basso, si ferma al primo risultato. Il prezzo è il tetto di listino accettato per quel passaggio."
+ },
+ "col_step": {
+  "message": "Passaggio"
+ },
+ "col_provider": {
+  "message": "Provider"
+ },
+ "col_price_cap": {
+  "message": "Tetto di prezzo"
+ },
+ "col_status": {
+  "message": "Stato"
+ },
+ "local": {
+  "message": "locale"
+ },
+ "free": {
+  "message": "gratis"
+ },
+ "always_on": {
+  "message": "sempre disponibile"
+ },
+ "configured": {
+  "message": "configurato"
+ },
+ "missing_key": {
+  "message": "chiave mancante"
+ },
+ "move_up": {
+  "message": "Sposta su"
+ },
+ "move_down": {
+  "message": "Sposta giù"
+ },
+ "step_signature": {
+  "message": "Link LinkedIn nella firma dell'email"
+ },
+ "step_blitzapi": {
+  "message": "Ricerca inversa per email BlitzAPI (treg)"
+ },
+ "step_quickenrich": {
+  "message": "Ricerca inversa per email QuickEnrich (treg)"
+ },
+ "step_hunter": {
+  "message": "Ricerca inversa per email Hunter.io (Monid)"
+ },
+ "step_village": {
+  "message": "Ricerca inversa per email Village (treg)"
+ },
+ "step_apollo": {
+  "message": "Abbinamento Apollo (Monid)"
+ },
+ "step_datalegion": {
+  "message": "Ricerca inversa per email Data Legion (Firecrawl)"
+ },
+ "step_contactout": {
+  "message": "Abbinamento ContactOut (Monid)"
+ },
+ "budget_title": {
+  "message": "Budget e comportamento"
+ },
+ "lookup_max_usd": {
+  "message": "Tetto per ricerca (USD)"
+ },
+ "daily_cap_usd": {
+  "message": "Tetto giornaliero (USD)"
+ },
+ "daily_cap_hint": {
+  "message": "0 = nessuna chiamata a pagamento"
+ },
+ "auto_daily_limit": {
+  "message": "Ricerche automatiche al giorno"
+ },
+ "auto_daily_hint": {
+  "message": "oltre, solo manuali"
+ },
+ "cache_max_age": {
+  "message": "Conservazione cache (giorni)"
+ },
+ "opt_skip_free_mail": {
+  "message": "Ignora i domini email personali (gmail.com, qq.com …)"
+ },
+ "single_lookup_title": {
+  "message": "Cerca un indirizzo"
+ },
+ "name_optional": {
+  "message": "Nome visualizzato (facoltativo)"
+ },
+ "force_lookup": {
+  "message": "Ignora la cache / forza la ricerca"
+ },
+ "lookup_go": {
+  "message": "Cerca"
+ },
+ "looking_up_short": {
+  "message": "Ricerca in corso…"
+ },
+ "history_title": {
+  "message": "Cronologia"
+ },
+ "search_placeholder": {
+  "message": "Cerca email / nome / azienda"
+ },
+ "all_statuses": {
+  "message": "Tutti gli stati"
+ },
+ "status_found": {
+  "message": "Trovato"
+ },
+ "status_uncertain": {
+  "message": "Incerto"
+ },
+ "status_not_found": {
+  "message": "Non trovato"
+ },
+ "status_skipped": {
+  "message": "Ignorato"
+ },
+ "export_csv": {
+  "message": "Esporta CSV"
+ },
+ "col_email": {
+  "message": "Email"
+ },
+ "col_name": {
+  "message": "Nome visualizzato"
+ },
+ "col_linkedin": {
+  "message": "LinkedIn"
+ },
+ "col_source": {
+  "message": "Fonte"
+ },
+ "col_cost": {
+  "message": "Costo"
+ },
+ "col_time": {
+  "message": "Ora"
+ },
+ "col_result": {
+  "message": "Risultato"
+ },
+ "col_duration": {
+  "message": "Durata"
+ },
+ "load_more": {
+  "message": "Carica altri"
+ },
+ "history_count": {
+  "message": "$1 voci, mostrate $2"
+ },
+ "history_empty": {
+  "message": "Nessuna voce"
+ },
+ "relookup": {
+  "message": "Cerca di nuovo"
+ },
+ "relookup_title": {
+  "message": "Ignora la cache e cerca di nuovo (può avere un costo)"
+ },
+ "delete": {
+  "message": "Elimina"
+ },
+ "reason_daily_budget": {
+  "message": "budget giornaliero esaurito"
+ },
+ "reason_invalid_email": {
+  "message": "email non valida"
+ },
+ "match_source": {
+  "message": "Fonte $1 · nome $2"
+ },
+ "name_matched": {
+  "message": "corrisponde"
+ },
+ "name_differs": {
+  "message": "diverso ($1 vs $2)"
+ },
+ "name_not_compared": {
+  "message": "non confrontato"
+ },
+ "cost_label": {
+  "message": "costo $1"
+ },
+ "stats_today": {
+  "message": "Oggi"
+ },
+ "stats_month": {
+  "message": "Questo mese"
+ },
+ "stats_all": {
+  "message": "Totale"
+ },
+ "stats_budget": {
+  "message": "Budget di oggi"
+ },
+ "n_lookups": {
+  "message": "$1 ricerche"
+ },
+ "found_n_usd": {
+  "message": "trovati $1 · $2"
+ },
+ "found_n_usd_cache": {
+  "message": "trovati $1 · $2 · $3 in cache"
+ },
+ "auto_n_cap": {
+  "message": "ricerche automatiche $1 / $2 · tetto per ricerca $3"
+ },
+ "last_30_days": {
+  "message": "Ultimi 30 giorni"
+ },
+ "chart_aria": {
+  "message": "Ricerche e spesa giornaliere, ultimi 30 giorni"
+ },
+ "chart_legend": {
+  "message": "Altezza della barra = ricerche del giorno (max $1)"
+ },
+ "chart_tip": {
+  "message": "$1: $2 ricerche, trovati $3, $4"
+ },
+ "by_provider": {
+  "message": "Per provider"
+ },
+ "col_calls": {
+  "message": "Chiamate"
+ },
+ "col_hits": {
+  "message": "Trovati"
+ },
+ "col_hit_rate": {
+  "message": "Tasso di successo"
+ },
+ "col_errors": {
+  "message": "Errori"
+ },
+ "col_spend": {
+  "message": "Spesa"
+ },
+ "col_avg_ms": {
+  "message": "Tempo medio"
+ },
+ "no_paid_calls": {
+  "message": "Nessuna chiamata a pagamento"
+ },
+ "export_import_title": {
+  "message": "Esporta / importa"
+ },
+ "data_intro": {
+  "message": "Cache, cronologia e registro delle spese risiedono nell'IndexedDB di questo browser. Esporta prima di cambiare computer o cancellare i dati del browser. All'importazione prevalgono i record più recenti. Le esportazioni non contengono mai le chiavi."
+ },
+ "export_json": {
+  "message": "Esporta JSON"
+ },
+ "import_json_merge": {
+  "message": "Importa JSON (unisci)"
+ },
+ "import_json_replace": {
+  "message": "Importa JSON (sostituisci tutto)"
+ },
+ "import_confirm_replace": {
+  "message": "Verranno cancellati cache, cronologia e registro su questo dispositivo, poi verrà importato il file. Continuare?"
+ },
+ "import_bad_json": {
+  "message": "Il file non è un JSON valido"
+ },
+ "import_done": {
+  "message": "Importati $1 record"
+ },
+ "import_failed": {
+  "message": "Importazione non riuscita: $1"
+ },
+ "cleanup_title": {
+  "message": "Pulizia"
+ },
+ "prune_btn": {
+  "message": "Rimuovi le voci di cache scadute"
+ },
+ "prune_done": {
+  "message": "Rimosse $1 voci scadute"
+ },
+ "prune_failed": {
+  "message": "Pulizia non riuscita"
+ },
+ "clear_btn": {
+  "message": "Cancella tutta la cache e la cronologia"
+ },
+ "clear_confirm": {
+  "message": "Cancellare tutta la cache, la cronologia e il registro? L'operazione è irreversibile; gli indirizzi già cercati avranno di nuovo un costo."
+ },
+ "cleared": {
+  "message": "Cancellato"
+ },
+ "failed": {
+  "message": "Non riuscito"
+ },
+ "about_title": {
+  "message": "Informazioni"
+ },
+ "about_text": {
+  "message": "Open source (AGPL-3.0). Non c'è alcun server: le ricerche vanno dal tuo browser direttamente ai provider di cui hai inserito le chiavi e i risultati sono salvati solo su questo dispositivo."
+ },
+ "about_gdpr": {
+  "message": "Sei tu il titolare delle ricerche che esegui: vengono inviati solo indirizzo email, nome visualizzato e dominio aziendale; i risultati restano su questo dispositivo (90 giorni per impostazione predefinita) e si possono eliminare nelle schede Cronologia e Dati."
+ },
+ "about_privacy_link": {
+  "message": "Informativa sulla privacy e note GDPR ↗"
+ },
+ "saved": {
+  "message": "Salvato"
+ },
+ "save_failed": {
+  "message": "Salvataggio non riuscito"
+ },
+ "tele_title": {
+  "message": "Statistiche d'uso anonime"
+ },
+ "tele_switch": {
+  "message": "Invia statistiche d'uso anonime"
+ },
+ "tele_intro": {
+  "message": "Attive per impostazione predefinita; se preferisci, disattivale qui. Se attive, una volta al giorno l'estensione invia un riepilogo del giorno precedente: quante ricerche sono state eseguite e come sono finite, quali passaggi sono stati chiamati e quante volte hanno avuto successo, da quale client di posta provenivano e la spesa totale arrotondata. Mai indirizzi email, nomi, domini, URL LinkedIn, campi del profilo, chiavi o contenuti dei messaggi. Disattivandole si eliminano l'id di installazione e tutto ciò che non è ancora stato inviato."
+ },
+ "tele_preview": {
+  "message": "Anteprima di cosa verrebbe inviato"
+ },
+ "tele_on_toast": {
+  "message": "Statistiche anonime attive"
+ },
+ "tele_off_toast": {
+  "message": "Disattivate. Id di installazione e dati non inviati eliminati"
+ },
+ "tele_status": {
+  "message": "$1 · inviate a $2"
+ },
+ "on": {
+  "message": "Attive"
+ },
+ "off": {
+  "message": "Disattivate"
+ },
+ "tele_pending": {
+  "message": "$1 giorni in attesa"
+ },
+ "connect_btn": {
+  "message": "Collegati"
+ },
+ "connect_opening": {
+  "message": "LinkedIn aperto"
+ },
+ "connect_title_attr": {
+  "message": "Apre il profilo LinkedIn di questa persona. Quando lì clicchi Collegati e Aggiungi una nota, la nota di invito viene compilata per te; premi tu Invia."
+ },
+ "local_time": {
+  "message": "Ora locale $1"
+ },
+ "local_time_title": {
+  "message": "Fuso orario stimato dalla località del profilo: $1"
+ },
+ "connect_note_default": {
+  "message": "Ciao {first}, ci siamo appena sentiti via email e mi farebbe piacere restare in contatto anche qui."
+ },
+ "connect_signature": {
+  "message": "— inviato tramite SenderFinder"
+ },
+ "li_filled": {
+  "message": "La nota è stata compilata. Rileggila e premi tu Invia; l'estensione non invia mai nulla."
+ },
+ "li_pending": {
+  "message": "C'è già un invito in sospeso per questa persona."
+ },
+ "li_login": {
+  "message": "Accedi a LinkedIn, poi clicca di nuovo Collegati nella scheda dell'email."
+ },
+ "li_note_limit": {
+  "message": "LinkedIn indica che hai esaurito gli inviti personalizzati di questo mese. Puoi comunque inviare senza nota."
+ },
+ "li_close": {
+  "message": "Chiudi"
+ },
+ "connect_title": {
+  "message": "Collegati su LinkedIn"
+ },
+ "connect_heading": {
+  "message": "Autorizzazione una tantum per linkedin.com"
+ },
+ "connect_intro": {
+  "message": "Per compilare la nota di invito, l'estensione ha bisogno di accedere alle pagine di linkedin.com che apre lei stessa. Lo autorizzi una sola volta."
+ },
+ "connect_what_title": {
+  "message": "Cosa succede dopo aver continuato:"
+ },
+ "connect_step1": {
+  "message": "Il profilo LinkedIn della persona si apre in una nuova scheda."
+ },
+ "connect_step2": {
+  "message": "Clicchi \"Collegati\" e \"Aggiungi una nota\" su LinkedIn. L'estensione compila la nota qui sotto non appena compare il campo della nota."
+ },
+ "connect_step3": {
+  "message": "La leggi e premi tu \"Invia\". L'estensione non clicca mai Collegati o Invia da sola e non viene mai eseguita sulle pagine LinkedIn che apri tu."
+ },
+ "connect_limit_hint": {
+  "message": "LinkedIn limita le note a 300 caratteri e gli account gratuiti hanno solo pochi inviti con nota al mese. Puoi modificare il modello nelle impostazioni dell'estensione."
+ },
+ "connect_note_preview": {
+  "message": "Nota da precompilare"
+ },
+ "connect_grant_btn": {
+  "message": "Autorizza linkedin.com e continua"
+ },
+ "connect_cancel": {
+  "message": "Annulla"
+ },
+ "connect_nothing_pending": {
+  "message": "Nessuna operazione in sospeso. Torna all'email e clicca di nuovo Collegati."
+ },
+ "connect_denied": {
+  "message": "Autorizzazione non concessa, quindi la nota non può essere compilata per te. Puoi comunque copiarla dall'anteprima qui sopra e incollarla su LinkedIn."
+ },
+ "connect_granted_opening": {
+  "message": "Autorizzato, apertura di LinkedIn…"
+ },
+ "opt_connect_title": {
+  "message": "Collegati su LinkedIn"
+ },
+ "opt_connect_intro": {
+  "message": "Il pulsante \"Collegati\" nel pannello apre il profilo della persona; quando clicchi Collegati e Aggiungi una nota su LinkedIn, la nota di invito qui sotto viene compilata per te e premi tu Invia. Segnaposto: {first} nome, {name} nome completo, {company} azienda."
+ },
+ "opt_connect_note": {
+  "message": "Modello della nota di invito"
+ },
+ "opt_connect_note_placeholder": {
+  "message": "Lascia vuoto per usare il modello predefinito"
+ },
+ "opt_connect_signature": {
+  "message": "Aggiungi alla nota la riga \"inviato tramite SenderFinder\""
+ },
+ "opt_connect_preview": {
+  "message": "Anteprima (nome di esempio)"
+ },
+ "opt_connect_chars": {
+  "message": "$1 / 300 caratteri"
+ },
+ "opt_connect_perm_granted": {
+  "message": "Accesso a linkedin.com concesso"
+ },
+ "opt_connect_perm_none": {
+  "message": "linkedin.com non ancora autorizzato (richiesto la prima volta che clicchi Collegati)"
+ },
+ "opt_connect_revoke": {
+  "message": "Revoca"
+ },
+ "panel_empty_title": {
+  "message": "Nessuna email aperta"
+ },
+ "panel_empty_hint": {
+  "message": "Apri un messaggio in Gmail o Outlook sul web. Il profilo LinkedIn del mittente comparirà qui."
+ },
+ "view_profile": {
+  "message": "Vedi il profilo LinkedIn ↗"
+ },
+ "others_in_thread": {
+  "message": "Altri in questa conversazione ($1)"
+ },
+ "current_roles": {
+  "message": "Ruoli attuali"
+ },
+ "settings_history": {
+  "message": "Impostazioni e cronologia"
+ },
+ "chip_title": {
+  "message": "Mostra il profilo LinkedIn nel pannello laterale"
+ },
+ "chip_open_fallback": {
+  "message": "Clicca l'icona dell'estensione nella barra degli strumenti per aprire il pannello laterale"
+ },
+ "hint_auto_off": {
+  "message": "Ricerca automatica disattivata"
+ },
+ "hint_noisy": {
+  "message": "Indirizzo di notifica, non cercato automaticamente"
+ },
+ "hint_me": {
+  "message": "Sei tu"
+ },
+ "hint_manual": {
+  "message": "Non ancora cercato"
+ },
+ "today_line": {
+  "message": "Oggi: $1 ricerche · $2 / $3 · auto $4 / $5"
+ },
+ "show_details": {
+  "message": "Dettagli"
+ },
+ "history_count_all": {
+  "message": "$1 voci"
+ },
+ "history_count_one": {
+  "message": "1 voce"
+ },
+ "via_step": {
+  "message": "via $1"
+ },
+ "trace_title": {
+  "message": "Passaggi provati"
+ },
+ "li_profile": {
+  "message": "Profilo LinkedIn"
+ },
+ "theme_toggle": {
+  "message": "Passa a chiaro / scuro"
+ },
+ "theme_label": {
+  "message": "Aspetto"
+ },
+ "theme_system": {
+  "message": "Come il sistema"
+ },
+ "theme_light": {
+  "message": "Chiaro"
+ },
+ "theme_dark": {
+  "message": "Scuro"
+ },
+ "today_short": {
+  "message": "Oggi $1 ricerche · $2 / $3"
+ },
+ "lookup_again_short": {
+  "message": "Aggiorna"
+ },
+ "li_copy_debug": {
+  "message": "Copia i dettagli per una segnalazione di bug"
+ },
+ "li_copied": {
+  "message": "Copiato"
+ },
+ "li_instructions": {
+  "message": "Clicca \"Collegati\", poi \"Aggiungi una nota\": la nota di invito verrà compilata per te. Oppure copiala e incollala tu."
+ },
+ "li_add_note": {
+  "message": "La finestra di invito è aperta. Clicca \"Aggiungi una nota\" e la nota verrà compilata."
+ },
+ "li_copy_note": {
+  "message": "Copia nota"
+ },
+ "rel_connected": {
+  "message": "1°"
+ },
+ "rel_connected_long": {
+  "message": "Collegamento di 1° grado"
+ },
+ "rel_pending": {
+  "message": "Invito in sospeso"
+ },
+ "rel_degree2": {
+  "message": "2°"
+ },
+ "rel_degree3": {
+  "message": "3°"
+ },
+ "rel_out": {
+  "message": "Fuori rete"
+ },
+ "rel_self": {
+  "message": "Tu"
+ },
+ "li_grant": {
+  "message": "Mostra le foto e il grado di collegamento su LinkedIn"
+ },
+ "li_grant_title": {
+  "message": "Legge ogni profilo una sola volta con il tuo accesso LinkedIn in questo browser. Non pubblica nulla."
+ },
+ "li_signed_out": {
+  "message": "Accedi a LinkedIn in questo browser per vedere il grado di collegamento"
+ },
+ "li_rel_denied": {
+  "message": "Autorizzazione non concessa"
+ },
+ "panel_slogan": {
+  "message": "Trova il mittente dell'email su LinkedIn"
+ },
+ "li_link_broken": {
+  "message": "Questo link LinkedIn non si apre: il provider dei dati ha restituito un indirizzo errato."
+ },
+ "li_link_broken_short": {
+  "message": "Il link LinkedIn non funziona"
+ },
+ "li_search_person": {
+  "message": "Cerca questa persona su LinkedIn"
+ },
+ "li_relookup_hint": {
+  "message": "Interroga di nuovo i provider (ricerca a pagamento)"
+ },
+ "company_search_title": {
+  "message": "Cerca questa azienda su LinkedIn"
+ },
+ "company_li_title": {
+  "message": "Pagina aziendale su LinkedIn"
+ },
+ "keys_need_one": {
+  "message": "Non è ancora configurato nulla. Aggiungi almeno una chiave: treg (più economico) o Monid (copertura migliore). Firecrawl da solo non è consigliato."
+ },
+ "vendor_treg_tagline": {
+  "message": "Il più economico. Ricerche inverse solo per email, da $$0.0005 per risultato."
+ },
+ "vendor_monid_tagline": {
+  "message": "Copertura migliore. Hunter per email, Apollo per email + nome + dominio aziendale (circa $$0.03)."
+ },
+ "vendor_firecrawl_tagline": {
+  "message": "Ultimo fallback opzionale (Data Legion). Fatturato in crediti."
+ },
+ "step_off": {
+  "message": "disattivato"
+ }
+}

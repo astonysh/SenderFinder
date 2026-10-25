@@ -1,0 +1,165 @@
+<!doctype html>
+<!--
+  ============================== PLACEHOLDERS ==============================
+  Replace these across all files in site/ with one search-and-replace:
+    CWS_PLACEHOLDER     Chrome Web Store listing URL (install button, see "CWS-BUTTON")
+  ==========================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy | SenderFinder</title>
+  <meta name="description" content="SenderFinder keeps keys and lookup history on your device. Only the providers you configure receive the addresses you look up. Anonymous usage counts are on by default and can be switched off.">
+  <link rel="canonical" href="https://senderfinder.com/privacy">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="SenderFinder">
+  <meta property="og:title" content="Privacy | SenderFinder">
+  <meta property="og:description" content="Your keys and history stay in your browser. Anonymous usage counts can be switched off.">
+  <meta property="og:url" content="https://senderfinder.com/privacy">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="" width="28" height="28">
+        <span>SenderFinder</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#how">How it works</a></li>
+          <li><a href="index.html#cost">Cost</a></li>
+          <li><a href="privacy.html" aria-current="page">Privacy</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="prose">
+    <article class="wrap narrow">
+      <h1>Privacy</h1>
+      <p class="updated">Last updated: 25 October 2026</p>
+      <p class="lead">Short version: your keys and your lookup history stay on your device, and the only thing sent to us is a daily anonymous usage count (on by default, one switch to turn off, never any address, name or profile). The only other outside parties are the data providers you choose to configure.</p>
+
+      <h2>Who "we" are</h2>
+      <p>SenderFinder is an open-source Chrome extension, released under the AGPL-3.0 license. There is no company account, no signup and no backend for lookups. The people who publish the code never receive your lookups, keys or results, because the extension has nowhere to send them. For the optional daily usage count described below, the controller in the sense of the GDPR is Tony Li, the maintainer of the GitHub repository <a href="https://github.com/astonysh/SenderFinder">astonysh/SenderFinder</a>, reachable at <a href="mailto:tony@senderfinder.com">tony@senderfinder.com</a> or through the repository's issue tracker. That count is the one thing that can reach us, and only if you turn it on.</p>
+
+      <h2>What the extension does not do</h2>
+      <ul>
+        <li>It does not send your lookups, keys, results or anything from your mailbox to us. Lookups go straight from your browser to the provider.</li>
+        <li>It sends anonymous usage counts once a day (see "Anonymous usage counts" below). The switch is on when you install it and can be turned off at any time.</li>
+        <li>It does not create an account or ask you to sign in.</li>
+      </ul>
+
+      <h2>What stays on your device</h2>
+      <ul>
+        <li><strong>Your API keys.</strong> They are stored in the extension's own storage on your device.</li>
+        <li><strong>Lookup history and cache.</strong> They are stored in your browser's IndexedDB, so the same address is not looked up and paid for twice.</li>
+        <li><strong>Settings.</strong> Provider order, caps and limits are stored locally as well.</li>
+      </ul>
+      <p>From the extension's settings page you can export or import your data as JSON, export history as CSV, or wipe everything.</p>
+
+      <h2>What leaves your device, and to whom</h2>
+      <p>When a lookup runs, the extension sends the email address and the display name you are looking up to the data providers you configured, directly from your browser, using your key. Nothing else from your mailbox is sent.</p>
+      <p>The free first step, scanning the email signature for a linkedin.com/in link, runs in your browser.</p>
+      <p>Lookups only happen in these cases:</p>
+      <ul>
+        <li>Automatically, for the sender of an email you open, up to the daily limit you set.</li>
+        <li>When you click another person in the thread, or click "look up anyway" on a skipped address.</li>
+      </ul>
+      <p>Personal mailbox domains (such as gmail.com, outlook.com, qq.com) and role addresses (such as info@, support@) are skipped by default and are not sent anywhere unless you ask.</p>
+
+      <h2>What is kept from the results</h2>
+      <p>Only professional fields are kept: name, title, company, location, LinkedIn URL, and, when the provider returns them, a profile photo URL, an X / Twitter link and a time zone (otherwise a time zone is guessed from the location, inside your browser). If a provider returns phone numbers or personal email addresses, they are discarded. The photo is loaded by your browser directly from the URL the provider returned, like any image on a web page.</p>
+      <h2>"Connect on LinkedIn" (optional)</h2>
+      <p>The card has a Connect button. When you click it, the extension opens the person's LinkedIn profile in a new tab and shows a bar with your prepared note. You click "Connect" and "Add a note" yourself; when the note box appears the extension fills the note in from your template. It never clicks Connect or Send: you read the note and send it yourself, or close the dialog.</p>
+      <p>This needs access to linkedin.com, which the extension does not have after installation. The first time you click Connect, a page explains this and asks for the permission; Chrome shows its own prompt. The permission is used only on tabs the extension opened for this purpose. It does not read your LinkedIn profile, your connections or anything else on LinkedIn, and it does not run on LinkedIn pages you open yourself. You can revoke the permission at any time from the extension's settings or from Chrome's extension details.</p>
+      <p>By default the note ends with a short line saying it was sent via SenderFinder, with a link to this project. You can switch that line off in settings. The note is shown to you before anything is sent.</p>
+
+      <h2>Anonymous usage counts (on by default, one switch to turn off)</h2>
+      <p>In the extension's settings there is a switch called "Send anonymous usage statistics". It is on after installation; turn it off and nothing in this section happens. While it is on, once a day the extension posts <strong>one summary of the previous day</strong> to a small server we run. The complete list of what that summary contains:</p>
+      <ul>
+        <li>The date, the extension version and your browser's UI language (for example "en-GB").</li>
+        <li>How many lookups ran that day and how they ended: found, uncertain, not found, skipped, answered from cache.</li>
+        <li>For each lookup step (such as "hunter" or "blitzapi"): how many times it was called, how often it hit, how often it errored.</li>
+        <li>How many lookups came from Gmail and how many from Outlook.</li>
+        <li>The day's total spend at your providers, rounded, as a single number.</li>
+        <li>A random installation id, generated the first time a count is recorded. It lets us count active installations. It is not derived from anything about you or your browser, and it is deleted from your device the moment you switch the counts off.</li>
+      </ul>
+      <p>The summary never contains email addresses, names, domains, LinkedIn URLs, any field of any profile, your API keys, or anything from an email. You can see the exact document that would be sent at any time with the "Show what would be sent" button next to the switch.</p>
+      <p>The receiving code is published in the same repository (<code>telemetry/</code>). It stores the summary in a database keyed by installation id and day. It does not record your IP address, user agent or cookies, and request logging is disabled on it. We use these numbers to understand how many people use the extension and which providers work, and to show that the project is alive when asking for sponsorship.</p>
+      <p>Legal basis under the GDPR, for users in the EU/EEA and the UK: our legitimate interest in knowing whether the extension works and is used, balanced by the fact that the summary contains nothing that identifies you and by the one-click switch to stop it. If you would rather not take part, switch the counts off. Switching off also deletes the installation id and any unsent summaries from your device. To have past rows for your installation id removed from the server, email <a href="mailto:tony@senderfinder.com">tony@senderfinder.com</a> or open an issue on GitHub with the id (it is shown in the preview).</p>
+
+      <h2>Data providers</h2>
+      <p>Each provider handles the requests it receives under its own privacy policy. Please read the policy on each provider's website before you add a key.</p>
+      <ul>
+        <li><strong>Monid</strong> (<a href="https://app.monid.ai/">app.monid.ai</a>). An aggregator that forwards lookups to Hunter.io, Apollo or ContactOut.</li>
+        <li><strong>treg</strong> (<a href="https://treg.to/">treg.to</a>). An aggregator that forwards lookups to BlitzAPI, QuickEnrich or Village.</li>
+        <li><strong>Firecrawl</strong> (<a href="https://www.firecrawl.dev/">firecrawl.dev</a>), optional. Used as a fallback for Data Legion.</li>
+      </ul>
+      <p>The services behind each aggregator (for example Hunter.io or Apollo) may also receive the address being looked up. Their own privacy policies apply.</p>
+
+      <h2>Your control</h2>
+      <ul>
+        <li>Remove a key at any time in settings. Without a key, no paid lookups can run.</li>
+        <li>Switch individual providers off, or set lower caps and limits.</li>
+        <li>Export or wipe your history and cache from the settings page.</li>
+        <li>Uninstalling the extension removes its local storage from your browser.</li>
+      </ul>
+
+      <h2>Your responsibilities when you look people up (GDPR, UK GDPR)</h2>
+      <p>When you look up the sender of an email, <strong>you</strong> decide to send that person's address to a data provider and you keep the result. In the words of the GDPR, you (or your employer) are the <em>controller</em> of that processing. The providers you configure process the request under their own terms, and the publishers of SenderFinder are not involved at all: the extension has no server and we never see the address or the result. The notes below are what we think a careful user in the EU, EEA, UK or Switzerland should know; they are not legal advice.</p>
+      <ul>
+        <li><strong>Lawful basis.</strong> For business contacts (people writing to you from a work address about work), the usual basis is legitimate interest (Art. 6(1)(f) GDPR): knowing who is writing to you and what their role is. Document that reasoning once if your organisation keeps a record of processing activities. Looking up private individuals is a different matter: the extension skips personal mailbox domains (gmail.com, outlook.com …) by default, and we recommend leaving that on.</li>
+        <li><strong>Transparency (Art. 14).</strong> When personal data is obtained from a source other than the person, they are in principle entitled to know. In practice, for a one-off lookup of a professional's public profile this is usually covered by your organisation's general privacy notice ("we use contact-enrichment services to identify business correspondents"). Make sure that notice exists.</li>
+        <li><strong>Data minimisation.</strong> The extension sends only the email address, the display name from the header and the company domain, and keeps only professional fields (name, title, company, location, LinkedIn URL, photo URL, time zone). Phone numbers and personal email addresses returned by a provider are discarded before anything is stored.</li>
+        <li><strong>Retention.</strong> Results are cached on your device for 90 days by default (settings → "Cache retention"), with at most 5,000 entries; older entries are pruned automatically, and "Clear all cache and history" removes everything at once.</li>
+        <li><strong>Requests from the people you looked up.</strong> If someone asks what you hold about them, the History tab shows every lookup and lets you delete it. Nothing about them exists anywhere else that the extension controls.</li>
+        <li><strong>Impact assessment.</strong> Looking up individual business correspondents one at a time, with results kept locally, is not large-scale or systematic monitoring; a DPIA is normally not required. Bulk enrichment of lists is not something this extension does.</li>
+        <li><strong>Outreach rules are separate.</strong> The "Connect on LinkedIn" helper only pre-fills a note that you send yourself. Whether and how you may contact someone commercially is governed by LinkedIn's terms and by your country's marketing rules (ePrivacy / PECR / UWG and the like), not by this policy.</li>
+      </ul>
+
+      <h2>Transfers outside the EEA and the UK</h2>
+      <p>Lookups go directly from your browser to the provider you configured. Those providers, and the services behind them, may be established or host data outside the EEA and the UK. The transfer safeguards that apply (Standard Contractual Clauses, the EU–US Data Privacy Framework, UK adequacy and so on) are part of <em>your</em> agreement with each provider; please check their terms and, where offered, sign their data processing agreement before you add a key. The anonymous usage counts are received by a Cloudflare Worker and stored in Cloudflare D1; they contain no personal data about you or about anyone you looked up.</p>
+
+      <h2>If you were looked up by a SenderFinder user</h2>
+      <p>We hold nothing about you: the extension has no server and the publishers never receive lookups or results. The person who looked you up holds the result on their own device (see "Your responsibilities" above), and the data provider they used holds whatever its own policy says. To exercise your rights, please contact that person or the provider; if you believe a provider holds your data unlawfully, their privacy policy names their data protection contact and you may also complain to your supervisory authority.</p>
+
+      <h2>Chrome Web Store user data policy</h2>
+      <p>SenderFinder's use of information received from Google APIs and from your mailbox adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements. The extension reads the sender and participants of the message you have open in Gmail or Outlook on the web, and the message body only to find a linkedin.com/in link locally. It does not read, store or transmit message content for any other purpose, does not use it for advertising, and never sells or transfers it to third parties other than the data providers you yourself configured for the lookup you asked for.</p>
+
+      <h2>Children</h2>
+      <p>SenderFinder is a tool for working professionals and is not directed at anyone under 16.</p>
+
+      <h2>This website</h2>
+      <p>This site is a set of static pages. It loads no external fonts, scripts, images or analytics, and sets no cookies.</p>
+
+      <h2>Questions</h2>
+      <p>Write to Tony Li at <a href="mailto:tony@senderfinder.com">tony@senderfinder.com</a>, or open an issue on <a href="https://github.com/astonysh/SenderFinder">GitHub</a>. Since the code is open source, you can also check every claim on this page yourself.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+          <li><a href="privacy.html" aria-current="page">Privacy</a></li>
+          <li><a href="clearbit-connect-alternative.html">Clearbit Connect alternative</a></li>
+          <li><a href="rapportive-alternative.html">Rapportive alternative</a></li>
+          <li><a href="https://github.com/astonysh/SenderFinder/blob/main/LICENSE">AGPL-3.0 License</a></li>
+        </ul>
+      </nav>
+      <p>SenderFinder is open-source software released under the AGPL-3.0 license.</p>
+      <p>Not affiliated with LinkedIn, HubSpot, Clearbit or any data provider. Product names belong to their owners.</p>
+    </div>
+  </footer>
+</body>
+</html>

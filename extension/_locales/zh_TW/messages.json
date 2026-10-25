@@ -1,0 +1,824 @@
+{
+ "ext_name": {
+  "message": "SenderFinder"
+ },
+ "ext_description": {
+  "message": "在 Gmail / Outlook 網頁版顯示寄件者的 LinkedIn 個人檔案。開放原始碼，使用你自己的供應商 key，資料只留在你的瀏覽器裡。"
+ },
+ "lookup_btn": {
+  "message": "查 LinkedIn"
+ },
+ "looking_up": {
+  "message": "正在查詢 $1 …"
+ },
+ "retry": {
+  "message": "重試"
+ },
+ "open_settings": {
+  "message": "開啟設定"
+ },
+ "name_match": {
+  "message": "姓名相符"
+ },
+ "name_mismatch": {
+  "message": "姓名不符，請確認"
+ },
+ "from_signature": {
+  "message": "來自郵件簽名檔"
+ },
+ "by_email": {
+  "message": "依電子郵件比對"
+ },
+ "cached": {
+  "message": "快取"
+ },
+ "header_name_vs_profile": {
+  "message": "郵件顯示名稱：$1 · 個人檔案姓名：$2"
+ },
+ "unknown": {
+  "message": "未知"
+ },
+ "skip_free_mail": {
+  "message": "個人信箱網域，預設不查"
+ },
+ "skip_role": {
+  "message": "共用 / 職務信箱，預設不查"
+ },
+ "skipped_generic": {
+  "message": "已略過：$1"
+ },
+ "lookup_anyway": {
+  "message": "仍要查詢"
+ },
+ "not_found_for": {
+  "message": "找不到 $1 的 LinkedIn 個人檔案"
+ },
+ "lookup_again": {
+  "message": "重新查詢"
+ },
+ "source": {
+  "message": "來源：$1"
+ },
+ "source_signature": {
+  "message": "郵件簽名檔"
+ },
+ "cost": {
+  "message": "費用：$1"
+ },
+ "lookup_short": {
+  "message": "查詢"
+ },
+ "personal_mail": {
+  "message": "個人信箱"
+ },
+ "role_mail": {
+  "message": "職務信箱"
+ },
+ "not_found_short": {
+  "message": "找不到"
+ },
+ "err_generic": {
+  "message": "錯誤"
+ },
+ "err_no_keys_short": {
+  "message": "未設定 key"
+ },
+ "err_auto_limit_short": {
+  "message": "自動查詢已達上限"
+ },
+ "err_unauthorized_short": {
+  "message": "key 無效"
+ },
+ "err_invalid_email": {
+  "message": "無法辨識的電子郵件地址"
+ },
+ "err_no_keys": {
+  "message": "還沒有填入供應商 key。一個就夠：treg（最便宜）或 Monid（涵蓋最廣）。請開啟擴充功能設定。"
+ },
+ "err_auto_limit": {
+  "message": "今天的自動查詢已達 $1 次上限，點一下可手動查詢。"
+ },
+ "popup_cannot_read": {
+  "message": "無法讀取設定"
+ },
+ "popup_no_keys": {
+  "message": "還沒有填入供應商 key。一個就夠：treg（最便宜）或 Monid（涵蓋最廣）。請先開啟設定。"
+ },
+ "popup_configured": {
+  "message": "已設定：$1 · 步驟：$2"
+ },
+ "popup_today_lookups": {
+  "message": "今日查詢"
+ },
+ "popup_today_spent": {
+  "message": "今日花費"
+ },
+ "popup_today_auto": {
+  "message": "今日自動查詢"
+ },
+ "popup_cache": {
+  "message": "快取筆數"
+ },
+ "popup_found_n": {
+  "message": "$1（找到 $2）"
+ },
+ "opt_auto_lookup": {
+  "message": "開啟郵件時自動查詢寄件者"
+ },
+ "opt_show_cost": {
+  "message": "顯示費用"
+ },
+ "popup_open_settings": {
+  "message": "開啟設定與歷史記錄"
+ },
+ "popup_hint": {
+  "message": "key、快取和歷史記錄都只保存在這個瀏覽器裡。"
+ },
+ "options_title": {
+  "message": "SenderFinder · 設定"
+ },
+ "tagline": {
+  "message": "開源 · 自備 key · 資料只留在本機"
+ },
+ "tab_settings": {
+  "message": "設定"
+ },
+ "tab_history": {
+  "message": "歷史記錄"
+ },
+ "tab_stats": {
+  "message": "統計"
+ },
+ "tab_data": {
+  "message": "資料"
+ },
+ "keys_title": {
+  "message": "供應商 key"
+ },
+ "keys_probe": {
+  "message": "測試 key（免費）"
+ },
+ "keys_intro": {
+  "message": "一個 key 就夠用。treg 最便宜（只靠電子郵件，大約一半的公司信箱查得到）；Monid 涵蓋最廣（Apollo 以姓名 + 公司網域比對，較貴）；Firecrawl 是可選的最後備援。key 只保存在這個瀏覽器裡，也只會傳送給各自的供應商。"
+ },
+ "key_monid": {
+  "message": "Monid API key"
+ },
+ "key_treg": {
+  "message": "treg token"
+ },
+ "key_firecrawl": {
+  "message": "Firecrawl API key"
+ },
+ "get_key": {
+  "message": "取得 ↗"
+ },
+ "optional_fallback": {
+  "message": "可選備援"
+ },
+ "firecrawl_usd_per_credit": {
+  "message": "Firecrawl 每 credit 價格（USD）"
+ },
+ "per_your_plan": {
+  "message": "依你的方案填寫"
+ },
+ "show_keys": {
+  "message": "顯示 key"
+ },
+ "probe_running": {
+  "message": "檢查中（免費）…"
+ },
+ "probe_failed": {
+  "message": "檢查失敗"
+ },
+ "probe_not_set": {
+  "message": "$1：未填"
+ },
+ "probe_valid": {
+  "message": "$1：有效"
+ },
+ "probe_invalid": {
+  "message": "$1：無效"
+ },
+ "hit_rate": {
+  "message": "命中率"
+ },
+ "steps_title": {
+  "message": "查詢步驟"
+ },
+ "steps_intro": {
+  "message": "由上而下依序嘗試，命中即停止。價格是該步驟可接受的目錄價上限。"
+ },
+ "col_step": {
+  "message": "步驟"
+ },
+ "col_provider": {
+  "message": "供應商"
+ },
+ "col_price_cap": {
+  "message": "價格上限"
+ },
+ "col_status": {
+  "message": "狀態"
+ },
+ "local": {
+  "message": "本機"
+ },
+ "free": {
+  "message": "免費"
+ },
+ "always_on": {
+  "message": "隨時可用"
+ },
+ "configured": {
+  "message": "已設定"
+ },
+ "missing_key": {
+  "message": "缺少 key"
+ },
+ "move_up": {
+  "message": "上移"
+ },
+ "move_down": {
+  "message": "下移"
+ },
+ "step_signature": {
+  "message": "郵件簽名檔裡的 LinkedIn 連結"
+ },
+ "step_blitzapi": {
+  "message": "BlitzAPI 電子郵件反查（treg）"
+ },
+ "step_quickenrich": {
+  "message": "QuickEnrich 電子郵件反查（treg）"
+ },
+ "step_hunter": {
+  "message": "Hunter.io 電子郵件反查（Monid）"
+ },
+ "step_village": {
+  "message": "Village 電子郵件反查（treg）"
+ },
+ "step_apollo": {
+  "message": "Apollo 比對（Monid）"
+ },
+ "step_datalegion": {
+  "message": "Data Legion 電子郵件反查（Firecrawl）"
+ },
+ "step_contactout": {
+  "message": "ContactOut 比對（Monid）"
+ },
+ "budget_title": {
+  "message": "預算與行為"
+ },
+ "lookup_max_usd": {
+  "message": "單次查詢上限（USD）"
+ },
+ "daily_cap_usd": {
+  "message": "每日上限（USD）"
+ },
+ "daily_cap_hint": {
+  "message": "0 = 完全不進行付費呼叫"
+ },
+ "auto_daily_limit": {
+  "message": "每日自動查詢次數"
+ },
+ "auto_daily_hint": {
+  "message": "超過後只能手動查詢"
+ },
+ "cache_max_age": {
+  "message": "快取保留天數"
+ },
+ "opt_skip_free_mail": {
+  "message": "略過個人信箱網域（gmail.com、qq.com …）"
+ },
+ "single_lookup_title": {
+  "message": "查詢單一地址"
+ },
+ "name_optional": {
+  "message": "顯示名稱（選填）"
+ },
+ "force_lookup": {
+  "message": "忽略快取 / 強制查詢"
+ },
+ "lookup_go": {
+  "message": "查詢"
+ },
+ "looking_up_short": {
+  "message": "查詢中…"
+ },
+ "history_title": {
+  "message": "歷史記錄"
+ },
+ "search_placeholder": {
+  "message": "搜尋電子郵件 / 姓名 / 公司"
+ },
+ "all_statuses": {
+  "message": "所有狀態"
+ },
+ "status_found": {
+  "message": "已找到"
+ },
+ "status_uncertain": {
+  "message": "不確定"
+ },
+ "status_not_found": {
+  "message": "找不到"
+ },
+ "status_skipped": {
+  "message": "已略過"
+ },
+ "export_csv": {
+  "message": "匯出 CSV"
+ },
+ "col_email": {
+  "message": "電子郵件"
+ },
+ "col_name": {
+  "message": "顯示名稱"
+ },
+ "col_linkedin": {
+  "message": "LinkedIn"
+ },
+ "col_source": {
+  "message": "來源"
+ },
+ "col_cost": {
+  "message": "費用"
+ },
+ "col_time": {
+  "message": "時間"
+ },
+ "col_result": {
+  "message": "結果"
+ },
+ "col_duration": {
+  "message": "耗時"
+ },
+ "load_more": {
+  "message": "載入更多"
+ },
+ "history_count": {
+  "message": "共 $1 筆，顯示 $2 筆"
+ },
+ "history_empty": {
+  "message": "還沒有記錄"
+ },
+ "relookup": {
+  "message": "重新查詢"
+ },
+ "relookup_title": {
+  "message": "忽略快取重新查詢（可能會產生費用）"
+ },
+ "delete": {
+  "message": "刪除"
+ },
+ "reason_daily_budget": {
+  "message": "今日預算已用完"
+ },
+ "reason_invalid_email": {
+  "message": "電子郵件無效"
+ },
+ "match_source": {
+  "message": "來源 $1 · 姓名$2"
+ },
+ "name_matched": {
+  "message": "相符"
+ },
+ "name_differs": {
+  "message": "不符（$1 vs $2）"
+ },
+ "name_not_compared": {
+  "message": "未比對"
+ },
+ "cost_label": {
+  "message": "費用 $1"
+ },
+ "stats_today": {
+  "message": "今天"
+ },
+ "stats_month": {
+  "message": "本月"
+ },
+ "stats_all": {
+  "message": "累計"
+ },
+ "stats_budget": {
+  "message": "今日預算"
+ },
+ "n_lookups": {
+  "message": "$1 次查詢"
+ },
+ "found_n_usd": {
+  "message": "找到 $1 · $2"
+ },
+ "found_n_usd_cache": {
+  "message": "找到 $1 · $2 · 快取 $3 筆"
+ },
+ "auto_n_cap": {
+  "message": "自動查詢 $1 / $2 · 單次上限 $3"
+ },
+ "last_30_days": {
+  "message": "最近 30 天"
+ },
+ "chart_aria": {
+  "message": "最近 30 天的每日查詢次數與花費"
+ },
+ "chart_legend": {
+  "message": "長條高度 = 當天查詢次數（最高 $1）"
+ },
+ "chart_tip": {
+  "message": "$1：$2 次查詢，找到 $3，$4"
+ },
+ "by_provider": {
+  "message": "依供應商"
+ },
+ "col_calls": {
+  "message": "呼叫"
+ },
+ "col_hits": {
+  "message": "命中"
+ },
+ "col_hit_rate": {
+  "message": "命中率"
+ },
+ "col_errors": {
+  "message": "錯誤"
+ },
+ "col_spend": {
+  "message": "花費"
+ },
+ "col_avg_ms": {
+  "message": "平均耗時"
+ },
+ "no_paid_calls": {
+  "message": "還沒有付費呼叫"
+ },
+ "export_import_title": {
+  "message": "匯出 / 匯入"
+ },
+ "data_intro": {
+  "message": "快取、歷史記錄和花費帳本都存放在這個瀏覽器的 IndexedDB 裡。換電腦或清除瀏覽器資料前請先匯出。匯入時以較新的記錄為準。匯出檔案不會包含 key。"
+ },
+ "export_json": {
+  "message": "匯出 JSON"
+ },
+ "import_json_merge": {
+  "message": "匯入 JSON（合併）"
+ },
+ "import_json_replace": {
+  "message": "匯入 JSON（全部取代）"
+ },
+ "import_confirm_replace": {
+  "message": "這會清除本機的快取、歷史記錄和帳本，再匯入這個檔案。要繼續嗎？"
+ },
+ "import_bad_json": {
+  "message": "這個檔案不是有效的 JSON"
+ },
+ "import_done": {
+  "message": "已匯入 $1 筆記錄"
+ },
+ "import_failed": {
+  "message": "匯入失敗：$1"
+ },
+ "cleanup_title": {
+  "message": "清理"
+ },
+ "prune_btn": {
+  "message": "移除過期的快取項目"
+ },
+ "prune_done": {
+  "message": "已移除 $1 筆過期項目"
+ },
+ "prune_failed": {
+  "message": "清理失敗"
+ },
+ "clear_btn": {
+  "message": "清除所有快取與歷史記錄"
+ },
+ "clear_confirm": {
+  "message": "確定要清除所有快取、歷史記錄和帳本？此操作無法復原，之前查過的地址會再次產生費用。"
+ },
+ "cleared": {
+  "message": "已清除"
+ },
+ "failed": {
+  "message": "失敗"
+ },
+ "about_title": {
+  "message": "關於"
+ },
+ "about_text": {
+  "message": "開放原始碼（AGPL-3.0）。沒有任何伺服器：查詢從你的瀏覽器直接送到你填入 key 的供應商，結果只儲存在本機。"
+ },
+ "about_gdpr": {
+  "message": "查詢由你發起、由你負責：只傳送信箱、顯示名稱和公司網域，結果只存在本機（預設 90 天），可在「歷史」和「資料」分頁刪除。"
+ },
+ "about_privacy_link": {
+  "message": "隱私權政策與 GDPR 說明 ↗"
+ },
+ "saved": {
+  "message": "已儲存"
+ },
+ "save_failed": {
+  "message": "儲存失敗"
+ },
+ "tele_title": {
+  "message": "匿名使用統計"
+ },
+ "tele_switch": {
+  "message": "傳送匿名使用統計"
+ },
+ "tele_intro": {
+  "message": "預設開啟，不想要的話可以在這裡關閉。開啟時，擴充功能每天會傳送一次前一天的摘要：查詢了幾次、結果如何、呼叫了哪些步驟和各自的命中次數、來自哪個郵件用戶端，以及四捨五入後的總花費。絕不包含任何電子郵件地址、姓名、網域、LinkedIn 網址、個人檔案欄位、key 或郵件內容。關閉後會刪除安裝 ID 和尚未傳送的資料。"
+ },
+ "tele_preview": {
+  "message": "預覽會傳送的內容"
+ },
+ "tele_on_toast": {
+  "message": "已開啟匿名統計"
+ },
+ "tele_off_toast": {
+  "message": "已關閉，安裝 ID 和未傳送的資料已刪除"
+ },
+ "tele_status": {
+  "message": "$1 · 傳送至 $2"
+ },
+ "on": {
+  "message": "開啟"
+ },
+ "off": {
+  "message": "關閉"
+ },
+ "tele_pending": {
+  "message": "$1 天待傳送"
+ },
+ "connect_btn": {
+  "message": "加入人脈"
+ },
+ "connect_opening": {
+  "message": "已開啟 LinkedIn"
+ },
+ "connect_title_attr": {
+  "message": "開啟這個人的 LinkedIn 個人檔案。你在該頁面按下 Connect 和 Add a note 後，邀請訊息會自動填好；由你自己按傳送。"
+ },
+ "local_time": {
+  "message": "當地時間 $1"
+ },
+ "local_time_title": {
+  "message": "依個人檔案地點推測的時區：$1"
+ },
+ "connect_note_default": {
+  "message": "{first} 您好，我們剛透過 email 聯絡過，希望在 LinkedIn 上也能保持聯繫。"
+ },
+ "connect_signature": {
+  "message": "— 透過 SenderFinder 傳送"
+ },
+ "li_filled": {
+  "message": "邀請訊息已填好，請檢查後自行按「傳送」。擴充功能絕不會替你傳送。"
+ },
+ "li_pending": {
+  "message": "已經向這個人送出邀請，正在等待對方回覆。"
+ },
+ "li_login": {
+  "message": "請先登入 LinkedIn，再回到郵件卡片重新按「加入人脈」。"
+ },
+ "li_note_limit": {
+  "message": "LinkedIn 表示你本月附訊息的邀請已用完，仍可不附訊息直接送出。"
+ },
+ "li_close": {
+  "message": "關閉"
+ },
+ "connect_title": {
+  "message": "在 LinkedIn 加入人脈"
+ },
+ "connect_heading": {
+  "message": "一次性授權存取 linkedin.com"
+ },
+ "connect_intro": {
+  "message": "為了幫你填入邀請訊息，擴充功能需要存取由它自己開啟的 linkedin.com 頁面。只需授權一次。"
+ },
+ "connect_what_title": {
+  "message": "按下「繼續」後會發生的事："
+ },
+ "connect_step1": {
+  "message": "在新分頁開啟對方的 LinkedIn 個人檔案。"
+ },
+ "connect_step2": {
+  "message": "你在 LinkedIn 上按「Connect」和「Add a note」。備註欄一出現，擴充功能就會把下面這段填進去。"
+ },
+ "connect_step3": {
+  "message": "你看過之後自行按「Send」。擴充功能絕不會自己按 Connect 或 Send，也不會在你自己開啟的 LinkedIn 頁面上執行。"
+ },
+ "connect_limit_hint": {
+  "message": "LinkedIn 限制備註最多 300 個字元，免費帳號每月只有少量可附訊息的邀請。你可以在擴充功能設定裡修改範本。"
+ },
+ "connect_note_preview": {
+  "message": "將填入的備註"
+ },
+ "connect_grant_btn": {
+  "message": "允許 linkedin.com 並繼續"
+ },
+ "connect_cancel": {
+  "message": "取消"
+ },
+ "connect_nothing_pending": {
+  "message": "沒有待處理的邀請。請回到郵件重新按「加入人脈」。"
+ },
+ "connect_denied": {
+  "message": "未取得授權，無法替你填入備註。你仍可從上方預覽複製，再到 LinkedIn 貼上。"
+ },
+ "connect_granted_opening": {
+  "message": "已授權，正在開啟 LinkedIn…"
+ },
+ "opt_connect_title": {
+  "message": "在 LinkedIn 加入人脈"
+ },
+ "opt_connect_intro": {
+  "message": "面板上的「加入人脈」按鈕會開啟對方的個人檔案；你在 LinkedIn 上按 Connect 和 Add a note 後，下面的邀請訊息會自動填入，由你自己按傳送。可用變數：{first} 名字、{name} 全名、{company} 公司。"
+ },
+ "opt_connect_note": {
+  "message": "邀請訊息範本"
+ },
+ "opt_connect_note_placeholder": {
+  "message": "留空則使用預設範本"
+ },
+ "opt_connect_signature": {
+  "message": "在訊息末尾加上「透過 SenderFinder 傳送」這一行"
+ },
+ "opt_connect_preview": {
+  "message": "預覽（範例姓名）"
+ },
+ "opt_connect_chars": {
+  "message": "$1 / 300 個字元"
+ },
+ "opt_connect_perm_granted": {
+  "message": "已授權存取 linkedin.com"
+ },
+ "opt_connect_perm_none": {
+  "message": "尚未授權 linkedin.com（第一次按「加入人脈」時會詢問）"
+ },
+ "opt_connect_revoke": {
+  "message": "撤銷授權"
+ },
+ "panel_empty_title": {
+  "message": "尚未開啟郵件"
+ },
+ "panel_empty_hint": {
+  "message": "在 Gmail 或 Outlook 網頁版開啟一封郵件，寄件者的 LinkedIn 個人檔案就會顯示在這裡。"
+ },
+ "view_profile": {
+  "message": "查看 LinkedIn 個人檔案 ↗"
+ },
+ "others_in_thread": {
+  "message": "此對話串的其他人（$1）"
+ },
+ "current_roles": {
+  "message": "目前職務"
+ },
+ "settings_history": {
+  "message": "設定與歷史記錄"
+ },
+ "chip_title": {
+  "message": "在側邊面板顯示 LinkedIn 個人檔案"
+ },
+ "chip_open_fallback": {
+  "message": "按一下工具列的擴充功能圖示即可開啟側邊面板"
+ },
+ "hint_auto_off": {
+  "message": "自動查詢已關閉"
+ },
+ "hint_noisy": {
+  "message": "通知類地址，不會自動查詢"
+ },
+ "hint_me": {
+  "message": "這是你自己"
+ },
+ "hint_manual": {
+  "message": "尚未查詢"
+ },
+ "today_line": {
+  "message": "今天：查詢 $1 次 · 花費 $2 / $3 · 自動 $4 / $5"
+ },
+ "show_details": {
+  "message": "詳細資料"
+ },
+ "history_count_all": {
+  "message": "共 $1 筆"
+ },
+ "history_count_one": {
+  "message": "共 1 筆"
+ },
+ "via_step": {
+  "message": "透過 $1"
+ },
+ "trace_title": {
+  "message": "嘗試過的步驟"
+ },
+ "li_profile": {
+  "message": "LinkedIn 個人檔案"
+ },
+ "theme_toggle": {
+  "message": "切換淺色 / 深色"
+ },
+ "theme_label": {
+  "message": "外觀"
+ },
+ "theme_system": {
+  "message": "跟隨系統"
+ },
+ "theme_light": {
+  "message": "淺色"
+ },
+ "theme_dark": {
+  "message": "深色"
+ },
+ "today_short": {
+  "message": "今天查詢 $1 次 · $2 / $3"
+ },
+ "lookup_again_short": {
+  "message": "重新查詢"
+ },
+ "li_copy_debug": {
+  "message": "複製詳細資訊以回報問題"
+ },
+ "li_copied": {
+  "message": "已複製"
+ },
+ "li_instructions": {
+  "message": "按「Connect」，再按「Add a note」，邀請訊息就會自動填入。也可以複製後自己貼上。"
+ },
+ "li_add_note": {
+  "message": "邀請視窗已開啟。按「Add a note」，備註就會自動填入。"
+ },
+ "li_copy_note": {
+  "message": "複製邀請訊息"
+ },
+ "rel_connected": {
+  "message": "一度"
+ },
+ "rel_connected_long": {
+  "message": "一度人脈"
+ },
+ "rel_pending": {
+  "message": "邀請待回覆"
+ },
+ "rel_degree2": {
+  "message": "二度"
+ },
+ "rel_degree3": {
+  "message": "三度"
+ },
+ "rel_out": {
+  "message": "人脈網路之外"
+ },
+ "rel_self": {
+  "message": "你自己"
+ },
+ "li_grant": {
+  "message": "顯示大頭貼和你們在 LinkedIn 上的關係"
+ },
+ "li_grant_title": {
+  "message": "用你在這個瀏覽器登入的 LinkedIn 帳號，每份個人檔案只讀取一次，不會發布任何內容。"
+ },
+ "li_signed_out": {
+  "message": "在這個瀏覽器登入 LinkedIn 後即可顯示關係"
+ },
+ "li_rel_denied": {
+  "message": "未授權"
+ },
+ "panel_slogan": {
+  "message": "在 LinkedIn 找到寄件者"
+ },
+ "li_link_broken": {
+  "message": "這個 LinkedIn 連結打不開：資料供應商給的地址有誤。"
+ },
+ "li_link_broken_short": {
+  "message": "LinkedIn 連結無效"
+ },
+ "li_search_person": {
+  "message": "在 LinkedIn 搜尋這個人"
+ },
+ "li_relookup_hint": {
+  "message": "再向供應商查詢一次（會產生費用）"
+ },
+ "company_search_title": {
+  "message": "在 LinkedIn 搜尋這家公司"
+ },
+ "company_li_title": {
+  "message": "LinkedIn 公司專頁"
+ },
+ "keys_need_one": {
+  "message": "還沒有設定任何 key。至少填一個：treg（最便宜）或 Monid（涵蓋最廣）。不建議只填 Firecrawl。"
+ },
+ "vendor_treg_tagline": {
+  "message": "最便宜。只靠電子郵件反查，每次命中最低 $$0.0005。"
+ },
+ "vendor_monid_tagline": {
+  "message": "涵蓋最廣。Hunter 以電子郵件查詢，Apollo 以電子郵件 + 姓名 + 公司網域查詢（約 $$0.03）。"
+ },
+ "vendor_firecrawl_tagline": {
+  "message": "可選的最後備援（Data Legion），以 credit 計費。"
+ },
+ "step_off": {
+  "message": "停用"
+ }
+}

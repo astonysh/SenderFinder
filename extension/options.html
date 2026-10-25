@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="options_title">SenderFinder · Settings</title>
+<link rel="icon" href="icons/icon48.png">
+<script src="theme-boot.js"></script>
+<link rel="stylesheet" href="options.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><img src="icons/icon48.png" alt="" width="28" height="28"><div><h1 data-i18n="ext_name">SenderFinder</h1><p class="muted small" data-i18n="tagline">Open source · your own keys · data stays on this device</p></div></div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="settings" aria-selected="true" data-i18n="tab_settings">Settings</button>
+    <button role="tab" data-tab="history" data-i18n="tab_history">History</button>
+    <button role="tab" data-tab="stats" data-i18n="tab_stats">Statistics</button>
+    <button role="tab" data-tab="data" data-i18n="tab_data">Data</button>
+  </nav>
+</header>
+<main>
+<div id="toast" class="toast" hidden></div>
+
+<!-- ───────────── Settings ───────────── -->
+<section id="tab-settings" class="tab" role="tabpanel">
+  <div class="card">
+    <div class="card-head"><h2 data-i18n="keys_title">Provider keys</h2><button id="probe" class="ghost" data-i18n="keys_probe">Test keys (free)</button></div>
+    <p class="muted small" data-i18n="keys_intro"></p>
+    <div class="vendors">
+      <div class="vendor" data-vendor="treg">
+        <div class="vendor-head"><h3><img class="vendor-logo" src="icons/vendors/treg.svg" alt="" width="20" height="20">treg</h3><span class="badge" data-vendor-status></span></div>
+        <p class="muted small" data-i18n="vendor_treg_tagline"></p>
+        <label><span data-i18n="key_treg">treg token</span> <a href="https://treg.to" target="_blank" rel="noopener" data-i18n="get_key">Get one ↗</a><input type="password" id="key-treg" autocomplete="off" spellcheck="false" placeholder="treg_…"></label>
+        <ul class="vendor-steps" data-vendor-steps></ul>
+      </div>
+      <div class="vendor" data-vendor="monid">
+        <div class="vendor-head"><h3><img class="vendor-logo" src="icons/vendors/monid.svg" alt="" width="20" height="20">Monid</h3><span class="badge" data-vendor-status></span></div>
+        <p class="muted small" data-i18n="vendor_monid_tagline"></p>
+        <label><span data-i18n="key_monid">Monid API key</span> <a href="https://app.monid.ai" target="_blank" rel="noopener" data-i18n="get_key">Get one ↗</a><input type="password" id="key-monid" autocomplete="off" spellcheck="false" placeholder="monid_…"></label>
+        <ul class="vendor-steps" data-vendor-steps></ul>
+      </div>
+      <div class="vendor" data-vendor="firecrawl">
+        <div class="vendor-head"><h3><img class="vendor-logo" src="icons/vendors/firecrawl.png" alt="" width="20" height="20">Firecrawl</h3><span class="badge" data-vendor-status></span></div>
+        <p class="muted small" data-i18n="vendor_firecrawl_tagline"></p>
+        <label><span data-i18n="key_firecrawl">Firecrawl API key</span> <a href="https://firecrawl.link/sf" target="_blank" rel="noopener" data-i18n="get_key">Get one ↗</a><input type="password" id="key-firecrawl" autocomplete="off" spellcheck="false" placeholder="fc-…"></label>
+        <label><span data-i18n="firecrawl_usd_per_credit">Firecrawl price per credit (USD)</span><span class="muted" data-i18n="per_your_plan">per your plan</span><input type="number" id="firecrawlUsdPerCredit" step="0.0001" min="0.00001"></label>
+        <ul class="vendor-steps" data-vendor-steps></ul>
+      </div>
+    </div>
+    <p id="keys-need" class="small" hidden data-i18n="keys_need_one"></p>
+    <div class="row"><label class="check"><input type="checkbox" id="showKeys"> <span data-i18n="show_keys">Show keys</span></label><span id="probe-out" class="small"></span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h2 data-i18n="steps_title">Lookup steps</h2><span class="muted small" data-i18n="steps_intro"></span></div>
+    <table class="steps"><thead><tr><th></th><th data-i18n="col_step">Step</th><th data-i18n="col_provider">Provider</th><th class="num" data-i18n="col_price_cap">Price cap</th><th data-i18n="col_status">Status</th><th></th></tr></thead><tbody id="steps"></tbody></table>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h2 data-i18n="budget_title">Budget & behaviour</h2></div>
+    <div class="grid2">
+      <label><span data-i18n="lookup_max_usd">Per-lookup cap (USD)</span><input type="number" id="lookupMaxUsd" step="0.005" min="0"></label>
+      <label><span data-i18n="daily_cap_usd">Daily cap (USD)</span><span class="muted" data-i18n="daily_cap_hint">0 = no paid calls at all</span><input type="number" id="dailyCapUsd" step="0.5" min="0"></label>
+      <label><span data-i18n="auto_daily_limit">Automatic lookups per day</span><span class="muted" data-i18n="auto_daily_hint">beyond that, manual only</span><input type="number" id="autoDailyLimit" step="1" min="0"></label>
+      <label><span data-i18n="cache_max_age">Cache retention (days)</span><input type="number" id="cacheMaxAgeDays" step="1" min="1"></label>
+    </div>
+    <div class="row wrap">
+      <label class="check"><input type="checkbox" id="autoLookup"> <span data-i18n="opt_auto_lookup"></span></label>
+      <label class="check"><input type="checkbox" id="skipFreeMail"> <span data-i18n="opt_skip_free_mail"></span></label>
+      <label class="check"><input type="checkbox" id="showCost"> <span data-i18n="opt_show_cost"></span></label>
+    </div>
+    <div class="row wrap">
+      <label class="check" for="theme"><span data-i18n="theme_label">Appearance</span></label>
+      <select id="theme"><option value="system" data-i18n="theme_system">Match the system</option><option value="light" data-i18n="theme_light">Light</option><option value="dark" data-i18n="theme_dark">Dark</option></select>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-head"><h2 data-i18n="opt_connect_title">Connect on LinkedIn</h2><span id="connect-perm" class="small muted"></span></div>
+    <p class="muted small" data-i18n="opt_connect_intro"></p>
+    <label><span data-i18n="opt_connect_note">Invitation note template</span><textarea id="connectNote" rows="3" maxlength="600" data-i18n-placeholder="opt_connect_note_placeholder" style="width:100%;font:inherit;padding:7px 9px;border:1px solid var(--border);border-radius:7px;background:var(--surface);color:var(--text);margin-top:4px;resize:vertical"></textarea></label>
+    <div class="row wrap">
+      <label class="check"><input type="checkbox" id="connectSignature"> <span data-i18n="opt_connect_signature"></span></label>
+      <span id="connect-chars" class="small muted"></span>
+      <button id="connect-revoke" class="ghost tiny" data-i18n="opt_connect_revoke" hidden>Revoke</button>
+    </div>
+    <div class="small muted" style="margin-top:8px" data-i18n="opt_connect_preview">Preview (sample name)</div>
+    <pre id="connect-preview" class="small" style="white-space:pre-wrap;font:13px/1.5 var(--font);background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin:4px 0 0"></pre>
+  </div>
+  <div class="card">
+    <div class="card-head"><h2 data-i18n="tele_title">Anonymous usage statistics</h2><button id="tele-preview" class="ghost" data-i18n="tele_preview">Preview what would be sent</button></div>
+    <p class="muted small" data-i18n="tele_intro"></p>
+    <div class="row wrap"><label class="check"><input type="checkbox" id="telemetry"> <span data-i18n="tele_switch">Send anonymous usage statistics</span></label><span id="tele-status" class="small muted"></span></div>
+    <pre id="tele-out" class="small" hidden></pre>
+  </div>
+</section>
+
+<!-- ───────────── History ───────────── -->
+<section id="tab-history" class="tab" role="tabpanel" hidden>
+  <div class="card">
+    <div class="card-head"><h2 data-i18n="single_lookup_title">Look up one address</h2></div>
+    <form id="lookup-form" class="lookup">
+      <input type="email" id="lk-email" placeholder="jane@acme.com" required>
+      <input type="text" id="lk-name" data-i18n-placeholder="name_optional">
+      <button type="submit" id="lk-go" data-i18n="lookup_go">Look up</button>
+      <label class="check"><input type="checkbox" id="lk-force"> <span data-i18n="force_lookup">Ignore cache / force lookup</span></label>
+    </form>
+    <div id="lk-result" class="result" hidden></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <div class="title-line"><h2 data-i18n="history_title">History</h2><span id="h-count" class="muted small"></span></div>
+      <div class="filters">
+        <input type="search" id="h-q" data-i18n-placeholder="search_placeholder">
+        <select id="h-status"><option value="" data-i18n="all_statuses">All statuses</option><option value="found" data-i18n="status_found">Found</option><option value="uncertain" data-i18n="status_uncertain">Uncertain</option><option value="not_found" data-i18n="status_not_found">Not found</option><option value="skipped" data-i18n="status_skipped">Skipped</option></select>
+        <button id="h-csv" class="ghost" data-i18n="export_csv">Export CSV</button>
+      </div>
+    </div>
+    <table class="people"><tbody id="h-rows"></tbody></table>
+    <button id="h-more" class="link more" hidden data-i18n="load_more">Load more</button>
+  </div>
+</section>
+
+<!-- ───────────── Statistics ───────────── -->
+<section id="tab-stats" class="tab" role="tabpanel" hidden>
+  <div class="stats-grid" id="stat-cards"></div>
+  <div class="card"><div class="card-head"><h2 data-i18n="last_30_days">Last 30 days</h2><span class="muted small" id="chart-legend"></span></div><div id="chart" class="chart" role="img" data-i18n-aria="chart_aria"></div></div>
+  <div class="card"><div class="card-head"><h2 data-i18n="by_provider">By provider</h2></div><div class="tablewrap"><table><thead><tr><th data-i18n="col_provider">Provider</th><th class="num" data-i18n="col_calls">Calls</th><th class="num" data-i18n="col_hits">Hits</th><th class="num" data-i18n="col_hit_rate">Hit rate</th><th class="num" data-i18n="col_errors">Errors</th><th class="num" data-i18n="col_spend">Spend</th><th class="num" data-i18n="col_avg_ms">Avg. time</th></tr></thead><tbody id="prov-rows"></tbody></table></div></div>
+</section>
+
+<!-- ───────────── Data ───────────── -->
+<section id="tab-data" class="tab" role="tabpanel" hidden>
+  <div class="card">
+    <div class="card-head"><h2 data-i18n="export_import_title">Export / import</h2></div>
+    <p class="muted small" data-i18n="data_intro"></p>
+    <div class="row wrap">
+      <button id="d-export" data-i18n="export_json">Export JSON</button>
+      <label class="ghost btn"><span data-i18n="import_json_merge">Import JSON (merge)</span><input type="file" id="d-import" accept="application/json" hidden></label>
+      <label class="ghost btn"><span data-i18n="import_json_replace">Import JSON (replace all)</span><input type="file" id="d-import-replace" accept="application/json" hidden></label>
+    </div>
+    <p id="d-out" class="small"></p>
+  </div>
+  <div class="card">
+    <div class="card-head"><h2 data-i18n="cleanup_title">Clean up</h2></div>
+    <div class="row wrap">
+      <button id="d-prune" class="ghost" data-i18n="prune_btn">Remove expired cache entries</button>
+      <button id="d-clear" class="danger" data-i18n="clear_btn">Clear all cache and history</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-head"><h2 data-i18n="about_title">About</h2></div>
+    <p class="small"><span data-i18n="ext_name">SenderFinder</span> <span id="version"></span> · <span data-i18n="about_text"></span></p>
+    <p class="small muted"><span data-i18n="about_gdpr"></span> <a href="https://senderfinder.com/privacy" target="_blank" rel="noopener" data-i18n="about_privacy_link">Privacy policy and GDPR notes ↗</a></p>
+  </div>
+</section>
+</main>
+<script src="options.js" type="module"></script>
+</body>
+</html>

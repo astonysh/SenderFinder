@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Jane Doe | LinkedIn</title>
+<style>body{font:14px Arial;margin:0;background:#f3f2ef}main{max-width:800px;margin:20px auto;background:#fff;padding:20px;border-radius:8px}button{font:inherit;padding:6px 14px;border-radius:16px;border:1px solid #0a66c2;background:#0a66c2;color:#fff;margin-right:8px}
+.artdeco-modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.5)}.artdeco-modal>div{background:#fff;padding:20px;border-radius:8px;min-width:400px}textarea{width:100%;height:80px}</style></head>
+<body><main>
+<section class="pv-top-card" data-member-id="1"><h1>Jane Doe</h1><div>Head of Partnerships at Acme · Berlin, Germany</div>
+<div><button id="msg">Message</button><button id="connect" aria-label="Invite Jane Doe to connect"><span>Connect</span></button><button aria-label="More actions">More</button></div></section>
+<section><h2>About</h2><p>Fictional profile for the extension's end-to-end test.</p></section>
+</main>
+<script>
+// Handlers attach late, like a hydrating SPA. The invitation sheet is rendered inside an open shadow root with the
+// note box directly in it (LinkedIn's newer flow); the old "Add a note" button flow is covered by the unit-level regexes.
+setTimeout(() => document.getElementById('connect').addEventListener('click', () => {
+  const host = document.createElement('div'); host.id = 'sheet'; document.body.append(host);
+  const root = host.attachShadow({ mode: 'open' });
+  root.innerHTML = '<style>.artdeco-modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.5)}.artdeco-modal>div{background:#fff;padding:20px;border-radius:8px;min-width:400px}textarea{width:100%;height:80px}</style>'
+    + '<div class="artdeco-modal" role="dialog" aria-modal="true"><div><h2>Add a note to your invitation</h2><textarea id="custom-message" name="message" maxlength="300" placeholder="Ex: We know each other from…"></textarea><div>0/300</div><button id="send">Send</button></div></div>';
+  const ta = root.querySelector('textarea'); ta.addEventListener('input', () => { document.title = 'typed:' + ta.value.length; });
+  root.querySelector('#send').addEventListener('click', () => { document.title = 'SENT'; });
+}), 1500);
+</script></body></html>

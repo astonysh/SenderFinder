@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="connect_title">Connect on LinkedIn</title>
+<link rel="icon" href="icons/icon48.png">
+<link rel="stylesheet" href="options.css">
+<style>
+  main { max-width: 640px; } .note { white-space: pre-wrap; font: 13px/1.5 var(--font); background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 12px; margin-top: 6px; }
+  ol { padding-left: 20px; } li { margin: 4px 0; } .actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 14px; }
+</style>
+</head>
+<body>
+<header class="top"><div class="brand"><img src="icons/icon48.png" alt="" width="28" height="28"><div><h1 data-i18n="ext_name">SenderFinder</h1><p class="muted small" data-i18n="connect_title">Connect on LinkedIn</p></div></div></header>
+<main>
+  <div class="card">
+    <h2 data-i18n="connect_heading">One-time permission for linkedin.com</h2>
+    <p class="small" data-i18n="connect_intro">To prefill the invitation, the extension needs access to linkedin.com pages that it opens itself. You only grant this once.</p>
+    <p class="small"><strong data-i18n="connect_what_title">What happens after you continue:</strong></p>
+    <ol class="small">
+      <li data-i18n="connect_step1">The person's LinkedIn profile opens in a new tab.</li>
+      <li data-i18n="connect_step2">The extension clicks "Connect" and "Add a note" and fills in the note below.</li>
+      <li data-i18n="connect_step3">You read it and press "Send" yourself. The extension never sends anything on its own and never runs on LinkedIn pages you open yourself.</li>
+    </ol>
+    <p class="small muted" data-i18n="connect_limit_hint">LinkedIn limits notes to 300 characters, and free accounts get only a few invitations with a note per month. You can edit the template in the extension's settings.</p>
+    <div><span class="muted small" data-i18n="connect_note_preview">Note to prefill</span><div class="note" id="note"></div></div>
+    <div class="actions">
+      <button id="grant" data-i18n="connect_grant_btn">Allow linkedin.com and continue</button>
+      <button id="cancel" class="ghost" data-i18n="connect_cancel">Cancel</button>
+      <span id="status" class="small muted"></span>
+    </div>
+  </div>
+</main>
+<script src="connect.js" type="module"></script>
+</body>
+</html>

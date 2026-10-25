@@ -1,14 +1,14 @@
-'use strict';
 // Benchmark the waterfall on a CSV of real addresses (columns: email,name[,...]). Costs money within the caps.
 //   npm run bench -- data/bench/wizleads-sample-50.csv --limit 10 [--offset 0] [--force]
 // Writes data/bench/<csv-name>.results.json and prints per-step hit rates, name-match rates and spend.
-const fs = require('fs'); const path = require('path');
-const { config } = require('../server/config');
-const { createStore } = require('../server/db');
-const { createMonidClient } = require('../server/providers/monid');
-const { createTregClient } = require('../server/providers/treg');
-const { createFirecrawlClient } = require('../server/providers/firecrawl');
-const { createLookup } = require('../server/waterfall');
+// Keys come from .env (see scripts/env.js); cache and ledger live in data/cli-cache.json, shared with npm run lookup.
+import fs from 'node:fs'; import path from 'node:path';
+import { keys, config, ROOT_DIR } from './env.js';
+import { createStore, memoryBackend } from '../extension/core/store.js';
+import { createMonidClient } from '../extension/core/providers/monid.js';
+import { createTregClient } from '../extension/core/providers/treg.js';
+import { createFirecrawlClient } from '../extension/core/providers/firecrawl.js';
+import { createLookup } from '../extension/core/waterfall.js';
 
 const argv = process.argv.slice(2); const file = argv.find(a => !a.startsWith('--'));
 const opt = k => { const i = argv.indexOf('--' + k); return i >= 0 ? argv[i + 1] : null; };
@@ -18,8 +18,11 @@ const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/).filter(Boolean);
 const header = lines[0].split(',').map(s => s.trim().toLowerCase());
 const rows = lines.slice(1).map(l => { const c = l.split(','); return Object.fromEntries(header.map((h, i) => [h, (c[i] || '').trim()])); }).filter(r => r.email).slice(offset, offset + limit);
 
-const store = createStore({ file: config.dbPath, timeZone: config.timezone });
-const svc = createLookup({ store, config, monid: createMonidClient({ apiKey: config.keys.monid }), treg: createTregClient({ token: config.keys.treg }), firecrawl: createFirecrawlClient({ apiKey: config.keys.firecrawl }) });
+const cacheFile = path.join(ROOT_DIR, 'data', 'cli-cache.json');
+const store = createStore({ backend: memoryBackend() });
+if (fs.existsSync(cacheFile)) await store.importAll(JSON.parse(fs.readFileSync(cacheFile, 'utf8')));
+const saveCache = async () => { fs.mkdirSync(path.dirname(cacheFile), { recursive: true }); fs.writeFileSync(cacheFile, JSON.stringify(await store.exportAll())); };
+const svc = createLookup({ store, config, monid: createMonidClient({ apiKey: keys.monid }), treg: createTregClient({ token: keys.treg }), firecrawl: createFirecrawlClient({ apiKey: keys.firecrawl }) });
 (async () => {
   const results = []; const t0 = Date.now();
   for (const [i, r] of rows.entries()) {
@@ -40,5 +43,5 @@ const svc = createLookup({ store, config, monid: createMonidClient({ apiKey: con
   const out = path.join(path.dirname(file), path.basename(file, '.csv') + '.results.json');
   const prev = fs.existsSync(out) ? JSON.parse(fs.readFileSync(out, 'utf8')) : []; const seen = new Set(results.map(r => r.email));
   fs.writeFileSync(out, JSON.stringify(prev.filter(r => !seen.has(r.email)).concat(results), null, 2)); console.log('results:', out);
-  store.close();
+  await saveCache();
 })().catch(e => { console.error(e); process.exit(1); });

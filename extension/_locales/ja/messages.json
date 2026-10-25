@@ -1,0 +1,824 @@
+{
+ "ext_name": {
+  "message": "SenderFinder"
+ },
+ "ext_description": {
+  "message": "Gmail / Outlook のウェブ版で送信者の LinkedIn プロフィールを表示。オープンソース、自分のプロバイダー key を使用、データはブラウザ内に保存。"
+ },
+ "lookup_btn": {
+  "message": "LinkedIn で探す"
+ },
+ "looking_up": {
+  "message": "$1 を検索中 …"
+ },
+ "retry": {
+  "message": "再試行"
+ },
+ "open_settings": {
+  "message": "設定を開く"
+ },
+ "name_match": {
+  "message": "名前が一致"
+ },
+ "name_mismatch": {
+  "message": "名前が異なります。ご確認ください"
+ },
+ "from_signature": {
+  "message": "メール署名から"
+ },
+ "by_email": {
+  "message": "メールアドレスで一致"
+ },
+ "cached": {
+  "message": "キャッシュ"
+ },
+ "header_name_vs_profile": {
+  "message": "メールの名前：$1 · プロフィールの名前：$2"
+ },
+ "unknown": {
+  "message": "不明"
+ },
+ "skip_free_mail": {
+  "message": "個人用メールのドメインのため、既定ではスキップ"
+ },
+ "skip_role": {
+  "message": "共有 / 役割アドレスのため、既定ではスキップ"
+ },
+ "skipped_generic": {
+  "message": "スキップ：$1"
+ },
+ "lookup_anyway": {
+  "message": "それでも検索"
+ },
+ "not_found_for": {
+  "message": "$1 の LinkedIn プロフィールは見つかりませんでした"
+ },
+ "lookup_again": {
+  "message": "もう一度検索"
+ },
+ "source": {
+  "message": "ソース：$1"
+ },
+ "source_signature": {
+  "message": "メール署名"
+ },
+ "cost": {
+  "message": "費用：$1"
+ },
+ "lookup_short": {
+  "message": "検索"
+ },
+ "personal_mail": {
+  "message": "個人用メール"
+ },
+ "role_mail": {
+  "message": "役割アドレス"
+ },
+ "not_found_short": {
+  "message": "見つかりません"
+ },
+ "err_generic": {
+  "message": "エラー"
+ },
+ "err_no_keys_short": {
+  "message": "key 未設定"
+ },
+ "err_auto_limit_short": {
+  "message": "自動検索の上限に達しました"
+ },
+ "err_unauthorized_short": {
+  "message": "key が無効"
+ },
+ "err_invalid_email": {
+  "message": "メールアドレスを認識できません"
+ },
+ "err_no_keys": {
+  "message": "プロバイダーの key がまだ設定されていません。1 つで十分です：treg（最安）または Monid（カバー率最高）。拡張機能の設定を開いてください。"
+ },
+ "err_auto_limit": {
+  "message": "自動検索が本日の上限 $1 回に達しました。クリックすると手動で検索できます。"
+ },
+ "popup_cannot_read": {
+  "message": "設定を読み込めません"
+ },
+ "popup_no_keys": {
+  "message": "プロバイダーの key がまだ設定されていません。1 つで十分です：treg（最安）または Monid（カバー率最高）。設定を開いてください。"
+ },
+ "popup_configured": {
+  "message": "設定済み：$1 · ステップ：$2"
+ },
+ "popup_today_lookups": {
+  "message": "今日の検索"
+ },
+ "popup_today_spent": {
+  "message": "今日の費用"
+ },
+ "popup_today_auto": {
+  "message": "今日の自動検索"
+ },
+ "popup_cache": {
+  "message": "キャッシュ件数"
+ },
+ "popup_found_n": {
+  "message": "$1（ヒット $2）"
+ },
+ "opt_auto_lookup": {
+  "message": "メールを開いたときに送信者を自動で検索する"
+ },
+ "opt_show_cost": {
+  "message": "費用を表示する"
+ },
+ "popup_open_settings": {
+  "message": "設定と履歴を開く"
+ },
+ "popup_hint": {
+  "message": "key、キャッシュ、履歴はこのブラウザ内にのみ保存されます。"
+ },
+ "options_title": {
+  "message": "SenderFinder · 設定"
+ },
+ "tagline": {
+  "message": "オープンソース · 自分の key · データはこの端末内のみ"
+ },
+ "tab_settings": {
+  "message": "設定"
+ },
+ "tab_history": {
+  "message": "履歴"
+ },
+ "tab_stats": {
+  "message": "統計"
+ },
+ "tab_data": {
+  "message": "データ"
+ },
+ "keys_title": {
+  "message": "プロバイダーの key"
+ },
+ "keys_probe": {
+  "message": "key をテスト（無料）"
+ },
+ "keys_intro": {
+  "message": "key は 1 つで十分です。treg は最安（メールアドレスのみ、仕事用アドレスの約半数がヒット）。Monid はカバー率が最も高い（Apollo が名前 + 会社ドメインで照合、やや高め）。Firecrawl は任意の最終フォールバックです。key はこのブラウザ内に保存され、それぞれのプロバイダーにのみ送信されます。"
+ },
+ "key_monid": {
+  "message": "Monid API key"
+ },
+ "key_treg": {
+  "message": "treg token"
+ },
+ "key_firecrawl": {
+  "message": "Firecrawl API key"
+ },
+ "get_key": {
+  "message": "取得 ↗"
+ },
+ "optional_fallback": {
+  "message": "任意のフォールバック"
+ },
+ "firecrawl_usd_per_credit": {
+  "message": "Firecrawl の credit 単価（USD）"
+ },
+ "per_your_plan": {
+  "message": "ご利用のプランに応じて"
+ },
+ "show_keys": {
+  "message": "key を表示"
+ },
+ "probe_running": {
+  "message": "確認中（無料）…"
+ },
+ "probe_failed": {
+  "message": "確認に失敗しました"
+ },
+ "probe_not_set": {
+  "message": "$1：未設定"
+ },
+ "probe_valid": {
+  "message": "$1：有効"
+ },
+ "probe_invalid": {
+  "message": "$1：無効"
+ },
+ "hit_rate": {
+  "message": "ヒット率"
+ },
+ "steps_title": {
+  "message": "検索ステップ"
+ },
+ "steps_intro": {
+  "message": "上から順に試し、最初にヒットした時点で停止します。価格は、そのステップで許容するカタログ価格の上限です。"
+ },
+ "col_step": {
+  "message": "ステップ"
+ },
+ "col_provider": {
+  "message": "プロバイダー"
+ },
+ "col_price_cap": {
+  "message": "価格上限"
+ },
+ "col_status": {
+  "message": "状態"
+ },
+ "local": {
+  "message": "ローカル"
+ },
+ "free": {
+  "message": "無料"
+ },
+ "always_on": {
+  "message": "常に利用可能"
+ },
+ "configured": {
+  "message": "設定済み"
+ },
+ "missing_key": {
+  "message": "key なし"
+ },
+ "move_up": {
+  "message": "上へ"
+ },
+ "move_down": {
+  "message": "下へ"
+ },
+ "step_signature": {
+  "message": "メール署名内の LinkedIn リンク"
+ },
+ "step_blitzapi": {
+  "message": "BlitzAPI メール逆引き（treg）"
+ },
+ "step_quickenrich": {
+  "message": "QuickEnrich メール逆引き（treg）"
+ },
+ "step_hunter": {
+  "message": "Hunter.io メール逆引き（Monid）"
+ },
+ "step_village": {
+  "message": "Village メール逆引き（treg）"
+ },
+ "step_apollo": {
+  "message": "Apollo 照合（Monid）"
+ },
+ "step_datalegion": {
+  "message": "Data Legion メール逆引き（Firecrawl）"
+ },
+ "step_contactout": {
+  "message": "ContactOut 照合（Monid）"
+ },
+ "budget_title": {
+  "message": "予算と動作"
+ },
+ "lookup_max_usd": {
+  "message": "1 回あたりの上限（USD）"
+ },
+ "daily_cap_usd": {
+  "message": "1 日の上限（USD）"
+ },
+ "daily_cap_hint": {
+  "message": "0 = 有料呼び出しを一切行わない"
+ },
+ "auto_daily_limit": {
+  "message": "1 日の自動検索回数"
+ },
+ "auto_daily_hint": {
+  "message": "超過後は手動のみ"
+ },
+ "cache_max_age": {
+  "message": "キャッシュの保持期間（日）"
+ },
+ "opt_skip_free_mail": {
+  "message": "個人用メールのドメインをスキップする（gmail.com、qq.com …）"
+ },
+ "single_lookup_title": {
+  "message": "アドレスを 1 件検索"
+ },
+ "name_optional": {
+  "message": "表示名（任意）"
+ },
+ "force_lookup": {
+  "message": "キャッシュを無視 / 強制検索"
+ },
+ "lookup_go": {
+  "message": "検索"
+ },
+ "looking_up_short": {
+  "message": "検索中…"
+ },
+ "history_title": {
+  "message": "履歴"
+ },
+ "search_placeholder": {
+  "message": "メール / 名前 / 会社で検索"
+ },
+ "all_statuses": {
+  "message": "すべての状態"
+ },
+ "status_found": {
+  "message": "見つかった"
+ },
+ "status_uncertain": {
+  "message": "不確か"
+ },
+ "status_not_found": {
+  "message": "見つからない"
+ },
+ "status_skipped": {
+  "message": "スキップ"
+ },
+ "export_csv": {
+  "message": "CSV をエクスポート"
+ },
+ "col_email": {
+  "message": "メール"
+ },
+ "col_name": {
+  "message": "表示名"
+ },
+ "col_linkedin": {
+  "message": "LinkedIn"
+ },
+ "col_source": {
+  "message": "ソース"
+ },
+ "col_cost": {
+  "message": "費用"
+ },
+ "col_time": {
+  "message": "時刻"
+ },
+ "col_result": {
+  "message": "結果"
+ },
+ "col_duration": {
+  "message": "所要時間"
+ },
+ "load_more": {
+  "message": "さらに読み込む"
+ },
+ "history_count": {
+  "message": "$1 件中 $2 件を表示"
+ },
+ "history_empty": {
+  "message": "まだ記録がありません"
+ },
+ "relookup": {
+  "message": "再検索"
+ },
+ "relookup_title": {
+  "message": "キャッシュを無視して再検索します（費用がかかる場合があります）"
+ },
+ "delete": {
+  "message": "削除"
+ },
+ "reason_daily_budget": {
+  "message": "本日の予算を使い切りました"
+ },
+ "reason_invalid_email": {
+  "message": "無効なメールアドレス"
+ },
+ "match_source": {
+  "message": "ソース $1 · 名前 $2"
+ },
+ "name_matched": {
+  "message": "一致"
+ },
+ "name_differs": {
+  "message": "不一致（$1 vs $2）"
+ },
+ "name_not_compared": {
+  "message": "未比較"
+ },
+ "cost_label": {
+  "message": "費用 $1"
+ },
+ "stats_today": {
+  "message": "今日"
+ },
+ "stats_month": {
+  "message": "今月"
+ },
+ "stats_all": {
+  "message": "累計"
+ },
+ "stats_budget": {
+  "message": "今日の予算"
+ },
+ "n_lookups": {
+  "message": "検索 $1 件"
+ },
+ "found_n_usd": {
+  "message": "ヒット $1 · $2"
+ },
+ "found_n_usd_cache": {
+  "message": "ヒット $1 · $2 · キャッシュ $3"
+ },
+ "auto_n_cap": {
+  "message": "自動検索 $1 / $2 · 1 回あたりの上限 $3"
+ },
+ "last_30_days": {
+  "message": "過去 30 日間"
+ },
+ "chart_aria": {
+  "message": "過去 30 日間の日別の検索数と費用"
+ },
+ "chart_legend": {
+  "message": "棒の高さ = その日の検索数（最大 $1）"
+ },
+ "chart_tip": {
+  "message": "$1：検索 $2 件、ヒット $3、$4"
+ },
+ "by_provider": {
+  "message": "プロバイダー別"
+ },
+ "col_calls": {
+  "message": "呼び出し"
+ },
+ "col_hits": {
+  "message": "ヒット"
+ },
+ "col_hit_rate": {
+  "message": "ヒット率"
+ },
+ "col_errors": {
+  "message": "エラー"
+ },
+ "col_spend": {
+  "message": "費用"
+ },
+ "col_avg_ms": {
+  "message": "平均時間"
+ },
+ "no_paid_calls": {
+  "message": "有料呼び出しはまだありません"
+ },
+ "export_import_title": {
+  "message": "エクスポート / インポート"
+ },
+ "data_intro": {
+  "message": "キャッシュ、履歴、支出の記録はこのブラウザの IndexedDB に保存されます。パソコンを変える前やブラウザのデータを消去する前にエクスポートしてください。インポート時は新しいレコードが優先されます。エクスポートに key は含まれません。"
+ },
+ "export_json": {
+  "message": "JSON をエクスポート"
+ },
+ "import_json_merge": {
+  "message": "JSON をインポート（統合）"
+ },
+ "import_json_replace": {
+  "message": "JSON をインポート（すべて置換）"
+ },
+ "import_confirm_replace": {
+  "message": "この端末のキャッシュ、履歴、支出の記録を消去してからファイルをインポートします。続行しますか？"
+ },
+ "import_bad_json": {
+  "message": "ファイルが有効な JSON ではありません"
+ },
+ "import_done": {
+  "message": "$1 件のレコードをインポートしました"
+ },
+ "import_failed": {
+  "message": "インポートに失敗しました：$1"
+ },
+ "cleanup_title": {
+  "message": "クリーンアップ"
+ },
+ "prune_btn": {
+  "message": "期限切れのキャッシュを削除"
+ },
+ "prune_done": {
+  "message": "期限切れの $1 件を削除しました"
+ },
+ "prune_failed": {
+  "message": "クリーンアップに失敗しました"
+ },
+ "clear_btn": {
+  "message": "キャッシュと履歴をすべて消去"
+ },
+ "clear_confirm": {
+  "message": "キャッシュ、履歴、支出の記録をすべて消去しますか？この操作は元に戻せません。以前に検索したアドレスにも再び費用がかかります。"
+ },
+ "cleared": {
+  "message": "消去しました"
+ },
+ "failed": {
+  "message": "失敗"
+ },
+ "about_title": {
+  "message": "SenderFinder について"
+ },
+ "about_text": {
+  "message": "オープンソース（AGPL-3.0）。サーバーはありません。検索はブラウザから key を設定したプロバイダーへ直接送られ、結果はこの端末にのみ保存されます。"
+ },
+ "about_gdpr": {
+  "message": "検索の管理者はあなたです。送信されるのはメールアドレス・表示名・会社ドメインのみで、結果はこの端末にのみ保存され（既定 90 日）、「履歴」と「データ」タブから削除できます。"
+ },
+ "about_privacy_link": {
+  "message": "プライバシーポリシーと GDPR に関する注記 ↗"
+ },
+ "saved": {
+  "message": "保存しました"
+ },
+ "save_failed": {
+  "message": "保存に失敗しました"
+ },
+ "tele_title": {
+  "message": "匿名の利用統計"
+ },
+ "tele_switch": {
+  "message": "匿名の利用統計を送信する"
+ },
+ "tele_intro": {
+  "message": "既定でオンです。不要な場合はここでオフにしてください。オンの間、拡張機能は 1 日 1 回、前日の概要を 1 件送信します：検索の回数と結果、呼び出したステップとそのヒット回数、使用したメールクライアント、四捨五入した合計費用。メールアドレス、名前、ドメイン、LinkedIn の URL、プロフィール項目、key、メール本文は一切含まれません。オフにするとインストール ID と未送信のデータは削除されます。"
+ },
+ "tele_preview": {
+  "message": "送信内容をプレビュー"
+ },
+ "tele_on_toast": {
+  "message": "匿名統計をオンにしました"
+ },
+ "tele_off_toast": {
+  "message": "オフにしました。インストール ID と未送信のデータを削除しました"
+ },
+ "tele_status": {
+  "message": "$1 · 送信先 $2"
+ },
+ "on": {
+  "message": "オン"
+ },
+ "off": {
+  "message": "オフ"
+ },
+ "tele_pending": {
+  "message": "$1 日分が未送信"
+ },
+ "connect_btn": {
+  "message": "つながる"
+ },
+ "connect_opening": {
+  "message": "LinkedIn を開きました"
+ },
+ "connect_title_attr": {
+  "message": "この人の LinkedIn プロフィールを開きます。LinkedIn で「つながりを申請」と「メモを追加」をクリックすると招待メモが自動入力されます。送信はご自身で行います。"
+ },
+ "local_time": {
+  "message": "現地時間 $1"
+ },
+ "local_time_title": {
+  "message": "プロフィールの所在地から推定したタイムゾーン：$1"
+ },
+ "connect_note_default": {
+  "message": "{first}さん、先日はメールでやり取りさせていただきありがとうございました。こちらでもぜひつながらせてください。"
+ },
+ "connect_signature": {
+  "message": "— SenderFinder 経由で送信"
+ },
+ "li_filled": {
+  "message": "メモを入力しました。内容を確認のうえ、ご自身で「送信」を押してください。拡張機能が送信することはありません。"
+ },
+ "li_pending": {
+  "message": "この人への招待はすでに送信済みで、承認待ちです。"
+ },
+ "li_login": {
+  "message": "LinkedIn にサインインしてから、メールのカードで「つながる」をもう一度クリックしてください。"
+ },
+ "li_note_limit": {
+  "message": "LinkedIn によると、今月のメモ付き招待は上限に達しています。メモなしであれば送信できます。"
+ },
+ "li_close": {
+  "message": "閉じる"
+ },
+ "connect_title": {
+  "message": "LinkedIn でつながる"
+ },
+ "connect_heading": {
+  "message": "linkedin.com への 1 回限りの許可"
+ },
+ "connect_intro": {
+  "message": "招待メモを自動入力するには、拡張機能が自ら開いた linkedin.com のページへのアクセス権が必要です。許可は 1 回だけです。"
+ },
+ "connect_what_title": {
+  "message": "続行すると次のように進みます："
+ },
+ "connect_step1": {
+  "message": "この人の LinkedIn プロフィールが新しいタブで開きます。"
+ },
+ "connect_step2": {
+  "message": "LinkedIn で「つながりを申請」と「メモを追加」をクリックします。メモ欄が表示された時点で、拡張機能が下のメモを入力します。"
+ },
+ "connect_step3": {
+  "message": "内容を確認し、ご自身で「送信」を押します。拡張機能が「つながりを申請」や「送信」を勝手にクリックすることはなく、ご自身で開いた LinkedIn ページ上で動作することもありません。"
+ },
+ "connect_limit_hint": {
+  "message": "LinkedIn ではメモは 300 文字までで、無料アカウントは月に数件しかメモ付きの招待を送れません。テンプレートは拡張機能の設定で編集できます。"
+ },
+ "connect_note_preview": {
+  "message": "自動入力されるメモ"
+ },
+ "connect_grant_btn": {
+  "message": "linkedin.com を許可して続行"
+ },
+ "connect_cancel": {
+  "message": "キャンセル"
+ },
+ "connect_nothing_pending": {
+  "message": "保留中の操作はありません。メールに戻って「つながる」をもう一度クリックしてください。"
+ },
+ "connect_denied": {
+  "message": "許可されなかったため、メモを自動入力できません。上のプレビューからコピーして LinkedIn に貼り付けることはできます。"
+ },
+ "connect_granted_opening": {
+  "message": "許可されました。LinkedIn を開いています…"
+ },
+ "opt_connect_title": {
+  "message": "LinkedIn でつながる"
+ },
+ "opt_connect_intro": {
+  "message": "パネルの「つながる」ボタンはこの人のプロフィールを開きます。LinkedIn で「つながりを申請」と「メモを追加」をクリックすると下の招待メモが自動入力され、送信はご自身で行います。プレースホルダー：{first} 名、{name} 氏名、{company} 会社名。"
+ },
+ "opt_connect_note": {
+  "message": "招待メモのテンプレート"
+ },
+ "opt_connect_note_placeholder": {
+  "message": "空欄なら既定のテンプレートを使用"
+ },
+ "opt_connect_signature": {
+  "message": "メモの末尾に「SenderFinder 経由で送信」の行を追加する"
+ },
+ "opt_connect_preview": {
+  "message": "プレビュー（サンプル名）"
+ },
+ "opt_connect_chars": {
+  "message": "$1 / 300 文字"
+ },
+ "opt_connect_perm_granted": {
+  "message": "linkedin.com へのアクセスを許可済み"
+ },
+ "opt_connect_perm_none": {
+  "message": "linkedin.com は未許可（初めて「つながる」をクリックしたときに確認します）"
+ },
+ "opt_connect_revoke": {
+  "message": "取り消す"
+ },
+ "panel_empty_title": {
+  "message": "メールが開かれていません"
+ },
+ "panel_empty_hint": {
+  "message": "Gmail または Outlook のウェブ版でメールを開いてください。送信者の LinkedIn プロフィールがここに表示されます。"
+ },
+ "view_profile": {
+  "message": "LinkedIn プロフィールを見る ↗"
+ },
+ "others_in_thread": {
+  "message": "このスレッドの他の人（$1）"
+ },
+ "current_roles": {
+  "message": "現在の役職"
+ },
+ "settings_history": {
+  "message": "設定と履歴"
+ },
+ "chip_title": {
+  "message": "サイドパネルに LinkedIn プロフィールを表示"
+ },
+ "chip_open_fallback": {
+  "message": "ツールバーの拡張機能アイコンをクリックしてサイドパネルを開いてください"
+ },
+ "hint_auto_off": {
+  "message": "自動検索はオフです"
+ },
+ "hint_noisy": {
+  "message": "通知系のアドレスのため自動検索しません"
+ },
+ "hint_me": {
+  "message": "これはあなたです"
+ },
+ "hint_manual": {
+  "message": "まだ検索していません"
+ },
+ "today_line": {
+  "message": "今日：検索 $1 件 · $2 / $3 · 自動 $4 / $5"
+ },
+ "show_details": {
+  "message": "詳細"
+ },
+ "history_count_all": {
+  "message": "$1 件"
+ },
+ "history_count_one": {
+  "message": "1 件"
+ },
+ "via_step": {
+  "message": "$1 経由"
+ },
+ "trace_title": {
+  "message": "試したステップ"
+ },
+ "li_profile": {
+  "message": "プロフィール"
+ },
+ "theme_toggle": {
+  "message": "ライト / ダークを切り替え"
+ },
+ "theme_label": {
+  "message": "外観"
+ },
+ "theme_system": {
+  "message": "システムに合わせる"
+ },
+ "theme_light": {
+  "message": "ライト"
+ },
+ "theme_dark": {
+  "message": "ダーク"
+ },
+ "today_short": {
+  "message": "今日 検索 $1 件 · $2 / $3"
+ },
+ "lookup_again_short": {
+  "message": "更新"
+ },
+ "li_copy_debug": {
+  "message": "バグ報告用の詳細をコピー"
+ },
+ "li_copied": {
+  "message": "コピーしました"
+ },
+ "li_instructions": {
+  "message": "「つながりを申請」、次に「メモを追加」をクリックすると、招待メモが自動入力されます。コピーしてご自身で貼り付けることもできます。"
+ },
+ "li_add_note": {
+  "message": "招待ダイアログが開いています。「メモを追加」をクリックするとメモが入力されます。"
+ },
+ "li_copy_note": {
+  "message": "メモをコピー"
+ },
+ "rel_connected": {
+  "message": "1次"
+ },
+ "rel_connected_long": {
+  "message": "1次のつながり"
+ },
+ "rel_pending": {
+  "message": "招待は承認待ち"
+ },
+ "rel_degree2": {
+  "message": "2次"
+ },
+ "rel_degree3": {
+  "message": "3次"
+ },
+ "rel_out": {
+  "message": "ネットワーク外"
+ },
+ "rel_self": {
+  "message": "あなた"
+ },
+ "li_grant": {
+  "message": "写真と LinkedIn でのつながりを表示"
+ },
+ "li_grant_title": {
+  "message": "このブラウザのご自身の LinkedIn ログインで、各プロフィールを 1 回だけ読み取ります。何も投稿しません。"
+ },
+ "li_signed_out": {
+  "message": "つながりを表示するには、このブラウザで LinkedIn にサインインしてください"
+ },
+ "li_rel_denied": {
+  "message": "許可されていません"
+ },
+ "panel_slogan": {
+  "message": "メールの送信者を LinkedIn で探す"
+ },
+ "li_link_broken": {
+  "message": "この LinkedIn リンクは開けません。データプロバイダーから誤ったアドレスが返されました。"
+ },
+ "li_link_broken_short": {
+  "message": "LinkedIn リンクが無効"
+ },
+ "li_search_person": {
+  "message": "この人を LinkedIn で検索"
+ },
+ "li_relookup_hint": {
+  "message": "プロバイダーに再度問い合わせます（有料の検索）"
+ },
+ "company_search_title": {
+  "message": "この会社を LinkedIn で検索"
+ },
+ "company_li_title": {
+  "message": "LinkedIn の会社ページ"
+ },
+ "keys_need_one": {
+  "message": "まだ何も設定されていません。少なくとも 1 つの key を追加してください：treg（最安）または Monid（カバー率最高）。Firecrawl のみの利用はおすすめしません。"
+ },
+ "vendor_treg_tagline": {
+  "message": "最安。メールアドレスのみの逆引き、1 ヒットあたり $$0.0005 から。"
+ },
+ "vendor_monid_tagline": {
+  "message": "カバー率最高。Hunter はメールアドレスで、Apollo はメールアドレス + 名前 + 会社ドメインで照合（約 $$0.03）。"
+ },
+ "vendor_firecrawl_tagline": {
+  "message": "任意の最終フォールバック（Data Legion）。credit 単位で課金。"
+ },
+ "step_off": {
+  "message": "オフ"
+ }
+}

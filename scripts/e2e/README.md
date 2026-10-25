@@ -1,12 +1,12 @@
-# 浏览器端到端测试（合成数据）
+# 浏览器端到端测试（合成数据，不花钱）
 
-把插件加载进无头 Chromium，用一张假的 Gmail 页面（`fake-gmail.html`，拦截 `mail.google.com`）和一个没有配置任何供应商 key 的服务端跑一遍：卡片注入、签名命中、个人邮箱跳过与"仍然查询"、设置弹窗测试连接、网页版五个页面截图。不发生任何付费调用。
+把插件加载进无头 Chromium，用一张假的 Gmail 页面（`fake-gmail.html`，拦截 `mail.google.com`）在**没有配置任何 key** 的状态下跑一遍：
+邮件页面只插入发件人旁的放大镜标记、侧边栏显示最新一封的发件人（个人邮箱→跳过）和线程里的其他人、点标记切换侧边栏的人、签名命中免费返回、无 key 时的提示、缓存复用、没有邮件时的空状态、设置页四个标签。
+此外检查：侧边栏里的首字母头像和「加好友」按钮、未授权时打开的 linkedin.com 授权页（含备注预览）、LinkedIn 页面助手在一张假的 LinkedIn 主页（`fake-linkedin.html`，拦截 `www.linkedin.com`）上完成「建立联系 → 添加备注 → 填好备注」且**不点发送**、设置页的邀请备注模板预览。
+三家供应商的域名被拦截，一旦有请求发出测试直接失败。
 
 ```bash
-# 1. 起一个测试服务端（独立端口、独立数据库、固定令牌）
-PORT=3391 APP_TOKEN=smoke-token-0123456789abcdef DB_PATH=./data/e2e.db npm start &
-# 2. 跑测试（需要本机有 playwright 包；没有的话 npm i -D playwright 或用 PLAYWRIGHT_MODULE 指向一个已安装的路径）
-PLAYWRIGHT_MODULE=/path/to/node_modules/playwright node scripts/e2e/run.js
+PLAYWRIGHT_MODULE=/path/to/node_modules/playwright npm run e2e
 ```
 
 截图输出到 `output/playwright/`。

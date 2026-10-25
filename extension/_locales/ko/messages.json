@@ -1,0 +1,824 @@
+{
+ "ext_name": {
+  "message": "SenderFinder"
+ },
+ "ext_description": {
+  "message": "Gmail / Outlook 웹에서 발신자의 LinkedIn 프로필을 보여 줍니다. 오픈 소스, 내 제공업체 키 사용, 데이터는 브라우저에만 저장됩니다."
+ },
+ "lookup_btn": {
+  "message": "LinkedIn에서 찾기"
+ },
+ "looking_up": {
+  "message": "$1 조회 중 …"
+ },
+ "retry": {
+  "message": "다시 시도"
+ },
+ "open_settings": {
+  "message": "설정 열기"
+ },
+ "name_match": {
+  "message": "이름 일치"
+ },
+ "name_mismatch": {
+  "message": "이름이 다릅니다. 확인해 주세요"
+ },
+ "from_signature": {
+  "message": "이메일 서명에서 찾음"
+ },
+ "by_email": {
+  "message": "이메일로 매칭"
+ },
+ "cached": {
+  "message": "캐시됨"
+ },
+ "header_name_vs_profile": {
+  "message": "이메일의 이름: $1 · 프로필의 이름: $2"
+ },
+ "unknown": {
+  "message": "알 수 없음"
+ },
+ "skip_free_mail": {
+  "message": "개인 메일 도메인이므로 기본적으로 건너뜁니다"
+ },
+ "skip_role": {
+  "message": "공용 / 역할 주소이므로 기본적으로 건너뜁니다"
+ },
+ "skipped_generic": {
+  "message": "건너뜀: $1"
+ },
+ "lookup_anyway": {
+  "message": "그래도 조회"
+ },
+ "not_found_for": {
+  "message": "$1의 LinkedIn 프로필을 찾지 못했습니다"
+ },
+ "lookup_again": {
+  "message": "다시 조회"
+ },
+ "source": {
+  "message": "출처: $1"
+ },
+ "source_signature": {
+  "message": "이메일 서명"
+ },
+ "cost": {
+  "message": "비용: $1"
+ },
+ "lookup_short": {
+  "message": "조회"
+ },
+ "personal_mail": {
+  "message": "개인 메일"
+ },
+ "role_mail": {
+  "message": "역할 주소"
+ },
+ "not_found_short": {
+  "message": "찾지 못함"
+ },
+ "err_generic": {
+  "message": "오류"
+ },
+ "err_no_keys_short": {
+  "message": "키 미설정"
+ },
+ "err_auto_limit_short": {
+  "message": "자동 조회 한도 도달"
+ },
+ "err_unauthorized_short": {
+  "message": "유효하지 않은 키"
+ },
+ "err_invalid_email": {
+  "message": "인식할 수 없는 이메일 주소"
+ },
+ "err_no_keys": {
+  "message": "아직 제공업체 키가 없습니다. 하나면 충분합니다: treg(가장 저렴) 또는 Monid(가장 넓은 범위). 확장 프로그램 설정을 여세요."
+ },
+ "err_auto_limit": {
+  "message": "자동 조회가 오늘 한도인 $1회에 도달했습니다. 클릭하면 수동으로 조회합니다."
+ },
+ "popup_cannot_read": {
+  "message": "설정을 읽을 수 없습니다"
+ },
+ "popup_no_keys": {
+  "message": "아직 제공업체 키가 없습니다. 하나면 충분합니다: treg(가장 저렴) 또는 Monid(가장 넓은 범위). 설정을 여세요."
+ },
+ "popup_configured": {
+  "message": "설정됨: $1 · 단계: $2"
+ },
+ "popup_today_lookups": {
+  "message": "오늘 조회"
+ },
+ "popup_today_spent": {
+  "message": "오늘 지출"
+ },
+ "popup_today_auto": {
+  "message": "오늘 자동 조회"
+ },
+ "popup_cache": {
+  "message": "캐시 항목"
+ },
+ "popup_found_n": {
+  "message": "$1 (찾음 $2)"
+ },
+ "opt_auto_lookup": {
+  "message": "메일을 열면 발신자를 자동으로 조회"
+ },
+ "opt_show_cost": {
+  "message": "비용 표시"
+ },
+ "popup_open_settings": {
+  "message": "설정 및 기록 열기"
+ },
+ "popup_hint": {
+  "message": "키, 캐시, 기록은 이 브라우저에만 저장됩니다."
+ },
+ "options_title": {
+  "message": "SenderFinder · 설정"
+ },
+ "tagline": {
+  "message": "오픈 소스 · 내 키 사용 · 데이터는 이 기기에만"
+ },
+ "tab_settings": {
+  "message": "설정"
+ },
+ "tab_history": {
+  "message": "기록"
+ },
+ "tab_stats": {
+  "message": "통계"
+ },
+ "tab_data": {
+  "message": "데이터"
+ },
+ "keys_title": {
+  "message": "제공업체 키"
+ },
+ "keys_probe": {
+  "message": "키 테스트(무료)"
+ },
+ "keys_intro": {
+  "message": "키 하나면 충분합니다. treg가 가장 저렴하고(이메일만 사용, 업무용 주소의 약 절반을 찾음), Monid는 범위가 가장 넓으며(Apollo가 이름 + 회사 도메인으로 매칭, 더 비쌈), Firecrawl은 선택적인 마지막 대체 수단입니다. 키는 이 브라우저에만 저장되며 해당 제공업체에만 전송됩니다."
+ },
+ "key_monid": {
+  "message": "Monid API 키"
+ },
+ "key_treg": {
+  "message": "treg 토큰"
+ },
+ "key_firecrawl": {
+  "message": "Firecrawl API 키"
+ },
+ "get_key": {
+  "message": "발급받기 ↗"
+ },
+ "optional_fallback": {
+  "message": "선택적 대체"
+ },
+ "firecrawl_usd_per_credit": {
+  "message": "Firecrawl 크레딧당 가격(USD)"
+ },
+ "per_your_plan": {
+  "message": "요금제에 맞게"
+ },
+ "show_keys": {
+  "message": "키 표시"
+ },
+ "probe_running": {
+  "message": "확인 중(무료)…"
+ },
+ "probe_failed": {
+  "message": "확인 실패"
+ },
+ "probe_not_set": {
+  "message": "$1: 미설정"
+ },
+ "probe_valid": {
+  "message": "$1: 유효함"
+ },
+ "probe_invalid": {
+  "message": "$1: 유효하지 않음"
+ },
+ "hit_rate": {
+  "message": "적중률"
+ },
+ "steps_title": {
+  "message": "조회 단계"
+ },
+ "steps_intro": {
+  "message": "위에서 아래로 차례로 시도하며 처음 찾는 순간 멈춥니다. 가격은 해당 단계에서 허용하는 정가 상한입니다."
+ },
+ "col_step": {
+  "message": "단계"
+ },
+ "col_provider": {
+  "message": "제공업체"
+ },
+ "col_price_cap": {
+  "message": "가격 상한"
+ },
+ "col_status": {
+  "message": "상태"
+ },
+ "local": {
+  "message": "로컬"
+ },
+ "free": {
+  "message": "무료"
+ },
+ "always_on": {
+  "message": "항상 사용 가능"
+ },
+ "configured": {
+  "message": "설정됨"
+ },
+ "missing_key": {
+  "message": "키 없음"
+ },
+ "move_up": {
+  "message": "위로 이동"
+ },
+ "move_down": {
+  "message": "아래로 이동"
+ },
+ "step_signature": {
+  "message": "이메일 서명의 LinkedIn 링크"
+ },
+ "step_blitzapi": {
+  "message": "BlitzAPI 이메일 역조회(treg)"
+ },
+ "step_quickenrich": {
+  "message": "QuickEnrich 이메일 역조회(treg)"
+ },
+ "step_hunter": {
+  "message": "Hunter.io 이메일 역조회(Monid)"
+ },
+ "step_village": {
+  "message": "Village 이메일 역조회(treg)"
+ },
+ "step_apollo": {
+  "message": "Apollo 매칭(Monid)"
+ },
+ "step_datalegion": {
+  "message": "Data Legion 이메일 역조회(Firecrawl)"
+ },
+ "step_contactout": {
+  "message": "ContactOut 매칭(Monid)"
+ },
+ "budget_title": {
+  "message": "예산 및 동작"
+ },
+ "lookup_max_usd": {
+  "message": "조회당 상한(USD)"
+ },
+ "daily_cap_usd": {
+  "message": "일일 상한(USD)"
+ },
+ "daily_cap_hint": {
+  "message": "0 = 유료 호출 안 함"
+ },
+ "auto_daily_limit": {
+  "message": "하루 자동 조회 횟수"
+ },
+ "auto_daily_hint": {
+  "message": "초과 시 수동 조회만 가능"
+ },
+ "cache_max_age": {
+  "message": "캐시 보관 기간(일)"
+ },
+ "opt_skip_free_mail": {
+  "message": "개인 메일 도메인 건너뛰기(gmail.com, naver.com …)"
+ },
+ "single_lookup_title": {
+  "message": "주소 하나 조회"
+ },
+ "name_optional": {
+  "message": "표시 이름(선택)"
+ },
+ "force_lookup": {
+  "message": "캐시 무시 / 강제 조회"
+ },
+ "lookup_go": {
+  "message": "조회"
+ },
+ "looking_up_short": {
+  "message": "조회 중…"
+ },
+ "history_title": {
+  "message": "기록"
+ },
+ "search_placeholder": {
+  "message": "이메일 / 이름 / 회사 검색"
+ },
+ "all_statuses": {
+  "message": "모든 상태"
+ },
+ "status_found": {
+  "message": "찾음"
+ },
+ "status_uncertain": {
+  "message": "불확실"
+ },
+ "status_not_found": {
+  "message": "찾지 못함"
+ },
+ "status_skipped": {
+  "message": "건너뜀"
+ },
+ "export_csv": {
+  "message": "CSV 내보내기"
+ },
+ "col_email": {
+  "message": "이메일"
+ },
+ "col_name": {
+  "message": "표시 이름"
+ },
+ "col_linkedin": {
+  "message": "LinkedIn"
+ },
+ "col_source": {
+  "message": "출처"
+ },
+ "col_cost": {
+  "message": "비용"
+ },
+ "col_time": {
+  "message": "시간"
+ },
+ "col_result": {
+  "message": "결과"
+ },
+ "col_duration": {
+  "message": "소요 시간"
+ },
+ "load_more": {
+  "message": "더 보기"
+ },
+ "history_count": {
+  "message": "총 $1개, $2개 표시 중"
+ },
+ "history_empty": {
+  "message": "아직 기록이 없습니다"
+ },
+ "relookup": {
+  "message": "다시 조회"
+ },
+ "relookup_title": {
+  "message": "캐시를 무시하고 다시 조회합니다(비용이 발생할 수 있음)"
+ },
+ "delete": {
+  "message": "삭제"
+ },
+ "reason_daily_budget": {
+  "message": "일일 예산 소진"
+ },
+ "reason_invalid_email": {
+  "message": "유효하지 않은 이메일"
+ },
+ "match_source": {
+  "message": "출처 $1 · 이름 $2"
+ },
+ "name_matched": {
+  "message": "일치"
+ },
+ "name_differs": {
+  "message": "다름($1 vs $2)"
+ },
+ "name_not_compared": {
+  "message": "비교 안 함"
+ },
+ "cost_label": {
+  "message": "비용 $1"
+ },
+ "stats_today": {
+  "message": "오늘"
+ },
+ "stats_month": {
+  "message": "이번 달"
+ },
+ "stats_all": {
+  "message": "전체 기간"
+ },
+ "stats_budget": {
+  "message": "오늘 예산"
+ },
+ "n_lookups": {
+  "message": "$1회 조회"
+ },
+ "found_n_usd": {
+  "message": "찾음 $1 · $2"
+ },
+ "found_n_usd_cache": {
+  "message": "찾음 $1 · $2 · 캐시 $3"
+ },
+ "auto_n_cap": {
+  "message": "자동 조회 $1 / $2 · 조회당 상한 $3"
+ },
+ "last_30_days": {
+  "message": "최근 30일"
+ },
+ "chart_aria": {
+  "message": "최근 30일 일별 조회 수와 지출"
+ },
+ "chart_legend": {
+  "message": "막대 높이 = 당일 조회 수(최대 $1)"
+ },
+ "chart_tip": {
+  "message": "$1: 조회 $2회, 찾음 $3, $4"
+ },
+ "by_provider": {
+  "message": "제공업체별"
+ },
+ "col_calls": {
+  "message": "호출"
+ },
+ "col_hits": {
+  "message": "적중"
+ },
+ "col_hit_rate": {
+  "message": "적중률"
+ },
+ "col_errors": {
+  "message": "오류"
+ },
+ "col_spend": {
+  "message": "지출"
+ },
+ "col_avg_ms": {
+  "message": "평균 시간"
+ },
+ "no_paid_calls": {
+  "message": "아직 유료 호출이 없습니다"
+ },
+ "export_import_title": {
+  "message": "내보내기 / 가져오기"
+ },
+ "data_intro": {
+  "message": "캐시, 기록, 지출 장부는 이 브라우저의 IndexedDB에 저장됩니다. 컴퓨터를 바꾸거나 브라우저 데이터를 지우기 전에 내보내세요. 가져올 때는 더 최신 레코드가 우선합니다. 내보낸 파일에 키는 포함되지 않습니다."
+ },
+ "export_json": {
+  "message": "JSON 내보내기"
+ },
+ "import_json_merge": {
+  "message": "JSON 가져오기(병합)"
+ },
+ "import_json_replace": {
+  "message": "JSON 가져오기(전체 교체)"
+ },
+ "import_confirm_replace": {
+  "message": "이 기기의 캐시, 기록, 장부를 모두 지운 뒤 파일을 가져옵니다. 계속할까요?"
+ },
+ "import_bad_json": {
+  "message": "유효한 JSON 파일이 아닙니다"
+ },
+ "import_done": {
+  "message": "레코드 $1개를 가져왔습니다"
+ },
+ "import_failed": {
+  "message": "가져오기 실패: $1"
+ },
+ "cleanup_title": {
+  "message": "정리"
+ },
+ "prune_btn": {
+  "message": "만료된 캐시 항목 삭제"
+ },
+ "prune_done": {
+  "message": "만료된 항목 $1개를 삭제했습니다"
+ },
+ "prune_failed": {
+  "message": "정리 실패"
+ },
+ "clear_btn": {
+  "message": "캐시와 기록 모두 지우기"
+ },
+ "clear_confirm": {
+  "message": "캐시, 기록, 장부를 모두 지울까요? 되돌릴 수 없으며, 이전에 조회한 주소도 다시 비용이 듭니다."
+ },
+ "cleared": {
+  "message": "지웠습니다"
+ },
+ "failed": {
+  "message": "실패"
+ },
+ "about_title": {
+  "message": "정보"
+ },
+ "about_text": {
+  "message": "오픈 소스(AGPL-3.0)입니다. 서버가 없습니다. 조회는 브라우저에서 키를 입력한 제공업체로 바로 전송되며, 결과는 이 기기에만 저장됩니다."
+ },
+ "about_gdpr": {
+  "message": "조회의 책임은 사용자에게 있습니다. 이메일 주소, 표시 이름, 회사 도메인만 전송되며 결과는 이 기기에만 저장되고(기본 90일) 기록 및 데이터 탭에서 삭제할 수 있습니다."
+ },
+ "about_privacy_link": {
+  "message": "개인정보 처리방침 및 GDPR 안내 ↗"
+ },
+ "saved": {
+  "message": "저장됨"
+ },
+ "save_failed": {
+  "message": "저장 실패"
+ },
+ "tele_title": {
+  "message": "익명 사용 통계"
+ },
+ "tele_switch": {
+  "message": "익명 사용 통계 보내기"
+ },
+ "tele_intro": {
+  "message": "기본적으로 켜져 있으며, 원하지 않으면 여기서 끌 수 있습니다. 켜져 있으면 확장 프로그램이 하루에 한 번 전날 요약을 보냅니다: 조회 횟수와 결과, 호출된 단계와 적중 횟수, 사용한 메일 클라이언트, 반올림한 총 지출. 이메일 주소, 이름, 도메인, LinkedIn URL, 프로필 항목, 키, 메일 내용은 절대 포함되지 않습니다. 끄면 설치 ID와 미전송 데이터가 삭제됩니다."
+ },
+ "tele_preview": {
+  "message": "전송될 내용 미리보기"
+ },
+ "tele_on_toast": {
+  "message": "익명 통계 켜짐"
+ },
+ "tele_off_toast": {
+  "message": "꺼짐. 설치 ID와 미전송 데이터를 삭제했습니다"
+ },
+ "tele_status": {
+  "message": "$1 · 전송 대상: $2"
+ },
+ "on": {
+  "message": "켜짐"
+ },
+ "off": {
+  "message": "꺼짐"
+ },
+ "tele_pending": {
+  "message": "$1일분 전송 대기 중"
+ },
+ "connect_btn": {
+  "message": "1촌 맺기"
+ },
+ "connect_opening": {
+  "message": "LinkedIn을 열었습니다"
+ },
+ "connect_title_attr": {
+  "message": "이 사람의 LinkedIn 프로필을 엽니다. 거기서 1촌 맺기와 메모 추가를 클릭하면 초대 메모가 자동으로 채워지며, 보내기는 직접 누릅니다."
+ },
+ "local_time": {
+  "message": "현지 시간 $1"
+ },
+ "local_time_title": {
+  "message": "프로필 위치로 추정한 시간대: $1"
+ },
+ "connect_note_default": {
+  "message": "안녕하세요 {first}님, 얼마 전 이메일로 연락드렸는데 여기서도 계속 소통하고 싶어 1촌 신청 드립니다."
+ },
+ "connect_signature": {
+  "message": "— SenderFinder를 통해 보냄"
+ },
+ "li_filled": {
+  "message": "메모가 채워졌습니다. 확인한 뒤 보내기를 직접 누르세요. 확장 프로그램은 절대 대신 보내지 않습니다."
+ },
+ "li_pending": {
+  "message": "이 사람에게 보낸 초대가 이미 대기 중입니다."
+ },
+ "li_login": {
+  "message": "LinkedIn에 로그인한 뒤 이메일 카드에서 1촌 맺기를 다시 클릭하세요."
+ },
+ "li_note_limit": {
+  "message": "LinkedIn에 따르면 이번 달 메모 포함 초대를 모두 사용했습니다. 메모 없이는 보낼 수 있습니다."
+ },
+ "li_close": {
+  "message": "닫기"
+ },
+ "connect_title": {
+  "message": "LinkedIn에서 1촌 맺기"
+ },
+ "connect_heading": {
+  "message": "linkedin.com에 대한 일회성 권한"
+ },
+ "connect_intro": {
+  "message": "초대 메모를 채우려면 확장 프로그램이 직접 여는 linkedin.com 페이지에 접근해야 합니다. 권한은 한 번만 허용하면 됩니다."
+ },
+ "connect_what_title": {
+  "message": "계속하면 진행되는 과정:"
+ },
+ "connect_step1": {
+  "message": "이 사람의 LinkedIn 프로필이 새 탭에서 열립니다."
+ },
+ "connect_step2": {
+  "message": "LinkedIn에서 \"1촌 맺기\"와 \"메모 추가\"를 클릭합니다. 메모 입력란이 나타나는 즉시 확장 프로그램이 아래 메모를 채웁니다."
+ },
+ "connect_step3": {
+  "message": "내용을 읽고 \"보내기\"를 직접 누릅니다. 확장 프로그램은 1촌 맺기나 보내기를 스스로 클릭하지 않으며, 사용자가 직접 연 LinkedIn 페이지에서는 실행되지 않습니다."
+ },
+ "connect_limit_hint": {
+  "message": "LinkedIn은 메모를 300자로 제한하며, 무료 계정은 메모 포함 초대를 매달 몇 건만 보낼 수 있습니다. 템플릿은 확장 프로그램 설정에서 수정할 수 있습니다."
+ },
+ "connect_note_preview": {
+  "message": "미리 채울 메모"
+ },
+ "connect_grant_btn": {
+  "message": "linkedin.com 허용하고 계속"
+ },
+ "connect_cancel": {
+  "message": "취소"
+ },
+ "connect_nothing_pending": {
+  "message": "대기 중인 요청이 없습니다. 이메일로 돌아가 1촌 맺기를 다시 클릭하세요."
+ },
+ "connect_denied": {
+  "message": "권한이 허용되지 않아 메모를 자동으로 채울 수 없습니다. 위 미리보기에서 복사해 LinkedIn에 직접 붙여넣을 수 있습니다."
+ },
+ "connect_granted_opening": {
+  "message": "허용됨, LinkedIn을 여는 중…"
+ },
+ "opt_connect_title": {
+  "message": "LinkedIn에서 1촌 맺기"
+ },
+ "opt_connect_intro": {
+  "message": "패널의 \"1촌 맺기\" 버튼은 이 사람의 프로필을 엽니다. LinkedIn에서 1촌 맺기와 메모 추가를 클릭하면 아래 초대 메모가 자동으로 채워지며, 보내기는 직접 누릅니다. 자리표시자: {first} 이름, {name} 전체 이름, {company} 회사."
+ },
+ "opt_connect_note": {
+  "message": "초대 메모 템플릿"
+ },
+ "opt_connect_note_placeholder": {
+  "message": "비워 두면 기본 템플릿 사용"
+ },
+ "opt_connect_signature": {
+  "message": "메모 끝에 \"SenderFinder를 통해 보냄\" 줄 추가"
+ },
+ "opt_connect_preview": {
+  "message": "미리보기(예시 이름)"
+ },
+ "opt_connect_chars": {
+  "message": "$1 / 300자"
+ },
+ "opt_connect_perm_granted": {
+  "message": "linkedin.com 접근 허용됨"
+ },
+ "opt_connect_perm_none": {
+  "message": "linkedin.com 아직 미허용(1촌 맺기를 처음 클릭할 때 요청)"
+ },
+ "opt_connect_revoke": {
+  "message": "권한 취소"
+ },
+ "panel_empty_title": {
+  "message": "열린 메일 없음"
+ },
+ "panel_empty_hint": {
+  "message": "Gmail 또는 Outlook 웹에서 메일을 열어 보세요. 발신자의 LinkedIn 프로필이 여기에 표시됩니다."
+ },
+ "view_profile": {
+  "message": "LinkedIn 프로필 보기 ↗"
+ },
+ "others_in_thread": {
+  "message": "이 스레드의 다른 사람($1)"
+ },
+ "current_roles": {
+  "message": "현재 직책"
+ },
+ "settings_history": {
+  "message": "설정 및 기록"
+ },
+ "chip_title": {
+  "message": "사이드 패널에서 LinkedIn 프로필 보기"
+ },
+ "chip_open_fallback": {
+  "message": "도구 모음의 확장 프로그램 아이콘을 클릭해 사이드 패널을 여세요"
+ },
+ "hint_auto_off": {
+  "message": "자동 조회가 꺼져 있습니다"
+ },
+ "hint_noisy": {
+  "message": "알림용 주소이므로 자동 조회하지 않습니다"
+ },
+ "hint_me": {
+  "message": "나입니다"
+ },
+ "hint_manual": {
+  "message": "아직 조회하지 않음"
+ },
+ "today_line": {
+  "message": "오늘: 조회 $1회 · $2 / $3 · 자동 $4 / $5"
+ },
+ "show_details": {
+  "message": "자세히"
+ },
+ "history_count_all": {
+  "message": "$1개"
+ },
+ "history_count_one": {
+  "message": "1개"
+ },
+ "via_step": {
+  "message": "$1 경유"
+ },
+ "trace_title": {
+  "message": "시도한 단계"
+ },
+ "li_profile": {
+  "message": "LinkedIn 프로필"
+ },
+ "theme_toggle": {
+  "message": "라이트 / 다크 전환"
+ },
+ "theme_label": {
+  "message": "모양"
+ },
+ "theme_system": {
+  "message": "시스템 설정 따르기"
+ },
+ "theme_light": {
+  "message": "라이트"
+ },
+ "theme_dark": {
+  "message": "다크"
+ },
+ "today_short": {
+  "message": "오늘 조회 $1회 · $2 / $3"
+ },
+ "lookup_again_short": {
+  "message": "새로고침"
+ },
+ "li_copy_debug": {
+  "message": "버그 신고용 정보 복사"
+ },
+ "li_copied": {
+  "message": "복사됨"
+ },
+ "li_instructions": {
+  "message": "\"1촌 맺기\"를 클릭한 뒤 \"메모 추가\"를 클릭하세요. 초대 메모가 자동으로 채워집니다. 또는 복사해서 직접 붙여넣으세요."
+ },
+ "li_add_note": {
+  "message": "초대 대화상자가 열렸습니다. \"메모 추가\"를 클릭하면 메모가 채워집니다."
+ },
+ "li_copy_note": {
+  "message": "메모 복사"
+ },
+ "rel_connected": {
+  "message": "1촌"
+ },
+ "rel_connected_long": {
+  "message": "1촌 관계"
+ },
+ "rel_pending": {
+  "message": "초대 대기 중"
+ },
+ "rel_degree2": {
+  "message": "2촌"
+ },
+ "rel_degree3": {
+  "message": "3촌"
+ },
+ "rel_out": {
+  "message": "네트워크 외"
+ },
+ "rel_self": {
+  "message": "나"
+ },
+ "li_grant": {
+  "message": "사진과 LinkedIn 관계 표시"
+ },
+ "li_grant_title": {
+  "message": "이 브라우저의 내 LinkedIn 로그인으로 각 프로필을 한 번씩만 읽습니다. 아무것도 게시하지 않습니다."
+ },
+ "li_signed_out": {
+  "message": "관계를 보려면 이 브라우저에서 LinkedIn에 로그인하세요"
+ },
+ "li_rel_denied": {
+  "message": "권한 미허용"
+ },
+ "panel_slogan": {
+  "message": "이메일 발신자를 LinkedIn에서 찾기"
+ },
+ "li_link_broken": {
+  "message": "이 LinkedIn 링크는 열리지 않습니다. 데이터 제공업체가 잘못된 주소를 보냈습니다."
+ },
+ "li_link_broken_short": {
+  "message": "LinkedIn 링크가 작동하지 않음"
+ },
+ "li_search_person": {
+  "message": "LinkedIn에서 이 사람 검색"
+ },
+ "li_relookup_hint": {
+  "message": "제공업체에 다시 요청합니다(유료 조회)"
+ },
+ "company_search_title": {
+  "message": "LinkedIn에서 이 회사 검색"
+ },
+ "company_li_title": {
+  "message": "LinkedIn 회사 페이지"
+ },
+ "keys_need_one": {
+  "message": "아직 아무것도 설정되지 않았습니다. 키를 하나 이상 추가하세요: treg(가장 저렴) 또는 Monid(가장 넓은 범위). Firecrawl만 단독으로 쓰는 것은 권장하지 않습니다."
+ },
+ "vendor_treg_tagline": {
+  "message": "가장 저렴합니다. 이메일 기반 역조회, 적중당 $$0.0005부터."
+ },
+ "vendor_monid_tagline": {
+  "message": "범위가 가장 넓습니다. Hunter는 이메일로, Apollo는 이메일 + 이름 + 회사 도메인으로 조회(약 $$0.03)."
+ },
+ "vendor_firecrawl_tagline": {
+  "message": "선택적인 마지막 대체 수단(Data Legion). 크레딧 단위로 과금됩니다."
+ },
+ "step_off": {
+  "message": "꺼짐"
+ }
+}

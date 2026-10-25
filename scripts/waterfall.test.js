@@ -1,13 +1,12 @@
-'use strict';
-const test = require('node:test');
-const assert = require('node:assert/strict');
-const { createStore } = require('../server/db');
-const { createLookup } = require('../server/waterfall');
-const { fakeTreg, fakeMonid, fakeFirecrawl, notConfigured } = require('./fakes');
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { createStore, memoryBackend } from '../extension/core/store.js';
+import { createLookup } from '../extension/core/waterfall.js';
+import { fakeTreg, fakeMonid, fakeFirecrawl, notConfigured } from './fakes.js';
 
 const cfg = (over = {}) => ({ steps: ['signature', 'blitzapi', 'hunter', 'quickenrich', 'apollo', 'datalegion'], lookupMaxUsd: 0.05, dailyCapUsd: 2, skipFreeMail: true, ...over });
 const mk = ({ treg, monid, firecrawl, config } = {}) => {
-  const store = createStore({ file: ':memory:' });
+  const store = createStore({ backend: memoryBackend() });
   const t = treg || fakeTreg(), m = monid || fakeMonid(), f = firecrawl || fakeFirecrawl();
   return { store, treg: t, monid: m, firecrawl: f, svc: createLookup({ store, config: cfg(config), monid: m, treg: t, firecrawl: f }) };
 };
@@ -29,7 +28,7 @@ test('cheapest provider first; a hit stops the waterfall and is cached', async (
   assert.equal(r.cost.usd, 0.0005); assert.equal(r.cost.calls.length, 1); assert.equal(monid.calls.length, 0);
   const again = await svc.lookup({ email: 'jane@acme.com' });
   assert.equal(again.cached, true); assert.equal(treg.calls.length, 1);
-  assert.equal(store.stats().allTime.lookups, 1);
+  assert.equal((await store.stats()).allTime.lookups, 1);
 });
 
 test('misses fall through to hunter and apollo; name is passed to apollo; not_found when all miss', async () => {

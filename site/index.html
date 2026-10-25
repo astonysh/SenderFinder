@@ -1,0 +1,284 @@
+<!doctype html>
+<!--
+  ============================== PLACEHOLDERS ==============================
+  Replace these across all files in site/ with one search-and-replace:
+    CWS_PLACEHOLDER     Chrome Web Store listing URL (install button, see "CWS-BUTTON")
+  ==========================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SenderFinder: see who's emailing you</title>
+  <meta name="description" content="An open-source Chrome extension that shows the LinkedIn profile of the person who emailed you, right in Gmail. Bring your own API key. No account, no server in between.">
+  <link rel="canonical" href="https://senderfinder.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SenderFinder">
+  <meta property="og:title" content="SenderFinder: see who's emailing you">
+  <meta property="og:description" content="Open an email in Gmail and see the sender's LinkedIn profile. Open source, your own API keys, no account.">
+  <meta property="og:url" content="https://senderfinder.com/">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-current="page">
+        <img src="assets/logo.png" alt="" width="28" height="28">
+        <span>SenderFinder</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#cost">Cost</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <h1 id="hero-title">See who's emailing you.</h1>
+          <p class="lead">Open an email in Gmail and the browser's side panel shows the sender's LinkedIn profile: name, role, company, location. Open source. Your own API key, no account, no server in between.</p>
+          <div class="actions">
+            <!-- CWS-BUTTON: when the store listing is live, set href="CWS_PLACEHOLDER" and change the label to "Add to Chrome". -->
+            <a class="button button-primary" href="https://github.com/astonysh/SenderFinder#install-from-source" data-store-url="CWS_PLACEHOLDER">Coming to the Chrome Web Store</a>
+            <a class="button button-secondary" href="https://github.com/astonysh/SenderFinder">View on GitHub</a>
+          </div>
+          <p class="fine">Until the store listing is live, the button above leads to the install-from-source guide.</p>
+        </div>
+
+        <figure class="mock">
+          <div class="mock-panel" aria-hidden="true">
+            <div class="mock-panel-head">SenderFinder</div>
+            <div class="mock-person">
+              <div class="mock-avatar">JD</div>
+              <div><div class="mock-name">Jane Doe</div><div class="mock-addr">jane.doe@acme.example</div></div>
+            </div>
+            <div class="mock-role">Head of Partnerships · Acme</div>
+            <div class="mock-loc">Berlin, Germany · 16:42 local time</div>
+            <div class="mock-actions"><span class="mock-btn primary">View LinkedIn profile ↗</span><span class="mock-btn">Connect</span></div>
+            <div class="mock-others">Others in this thread (2)</div>
+            <ul class="mock-list">
+              <li><span>Sam Rivera<small>sam.rivera@acme.example</small></span><span class="mock-btn">Look up</span></li>
+              <li><span>Alex Chen<small>alex.chen@acme.example</small></span><span class="mock-btn">Look up</span></li>
+            </ul>
+          </div>
+          <figcaption>The side panel next to Gmail. The people and company are fictional.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <h2 id="how-title">How it works</h2>
+        <p class="section-intro">Three steps. No signup anywhere except with the data provider you choose.</p>
+        <ol class="steps">
+          <li>
+            <h3>Install the extension</h3>
+            <p>Add it to Chrome. Until the Web Store listing is live, install it from source in a minute.</p>
+            <a href="https://github.com/astonysh/SenderFinder#install-from-source">Install from source</a>
+          </li>
+          <li>
+            <h3>Get one API key</h3>
+            <p>Create a key at <a href="https://app.monid.ai/">Monid</a> or <a href="https://treg.to/">treg</a>. One of the two is enough to start.</p>
+          </li>
+          <li>
+            <h3>Paste it in settings</h3>
+            <p>Open the extension's settings and paste the key. Then open any email in Gmail.</p>
+          </li>
+        </ol>
+
+        <div class="grid-2 mt-lg">
+          <div>
+            <h3>What you see</h3>
+            <ul class="checklist">
+              <li>A side panel with name, headline, company, location and a link to the profile. The email itself only gets a small "in" mark next to the sender.</li>
+              <li>Other people in the thread (other senders, To, Cc) listed in the panel. They are looked up only when you click them.</li>
+              <li>An "uncertain" mark when the provider's name doesn't match the name in the email header. Both names are shown.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Where it works</h3>
+            <ul class="checklist">
+              <li>Gmail on the web.</li>
+              <li>Outlook on the web, on a best-effort basis.</li>
+              <li>Not supported: desktop mail apps such as Apple Mail or Outlook for desktop, and Firefox (not yet).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cost" aria-labelledby="cost-title">
+      <div class="wrap">
+        <h2 id="cost-title">Cheapest first. Then it stops.</h2>
+        <p class="section-intro">You pay the data providers directly, with your own key. The extension tries the free option first, then paid providers from cheapest to most expensive, and stops at the first match.</p>
+
+        <ol class="waterfall">
+          <li><strong>Email signature scan</strong> <span>Free. If the signature contains a linkedin.com/in link, that's the answer.</span></li>
+          <li><strong>Cheapest paid provider</strong> <span>The current catalog price is read first. If it's above your per-lookup cap, the step is skipped.</span></li>
+          <li><strong>Next provider, only on a miss</strong> <span>Misses on most providers are free.</span></li>
+          <li><strong>Match found, chain stops</strong> <span>The result is cached in your browser. The same address never costs money twice.</span></li>
+        </ol>
+
+        <dl class="stats">
+          <div class="stat">
+            <dt>Typical successful lookup</dt>
+            <dd>$0.0005–$0.03 <small>Usually well under a cent, depending on which step hits.</small></dd>
+          </div>
+          <div class="stat">
+            <dt>Per-lookup cap</dt>
+            <dd>$0.05 <small>Default. You can change it.</small></dd>
+          </div>
+          <div class="stat">
+            <dt>Daily cap</dt>
+            <dd>$2 <small>Default. You can change it.</small></dd>
+          </div>
+        </dl>
+
+        <div class="grid-2 mt-lg">
+          <div>
+            <h3>Only the sender, automatically</h3>
+            <p>Only the sender of the email you open is looked up on its own. You set a daily limit on automatic lookups. Everyone else in the thread waits for a click.</p>
+          </div>
+          <div>
+            <h3>No money spent on dead ends</h3>
+            <p>Personal mailbox domains (gmail.com, outlook.com, qq.com and similar) and role addresses (info@, support@ and similar) are skipped by default. A button lets you look them up anyway.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="providers" aria-labelledby="providers-title">
+      <div class="wrap">
+        <h2 id="providers-title">Supported providers</h2>
+        <p class="section-intro">The extension calls these services directly from your browser, using keys you paste into its settings.</p>
+        <div class="grid-2">
+          <div class="panel">
+            <h3><a href="https://app.monid.ai/">Monid</a></h3>
+            <p>An API aggregator. One key gives access to Hunter.io, Apollo and ContactOut.</p>
+          </div>
+          <div class="panel">
+            <h3><a href="https://treg.to/">treg</a></h3>
+            <p>An aggregator for BlitzAPI, QuickEnrich and Village.</p>
+          </div>
+          <div class="panel">
+            <h3><a href="https://www.firecrawl.dev/">Firecrawl</a> <small class="fine">(optional)</small></h3>
+            <p>An optional fallback, for Data Legion.</p>
+          </div>
+          <div class="panel">
+            <h3>Your order, your limits</h3>
+            <p>In settings you can switch providers on or off, change their order, and set both caps. Settings also show your history and spending.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy" aria-labelledby="privacy-title">
+      <div class="wrap">
+        <h2 id="privacy-title">There is no "us" in the middle</h2>
+        <div class="grid-2">
+          <ul class="checklist">
+            <li>No account, no signup, no server in the lookup path. The only thing sent to us is a daily anonymous usage count, which you can switch off.</li>
+            <li>Data flows only between your browser and the providers you configured.</li>
+            <li>Only professional fields are kept: name, title, company, location and LinkedIn URL.</li>
+          </ul>
+          <ul class="checklist">
+            <li>Phone numbers and personal emails returned by providers are discarded.</li>
+            <li>History and cache live in your browser's IndexedDB.</li>
+            <li>Export everything as JSON or CSV, or wipe it, from the settings page.</li>
+          </ul>
+        </div>
+        <p><a href="privacy.html">Read the full privacy statement</a></p>
+      </div>
+    </section>
+
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="wrap">
+        <h2 id="faq-title">Questions</h2>
+        <div class="faq">
+          <details>
+            <summary>Is it free?</summary>
+            <div>
+              <p>The extension is free and open source under the AGPL-3.0 license. Lookups are paid to the data provider you choose, with your own key. A successful lookup usually costs well under a cent, and the caps keep spending predictable.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Do I need an account?</summary>
+            <div>
+              <p>Not with us. There is no account and no server in the lookup path. You only need a key from a data provider.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Which key should I get?</summary>
+            <div>
+              <p>One key from either <a href="https://app.monid.ai/">Monid</a> or <a href="https://treg.to/">treg</a> is enough to start. Adding both, and optionally <a href="https://www.firecrawl.dev/">Firecrawl</a>, gives the waterfall more places to look.</p>
+            </div>
+          </details>
+          <details>
+            <summary>How do I keep costs under control?</summary>
+            <div>
+              <p>There is a per-lookup cap (default $0.05) and a daily cap (default $2). Only the sender of the opened email is looked up automatically, with a daily limit you set. Results are cached, so the same address is never paid for twice.</p>
+            </div>
+          </details>
+          <details>
+            <summary>What if it shows the wrong person?</summary>
+            <div>
+              <p>If the name from the provider doesn't match the display name in the email header, the result is marked "uncertain" and shows both names, so you can judge for yourself.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Why is a gmail.com sender not looked up?</summary>
+            <div>
+              <p>Personal mailbox domains and role addresses like info@ rarely match a profile, so they are skipped by default to save money. Click the button in the panel to look them up anyway.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Does it work in Outlook, Apple Mail or Firefox?</summary>
+            <div>
+              <p>Outlook on the web is supported on a best-effort basis. Desktop mail apps such as Apple Mail and Outlook for desktop are not supported. Firefox is not supported yet.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Where is my data stored?</summary>
+            <div>
+              <p>On your device. Keys are kept in the extension's storage. History and cache are kept in your browser's IndexedDB. You can export or wipe them from the settings page. See the <a href="privacy.html">privacy statement</a>.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Is this a replacement for Rapportive or Clearbit Connect?</summary>
+            <div>
+              <p>It does the job they used to do: show who is behind an email address. Read more about the <a href="clearbit-connect-alternative.html">Clearbit Connect alternative</a> and the <a href="rapportive-alternative.html">Rapportive alternative</a>.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="https://github.com/astonysh/SenderFinder">GitHub</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="clearbit-connect-alternative.html">Clearbit Connect alternative</a></li>
+          <li><a href="rapportive-alternative.html">Rapportive alternative</a></li>
+          <li><a href="https://github.com/astonysh/SenderFinder/blob/main/LICENSE">AGPL-3.0 License</a></li>
+        </ul>
+      </nav>
+      <p>SenderFinder is open-source software released under the AGPL-3.0 license.</p>
+      <p>Not affiliated with LinkedIn, HubSpot, Clearbit or any data provider. Product names belong to their owners.</p>
+    </div>
+  </footer>
+</body>
+</html>

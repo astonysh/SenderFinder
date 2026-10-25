@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="ext_name">SenderFinder</title>
+<script src="theme-boot.js"></script>
+<link rel="stylesheet" href="sidepanel.css"></head>
+<body>
+  <header class="top">
+    <!-- Chrome already shows the extension's icon and name above the panel: a tagline here instead of repeating it. -->
+    <span class="slogan" data-i18n="panel_slogan">Find the email sender on LinkedIn</span>
+    <button id="theme" class="icon" type="button" data-i18n-title="theme_toggle" data-i18n-aria="theme_toggle" aria-label="Theme"></button>
+    <button id="settings" class="icon" type="button" data-i18n-title="settings_history" data-i18n-aria="settings_history" aria-label="Settings"></button>
+  </header>
+  <div id="status" class="status" hidden></div>
+  <main id="main"></main>
+  <footer class="foot">
+    <div id="today" class="today"></div>
+    <label class="check"><input type="checkbox" id="autoLookup"><span data-i18n="opt_auto_lookup">Look up the sender automatically when a message opens</span></label>
+    <label class="check"><input type="checkbox" id="showCost"><span data-i18n="opt_show_cost">Show the cost</span></label>
+  </footer>
+  <script src="sidepanel.js" type="module"></script>
+</body></html>

@@ -1,8 +1,7 @@
-'use strict';
-const test = require('node:test');
-const assert = require('node:assert/strict');
-const { normalizeEmail, cleanDisplayName, nameMatches, normalizeLinkedInUrl, isFreeMail, isRoleAddress, nameHintFromEmail } = require('../server/identity');
-const { extractLinkedInUrls, signatureBlock } = require('../server/signature');
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { normalizeEmail, cleanDisplayName, nameMatches, normalizeLinkedInUrl, isFreeMail, isRoleAddress, nameHintFromEmail } from '../extension/core/identity.js';
+import { extractLinkedInUrls, signatureBlock } from '../extension/core/signature.js';
 
 test('emails are normalised and validated', () => {
   assert.equal(normalizeEmail(' Jane.Doe@Acme.COM '), 'jane.doe@acme.com');
