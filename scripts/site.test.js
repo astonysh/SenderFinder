@@ -555,13 +555,28 @@ test('the content pages and the two alternatives link to each other', () => {
   }
 });
 
-test('the footer Resources column links every locale to the English pages', () => {
+test('the footer groups product, resources, alternatives and project links with separate legal links', () => {
   for (const lang of LANGUAGES) {
-    const html = pageOf(lang, PAGES[0]);
-    assert.ok(html.includes('class="v2-foot-resources"'), `${lang.locale}: no Resources column`);
-    for (const id of CONTENT_IDS) {
-      const href = pagePath(LANGUAGES[0], contentPage(id));
-      assert.ok(html.includes(`href="${href}"`), `${lang.locale}: footer does not link to ${id}`);
+    const home = pagePath(lang, PAGES[0]);
+    const route = id => pagePath(lang, PAGES.find(page => page.id === id));
+    const englishRoute = id => pagePath(LANGUAGES[0], contentPage(id));
+    const expected = {
+      product: [`${home}#how`, `${home}#cost`, route('install'), `${home}#faq`],
+      resources: ['findByEmail', 'outlook', 'benchmark', 'salesnav'].map(englishRoute),
+      alternatives: [route('clearbit'), route('rapportive')],
+      project: [REPO_URL, route('changelog'), englishRoute('sponsors'), englishRoute('stats')],
+    };
+    for (const page of PAGES.filter(page => hasPage(page, lang.locale))) {
+      const html = pageOf(lang, page);
+      for (const [group, targets] of Object.entries(expected)) {
+        const column = html.match(new RegExp(`<nav class="v2-foot-${group}"[^>]*>([\\s\\S]*?)<\\/nav>`));
+        assert.ok(column, `${lang.locale}/${page.id}: missing ${group} footer column`);
+        assert.deepEqual([...column[1].matchAll(/<a href="([^"]+)"/g)].map(match => match[1]), targets);
+      }
+      const legal = html.match(/<ul class="v2-foot-legal">([\s\S]*?)<\/ul>/);
+      assert.ok(legal, `${lang.locale}/${page.id}: legal links missing`);
+      assert.deepEqual([...legal[1].matchAll(/<a href="([^"]+)"/g)].map(match => match[1]),
+        [route('privacy'), `${REPO_URL}/blob/main/LICENSE`]);
     }
   }
 });

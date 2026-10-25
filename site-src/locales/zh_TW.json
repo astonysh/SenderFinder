@@ -20,7 +20,12 @@
       "clearbit": "Clearbit Connect 替代方案",
       "rapportive": "Rapportive 替代方案",
       "changelog": "更新日誌",
-      "resources": "資源",
+      "groups": {
+      "product": "產品",
+      "alternatives": "替代方案",
+      "project": "專案"
+    },
+    "resources": "資源",
       "resourcesLinks": {
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",

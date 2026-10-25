@@ -20,7 +20,12 @@
       "clearbit": "Clearbit Connect の代替",
       "rapportive": "Rapportive の代替",
       "changelog": "変更履歴",
-      "resources": "リソース",
+      "groups": {
+      "product": "製品",
+      "alternatives": "代替サービス",
+      "project": "プロジェクト"
+    },
+    "resources": "リソース",
       "resourcesLinks": {
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",

@@ -20,7 +20,12 @@
       "clearbit": "Clearbit Connect 대안",
       "rapportive": "Rapportive 대안",
       "changelog": "변경 기록",
-      "resources": "리소스",
+      "groups": {
+      "product": "제품",
+      "alternatives": "대안 서비스",
+      "project": "프로젝트"
+    },
+    "resources": "리소스",
       "resourcesLinks": {
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",

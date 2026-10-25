@@ -534,42 +534,61 @@ ${languages}
 }
 
 function footerV2(lang, page, data, scope) {
-  const links = [
-    { href: scope.url.install, label: data.ui.footer.install, id: 'install' },
-    { href: scope.url.privacy, label: data.ui.footer.privacy, id: 'privacy' },
-    { href: scope.url.clearbit, label: data.ui.footer.clearbit, id: 'clearbit' },
-    { href: scope.url.rapportive, label: data.ui.footer.rapportive, id: 'rapportive' },
-    { href: scope.url.changelog, label: data.ui.footer.changelog, id: 'changelog' },
-    { href: `${scope.url.index}#faq`, label: data.ui.nav.faq },
-    { href: REPO_URL, label: 'GitHub' },
-    { href: `${REPO_URL}/blob/main/LICENSE`, label: data.ui.footer.license },
-  ].map(item => {
+  const links = items => items.map(item => {
     const current = item.id === page.id ? ' aria-current="page"' : '';
-    return `        <li><a href="${item.href}"${current}>${esc(item.label)}</a></li>`;
+    const language = item.english ? ' lang="en"' : '';
+    const hreflang = item.english ? ' hreflang="en"' : '';
+    return `            <li${language}><a href="${item.href}"${hreflang}${current}>${esc(item.label)}</a></li>`;
   }).join('\n');
-  const resources = PAGES.filter(p => p.resources);
-  const resourceLinks = resources.map(resource =>
-    `          <li lang="en"><a href="${urlFor(lang, resource.id)}" hreflang="en">${esc(t(data, `ui.footer.resourcesLinks.${resource.id}`))}</a></li>`).join('\n');
+  const resource = id => ({ href: urlFor(lang, id), label: data.ui.footer.resourcesLinks[id], id, english: true });
+  const groups = [
+    { id: 'product', label: data.ui.footer.groups.product, items: [
+      { href: `${scope.url.index}#how`, label: data.ui.nav.how },
+      { href: `${scope.url.index}#cost`, label: data.ui.nav.cost },
+      { href: scope.url.install, label: data.ui.footer.install, id: 'install' },
+      { href: `${scope.url.index}#faq`, label: data.ui.nav.faq },
+    ] },
+    { id: 'resources', label: data.ui.footer.resources, items: ['findByEmail', 'outlook', 'benchmark', 'salesnav'].map(resource) },
+    { id: 'alternatives', label: data.ui.footer.groups.alternatives, items: [
+      { href: scope.url.clearbit, label: data.ui.footer.clearbit, id: 'clearbit' },
+      { href: scope.url.rapportive, label: data.ui.footer.rapportive, id: 'rapportive' },
+    ] },
+    { id: 'project', label: data.ui.footer.groups.project, items: [
+      { href: REPO_URL, label: 'GitHub' },
+      { href: scope.url.changelog, label: data.ui.footer.changelog, id: 'changelog' },
+      resource('sponsors'),
+      resource('stats'),
+    ] },
+  ];
+  const columns = groups.map(group => `        <nav class="v2-foot-${group.id}" aria-label="${esc(group.label)}">
+          <p class="v2-foot-head">${esc(group.label)}</p>
+          <ul class="v2-foot-links">
+${links(group.items)}
+          </ul>
+        </nav>`).join('\n');
+  const legalLinks = links([
+    { href: scope.url.privacy, label: data.ui.footer.privacy, id: 'privacy' },
+    { href: `${REPO_URL}/blob/main/LICENSE`, label: data.ui.footer.license },
+  ]);
   return `  <footer class="v2-foot">
     <div class="v2-wrap v2-foot-inner">
-      <a class="v2-brand" href="${scope.url.index}">
-        <img src="${scope.base}assets/icon-128.png" alt="" width="32" height="32">
-        <span>SenderFinder</span>
-      </a>
-      <ul class="v2-foot-links">
-${links}
-      </ul>
-      <nav class="v2-foot-resources" aria-label="${esc(data.ui.footer.resources)}">
-        <p class="v2-foot-head">${esc(data.ui.footer.resources)}</p>
-        <ul class="v2-foot-links v2-foot-links--stack">
-${resourceLinks}
-        </ul>
-      </nav>
-      <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> ${esc(data.ui.footer.privacyLine)} <a href="${scope.url.privacy}">${esc(data.ui.footer.privacy)}</a></p>
+      <div class="v2-foot-top">
+        <a class="v2-brand" href="${scope.url.index}">
+          <img src="${scope.base}assets/icon-128.png" alt="" width="32" height="32">
+          <span>SenderFinder</span>
+        </a>
+        <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg><span>${esc(data.ui.footer.privacyLine)}</span></p>
+      </div>
+      <div class="v2-foot-grid">
+${columns}
+      </div>
       <div class="v2-foot-bottom">
         <p>${esc(data.ui.footer.built)}</p>
-        <p>${esc(data.ui.footer.trademarks)}</p>
+        <ul class="v2-foot-legal">
+${legalLinks}
+        </ul>
       </div>
+      <p class="v2-foot-trademarks">${esc(data.ui.footer.trademarks)}</p>
     </div>
   </footer>`;
 }

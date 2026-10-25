@@ -20,7 +20,12 @@
       "clearbit": "Alternativa a Clearbit Connect",
       "rapportive": "Alternativa a Rapportive",
       "changelog": "Registro de cambios",
-      "resources": "Recursos",
+      "groups": {
+      "product": "Producto",
+      "alternatives": "Alternativas",
+      "project": "Proyecto"
+    },
+    "resources": "Recursos",
       "resourcesLinks": {
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",

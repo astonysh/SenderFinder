@@ -75,8 +75,9 @@ names.
 **English-only pages.** A page in `PAGES` can declare `locales: ['en']` (the six content pages and the
 404 page do). Such a page is built only in English, carries one `en` hreflang plus `x-default`, appears
 once in the sitemap, and has no locale-prefixed URL. Its language switcher points every other language
-at that language's home page. The footer's **Resources** column is shown in every language with a
-translated heading (`ui.footer.resources`) and English link labels, and links to the English canonical
+at that language's home page. The footer groups links into **Product**, **Resources**, **Alternatives** and **Project**, with
+translated headings (`ui.footer.groups` and `ui.footer.resources`). English-only resource and project
+links keep English labels and point to the English canonical
 URL (`hreflang="en"`), so no link ever points at a locale-prefixed page that does not exist. Copy for these pages lives outside the locale files, in
 `site-src/content/<id>.json` (`meta`, `page`, `faq`), and is loaded only for English; see
 “English-only content pages” below.
