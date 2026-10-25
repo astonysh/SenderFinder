@@ -101,7 +101,7 @@
       "desc": "Apri un’email per trovare il profilo LinkedIn del mittente. Collegati con questa persona e mantieni il contatto.",
       "install": "Installa in 2 minuti",
       "github": "Vedi su GitHub",
-      "fine": "Non è ancora sul Chrome Web Store. La pagina di installazione spiega l'installazione non pacchettizzata in due minuti.",
+      "fine": "Disponibile su Microsoft Edge Add-ons. Per Chrome, segui la guida di installazione dal codice sorgente in due minuti.",
       "alt": "Il pannello laterale di SenderFinder accanto a Gmail, con Jane Doe, responsabile partnership di Acme a Berlino, il link al suo profilo LinkedIn, un pulsante Collegati e le altre persone nella conversazione.",
       "caption": "Il pannello laterale mentre leggi un'email. Le persone e l'azienda sono di fantasia.",
       "privacyLine": "Le ricerche vanno direttamente dal tuo browser al fornitore che configuri: nessun server SenderFinder nel percorso della ricerca.",
@@ -452,11 +452,11 @@
   },
   "install": {
     "title": "Installa SenderFinder",
-    "lead": "La scheda sul Chrome Web Store non è ancora attiva, quindi carichi l'estensione dal codice sorgente. Due minuti, una volta per browser.",
+    "lead": "Installa direttamente da Microsoft Edge Add-ons. Per Chrome, segui i passaggi per installare dal codice sorgente: la versione sullo store non è ancora disponibile.",
     "note": "Serve Chrome, Edge o un altro browser Chromium su desktop; le estensioni non si possono aggiungere alle app mobili. Le schermate sono in inglese, l'estensione segue la lingua del tuo browser.",
     "downloadLabel": "Scarica lo ZIP",
     "githubLabel": "Apri il repository",
-    "stepsTitle": "Cinque passaggi",
+    "stepsTitle": "Installazione dal codice sorgente in cinque passaggi",
     "steps": [
       {
         "title": "Scarica il codice",
@@ -565,7 +565,8 @@
         "Le ricerche vanno direttamente dal tuo browser al fornitore che configuri: nessun server SenderFinder nel percorso della ricerca. I conteggi d'uso anonimi sono attivi per impostazione predefinita e si possono disattivare nelle impostazioni.",
         "Puoi rimuovere la chiave dalle impostazioni in qualsiasi momento — senza chiave non può partire nessuna ricerca a pagamento — oppure disinstallare l'estensione, che cancella il suo storage."
       ]
-    }
+    },
+    "edgeLabel": "Aggiungi a Microsoft Edge"
   },
   "privacy": {
     "title": "Privacy",

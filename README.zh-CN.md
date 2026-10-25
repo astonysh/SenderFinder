@@ -4,6 +4,12 @@
 
 Rapportive / Clearbit Connect 式的开源浏览器插件，支持 Chrome 和 Microsoft Edge 桌面版：在 Gmail（Outlook 网页版尽力支持）打开一封邮件，浏览器右侧的侧边栏显示发件人的 LinkedIn 资料：头像、姓名、职位、公司、地点、对方当地时间、资料链接，有的话还有 X / Twitter 链接。线程里的其他人（其他发件人、收件人、抄送）列在下面，点一下才查。邮件页面本身只在发件人名字旁边多一个很小的放大镜标记，不改动 Gmail 的布局；点标记可以切换侧边栏显示的人。
 
+## 安装
+
+<a href="https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki"><img src="site-src/assets/edge.svg" width="24" height="24" alt="Microsoft Edge"></a> **[从 Microsoft Edge 扩展商店安装](https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki)**
+
+Edge 版已上架，可直接从商店安装。Chrome 版暂未上架，请参阅下方源码安装步骤。
+
 侧边栏第一次需要点一下工具栏里的插件图标（或邮件里的放大镜标记）打开，之后在这个标签页里一直开着，换邮件会自动更新。
 
 侧边栏里的「加好友」按钮会在新标签页打开对方的 LinkedIn 主页。你自己点击「建立联系」后，插件会在邀请对话框里点击一次「Add a note」并填入可编辑的备注模板；**插件不会替你点击「建立联系」或「发送」**。关系度、头像和所选资料关联的公司链接会在你授权后通过你自己的 LinkedIn 登录会话读取。LinkedIn 权限为可选，只在插件打开的标签页中使用，可在设置里撤销。注意：LinkedIn 限制备注 300 字符，免费账号每月只有少量带备注的邀请。
@@ -83,7 +89,7 @@ Outlook 网页版（outlook.live.com / outlook.office.com）是尽力支持：�
 
 ### Microsoft Edge 桌面版
 
-Edge 与 Chrome 共用这份 Chromium MV3 扩展代码。开发者模式安装时，在 `edge://extensions` 打开「开发人员模式」→「加载解压缩的扩展」并选择 `extension/`；发布到 Microsoft Edge Add-ons 时运行 `npm run zip:edge`，上传生成的 `output/senderfinder-edge-<版本>.zip`。Edge 中的设置、API key 和缓存独立保存在 Edge 配置文件里，需要单独配置；数据页导出的 JSON 可用于迁移非 key 数据。
+推荐直接从 [Microsoft Edge 扩展商店](https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki) 安装。Edge 与 Chrome 共用这份 Chromium MV3 扩展代码。开发者模式安装时，在 `edge://extensions` 打开「开发人员模式」→「加载解压缩的扩展」并选择 `extension/`；发布到 Microsoft Edge Add-ons 时运行 `npm run zip:edge`，上传生成的 `output/senderfinder-edge-<版本>.zip`。Edge 中的设置、API key 和缓存独立保存在 Edge 配置文件里，需要单独配置；数据页导出的 JSON 可用于迁移非 key 数据。
 
 ## 界面语言
 

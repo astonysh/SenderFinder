@@ -5,7 +5,11 @@
       <h1>{{rapportive.title}}</h1>
       <p class="v2-lead">{{rapportive.lead}}</p>
       <div class="v2-actions">
-        <a class="v2-btn v2-btn--default" href="{{url.install}}" data-store-url="CWS_PLACEHOLDER">{{rapportive.ctaInstall}}</a>
+        <a class="v2-btn v2-btn--default" href="{{url.edgeStore}}">
+          <svg class="i" aria-hidden="true"><use href="#i-edge"/></svg> {{install.edgeLabel}}
+        </a>
+
+        <a class="v2-btn v2-btn--outline" href="{{url.install}}" data-store-url="CWS_PLACEHOLDER">{{rapportive.ctaInstall}}</a>
         <a class="v2-btn v2-btn--outline" href="{{url.index}}#how">{{rapportive.ctaHow}}</a>
       </div>
     </header>

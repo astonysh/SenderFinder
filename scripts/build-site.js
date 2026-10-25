@@ -181,6 +181,7 @@ const fill = (s, vars) => String(s).replace(/\{(\w+)\}/g, (m, k) => (k in vars ?
 export function scopeFor(lang, data) {
   const fmt = makeFormatters(lang.htmlLang);
   const url = Object.fromEntries(PAGES.filter(p => !p.noindex).map(p => [p.id, urlFor(lang, p.id)]));
+  url.edgeStore = CONFIG.edgeStoreUrl;
   const calc = {
     ...data.calc,
     fallbackIntro: fill(data.calc.fallbackIntro, { skip: fmt.percent(DEFAULTS.skipShare) }),

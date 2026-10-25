@@ -101,7 +101,7 @@
       "desc": "Öffne eine E-Mail, um das LinkedIn-Profil des Absenders zu finden. Vernetze dich mit ihm und bleibe in Kontakt.",
       "install": "In 2 Minuten installieren",
       "github": "Auf GitHub ansehen",
-      "fine": "Noch nicht im Chrome Web Store. Die Installationsseite führt durch die zwei Minuten für die Installation als entpackte Erweiterung.",
+      "fine": "Jetzt bei Microsoft Edge-Add-Ons verfügbar. Für Chrome gibt es eine zweiminütige Anleitung zur Installation aus dem Quellcode.",
       "alt": "Die SenderFinder-Seitenleiste neben Gmail: Jane Doe, Head of Partnerships bei Acme in Berlin, mit ihrem LinkedIn-Link, einer Schaltfläche „Vernetzen“ und den anderen Personen in der Konversation.",
       "caption": "Die Seitenleiste beim Lesen einer E-Mail. Personen und Unternehmen sind fiktiv.",
       "privacyLine": "Abfragen gehen direkt von deinem Browser an den Anbieter, den du konfigurierst – kein SenderFinder-Server im Abfrageweg.",
@@ -452,11 +452,11 @@
   },
   "install": {
     "title": "SenderFinder installieren",
-    "lead": "Den Eintrag im Chrome Web Store gibt es noch nicht, deshalb lädst du die Erweiterung aus dem Quellcode. Zwei Minuten, einmal pro Browser.",
+    "lead": "Direkt über Microsoft Edge-Add-Ons installieren. Für Chrome folgen Sie den Schritten zur Installation aus dem Quellcode; der Store-Eintrag ist noch nicht verfügbar.",
     "note": "Du brauchst Chrome, Edge oder einen anderen Chromium-Browser auf einem Desktop-Rechner; in den mobilen Apps lassen sich keine Erweiterungen hinzufügen. Die Screenshots sind auf Englisch, die Erweiterung selbst folgt der Sprache deines Browsers.",
     "downloadLabel": "ZIP herunterladen",
     "githubLabel": "Repository öffnen",
-    "stepsTitle": "Fünf Schritte",
+    "stepsTitle": "In fünf Schritten aus dem Quellcode installieren",
     "steps": [
       {
         "title": "Code holen",
@@ -565,7 +565,8 @@
         "Abfragen gehen direkt von deinem Browser an den Anbieter, den du konfigurierst – kein SenderFinder-Server im Abfrageweg. Anonyme tägliche Nutzungszählung ist standardmäßig an und lässt sich in den Einstellungen abschalten.",
         "Entferne den Schlüssel jederzeit in den Einstellungen – ohne Schlüssel kann keine kostenpflichtige Abfrage laufen – oder deinstalliere die Erweiterung, was ihren Speicher löscht."
       ]
-    }
+    },
+    "edgeLabel": "Zu Microsoft Edge hinzufügen"
   },
   "privacy": {
     "title": "Datenschutz",

@@ -101,7 +101,7 @@
       "desc": "Open an email to find the sender’s LinkedIn profile. Connect with them and stay connected.",
       "install": "Install in 2 minutes",
       "github": "View on GitHub",
-      "fine": "Not in the Chrome Web Store yet. The install page walks through the two-minute unpacked install.",
+      "fine": "Available on Microsoft Edge Add-ons. For Chrome, follow the two-minute source installation guide.",
       "alt": "SenderFinder side panel beside Gmail showing a sample sender profile and other people in the email thread.",
       "caption": "The side panel while reading an email. The people and company are fictional.",
       "privacyLine": "Lookups go directly from your browser to the provider you configure — no SenderFinder server in the lookup path.",
@@ -452,11 +452,11 @@
   },
   "install": {
     "title": "Install SenderFinder",
-    "lead": "The Chrome Web Store listing isn't live yet, so you load the extension from source. Two minutes, once per browser.",
+    "lead": "Install directly from Microsoft Edge Add-ons. For Chrome, follow the source installation steps below; its store listing is not live yet.",
     "note": "You need Chrome, Edge or another Chromium browser on a desktop; extensions can't be added to the mobile apps. The screenshots are in English, the extension itself follows your browser language.",
     "downloadLabel": "Download the ZIP",
     "githubLabel": "Open the repository",
-    "stepsTitle": "Five steps",
+    "stepsTitle": "Install from source in five steps",
     "steps": [
       {
         "title": "Get the code",
@@ -565,7 +565,8 @@
         "Lookups go directly from your browser to the provider you configure — no SenderFinder server in the lookup path. Anonymous daily usage counts are on by default and can be switched off in settings.",
         "Remove the key in settings at any time — without a key no paid lookup can run — or uninstall the extension, which deletes its storage."
       ]
-    }
+    },
+    "edgeLabel": "Add to Microsoft Edge"
   },
   "privacy": {
     "title": "Privacy",

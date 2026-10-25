@@ -101,7 +101,7 @@
       "desc": "Abra um e-mail para encontrar o perfil do remetente no LinkedIn. Conecte-se com essa pessoa e mantenha o contato.",
       "install": "Instalar em 2 minutos",
       "github": "Ver no GitHub",
-      "fine": "Ainda não está na Chrome Web Store. A página de instalação explica a instalação sem compactação, que leva dois minutos.",
+      "fine": "Disponível no Microsoft Edge Add-ons. No Chrome, siga o guia de instalação pelo código-fonte em dois minutos.",
       "alt": "O painel lateral do SenderFinder ao lado do Gmail, mostrando Jane Doe, chefe de parcerias na Acme em Berlim, com o link do LinkedIn dela, um botão Conectar e as outras pessoas da conversa.",
       "caption": "O painel lateral enquanto você lê um e-mail. As pessoas e a empresa são fictícias.",
       "privacyLine": "As buscas vão diretamente do seu navegador ao provedor que você configurar — nenhum servidor do SenderFinder no caminho da busca.",
@@ -452,11 +452,11 @@
   },
   "install": {
     "title": "Instalar o SenderFinder",
-    "lead": "A ficha na Chrome Web Store ainda não está publicada, então você carrega a extensão a partir do código-fonte. Dois minutos, uma vez por navegador.",
+    "lead": "Instale diretamente pelo Microsoft Edge Add-ons. No Chrome, siga as etapas abaixo para instalar pelo código-fonte; a versão na loja ainda não está disponível.",
     "note": "Você precisa do Chrome, do Edge ou de outro navegador Chromium em um computador; extensões não podem ser adicionadas aos aplicativos para celular. As capturas de tela estão em inglês, a extensão em si segue o idioma do seu navegador.",
     "downloadLabel": "Baixar o ZIP",
     "githubLabel": "Abrir o repositório",
-    "stepsTitle": "Cinco passos",
+    "stepsTitle": "Instalar pelo código-fonte em cinco etapas",
     "steps": [
       {
         "title": "Obtenha o código",
@@ -565,7 +565,8 @@
         "As buscas vão diretamente do seu navegador ao provedor que você configurar — nenhum servidor do SenderFinder no caminho da busca. As contagens diárias de uso anônimas vêm ativadas por padrão e podem ser desativadas nas configurações.",
         "Remova a chave nas configurações a qualquer momento — sem uma chave, nenhuma busca paga pode rodar — ou desinstale a extensão, o que apaga o armazenamento dela."
       ]
-    }
+    },
+    "edgeLabel": "Adicionar ao Microsoft Edge"
   },
   "privacy": {
     "title": "Privacidade",

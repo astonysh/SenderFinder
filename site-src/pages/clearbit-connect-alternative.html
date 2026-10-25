@@ -5,7 +5,11 @@
       <h1>{{clearbit.title}}</h1>
       <p class="v2-lead">{{clearbit.lead}}</p>
       <div class="v2-actions">
-        <a class="v2-btn v2-btn--default" href="{{url.install}}" data-store-url="CWS_PLACEHOLDER">{{clearbit.ctaInstall}}</a>
+        <a class="v2-btn v2-btn--default" href="{{url.edgeStore}}">
+          <svg class="i" aria-hidden="true"><use href="#i-edge"/></svg> {{install.edgeLabel}}
+        </a>
+
+        <a class="v2-btn v2-btn--outline" href="{{url.install}}" data-store-url="CWS_PLACEHOLDER">{{clearbit.ctaInstall}}</a>
         <a class="v2-btn v2-btn--outline" href="{{url.index}}#how">{{clearbit.ctaHow}}</a>
       </div>
     </header>

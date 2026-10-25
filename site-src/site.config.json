@@ -1,5 +1,6 @@
 {
   "//": "Build-time switches for the website. See site/README.md.",
   "//consentMode": "false: the notice at the bottom is informational with one OK button (the site sets no cookies today). true: same bar, but with Accept/Reject, stored in localStorage as sf-consent, and exposed as <html data-consent=\"granted|denied|pending\"> plus a window 'sf:consent' event, so an analytics script can check before it loads.",
-  "consentMode": false
+  "consentMode": false,
+  "edgeStoreUrl": "https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki"
 }

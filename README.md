@@ -4,6 +4,12 @@
 
 An open-source browser extension in the spirit of Rapportive and Clearbit Connect, available for Chrome and desktop Microsoft Edge: open an email in Gmail (Outlook on the web is best-effort) and the browser's side panel shows the sender's LinkedIn profile: photo, name, title, company, location, their local time, the profile link and, when known, an X / Twitter link. Other people in the thread (other senders, To, Cc) are listed below and looked up only when you click them. The mail page itself only gets a tiny magnifier mark next to the sender's name, so Gmail's layout is untouched; clicking the mark switches the panel to that person.
 
+## Install
+
+<a href="https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki"><img src="site-src/assets/edge.svg" width="24" height="24" alt="Microsoft Edge"></a> **[Install from Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki)**
+
+The Edge version is live and can be installed directly from the store. The Chrome listing is not live yet; use the source installation steps below.
+
 Open the panel once by clicking the extension's toolbar icon (or the magnifier mark in an email); it then stays open in that tab and follows the email you are reading.
 
 The panel's **Connect** button opens the person's LinkedIn profile in a new tab. You click Connect; in the invitation dialog the extension clicks “Add a note” once and fills in your editable note template. **The extension never clicks Connect or Send**. LinkedIn access is optional and can be revoked in settings. The relationship/photo feature also uses your own LinkedIn session to read associated company links after you grant access.
@@ -64,7 +70,7 @@ Defaults: only the sender of the opened message is looked up automatically; ever
 
 ### Microsoft Edge desktop
 
-Edge uses the same Chromium MV3 extension as Chrome. For local installation, open `edge://extensions`, turn on **Developer mode**, choose **Load unpacked**, and select `extension/`. To submit to Microsoft Edge Add-ons, run `npm run zip:edge` and upload `output/senderfinder-edge-<version>.zip`. Settings, provider keys and cache are stored separately in Edge; the Data page can export JSON for moving non-key data.
+Install from [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki). Edge uses the same Chromium MV3 extension as Chrome. For local installation, open `edge://extensions`, turn on **Developer mode**, choose **Load unpacked**, and select `extension/`. To submit to Microsoft Edge Add-ons, run `npm run zip:edge` and upload `output/senderfinder-edge-<version>.zip`. Settings, provider keys and cache are stored separately in Edge; the Data page can export JSON for moving non-key data.
 
 ## UI language
 

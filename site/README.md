@@ -25,7 +25,7 @@ Node 22+, no dependencies. `npm run site` deletes `site/` first, so it is never 
 | `site-src/pages/*.html` | One template per page (`changelog.html` and the six English-only pages use dedicated or shared templates). `{{key}}`, `{{#each list}}…{{/each}}`, `{{#if value}}…{{/if}}` |
 | `site-src/locales/<locale>.json` | Every string of every multilingual page, one file per language |
 | `site-src/content/<id>.json` | Copy for English-only pages (`meta`, `page`, `faq`); never read for other languages |
-| `site-src/site.config.json` | Build switches (currently `consentMode`) |
+| `site-src/site.config.json` | Build switches (`consentMode`) and the published `edgeStoreUrl` |
 | `site-src/partials/icons.svg` | The icon sprite, inlined into every page |
 | `site-src/assets/app.css` | The only stylesheet, for every page: tokens (light/dark/system), shared chrome, the marketing layout, prose pages, install steps, calculator |
 | `site-src/assets/theme-boot.js` | Blocking head script: applies the saved theme and consent state before first paint |

@@ -101,7 +101,7 @@
       "desc": "Abre un correo para encontrar el perfil de LinkedIn del remitente. Conecta con esa persona y mantén el contacto.",
       "install": "Instalar en 2 minutos",
       "github": "Ver en GitHub",
-      "fine": "Todavía no está en Chrome Web Store. La página de instalación explica cómo cargarla descomprimida en dos minutos.",
+      "fine": "Disponible en Microsoft Edge Add-ons. Para Chrome, sigue la guía de instalación desde el código fuente en dos minutos.",
       "alt": "El panel lateral de SenderFinder junto a Gmail, mostrando a Jane Doe, responsable de alianzas en Acme, en Berlín, con el enlace a su LinkedIn, un botón Conectar y las demás personas de la conversación.",
       "caption": "El panel lateral mientras lees un correo. Las personas y la empresa son ficticias.",
       "privacyLine": "Las consultas van directamente desde tu navegador al proveedor que configures: ningún servidor de SenderFinder en el camino de la búsqueda.",
@@ -452,11 +452,11 @@
   },
   "install": {
     "title": "Instalar SenderFinder",
-    "lead": "La ficha de Chrome Web Store aún no está publicada, así que cargas la extensión desde el código fuente. Dos minutos, una vez por navegador.",
+    "lead": "Instala directamente desde Microsoft Edge Add-ons. Para Chrome, sigue los pasos de instalación desde el código fuente; todavía no está disponible en su tienda.",
     "note": "Necesitas Chrome, Edge u otro navegador basado en Chromium en un ordenador; las extensiones no se pueden añadir a las aplicaciones móviles. Las capturas están en inglés; la extensión sigue el idioma de tu navegador.",
     "downloadLabel": "Descargar el ZIP",
     "githubLabel": "Abrir el repositorio",
-    "stepsTitle": "Cinco pasos",
+    "stepsTitle": "Instalar desde el código fuente en cinco pasos",
     "steps": [
       {
         "title": "Consigue el código",
@@ -565,7 +565,8 @@
         "Las consultas van directamente desde tu navegador al proveedor que configures: ningún servidor de SenderFinder en el camino de la búsqueda. Los recuentos de uso anónimos están activados por defecto y se pueden desactivar en la configuración.",
         "Quita la clave en la configuración cuando quieras —sin clave no se puede ejecutar ninguna búsqueda de pago— o desinstala la extensión, lo que borra su almacenamiento."
       ]
-    }
+    },
+    "edgeLabel": "Añadir a Microsoft Edge"
   },
   "privacy": {
     "title": "Privacidad",

@@ -15,11 +15,15 @@
     </ul>
 
     <div class="v2-actions">
+        <a class="v2-btn v2-btn--default" href="{{url.edgeStore}}">
+          <svg class="i" aria-hidden="true"><use href="#i-edge"/></svg> {{install.edgeLabel}}
+        </a>
+
       <!-- CWS-BUTTON: when the store listing is live, set href="CWS_PLACEHOLDER" and change the label to "Add to Chrome". -->
       <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder">
         <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> {{index.hero.github}}
       </a>
-      <a class="v2-btn v2-btn--default" href="{{url.install}}" data-store-url="CWS_PLACEHOLDER">
+      <a class="v2-btn v2-btn--outline" href="{{url.install}}" data-store-url="CWS_PLACEHOLDER">
         {{index.hero.install}} <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg>
       </a>
     </div>
@@ -43,6 +47,7 @@
       <li><svg class="i" aria-hidden="true"><use href="#i-outlook"/></svg> {{works.outlook}}</li>
       <li><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg> {{works.linkedin}}</li>
       <li><svg class="i" aria-hidden="true"><use href="#i-chrome"/></svg> {{works.chrome}}</li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-edge"/></svg> Microsoft Edge</li>
     </ul>
   </div>
 </section>

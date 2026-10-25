@@ -101,7 +101,7 @@
       "desc": "打开一封邮件，找到发件人的 LinkedIn 个人主页。与对方建立联系，并保持长期联络。",
       "install": "2 分钟装好",
       "github": "在 GitHub 上查看",
-      "fine": "还没上 Chrome 应用商店。安装页会带你走完这两分钟的已解压安装。",
+      "fine": "已上架 Microsoft Edge 扩展商店。Chrome 用户可按指南在两分钟内从源码安装。",
       "alt": "Gmail 旁边的 SenderFinder 侧边栏，显示示例发件人资料和邮件线程中的其他联系人。",
       "caption": "读邮件时的侧边栏。人物和公司均为虚构。",
       "privacyLine": "查询请求从浏览器直接发送给你配置的数据供应商——查询路径上没有 SenderFinder 服务器。",
@@ -452,11 +452,11 @@
   },
   "install": {
     "title": "安装 SenderFinder",
-    "lead": "Chrome 应用商店还没上架，所以要从源码加载。两分钟，每个浏览器装一次。",
+    "lead": "Edge 用户可直接从 Microsoft Edge 扩展商店安装。Chrome 商店暂未上架，请按下方步骤从源码安装。",
     "note": "你需要在桌面版 Chrome、Edge 或其他 Chromium 浏览器上安装；手机版应用装不了插件。截图是英文的，插件本身跟随浏览器语言。",
     "downloadLabel": "下载 ZIP",
     "githubLabel": "打开仓库",
-    "stepsTitle": "五个步骤",
+    "stepsTitle": "从源码安装：五个步骤",
     "steps": [
       {
         "title": "拿到代码",
@@ -565,7 +565,8 @@
         "查询请求从浏览器直接发送给你配置的数据供应商——查询路径上没有 SenderFinder 服务器。匿名每日使用统计默认开启，可以在设置里关闭。",
         "随时可以在设置里删掉 key——没有 key，任何付费查询都跑不了——或者卸载插件，卸载会删掉它的存储。"
       ]
-    }
+    },
+    "edgeLabel": "添加到 Microsoft Edge"
   },
   "privacy": {
     "title": "隐私",

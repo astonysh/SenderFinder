@@ -101,7 +101,7 @@
       "desc": "Ouvrez un e-mail pour trouver le profil LinkedIn de l’expéditeur. Entrez en contact avec cette personne et gardez le lien.",
       "install": "Installer en 2 minutes",
       "github": "Voir sur GitHub",
-      "fine": "Pas encore dans le Chrome Web Store. La page d'installation détaille l'installation en deux minutes, sans empaquetage.",
+      "fine": "Disponible sur Microsoft Edge Add-ons. Pour Chrome, suivez le guide d’installation depuis le code source en deux minutes.",
       "alt": "Le panneau latéral SenderFinder à côté de Gmail, montrant Jane Doe, responsable des partenariats chez Acme à Berlin, avec son lien LinkedIn, un bouton Se connecter et les autres personnes du fil.",
       "caption": "Le panneau latéral pendant la lecture d'un e-mail. Les personnes et l'entreprise sont fictives.",
       "privacyLine": "Les recherches vont directement de votre navigateur au fournisseur que vous configurez : aucun serveur SenderFinder dans le chemin de la recherche.",
@@ -452,11 +452,11 @@
   },
   "install": {
     "title": "Installer SenderFinder",
-    "lead": "La fiche Chrome Web Store n'est pas encore en ligne, vous installez donc l'extension depuis les sources. Deux minutes, une fois par navigateur.",
+    "lead": "Installez directement depuis Microsoft Edge Add-ons. Pour Chrome, suivez les étapes ci-dessous pour installer depuis le code source ; la fiche du store n’est pas encore disponible.",
     "note": "Il faut Chrome, Edge ou un autre navigateur Chromium sur ordinateur ; les extensions ne peuvent pas être ajoutées aux applications mobiles. Les captures d'écran sont en anglais, l'extension elle-même suit la langue de votre navigateur.",
     "downloadLabel": "Télécharger le ZIP",
     "githubLabel": "Ouvrir le dépôt",
-    "stepsTitle": "Cinq étapes",
+    "stepsTitle": "Installer depuis le code source en cinq étapes",
     "steps": [
       {
         "title": "Récupérer le code",
@@ -565,7 +565,8 @@
         "Les recherches vont directement de votre navigateur au fournisseur que vous configurez : aucun serveur SenderFinder dans le chemin de la recherche. Les statistiques d'utilisation anonymes sont activées par défaut et peuvent être désactivées dans les paramètres.",
         "Supprimez la clé dans les paramètres à tout moment — sans clé, aucune recherche payante ne peut tourner — ou désinstallez l'extension, ce qui supprime son stockage."
       ]
-    }
+    },
+    "edgeLabel": "Ajouter à Microsoft Edge"
   },
   "privacy": {
     "title": "Confidentialité",

@@ -101,7 +101,7 @@
       "desc": "開啟一封郵件，找到寄件者的 LinkedIn 個人檔案。與對方建立聯繫，並保持長期聯絡。",
       "install": "2 分鐘完成安裝",
       "github": "在 GitHub 上查看",
-      "fine": "還沒上架 Chrome Web Store。安裝頁面會帶你走完兩分鐘的未封裝安裝流程。",
+      "fine": "已於 Microsoft Edge 附加元件商店上架。Chrome 使用者可依指南在兩分鐘內從原始碼安裝。",
       "alt": "Gmail 旁邊的 SenderFinder 側邊面板，顯示 Jane Doe（柏林 Acme 的合作夥伴關係主管），以及她的 LinkedIn 連結、加入人脈按鈕和對話串中的其他人。",
       "caption": "閱讀郵件時的側邊面板。人物與公司均為虛構。",
       "privacyLine": "查詢會從你的瀏覽器直接傳送給你設定的供應商 —— 查詢路徑上沒有 SenderFinder 伺服器。",
@@ -452,11 +452,11 @@
   },
   "install": {
     "title": "安裝 SenderFinder",
-    "lead": "Chrome Web Store 還沒上架，所以要先從原始碼載入擴充功能。兩分鐘，每個瀏覽器做一次。",
+    "lead": "Edge 使用者可直接從 Microsoft Edge 附加元件商店安裝。Chrome 商店尚未上架，請依下方步驟從原始碼安裝。",
     "note": "你需要在桌機上使用 Chrome、Edge 或其他 Chromium 瀏覽器；擴充功能無法加到行動版 App。截圖是英文版，擴充功能本身會跟隨你的瀏覽器語言。",
     "downloadLabel": "下載 ZIP",
     "githubLabel": "開啟儲存庫",
-    "stepsTitle": "五個步驟",
+    "stepsTitle": "從原始碼安裝：五個步驟",
     "steps": [
       {
         "title": "取得程式碼",
@@ -565,7 +565,8 @@
         "查詢請求會從你的瀏覽器直接傳送給你設定的供應商 —— 查詢路徑上沒有 SenderFinder 伺服器。匿名使用統計預設開啟，可以在設定裡關閉。",
         "你隨時可以在設定裡移除 key —— 沒有 key 就無法執行任何付費查詢 —— 或者直接解除安裝擴充功能，這會刪除它的儲存資料。"
       ]
-    }
+    },
+    "edgeLabel": "新增至 Microsoft Edge"
   },
   "privacy": {
     "title": "隱私權",

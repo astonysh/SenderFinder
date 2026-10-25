@@ -5,8 +5,12 @@
       <p class="v2-lead">{{install.lead}}</p>
       <p class="v2-note">{{install.note}}</p>
       <div class="v2-actions">
+        <a class="v2-btn v2-btn--default" href="{{url.edgeStore}}">
+          <svg class="i" aria-hidden="true"><use href="#i-edge"/></svg> {{install.edgeLabel}}
+        </a>
+
         <!-- CWS-BUTTON: when the store listing is live, replace this block with the store button and drop the source steps. -->
-        <a class="v2-btn v2-btn--default" href="https://github.com/astonysh/SenderFinder/archive/refs/heads/main.zip" data-store-url="CWS_PLACEHOLDER">
+        <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder/archive/refs/heads/main.zip" data-store-url="CWS_PLACEHOLDER">
           {{install.downloadLabel}} <svg class="i" aria-hidden="true"><use href="#i-download"/></svg>
         </a>
         <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder">

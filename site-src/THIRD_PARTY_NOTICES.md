@@ -38,3 +38,11 @@ written by hand for this site.
 Gmail, Outlook, LinkedIn and Chrome are trademarks of their owners. Provider names (Monid, treg,
 Firecrawl, Hunter, Apollo, ContactOut, BlitzAPI, QuickEnrich, Village, Data Legion) belong to their
 owners. SenderFinder is not affiliated with any of them.
+
+## Microsoft Edge icon
+
+Microsoft Edge brand icon from Font Awesome Free 6.7.2 by Fonticons, Inc.
+Source: https://github.com/FortAwesome/Font-Awesome/blob/6.x/svgs/brands/edge.svg
+Licensed under CC BY 4.0: https://creativecommons.org/licenses/by/4.0/.
+The website uses the icon in its SVG sprite; the standalone README asset uses a blue fill.
+Microsoft Edge is a trademark of Microsoft Corporation.
