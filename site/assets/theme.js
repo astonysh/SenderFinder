@@ -1,11 +1,13 @@
-/* Light / dark / system switch for the website, the same model as the extension:
-   "system" follows prefers-color-scheme, "light" and "dark" set <html data-theme> and are remembered.
-   The stylesheet decides what a theme looks like; this file only records the choice.
-   Without JavaScript the control stays hidden and the site simply follows the system. */
+/* Light / dark switch for the website: one button, no menu. The page follows the system until the visitor
+   clicks; each click flips to the other theme. Flipping back to the theme the system already uses goes back
+   to following the system, so only a deviation is remembered (localStorage "el-theme", read by
+   theme-boot.js before first paint). Without JavaScript the button stays hidden and the site follows the system. */
 
 const KEY = 'el-theme';
 const root = document.documentElement;
 const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+const systemTheme = () => (media.matches ? 'dark' : 'light');
 
 const stored = () => {
   try {
@@ -15,18 +17,21 @@ const stored = () => {
 };
 
 let current = stored();
+const shown = () => (current === 'system' ? systemTheme() : current);
 
 function paint() {
   if (current === 'system') delete root.dataset.theme;
   else root.dataset.theme = current;
-  root.dataset.themeChoice = current;   // the header shows the icon of the chosen state
-  for (const button of document.querySelectorAll('[data-theme-value]')) {
-    button.setAttribute('aria-pressed', String(button.dataset.themeValue === current));
+  const next = shown() === 'dark' ? 'light' : 'dark';
+  for (const button of document.querySelectorAll('.theme-switch')) {
+    button.setAttribute('aria-label', button.dataset[next === 'dark' ? 'labelDark' : 'labelLight']);
+    button.title = button.getAttribute('aria-label');
   }
 }
 
-function choose(value) {
-  current = value === 'light' || value === 'dark' ? value : 'system';
+function toggle() {
+  const next = shown() === 'dark' ? 'light' : 'dark';
+  current = next === systemTheme() ? 'system' : next;
   try {
     if (current === 'system') localStorage.removeItem(KEY);
     else localStorage.setItem(KEY, current);
@@ -37,13 +42,7 @@ function choose(value) {
 root.classList.add('js');
 paint();
 
-for (const button of document.querySelectorAll('[data-theme-value]')) {
-  button.addEventListener('click', () => {
-    choose(button.dataset.themeValue);
-    const panel = button.closest('details');
-    if (panel) panel.open = false;
-  });
-}
+for (const button of document.querySelectorAll('.theme-switch')) button.addEventListener('click', toggle);
 
 // Following the system means following it when it changes too.
 media.addEventListener('change', () => { if (current === 'system') paint(); });

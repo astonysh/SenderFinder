@@ -197,13 +197,13 @@ code { background: var(--surface-2); padding: .05em .25em; border-radius: 2px; }
 }
 
 /* the header switchers keep their markup, only the shape follows the new tokens */
-.v2-nav .theme-switch summary, .v2-nav .lang-switch summary {
+.v2-nav .theme-switch, .v2-nav .lang-switch summary {
   border: 1px solid var(--v2-border); border-radius: var(--radius-md); background: var(--v2-bg);
   color: var(--v2-fg); height: 2.25rem; padding: 0 .65rem; font-size: .875rem;
 }
-.v2-nav .theme-switch summary:hover, .v2-nav .lang-switch summary:hover { background: var(--v2-accent); }
-.v2-nav .lang-menu, .v2-nav .theme-menu { border-radius: var(--radius-md); border-color: var(--v2-border); box-shadow: var(--v2-shadow); }
-.v2-nav .lang-menu li a, .v2-nav .theme-menu button { border-radius: var(--radius-sm); }
+.v2-nav .theme-switch:hover, .v2-nav .lang-switch summary:hover { background: var(--v2-accent); }
+.v2-nav .lang-menu { border-radius: var(--radius-md); border-color: var(--v2-border); box-shadow: var(--v2-shadow); }
+.v2-nav .lang-menu li a { border-radius: var(--radius-sm); }
 
 /* ---------------------------------------------------------------- hero */
 
@@ -326,6 +326,10 @@ code { background: var(--surface-2); padding: .05em .25em; border-radius: 2px; }
 .v2-cta { padding: clamp(2rem, 5vw, 2.75rem) clamp(1.25rem, 4vw, 2rem); border-radius: var(--radius-xl); text-align: center; color: #fff; background-image: linear-gradient(135deg, var(--gradient-from), var(--gradient-via), var(--gradient-to)); }
 .v2-cta h2 { margin: 0; font-size: clamp(1.6rem, 3.4vw, 1.9rem); font-weight: 700; color: #fff; }
 .v2-cta p { margin: .6rem auto 0; max-width: 38rem; font-size: 1.05rem; color: oklch(1 0 0 / 95%); }
+.v2-cta p { text-wrap: balance; line-height: 1.7; }
+.v2-cta a { color: #fff; font-weight: 600; text-decoration: underline; text-decoration-color: oklch(1 0 0 / 55%); text-decoration-thickness: 1.5px; text-underline-offset: .22em; border-radius: var(--radius-sm); transition: text-decoration-color .15s, background-color .15s; }
+.v2-cta a:hover { text-decoration-color: #fff; background: oklch(1 0 0 / 14%); }
+.v2-cta a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 .v2-cta .v2-actions { margin-top: 1.5rem; }
 .v2-cta .v2-btn--outline { background: oklch(1 0 0 / 95%); border-color: transparent; color: oklch(0.2 0.02 300); }
 
@@ -488,18 +492,16 @@ th { font-weight: 600; }
 .mt-lg { margin-top: 2.25rem; }
 
 /* Header dropdowns: language and appearance. Both are plain <details>, no JavaScript needed. */
-.lang-switch, .theme-switch { position: relative; font-size: .95rem; }
-.lang-switch summary, .theme-switch summary { display: inline-flex; align-items: center; gap: .4rem; cursor: pointer; list-style: none; padding: .35rem .6rem; border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); background: var(--bg); }
-.lang-switch summary::-webkit-details-marker, .theme-switch summary::-webkit-details-marker { display: none; }
-.lang-switch summary::after, .theme-switch summary::after { content: "\25BE"; font-size: .8em; color: var(--muted); }
-.lang-switch[open] summary::after, .theme-switch[open] summary::after { content: "\25B4"; }
-.lang-menu, .theme-menu { position: absolute; right: 0; top: calc(100% + .35rem); z-index: 20; padding: .5rem; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); }
+.lang-switch { position: relative; font-size: .95rem; }
+.lang-switch summary, .theme-switch { display: inline-flex; align-items: center; gap: .4rem; cursor: pointer; list-style: none; padding: .35rem .6rem; border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); background: var(--bg); }
+.lang-switch summary::-webkit-details-marker { display: none; }
+.lang-switch summary::after { content: "\25BE"; font-size: .8em; color: var(--muted); }
+.lang-switch[open] summary::after { content: "\25B4"; }
+.lang-menu { position: absolute; right: 0; top: calc(100% + .35rem); z-index: 20; padding: .5rem; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); }
 .lang-menu { min-width: 12rem; max-width: min(18rem, calc(100vw - 2.5rem)); max-height: 70vh; overflow-y: auto; }
-.theme-menu { display: flex; flex-direction: column; gap: .1rem; min-width: 10rem; }
-.theme-menu button { text-align: left; padding: .35rem .5rem; border: 0; border-radius: var(--radius); background: transparent; color: var(--muted); font: inherit; cursor: pointer; }
-.theme-menu button:hover { color: var(--text); background: var(--surface-2); }
-.theme-menu button[aria-pressed="true"] { color: var(--text); font-weight: 650; background: var(--surface-2); }
-.theme-menu button[aria-pressed="true"]::after { content: " \2713"; }
+.theme-switch { justify-content: center; font: inherit; font-size: .95rem; line-height: 1; cursor: pointer; }
+.theme-switch .i { width: 1.1rem; height: 1.1rem; }
+.theme-switch:focus-visible { outline: 2px solid var(--v2-ring, var(--accent)); outline-offset: 2px; }
 html:not(.js) .theme-switch { display: none; }
 .lang-menu ul { list-style: none; margin: 0; padding: 0; }
 .lang-menu li a { display: block; padding: .35rem .5rem; border-radius: var(--radius); color: var(--muted); text-decoration: none; white-space: nowrap; }
@@ -642,12 +644,17 @@ html.notice-on .site-footer { padding-bottom: 8rem; }
   .notice-btn { min-height: 30px; padding: .2rem .6rem; font-size: .78rem; }
 }
 
-/* The theme control shows the icon of the current choice */
+/* The theme button shows the theme a click switches to: a moon on a light page, a sun on a dark one */
 .theme-icon { display: none; }
-.theme-icon-monitor { display: inline-block; }
-html[data-theme-choice="light"] .theme-icon-monitor, html[data-theme-choice="dark"] .theme-icon-monitor { display: none; }
-html[data-theme-choice="light"] .theme-icon-light { display: inline-block; }
-html[data-theme-choice="dark"] .theme-icon-dark { display: inline-block; }
+.theme-icon-dark { display: inline-block; }
+@media (prefers-color-scheme: dark) {
+  .theme-icon-dark { display: none; }
+  .theme-icon-light { display: inline-block; }
+}
+html[data-theme="light"] .theme-icon-dark { display: inline-block; }
+html[data-theme="light"] .theme-icon-light { display: none; }
+html[data-theme="dark"] .theme-icon-dark { display: none; }
+html[data-theme="dark"] .theme-icon-light { display: inline-block; }
 
 /* ---------------------------------------------------------------- free-first pricing */
 

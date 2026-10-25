@@ -321,7 +321,6 @@ function header(lang, page, data, scope) {
     return `              <li><a href="${href}" hreflang="${other.hreflang}" lang="${other.htmlLang}"${current}>${other.name}</a></li>`;
   }).join('\n');
 
-  const theme = (value, label) => `            <button type="button" data-theme-value="${value}" aria-pressed="${value === 'system'}">${esc(label)}</button>`;
   const brandCurrent = page.id === 'index' ? ' aria-current="page"' : '';
   return `  <a class="skip-link" href="#main">${esc(data.ui.skip)}</a>
 
@@ -337,14 +336,7 @@ ${items}
         </ul>
       </nav>
       <div class="header-tools">
-        <details class="theme-switch">
-          <summary><span class="visually-hidden">${esc(data.ui.theme.label)}: </span><svg class="i theme-icon theme-icon-monitor" aria-hidden="true"><use href="#i-monitor"/></svg><svg class="i theme-icon theme-icon-light" aria-hidden="true"><use href="#i-sun"/></svg><svg class="i theme-icon theme-icon-dark" aria-hidden="true"><use href="#i-moon"/></svg></summary>
-          <div class="theme-menu" role="group" aria-label="${esc(data.ui.theme.label)}">
-${theme('system', data.ui.theme.system)}
-${theme('light', data.ui.theme.light)}
-${theme('dark', data.ui.theme.dark)}
-          </div>
-        </details>
+        <button type="button" class="theme-switch" data-label-light="${esc(data.ui.theme.label)}: ${esc(data.ui.theme.light)}" data-label-dark="${esc(data.ui.theme.label)}: ${esc(data.ui.theme.dark)}" aria-label="${esc(data.ui.theme.label)}"><svg class="i theme-icon theme-icon-light" aria-hidden="true"><use href="#i-sun"/></svg><svg class="i theme-icon theme-icon-dark" aria-hidden="true"><use href="#i-moon"/></svg></button>
         <details class="lang-switch">
           <summary><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg><span class="visually-hidden">${esc(data.ui.language)}: </span>${lang.name}</summary>
           <div class="lang-menu">
@@ -428,7 +420,6 @@ function headerV2(lang, page, data, scope) {
     const current = other.locale === lang.locale ? ' aria-current="page"' : '';
     return `                <li><a href="${href}" hreflang="${other.hreflang}" lang="${other.htmlLang}"${current}>${other.name}</a></li>`;
   }).join('\n');
-  const theme = (value, label) => `              <button type="button" data-theme-value="${value}" aria-pressed="${value === 'system'}">${esc(label)}</button>`;
   return `  <a class="skip-link" href="#main">${esc(data.ui.skip)}</a>
 
   <header class="v2-nav">
@@ -446,14 +437,7 @@ ${items}
         </nav>
 
         <div class="v2-nav-tools header-tools">
-          <details class="theme-switch">
-            <summary><span class="visually-hidden">${esc(data.ui.theme.label)}: </span><svg class="i theme-icon theme-icon-monitor" aria-hidden="true"><use href="#i-monitor"/></svg><svg class="i theme-icon theme-icon-light" aria-hidden="true"><use href="#i-sun"/></svg><svg class="i theme-icon theme-icon-dark" aria-hidden="true"><use href="#i-moon"/></svg></summary>
-            <div class="theme-menu" role="group" aria-label="${esc(data.ui.theme.label)}">
-${theme('system', data.ui.theme.system)}
-${theme('light', data.ui.theme.light)}
-${theme('dark', data.ui.theme.dark)}
-            </div>
-          </details>
+          <button type="button" class="theme-switch" data-label-light="${esc(data.ui.theme.label)}: ${esc(data.ui.theme.light)}" data-label-dark="${esc(data.ui.theme.label)}: ${esc(data.ui.theme.dark)}" aria-label="${esc(data.ui.theme.label)}"><svg class="i theme-icon theme-icon-light" aria-hidden="true"><use href="#i-sun"/></svg><svg class="i theme-icon theme-icon-dark" aria-hidden="true"><use href="#i-moon"/></svg></button>
           <details class="lang-switch">
             <summary><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg><span class="visually-hidden">${esc(data.ui.language)}: </span>${lang.name}</summary>
             <div class="lang-menu">
