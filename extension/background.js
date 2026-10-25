@@ -128,10 +128,11 @@ chrome.tabs.onRemoved.addListener(tabId => { sess.del('connect:' + tabId).catch(
 
 // ── Relationship + photo from LinkedIn (optional): the signed-in user's degree to a profile, whether an invitation
 //    is pending, and the profile photo. Read with the user's own linkedin.com session (csrf header = JSESSIONID),
-//    only for people shown in the side panel, one at a time, cached for 3 days and capped per day so the account
-//    never sees bulk traffic. Needs the optional linkedin.com origin + "cookies" permissions.
+//    only for people shown in the side panel, one at a time, cached (3 days once connected, 12 hours otherwise,
+//    10 minutes while an invitation is outstanding so an acceptance shows up on the next panel open) and capped per
+//    day so the account never sees bulk traffic. Needs the optional linkedin.com origin + "cookies" permissions.
 const LI_REL_PERMS = { permissions: ['cookies'], origins: [LI_ORIGIN] };
-const LI_REL_TTL_MS = 3 * 24 * 3600 * 1000, LI_REL_OPEN_TTL_MS = 12 * 3600 * 1000, LI_REL_DAILY = 60, LI_INVITE_TTL_MS = 30 * 24 * 3600 * 1000;
+const LI_REL_TTL_MS = 3 * 24 * 3600 * 1000, LI_REL_OPEN_TTL_MS = 12 * 3600 * 1000, LI_REL_PENDING_TTL_MS = 10 * 60 * 1000, LI_REL_DAILY = 60, LI_INVITE_TTL_MS = 30 * 24 * 3600 * 1000;
 const DECO = 'com.linkedin.voyager.dash.deco.identity.profile.';
 const DASH_DECOS = [DECO + 'FullProfileWithEntities-93', DECO + 'FullProfileWithEntities-91', DECO + 'WebTopCardCore-18', null];
 // Decorations that carry the member relationship (degree / connected / invitation), tried when the profile one lacks it.
@@ -171,9 +172,20 @@ async function liRelation(msg) {
   if (!(await chrome.permissions.contains(LI_REL_PERMS))) return err('LI_NO_PERMISSION');
   const key = 'lirel:' + slug.toLowerCase();
   const cached = (await chrome.storage.local.get(key))[key];
-  const finish = async ({ diag, ...rel }) => { const pending = rel.pending || (rel.relation !== 'connected' && await liInvitedRecently(slug)); return { ok: true, ...rel, pending, relation: relationOf({ ...rel, pending }) }; };
-  // Not-yet-connected people can change state (invited, accepted) at any time: re-check them sooner.
-  const ttl = cached && relationOf(cached) === 'connected' ? LI_REL_TTL_MS : LI_REL_OPEN_TTL_MS;
+  // "Invitation pending" is what LinkedIn reports, or what the content script saw when the user sent one (the
+  // profile data often omits invitation state); it ends when LinkedIn reports the two as connected.
+  const invited = await liInvitedRecently(slug);
+  const finish = async ({ diag, ...rel }) => {
+    const pending = !!rel.pending || (relationOf(rel) !== 'connected' && invited);
+    const relation = relationOf({ ...rel, pending });
+    if (relation === 'connected' && invited) await chrome.storage.local.remove('liInvited:' + slug.toLowerCase());
+    return { ok: true, ...rel, pending, relation };
+  };
+  // Not-yet-connected people can change state (invited, accepted) at any time: re-check them sooner. An outstanding
+  // invitation is re-checked on every panel open / focus (10 minutes apart at most), so an acceptance shows up
+  // the next time the email is opened instead of hours later.
+  const was = cached ? relationOf({ ...cached, pending: cached.pending || invited }) : null;
+  const ttl = was === 'connected' ? LI_REL_TTL_MS : was === 'pending' ? LI_REL_PENDING_TTL_MS : LI_REL_OPEN_TTL_MS;
   if (cached && cached.v === LI_REL_VERSION && msg.force !== true && Date.now() - cached.at < ttl) return finish({ ...cached, cached: true });
   return liSerial(async () => {
     const day = dayOf(new Date());

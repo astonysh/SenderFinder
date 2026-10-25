@@ -29,7 +29,8 @@ Edge 版已上架，可直接从商店安装。Chrome 版暂未上架，请参�
 | 3 | `hunter` | Monid `hunterio /people/find` | 邮箱 | $0.0049 | 免费（404） | 17.9 % |
 | 4 | `quickenrich` | treg `quickenrich.people.enrich` | 邮箱 | $0.0048 | 免费 | 17.4 % |
 | 5 | `apollo` | Monid `apollo /people/match` | 邮箱 + 姓名 + 公司域名 | $0.026 | 免费，能挂到已知公司的空壳会计费 | 100 %（19/19） |
-| 6 | `datalegion` | Firecrawl Alexandria `datalegion people/enrich-base-no-contact` | 邮箱 | 10 credits（≈ $0.008–0.032） | 免费 | — |
+| 6 | `websearch` | Firecrawl `/v2/search`，姓名 + 公司关键词，只搜 linkedin.com | 姓名 + 公司域名 | 2 credits（≈ $0.002–0.006） | 计费（搜索已执行） | — |
+| 7 | `datalegion` | Firecrawl Alexandria `datalegion people/enrich-base-no-contact` | 邮箱 | 10 credits（≈ $0.008–0.032） | 免费 | — |
 
 条件命中率 = 该步骤回答数 ÷ 到达该步骤的次数，数据来自 2026-10-25 的 50 条实测；完整表格与说明见 https://senderfinder.com/email-enrichment-api-benchmark。
 
@@ -43,7 +44,7 @@ Edge 版已上架，可直接从商店安装。Chrome 版暂未上架，请参�
 |---|---|---:|---|---|
 | **treg** | `blitzapi` → `quickenrich`（可再开 `village`） | $0.0005–0.005 | 只靠邮箱，基准样本里约一半到六成 | 预算敏感、量大 |
 | **Monid** | `hunter` → `apollo`（可再开 `contactout`） | $0.005–0.026 | Apollo 带姓名 + 公司域名兜底，基准样本里 19/19 命中 | 要命中率 |
-| **Firecrawl** | 只有 `datalegion` | 10 credits | 没有命中率数据 | 不建议单独用，只做兜底 |
+| **Firecrawl** | `websearch` → `datalegion` | 2 / 10 credits | 姓名 + 公司的网页搜索能找到任何数据库都没有的公开档案（新公司、新入职） | 放在 treg / Monid 后面兜底 |
 
 两家都填就是默认瀑布流：treg 的便宜步骤先试，Monid 的 Apollo 兜底。Apollo、Hunter、ContactOut 都是经 Monid 代理调用，BlitzAPI、QuickEnrich、Village 经 treg，插件不直连任何数据源，所以 Apollo 自己的 API key 填进来没用。
 

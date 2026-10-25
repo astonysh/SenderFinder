@@ -3,7 +3,7 @@
   "message": "SenderFinder"
  },
  "ext_description": {
-  "message": "在 Gmail / Outlook 網頁版顯示寄件者的 LinkedIn 個人檔案。開放原始碼，使用你自己的供應商 key，資料只留在你的瀏覽器裡。"
+  "message": "在 Gmail 或 Outlook 中找到寄件人的 LinkedIn 個人檔案。讓聯繫不止於郵件。開源，使用你自己的供應商金鑰。"
  },
  "lookup_btn": {
   "message": "查 LinkedIn"
@@ -259,6 +259,9 @@
  },
  "step_apollo": {
   "message": "Apollo 比對（Monid）"
+ },
+ "step_websearch": {
+  "message": "依姓名 + 公司在網路上搜尋 LinkedIn（Firecrawl）"
  },
  "step_datalegion": {
   "message": "Data Legion 電子郵件反查（Firecrawl）"
@@ -816,7 +819,7 @@
   "message": "涵蓋最廣。Hunter 以電子郵件查詢，Apollo 以電子郵件 + 姓名 + 公司網域查詢（約 $$0.03）。"
  },
  "vendor_firecrawl_tagline": {
-  "message": "可選的最後備援（Data Legion），以 credit 計費。"
+  "message": "最後的備援：依姓名 + 公司在 linkedin.com 上搜尋（2 credits）與 Data Legion（10 credits），按 credit 計費。"
  },
  "step_off": {
   "message": "停用"

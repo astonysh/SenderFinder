@@ -3,7 +3,7 @@
   "message": "SenderFinder"
  },
  "ext_description": {
-  "message": "Mostra o perfil do LinkedIn do remetente no Gmail / Outlook web. Código aberto, suas chaves de provedor, dados ficam no navegador."
+  "message": "Encontre remetentes do Gmail ou Outlook no LinkedIn e conecte-se além do e-mail. Código aberto, com suas próprias chaves."
  },
  "lookup_btn": {
   "message": "Encontrar no LinkedIn"
@@ -259,6 +259,9 @@
  },
  "step_apollo": {
   "message": "Correspondência Apollo (Monid)"
+ },
+ "step_websearch": {
+  "message": "Busca na web por nome + empresa no LinkedIn (Firecrawl)"
  },
  "step_datalegion": {
   "message": "Busca reversa por e-mail Data Legion (Firecrawl)"
@@ -816,7 +819,7 @@
   "message": "Melhor cobertura. Hunter por e-mail, Apollo por e-mail + nome + domínio da empresa (cerca de $$0.03)."
  },
  "vendor_firecrawl_tagline": {
-  "message": "Último recurso opcional (Data Legion). Cobrado em créditos."
+  "message": "Últimos recursos: busca na web por nome + empresa no linkedin.com (2 créditos) e Data Legion (10 créditos). Cobrado em créditos."
  },
  "step_off": {
   "message": "desativado"

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.2 (2026-10-25)
+
+- Refreshed the extension summary in all 10 languages and the English / Simplified Chinese store copy: find the sender’s LinkedIn profile, connect beyond the inbox. Monid signup links use the maintainer’s affiliate URL.
+
+- New step `websearch` (Firecrawl, 2 credits): when every reverse-email provider misses, a web search for the header name + the company keyword of the work domain, restricted to linkedin.com, finds the public profile page ("Jane Doe - Head of Growth at Acme"). Reverse-email databases do not know new companies or new hires, while the LinkedIn page is indexed; seen live 2026-10-25 with a monid.ai address that seven data sources all missed. A result is accepted only when its title names the person (same name check as the other steps) and mentions the company keyword. On by default before Data Legion; skipped without a header name or a work domain, or without a Firecrawl key.
+- Side panel: when nothing is found, a free "Search LinkedIn for this person" link opens LinkedIn's people search with the header name and the company keyword.
+- Fix: an invitation you sent stayed "Invitation pending" in the side panel for up to 12 hours after the person accepted, because the relationship read at sending time was cached that long. An outstanding invitation is now re-checked against LinkedIn every time the panel opens or regains focus (at most once per 10 minutes), and "Look up again" re-reads the relationship immediately. Once LinkedIn reports the two of you as connected, the local "invited" marker is cleared.
+
 ## 0.5.1 (2026-10-25)
 
 - Fix: buttons sometimes needed a second click. The side panel no longer re-renders while a pointer is pressed (a focus, relationship refresh or state push used to replace the pressed button and Chrome dropped the click), and the magnifier chip asks the side panel to open before the worker awaits anything, so the user gesture no longer expires after a cold start.

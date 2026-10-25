@@ -1,4 +1,4 @@
-# Chrome Web Store submission kit
+# Browser store submission kit
 
 Everything in this folder is generated or hand-written for the store listing. Regenerate the images with
 `npm run store:assets` (uses synthetic people only; nothing real, no provider call).
@@ -40,3 +40,22 @@ Everything in this folder is generated or hand-written for the store listing. Re
 - Tag the release on GitHub (`v<version>`) and attach the same zip (which must not contain private signing keys).
 - Put the store link on the website and in the README ("Install from the Chrome Web Store" above "Install from source").
 - Each later release: `npm run bump -- patch|minor "summary"`, tests, `npm run zip -- --store`, upload, submit.
+
+## Microsoft Edge Add-ons updates
+
+SenderFinder is live at https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki.
+
+1. Run `npm run zip:edge` to create `output/senderfinder-edge-<version>.zip`; the development public key is stripped.
+2. In Partner Center, open the existing SenderFinder item, choose Update, and replace its package.
+3. Use the shared `listing.en.md` and `listing.zh_CN.md` descriptions. The package includes short descriptions for all 10 languages; review the dashboard’s imported text for every language. Preserve existing screenshots unless newer assets are supplied.
+4. Add the version’s release notes and reviewer instructions, then submit for certification. A submitted update is not live until the store completes certification and publishing.
+
+## Automated Edge package updates
+
+Microsoft’s Update REST API supports uploading a package to an existing product, checking upload status, submitting its draft for certification, and checking publication status. Store descriptions and other listing metadata still require Partner Center.
+
+Use the v1.1 authentication scheme: API Key and Client ID from Partner Center’s Publish API page. Store credentials in local secret storage or CI secrets, never in this repository or chat. SenderFinder product ID: `e29bfc9a-64dd-4a2d-83be-eee965037989`.
+
+The automation sequence is: build with `npm run zip:edge`, upload, wait for verification, submit with reviewer notes, then report certification/publication status. Submitting does not mean the update is immediately live.
+
+Official documentation: https://learn.microsoft.com/en-us/microsoft-edge/extensions/update/api/using-addons-api

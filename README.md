@@ -29,7 +29,8 @@ Cheapest step first. Each provider's current catalog price is read before the ca
 | 3 | `hunter` | Monid `hunterio /people/find` | email | $0.0049 | free (404) | 17.9 % |
 | 4 | `quickenrich` | treg `quickenrich.people.enrich` | email | $0.0048 | free | 17.4 % |
 | 5 | `apollo` | Monid `apollo /people/match` | email + name + domain | $0.026 | free; an empty stub attached to a known company is billed | 100 % (19/19) |
-| 6 | `datalegion` | Firecrawl Alexandria `datalegion people/enrich-base-no-contact` | email | 10 credits (≈ $0.008–0.032) | free | — |
+| 6 | `websearch` | Firecrawl `/v2/search`, name + company keyword, linkedin.com only | name + domain | 2 credits (≈ $0.002–0.006) | billed (the search ran) | — |
+| 7 | `datalegion` | Firecrawl Alexandria `datalegion people/enrich-base-no-contact` | email | 10 credits (≈ $0.008–0.032) | free | — |
 
 Observed hit rate is answered ÷ reached — the conditional chance that a step answers once the chain reaches it, measured on the 50-address run of 2026-10-25. Full table and caveats: https://senderfinder.com/email-enrichment-api-benchmark.
 
@@ -43,7 +44,7 @@ The extension knows three keys; each is an aggregator with several data sources 
 |---|---|---:|---|---|
 | **treg** | `blitzapi` → `quickenrich` (optionally `village`) | $0.0005–0.005 | email only; roughly half to 60 % of the benchmark sample | tight budgets, high volume |
 | **Monid** | `hunter` → `apollo` (optionally `contactout`) | $0.005–0.026 | Apollo matches on name + company domain; 19/19 in the benchmark | hit rate |
-| **Firecrawl** | `datalegion` only | 10 credits | no hit-rate data | not recommended alone; fallback only |
+| **Firecrawl** | `websearch` → `datalegion` | 2 / 10 credits | the name + company web search finds public profiles no database knows (new companies, new hires) | the backstop behind treg / Monid |
 
 Both treg and Monid together is the default waterfall: treg's cheap steps first, Monid's Apollo as the backstop. Apollo, Hunter and ContactOut are called through Monid, BlitzAPI, QuickEnrich and Village through treg; the extension never calls a data source directly, so an Apollo API key of your own does nothing here.
 

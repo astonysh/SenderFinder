@@ -1,6 +1,6 @@
 // Packs extension/ into a browser upload archive or manual-install archive.
 //   --store      strip only the development "key" field from manifest.json; all extension code and features are kept.
-//   --edge       name the unchanged Chromium archive for Microsoft Edge Add-ons.
+//   --edge       name the Chromium archive for Microsoft Edge Add-ons and strip the development "key" field.
 // Never bundle extension-key.pem: it is private signing material and must stay out of uploaded / released archives.
 // Usage: npm run zip -- --store  ·  npm run zip:edge
 import { execFileSync } from 'node:child_process';
@@ -20,10 +20,10 @@ fs.mkdirSync(path.dirname(out), { recursive: true }); fs.rmSync(out, { force: tr
 const stage = fs.mkdtempSync(path.join(os.tmpdir(), 'senderfinder-zip-'));
 try {
   fs.cpSync(src, stage, { recursive: true, filter: p => !/\.DS_Store$|\.zip$/.test(p) });
-  if (args.includes('--store')) {
+  if (args.includes('--store') || isEdge) {
     const { key, ...rest } = manifest;
     fs.writeFileSync(path.join(stage, 'manifest.json'), JSON.stringify(rest, null, 2) + '\n');
   }
   execFileSync('zip', ['-qr', out, '.'], { cwd: stage, stdio: 'inherit' });
 } finally { fs.rmSync(stage, { recursive: true, force: true }); }
-console.log(`${path.relative(ROOT_DIR, out)}  (${(fs.statSync(out).size / 1024).toFixed(0)} KB, v${manifest.version}${args.includes('--store') ? ', manifest "key" stripped' : isEdge ? ', Edge-compatible Chromium package' : ''})`);
+console.log(`${path.relative(ROOT_DIR, out)}  (${(fs.statSync(out).size / 1024).toFixed(0)} KB, v${manifest.version}${args.includes('--store') || isEdge ? ', manifest "key" stripped' : ''})`);

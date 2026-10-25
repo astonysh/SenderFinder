@@ -41,6 +41,35 @@ export function createFirecrawlClient({ apiKey, fetchImpl = globalThis.fetch, ti
     if (usd != null && usd > maxUsd + 1e-9) throw providerError('FIRECRAWL_COST_EXCEEDED', { usd, billing: 'reported', price });
     return { status: 'ok', usd, billing: credits == null ? 'unknown' : 'reported', data: item.data, credits, price };
   }
-  return { isConfigured: configured, call, usdPerCredit, BASE };
+  // Web search: POST /v2/search {query, limit, includeDomains} -> {success, data:{web:[{url,title,description}]}, creditsUsed}.
+  // Billed per request (2 credits for up to 10 results on 2026-10-25); `maxCredits` is what the budget books.
+  async function search(query, { limit = 5, includeDomains, maxUsd, maxCredits }) {
+    if (!configured()) throw providerError('FIRECRAWL_NOT_CONFIGURED');
+    const price = maxCredits * usdPerCredit;
+    if (price > maxUsd + 1e-9) throw providerError('FIRECRAWL_PRICE_OVER_CAP', { price, maxUsd });
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    let res, body;
+    try {
+      res = await fetchImpl(BASE + '/search', { method: 'POST', signal: controller.signal,
+        headers: { Authorization: 'Bearer ' + apiKey.trim(), 'Content-Type': 'application/json', 'x-request-id': crypto.randomUUID() },
+        body: JSON.stringify({ query, limit, sources: ['web'], ...(Array.isArray(includeDomains) && includeDomains.length ? { includeDomains } : {}) }) });
+      body = await res.json().catch(() => null);
+    } catch (_) { throw providerError('FIRECRAWL_UNCERTAIN', { billing: 'unknown', price }); }
+    finally { clearTimeout(timer); }
+    if (res.status < 200 || res.status >= 300 || !body) {
+      if ([400, 401, 402, 403, 404, 422, 429].includes(res.status)) throw providerError('FIRECRAWL_FAILED', { status: res.status, price, detail: body && (body.error || body.message) });
+      throw providerError('FIRECRAWL_UNCERTAIN', { billing: 'unknown', status: res.status, price });
+    }
+    const d = body.data || {};
+    const web = Array.isArray(d.web) ? d.web : Array.isArray(d) ? d : [];
+    const creditsRaw = body.creditsUsed != null ? body.creditsUsed : d.creditsUsed;
+    const credits = Number.isFinite(Number(creditsRaw)) ? Number(creditsRaw) : null;
+    const usd = credits == null ? null : credits * usdPerCredit;
+    if (usd != null && usd > maxUsd + 1e-9) throw providerError('FIRECRAWL_COST_EXCEEDED', { usd, billing: 'reported', price });
+    const results = web.filter(r => r && typeof r.url === 'string').map(r => ({ url: r.url, title: typeof r.title === 'string' ? r.title : '', description: typeof r.description === 'string' ? r.description : '' }));
+    return { status: results.length ? 'ok' : 'miss', usd, billing: credits == null ? 'unknown' : 'reported', data: { web: results }, credits, price };
+  }
+  return { isConfigured: configured, call, search, usdPerCredit, BASE };
 }
 

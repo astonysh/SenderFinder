@@ -64,16 +64,19 @@ const canConnect = rel => !(rel && ['connected', 'pending', 'self'].includes(rel
 // A link LinkedIn does not know (or an all-digits handle, which is an id, not a profile): offer a search instead.
 const brokenLink = (prof, rel) => !!((rel && rel.missing) || /\/in\/\d+\/?$/.test(prof.linkedinUrl || ''));
 const liSearchUrl = prof => 'https://www.linkedin.com/search/results/people/?keywords=' + encodeURIComponent([prof.fullName, prof.company].filter(Boolean).join(' '));
+// Nothing found: LinkedIn's own people search with the header name and the work domain's keyword (free, opens a tab).
+const companyKeyword = email => { const d = String(email || '').split('@')[1] || ''; const ls = d.toLowerCase().split('.').filter(l => l && !/^(www|mail|com|net|org|io|ai|co|uk|de|fr|cn|jp|app|dev|inc|ltd|group|email)$/.test(l)); return ls.sort((a, b) => b.length - a.length)[0] || null; };
+const liSearchUrlFor = p => { const nm = displayName(p.name); return nm ? 'https://www.linkedin.com/search/results/people/?keywords=' + encodeURIComponent([nm, companyKeyword(p.email)].filter(Boolean).join(' ')) : null; };
 chrome.runtime.onMessage.addListener(msg => { if (msg && msg.type === 'panel:state' && msg.tabId === tabId) { state = msg.state; render(); loadFooter(); } });
 chrome.storage.onChanged.addListener((c, area) => { if (area === 'local' && c.settings) loadFooter(); });
 // Re-read the shown relationships in place (old values stay on screen until the new ones arrive: no flicker).
 let refreshing = false;
 const relKey = r => JSON.stringify([r.relation, r.pending, r.connected, r.distance, r.photoUrl, r.missing, r.companies || null]);
-async function refreshRels() {
+async function refreshRels({ force = null } = {}) {   // force: one linkedinUrl to re-read from LinkedIn even if cached
   if (refreshing || !liGranted || !rels.size) return; refreshing = true;
   let changed = false;   // re-render only when a relationship really changed: the focus that precedes a click must not rebuild the buttons
   try {
-    await Promise.all([...rels.keys()].map(url => send({ type: 'li:relation', linkedinUrl: url }).then(r => {
+    await Promise.all([...rels.keys()].map(url => send({ type: 'li:relation', linkedinUrl: url, force: url === force }).then(r => {
       if (!r || !r.ok) return;
       const old = rels.get(url);
       if (!old || old.loading || old.error || relKey(old) !== relKey(r)) changed = true;
@@ -84,7 +87,7 @@ async function refreshRels() {
 chrome.runtime.onMessage.addListener(msg => { if (msg && msg.type === 'li:changed') refreshRels(); });
 // Back from the LinkedIn tab: re-read relationships (cached ones come back instantly; just-invited people are re-checked).
 document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshRels(); });
-window.addEventListener('focus', refreshRels);
+window.addEventListener('focus', () => refreshRels());
 if (fixedTab == null && chrome.tabs && chrome.tabs.onActivated) chrome.tabs.onActivated.addListener(() => refresh());
 
 // ── Pieces ──
@@ -109,7 +112,12 @@ function clock(tz) { if (!tz) return null; const text = clockText(tz); if (!text
 const statusOf = r => (!r ? 'idle' : r.pending ? 'loading' : r.ok === false ? (r.error === 'AUTO_LIMIT' ? 'idle' : 'error') : r.status || 'idle');
 const hintFor = reason => ({ auto_off: t('hint_auto_off'), noisy: t('hint_noisy'), me: t('hint_me') }[reason] || t('hint_manual'));
 const matchBadge = r => (r.match && r.match.nameMatched === true ? badge(t('name_match'), 'ok') : r.match && r.match.nameMatched === false ? badge(t('name_mismatch'), 'warn') : badge(r.match && r.match.step === 'signature' ? t('from_signature') : t('by_email')));
-const lookup = (p, force) => send({ type: 'panel:lookup', tabId, email: p.email, name: p.name, force: force === true }).catch(() => {});
+// "Look up again" also asks LinkedIn for the relationship afresh (free, within the daily cap): an accepted
+// invitation then shows as Connected right away instead of on the next scheduled re-check.
+const lookup = (p, force) => {
+  if (force === true) { const r = state && state.results && state.results[p.email]; const url = r && r.profile && r.profile.linkedinUrl; if (url && rels.has(url)) refreshRels({ force: url }); }
+  return send({ type: 'panel:lookup', tabId, email: p.email, name: p.name, force: force === true }).catch(() => {});
+};
 // ── Icons (static markup, no user data) ──
 const ICONS = {
   li: '<svg class="i" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 2H3.55C2.7 2 2 2.7 2 3.55v16.9C2 21.3 2.7 22 3.55 22h16.9c.85 0 1.55-.7 1.55-1.55V3.55C22 2.7 21.3 2 20.45 2zM8.34 19.04H5.37V9.5h2.97v9.54zM6.85 8.2a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44zm12.19 10.84h-2.96v-4.64c0-1.1-.02-2.53-1.54-2.53-1.55 0-1.78 1.2-1.78 2.45v4.72H9.8V9.5h2.84v1.3h.04c.4-.75 1.37-1.54 2.81-1.54 3 0 3.56 1.98 3.56 4.55v5.23z"/></svg>',
@@ -175,7 +183,12 @@ function primary(p, r) {
     r && r.error === 'NO_KEYS' ? h('button', { class: 'pill', onclick: () => chrome.runtime.openOptionsPage() }, t('open_settings')) : null,
     h('button', { class: 'pill', onclick: () => lookup(p, false) }, t('retry'))));
   else if (st === 'skipped') { const why = { free_mail_provider: t('skip_free_mail'), role_address: t('skip_role') }[r.skippedReason] || t('skipped_generic', r.skippedReason || ''); card.append(h('div', { class: 'state' }, h('span', { class: 'msg' }, why), h('button', { class: 'pill', 'data-act': 'lookup', onclick: () => lookup(p, true) }, t('lookup_anyway')))); }
-  else if (st === 'not_found') card.append(h('div', { class: 'state' }, h('span', { class: 'msg' }, t('not_found_for', p.email)), h('button', { class: 'pill', onclick: () => lookup(p, true) }, t('lookup_again'))));
+  else if (st === 'not_found') {
+    const su = liSearchUrlFor(p);
+    card.append(h('div', { class: 'state' }, h('span', { class: 'msg' }, t('not_found_for', p.email)),
+      su ? h('a', { class: 'li', href: su, target: '_blank', rel: 'noopener noreferrer', 'data-act': 'li-search' }, icon('li', 'ic-li'), h('span', {}, t('li_search_person')), h('span', { class: 'go' }, '↗')) : null,
+      h('button', { class: 'pill', onclick: () => lookup(p, true) }, t('lookup_again'))));
+  }
   else {
     const pos = (prof.positions || []).filter(x => x.current && (x.title || x.company)).slice(0, 3);
     if (prof.title || prof.company) card.append(h('div', { class: 'role' }, prof.title || null, prof.title && prof.company ? h('span', { class: 'co' }, ' · ') : null, prof.company ? companyLink(prof.company, prof, rel, null, prof.title ? 'co' : '') : null));

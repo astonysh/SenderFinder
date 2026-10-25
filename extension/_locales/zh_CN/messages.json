@@ -3,7 +3,7 @@
   "message": "SenderFinder"
  },
  "ext_description": {
-  "message": "在 Gmail / Outlook 网页版里显示发件人的 LinkedIn 资料。开源，自带供应商 key，数据只在你的浏览器和你选择的供应商之间流动。"
+  "message": "在 Gmail 或 Outlook 中找到发件人的 LinkedIn 资料。让联系不止于邮件。开源，使用你自己的供应商 key。"
  },
  "lookup_btn": {
   "message": "查 LinkedIn"
@@ -259,6 +259,9 @@
  },
  "step_apollo": {
   "message": "Apollo 匹配（Monid）"
+ },
+ "step_websearch": {
+  "message": "按姓名 + 公司在网上搜 LinkedIn（Firecrawl）"
  },
  "step_datalegion": {
   "message": "Data Legion 邮箱反查（Firecrawl）"
@@ -816,7 +819,7 @@
   "message": "覆盖最全。Hunter 按邮箱查，Apollo 按邮箱 + 姓名 + 公司域名查（约 $$0.03）。"
  },
  "vendor_firecrawl_tagline": {
-  "message": "可选的最后兜底（Data Legion），按 credit 计费。"
+  "message": "最后的兜底：按姓名 + 公司在 linkedin.com 上网搜（2 credits）和 Data Legion（10 credits），按 credit 计费。"
  },
  "step_off": {
   "message": "未启用"

@@ -5,10 +5,11 @@
 import { normalizeEmail, domainOf, isFreeMail, isRoleAddress, cleanDisplayName, nameMatches } from './identity.js';
 import { extractLinkedInUrls, signatureBlock } from './signature.js';
 import { normalizeProfile } from './providers/profile.js';
+import { searchQuery, pickProfile } from './websearch.js';
 
 // Step catalogue. `needs` lists what must be known; `maxUsd` is the catalog price we accept.
 // Observed hit rates (treg catalog, 2026-10-25): blitzapi 21 %, quickenrich 11 %, hunter 46 %.
-export const DEFAULT_STEPS = ['signature', 'blitzapi', 'hunter', 'quickenrich', 'apollo', 'datalegion'];
+export const DEFAULT_STEPS = ['signature', 'blitzapi', 'hunter', 'quickenrich', 'apollo', 'websearch', 'datalegion'];
 
 export const STEPS = {
   signature:  { id: 'signature',  provider: 'local',                                 label: 'LinkedIn link in the email signature',       maxUsd: 0,      needs: ['email'] },
@@ -17,6 +18,9 @@ export const STEPS = {
   hunter:     { id: 'hunter',     provider: 'monid:hunterio/people/find',            label: 'Hunter.io reverse email (Monid)',       maxUsd: 0.006,  needs: ['email'] },
   village:    { id: 'village',    provider: 'treg:village.people.from_email',        label: 'Village reverse email (treg)',         maxUsd: 0.025,  needs: ['email'] },
   apollo:     { id: 'apollo',     provider: 'monid:apollo/people/match',             label: 'Apollo match (Monid)',             maxUsd: 0.03,   needs: ['email'] },
+  // Name + company web search restricted to linkedin.com: the only step that does not depend on the address being in a
+  // vendor database. 2 credits per request (2026-10-25). Needs a header name and a work domain.
+  websearch:  { id: 'websearch',  provider: 'firecrawl:search',                      label: 'LinkedIn web search by name + company (Firecrawl)', maxUsd: 0.01, needs: ['name', 'domain'], credits: 2 },
   datalegion: { id: 'datalegion', provider: 'firecrawl:datalegion/people/enrich-base-no-contact', label: 'Data Legion reverse email (Firecrawl)', maxUsd: 0.035, needs: ['email'], credits: 10 },
   contactout: { id: 'contactout', provider: 'monid:contactout/v1/people/enrich/work-email', label: 'ContactOut match (Monid)', maxUsd: 0.025, needs: ['email'] },
 };
@@ -107,6 +111,13 @@ export function createLookup({ store, config, monid, treg, firecrawl, now = () =
       const profile = person ? normalizeProfile(person, { provider: s.provider }) : null;
       return { status: profile && profile.linkedinUrl ? 'hit' : 'miss', usd: r.usd, billing: r.billing, profile: profile && profile.linkedinUrl ? profile : null };
     }
+    if (id === 'websearch') {
+      const query = searchQuery(ctx);
+      const r = await firecrawl.search(query, { limit: 5, includeDomains: ['linkedin.com'], maxUsd, maxCredits: s.credits });
+      if (r.status === 'miss') return { ...r, profile: null };
+      const profile = pickProfile((r.data && r.data.web) || [], { name: ctx.name, domain: ctx.domain, provider: s.provider });
+      return { status: profile ? 'hit' : 'miss', usd: r.usd, billing: r.billing, profile };
+    }
     throw Object.assign(new Error('UNKNOWN_STEP'), { code: 'UNKNOWN_STEP' });
   }
 
@@ -172,6 +183,8 @@ export function createLookup({ store, config, monid, treg, firecrawl, now = () =
       if (s.maxUsd > remaining + 1e-12) { calls.push({ step: id, provider: s.provider, status: 'skipped', reason: 'lookup_budget', usd: 0, ms: 0 }); continue; }
       const spentToday = await store.spentToday();
       if (config.dailyCapUsd <= 0 || spentToday + s.maxUsd > config.dailyCapUsd + 1e-12) { calls.push({ step: id, provider: s.provider, status: 'skipped', reason: 'daily_budget', usd: 0, ms: 0 }); continue; }
+      // Steps that need a header name or a work domain (websearch) are skipped when the mail does not give them.
+      if (s.needs.some(n => !ctx[n])) { calls.push({ step: id, provider: s.provider, status: 'skipped', reason: 'missing_input', usd: 0, ms: 0 }); continue; }
       const t = Date.now();
       let r;
       try { r = await runStep(id, ctx, Math.min(s.maxUsd, remaining)); }

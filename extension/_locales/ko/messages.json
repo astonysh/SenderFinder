@@ -3,7 +3,7 @@
   "message": "SenderFinder"
  },
  "ext_description": {
-  "message": "Gmail / Outlook 웹에서 발신자의 LinkedIn 프로필을 보여 줍니다. 오픈 소스, 내 제공업체 키 사용, 데이터는 브라우저에만 저장됩니다."
+  "message": "Gmail이나 Outlook에서 발신자의 LinkedIn 프로필을 찾으세요. 이메일을 넘어 연결하세요. 오픈 소스이며 개인 제공업체 키를 사용합니다."
  },
  "lookup_btn": {
   "message": "LinkedIn에서 찾기"
@@ -259,6 +259,9 @@
  },
  "step_apollo": {
   "message": "Apollo 매칭(Monid)"
+ },
+ "step_websearch": {
+  "message": "이름 + 회사로 LinkedIn 웹 검색 (Firecrawl)"
  },
  "step_datalegion": {
   "message": "Data Legion 이메일 역조회(Firecrawl)"
@@ -816,7 +819,7 @@
   "message": "범위가 가장 넓습니다. Hunter는 이메일로, Apollo는 이메일 + 이름 + 회사 도메인으로 조회(약 $$0.03)."
  },
  "vendor_firecrawl_tagline": {
-  "message": "선택적인 마지막 대체 수단(Data Legion). 크레딧 단위로 과금됩니다."
+  "message": "마지막 대안: 이름 + 회사로 linkedin.com 웹 검색(2 크레딧)과 Data Legion(10 크레딧). 크레딧으로 과금됩니다."
  },
  "step_off": {
   "message": "꺼짐"

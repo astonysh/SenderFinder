@@ -3,7 +3,7 @@
   "message": "SenderFinder"
  },
  "ext_description": {
-  "message": "Shows the LinkedIn profile of the sender in Gmail / Outlook web. Open source, your own provider keys, data stays in your browser."
+  "message": "Find email senders on LinkedIn from Gmail or Outlook. Connect beyond the inbox. Open source; bring your own provider keys."
  },
  "lookup_btn": {
   "message": "Find on LinkedIn"
@@ -259,6 +259,9 @@
  },
  "step_apollo": {
   "message": "Apollo match (Monid)"
+ },
+ "step_websearch": {
+  "message": "LinkedIn web search by name + company (Firecrawl)"
  },
  "step_datalegion": {
   "message": "Data Legion reverse email (Firecrawl)"
@@ -816,7 +819,7 @@
   "message": "Best coverage. Hunter by email, Apollo by email + name + company domain (about $$0.03)."
  },
  "vendor_firecrawl_tagline": {
-  "message": "Optional last fallback (Data Legion). Billed in credits."
+  "message": "Last fallbacks: a name + company web search on linkedin.com (2 credits) and Data Legion (10 credits). Billed in credits."
  },
  "step_off": {
   "message": "off"

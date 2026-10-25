@@ -3,7 +3,7 @@
   "message": "SenderFinder"
  },
  "ext_description": {
-  "message": "Gmail / Outlook のウェブ版で送信者の LinkedIn プロフィールを表示。オープンソース、自分のプロバイダー key を使用、データはブラウザ内に保存。"
+  "message": "Gmail や Outlook で送信者の LinkedIn プロフィールを検索。メールを超えてつながろう。オープンソース。自分のプロバイダーキーを使用。"
  },
  "lookup_btn": {
   "message": "LinkedIn で探す"
@@ -259,6 +259,9 @@
  },
  "step_apollo": {
   "message": "Apollo 照合（Monid）"
+ },
+ "step_websearch": {
+  "message": "氏名 + 会社名で LinkedIn をウェブ検索（Firecrawl）"
  },
  "step_datalegion": {
   "message": "Data Legion メール逆引き（Firecrawl）"
@@ -816,7 +819,7 @@
   "message": "カバー率最高。Hunter はメールアドレスで、Apollo はメールアドレス + 名前 + 会社ドメインで照合（約 $$0.03）。"
  },
  "vendor_firecrawl_tagline": {
-  "message": "任意の最終フォールバック（Data Legion）。credit 単位で課金。"
+  "message": "最後の手段：氏名 + 会社名で linkedin.com をウェブ検索（2 クレジット）と Data Legion（10 クレジット）。クレジット課金。"
  },
  "step_off": {
   "message": "オフ"

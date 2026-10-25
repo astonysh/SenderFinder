@@ -44,6 +44,12 @@ export function fakeFirecrawl({ answers = {} } = {}) {
       if (!a) return { status: 'miss', usd: 0, billing: 'reported', data: null, credits: 0, price: maxCredits * 0.0032 };
       return { status: 'ok', usd: (a.credits ?? maxCredits) * 0.0032, billing: 'reported', data: a.data, credits: a.credits ?? maxCredits, price: maxCredits * 0.0032 };
     },
+    async search(query, { limit, includeDomains, maxUsd, maxCredits }) {
+      calls.push({ provider: 'firecrawl', capability: 'search', options: { query, limit, includeDomains }, maxUsd, maxCredits });
+      const a = answers.search;
+      if (!a) return { status: 'miss', usd: 0, billing: 'reported', data: { web: [] }, credits: 0, price: maxCredits * 0.0032 };
+      return { status: 'ok', usd: (a.credits ?? maxCredits) * 0.0032, billing: 'reported', data: { web: a.web || [] }, credits: a.credits ?? maxCredits, price: maxCredits * 0.0032 };
+    },
   };
 }
 export const notConfigured = () => ({ isConfigured: () => false, calls: [], async call() { throw new Error('not configured'); }, async run() { throw new Error('not configured'); } });
