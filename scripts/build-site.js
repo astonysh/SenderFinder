@@ -304,6 +304,7 @@ function structuredData(lang, page, data, scope) {
       url: `${SITE_URL}/`,
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/icon-128.png`, width: 128, height: 128 },
       sameAs: [REPO_URL],
+      contactPoint: { '@type': 'ContactPoint', email: 'tony@senderfinder.com', contactType: 'sponsorship' },
     },
   ];
 

@@ -84,10 +84,10 @@
       {
         "id": "how",
         "title": "How to sponsor",
-        "comment": "<!-- TODO-VERIFY: GitHub Sponsors URL; TODO-VERIFY: sponsor contact email. Do not publish placeholder links: the visible copy tells readers the page is being set up and points at GitHub issues in the meantime. -->",
+        "comment": "<!-- TODO-VERIFY: GitHub Sponsors URL (not created yet as of 2026-10-25). -->",
         "blocks": [
           "The GitHub Sponsors page is being set up. Until it is live, the practical route is to open an issue on <a href=\"https://github.com/astonysh/SenderFinder\">github.com/astonysh/SenderFinder</a> with the subject “sponsorship” and say what you have in mind — one-time, recurring, or in kind (benchmark provider credits are especially useful). The maintainer will reply with a way to contribute.",
-          "A sponsor contact address will be published here when it exists. Until then, GitHub issues are the public, durable channel; please do not send keys, addresses or other personal data in an issue.",
+          "You can also write to <a href=\"mailto:tony@senderfinder.com\">tony@senderfinder.com</a>. GitHub issues remain the public, durable channel; please do not send keys, addresses or other personal data in either.",
           "If you are a provider and want to donate API credits for benchmark runs, say so in the same issue. Credits are used only for the published benchmark, and the methodology and results stay public."
         ]
       },
@@ -144,7 +144,7 @@
     },
     {
       "q": "How do I sponsor before GitHub Sponsors is live?",
-      "a": "Open an issue on GitHub with the subject “sponsorship” and describe what you have in mind. Provider credits for benchmark runs are also useful. Do not include keys, addresses or personal data in the issue."
+      "a": "Open an issue on GitHub with the subject “sponsorship” or email tony@senderfinder.com, and describe what you have in mind. Provider credits for benchmark runs are also useful. Do not include keys, addresses or personal data in either."
     }
   ]
 }

@@ -495,8 +495,10 @@ test('the benchmark table is generated from the results file', () => {
 test('the content pages keep their required placeholders and disclosures', () => {
   assert.match(contentHtml('stats'), /<!-- STATS-PLACEHOLDER/);
   assert.match(contentHtml('sponsors'), /There are none yet/);
-  assert.match(contentHtml('sponsors'), /TODO-VERIFY: GitHub Sponsors URL/);
-  assert.match(contentHtml('sponsors'), /TODO-VERIFY: sponsor contact email/);
+  assert.match(contentHtml('sponsors'), /TODO-VERIFY: GitHub Sponsors URL \(not created yet as of 2026-10-25\)/);
+  assert.match(contentHtml('sponsors'), /mailto:tony@senderfinder\.com/);
+  assert.ok(!contentHtml('sponsors').includes('TODO-VERIFY: sponsor contact email'));
+  assert.equal(typeOf(graphOf(contentHtml('sponsors')), 'Organization').contactPoint.email, 'tony@senderfinder.com');
   assert.match(contentHtml('sponsors'), /firecrawl\.link\/sf/);
   const salesnav = contentHtml('salesnav');
   assert.match(salesnav, /18 March 2020/, 'the verified retirement date is missing');
