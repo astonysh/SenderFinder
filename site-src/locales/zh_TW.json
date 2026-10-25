@@ -122,7 +122,7 @@
         },
         {
           "title": "取得一組 API key",
-          "body": "在 <a href=\"https://app.monid.ai/\">Monid</a> 或 <a href=\"https://treg.to/\">treg</a> 建立 key。兩者擇一就能開始。"
+          "body": "在 <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> 或 <a href=\"https://treg.to/\">treg</a> 建立 key。兩者擇一就能開始。"
         },
         {
           "title": "在設定裡貼上 key",
@@ -206,7 +206,7 @@
       "intro": "擴充功能會用你貼進設定裡的 key，直接從你的瀏覽器呼叫這些服務。",
       "items": [
         {
-          "title": "<a href=\"https://app.monid.ai/\">Monid</a>",
+          "title": "<a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a>",
           "body": "API 聚合服務。一組 key 就能使用 Hunter.io、Apollo 和 ContactOut。"
         },
         {
@@ -236,7 +236,7 @@
         },
         {
           "q": "該申請哪一組 key？",
-          "a": "從 <a href=\"https://app.monid.ai/\">Monid</a> 或 <a href=\"https://treg.to/\">treg</a> 取得一組 key 就足以開始。兩組都填，需要時再加上 <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>，能讓瀑布流程有更多地方可查。<a href=\"{{url.install}}#which-key\">安裝頁面</a>有兩者的比較。"
+          "a": "從 <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> 或 <a href=\"https://treg.to/\">treg</a> 取得一組 key 就足以開始。兩組都填，需要時再加上 <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>，能讓瀑布流程有更多地方可查。<a href=\"{{url.install}}#which-key\">安裝頁面</a>有兩者的比較。"
         },
         {
           "q": "如何控制費用？",
@@ -471,7 +471,7 @@
       },
       {
         "title": "取得一組 key 並貼上",
-        "body": "安裝完成後設定頁面會自己開啟。到 <a href=\"https://app.monid.ai/\">Monid</a>（Hunter、Apollo、ContactOut）或 <a href=\"https://treg.to/\">treg</a>（BlitzAPI、QuickEnrich、Village）建立 key；<a href=\"https://firecrawl.link/sf\">Firecrawl</a> 是選填。一組 key 就夠。貼到「供應商 key」欄位。",
+        "body": "安裝完成後設定頁面會自己開啟。到 <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a>（Hunter、Apollo、ContactOut）或 <a href=\"https://treg.to/\">treg</a>（BlitzAPI、QuickEnrich、Village）建立 key；<a href=\"https://firecrawl.link/sf\">Firecrawl</a> 是選填。一組 key 就夠。貼到「供應商 key」欄位。",
         "image": "settings-keys.png",
         "alt": "SenderFinder 設定頁面：Monid、treg 和 Firecrawl 的供應商 key 欄位、測試 key 按鈕，以及查詢步驟表。",
         "caption": "首次安裝後的設定頁：上方是 key，下方是步驟與價格。"
@@ -664,7 +664,7 @@
         "title": "哪裡不一樣",
         "list": [
           "<strong>開放原始碼。</strong>程式碼在 <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> 上，以 AGPL-3.0 授權釋出。你可以直接讀懂它到底做了什麼。",
-          "<strong>你自己的 key。</strong>擴充功能會用你貼進設定裡的 key，直接從你的瀏覽器呼叫資料供應商。支援 <a href=\"https://app.monid.ai/\">Monid</a> 和 <a href=\"https://treg.to/\">treg</a>，<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> 為選填的最後備援。",
+          "<strong>你自己的 key。</strong>擴充功能會用你貼進設定裡的 key，直接從你的瀏覽器呼叫資料供應商。支援 <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> 和 <a href=\"https://treg.to/\">treg</a>，<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> 為選填的最後備援。",
           "<strong>不需註冊。</strong>查詢會從你的瀏覽器直接傳送給你設定的供應商；查詢路徑上沒有 SenderFinder 伺服器。匿名使用統計預設開啟，可以在設定裡關閉。",
           "<strong>不會被 CRM 綁住。</strong>結果留在你的瀏覽器裡。你可以把歷史記錄匯出成 JSON 或 CSV，帶到任何地方。",
           "<strong>花費可預期。</strong>會先試最便宜的來源，命中就停止。單次上限和每日上限讓花費受到控制。結果會快取，同一個地址永遠不會付兩次錢。"
@@ -725,7 +725,7 @@
         "title": "哪裡不一樣",
         "list": [
           "<strong>開放原始碼。</strong>以 AGPL-3.0 授權，程式碼在 <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> 上。沒有公司可以替你把它關掉。",
-          "<strong>你自己的 key。</strong>個人檔案來自由你選擇的資料供應商：<a href=\"https://app.monid.ai/\">Monid</a> 或 <a href=\"https://treg.to/\">treg</a>，<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> 為選填的最後備援。擴充功能會直接從你的瀏覽器呼叫它們。",
+          "<strong>你自己的 key。</strong>個人檔案來自由你選擇的資料供應商：<a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> 或 <a href=\"https://treg.to/\">treg</a>，<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> 為選填的最後備援。擴充功能會直接從你的瀏覽器呼叫它們。",
           "<strong>不需註冊。</strong>查詢會從你的瀏覽器直接傳送給你設定的供應商；查詢路徑上沒有 SenderFinder 伺服器。匿名使用統計預設開啟，可以在設定裡關閉。",
           "<strong>不會被 CRM 綁住。</strong>歷史記錄留在你的瀏覽器裡。想匯出成 JSON 或 CSV，隨時都可以。",
           "<strong>姓名比對。</strong>供應商回傳的姓名與郵件裡的顯示名稱不符時，結果會標上「不確定」，並同時顯示兩個姓名。"

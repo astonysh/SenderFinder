@@ -122,7 +122,7 @@
         },
         {
           "title": "API キーを 1 つ取得する",
-          "body": "<a href=\"https://app.monid.ai/\">Monid</a> または <a href=\"https://treg.to/\">treg</a> でキーを作成してください。どちらか 1 つで始められます。"
+          "body": "<a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> または <a href=\"https://treg.to/\">treg</a> でキーを作成してください。どちらか 1 つで始められます。"
         },
         {
           "title": "設定に貼り付ける",
@@ -206,7 +206,7 @@
       "intro": "拡張機能は、設定に貼り付けたキーを使って、これらのサービスをブラウザから直接呼び出します。",
       "items": [
         {
-          "title": "<a href=\"https://app.monid.ai/\">Monid</a>",
+          "title": "<a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a>",
           "body": "API アグリゲーターです。1 つのキーで Hunter.io、Apollo、ContactOut を利用できます。"
         },
         {
@@ -236,7 +236,7 @@
         },
         {
           "q": "どのキーを取得すればよいですか",
-          "a": "<a href=\"https://app.monid.ai/\">Monid</a> か <a href=\"https://treg.to/\">treg</a> のどちらか 1 つのキーで始められます。両方、さらに任意で <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> を追加すると、チェーンが照会できる範囲が広がります。<a href=\"{{url.install}}#which-key\">インストールページ</a>で比較しています。"
+          "a": "<a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> か <a href=\"https://treg.to/\">treg</a> のどちらか 1 つのキーで始められます。両方、さらに任意で <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> を追加すると、チェーンが照会できる範囲が広がります。<a href=\"{{url.install}}#which-key\">インストールページ</a>で比較しています。"
         },
         {
           "q": "費用を抑えるにはどうすればよいですか",
@@ -471,7 +471,7 @@
       },
       {
         "title": "キーを 1 つ取得して貼り付ける",
-        "body": "インストール後に設定ページが自動的に開きます。<a href=\"https://app.monid.ai/\">Monid</a>（Hunter、Apollo、ContactOut）または <a href=\"https://treg.to/\">treg</a>（BlitzAPI、QuickEnrich、Village）でキーを作成してください。<a href=\"https://firecrawl.link/sf\">Firecrawl</a> は任意です。キーは 1 つで十分です。「プロバイダーのキー」に貼り付けてください。",
+        "body": "インストール後に設定ページが自動的に開きます。<a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a>（Hunter、Apollo、ContactOut）または <a href=\"https://treg.to/\">treg</a>（BlitzAPI、QuickEnrich、Village）でキーを作成してください。<a href=\"https://firecrawl.link/sf\">Firecrawl</a> は任意です。キーは 1 つで十分です。「プロバイダーのキー」に貼り付けてください。",
         "image": "settings-keys.png",
         "alt": "SenderFinder の設定ページ。Monid、treg、Firecrawl のプロバイダーキー入力欄、「キーをテスト」ボタン、検索ステップの表が表示されている。",
         "caption": "初回インストール時の設定。上部がキー、下部がステップと価格。"
@@ -664,7 +664,7 @@
         "title": "何が違うか",
         "list": [
           "<strong>オープンソース。</strong>コードは AGPL-3.0 ライセンスで <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> にあります。何をしているかを正確に読むことができます。",
-          "<strong>自分のキー。</strong>拡張機能は、設定に貼り付けたキーを使って、データプロバイダーをブラウザから直接呼び出します。対応：<a href=\"https://app.monid.ai/\">Monid</a> と <a href=\"https://treg.to/\">treg</a>、<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> は任意のフォールバックです。",
+          "<strong>自分のキー。</strong>拡張機能は、設定に貼り付けたキーを使って、データプロバイダーをブラウザから直接呼び出します。対応：<a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> と <a href=\"https://treg.to/\">treg</a>、<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> は任意のフォールバックです。",
           "<strong>登録不要。</strong>検索リクエストはブラウザーから設定したプロバイダーへ直接送信されます。検索経路に SenderFinder のサーバーはありません。匿名の利用統計は既定でオンで、設定からオフにできます。",
           "<strong>CRM への囲い込みなし。</strong>結果はお使いのブラウザ内に残ります。履歴は JSON または CSV で書き出し、どこへでも持ち出せます。",
           "<strong>見通せる費用。</strong>最も安いソースから順に試し、最初に一致した時点でチェーンは止まります。1 回あたりの上限と 1 日の上限で支出を抑えられます。結果はキャッシュされるため、同じアドレスに二度支払うことはありません。"
@@ -725,7 +725,7 @@
         "title": "何が違うか",
         "list": [
           "<strong>オープンソース。</strong>AGPL-3.0 ライセンスで、コードは <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> にあります。企業が勝手に止めることはできません。",
-          "<strong>自分のキー。</strong>プロフィールは、ご自身で選んだデータプロバイダーから取得します。<a href=\"https://app.monid.ai/\">Monid</a> または <a href=\"https://treg.to/\">treg</a>、<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> は任意のフォールバックです。拡張機能はブラウザからそれらを直接呼び出します。",
+          "<strong>自分のキー。</strong>プロフィールは、ご自身で選んだデータプロバイダーから取得します。<a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> または <a href=\"https://treg.to/\">treg</a>、<a href=\"https://www.firecrawl.dev/\">Firecrawl</a> は任意のフォールバックです。拡張機能はブラウザからそれらを直接呼び出します。",
           "<strong>登録不要。</strong>検索リクエストはブラウザーから設定したプロバイダーへ直接送信されます。検索経路に SenderFinder のサーバーはありません。匿名の利用統計は既定でオンで、設定からオフにできます。",
           "<strong>CRM への囲い込みなし。</strong>履歴はお使いのブラウザ内に残ります。いつでも JSON または CSV で書き出せます。",
           "<strong>名前の確認。</strong>プロバイダーの名前がメールの表示名と一致しない場合、結果は「不確実」と表示され、両方の名前が示されます。"

@@ -55,7 +55,7 @@ Until the Chrome Web Store listing is live:
 1. Download or clone this repository.
 2. `chrome://extensions` → enable **Developer mode** → **Load unpacked** → pick the `extension/` folder.
 3. The settings page opens on first install. Get a key; one is enough to start:
-   - **Monid**: https://app.monid.ai → API keys. One key covers Hunter, Apollo and ContactOut.
+   - **Monid**: https://monid.ai?fpr=sf → API keys. One key covers Hunter, Apollo and ContactOut. Affiliate link: qualifying paid signups may earn the maintainer a commission.
    - **treg**: https://treg.to → account → token. One token covers BlitzAPI, QuickEnrich and Village.
    - Firecrawl (optional fallback): https://firecrawl.link/sf → API keys.
 4. Click "test keys (free)", then open any email in Gmail.

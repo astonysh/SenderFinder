@@ -122,7 +122,7 @@
         },
         {
           "title": "Get one API key",
-          "body": "Create a key at <a href=\"https://app.monid.ai/\">Monid</a> or <a href=\"https://treg.to/\">treg</a>. One of the two is enough to start."
+          "body": "Create a key at <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> or <a href=\"https://treg.to/\">treg</a>. One of the two is enough to start."
         },
         {
           "title": "Paste it in settings",
@@ -206,7 +206,7 @@
       "intro": "The extension calls these services directly from your browser, using keys you paste into its settings.",
       "items": [
         {
-          "title": "<a href=\"https://app.monid.ai/\">Monid</a>",
+          "title": "<a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a>",
           "body": "An API aggregator. One key gives access to Hunter.io, Apollo and ContactOut."
         },
         {
@@ -236,7 +236,7 @@
         },
         {
           "q": "Which key should I get?",
-          "a": "One key from either <a href=\"https://app.monid.ai/\">Monid</a> or <a href=\"https://treg.to/\">treg</a> is enough to start. Adding both, and optionally <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>, gives the waterfall more places to look. The <a href=\"{{url.install}}#which-key\">install page</a> compares them."
+          "a": "One key from either <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> or <a href=\"https://treg.to/\">treg</a> is enough to start. Adding both, and optionally <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>, gives the waterfall more places to look. The <a href=\"{{url.install}}#which-key\">install page</a> compares them."
         },
         {
           "q": "How do I keep costs under control?",
@@ -471,7 +471,7 @@
       },
       {
         "title": "Get one key and paste it",
-        "body": "The settings page opens by itself after installation. Create a key at <a href=\"https://app.monid.ai/\">Monid</a> (Hunter, Apollo, ContactOut) or <a href=\"https://treg.to/\">treg</a> (BlitzAPI, QuickEnrich, Village); <a href=\"https://firecrawl.link/sf\">Firecrawl</a> is optional. One key is enough. Paste it under “Provider keys”.",
+        "body": "The settings page opens by itself after installation. Create a key at <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> (Hunter, Apollo, ContactOut) or <a href=\"https://treg.to/\">treg</a> (BlitzAPI, QuickEnrich, Village); <a href=\"https://firecrawl.link/sf\">Firecrawl</a> is optional. One key is enough. Paste it under “Provider keys”.",
         "image": "settings-keys.png",
         "alt": "The SenderFinder settings page: provider key fields for Monid, treg and Firecrawl, the Test keys button and the lookup steps table.",
         "caption": "Settings on first install: keys at the top, steps and prices below."
@@ -664,7 +664,7 @@
         "title": "What is different",
         "list": [
           "<strong>Open source.</strong> The code is on <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> under the AGPL-3.0 license. You can read exactly what it does.",
-          "<strong>Your own keys.</strong> The extension calls data providers directly from your browser, using keys you paste into its settings. Supported: <a href=\"https://app.monid.ai/\">Monid</a> and <a href=\"https://treg.to/\">treg</a>, with <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> as an optional fallback.",
+          "<strong>Your own keys.</strong> The extension calls data providers directly from your browser, using keys you paste into its settings. Supported: <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> and <a href=\"https://treg.to/\">treg</a>, with <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> as an optional fallback.",
           "<strong>No signup.</strong> Lookups go directly from your browser to the provider you configure; there is no SenderFinder server in the lookup path. Anonymous daily usage counts are on by default and can be switched off in settings.",
           "<strong>No CRM lock-in.</strong> Results stay in your browser. You can export history as JSON or CSV and take it wherever you like.",
           "<strong>Predictable cost.</strong> The cheapest source is tried first, and the chain stops at the first match. A per-lookup cap and a daily cap keep spending in check. Results are cached, so an address is never paid for twice."
@@ -725,7 +725,7 @@
         "title": "What is different",
         "list": [
           "<strong>Open source.</strong> AGPL-3.0 licensed, with the code on <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a>. No company can switch it off for you.",
-          "<strong>Your own keys.</strong> Profiles come from data providers you choose: <a href=\"https://app.monid.ai/\">Monid</a> or <a href=\"https://treg.to/\">treg</a>, with <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> as an optional fallback. The extension calls them directly from your browser.",
+          "<strong>Your own keys.</strong> Profiles come from data providers you choose: <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> or <a href=\"https://treg.to/\">treg</a>, with <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> as an optional fallback. The extension calls them directly from your browser.",
           "<strong>No signup.</strong> Lookups go directly from your browser to the provider you configure; there is no SenderFinder server in the lookup path. Anonymous daily usage counts are on by default and can be switched off in settings.",
           "<strong>No CRM lock-in.</strong> History stays in your browser. Export it as JSON or CSV whenever you want.",
           "<strong>A name check.</strong> If the provider's name doesn't match the display name in the email, the result is marked “uncertain” and shows both names."

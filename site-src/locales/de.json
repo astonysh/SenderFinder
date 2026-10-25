@@ -122,7 +122,7 @@
         },
         {
           "title": "Einen API-Schlüssel holen",
-          "body": "Erstelle einen Schlüssel bei <a href=\"https://app.monid.ai/\">Monid</a> oder <a href=\"https://treg.to/\">treg</a>. Einer von beiden reicht für den Anfang."
+          "body": "Erstelle einen Schlüssel bei <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> oder <a href=\"https://treg.to/\">treg</a>. Einer von beiden reicht für den Anfang."
         },
         {
           "title": "In den Einstellungen einfügen",
@@ -206,7 +206,7 @@
       "intro": "Die Erweiterung ruft diese Dienste direkt aus deinem Browser auf, mit Schlüsseln, die du in ihren Einstellungen einfügst.",
       "items": [
         {
-          "title": "<a href=\"https://app.monid.ai/\">Monid</a>",
+          "title": "<a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a>",
           "body": "Ein API-Aggregator. Ein Schlüssel gibt Zugriff auf Hunter.io, Apollo und ContactOut."
         },
         {
@@ -236,7 +236,7 @@
         },
         {
           "q": "Welchen Schlüssel sollte ich holen?",
-          "a": "Ein Schlüssel von <a href=\"https://app.monid.ai/\">Monid</a> oder <a href=\"https://treg.to/\">treg</a> reicht für den Anfang. Mit beiden, und optional <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>, hat die Kette mehr Stellen zum Nachsehen. Die <a href=\"{{url.install}}#which-key\">Installationsseite</a> vergleicht sie."
+          "a": "Ein Schlüssel von <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> oder <a href=\"https://treg.to/\">treg</a> reicht für den Anfang. Mit beiden, und optional <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>, hat die Kette mehr Stellen zum Nachsehen. Die <a href=\"{{url.install}}#which-key\">Installationsseite</a> vergleicht sie."
         },
         {
           "q": "Wie behalte ich die Kosten im Griff?",
@@ -471,7 +471,7 @@
       },
       {
         "title": "Einen Schlüssel holen und einfügen",
-        "body": "Die Einstellungsseite öffnet sich nach der Installation von selbst. Erstelle einen Schlüssel bei <a href=\"https://app.monid.ai/\">Monid</a> (Hunter, Apollo, ContactOut) oder <a href=\"https://treg.to/\">treg</a> (BlitzAPI, QuickEnrich, Village); <a href=\"https://firecrawl.link/sf\">Firecrawl</a> ist optional. Ein Schlüssel reicht. Füge ihn unter „Anbieter-Keys“ ein.",
+        "body": "Die Einstellungsseite öffnet sich nach der Installation von selbst. Erstelle einen Schlüssel bei <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> (Hunter, Apollo, ContactOut) oder <a href=\"https://treg.to/\">treg</a> (BlitzAPI, QuickEnrich, Village); <a href=\"https://firecrawl.link/sf\">Firecrawl</a> ist optional. Ein Schlüssel reicht. Füge ihn unter „Anbieter-Keys“ ein.",
         "image": "settings-keys.png",
         "alt": "Die Einstellungsseite von SenderFinder: Felder für Anbieter-Schlüssel von Monid, treg und Firecrawl, die Schaltfläche Keys testen und die Tabelle der Abfrageschritte.",
         "caption": "Einstellungen bei der ersten Installation: Schlüssel oben, Schritte und Preise darunter."
@@ -664,7 +664,7 @@
         "title": "Was anders ist",
         "list": [
           "<strong>Open Source.</strong> Der Code liegt auf <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> unter der AGPL-3.0-Lizenz. Du kannst genau nachlesen, was er tut.",
-          "<strong>Deine eigenen Schlüssel.</strong> Die Erweiterung ruft Datenanbieter direkt aus deinem Browser auf, mit Schlüsseln, die du in ihre Einstellungen einfügst. Unterstützt werden <a href=\"https://app.monid.ai/\">Monid</a> und <a href=\"https://treg.to/\">treg</a>, mit <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> als optionalem Fallback.",
+          "<strong>Deine eigenen Schlüssel.</strong> Die Erweiterung ruft Datenanbieter direkt aus deinem Browser auf, mit Schlüsseln, die du in ihre Einstellungen einfügst. Unterstützt werden <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> und <a href=\"https://treg.to/\">treg</a>, mit <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> als optionalem Fallback.",
           "<strong>Keine Registrierung.</strong> Abfragen gehen direkt von deinem Browser an den Anbieter, den du konfigurierst; kein SenderFinder-Server im Abfrageweg. Anonyme tägliche Nutzungszählung ist standardmäßig an und lässt sich in den Einstellungen abschalten.",
           "<strong>Keine Bindung an ein CRM.</strong> Ergebnisse bleiben in deinem Browser. Du kannst den Verlauf als JSON oder CSV exportieren und mitnehmen, wohin du willst.",
           "<strong>Planbare Kosten.</strong> Die günstigste Quelle wird zuerst versucht, und die Kette stoppt beim ersten Treffer. Eine Obergrenze pro Abfrage und ein Tageslimit halten die Ausgaben im Rahmen. Ergebnisse werden zwischengespeichert, eine Adresse wird also nie zweimal bezahlt."
@@ -725,7 +725,7 @@
         "title": "Was anders ist",
         "list": [
           "<strong>Open Source.</strong> AGPL-3.0-Lizenz, der Code liegt auf <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a>. Kein Unternehmen kann es dir abschalten.",
-          "<strong>Deine eigenen Schlüssel.</strong> Profile kommen von Datenanbietern, die du wählst: <a href=\"https://app.monid.ai/\">Monid</a> oder <a href=\"https://treg.to/\">treg</a>, mit <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> als optionalem Fallback. Die Erweiterung ruft sie direkt aus deinem Browser auf.",
+          "<strong>Deine eigenen Schlüssel.</strong> Profile kommen von Datenanbietern, die du wählst: <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> oder <a href=\"https://treg.to/\">treg</a>, mit <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> als optionalem Fallback. Die Erweiterung ruft sie direkt aus deinem Browser auf.",
           "<strong>Keine Registrierung.</strong> Abfragen gehen direkt von deinem Browser an den Anbieter, den du konfigurierst; kein SenderFinder-Server im Abfrageweg. Anonyme tägliche Nutzungszählung ist standardmäßig an und lässt sich in den Einstellungen abschalten.",
           "<strong>Keine Bindung an ein CRM.</strong> Der Verlauf bleibt in deinem Browser. Exportiere ihn als JSON oder CSV, wann immer du willst.",
           "<strong>Ein Namensabgleich.</strong> Wenn der Name des Anbieters nicht zum Anzeigenamen in der E-Mail passt, wird das Ergebnis als „unsicher“ markiert und zeigt beide Namen."

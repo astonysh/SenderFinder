@@ -72,7 +72,7 @@ Chrome 商店上架前，这样装：
 1. 下载或克隆本仓库。
 2. `chrome://extensions` → 打开"开发者模式" → "加载已解压的扩展程序" → 选 `extension/` 目录。
 3. 首次安装会自动打开设置页。去拿 key，填一个就能用：
-   - **Monid**：https://app.monid.ai → API keys。一个 key 覆盖 Hunter、Apollo、ContactOut。
+   - **Monid**：https://monid.ai?fpr=sf → API keys。一个 key 覆盖 Hunter、Apollo、ContactOut。这是推广链接；符合条件的注册付费可能为维护者带来佣金。
    - **treg**：https://treg.to → 账户 → token。一个 token 覆盖 BlitzAPI、QuickEnrich、Village。
    - Firecrawl（可选兜底）：https://firecrawl.link/sf → API keys。
 4. 点"测试 key（免费）"确认有效，然后打开 Gmail 点开任意一封邮件。

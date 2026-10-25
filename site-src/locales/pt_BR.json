@@ -122,7 +122,7 @@
         },
         {
           "title": "Obtenha uma chave de API",
-          "body": "Crie uma chave no <a href=\"https://app.monid.ai/\">Monid</a> ou no <a href=\"https://treg.to/\">treg</a>. Uma das duas basta para começar."
+          "body": "Crie uma chave no <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> ou no <a href=\"https://treg.to/\">treg</a>. Uma das duas basta para começar."
         },
         {
           "title": "Cole a chave nas configurações",
@@ -206,7 +206,7 @@
       "intro": "A extensão chama esses serviços diretamente do seu navegador, usando as chaves que você cola nas configurações dela.",
       "items": [
         {
-          "title": "<a href=\"https://app.monid.ai/\">Monid</a>",
+          "title": "<a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a>",
           "body": "Um agregador de APIs. Uma chave dá acesso ao Hunter.io, ao Apollo e ao ContactOut."
         },
         {
@@ -236,7 +236,7 @@
         },
         {
           "q": "Qual chave eu pego?",
-          "a": "Uma chave do <a href=\"https://app.monid.ai/\">Monid</a> ou do <a href=\"https://treg.to/\">treg</a> basta para começar. Adicionar as duas, e opcionalmente o <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>, dá mais lugares para a cascata procurar. A <a href=\"{{url.install}}#which-key\">página de instalação</a> compara as opções."
+          "a": "Uma chave do <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> ou do <a href=\"https://treg.to/\">treg</a> basta para começar. Adicionar as duas, e opcionalmente o <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>, dá mais lugares para a cascata procurar. A <a href=\"{{url.install}}#which-key\">página de instalação</a> compara as opções."
         },
         {
           "q": "Como mantenho os custos sob controle?",
@@ -471,7 +471,7 @@
       },
       {
         "title": "Obtenha uma chave e cole",
-        "body": "A página de configurações abre sozinha depois da instalação. Crie uma chave no <a href=\"https://app.monid.ai/\">Monid</a> (Hunter, Apollo, ContactOut) ou no <a href=\"https://treg.to/\">treg</a> (BlitzAPI, QuickEnrich, Village); o <a href=\"https://firecrawl.link/sf\">Firecrawl</a> é opcional. Uma chave basta. Cole em “Chaves de provedor”.",
+        "body": "A página de configurações abre sozinha depois da instalação. Crie uma chave no <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> (Hunter, Apollo, ContactOut) ou no <a href=\"https://treg.to/\">treg</a> (BlitzAPI, QuickEnrich, Village); o <a href=\"https://firecrawl.link/sf\">Firecrawl</a> é opcional. Uma chave basta. Cole em “Chaves de provedor”.",
         "image": "settings-keys.png",
         "alt": "A página de configurações do SenderFinder: campos de chave de provedor para Monid, treg e Firecrawl, o botão Testar chaves e a tabela de etapas de busca.",
         "caption": "Configurações na primeira instalação: chaves no topo, etapas e preços abaixo."
@@ -664,7 +664,7 @@
         "title": "O que é diferente",
         "list": [
           "<strong>Código aberto.</strong> O código está no <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> sob a licença AGPL-3.0. Você pode ler exatamente o que ele faz.",
-          "<strong>Suas próprias chaves.</strong> A extensão chama provedores de dados diretamente do seu navegador, usando as chaves que você cola nas configurações dela. Compatíveis: <a href=\"https://app.monid.ai/\">Monid</a> e <a href=\"https://treg.to/\">treg</a>, com o <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> como alternativa opcional.",
+          "<strong>Suas próprias chaves.</strong> A extensão chama provedores de dados diretamente do seu navegador, usando as chaves que você cola nas configurações dela. Compatíveis: <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> e <a href=\"https://treg.to/\">treg</a>, com o <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> como alternativa opcional.",
           "<strong>Sem cadastro.</strong> As buscas vão diretamente do seu navegador ao provedor que você configurar; não há nenhum servidor do SenderFinder no caminho da busca. As contagens diárias de uso anônimas vêm ativadas por padrão e podem ser desativadas nas configurações.",
           "<strong>Sem prisão a um CRM.</strong> Os resultados ficam no seu navegador. Você pode exportar o histórico como JSON ou CSV e levá-lo para onde quiser.",
           "<strong>Custo previsível.</strong> A fonte mais barata é tentada primeiro, e a cadeia para no primeiro acerto. Um teto por busca e um teto diário mantêm o gasto sob controle. Os resultados ficam em cache, então um endereço nunca é pago duas vezes."
@@ -725,7 +725,7 @@
         "title": "O que é diferente",
         "list": [
           "<strong>Código aberto.</strong> Licença AGPL-3.0, com o código no <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a>. Nenhuma empresa pode desligá-lo para você.",
-          "<strong>Suas próprias chaves.</strong> Os perfis vêm dos provedores de dados que você escolher: <a href=\"https://app.monid.ai/\">Monid</a> ou <a href=\"https://treg.to/\">treg</a>, com o <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> como alternativa opcional. A extensão os chama diretamente do seu navegador.",
+          "<strong>Suas próprias chaves.</strong> Os perfis vêm dos provedores de dados que você escolher: <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> ou <a href=\"https://treg.to/\">treg</a>, com o <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> como alternativa opcional. A extensão os chama diretamente do seu navegador.",
           "<strong>Sem cadastro.</strong> As buscas vão diretamente do seu navegador ao provedor que você configurar; não há nenhum servidor do SenderFinder no caminho da busca. As contagens diárias de uso anônimas vêm ativadas por padrão e podem ser desativadas nas configurações.",
           "<strong>Sem prisão a um CRM.</strong> O histórico fica no seu navegador. Exporte como JSON ou CSV quando quiser.",
           "<strong>Uma conferência de nome.</strong> Se o nome do provedor não conferir com o nome exibido no e-mail, o resultado é marcado como “incerto” e mostra os dois nomes."

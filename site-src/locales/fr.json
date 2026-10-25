@@ -122,7 +122,7 @@
         },
         {
           "title": "Obtenir une clé API",
-          "body": "Créez une clé chez <a href=\"https://app.monid.ai/\">Monid</a> ou chez <a href=\"https://treg.to/\">treg</a>. L'une des deux suffit pour commencer."
+          "body": "Créez une clé chez <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> ou chez <a href=\"https://treg.to/\">treg</a>. L'une des deux suffit pour commencer."
         },
         {
           "title": "La coller dans les paramètres",
@@ -206,7 +206,7 @@
       "intro": "L'extension appelle ces services directement depuis votre navigateur, avec les clés que vous collez dans ses paramètres.",
       "items": [
         {
-          "title": "<a href=\"https://app.monid.ai/\">Monid</a>",
+          "title": "<a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a>",
           "body": "Un agrégateur d'API. Une seule clé donne accès à Hunter.io, Apollo et ContactOut."
         },
         {
@@ -236,7 +236,7 @@
         },
         {
           "q": "Quelle clé choisir ?",
-          "a": "Une clé de <a href=\"https://app.monid.ai/\">Monid</a> ou de <a href=\"https://treg.to/\">treg</a> suffit pour commencer. Ajouter les deux, et éventuellement <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>, donne à la cascade plus d'endroits où chercher. La <a href=\"{{url.install}}#which-key\">page d'installation</a> les compare."
+          "a": "Une clé de <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> ou de <a href=\"https://treg.to/\">treg</a> suffit pour commencer. Ajouter les deux, et éventuellement <a href=\"https://www.firecrawl.dev/\">Firecrawl</a>, donne à la cascade plus d'endroits où chercher. La <a href=\"{{url.install}}#which-key\">page d'installation</a> les compare."
         },
         {
           "q": "Comment garder les coûts sous contrôle ?",
@@ -471,7 +471,7 @@
       },
       {
         "title": "Obtenir une clé et la coller",
-        "body": "La page des paramètres s'ouvre d'elle-même après l'installation. Créez une clé chez <a href=\"https://app.monid.ai/\">Monid</a> (Hunter, Apollo, ContactOut) ou chez <a href=\"https://treg.to/\">treg</a> (BlitzAPI, QuickEnrich, Village) ; <a href=\"https://firecrawl.link/sf\">Firecrawl</a> est facultatif. Une seule clé suffit. Collez-la sous « Clés des fournisseurs ».",
+        "body": "La page des paramètres s'ouvre d'elle-même après l'installation. Créez une clé chez <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> (Hunter, Apollo, ContactOut) ou chez <a href=\"https://treg.to/\">treg</a> (BlitzAPI, QuickEnrich, Village) ; <a href=\"https://firecrawl.link/sf\">Firecrawl</a> est facultatif. Une seule clé suffit. Collez-la sous « Clés des fournisseurs ».",
         "image": "settings-keys.png",
         "alt": "La page des paramètres de SenderFinder : les champs de clés pour Monid, treg et Firecrawl, le bouton Tester les clés et le tableau des étapes de recherche.",
         "caption": "Paramètres à la première installation : les clés en haut, les étapes et les prix en dessous."
@@ -664,7 +664,7 @@
         "title": "Ce qui est différent",
         "list": [
           "<strong>Open source.</strong> Le code est sur <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> sous licence AGPL-3.0. Vous pouvez lire exactement ce qu'il fait.",
-          "<strong>Vos propres clés.</strong> L'extension appelle les fournisseurs de données directement depuis votre navigateur, avec les clés que vous collez dans ses paramètres. Pris en charge : <a href=\"https://app.monid.ai/\">Monid</a> et <a href=\"https://treg.to/\">treg</a>, avec <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> comme recours facultatif.",
+          "<strong>Vos propres clés.</strong> L'extension appelle les fournisseurs de données directement depuis votre navigateur, avec les clés que vous collez dans ses paramètres. Pris en charge : <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> et <a href=\"https://treg.to/\">treg</a>, avec <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> comme recours facultatif.",
           "<strong>Sans inscription.</strong> Les recherches vont directement de votre navigateur au fournisseur que vous configurez ; aucun serveur SenderFinder dans le chemin de la recherche. Les statistiques d'utilisation anonymes sont activées par défaut et peuvent être désactivées dans les paramètres.",
           "<strong>Aucun verrouillage CRM.</strong> Les résultats restent dans votre navigateur. Vous pouvez exporter l'historique en JSON ou en CSV et l'emporter où vous voulez.",
           "<strong>Un coût prévisible.</strong> La source la moins chère est essayée en premier, et la chaîne s'arrête au premier résultat. Un plafond par recherche et un plafond quotidien contiennent les dépenses. Les résultats sont mis en cache, donc une adresse n'est jamais payée deux fois."
@@ -725,7 +725,7 @@
         "title": "Ce qui est différent",
         "list": [
           "<strong>Open source.</strong> Sous licence AGPL-3.0, avec le code sur <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a>. Aucune entreprise ne peut le désactiver pour vous.",
-          "<strong>Vos propres clés.</strong> Les profils viennent des fournisseurs de données que vous choisissez : <a href=\"https://app.monid.ai/\">Monid</a> ou <a href=\"https://treg.to/\">treg</a>, avec <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> comme recours facultatif. L'extension les appelle directement depuis votre navigateur.",
+          "<strong>Vos propres clés.</strong> Les profils viennent des fournisseurs de données que vous choisissez : <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> ou <a href=\"https://treg.to/\">treg</a>, avec <a href=\"https://www.firecrawl.dev/\">Firecrawl</a> comme recours facultatif. L'extension les appelle directement depuis votre navigateur.",
           "<strong>Sans inscription.</strong> Les recherches vont directement de votre navigateur au fournisseur que vous configurez ; aucun serveur SenderFinder dans le chemin de la recherche. Les statistiques d'utilisation anonymes sont activées par défaut et peuvent être désactivées dans les paramètres.",
           "<strong>Aucun verrouillage CRM.</strong> L'historique reste dans votre navigateur. Exportez-le en JSON ou en CSV quand vous voulez.",
           "<strong>Une vérification du nom.</strong> Si le nom du fournisseur ne correspond pas au nom affiché dans l'e-mail, le résultat est marqué « incertain » et affiche les deux noms."

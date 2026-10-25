@@ -164,7 +164,7 @@
       
       
       <h2 id="providers">Provider relationships, disclosed</h2>
-      <!-- TODO-VERIFY: confirm referral/affiliate status for treg and Monid. The repository only documents Firecrawl's referral link (firecrawl.link/sf in CHANGELOG.md); the treg and Monid signup links are plain URLs today. Add the exact programme names only after confirming them. -->
+      <!-- TODO-VERIFY: confirm referral/affiliate status for treg. Monid uses the maintainer-confirmed affiliate link https://monid.ai?fpr=sf; Firecrawl uses firecrawl.link/sf. Add programme details only after confirming them. -->
       
       <p>SenderFinder depends on three data providers. Two aggregate several sources behind one key; the third is an optional fallback. They are commercial services, and the project's relationship with them should be as legible as the lookup path.</p><p>The extension never calls a data source directly. BlitzAPI, QuickEnrich and Village are called through treg; Hunter, Apollo and ContactOut through Monid; Data Legion through Firecrawl. An Apollo API key of your own does nothing here, because the request goes through Monid. That is an architectural fact, not a sponsorship claim.</p>
       
@@ -177,12 +177,12 @@
             <tr><th>Provider</th><th>What it powers</th><th>Relationship</th></tr>
           </thead>
           <tbody>
-            <tr><td data-label="Provider">treg</td><td data-label="What it powers">BlitzAPI, QuickEnrich, Village</td><td data-label="Relationship">No referral parameter is documented in the repository.</td></tr><tr><td data-label="Provider">Monid</td><td data-label="What it powers">Hunter, Apollo, ContactOut</td><td data-label="Relationship">No referral parameter is documented in the repository.</td></tr><tr><td data-label="Provider">Firecrawl</td><td data-label="What it powers">Data Legion fallback</td><td data-label="Relationship">Referral link firecrawl.link/sf, documented in CHANGELOG.md.</td></tr>
+            <tr><td data-label="Provider">treg</td><td data-label="What it powers">BlitzAPI, QuickEnrich, Village</td><td data-label="Relationship">No referral parameter is documented in the repository.</td></tr><tr><td data-label="Provider"><a href="https://monid.ai?fpr=sf" rel="sponsored">Monid</a></td><td data-label="What it powers">Hunter, Apollo, ContactOut</td><td data-label="Relationship">Affiliate link. The maintainer may earn a commission when you sign up and pay through this link.</td></tr><tr><td data-label="Provider">Firecrawl</td><td data-label="What it powers">Data Legion fallback</td><td data-label="Relationship">Referral link firecrawl.link/sf, documented in CHANGELOG.md.</td></tr>
           </tbody>
         </table>
       </div>
       
-      <p class="v2-note fine">If you sign up through a provider link in the extension and the provider pays a referral fee, that fee goes to the project. It does not change the waterfall order, the prices shown in settings, or the benchmark. The table is updated when a relationship changes.</p>
+      <p class="v2-note fine">Monid links on this website, in the extension and in the setup documentation use the maintainer’s affiliate link. Qualifying paid signups may earn the maintainer a commission and help support SenderFinder. Firecrawl also uses a referral link. It does not change the waterfall order, the prices shown in settings, or the benchmark. The table is updated when a relationship changes.</p>
       
       
       
