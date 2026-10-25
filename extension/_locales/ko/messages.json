@@ -756,7 +756,7 @@
   "message": "1촌"
  },
  "rel_connected_long": {
-  "message": "1촌 관계"
+  "message": "연결됨"
  },
  "rel_pending": {
   "message": "초대 대기 중"

@@ -756,7 +756,7 @@
   "message": "1次"
  },
  "rel_connected_long": {
-  "message": "1次のつながり"
+  "message": "つながり済み"
  },
  "rel_pending": {
   "message": "招待は承認待ち"

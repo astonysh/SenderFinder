@@ -756,7 +756,7 @@
   "message": "1°"
  },
  "rel_connected_long": {
-  "message": "Collegamento di 1° grado"
+  "message": "Collegato"
  },
  "rel_pending": {
   "message": "Invito in sospeso"

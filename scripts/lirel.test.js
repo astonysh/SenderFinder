@@ -75,3 +75,40 @@ test('companiesOf: position → company entity (LinkedIn page and website)', asy
   ];
   assert.deepEqual(companiesOf(all), { boomi: { li: 'https://www.linkedin.com/company/boomi', web: 'https://boomi.com' }, inflow: { li: 'https://www.linkedin.com/company/inflowpay', web: null } });
 });
+
+// Shapes LinkedIn returns since autumn 2026 (networkinfo is gone; the degree only comes from the decorations).
+const ID = 'ACoAAAEWNTABlCu75wR2IZVWMsvkMxkw_UehcDM';
+test('parseDashProfile: 1st degree as a "*connection" URN link (WebTopCardCore-18, normalized)', () => {
+  const json = { data: {}, included: [
+    { $type: 'com.linkedin.voyager.dash.identity.profile.Profile', entityUrn: 'urn:li:fsd_profile:' + ID, publicIdentifier: 'eliaskhoury', profilePicture: { displayImageReference: { vectorImage: vi } }, '*memberRelationship': 'urn:li:fsd_memberRelationship:' + ID },
+    { createdAt: 1540897289000, connectedMember: 'urn:li:fsd_profile:' + ID, entityUrn: 'urn:li:fsd_connection:' + ID, $type: 'com.linkedin.voyager.dash.relationships.Connection' },
+    { memberRelationshipUnion: { '*connection': 'urn:li:fsd_connection:' + ID }, entityUrn: 'urn:li:fsd_memberRelationship:' + ID, memberRelationshipData: { '*connection': 'urn:li:fsd_connection:' + ID }, $type: 'com.linkedin.voyager.dash.relationships.MemberRelationship' },
+  ] };
+  const r = parseDashProfile(json, 'eliaskhoury');
+  assert.equal(r.found, true); assert.equal(r.connected, true); assert.equal(r.distance, 1); assert.equal(r.pending, null);
+  assert.equal(relationOf(r), 'connected');
+});
+test('parseDashProfile: relationship not linked from the profile, matched by member id (TopCardSupplementary-150)', () => {
+  const OTHER = 'ACoAAAAAq40BcfHlmM7LMAFEGM4BeWc-yR2Q4XQ';
+  const json = { data: {}, included: [
+    { $type: 'com.linkedin.voyager.dash.identity.profile.Profile', entityUrn: 'urn:li:fsd_profile:' + ID, publicIdentifier: 'eliaskhoury', '*connections': 'urn:li:collectionResponse:x', '*followingState': 'urn:li:fsd_followingState:urn:li:fsd_profile:' + ID },
+    { entityUrn: 'urn:li:fsd_connection:' + OTHER, $type: 'com.linkedin.voyager.dash.relationships.Connection' },
+    { memberRelationshipUnion: { '*connection': 'urn:li:fsd_connection:' + ID }, entityUrn: 'urn:li:fsd_memberRelationship:' + ID, $type: 'com.linkedin.voyager.dash.relationships.MemberRelationship' },
+  ] };
+  const r = parseDashProfile(json, 'eliaskhoury');
+  assert.equal(r.found, true); assert.equal(r.connected, true); assert.equal(relationOf(r), 'connected');
+  // Same decoration for a 3rd-degree person: inline noConnection, no invitation.
+  const far = parseDashProfile({ included: [
+    { entityUrn: 'urn:li:fsd_profile:' + OTHER, publicIdentifier: 'williamhgates' },
+    { memberRelationshipUnion: { noConnection: { memberDistance: 'DISTANCE_3', invitationUnion: { noInvitation: { inviter: 'urn:li:fsd_profile:me', targetInvitee: 'urn:li:fsd_profile:' + OTHER } } } }, entityUrn: 'urn:li:fsd_memberRelationship:' + OTHER, $type: 'com.linkedin.voyager.dash.relationships.MemberRelationship' },
+  ] }, 'williamhgates');
+  assert.equal(far.connected, false); assert.equal(far.distance, 3); assert.equal(far.pending, null); assert.equal(relationOf(far), 'degree3');
+});
+test('parseDashProfile: a Connection entity for another member does not make this one connected', () => {
+  const r = parseDashProfile({ included: [
+    { entityUrn: 'urn:li:fsd_profile:A', publicIdentifier: 'a', '*memberRelationship': 'urn:li:fsd_memberRelationship:A' },
+    { entityUrn: 'urn:li:fsd_memberRelationship:A', memberRelationshipUnion: { noConnection: { memberDistance: 'DISTANCE_2' } } },
+    { entityUrn: 'urn:li:fsd_connection:B', connectedMember: 'urn:li:fsd_profile:B', $type: 'com.linkedin.voyager.dash.relationships.Connection' },
+  ] }, 'a');
+  assert.equal(r.connected, false); assert.equal(relationOf(r), 'degree2');
+});

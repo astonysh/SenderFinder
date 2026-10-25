@@ -82,17 +82,26 @@ export function parseDashProfile(json, slug) {
   const ref = P['*memberRelationship'] || (typeof P.memberRelationship === 'string' ? P.memberRelationship : null);
   if (P.memberRelationship && typeof P.memberRelationship === 'object') R = P.memberRelationship;
   else if (ref) R = all.find(o => o.entityUrn === ref) || null;
+  // Some decorations (TopCardSupplementary) do not link the profile to its relationship at all: the entity is
+  // still in `included`, keyed by the same member id as the profile (fsd_profile:ID ↔ fsd_memberRelationship:ID).
+  const memberId = typeof P.entityUrn === 'string' ? (/^urn:li:fsd_profile:(.+)$/.exec(P.entityUrn) || [])[1] : null;
+  if (!R && memberId) R = all.find(o => o.entityUrn === 'urn:li:fsd_memberRelationship:' + memberId) || null;
   const sampleCo = all.find(o => typeof o.entityUrn === 'string' && COMPANY_URN.test(o.entityUrn));
   out.diag = { keys: Object.keys(P).filter(k => /relation|distance|invit|connection|follow/i.test(k)).slice(0, 12), rel: R ? Object.keys(R).slice(0, 12) : null,
     companies: Object.keys(out.companies).length, coKeys: sampleCo ? Object.keys(sampleCo).filter(k => !k.startsWith('$')).slice(0, 15) : null };
-  if (!R) return out;
+  // A Connection entity for this member means 1st degree even when the relationship entity is missing or opaque.
+  const connEntity = memberId && all.find(o => o.entityUrn === 'urn:li:fsd_connection:' + memberId || (o.connectedMember === P.entityUrn && /\.Connection$/.test(String(o.$type || ''))));
+  if (!R) { if (connEntity) { out.found = true; out.connected = true; out.distance = 1; } return out; }
   out.found = true;
-  const U = R.memberRelationshipUnion || R.memberRelationship || R;
+  const U = R.memberRelationshipUnion || R.memberRelationshipData || R.memberRelationship || R;
   if (U && typeof U === 'object') {
-    if (U.connection) out.connected = true;
-    else if (U.noConnection || U.noInvitation) out.connected = false;
+    // Normalized responses hold a 1st-degree connection as a URN link ("*connection"), not an inline object.
+    if (U.connection || U['*connection']) out.connected = true;
+    else if (U.noConnection || U['*noConnection'] || U.noInvitation) out.connected = false;
     if (U.self) out.distance = 'self';
   }
+  if (out.connected == null && connEntity) out.connected = true;
+  if (out.connected === true && out.distance == null) out.distance = 1;
   // Normalized responses link sub-entities by URN ("*invitation": "urn:li:fsd_invitation:…"): follow those links.
   const byUrn = new Map(all.filter(o => typeof o.entityUrn === 'string').map(o => [o.entityUrn, o]));
   const seen = new Set(); const parts = [];

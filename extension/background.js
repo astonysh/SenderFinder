@@ -136,7 +136,7 @@ const DECO = 'com.linkedin.voyager.dash.deco.identity.profile.';
 const DASH_DECOS = [DECO + 'FullProfileWithEntities-93', DECO + 'FullProfileWithEntities-91', DECO + 'WebTopCardCore-18', null];
 // Decorations that carry the member relationship (degree / connected / invitation), tried when the profile one lacks it.
 const REL_DECOS = [DECO + 'TopCardSupplementary-150', DECO + 'TopCardSupplementary-140', DECO + 'TopCardSupplementary-130', DECO + 'WebTopCardCore-20', DECO + 'WebTopCardCore-16', DECO + 'TopCardComplete-138'];
-const LI_REL_VERSION = 4;   // cache entries from an older parser are fetched again once
+const LI_REL_VERSION = 5;   // cache entries from an older parser are fetched again once (5: "*connection" URN links)
 let liChain = Promise.resolve();
 const liSerial = fn => { const p = liChain.then(fn, fn); liChain = p.then(() => new Promise(r => setTimeout(r, 800)), () => {}); return p; };
 async function liFetch(path, csrf, { normalized = true } = {}) {
@@ -186,8 +186,9 @@ async function liRelation(msg) {
     try {
       await chrome.storage.local.set({ lirelCount: { day, n: n + 1 } });
       const diag = [];
+      // networkinfo answers 410 since autumn 2026 (retired): the degree then comes from the profile decorations below.
       let ni = await liFetch(`identity/profiles/${encodeURIComponent(slug)}/networkinfo`, csrf);
-      if (!ni.json) ni = await liFetch(`identity/profiles/${encodeURIComponent(slug)}/networkinfo`, csrf, { normalized: false });
+      if (!ni.json && ni.status !== 410) ni = await liFetch(`identity/profiles/${encodeURIComponent(slug)}/networkinfo`, csrf, { normalized: false });
       const net = parseNetworkInfo(ni.json);
       diag.push({ networkinfo: ni.status, distance: net.distance });
       // The profile decoration (photo) and the one carrying the relationship change version now and then:

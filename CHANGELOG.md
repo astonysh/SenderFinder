@@ -2,6 +2,7 @@
 
 ## 0.5.0 (2026-10-25)
 
+- Fix: people you are already connected with showed a Connect button instead of "Connected". LinkedIn retired the `networkinfo` endpoint (410) and now returns a 1st-degree relationship as a URN link (`"*connection"`) rather than an inline object; the parser understands both, and also finds the relationship entity by member id when the profile does not link to it (TopCardSupplementary). Cached relationships are read again once (cache version 5).
 - Settings: provider keys are grouped by vendor (treg / Monid / Firecrawl) with each vendor's logo and official name (Monid, not MonID). The Firecrawl "Get one" link is the referral link firecrawl.link/sf. Each box shows its key status and the steps that key unlocks with prices; a hint says at least one of treg or Monid is needed. One key alone runs the whole flow (missing-key steps are skipped), as before.
 - "No key set" texts now say which key to add (treg cheapest, Monid best coverage) instead of just "open settings".
 - Side panel: a result that said "no key set" clears itself once a key is saved; the main sender is looked up again automatically and the banner updates without reopening the panel. The card also offers Retry next to Open settings.
