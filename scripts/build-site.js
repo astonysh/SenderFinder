@@ -481,12 +481,12 @@ function notice(data, scope) {
    exist in the target language, and falls back to that language's home page. */
 function headerV2(lang, page, data, scope) {
   const nav = [
-    { href: `${scope.url.index}#how`, label: data.ui.nav.how, id: 'index' },
-    { href: `${scope.url.index}#privacy`, label: data.ui.nav.privacy, id: 'index' },
-    { href: `${scope.url.index}#cost`, label: data.ui.nav.cost, id: 'index' },
+    { href: `${scope.url.index}#how`, label: data.ui.nav.how },
+    { href: `${scope.url.index}#privacy`, label: data.ui.nav.privacy },
+    { href: `${scope.url.index}#cost`, label: data.ui.nav.cost },
     { href: scope.url.install, label: data.ui.nav.install, id: 'install' },
     { href: scope.url.changelog, label: data.ui.nav.changelog, id: 'changelog' },
-    { href: `${scope.url.index}#faq`, label: data.ui.nav.faq, id: 'index' },
+    { href: `${scope.url.index}#faq`, label: data.ui.nav.faq },
     { href: REPO_URL, label: 'GitHub' },
   ];
   const items = nav.map(item => {
