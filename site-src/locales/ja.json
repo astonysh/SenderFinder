@@ -94,7 +94,7 @@
   },
   "index": {
     "hero": {
-      "lead": "メールを送ってきた人を見つけて、LinkedIn でつながりましょう。",
+      "lead": "送信者と一致する可能性のある LinkedIn プロフィールを確認できます。",
       "desc": "Gmail または Outlook でメールを開くと、SenderFinder に送信者と一致する可能性のある LinkedIn プロフィールが表示されます。相手を確認してから、必要に応じて LinkedIn でつながりのリクエストを送れます。",
       "install": "2 分でインストール",
       "github": "GitHub で見る",

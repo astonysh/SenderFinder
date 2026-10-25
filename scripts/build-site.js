@@ -701,8 +701,8 @@ export function readChangelog() {
   return renderChangelog(fs.readFileSync(path.join(ROOT, 'CHANGELOG.md'), 'utf8'));
 }
 
-/* The hero headline and its sub-line are the extension's own strings: panel_slogan and tagline from
-   extension/_locales/<locale>/messages.json. Read at build time so the two never drift apart. */
+/* The homepage headline and document title use panel_slogan from the extension locale. Supporting
+   homepage copy lives in site-src/locales so it can explain the website flow without duplicating the slogan. */
 export function readExtensionStrings(locale) {
   const file = path.join(ROOT, 'extension', '_locales', locale, 'messages.json');
   const messages = JSON.parse(fs.readFileSync(file, 'utf8'));

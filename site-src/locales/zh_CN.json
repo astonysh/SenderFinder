@@ -94,7 +94,7 @@
   },
   "index": {
     "hero": {
-      "lead": "找到给你发邮件的人，再在 LinkedIn 上建立联系。",
+      "lead": "查看可能与邮件发件人匹配的 LinkedIn 个人主页。",
       "desc": "在 Gmail 或 Outlook 打开邮件，即可在 SenderFinder 中查看可能匹配的发件人 LinkedIn 主页。确认匹配后，你可以在 LinkedIn 上发送连接邀请。",
       "install": "2 分钟装好",
       "github": "在 GitHub 上查看",

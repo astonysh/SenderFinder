@@ -786,7 +786,7 @@
   "message": "未授权"
  },
  "panel_slogan": {
-  "message": "找到发件人的 LinkedIn"
+  "message": "找到邮件发件人，并在 LinkedIn 上与他们建立联系"
  },
  "li_link_broken": {
   "message": "这个 LinkedIn 链接打不开：数据商给的地址不对。"

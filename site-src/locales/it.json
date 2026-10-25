@@ -94,7 +94,7 @@
   },
   "index": {
     "hero": {
-      "lead": "Scopri chi ti ha scritto e connettiti con quella persona su LinkedIn.",
+      "lead": "Visualizza il profilo LinkedIn che potrebbe corrispondere al mittente.",
       "desc": "Apri un messaggio in Gmail o Outlook per vedere in SenderFinder il profilo LinkedIn che potrebbe corrispondere al mittente. Verifica che sia la persona giusta e, se vuoi, inviale una richiesta di collegamento.",
       "install": "Installa in 2 minuti",
       "github": "Vedi su GitHub",

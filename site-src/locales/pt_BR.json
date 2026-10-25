@@ -94,7 +94,7 @@
   },
   "index": {
     "hero": {
-      "lead": "Descubra quem enviou o e-mail e conecte-se com essa pessoa no LinkedIn.",
+      "lead": "Veja o perfil do LinkedIn que pode corresponder a quem enviou o e-mail.",
       "desc": "Abra uma mensagem no Gmail ou Outlook para ver no SenderFinder o perfil do LinkedIn que pode corresponder ao remetente. Confira se é a pessoa certa e, se quiser, envie um convite para se conectar.",
       "install": "Instalar em 2 minutos",
       "github": "Ver no GitHub",

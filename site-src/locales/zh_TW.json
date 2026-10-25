@@ -94,7 +94,7 @@
   },
   "index": {
     "hero": {
-      "lead": "找到寄件者，再到 LinkedIn 上建立聯繫。",
+      "lead": "查看可能與郵件寄件者相符的 LinkedIn 個人檔案。",
       "desc": "在 Gmail 或 Outlook 開啟郵件，即可在 SenderFinder 中查看可能符合寄件者的 LinkedIn 個人檔案。確認對方無誤後，你可以在 LinkedIn 上發出邀請。",
       "install": "2 分鐘完成安裝",
       "github": "在 GitHub 上查看",

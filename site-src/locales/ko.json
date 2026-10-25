@@ -94,7 +94,7 @@
   },
   "index": {
     "hero": {
-      "lead": "이메일을 보낸 사람을 찾고 LinkedIn에서 연결하세요.",
+      "lead": "발신자와 일치할 가능성이 있는 LinkedIn 프로필을 확인하세요.",
       "desc": "Gmail이나 Outlook에서 메일을 열면 SenderFinder에 발신자와 일치할 가능성이 있는 LinkedIn 프로필이 표시됩니다. 프로필을 확인한 뒤 원할 때 연결 요청을 보낼 수 있습니다.",
       "install": "2분 만에 설치",
       "github": "GitHub에서 보기",

@@ -94,7 +94,7 @@
   },
   "index": {
     "hero": {
-      "lead": "Finde heraus, wer dir geschrieben hat, und vernetze dich auf LinkedIn.",
+      "lead": "Sieh dir das LinkedIn-Profil an, das wahrscheinlich zum Absender gehört.",
       "desc": "Öffne eine Nachricht in Gmail oder Outlook, um in SenderFinder ein mögliches LinkedIn-Profil der absendenden Person zu sehen. Prüfe, ob das Profil passt, und sende bei Bedarf eine Vernetzungsanfrage.",
       "install": "In 2 Minuten installieren",
       "github": "Auf GitHub ansehen",
