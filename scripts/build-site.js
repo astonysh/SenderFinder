@@ -525,7 +525,6 @@ ${items}
 ${languages}
                 </ul>
               </nav>
-              <p class="fine">${esc(data.ui.languageHint)}</p>
             </div>
           </details>
         </div>
