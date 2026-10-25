@@ -283,6 +283,10 @@ test('every local link, script and image resolves to a file in site/', () => {
 test('every page keeps primary links in the header and informational links in the footer', () => {
   for (const lang of LANGUAGES) {
     const home = pagePath(lang, PAGES[0]);
+    const homeHtml = pageOf(lang, PAGES[0]);
+    for (const anchor of ['how', 'cost', 'faq']) {
+      assert.ok(homeHtml.includes(`id="${anchor}"`), `${lang.locale}: navigation target #${anchor} is missing`);
+    }
     const route = id => pagePath(lang, PAGES.find(page => page.id === id));
     for (const page of PAGES.filter(page => hasPage(page, lang.locale))) {
       const html = pageOf(lang, page);
