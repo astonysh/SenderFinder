@@ -453,12 +453,18 @@ function head(lang, page, data, scope) {
 }
 
 /* One stroke style for the whole set: the line icons inherit fill="none" + stroke="currentColor" from their
-   symbol, so they follow the text colour in both themes. Symbols that are meant to be solid (the GitHub
-   mark) or to fill a shape (the cookie dots) say so themselves. */
+   symbol, so they follow the text colour in both themes. Symbols that are meant to be solid (GitHub
+   and Edge marks) or to fill a shape (the cookie dots) say so themselves. */
 const sprite = () => {
   const symbols = fs.readFileSync(path.join(SRC, 'partials', 'icons.svg'), 'utf8').trim()
-    .replace(/<symbol ([^>]*?)data-solid="true"/g, '<symbol $1 fill="currentColor" stroke="none"')
-    .replace(/<symbol /g, '<symbol fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ');
+    .replace(/<symbol ([^>]+)>/g, (_, attrs) => {
+      // Emit each presentation attribute once: duplicate fill/stroke attributes can hide solid icons.
+      const solid = attrs.includes('data-solid="true"');
+      const clean = attrs.replace(/\s*data-solid="true"/, '');
+      return solid
+        ? `<symbol ${clean} fill="currentColor" stroke="none">`
+        : `<symbol ${clean} fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">`;
+    });
   return `<svg class="icon-sprite" aria-hidden="true" focusable="false" width="0" height="0" xmlns="http://www.w3.org/2000/svg">\n${symbols}\n</svg>`;
 };
 
