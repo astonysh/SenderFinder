@@ -786,7 +786,7 @@
   "message": "Permiso no concedido"
  },
  "panel_slogan": {
-  "message": "Encuentra a quienes te escriben y conecta con ellos en LinkedIn"
+  "message": "Encuentra al remitente en LinkedIn. Conecta más allá del correo."
  },
  "li_link_broken": {
   "message": "Este enlace de LinkedIn no se abre: el proveedor de datos devolvió una dirección incorrecta."

@@ -16,6 +16,8 @@ const EXT = path.join(ROOT, 'extension');
 const OUT = path.join(ROOT, 'store'); fs.mkdirSync(OUT, { recursive: true });
 // Screenshots the website uses (site-src/assets/screenshots/ is the source, the generator copies it into site/).
 const SITE = path.join(ROOT, 'site-src', 'assets', 'screenshots'); fs.mkdirSync(SITE, { recursive: true });
+const slogan = JSON.parse(fs.readFileSync(path.join(EXT, '_locales', 'en', 'messages.json'), 'utf8')).panel_slogan.message;
+const sloganHtml = slogan.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace('. ', '.<br>');
 const MOCK = fs.readFileSync(path.join(__dirname, 'mock-gmail.html'), 'utf8');
 const dataUrl = (file, mime) => `data:${mime};base64,` + fs.readFileSync(file).toString('base64');
 const png = buf => 'data:image/png;base64,' + buf.toString('base64');
@@ -109,11 +111,11 @@ const icon = dataUrl(path.join(ROOT, 'design', 'icon-1024.png'), 'image/png');
 const tile = async (w, h, file, iconPx, titlePx, subPx) => {
   const c = await ctx.newPage(); await c.setViewportSize({ width: w, height: h });
   await c.setContent(`<body style="margin:0;width:${w}px;height:${h}px;background:#f6f6f3;display:flex;align-items:center;justify-content:center;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#1b1d22">
-    <div style="display:flex;align-items:center;gap:${Math.round(iconPx * 0.28)}px">
-      <img src="${icon}" style="width:${iconPx}px;height:${iconPx}px;border-radius:${Math.round(iconPx * 0.22)}px">
-      <div><div style="font-size:${titlePx}px;font-weight:700;letter-spacing:-0.02em;line-height:1.1">SenderFinder</div>
-      <div style="font-size:${subPx}px;margin-top:${Math.round(subPx * 0.5)}px;color:#3a3d44">Find the email sender on LinkedIn</div>
-      <div style="font-size:${Math.round(subPx * 0.68)}px;margin-top:${Math.round(subPx * 0.45)}px;color:#6c707a;white-space:nowrap">Open source · your own keys · lookup history stays on your device</div></div>
+    <div style="display:flex;align-items:center;max-width:90%;gap:${Math.round(iconPx * 0.28)}px">
+      <img src="${icon}" style="flex-shrink:0;width:${iconPx}px;height:${iconPx}px;border-radius:${Math.round(iconPx * 0.22)}px">
+      <div style="min-width:0"><div style="font-size:${titlePx}px;font-weight:700;letter-spacing:-0.02em;line-height:1.1">SenderFinder</div>
+      <div style="font-size:${subPx}px;margin-top:${Math.round(subPx * 0.5)}px;color:#3a3d44">${sloganHtml}</div>
+      <div style="font-size:${Math.round(subPx * 0.68)}px;margin-top:${Math.round(subPx * 0.45)}px;color:#6c707a">Open source · your own keys · lookup history stays on your device</div></div>
     </div></body>`);
   await c.screenshot({ path: path.join(OUT, file), clip: { x: 0, y: 0, width: w, height: h } }); await c.close();
 };

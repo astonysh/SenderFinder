@@ -216,11 +216,14 @@ export function scopeFor(lang, data) {
     },
   };
   const ext = readExtensionStrings(lang.locale);
-  // the hero highlights the brand word with the gradient; every locale's slogan contains it
-  const at = ext.slogan.indexOf('LinkedIn');
+  // Keep the two slogan sentences on separate lines while preserving the localized text.
+  const sentences = ext.slogan.match(/^(.+?[.。])(\s*)(.+)$/u);
+  const headline = sentences ? sentences[1] + sentences[2] : ext.slogan;
+  const followup = sentences ? sentences[3] : '';
+  const at = headline.indexOf('LinkedIn');
   const heroSlogan = at >= 0
-    ? { before: ext.slogan.slice(0, at), after: ext.slogan.slice(at + 'LinkedIn'.length) }
-    : { before: ext.slogan, after: '' };
+    ? { before: headline.slice(0, at), after: headline.slice(at + 'LinkedIn'.length), followup }
+    : { before: headline, after: '', followup };
   const steps = { treg: 'BlitzAPI → QuickEnrich', monid: 'Hunter → Apollo', both: 'BlitzAPI → Hunter → QuickEnrich → Apollo' };
   const pricing = {
     cards: ['treg', 'both', 'monid'].map(mode => {

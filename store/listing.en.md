@@ -17,7 +17,7 @@ English (default). The extension UI supports 10 languages: English, Simplified a
 
 ## Detailed description
 
-Find the email sender on LinkedIn, without leaving your inbox.
+Find the sender on LinkedIn. Connect beyond the inbox.
 
 Open a message in Gmail (or Outlook on the web) and the side panel shows who wrote it: photo, name, title, company, location, local time, a LinkedIn profile link and, when available, X / Twitter. Everyone else in the thread is listed underneath; one click looks any of them up. A small magnifier next to the sender's name is all that is added to the mail page itself.
 

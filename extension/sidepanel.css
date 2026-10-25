@@ -15,7 +15,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--focus); outline
 
 /* Header */
 .top { display: flex; align-items: center; gap: 8px; padding: 6px 10px 6px 14px; border-bottom: 1px solid var(--line); }
-.slogan { flex: 1; min-width: 0; color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.slogan { flex: 1; min-width: 0; color: var(--muted); font-size: 12px; line-height: 1.35; white-space: normal; }
 button { font: inherit; color: inherit; cursor: pointer; } button:disabled { opacity: .5; cursor: default; }
 button.icon { background: none; border: 0; padding: 5px; border-radius: 4px; color: var(--muted); display: inline-flex; }
 button.icon:hover { color: var(--text); background: var(--hover); }

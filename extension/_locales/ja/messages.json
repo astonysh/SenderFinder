@@ -786,7 +786,7 @@
   "message": "許可されていません"
  },
  "panel_slogan": {
-  "message": "メールの送信者を見つけて、LinkedIn でつながりましょう"
+  "message": "メールの送信者を LinkedIn で見つける。メールを超えてつながる。"
  },
  "li_link_broken": {
   "message": "この LinkedIn リンクは開けません。データプロバイダーから誤ったアドレスが返されました。"
