@@ -95,9 +95,10 @@ one sentence saying the English version prevails.
 
 - **Theme.** `assets/theme-boot.js` (a blocking classic script in `<head>`) reads `localStorage['el-theme']`
   and sets `<html data-theme="light|dark">` before first paint, exactly like the extension. Without a
-  saved choice the site follows `prefers-color-scheme`. The header control writes the same key and also
-  sets `data-theme-choice` so the summary can show a sun, a moon or a monitor. Without JavaScript the
-  control stays hidden and the site follows the system.
+  saved choice the site follows `prefers-color-scheme`. Following the system is the default and is not
+  listed: the header menu only offers the opposite of the theme on screen (Light when dark, Dark when
+  light), and the summary shows a sun or a moon for the theme on screen. Picking the theme the system
+  already uses clears the key again. Without JavaScript the control stays hidden and the site follows the system.
 - **Icons.** One sprite (`site-src/partials/icons.svg`) with a single stroke style, inlined into every
   page and coloured with `currentColor`, so it follows the theme. Icons are picked by position in
   `scripts/build-site.js` (`HOW_ICONS`, `FACT_ICONS`, …) — never stored in the locale files.
@@ -175,10 +176,16 @@ html_handling = "auto-trailing-slash"
 not_found_handling = "404-page"
 ```
 
+Deploys are automatic (Cloudflare Workers Builds, connected to this GitHub repository): every push to
+`main` that changes `site/*` or `wrangler.toml` runs `npx wrangler deploy` from the repository root. There is
+no build command, so always regenerate and commit the output yourself:
+
 ```bash
-npm run site && npm test      # then commit site/ with the sources
-npx wrangler deploy           # from the repository root
+npm run site && npm test      # then commit site/ together with site-src/ and push to main
 ```
+
+Pushes to other branches create preview URLs; they do not touch senderfinder.com. A manual deploy
+(`npx wrangler deploy` from the repository root) still works if the Git integration is ever disconnected.
 
 `site/.assetsignore` (generated from `site-src/.assetsignore`) keeps `README.md` out of the upload.
 `site/_headers` sets response headers, including
