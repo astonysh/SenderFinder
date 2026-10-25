@@ -518,7 +518,7 @@ ${items}
         <div class="v2-nav-tools header-tools">
           <button type="button" class="theme-switch" data-label-light="${esc(data.ui.theme.label)}: ${esc(data.ui.theme.light)}" data-label-dark="${esc(data.ui.theme.label)}: ${esc(data.ui.theme.dark)}" aria-label="${esc(data.ui.theme.label)}"><svg class="i theme-icon theme-icon-light" aria-hidden="true"><use href="#i-sun"/></svg><svg class="i theme-icon theme-icon-dark" aria-hidden="true"><use href="#i-moon"/></svg></button>
           <details class="lang-switch">
-            <summary><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg><span class="visually-hidden">${esc(data.ui.language)}: </span>${lang.name}</summary>
+            <summary aria-label="${esc(data.ui.language)}: ${esc(lang.name)}" title="${esc(data.ui.language)}: ${esc(lang.name)}"><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg></summary>
             <div class="lang-menu">
               <nav aria-label="${esc(data.ui.language)}">
                 <ul>

@@ -219,6 +219,12 @@ test('the language switcher links each language to the same page, or to its home
     for (const page of PAGES) {
       if (!hasPage(page, lang.locale)) continue;
       const html = pageOf(lang, page);
+      const languageButton = html.match(/<details class="lang-switch">\s*<summary([^>]*)>([\s\S]*?)<\/summary>/);
+      assert.ok(languageButton, `${lang.locale}/${page.id}: language button missing`);
+      assert.ok(languageButton[1].includes(`aria-label="${esc(readLocale(lang.locale).ui.language)}: ${esc(lang.name)}"`),
+        `${lang.locale}/${page.id}: language button lacks its accessible name`);
+      assert.ok(languageButton[2].includes('href="#i-globe"'), `${lang.locale}/${page.id}: globe icon missing`);
+      assert.equal(languageButton[2].replace(/<[^>]+>/g, '').trim(), '', `${lang.locale}/${page.id}: visible text remains in language button`);
       const links = [...html.matchAll(/<li><a href="([^"]+)" hreflang="[^"]+" lang="[^"]+"( aria-current="page")?>/g)];
       assert.equal(links.length, LANGUAGES.length, `${rel(SITE, pageFile(lang, page))}: ${links.length} language links`);
       const targets = links.map(m => path.posix.normalize(m[1]));
