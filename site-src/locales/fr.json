@@ -94,7 +94,7 @@
   },
   "index": {
     "hero": {
-      "desc": "Ouvrez un e-mail pour trouver le profil LinkedIn de l’expéditeur, entrer en contact avec cette personne et suivre ses actualités.",
+      "desc": "Ouvrez un e-mail pour trouver le profil LinkedIn de l’expéditeur. Entrez en contact avec cette personne et gardez le lien.",
       "install": "Installer en 2 minutes",
       "github": "Voir sur GitHub",
       "fine": "Pas encore dans le Chrome Web Store. La page d'installation détaille l'installation en deux minutes, sans empaquetage.",

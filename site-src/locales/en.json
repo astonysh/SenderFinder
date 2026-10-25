@@ -94,7 +94,7 @@
   },
   "index": {
     "hero": {
-      "desc": "Open an email to find the sender’s LinkedIn profile, connect with them, and follow their updates.",
+      "desc": "Open an email to find the sender’s LinkedIn profile. Connect with them and stay connected.",
       "install": "Install in 2 minutes",
       "github": "View on GitHub",
       "fine": "Not in the Chrome Web Store yet. The install page walks through the two-minute unpacked install.",

@@ -94,7 +94,7 @@
   },
   "index": {
     "hero": {
-      "desc": "Öffne eine E-Mail, um das LinkedIn-Profil des Absenders zu finden, dich mit ihm zu vernetzen und seine Neuigkeiten zu verfolgen.",
+      "desc": "Öffne eine E-Mail, um das LinkedIn-Profil des Absenders zu finden. Vernetze dich mit ihm und bleibe in Kontakt.",
       "install": "In 2 Minuten installieren",
       "github": "Auf GitHub ansehen",
       "fine": "Noch nicht im Chrome Web Store. Die Installationsseite führt durch die zwei Minuten für die Installation als entpackte Erweiterung.",
