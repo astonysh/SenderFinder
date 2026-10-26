@@ -281,9 +281,8 @@ code { background: var(--surface-2); padding: .05em .25em; border-radius: 2px; }
 .v2-cloud .i { width: 22px; height: 22px; flex-shrink: 0; }
 
 /* privacy: diagram card + three lists */
-.v2-flow-card { padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--v2-border); border-radius: var(--radius-xl); background: var(--v2-card); }
+.v2-flow-card { margin: 0; padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--v2-border); border-radius: var(--radius-xl); background: var(--v2-card); }
 .v2-flow-card .flow { margin: 0; }
-.v2-flow-card .flow-nope { text-decoration-thickness: 1px; }
 
 /* pricing-style cost cards */
 .v2-price { position: relative; display: flex; flex-direction: column; padding: 2rem 1.5rem 1.75rem; border: 1px solid var(--v2-border); border-radius: var(--radius-xl); background: var(--v2-card); text-align: center; }
@@ -597,21 +596,21 @@ a[href^="https://github.com"]:not(.v2-btn):not(.v2-badge):not(.v2-brand)::before
 
 /* Data-flow diagram: stacked on a phone, horizontal from 820px up */
 .flow { margin: 1.75rem 0 0; }
-.flow-row { display: grid; gap: .75rem; }
-@media (min-width: 820px) { .flow-row { grid-template-columns: 1fr auto 1fr; align-items: center; } }
-.flow-box { padding: .9rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface-2); }
+.flow-row { display: grid; gap: 1rem; }
+@media (min-width: 820px) { .flow-row { grid-template-columns: minmax(0, 1fr) minmax(9rem, 12rem) minmax(0, 1fr); align-items: stretch; } }
+.flow-box { min-width: 0; padding: 1.1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface-2); }
 .flow-box h3 { margin: .4rem 0 .1rem; font-size: 1rem; }
 .flow-box p { margin: 0; font-size: .9rem; color: var(--muted); }
 .flow-box .i { color: var(--accent); }
-.flow-mid { display: flex; flex-direction: column; align-items: center; gap: .3rem; text-align: center; font-size: .82rem; color: var(--muted); }
+.flow-mid { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .65rem; padding: .5rem 0; text-align: center; font-size: .82rem; color: var(--muted); }
 .flow-mid p { margin: 0; max-width: 12rem; }
 .i-arrow { width: 26px; height: 26px; color: var(--accent); }
 .flow-arrow-right { display: none; }
 @media (min-width: 820px) { .flow-arrow-down { display: none; } .flow-arrow-right { display: block; } }
-.flow-none { display: flex; align-items: center; gap: .4rem; margin: .8rem 0 0; font-size: .82rem; color: var(--muted); }
-.flow-none .i { color: var(--muted); width: 16px; height: 16px; }
-.flow-nope { display: inline-flex; align-items: center; gap: .4rem; margin: .35rem 0 0; padding: .35rem .55rem; border: 1px dashed var(--muted); border-radius: var(--radius); font-size: .78rem; line-height: 1.25; color: var(--muted); text-decoration: line-through; text-decoration-thickness: 1px; max-width: 15rem; }
-.flow-nope .i { text-decoration: none; }
+.flow-none { display: flex; align-items: flex-start; gap: .5rem; margin: 1.25rem 0 0; padding-top: 1rem; border-top: 1px solid var(--border); font-size: .82rem; color: var(--muted); }
+.flow-none .i { flex-shrink: 0; margin-top: .2em; color: var(--muted); width: 16px; height: 16px; }
+.flow-nope { display: inline-flex; align-items: flex-start; gap: .4rem; padding: .5rem .65rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: .78rem; line-height: 1.5; color: var(--muted); }
+.flow-nope .i { flex-shrink: 0; margin-top: .15em; }
 
 /* Facts: one icon per line, aligned, no decoration beyond that */
 .facts { display: grid; gap: .7rem; max-width: 46rem; list-style: none; margin: 1rem 0 1.5rem; padding: 0; }
