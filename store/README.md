@@ -59,3 +59,36 @@ Use the v1.1 authentication scheme: API Key and Client ID from Partner Center’
 The automation sequence is: build with `npm run zip:edge`, upload, wait for verification, submit with reviewer notes, then report certification/publication status. Submitting does not mean the update is immediately live.
 
 Official documentation: https://learn.microsoft.com/en-us/microsoft-edge/extensions/update/api/using-addons-api
+
+### SenderFinder publish command
+
+The repository includes `scripts/publish-edge.js` (Node 22+, no dependencies).
+Credentials are read from `EDGE_API_KEY` / `EDGE_CLIENT_ID`, or the local, Git-ignored file `data/edge-publish/credentials.json` with the fields `apiKey` and `clientId`. Restrict this file to its owner (`0600`); never include it in a package. `EDGE_CREDENTIALS_FILE` can select another local credentials file. `EDGE_PRODUCT_ID` defaults to SenderFinder’s existing product.
+
+```bash
+npm run zip:edge
+npm run publish:edge -- publish --notes-file output/edge-<version>-review-notes.txt
+```
+
+Reviewer notes must contain fewer than 2,000 characters. The command uploads the current version’s ZIP, waits for verification, submits reviewer notes, and checks whether the certification submission was created. It does not edit store descriptions or bypass certification.
+
+For separate steps or a resumed session:
+
+```bash
+npm run publish:edge -- upload
+npm run publish:edge -- wait --kind upload
+npm run publish:edge -- submit --notes-file output/edge-<version>-review-notes.txt
+npm run publish:edge -- wait --kind publish
+npm run publish:edge -- status --kind publish
+```
+
+Operation IDs and package hashes are saved in `output/edge-publish-<version>.json`. POST requests are never automatically retried. If a request times out before its operation ID is recorded, inspect Partner Center before sending another request. An API status of `Succeeded` for submission means the certification submission was created, not that the version is already public.
+
+If Microsoft returns `InProgressSubmission`, an earlier store submission is still being processed. Keep the verified upload and wait for that submission to finish. Afterward, explicitly resume the failed submission with:
+
+```bash
+npm run publish:edge -- submit --retry-failed --notes-file output/edge-<version>-review-notes.txt
+npm run publish:edge -- wait --kind publish
+```
+
+`--retry-failed` only resets a submission whose saved API status is `Failed`; prior operation details remain in the state history. It does not cancel an existing store review.

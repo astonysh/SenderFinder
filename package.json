@@ -19,6 +19,7 @@
     "store:assets": "node scripts/store/shots.js",
     "zip": "node scripts/zip-extension.js",
     "zip:edge": "node scripts/zip-extension.js --edge",
+    "publish:edge": "node scripts/publish-edge.js",
     "bench": "node scripts/bench.js",
     "bump": "node scripts/bump.js",
     "site:deploy": "wrangler deploy",
