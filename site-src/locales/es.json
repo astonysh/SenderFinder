@@ -572,7 +572,7 @@
     "title": "Privacidad",
     "updated": "Última actualización: 25 de octubre de 2026",
     "prevails": "Esta página es una traducción; si hay diferencias, prevalece la versión en inglés.",
-    "lead": "SenderFinder lee el remitente y los participantes del correo abierto y analiza su cuerpo localmente para encontrar un enlace a un perfil de LinkedIn. Si usas las funciones de LinkedIn, la extensión usa tu propia sesión de LinkedIn para leer el grado de conexión, una invitación pendiente, la foto y los enlaces a empresas asociadas. La ayuda para conectar pulsa una vez «Add a note» y rellena una nota para que la revises. Los datos de búsqueda se envían directamente al proveedor que configures. Los recuentos de uso anónimos están activados por defecto; un interruptor en la configuración los desactiva.",
+    "lead": "SenderFinder lee el remitente y los participantes del correo abierto y analiza su cuerpo localmente para encontrar un enlace a un perfil de LinkedIn. Si usas las funciones de LinkedIn, la extensión usa tu propia sesión de LinkedIn para leer el grado de conexión, una invitación pendiente, la foto y los enlaces a empresas asociadas. La ayuda para conectar pulsa una vez «Add a note» y rellena una nota para que la revises. Los datos de búsqueda se envían directamente al proveedor que configures. Los recuentos de uso anónimos están activados por defecto; un interruptor en la configuración los desactiva. Con tu permiso, el acceso a LinkedIn también puede completar cargos actuales, empresa y ubicación.",
     "sections": [
       {
         "title": "Quién mantiene SenderFinder",

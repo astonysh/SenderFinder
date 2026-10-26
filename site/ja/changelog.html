@@ -135,7 +135,10 @@
     </header>
 
     <article class="v2-prose">
-      <h2 id="v0-5-2">0.5.2 (2026-10-25)</h2>
+      <h2 id="v0-5-3">0.5.3 (2026-10-26)</h2>
+<ul><li>Complete missing job details from the authorized LinkedIn profile; offer manual, budget-limited provider enrichment without replacing the known profile link.</li></ul>
+
+<h2 id="v0-5-2">0.5.2 (2026-10-25)</h2>
 <ul><li>Refreshed the extension summary in all 10 languages and the English / Simplified Chinese store copy: find the sender’s LinkedIn profile, connect beyond the inbox. Monid signup links use the maintainer’s affiliate URL.</li></ul>
 <ul><li>New step <code>websearch</code> (Firecrawl, 2 credits): when every reverse-email provider misses, a web search for the header name + the company keyword of the work domain, restricted to linkedin.com, finds the public profile page (&quot;Jane Doe - Head of Growth at Acme&quot;). Reverse-email databases do not know new companies or new hires, while the LinkedIn page is indexed; seen live 2026-10-25 with a monid.ai address that seven data sources all missed. A result is accepted only when its title names the person (same name check as the other steps) and mentions the company keyword. On by default before Data Legion; skipped without a header name or a work domain, or without a Firecrawl key.</li><li>Side panel: when nothing is found, a free &quot;Search LinkedIn for this person&quot; link opens LinkedIn&#39;s people search with the header name and the company keyword.</li><li>Fix: an invitation you sent stayed &quot;Invitation pending&quot; in the side panel for up to 12 hours after the person accepted, because the relationship read at sending time was cached that long. An outstanding invitation is now re-checked against LinkedIn every time the panel opens or regains focus (at most once per 10 minutes), and &quot;Look up again&quot; re-reads the relationship immediately. Once LinkedIn reports the two of you as connected, the local &quot;invited&quot; marker is cleared.</li></ul>
 

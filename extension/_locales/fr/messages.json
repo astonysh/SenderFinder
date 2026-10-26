@@ -597,7 +597,7 @@
   "message": "Autorisation unique pour linkedin.com"
  },
  "connect_intro": {
-  "message": "L’accès LinkedIn facultatif permet à l’extension d’utiliser votre session. Elle peut lire le degré de relation et la photo ; pour Connect, elle ouvre le profil et remplit votre note après avoir cliqué une fois sur « Add a note ». Vous accordez l’accès avant utilisation. Elle lit aussi les noms et liens des entreprises associées au profil sélectionné."
+  "message": "L’accès LinkedIn facultatif permet à l’extension d’utiliser votre session. Elle peut lire le degré de relation et la photo ; pour Connect, elle ouvre le profil et remplit votre note après avoir cliqué une fois sur « Add a note ». Vous accordez l’accès avant utilisation. Elle lit aussi les noms et liens des entreprises associées au profil sélectionné. Avec votre autorisation, l’accès à LinkedIn peut aussi compléter les postes actuels, l’entreprise et le lieu."
  },
  "connect_what_title": {
   "message": "Ce qui se passe ensuite :"
@@ -636,7 +636,7 @@
   "message": "Se connecter sur LinkedIn"
  },
  "opt_connect_intro": {
-  "message": "Les fonctions LinkedIn utilisent votre session pour lire le degré de relation et la photo. Si vous choisissez Connect, l’extension ouvre le profil, clique une fois sur « Add a note » et remplit votre modèle. Vous cliquez vous-même sur Connect et Send. Elle lit aussi les noms et liens des entreprises associées au profil sélectionné."
+  "message": "Les fonctions LinkedIn utilisent votre session pour lire le degré de relation et la photo. Si vous choisissez Connect, l’extension ouvre le profil, clique une fois sur « Add a note » et remplit votre modèle. Vous cliquez vous-même sur Connect et Send. Elle lit aussi les noms et liens des entreprises associées au profil sélectionné. Avec votre autorisation, l’accès à LinkedIn peut aussi compléter les postes actuels, l’entreprise et le lieu."
  },
  "opt_connect_note": {
   "message": "Modèle de note d'invitation"
@@ -825,6 +825,27 @@
   "message": "désactivé"
  },
  "li_grant_disclosure": {
-  "message": "Si vous continuez, SenderFinder utilise votre session LinkedIn pour lire le degré de relation et la photo de ce profil. Les données restent dans ce navigateur ; aucune invitation n’est envoyée. Elle lit aussi les noms et liens des entreprises associées au profil sélectionné."
+  "message": "Si vous continuez, SenderFinder utilise votre session LinkedIn pour lire le degré de relation et la photo de ce profil. Les données restent dans ce navigateur ; aucune invitation n’est envoyée. Elle lit aussi les noms et liens des entreprises associées au profil sélectionné. Avec votre autorisation, l’accès à LinkedIn peut aussi compléter les postes actuels, l’entreprise et le lieu."
+ },
+ "enrich_btn": {
+  "message": "Compléter le poste et l’entreprise"
+ },
+ "enrich_hint": {
+  "message": "Interroge vos fournisseurs ; des frais peuvent s’appliquer dans vos plafonds par recherche et par jour."
+ },
+ "enrich_busy": {
+  "message": "En cours…"
+ },
+ "enrich_unchanged": {
+  "message": "Aucune information supplémentaire pour ce profil LinkedIn. Le profil initial est conservé."
+ },
+ "enrich_failed": {
+  "message": "Impossible de compléter les informations. Le profil initial est conservé."
+ },
+ "li_career_source": {
+  "message": "Poste et entreprise : LinkedIn"
+ },
+ "li_career_access_note": {
+  "message": "Avec votre autorisation, l’accès à LinkedIn peut aussi compléter les postes actuels, l’entreprise et le lieu."
  }
 }

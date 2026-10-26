@@ -1,6 +1,6 @@
 {
   "name": "senderfinder",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "private": true,
   "description": "Open-source Chrome and Edge extension: the LinkedIn profile behind an email address, shown in Gmail / Outlook on the web. Bring your own provider keys; nothing leaves your browser except the calls to the providers you configured.",
   "type": "module",

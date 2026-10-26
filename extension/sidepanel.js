@@ -1,6 +1,7 @@
 // Side panel: shows the person the open email is about (Rapportive style) and the other people in the thread.
 // State comes from the service worker (panel:get / panel:state); lookups are requested with panel:lookup.
 import { t, localizeDocument } from './lib/i18n.js';
+import { mergeProfileDetails } from './core/profile-details.js';
 import { applyTheme, effectiveTheme, onThemeChange, watchTheme } from './lib/theme.js';
 const $ = id => document.getElementById(id);
 const send = msg => chrome.runtime.sendMessage(msg);
@@ -36,7 +37,7 @@ function relFor(prof) {
   const url = prof.linkedinUrl;
   if (!rels.has(url)) {
     rels.set(url, { loading: true });
-    send({ type: 'li:relation', linkedinUrl: url }).then(r => r, () => null).then(r => { rels.set(url, r && r.ok ? r : { error: (r && r.error) || 'LI_FAILED' }); render(); });
+    send({ type: 'li:relation', linkedinUrl: url, includeCareer: !prof.company || !prof.title }).then(r => r, () => null).then(r => { rels.set(url, r && r.ok ? r : { error: (r && r.error) || 'LI_FAILED' }); render(); });
   }
   const v = rels.get(url);
   return v && !v.loading && !v.error ? v : v && v.error ? v : null;
@@ -71,12 +72,12 @@ chrome.runtime.onMessage.addListener(msg => { if (msg && msg.type === 'panel:sta
 chrome.storage.onChanged.addListener((c, area) => { if (area === 'local' && c.settings) loadFooter(); });
 // Re-read the shown relationships in place (old values stay on screen until the new ones arrive: no flicker).
 let refreshing = false;
-const relKey = r => JSON.stringify([r.relation, r.pending, r.connected, r.distance, r.photoUrl, r.missing, r.companies || null]);
+const relKey = r => JSON.stringify([r.relation, r.pending, r.connected, r.distance, r.photoUrl, r.missing, r.companies || null, r.profile || null]);
 async function refreshRels({ force = null } = {}) {   // force: one linkedinUrl to re-read from LinkedIn even if cached
   if (refreshing || !liGranted || !rels.size) return; refreshing = true;
   let changed = false;   // re-render only when a relationship really changed: the focus that precedes a click must not rebuild the buttons
   try {
-    await Promise.all([...rels.keys()].map(url => send({ type: 'li:relation', linkedinUrl: url, force: url === force }).then(r => {
+    await Promise.all([...rels.keys()].map(url => send({ type: 'li:relation', linkedinUrl: url, force: url === force, includeCareer: true }).then(r => {
       if (!r || !r.ok) return;
       const old = rels.get(url);
       if (!old || old.loading || old.error || relKey(old) !== relKey(r)) changed = true;
@@ -164,10 +165,13 @@ const liLink = (url, compact) => compact
 // ── The main person ──
 function primary(p, r) {
   const st = statusOf(r);
-  const prof = (st === 'found' || st === 'uncertain') ? r.profile : null;
+  let prof = (st === 'found' || st === 'uncertain') ? r.profile : null;
   const card = h('section', { class: 'person primary', 'data-status': st, 'data-email': p.email });
   const name = (prof && prof.fullName) || displayName(p.name) || p.email;
   const rel = prof ? relFor(prof) : null, rl = relLabel(rel);
+  const original = prof;
+  prof = mergeProfileDetails(prof, rel && rel.profile);
+  const careerAdded = original && prof && ((!original.company && prof.company) || (!original.title && prof.title));
   card.append(h('h2', { class: 'name' }, name, rl ? h('span', { class: 'deg ' + rl[1] }, rl[0]) : null));
   const facts = h('div', { class: 'facts' }, h('div', { class: 'email' }, p.email));
   if (prof) {
@@ -193,7 +197,7 @@ function primary(p, r) {
     const pos = (prof.positions || []).filter(x => x.current && (x.title || x.company)).slice(0, 3);
     if (prof.title || prof.company) card.append(h('div', { class: 'role' }, prof.title || null, prof.title && prof.company ? h('span', { class: 'co' }, ' · ') : null, prof.company ? companyLink(prof.company, prof, rel, null, prof.title ? 'co' : '') : null));
     if (headlineAdds(prof.headline, prof.title, prof.company)) card.append(h('div', { class: prof.title || prof.company ? 'headline' : 'role' }, prof.headline));
-    if (pos.length > 1) card.append(h('ul', { class: 'roles', 'aria-label': t('current_roles') }, ...pos.map(x => h('li', {}, x.title || null, x.title && x.company ? ' @ ' : null, x.company ? companyLink(x.company, prof, rel, x) : null))));
+    if (pos.length && (pos.length > 1 || !(prof.title || prof.company))) card.append(h('ul', { class: 'roles', 'aria-label': t('current_roles') }, ...pos.map(x => h('li', {}, x.title || null, x.title && x.company ? ' @ ' : null, x.company ? companyLink(x.company, prof, rel, x) : null))));
     // Profile + Connect side by side; when already connected (or invited) the second half says so instead.
     const second = canConnect(rel) ? connectButton(p, r)
       : h('span', { class: 'relnote ' + (rel.relation === 'connected' ? 'ok' : rel.relation === 'pending' ? 'warn' : '') }, rel.relation === 'connected' ? icon('check', 'ic') : null, h('span', { class: 'lbl' }, rel.relation === 'connected' ? t('rel_connected_long') : rl[0]));
@@ -210,7 +214,13 @@ function primary(p, r) {
     if (r.match && r.match.step) meta.append(h('span', {}, t('source', r.match.step === 'signature' ? t('source_signature') : (r.match.provider || r.match.step).replace(/^[a-z]+:/, ''))));
     if (showCost && r.cost) meta.append(h('span', {}, t('cost', usd(r.cost.usd))));
     meta.append(h('span', {}, h('button', { class: 'tlink', onclick: () => lookup(p, true) }, t('lookup_again'))));
+    if (careerAdded) meta.append(h('span', {}, t('li_career_source')));
     card.append(meta);
+    if (r.match && r.match.step === 'signature' && (!prof.company || !prof.title) && !rels.get(prof.linkedinUrl)?.loading) {
+      card.append(h('div', { class: 'meta' }, h('button', { class: 'pill', type: 'button', 'data-act': 'enrich', disabled: r.enriching ? '' : null, title: t('enrich_hint'), onclick: () => send({ type: 'panel:lookup', tabId, email: p.email, name: p.name, enrich: true }).catch(() => {}) }, r.enriching ? t('enrich_busy') : t('enrich_btn')), h('span', {}, t('enrich_hint'))));
+      if (r.enrichmentUnchanged) card.append(h('p', { class: 'li-disclosure' }, t('enrich_unchanged')));
+      if (r.enrichmentError) card.append(h('p', { class: 'li-disclosure' }, r.enrichmentError === 'NO_KEYS' ? t('keys_need_one') : t('enrich_failed')));
+    }
     if (!liGranted) card.append(h('p', { class: 'li-disclosure' }, t('li_grant_disclosure')),
       h('button', { class: 'grant', type: 'button', title: t('li_grant_title'), 'data-act': 'li-grant', onclick: e => grantLinkedIn(e.currentTarget) }, icon('li', 'ic-li'), h('span', {}, t('li_grant'))));
     else if (rel && rel.error === 'LI_SIGNED_OUT') card.append(h('div', { class: 'meta' }, h('span', {}, t('li_signed_out'))));
@@ -221,9 +231,10 @@ function primary(p, r) {
 // ── Other people in the thread: one compact line each, looked up only on click ──
 function row(p, r) {
   const st = statusOf(r);
-  const prof = (st === 'found' || st === 'uncertain') ? r.profile : null;
+  let prof = (st === 'found' || st === 'uncertain') ? r.profile : null;
   const name = (prof && prof.fullName) || displayName(p.name) || p.email.split('@')[0];
   const rel = prof ? relFor(prof) : null, rl = relLabel(rel);
+  prof = mergeProfileDetails(prof, rel && rel.profile);
   const nm = h('span', { class: 'nm' }, name, rl ? h('span', { class: 'deg ' + rl[1] }, rl[0]) : null, st === 'uncertain' ? badge(t('status_uncertain'), 'warn') : null);
   const subText = prof ? [prof.title || prof.headline, prof.company].filter(Boolean).join(' · ') || p.email : p.email;
   const sub = h('span', { class: 'sub', title: subText }, subText);

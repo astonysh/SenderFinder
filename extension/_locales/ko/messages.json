@@ -597,7 +597,7 @@
   "message": "linkedin.com에 대한 일회성 권한"
  },
  "connect_intro": {
-  "message": "선택적 LinkedIn 권한으로 사용자의 세션을 이용합니다. 인맥 정도와 사진을 읽으며, Connect에서는 프로필을 열고 “Add a note”를 한 번 클릭해 메모를 입력합니다. 사용 전에 권한을 허용합니다. 선택한 프로필과 연관된 회사 이름과 회사 링크도 읽습니다."
+  "message": "선택적 LinkedIn 권한으로 사용자의 세션을 이용합니다. 인맥 정도와 사진을 읽으며, Connect에서는 프로필을 열고 “Add a note”를 한 번 클릭해 메모를 입력합니다. 사용 전에 권한을 허용합니다. 선택한 프로필과 연관된 회사 이름과 회사 링크도 읽습니다. 권한을 허용하면 LinkedIn에서 현재 직책, 회사 및 위치도 보완할 수 있습니다."
  },
  "connect_what_title": {
   "message": "계속하면 진행되는 과정:"
@@ -636,7 +636,7 @@
   "message": "LinkedIn에서 1촌 맺기"
  },
  "opt_connect_intro": {
-  "message": "LinkedIn 기능은 사용자의 세션으로 인맥 정도와 사진을 읽습니다. Connect를 선택하면 프로필을 열고 “Add a note”를 한 번 클릭해 템플릿을 입력합니다. Connect와 Send는 사용자가 직접 클릭합니다. 선택한 프로필과 연관된 회사 이름과 회사 링크도 읽습니다."
+  "message": "LinkedIn 기능은 사용자의 세션으로 인맥 정도와 사진을 읽습니다. Connect를 선택하면 프로필을 열고 “Add a note”를 한 번 클릭해 템플릿을 입력합니다. Connect와 Send는 사용자가 직접 클릭합니다. 선택한 프로필과 연관된 회사 이름과 회사 링크도 읽습니다. 권한을 허용하면 LinkedIn에서 현재 직책, 회사 및 위치도 보완할 수 있습니다."
  },
  "opt_connect_note": {
   "message": "초대 메모 템플릿"
@@ -825,6 +825,27 @@
   "message": "꺼짐"
  },
  "li_grant_disclosure": {
-  "message": "계속하면 SenderFinder가 사용자의 LinkedIn 세션으로 이 프로필의 인맥 정도와 사진을 읽습니다. 데이터는 이 브라우저에 남고 초대는 전송되지 않습니다. 선택한 프로필과 연관된 회사 이름과 회사 링크도 읽습니다."
+  "message": "계속하면 SenderFinder가 사용자의 LinkedIn 세션으로 이 프로필의 인맥 정도와 사진을 읽습니다. 데이터는 이 브라우저에 남고 초대는 전송되지 않습니다. 선택한 프로필과 연관된 회사 이름과 회사 링크도 읽습니다. 권한을 허용하면 LinkedIn에서 현재 직책, 회사 및 위치도 보완할 수 있습니다."
+ },
+ "enrich_btn": {
+  "message": "직책과 회사 보완"
+ },
+ "enrich_hint": {
+  "message": "설정한 제공업체에 조회합니다. 조회별·일별 예산 내에서 요금이 발생할 수 있습니다."
+ },
+ "enrich_busy": {
+  "message": "보완 중…"
+ },
+ "enrich_unchanged": {
+  "message": "이 LinkedIn 프로필의 추가 정보를 찾지 못했습니다. 기존 정보는 유지됩니다."
+ },
+ "enrich_failed": {
+  "message": "정보를 보완하지 못했습니다. 기존 정보는 유지됩니다."
+ },
+ "li_career_source": {
+  "message": "직책 및 회사: LinkedIn"
+ },
+ "li_career_access_note": {
+  "message": "권한을 허용하면 LinkedIn에서 현재 직책, 회사 및 위치도 보완할 수 있습니다."
  }
 }

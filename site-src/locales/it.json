@@ -572,7 +572,7 @@
     "title": "Privacy",
     "updated": "Ultimo aggiornamento: 25 ottobre 2026",
     "prevails": "Questa pagina è una traduzione; in caso di difformità prevale la versione inglese.",
-    "lead": "SenderFinder legge il mittente e i partecipanti dell'email aperta e ne analizza localmente il testo per trovare un link a un profilo LinkedIn. Se attivi le funzioni LinkedIn, usa la tua sessione LinkedIn per leggere il grado di collegamento, un invito in sospeso, la foto e i link alle aziende associate. L'assistente Connect clicca una volta “Add a note” e compila una nota che puoi controllare. I campi della ricerca vanno direttamente al fornitore che configuri. I conteggi d'uso anonimi sono attivi per impostazione predefinita; un interruttore nelle impostazioni li disattiva.",
+    "lead": "SenderFinder legge il mittente e i partecipanti dell'email aperta e ne analizza localmente il testo per trovare un link a un profilo LinkedIn. Se attivi le funzioni LinkedIn, usa la tua sessione LinkedIn per leggere il grado di collegamento, un invito in sospeso, la foto e i link alle aziende associate. L'assistente Connect clicca una volta “Add a note” e compila una nota che puoi controllare. I campi della ricerca vanno direttamente al fornitore che configuri. I conteggi d'uso anonimi sono attivi per impostazione predefinita; un interruttore nelle impostazioni li disattiva. Con il tuo consenso, l’accesso a LinkedIn può completare anche ruoli attuali, azienda e località.",
     "sections": [
       {
         "title": "Chi gestisce SenderFinder",

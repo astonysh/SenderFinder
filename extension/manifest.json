@@ -3,7 +3,7 @@
   "minimum_chrome_version": "114",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwKba7VMTLoRE1fj+TYj7dHPx9ikjHyjYC/Xz+Qo52LijSIm48jFIVEyWR/O94RwM1QzhXKQAJM96awZR1ZNSwHYTSMZQCvmCv7aJAfReXt02jkYgipTIWM4INT+vc78jaCAZklID/ELvXXq9vM9SE/NpoDNmjpmO/vbv9NJ/4rOyzHUeUnndvrO1guSs3jO+Lhc5pWSX+m4k/OfsRO8rxnS8SGDOygxsFkByNlrp7Oqe8ghssuiOJ+Um/GFQJTgX7qM9yrFKcnimqre+0XjlxWjlkfdzdCKs8IwjVKT6QLtnaRVoG5VlsVgj8O713YN+7M10y7Zvq3yeX0nWRHr4bwIDAQAB",
   "name": "__MSG_ext_name__",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "__MSG_ext_description__",
   "icons": {
     "16": "icons/icon16.png",

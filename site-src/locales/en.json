@@ -572,7 +572,7 @@
     "title": "Privacy",
     "updated": "Last updated: 25 October 2026",
     "prevails": "",
-    "lead": "SenderFinder reads the sender and participants of the open email and scans its body locally for a LinkedIn profile link. If you enable LinkedIn features, it uses your own LinkedIn session to read the connection degree, a pending invitation, the photo and associated company links. The Connect helper clicks “Add a note” once and fills a note for you to review. Lookup fields go directly to the provider you configure. Anonymous usage counts are on by default; one switch in settings turns them off.",
+    "lead": "SenderFinder reads the sender and participants of the open email and scans its body locally for a LinkedIn profile link. If you enable LinkedIn features, it uses your own LinkedIn session to read the connection degree, a pending invitation, the photo and associated company links. The Connect helper clicks “Add a note” once and fills a note for you to review. Lookup fields go directly to the provider you configure. Anonymous usage counts are on by default; one switch in settings turns them off. With your permission, LinkedIn access can also fill in current roles, company and location.",
     "sections": [
       {
         "title": "Who runs SenderFinder",

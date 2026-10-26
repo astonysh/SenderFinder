@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.3 (2026-10-26)
+
+- Complete missing job details from the authorized LinkedIn profile; offer manual, budget-limited provider enrichment without replacing the known profile link.
+
 ## 0.5.2 (2026-10-25)
 
 - Refreshed the extension summary in all 10 languages and the English / Simplified Chinese store copy: find the sender’s LinkedIn profile, connect beyond the inbox. Monid signup links use the maintainer’s affiliate URL.

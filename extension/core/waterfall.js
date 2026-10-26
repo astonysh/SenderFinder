@@ -2,9 +2,10 @@
 // Every paid call is price-checked against the remaining per-lookup budget and the
 // daily cap before it is sent, and booked in the ledger after it returns.
 // Runs unchanged in the extension's service worker and in Node (tests, CLI).
-import { normalizeEmail, domainOf, isFreeMail, isRoleAddress, cleanDisplayName, nameMatches } from './identity.js';
+import { normalizeEmail, domainOf, isFreeMail, isRoleAddress, cleanDisplayName, nameMatches, normalizeLinkedInUrl } from './identity.js';
 import { extractLinkedInUrls, signatureBlock } from './signature.js';
 import { normalizeProfile } from './providers/profile.js';
+import { mergeProfileDetails } from './profile-details.js';
 import { searchQuery, pickProfile } from './websearch.js';
 
 // Step catalogue. `needs` lists what must be known; `maxUsd` is the catalog price we accept.
@@ -128,7 +129,7 @@ export function createLookup({ store, config, monid, treg, firecrawl, now = () =
   }
 
   // The lookup itself.
-  async function lookup({ email: rawEmail, name: rawName, domain: rawDomain, signature, source = 'api', force = false, maxUsd } = {}) {
+  async function lookup({ email: rawEmail, name: rawName, domain: rawDomain, signature, source = 'api', force = false, maxUsd, enrich = null } = {}) {
     const email = normalizeEmail(rawEmail);
     if (!email) throw Object.assign(new Error('INVALID_EMAIL'), { code: 'INVALID_EMAIL', http: 400 });
     const name = cleanDisplayName(rawName, email);
@@ -137,6 +138,8 @@ export function createLookup({ store, config, monid, treg, firecrawl, now = () =
     const cap = Math.min(Number.isFinite(Number(maxUsd)) && Number(maxUsd) >= 0 ? Number(maxUsd) : config.lookupMaxUsd, config.lookupMaxUsd);
     const startedAt = now();
 
+    const anchor = enrich && normalizeLinkedInUrl(enrich.profile && enrich.profile.linkedinUrl);
+    if (enrich && (!anchor || !force)) throw Object.assign(new Error('INVALID_ENRICHMENT'), { code: 'INVALID_ENRICHMENT' });
     if (!force) {
       const cached = await store.getLookup(email);
       if (cached && cached.status !== 'skipped') {
@@ -160,7 +163,7 @@ export function createLookup({ store, config, monid, treg, firecrawl, now = () =
     };
 
     // Free signature scan always runs first, even for free-mail / role addresses.
-    if (stepIds.includes('signature') && ctx.signature) {
+    if (!anchor && stepIds.includes('signature') && ctx.signature) {
       const t = Date.now();
       const r = await runStep('signature', ctx, 0);
       calls.push({ step: 'signature', provider: 'local', status: r.status, usd: 0, ms: Date.now() - t });
@@ -204,11 +207,14 @@ export function createLookup({ store, config, monid, treg, firecrawl, now = () =
       calls.push(entry);
       await store.recordCall({ email, step: id, provider: s.provider, status: r.status, usd: booked, billing: r.billing, ms: entry.ms });
       if (r.status === 'hit') {
+        if (anchor && (normalizeLinkedInUrl(r.profile && r.profile.linkedinUrl)?.toLowerCase() !== anchor.toLowerCase() || !(r.profile.title || r.profile.company))) continue;
+        if (anchor) r.profile = mergeProfileDetails(enrich.profile, r.profile);
         const d = decide(r.profile, ctx, id);
         if (d.status === 'found') return finish('found', r.profile, d.match);
         if (!fallback) fallback = { profile: r.profile, match: d.match };
       }
     }
+    if (anchor) return { ...await finish('found', enrich.profile, enrich.match), enrichmentUnchanged: true };
     if (fallback) return finish('uncertain', fallback.profile, fallback.match);
     return finish('not_found', null, null);
   }

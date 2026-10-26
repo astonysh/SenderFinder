@@ -65,19 +65,55 @@ export function companiesOf(all) {
   return Object.fromEntries(Object.entries(out).slice(0, 30));
 }
 
+// Follow only career collections attached to this profile, never other people's positions in `included`.
+function careerOf(profile, all) {
+  const byUrn = new Map(all.filter(o => typeof o.entityUrn === 'string').map(o => [o.entityUrn, o]));
+  const seen = new Set(), positions = [];
+  const text = value => typeof value === 'string' && value.trim() ? value.trim().slice(0, 500) : null;
+  const visit = (value, company = null, explicitlyCurrent = false) => {
+    if (typeof value === 'string') { if (byUrn.has(value)) visit(byUrn.get(value), company, explicitlyCurrent); return; }
+    if (!value || typeof value !== 'object' || seen.has(value)) return;
+    seen.add(value);
+    if (Array.isArray(value)) { value.forEach(v => visit(v, company, explicitlyCurrent)); return; }
+    const ref = value['*company'] || value.companyUrn;
+    const co = byUrn.get(ref) || (typeof value.company === 'object' ? value.company : null);
+    const companyName = text(value.companyName) || text(co && co.name) || company;
+    const period = value.timePeriod || value.dateRange;
+    const current = value.current === true || value.isCurrent === true ||
+      (value.current !== false && value.isCurrent !== false && !(period && period.endDate) &&
+        (explicitlyCurrent || !!(period && period.startDate)));
+    const title = text(value.title);
+    if (current && (title || companyName) && (title || period || value.current === true || value.isCurrent === true)) {
+      positions.push({ title, company: companyName, current: true, companyLinkedin: co ? liCompanyUrl(co) : null,
+        domain: (() => { try { return new URL(webUrl(co && (co.websiteUrl || co.companyPageUrl || co.website))).hostname; } catch (_) { return null; } })() });
+    }
+    for (const [key, child] of Object.entries(value)) {
+      if (/company|profilePicture|background|memberRelationship/i.test(key)) continue;
+      if (typeof child === 'object' || key.startsWith('*')) visit(child, companyName, explicitlyCurrent);
+    }
+  };
+  for (const [key, value] of Object.entries(profile)) if (/position|employment/i.test(key)) visit(value, null, /currentPosition/i.test(key));
+  const unique = positions.filter((p, i) => positions.findIndex(q => q.title === p.title && q.company === p.company) === i).slice(0, 10);
+  const primary = unique[0];
+  return { headline: text(profile.headline), title: primary && primary.title || null, company: primary && primary.company || null,
+    companyDomain: primary && primary.domain || null, positions: unique,
+    location: text(profile.locationName) || text(profile.geoLocation && profile.geoLocation.geo && profile.geoLocation.geo.defaultLocalizedName) };
+}
+
 // dash profile → { photoUrl, connected, pending, distance, found, diag }. Only the profile being looked up counts:
 // the response also carries other people (mutual connections, colleagues) with their own relationships and photos.
 // Photo: a VectorImage under that profile's "profilePicture" (never the background). Relationship: its
 // memberRelationship — inline, or (normalized responses) an entity in `included` referenced by URN.
 export function parseDashProfile(json, slug) {
-  const out = { photoUrl: null, connected: null, pending: null, distance: null, found: false, diag: null, companies: {} };
+  const out = { photoUrl: null, connected: null, pending: null, distance: null, found: false, diag: null, companies: {}, profile: null };
   if (!json || typeof json !== 'object') return out;
   const all = [...walk(json)].map(([o]) => o);
   const want = String(slug || '').toLowerCase();
-  const P = (want && all.find(o => typeof o.publicIdentifier === 'string' && o.publicIdentifier.toLowerCase() === want)) || all.find(o => o.profilePicture && typeof o.profilePicture === 'object');
+  const P = (want && all.find(o => typeof o.publicIdentifier === 'string' && o.publicIdentifier.toLowerCase() === want)) || (!want && all.find(o => o.profilePicture && typeof o.profilePicture === 'object'));
   if (!P) return out;
   for (const [o, path] of walk(P.profilePicture || {})) if (!out.photoUrl && o.rootUrl && !/background/i.test(path.join('.'))) out.photoUrl = vectorImageUrl(o);
   out.companies = companiesOf(all);
+  out.profile = { linkedinUrl: want ? 'https://www.linkedin.com/in/' + encodeURIComponent(slug) : null, ...careerOf(P, all) };
   let R = null;
   const ref = P['*memberRelationship'] || (typeof P.memberRelationship === 'string' ? P.memberRelationship : null);
   if (P.memberRelationship && typeof P.memberRelationship === 'object') R = P.memberRelationship;

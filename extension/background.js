@@ -137,7 +137,7 @@ const DECO = 'com.linkedin.voyager.dash.deco.identity.profile.';
 const DASH_DECOS = [DECO + 'FullProfileWithEntities-93', DECO + 'FullProfileWithEntities-91', DECO + 'WebTopCardCore-18', null];
 // Decorations that carry the member relationship (degree / connected / invitation), tried when the profile one lacks it.
 const REL_DECOS = [DECO + 'TopCardSupplementary-150', DECO + 'TopCardSupplementary-140', DECO + 'TopCardSupplementary-130', DECO + 'WebTopCardCore-20', DECO + 'WebTopCardCore-16', DECO + 'TopCardComplete-138'];
-const LI_REL_VERSION = 5;   // cache entries from an older parser are fetched again once (5: "*connection" URN links)
+const LI_REL_VERSION = 6;   // Older entries are fetched again once; v6 adds scoped professional profile fields.
 let liChain = Promise.resolve();
 const liSerial = fn => { const p = liChain.then(fn, fn); liChain = p.then(() => new Promise(r => setTimeout(r, 800)), () => {}); return p; };
 async function liFetch(path, csrf, { normalized = true } = {}) {
@@ -149,18 +149,23 @@ async function liFetch(path, csrf, { normalized = true } = {}) {
   return { status: r.status, json: r.ok ? await r.json().catch(() => null) : null };
 }
 // Tries decorations in order (the last one that worked first) and returns the first parsed result that `good` accepts.
-async function liDash(slug, csrf, decos, memoKey, good, diag) {
+async function liDash(slug, csrf, decos, memoKey, good, diag, retainProfile = false) {
   const memo = (await chrome.storage.local.get(memoKey))[memoKey];
   const order = memo !== undefined && decos.includes(memo) ? [memo, ...decos.filter(d => d !== memo)] : decos;
+  let best = null;
   for (const d of order) {
     const { status, json } = await liFetch(`identity/dash/profiles?q=memberIdentity&memberIdentity=${encodeURIComponent(slug)}` + (d ? '&decorationId=' + d : ''), csrf);
     const parsed = parseDashProfile(json, slug);
     diag.push({ deco: d ? d.slice(DECO.length) : null, status, found: parsed.found, photo: !!parsed.photoUrl, keys: parsed.diag });
     // No such profile (the link from the provider is wrong): other decorations will not change that.
-    if (status === 404 || status === 403) return { missing: true };
+    if (status === 404 || status === 403) {
+      if (retainProfile) { if (best) return best; continue; }
+      return { missing: true };
+    }
+    if (json && (parsed.photoUrl || parsed.found || parsed.profile)) best = best || parsed;
     if (json && good(parsed)) { if (d !== memo) await chrome.storage.local.set({ [memoKey]: d }); return parsed; }
   }
-  return null;
+  return retainProfile ? best : null;
 }
 async function liInvitedRecently(slug) {
   const k = 'liInvited:' + slug.toLowerCase(); const at = (await chrome.storage.local.get(k))[k];
@@ -186,7 +191,7 @@ async function liRelation(msg) {
   // the next time the email is opened instead of hours later.
   const was = cached ? relationOf({ ...cached, pending: cached.pending || invited }) : null;
   const ttl = was === 'connected' ? LI_REL_TTL_MS : was === 'pending' ? LI_REL_PENDING_TTL_MS : LI_REL_OPEN_TTL_MS;
-  if (cached && cached.v === LI_REL_VERSION && msg.force !== true && Date.now() - cached.at < ttl) return finish({ ...cached, cached: true });
+  if (cached && cached.v === LI_REL_VERSION && msg.force !== true && (!msg.includeCareer || cached.careerChecked) && Date.now() - cached.at < ttl) return finish({ ...cached, cached: true });
   return liSerial(async () => {
     const day = dayOf(new Date());
     const { lirelCount } = await chrome.storage.local.get('lirelCount');
@@ -205,12 +210,14 @@ async function liRelation(msg) {
       diag.push({ networkinfo: ni.status, distance: net.distance });
       // The profile decoration (photo) and the one carrying the relationship change version now and then:
       // remember the ones that work. Relationship decorations are only tried when nothing else gave a degree.
-      const dash = (await liDash(slug, csrf, DASH_DECOS, 'lirelDeco', x => x.photoUrl || x.found, diag)) || {};
+      const career = msg.includeCareer === true;
+      const dash = (await liDash(slug, csrf, DASH_DECOS, career ? 'lirelCareerDeco' : 'lirelDeco',
+        x => career ? x.profile && (x.profile.company || x.profile.title) : x.photoUrl || x.found, diag, career)) || {};
       if (dash.missing) { const rel = { v: LI_REL_VERSION, missing: true, at: Date.now(), diag }; await chrome.storage.local.set({ [key]: rel }); return finish(rel); }
       let relD = dash.found ? dash : null;
       if (!relD && net.distance == null) relD = await liDash(slug, csrf, REL_DECOS, 'lirelRelDeco', x => x.found, diag);
       const rel = { v: LI_REL_VERSION, distance: net.distance != null ? net.distance : (relD && relD.distance) || null, connected: relD ? relD.connected : null, pending: relD ? relD.pending : null,
-        photoUrl: dash.photoUrl || (relD && relD.photoUrl) || null, companies: { ...((relD && relD.companies) || {}), ...(dash.companies || {}) }, at: Date.now(), diag };
+        careerChecked: career, profile: dash.profile || (relD && relD.profile) || null, photoUrl: dash.photoUrl || (relD && relD.photoUrl) || null, companies: { ...((relD && relD.companies) || {}), ...(dash.companies || {}) }, at: Date.now(), diag };
       await chrome.storage.local.set({ [key]: rel });
       return finish(rel);
     } catch (e) {
@@ -287,10 +294,14 @@ async function panelLookup(tabId, msg) {
   if (!st) return err('NO_THREAD');
   const email = normalizeEmail(msg.email);
   if (!email) return err('INVALID_EMAIL', t('err_invalid_email'));
-  st.results = { ...st.results, [email]: { pending: true } }; await pushPanel(tabId);
-  const r = withTz(await doLookup({ email, name: cleanName(msg.name), signature: st.signatures[email], force: msg.force === true, auto: false, source: st.source }));
+  const previous = st.results[email];
+  const enrich = msg.enrich === true && previous && previous.profile && previous.match && previous.match.step === 'signature';
+  if (msg.enrich === true && !enrich) return err('INVALID_ENRICHMENT');
+  if (enrich && previous.enriching) return err('LOOKUP_BUSY');
+  st.results = { ...st.results, [email]: enrich ? { ...previous, enriching: true } : { pending: true } }; await pushPanel(tabId);
+  const r = withTz(await doLookup({ email, name: cleanName(msg.name), signature: st.signatures[email], force: enrich || msg.force === true, auto: false, source: st.source, enrich: enrich ? previous : null }));
   await telemetryCount(r, st.source);
-  if (await stillCurrent(tabId, st)) { st.results = { ...st.results, [email]: r }; await pushPanel(tabId); }
+  if (await stillCurrent(tabId, st)) { st.results = { ...st.results, [email]: enrich && !r.ok ? { ...previous, enrichmentError: r.error } : r }; await pushPanel(tabId); }
   return r;
 }
 // The panel asked about a tab we know nothing about (worker restarted, or the panel opened late): ask the page to resend.
@@ -318,6 +329,8 @@ async function doLookup(msg, sender) {
   const email = normalizeEmail(msg.email);
   if (!email) return err('INVALID_EMAIL', t('err_invalid_email'));
   const { settings, service: lookup, store } = await service();
+  if (msg.enrich && (msg.auto === true || !msg.force)) return err('INVALID_ENRICHMENT');
+  if (msg.enrich && !hasAnyKey(settings)) return err('NO_KEYS', t('err_no_keys_short'));
   if (!hasAnyKey(settings)) {
     // No keys: the cache still answers and the free signature scan still runs, but a miss is not cached
     // (it would otherwise shadow the real lookup once keys are added).
@@ -346,13 +359,13 @@ async function doLookup(msg, sender) {
       if (!a.allowed) return err('AUTO_LIMIT', t('err_auto_limit', settings.autoDailyLimit), { n: a.n });
     }
   }
-  const key = email + (msg.force ? '!' : '');
+  const key = email + (msg.enrich ? ':enrich' : msg.force ? '!' : '');
   if (!msg.force && inflight.has(key)) return inflight.get(key);
   const p = enqueue(async () => {
     hold();
     try {
       const r = await lookup.lookup({ email, name: msg.name ? String(msg.name).slice(0, 200) : undefined, signature: msg.signature ? String(msg.signature).slice(0, 20000) : undefined,
-        source: ['gmail', 'outlook', 'options', 'popup'].includes(msg.source) ? msg.source : 'extension', force: msg.force === true, maxUsd: msg.maxUsd });
+        source: ['gmail', 'outlook', 'options', 'popup'].includes(msg.source) ? msg.source : 'extension', force: msg.force === true, maxUsd: msg.maxUsd, enrich: msg.enrich || null });
       if (auto && !r.cached && r.status !== 'skipped') await autoBump();
       return r;
     } catch (e) {
@@ -401,7 +414,7 @@ chrome.runtime.onMessage.addListener((msg, sender, respond) => {
     if (t === 'ui:settings') { const s = await getSettings(); return { ok: true, ...publicSettings(s), hasKeys: hasAnyKey(s) }; }
     if (t === 'lookup') {
       if (!fromMailPage(sender) && !fromExtensionPage(sender)) return err('FORBIDDEN');
-      const r = withTz(await doLookup(msg, sender));
+      const r = withTz(await doLookup({ ...msg, enrich: null }, sender));
       await telemetryCount(r, msg.source);
       return r;
     }

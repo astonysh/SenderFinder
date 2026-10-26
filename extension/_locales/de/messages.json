@@ -597,7 +597,7 @@
   "message": "Einmalige Berechtigung für linkedin.com"
  },
  "connect_intro": {
-  "message": "Der optionale LinkedIn-Zugriff erlaubt der Erweiterung, deine Sitzung zu nutzen. Sie kann Beziehungsgrad und Foto lesen; bei Connect öffnet sie das Profil und füllt nach einem Klick auf „Add a note“ deine Notiz aus. Du erteilst den Zugriff vor der Nutzung. Außerdem liest sie zugehörige Firmennamen und Firmenlinks des ausgewählten Profils."
+  "message": "Der optionale LinkedIn-Zugriff erlaubt der Erweiterung, deine Sitzung zu nutzen. Sie kann Beziehungsgrad und Foto lesen; bei Connect öffnet sie das Profil und füllt nach einem Klick auf „Add a note“ deine Notiz aus. Du erteilst den Zugriff vor der Nutzung. Außerdem liest sie zugehörige Firmennamen und Firmenlinks des ausgewählten Profils. Mit deiner Erlaubnis kann der LinkedIn-Zugriff auch aktuelle Positionen, Unternehmen und Standort ergänzen."
  },
  "connect_what_title": {
   "message": "Das passiert, wenn Sie fortfahren:"
@@ -636,7 +636,7 @@
   "message": "Auf LinkedIn vernetzen"
  },
  "opt_connect_intro": {
-  "message": "LinkedIn-Funktionen nutzen deine Sitzung, um Beziehungsgrad und Profilfoto zu lesen. Bei Connect öffnet die Erweiterung das Profil, klickt einmal auf „Add a note“ und füllt deine Vorlage aus. Connect und Send klickst du selbst. Außerdem liest sie zugehörige Firmennamen und Firmenlinks des ausgewählten Profils."
+  "message": "LinkedIn-Funktionen nutzen deine Sitzung, um Beziehungsgrad und Profilfoto zu lesen. Bei Connect öffnet die Erweiterung das Profil, klickt einmal auf „Add a note“ und füllt deine Vorlage aus. Connect und Send klickst du selbst. Außerdem liest sie zugehörige Firmennamen und Firmenlinks des ausgewählten Profils. Mit deiner Erlaubnis kann der LinkedIn-Zugriff auch aktuelle Positionen, Unternehmen und Standort ergänzen."
  },
  "opt_connect_note": {
   "message": "Vorlage für die Einladungsnotiz"
@@ -825,6 +825,27 @@
   "message": "aus"
  },
  "li_grant_disclosure": {
-  "message": "Wenn du fortfährst, nutzt SenderFinder deine LinkedIn-Sitzung, um Beziehungsgrad und Foto dieses Profils zu lesen. Die Daten bleiben in diesem Browser; es wird keine Einladung gesendet. Außerdem liest sie zugehörige Firmennamen und Firmenlinks des ausgewählten Profils."
+  "message": "Wenn du fortfährst, nutzt SenderFinder deine LinkedIn-Sitzung, um Beziehungsgrad und Foto dieses Profils zu lesen. Die Daten bleiben in diesem Browser; es wird keine Einladung gesendet. Außerdem liest sie zugehörige Firmennamen und Firmenlinks des ausgewählten Profils. Mit deiner Erlaubnis kann der LinkedIn-Zugriff auch aktuelle Positionen, Unternehmen und Standort ergänzen."
+ },
+ "enrich_btn": {
+  "message": "Berufliche Angaben ergänzen"
+ },
+ "enrich_hint": {
+  "message": "Fragt deine Anbieter ab; innerhalb deiner Such- und Tageslimits können Kosten entstehen."
+ },
+ "enrich_busy": {
+  "message": "Wird ergänzt…"
+ },
+ "enrich_unchanged": {
+  "message": "Keine weiteren Angaben zu diesem LinkedIn-Profil gefunden. Das bisherige Profil bleibt erhalten."
+ },
+ "enrich_failed": {
+  "message": "Ergänzung fehlgeschlagen. Das bisherige Profil bleibt erhalten."
+ },
+ "li_career_source": {
+  "message": "Berufliche Angaben: LinkedIn"
+ },
+ "li_career_access_note": {
+  "message": "Mit deiner Erlaubnis kann der LinkedIn-Zugriff auch aktuelle Positionen, Unternehmen und Standort ergänzen."
  }
 }

@@ -572,7 +572,7 @@
     "title": "Privacidade",
     "updated": "Última atualização: 25 de outubro de 2026",
     "prevails": "Esta página é uma tradução; se houver divergência, a versão em inglês prevalece.",
-    "lead": "O SenderFinder lê o remetente e os participantes do e-mail aberto e analisa o corpo localmente em busca de um link de perfil do LinkedIn. Se você ativar os recursos do LinkedIn, ele usa a sua própria sessão do LinkedIn para ler o grau de conexão, um convite pendente, a foto e os links das empresas associadas. O assistente Connect clica uma vez em “Add a note” e preenche uma nota para você revisar. Os dados da busca vão diretamente ao provedor que você configurar. As contagens de uso anônimas vêm ativadas por padrão; um interruptor nas configurações as desativa.",
+    "lead": "O SenderFinder lê o remetente e os participantes do e-mail aberto e analisa o corpo localmente em busca de um link de perfil do LinkedIn. Se você ativar os recursos do LinkedIn, ele usa a sua própria sessão do LinkedIn para ler o grau de conexão, um convite pendente, a foto e os links das empresas associadas. O assistente Connect clica uma vez em “Add a note” e preenche uma nota para você revisar. Os dados da busca vão diretamente ao provedor que você configurar. As contagens de uso anônimas vêm ativadas por padrão; um interruptor nas configurações as desativa. Com sua permissão, o acesso ao LinkedIn também pode preencher cargos atuais, empresa e localização.",
     "sections": [
       {
         "title": "Quem mantém o SenderFinder",

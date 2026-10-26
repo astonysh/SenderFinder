@@ -597,7 +597,7 @@
   "message": "Permiso único para linkedin.com"
  },
  "connect_intro": {
-  "message": "El acceso opcional a LinkedIn permite usar tu sesión. Puede leer el grado de conexión y la foto; para Connect abre un perfil y rellena tu nota después de pulsar una vez «Add a note». Concedes el acceso antes de usarlo. También lee los nombres y enlaces de las empresas asociadas al perfil seleccionado."
+  "message": "El acceso opcional a LinkedIn permite usar tu sesión. Puede leer el grado de conexión y la foto; para Connect abre un perfil y rellena tu nota después de pulsar una vez «Add a note». Concedes el acceso antes de usarlo. También lee los nombres y enlaces de las empresas asociadas al perfil seleccionado. Con tu permiso, el acceso a LinkedIn también puede completar cargos actuales, empresa y ubicación."
  },
  "connect_what_title": {
   "message": "Qué pasa después de continuar:"
@@ -636,7 +636,7 @@
   "message": "Conectar en LinkedIn"
  },
  "opt_connect_intro": {
-  "message": "Las funciones de LinkedIn usan tu sesión para leer el grado de conexión y la foto. Al elegir Connect, la extensión abre el perfil, pulsa una vez «Add a note» y rellena tu plantilla. Tú pulsas Connect y Send. También lee los nombres y enlaces de las empresas asociadas al perfil seleccionado."
+  "message": "Las funciones de LinkedIn usan tu sesión para leer el grado de conexión y la foto. Al elegir Connect, la extensión abre el perfil, pulsa una vez «Add a note» y rellena tu plantilla. Tú pulsas Connect y Send. También lee los nombres y enlaces de las empresas asociadas al perfil seleccionado. Con tu permiso, el acceso a LinkedIn también puede completar cargos actuales, empresa y ubicación."
  },
  "opt_connect_note": {
   "message": "Plantilla de la nota de invitación"
@@ -825,6 +825,27 @@
   "message": "inactivo"
  },
  "li_grant_disclosure": {
-  "message": "Si continúas, SenderFinder usa tu sesión de LinkedIn para leer el grado de conexión y la foto de este perfil. Los datos quedan en este navegador; no se envía ninguna invitación. También lee los nombres y enlaces de las empresas asociadas al perfil seleccionado."
+  "message": "Si continúas, SenderFinder usa tu sesión de LinkedIn para leer el grado de conexión y la foto de este perfil. Los datos quedan en este navegador; no se envía ninguna invitación. También lee los nombres y enlaces de las empresas asociadas al perfil seleccionado. Con tu permiso, el acceso a LinkedIn también puede completar cargos actuales, empresa y ubicación."
+ },
+ "enrich_btn": {
+  "message": "Completar cargo y empresa"
+ },
+ "enrich_hint": {
+  "message": "Consulta a tus proveedores; puede generar costes dentro de tus límites por consulta y diarios."
+ },
+ "enrich_busy": {
+  "message": "Completando…"
+ },
+ "enrich_unchanged": {
+  "message": "No se encontraron más datos para este perfil de LinkedIn. Se conserva el perfil original."
+ },
+ "enrich_failed": {
+  "message": "No se pudieron completar los datos. Se conserva el perfil original."
+ },
+ "li_career_source": {
+  "message": "Cargo y empresa: LinkedIn"
+ },
+ "li_career_access_note": {
+  "message": "Con tu permiso, el acceso a LinkedIn también puede completar cargos actuales, empresa y ubicación."
  }
 }

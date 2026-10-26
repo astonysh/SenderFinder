@@ -597,7 +597,7 @@
   "message": "Permissão única para linkedin.com"
  },
  "connect_intro": {
-  "message": "O acesso opcional ao LinkedIn permite usar sua sessão. A extensão pode ler o grau de conexão e a foto; em Connect, abre o perfil, clica uma vez em “Add a note” e preenche sua nota. Você concede o acesso antes do uso. Ela também lê nomes e links das empresas associadas ao perfil selecionado."
+  "message": "O acesso opcional ao LinkedIn permite usar sua sessão. A extensão pode ler o grau de conexão e a foto; em Connect, abre o perfil, clica uma vez em “Add a note” e preenche sua nota. Você concede o acesso antes do uso. Ela também lê nomes e links das empresas associadas ao perfil selecionado. Com sua permissão, o acesso ao LinkedIn também pode preencher cargos atuais, empresa e localização."
  },
  "connect_what_title": {
   "message": "O que acontece depois que você continuar:"
@@ -636,7 +636,7 @@
   "message": "Conectar no LinkedIn"
  },
  "opt_connect_intro": {
-  "message": "Os recursos do LinkedIn usam sua sessão para ler o grau de conexão e a foto. Ao escolher Connect, a extensão abre o perfil, clica uma vez em “Add a note” e preenche seu modelo. Você clica em Connect e Send. Ela também lê nomes e links das empresas associadas ao perfil selecionado."
+  "message": "Os recursos do LinkedIn usam sua sessão para ler o grau de conexão e a foto. Ao escolher Connect, a extensão abre o perfil, clica uma vez em “Add a note” e preenche seu modelo. Você clica em Connect e Send. Ela também lê nomes e links das empresas associadas ao perfil selecionado. Com sua permissão, o acesso ao LinkedIn também pode preencher cargos atuais, empresa e localização."
  },
  "opt_connect_note": {
   "message": "Modelo da nota de convite"
@@ -825,6 +825,27 @@
   "message": "desativado"
  },
  "li_grant_disclosure": {
-  "message": "Ao continuar, o SenderFinder usa sua sessão do LinkedIn para ler o grau de conexão e a foto deste perfil. Os dados ficam neste navegador; nenhum convite é enviado. Ela também lê nomes e links das empresas associadas ao perfil selecionado."
+  "message": "Ao continuar, o SenderFinder usa sua sessão do LinkedIn para ler o grau de conexão e a foto deste perfil. Os dados ficam neste navegador; nenhum convite é enviado. Ela também lê nomes e links das empresas associadas ao perfil selecionado. Com sua permissão, o acesso ao LinkedIn também pode preencher cargos atuais, empresa e localização."
+ },
+ "enrich_btn": {
+  "message": "Completar cargo e empresa"
+ },
+ "enrich_hint": {
+  "message": "Consulta seus provedores; pode haver custos dentro dos limites por consulta e por dia."
+ },
+ "enrich_busy": {
+  "message": "Completando…"
+ },
+ "enrich_unchanged": {
+  "message": "Nenhum dado adicional para este perfil do LinkedIn. O perfil original foi mantido."
+ },
+ "enrich_failed": {
+  "message": "Não foi possível completar os dados. O perfil original foi mantido."
+ },
+ "li_career_source": {
+  "message": "Cargo e empresa: LinkedIn"
+ },
+ "li_career_access_note": {
+  "message": "Com sua permissão, o acesso ao LinkedIn também pode preencher cargos atuais, empresa e localização."
  }
 }

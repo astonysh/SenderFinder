@@ -597,7 +597,7 @@
   "message": "One-time permission for linkedin.com"
  },
  "connect_intro": {
-  "message": "The optional LinkedIn access lets the extension use your session. It can read connection degree and photo; for Connect it opens a profile and fills your invitation note after clicking “Add a note” once. You grant access before use. It also reads associated company names and company-page links for the selected profile."
+  "message": "The optional LinkedIn access lets the extension use your session. It can read connection degree and photo; for Connect it opens a profile and fills your invitation note after clicking “Add a note” once. You grant access before use. It also reads associated company names and company-page links for the selected profile. With your permission, LinkedIn access can also fill in current roles, company and location."
  },
  "connect_what_title": {
   "message": "What happens after you continue:"
@@ -636,7 +636,7 @@
   "message": "Connect on LinkedIn"
  },
  "opt_connect_intro": {
-  "message": "LinkedIn features use your own LinkedIn session to read connection degree and profile photo. When you choose Connect, the extension opens the profile, clicks “Add a note” once and fills your template. You click Connect and Send yourself. It also reads associated company names and company-page links for the selected profile."
+  "message": "LinkedIn features use your own LinkedIn session to read connection degree and profile photo. When you choose Connect, the extension opens the profile, clicks “Add a note” once and fills your template. You click Connect and Send yourself. It also reads associated company names and company-page links for the selected profile. With your permission, LinkedIn access can also fill in current roles, company and location."
  },
  "opt_connect_note": {
   "message": "Invitation note template"
@@ -825,6 +825,27 @@
   "message": "off"
  },
  "li_grant_disclosure": {
-  "message": "If you continue, SenderFinder uses your LinkedIn session to read this profile’s connection degree and photo. The data stays in this browser; no invitation is sent. It also reads associated company names and company-page links for the selected profile."
+  "message": "If you continue, SenderFinder uses your LinkedIn session to read this profile’s connection degree and photo. The data stays in this browser; no invitation is sent. It also reads associated company names and company-page links for the selected profile. With your permission, LinkedIn access can also fill in current roles, company and location."
+ },
+ "enrich_btn": {
+  "message": "Complete job details"
+ },
+ "enrich_hint": {
+  "message": "Queries your providers; charges may apply within your lookup and daily limits."
+ },
+ "enrich_busy": {
+  "message": "Completing…"
+ },
+ "enrich_unchanged": {
+  "message": "No additional details found for this LinkedIn profile. The original profile is unchanged."
+ },
+ "enrich_failed": {
+  "message": "Could not complete the details. The original profile is unchanged."
+ },
+ "li_career_source": {
+  "message": "Job details: LinkedIn"
+ },
+ "li_career_access_note": {
+  "message": "With your permission, LinkedIn access can also fill in current roles, company and location."
  }
 }
