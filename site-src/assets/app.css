@@ -276,10 +276,9 @@ code { background: var(--surface-2); padding: .05em .25em; border-radius: 2px; }
 /* logo cloud */
 .v2-cloud { text-align: center; }
 .v2-cloud p { margin: 0; font-size: .875rem; font-weight: 600; color: var(--v2-muted-fg); }
-.v2-cloud ul { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem .75rem; place-items: center; margin: 1.25rem 0 0; padding: 0; list-style: none; }
-@media (min-width: 720px) { .v2-cloud ul { grid-template-columns: repeat(4, 1fr); } }
-.v2-cloud li { display: inline-flex; align-items: center; gap: .5rem; font-weight: 600; color: var(--v2-muted-fg); opacity: .78; }
-.v2-cloud .i { width: 22px; height: 22px; }
+.v2-cloud ul { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.25rem clamp(1.5rem, 4vw, 3rem); margin: 1.25rem 0 0; padding: 0; list-style: none; }
+.v2-cloud li { display: inline-flex; align-items: center; gap: .5rem; max-width: 100%; font-weight: 600; color: var(--v2-muted-fg); }
+.v2-cloud .i { width: 22px; height: 22px; flex-shrink: 0; }
 
 /* privacy: diagram card + three lists */
 .v2-flow-card { padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--v2-border); border-radius: var(--radius-xl); background: var(--v2-card); }
