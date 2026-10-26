@@ -151,6 +151,22 @@ function render(tpl, scopes, file = 'template', depth = 0) {
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 
+// Apply to the finished document so links from templates, translations and content
+// all follow the same policy, including pages built without client-side JavaScript.
+function externalLinksInNewTab(html) {
+  return html.replace(/<a\b(?:[^>"']|"[^"]*"|'[^']*')*>/gi, tag => {
+    const href = tag.match(/\shref\s*=\s*(["'])(.*?)\1/i)?.[2];
+    if (!href) return tag;
+    let url;
+    try { url = new URL(href.replace(/&amp;/g, '&'), SITE_URL); } catch { return tag; }
+    if (!['http:', 'https:'].includes(url.protocol) || url.origin === SITE_URL) return tag;
+    const rel = tag.match(/\srel\s*=\s*(["'])(.*?)\1/i)?.[2] || '';
+    const tokens = [...new Set([...rel.split(/\s+/).filter(Boolean), 'noopener', 'noreferrer'])];
+    return tag.replace(/\s(?:target|rel)\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+      .replace(/>$/, ` target="_blank" rel="${esc(tokens.join(' '))}">`);
+  });
+}
+
 export const localeDir = lang => (lang.dir ? `/${lang.dir}` : '');
 export const pagePath = (lang, page) => (page.path === '/' ? `${localeDir(lang)}/` : `${localeDir(lang)}${page.path}`);
 export const pageFile = (lang, page) => (lang.dir ? `${lang.dir}/${page.out}` : page.out);
@@ -778,7 +794,7 @@ export function buildSite(outDir, { locales = LANGUAGES.map(l => l.locale) } = {
       ].join('\n');
       const file = path.join(outDir, pageFile(lang, page));
       fs.mkdirSync(path.dirname(file), { recursive: true });
-      fs.writeFileSync(file, html);
+      fs.writeFileSync(file, externalLinksInNewTab(html));
       pages++;
     }
   }
