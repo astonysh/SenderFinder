@@ -21,11 +21,11 @@
       "rapportive": "Rapportive 替代方案",
       "changelog": "更新日志",
       "groups": {
-      "product": "产品",
-      "alternatives": "替代方案",
-      "project": "项目"
-    },
-    "resources": "资源",
+        "product": "产品",
+        "alternatives": "替代方案",
+        "project": "项目"
+      },
+      "resources": "资源",
       "resourcesLinks": {
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",
@@ -62,10 +62,10 @@
       "ogDescription": "在 Gmail 打开一封邮件，就能看到发件人的 LinkedIn 资料。开源，用你自己的 API key，没有账号。"
     },
     "install": {
-      "title": "安装 SenderFinder（从源码，2 分钟）| SenderFinder",
-      "description": "一步一步来：下载插件，在 Chrome 里加载已解压的扩展程序，填一个供应商 key，打开 Gmail。每一步都有截图，还有排错说明。",
+      "title": "安装 SenderFinder Chrome / Edge 扩展 | SenderFinder",
+      "description": "从 Chrome 应用商店或 Microsoft Edge 扩展商店安装 SenderFinder，再填写一个供应商 key。也提供可选的源码安装步骤和排错说明。",
       "ogTitle": "安装 SenderFinder",
-      "ogDescription": "两分钟，五步，一个 API key。在 Chrome 应用商店上架前，先从源码安装这个开源插件。"
+      "ogDescription": "从 Chrome 应用商店或 Microsoft Edge 扩展商店安装 SenderFinder。开源，使用你自己的供应商 key。"
     },
     "privacy": {
       "title": "隐私 | SenderFinder",
@@ -99,9 +99,9 @@
   "index": {
     "hero": {
       "desc": "打开一封邮件，找到发件人的 LinkedIn 个人主页。与对方建立联系，并保持长期联络。",
-      "install": "2 分钟装好",
+      "install": "添加到 Chrome",
       "github": "在 GitHub 上查看",
-      "fine": "已上架 Microsoft Edge 扩展商店。Chrome 用户可按指南在两分钟内从源码安装。",
+      "fine": "已上架 Chrome 应用商店和 Microsoft Edge 扩展商店。",
       "alt": "Gmail 旁边的 SenderFinder 侧边栏，显示示例发件人资料和邮件线程中的其他联系人。",
       "caption": "读邮件时的侧边栏。人物和公司均为虚构。",
       "privacyLine": "查询请求从浏览器直接发送给你配置的数据供应商——查询路径上没有 SenderFinder 服务器。",
@@ -118,7 +118,7 @@
       "steps": [
         {
           "title": "安装插件",
-          "body": "Chrome 应用商店还没上架，所以要从源码加载：下载仓库，打开 <code>chrome://extensions</code>，开启开发者模式，选择 <code>extension/</code> 文件夹。这里有<a href=\"{{url.install}}\">带截图的详细步骤</a>。"
+          "body": "从 <a href=\"{{url.chromeStore}}\">Chrome 应用商店</a>或 <a href=\"{{url.edgeStore}}\">Microsoft Edge 扩展商店</a>安装 SenderFinder。也可以<a href=\"{{url.install}}\">从源码安装</a>。"
         },
         {
           "title": "拿一个 API key",
@@ -406,7 +406,7 @@
       },
       "cta": {
         "title": "两分钟，就装好了",
-        "description": "Chrome 应用商店还没上架，所以要以已解压方式加载插件。五个步骤，每步一张截图。",
+        "description": "从 Chrome 应用商店或 Microsoft Edge 扩展商店安装。安装指南也提供源码安装步骤。",
         "button": "打开安装指南"
       }
     }
@@ -452,11 +452,11 @@
   },
   "install": {
     "title": "安装 SenderFinder",
-    "lead": "Edge 用户可直接从 Microsoft Edge 扩展商店安装。Chrome 商店暂未上架，请按下方步骤从源码安装。",
+    "lead": "可直接从 Chrome 应用商店或 Microsoft Edge 扩展商店安装。下方也保留了可选的源码安装步骤。",
     "note": "你需要在桌面版 Chrome、Edge 或其他 Chromium 浏览器上安装；手机版应用装不了插件。截图是英文的，插件本身跟随浏览器语言。",
     "downloadLabel": "下载 ZIP",
     "githubLabel": "打开仓库",
-    "stepsTitle": "从源码安装：五个步骤",
+    "stepsTitle": "可选：五步从源码安装",
     "steps": [
       {
         "title": "拿到代码",
@@ -552,12 +552,12 @@
       },
       {
         "q": "以后怎么更新",
-        "a": "把新文件放进同一个文件夹，然后在 chrome://extensions 里点卡片上的刷新箭头。插件 id 固定写在 manifest 里，所以 key、缓存和历史都不会丢。"
+        "a": "从商店安装的版本会自动更新。如果从源码安装，请替换同一文件夹中的文件，再到 chrome://extensions 点击重新加载。"
       }
     ],
     "nextTitle": "接下来",
     "next": "读一读<a href=\"{{url.index}}#how\">工作原理</a>，看看<a href=\"{{url.index}}#cost\">一次查询要多少钱</a>，或者在<a href=\"{{url.index}}#calculator\">费用计算器</a>里算算你自己的量级。数据方面的问题在<a href=\"{{url.privacy}}\">隐私说明</a>里回答。",
-    "fine": "等 Chrome 应用商店上架后，这个页面会变成一键安装；在那之前，上面的步骤是唯一的安装方式。",
+    "fine": "上面的源码安装步骤是可选的。从商店安装的版本会自动更新。",
     "privacy": {
       "title": "隐私一览",
       "points": [
@@ -691,7 +691,7 @@
       {
         "title": "换过来只要几分钟",
         "ordered": [
-          "安装插件。Chrome 应用商店上架前，先<a href=\"{{url.install}}\">从源码安装</a>。",
+          "从 <a href=\"{{url.chromeStore}}\">Chrome 应用商店</a>或 <a href=\"{{url.edgeStore}}\">Microsoft Edge 扩展商店</a>安装插件。",
           "在 Monid 或 treg 创建一个 API key。",
           "把它填进插件设置，然后在 Gmail 里打开一封邮件。"
         ],
@@ -753,7 +753,7 @@
       {
         "title": "开始用",
         "ordered": [
-          "安装插件。Chrome 应用商店上架前，先<a href=\"{{url.install}}\">从源码安装</a>。",
+          "从 <a href=\"{{url.chromeStore}}\">Chrome 应用商店</a>或 <a href=\"{{url.edgeStore}}\">Microsoft Edge 扩展商店</a>安装插件。",
           "在 Monid 或 treg 创建一个 API key。",
           "把它填进插件设置，然后在 Gmail 里打开一封邮件。"
         ],

@@ -5,11 +5,12 @@
       <p class="v2-lead">{{page.lead}}</p>
       {{#if page.updated}}<p class="v2-note">{{page.updated}}</p>{{/if}}
       <div class="v2-actions">
-        <a class="v2-btn v2-btn--default" href="{{url.edgeStore}}">
+        <a class="v2-btn v2-btn--default" href="{{url.chromeStore}}">
+          <svg class="i" aria-hidden="true"><use href="#i-chrome"/></svg> {{index.hero.install}}
+        </a>
+        <a class="v2-btn v2-btn--outline" href="{{url.edgeStore}}">
           <svg class="i" aria-hidden="true"><use href="#i-edge"/></svg> {{install.edgeLabel}}
         </a>
-
-        <a class="v2-btn v2-btn--outline" href="{{url.install}}" data-store-url="CWS_PLACEHOLDER">{{page.cta.install}}</a>
         <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder">
           <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> {{page.cta.github}}
         </a>

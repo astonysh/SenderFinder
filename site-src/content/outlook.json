@@ -65,7 +65,7 @@
         "id": "try-it",
         "title": "How to try it and what to report",
         "ordered": [
-          "Install SenderFinder from the <a href=\"/install\">install guide</a>. The Chrome Web Store listing is not live yet, so this is the ZIP-and-load-unpacked route.",
+          "Install SenderFinder from the <a href=\"https://chromewebstore.google.com/detail/senderfinder/dkjlkejkbapohkhneecbhnjifdjeihfp\">Chrome Web Store</a> or <a href=\"https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki\">Microsoft Edge Add-ons</a>. The <a href=\"/install\">install guide</a> also covers the optional source route.",
           "Create one provider key (Monid or treg) and paste it into the settings page that opens on first install. Press “Test keys (free)” before the first lookup.",
           "Open <code>outlook.live.com</code> or <code>outlook.office.com</code> in Chrome or Edge, open a message and click the SenderFinder toolbar icon once. The panel stays open in that tab.",
           "If the magnifier mark does not appear next to the sender, open an issue on <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> with the Outlook hostname, your browser version and the DOM of the sender block — not the email content.",

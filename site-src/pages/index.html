@@ -15,16 +15,14 @@
     </ul>
 
     <div class="v2-actions">
-        <a class="v2-btn v2-btn--default" href="{{url.edgeStore}}">
-          <svg class="i" aria-hidden="true"><use href="#i-edge"/></svg> {{install.edgeLabel}}
-        </a>
-
-      <!-- CWS-BUTTON: when the store listing is live, set href="CWS_PLACEHOLDER" and change the label to "Add to Chrome". -->
+      <a class="v2-btn v2-btn--default" href="{{url.chromeStore}}">
+        <svg class="i" aria-hidden="true"><use href="#i-chrome"/></svg> {{index.hero.install}}
+      </a>
+      <a class="v2-btn v2-btn--outline" href="{{url.edgeStore}}">
+        <svg class="i" aria-hidden="true"><use href="#i-edge"/></svg> {{install.edgeLabel}}
+      </a>
       <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder">
         <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> {{index.hero.github}}
-      </a>
-      <a class="v2-btn v2-btn--outline" href="{{url.install}}" data-store-url="CWS_PLACEHOLDER">
-        {{index.hero.install}} <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg>
       </a>
     </div>
     <p class="v2-hero-fine">{{index.hero.fine}}</p>

@@ -21,11 +21,11 @@
       "rapportive": "Rapportive 替代方案",
       "changelog": "更新日誌",
       "groups": {
-      "product": "產品",
-      "alternatives": "替代方案",
-      "project": "專案"
-    },
-    "resources": "資源",
+        "product": "產品",
+        "alternatives": "替代方案",
+        "project": "專案"
+      },
+      "resources": "資源",
       "resourcesLinks": {
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",
@@ -62,10 +62,10 @@
       "ogDescription": "在 Gmail 開啟一封郵件，就能看到寄件者的 LinkedIn 個人檔案。開放原始碼、自備 API key、不需要帳號。"
     },
     "install": {
-      "title": "安裝 SenderFinder（2 分鐘，從原始碼開始）| SenderFinder",
-      "description": "一步一步來：下載擴充功能、在 Chrome 載入未封裝的版本、貼上一組供應商 key，然後開啟 Gmail。每個步驟都有截圖，另外還有疑難排解。",
+      "title": "安裝 SenderFinder Chrome / Edge 擴充功能 | SenderFinder",
+      "description": "從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝 SenderFinder，再填入一組供應商 key。另有可選的原始碼安裝步驟。",
       "ogTitle": "安裝 SenderFinder",
-      "ogDescription": "兩分鐘、五個步驟、一組 API key。在 Chrome Web Store 上架之前，先從原始碼安裝這個開放原始碼擴充功能。"
+      "ogDescription": "從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝 SenderFinder。開放原始碼，使用你自己的供應商 key。"
     },
     "privacy": {
       "title": "隱私權 | SenderFinder",
@@ -99,9 +99,9 @@
   "index": {
     "hero": {
       "desc": "開啟一封郵件，找到寄件者的 LinkedIn 個人檔案。與對方建立聯繫，並保持長期聯絡。",
-      "install": "2 分鐘完成安裝",
+      "install": "加到 Chrome",
       "github": "在 GitHub 上查看",
-      "fine": "已於 Microsoft Edge 附加元件商店上架。Chrome 使用者可依指南在兩分鐘內從原始碼安裝。",
+      "fine": "已於 Chrome 線上應用程式商店和 Microsoft Edge 附加元件商店上架。",
       "alt": "Gmail 旁邊的 SenderFinder 側邊面板，顯示 Jane Doe（柏林 Acme 的合作夥伴關係主管），以及她的 LinkedIn 連結、加入人脈按鈕和對話串中的其他人。",
       "caption": "閱讀郵件時的側邊面板。人物與公司均為虛構。",
       "privacyLine": "查詢會從你的瀏覽器直接傳送給你設定的供應商 —— 查詢路徑上沒有 SenderFinder 伺服器。",
@@ -118,7 +118,7 @@
       "steps": [
         {
           "title": "安裝擴充功能",
-          "body": "Chrome Web Store 還沒上架，所以要手動載入未封裝的版本：下載儲存庫、開啟 <code>chrome://extensions</code>、打開開發人員模式，然後選擇 <code>extension/</code> 資料夾。這裡有<a href=\"{{url.install}}\">附截圖的逐步說明</a>。"
+          "body": "從 <a href=\"{{url.chromeStore}}\">Chrome 線上應用程式商店</a>或 <a href=\"{{url.edgeStore}}\">Microsoft Edge 附加元件商店</a>安裝 SenderFinder。也可以<a href=\"{{url.install}}\">從原始碼安裝</a>。"
         },
         {
           "title": "取得一組 API key",
@@ -406,7 +406,7 @@
       },
       "cta": {
         "title": "兩分鐘，就完成了",
-        "description": "Chrome Web Store 還沒上架，所以要以未封裝的方式載入擴充功能。五個步驟，每步一張截圖。",
+        "description": "從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝。安裝指南也提供原始碼安裝步驟。",
         "button": "開啟安裝指南"
       }
     }
@@ -452,11 +452,11 @@
   },
   "install": {
     "title": "安裝 SenderFinder",
-    "lead": "Edge 使用者可直接從 Microsoft Edge 附加元件商店安裝。Chrome 商店尚未上架，請依下方步驟從原始碼安裝。",
+    "lead": "可直接從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝。下方也保留可選的原始碼安裝步驟。",
     "note": "你需要在桌機上使用 Chrome、Edge 或其他 Chromium 瀏覽器；擴充功能無法加到行動版 App。截圖是英文版，擴充功能本身會跟隨你的瀏覽器語言。",
     "downloadLabel": "下載 ZIP",
     "githubLabel": "開啟儲存庫",
-    "stepsTitle": "從原始碼安裝：五個步驟",
+    "stepsTitle": "可選：五步從原始碼安裝",
     "steps": [
       {
         "title": "取得程式碼",
@@ -552,12 +552,12 @@
       },
       {
         "q": "之後要怎麼更新",
-        "a": "把新檔案放進同一個資料夾，然後在 chrome://extensions 的卡片上點重新載入的箭頭。擴充功能 ID 固定在 manifest 裡，所以 key、快取和歷史記錄都會保留。"
+        "a": "從商店安裝的版本會自動更新。如果從原始碼安裝，請替換相同資料夾中的檔案，再到 chrome://extensions 點選重新載入。"
       }
     ],
     "nextTitle": "接下來",
     "next": "閱讀<a href=\"{{url.index}}#how\">運作方式</a>、看看<a href=\"{{url.index}}#cost\">一次查詢要多少錢</a>，或用<a href=\"{{url.index}}#calculator\">費用試算</a>估算你自己的用量。資料相關的問題可以在<a href=\"{{url.privacy}}\">隱私權聲明</a>找到答案。",
-    "fine": "等 Chrome Web Store 上架後，這個頁面就會變成按一下即安裝；在那之前，上面的步驟是唯一的安裝方式。",
+    "fine": "上面的原始碼安裝步驟是可選的。從商店安裝的版本會自動更新。",
     "privacy": {
       "title": "隱私權一眼看懂",
       "points": [
@@ -691,7 +691,7 @@
       {
         "title": "轉換只要幾分鐘",
         "ordered": [
-          "安裝擴充功能。Chrome Web Store 還沒上架前，請<a href=\"{{url.install}}\">從原始碼安裝</a>。",
+          "從 <a href=\"{{url.chromeStore}}\">Chrome 線上應用程式商店</a>或 <a href=\"{{url.edgeStore}}\">Microsoft Edge 附加元件商店</a>安裝擴充功能。",
           "在 Monid 或 treg 建立一組 API key。",
           "把它貼進擴充功能的設定，然後在 Gmail 開啟一封郵件。"
         ],
@@ -753,7 +753,7 @@
       {
         "title": "開始使用",
         "ordered": [
-          "安裝擴充功能。Chrome Web Store 還沒上架前，請<a href=\"{{url.install}}\">從原始碼安裝</a>。",
+          "從 <a href=\"{{url.chromeStore}}\">Chrome 線上應用程式商店</a>或 <a href=\"{{url.edgeStore}}\">Microsoft Edge 附加元件商店</a>安裝擴充功能。",
           "在 Monid 或 treg 建立一組 API key。",
           "把它貼進擴充功能的設定，然後在 Gmail 開啟一封郵件。"
         ],

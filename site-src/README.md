@@ -25,7 +25,7 @@ Node 22+, no dependencies. `npm run site` deletes `site/` first, so it is never 
 | `site-src/pages/*.html` | One template per page (`changelog.html` and the six English-only pages use dedicated or shared templates). `{{key}}`, `{{#each list}}…{{/each}}`, `{{#if value}}…{{/if}}` |
 | `site-src/locales/<locale>.json` | Every string of every multilingual page, one file per language |
 | `site-src/content/<id>.json` | Copy for English-only pages (`meta`, `page`, `faq`); never read for other languages |
-| `site-src/site.config.json` | Build switches (`consentMode`) and the published `edgeStoreUrl` |
+| `site-src/site.config.json` | Build switches (`consentMode`) and the published Chrome and Edge store URLs |
 | `site-src/partials/icons.svg` | The icon sprite, inlined into every page |
 | `site-src/assets/app.css` | The only stylesheet, for every page: tokens (light/dark/system), shared chrome, the marketing layout, prose pages, install steps, calculator |
 | `site-src/assets/theme-boot.js` | Blocking head script: applies the saved theme and consent state before first paint |
@@ -246,16 +246,12 @@ developer mode on). The two people who are "found" in the demo thread get the il
 URLs; nothing is downloaded. If you change the extension UI, rerun it, then `npm run site`.
 No real addresses, names or mail content are used, and none may be added.
 
-## The install button and the Chrome Web Store
+## Store install buttons
 
-The extension is not on the Chrome Web Store yet, so every install button links to the install guide of
-its own language (`/install`, `/ja/install`, …) and keeps `data-store-url="CWS_PLACEHOLDER"`.
-Each one is marked with a `CWS-BUTTON` comment in `site-src/pages/`. When the listing is live:
-
-1. Search for `CWS-BUTTON` in `site-src/pages/` (index, install, both alternatives, content — the shared template).
-2. Point the buttons at the store URL, change the labels in `site-src/locales/*.json`
-   (`index.hero.install` and the `ctaInstall` keys), and drop `CWS_PLACEHOLDER`.
-3. Update the sentence under the hero button and the `install.fine` note, then run `npm run site`.
+The Chrome and Edge store URLs are defined in `site-src/site.config.json` and exposed to templates as
+`{{url.chromeStore}}` and `{{url.edgeStore}}`. The home, install, alternative and English-only content
+pages link directly to the stores. The install guide also retains the optional source installation
+steps, while navigation and other explanatory links still lead to the localized guide.
 
 ## Deploy: Cloudflare Workers Static Assets
 

@@ -21,11 +21,11 @@
       "rapportive": "Alternative à Rapportive",
       "changelog": "Journal des modifications",
       "groups": {
-      "product": "Produit",
-      "alternatives": "Alternatives",
-      "project": "Projet"
-    },
-    "resources": "Ressources",
+        "product": "Produit",
+        "alternatives": "Alternatives",
+        "project": "Projet"
+      },
+      "resources": "Ressources",
       "resourcesLinks": {
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",
@@ -62,10 +62,10 @@
       "ogDescription": "Ouvrez un e-mail dans Gmail et voyez le profil LinkedIn de l'expéditeur. Open source, vos propres clés API, pas de compte."
     },
     "install": {
-      "title": "Installer SenderFinder (2 minutes, depuis les sources) | SenderFinder",
-      "description": "Étape par étape : téléchargez l'extension, chargez-la dans Chrome en mode non empaqueté, collez une clé de fournisseur et ouvrez Gmail. Des captures d'écran pour chaque étape, plus un dépannage.",
+      "title": "Installer SenderFinder pour Chrome ou Edge | SenderFinder",
+      "description": "Installez SenderFinder depuis le Chrome Web Store ou Microsoft Edge Add-ons, puis ajoutez une clé de fournisseur. Une installation facultative depuis les sources est aussi expliquée.",
       "ogTitle": "Installer SenderFinder",
-      "ogDescription": "Deux minutes, cinq étapes, une clé API. Installez l'extension open source depuis les sources en attendant la fiche Chrome Web Store."
+      "ogDescription": "Installez SenderFinder depuis le Chrome Web Store ou Microsoft Edge Add-ons. Open source, avec votre propre clé de fournisseur."
     },
     "privacy": {
       "title": "Confidentialité | SenderFinder",
@@ -99,9 +99,9 @@
   "index": {
     "hero": {
       "desc": "Ouvrez un e-mail pour trouver le profil LinkedIn de l’expéditeur. Entrez en contact avec cette personne et gardez le lien.",
-      "install": "Installer en 2 minutes",
+      "install": "Ajouter à Chrome",
       "github": "Voir sur GitHub",
-      "fine": "Disponible sur Microsoft Edge Add-ons. Pour Chrome, suivez le guide d’installation depuis le code source en deux minutes.",
+      "fine": "Disponible sur le Chrome Web Store et Microsoft Edge Add-ons.",
       "alt": "Le panneau latéral SenderFinder à côté de Gmail, montrant Jane Doe, responsable des partenariats chez Acme à Berlin, avec son lien LinkedIn, un bouton Se connecter et les autres personnes du fil.",
       "caption": "Le panneau latéral pendant la lecture d'un e-mail. Les personnes et l'entreprise sont fictives.",
       "privacyLine": "Les recherches vont directement de votre navigateur au fournisseur que vous configurez : aucun serveur SenderFinder dans le chemin de la recherche.",
@@ -118,7 +118,7 @@
       "steps": [
         {
           "title": "Installer l'extension",
-          "body": "La fiche Chrome Web Store n'est pas encore en ligne, vous chargez donc l'extension sans empaquetage : téléchargez le dépôt, ouvrez <code>chrome://extensions</code>, activez le mode développeur et choisissez le dossier <code>extension/</code>. Un <a href=\"{{url.install}}\">guide pas à pas avec captures d'écran</a> est disponible."
+          "body": "Installez SenderFinder depuis le <a href=\"{{url.chromeStore}}\">Chrome Web Store</a> ou <a href=\"{{url.edgeStore}}\">Microsoft Edge Add-ons</a>. Vous pouvez aussi <a href=\"{{url.install}}\">l’installer depuis les sources</a>."
         },
         {
           "title": "Obtenir une clé API",
@@ -406,7 +406,7 @@
       },
       "cta": {
         "title": "Deux minutes, et c'est fait",
-        "description": "La fiche Chrome Web Store n'est pas encore en ligne, vous chargez donc l'extension sans empaquetage. Cinq étapes, une capture d'écran pour chacune.",
+        "description": "Installez-le depuis le Chrome Web Store ou Microsoft Edge Add-ons. Le guide explique aussi l’installation depuis les sources.",
         "button": "Ouvrir le guide d'installation"
       }
     }
@@ -452,11 +452,11 @@
   },
   "install": {
     "title": "Installer SenderFinder",
-    "lead": "Installez directement depuis Microsoft Edge Add-ons. Pour Chrome, suivez les étapes ci-dessous pour installer depuis le code source ; la fiche du store n’est pas encore disponible.",
+    "lead": "Installez SenderFinder directement depuis le Chrome Web Store ou Microsoft Edge Add-ons. L’installation depuis les sources reste possible ci-dessous.",
     "note": "Il faut Chrome, Edge ou un autre navigateur Chromium sur ordinateur ; les extensions ne peuvent pas être ajoutées aux applications mobiles. Les captures d'écran sont en anglais, l'extension elle-même suit la langue de votre navigateur.",
     "downloadLabel": "Télécharger le ZIP",
     "githubLabel": "Ouvrir le dépôt",
-    "stepsTitle": "Installer depuis le code source en cinq étapes",
+    "stepsTitle": "Facultatif : installer depuis les sources en cinq étapes",
     "steps": [
       {
         "title": "Récupérer le code",
@@ -552,12 +552,12 @@
       },
       {
         "q": "Comment le mettre à jour plus tard",
-        "a": "Placez les nouveaux fichiers dans le même dossier et cliquez sur la flèche de rechargement de la carte dans chrome://extensions. L'identifiant de l'extension est figé dans le manifeste, les clés, le cache et l'historique survivent donc."
+        "a": "Les installations depuis les stores se mettent à jour automatiquement. Si vous avez installé depuis les sources, remplacez les fichiers dans le même dossier et cliquez sur recharger dans chrome://extensions."
       }
     ],
     "nextTitle": "Et ensuite",
     "next": "Lisez le <a href=\"{{url.index}}#how\">fonctionnement</a>, vérifiez <a href=\"{{url.index}}#cost\">ce que coûte une recherche</a> ou calculez votre propre volume dans le <a href=\"{{url.index}}#calculator\">calculateur de coût</a>. Les questions sur les données sont traitées dans la <a href=\"{{url.privacy}}\">politique de confidentialité</a>.",
-    "fine": "Quand la fiche Chrome Web Store sera en ligne, cette page deviendra une installation en un clic ; d'ici là, les étapes ci-dessus sont le seul moyen d'installer.",
+    "fine": "Les étapes d’installation depuis les sources sont facultatives. Les installations depuis les stores se mettent à jour automatiquement.",
     "privacy": {
       "title": "La confidentialité en un coup d'œil",
       "points": [
@@ -691,7 +691,7 @@
       {
         "title": "Basculer prend quelques minutes",
         "ordered": [
-          "Installez l'extension. Tant que la fiche Chrome Web Store n'est pas en ligne, <a href=\"{{url.install}}\">installez-la depuis les sources</a>.",
+          "Installez l’extension depuis le <a href=\"{{url.chromeStore}}\">Chrome Web Store</a> ou <a href=\"{{url.edgeStore}}\">Microsoft Edge Add-ons</a>.",
           "Créez une clé API chez Monid ou treg.",
           "Collez-la dans les paramètres de l'extension et ouvrez un e-mail dans Gmail."
         ],
@@ -753,7 +753,7 @@
       {
         "title": "Pour commencer",
         "ordered": [
-          "Installez l'extension. Tant que la fiche Chrome Web Store n'est pas en ligne, <a href=\"{{url.install}}\">installez-la depuis les sources</a>.",
+          "Installez l’extension depuis le <a href=\"{{url.chromeStore}}\">Chrome Web Store</a> ou <a href=\"{{url.edgeStore}}\">Microsoft Edge Add-ons</a>.",
           "Créez une clé API chez Monid ou treg.",
           "Collez-la dans les paramètres de l'extension et ouvrez un e-mail dans Gmail."
         ],

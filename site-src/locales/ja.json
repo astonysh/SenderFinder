@@ -21,11 +21,11 @@
       "rapportive": "Rapportive の代替",
       "changelog": "変更履歴",
       "groups": {
-      "product": "製品",
-      "alternatives": "代替サービス",
-      "project": "プロジェクト"
-    },
-    "resources": "リソース",
+        "product": "製品",
+        "alternatives": "代替サービス",
+        "project": "プロジェクト"
+      },
+      "resources": "リソース",
       "resourcesLinks": {
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",
@@ -62,10 +62,10 @@
       "ogDescription": "Gmail でメールを開くと、送信者の LinkedIn プロフィールが表示されます。オープンソース、ご自身の API キー、アカウント不要。"
     },
     "install": {
-      "title": "SenderFinder をインストール（2 分・ソースから） | SenderFinder",
-      "description": "手順は次のとおりです。拡張機能をダウンロードし、Chrome でパッケージ化されていない拡張機能として読み込み、プロバイダーのキーを 1 つ貼り付けて Gmail を開きます。各手順のスクリーンショットとトラブルシューティングも用意しています。",
+      "title": "Chrome・Edge に SenderFinder をインストール | SenderFinder",
+      "description": "Chrome ウェブストアまたは Microsoft Edge アドオンから SenderFinder をインストールし、プロバイダーのキーを追加します。任意のソースからのインストール手順も掲載しています。",
       "ogTitle": "SenderFinder をインストール",
-      "ogDescription": "2 分、5 ステップ、API キーは 1 つ。Chrome ウェブストアで公開されるまでは、オープンソースの拡張機能をソースからインストールしてください。"
+      "ogDescription": "Chrome ウェブストアまたは Microsoft Edge アドオンから SenderFinder をインストール。オープンソースで、自分のプロバイダーキーを使用します。"
     },
     "privacy": {
       "title": "プライバシー | SenderFinder",
@@ -99,9 +99,9 @@
   "index": {
     "hero": {
       "desc": "メールを開いて送信者の LinkedIn プロフィールを見つけましょう。つながりを作って、その後も交流を続けましょう。",
-      "install": "2 分でインストール",
+      "install": "Chrome に追加",
       "github": "GitHub で見る",
-      "fine": "Microsoft Edge アドオンで公開中。Chrome では約2分のソースからのインストール手順をご利用ください。",
+      "fine": "Chrome ウェブストアと Microsoft Edge アドオンで公開中です。",
       "alt": "Gmail の隣に表示された SenderFinder のサイドパネル。ベルリンの Acme で Head of Partnerships を務める Jane Doe の氏名、LinkedIn へのリンク、「つながる」ボタン、そしてスレッドの他のメンバーが表示されている。",
       "caption": "メールを読んでいるときのサイドパネル。人物と会社は架空のものです。",
       "privacyLine": "検索リクエストはブラウザーから設定したプロバイダーへ直接送信されます。検索経路に SenderFinder のサーバーはありません。",
@@ -118,7 +118,7 @@
       "steps": [
         {
           "title": "拡張機能をインストールする",
-          "body": "Chrome ウェブストアではまだ公開されていないため、パッケージ化されていない拡張機能として読み込みます。リポジトリをダウンロードし、<code>chrome://extensions</code> を開いてデベロッパーモードをオンにし、<code>extension/</code> フォルダを選択してください。スクリーンショット付きの<a href=\"{{url.install}}\">手順ガイド</a>もあります。"
+          "body": "<a href=\"{{url.chromeStore}}\">Chrome ウェブストア</a>または <a href=\"{{url.edgeStore}}\">Microsoft Edge アドオン</a>から SenderFinder を追加します。<a href=\"{{url.install}}\">ソースからインストール</a>することもできます。"
         },
         {
           "title": "API キーを 1 つ取得する",
@@ -406,7 +406,7 @@
       },
       "cta": {
         "title": "2 分で終わります",
-        "description": "Chrome ウェブストアではまだ公開されていないため、パッケージ化されていない拡張機能として読み込みます。5 つのステップを、それぞれスクリーンショット付きで説明しています。",
+        "description": "Chrome ウェブストアまたは Microsoft Edge アドオンから追加できます。ガイドにはソースからのインストール方法もあります。",
         "button": "インストールガイドを開く"
       }
     }
@@ -452,11 +452,11 @@
   },
   "install": {
     "title": "SenderFinder をインストール",
-    "lead": "Microsoft Edge アドオンから直接インストールできます。Chrome ウェブストアでは未公開のため、Chrome では以下の手順でソースからインストールしてください。",
+    "lead": "Chrome ウェブストアまたは Microsoft Edge アドオンから直接インストールできます。下には任意のソースからのインストール手順もあります。",
     "note": "デスクトップ版の Chrome、Edge などの Chromium 系ブラウザが必要です。モバイルアプリには拡張機能を追加できません。スクリーンショットは英語ですが、拡張機能自体はブラウザの言語設定に従います。",
     "downloadLabel": "ZIP をダウンロード",
     "githubLabel": "リポジトリを開く",
-    "stepsTitle": "ソースからインストールする5つの手順",
+    "stepsTitle": "任意：ソースからインストールする5つの手順",
     "steps": [
       {
         "title": "コードを取得する",
@@ -552,12 +552,12 @@
       },
       {
         "q": "後から更新するには",
-        "a": "新しいファイルを同じフォルダに置き、chrome://extensions のカードにある更新の矢印をクリックしてください。拡張機能 ID は manifest で固定されているため、キー、キャッシュ、履歴はそのまま残ります。"
+        "a": "ストアからのインストールは自動更新されます。ソースからインストールした場合は、同じフォルダーのファイルを置き換え、chrome://extensions で再読み込みをクリックしてください。"
       }
     ],
     "nextTitle": "次に読む",
     "next": "<a href=\"{{url.index}}#how\">仕組み</a>、<a href=\"{{url.index}}#cost\">検索にかかる費用</a>、<a href=\"{{url.index}}#calculator\">費用計算ツール</a>でご自身の件数を試算できます。データの扱いについては<a href=\"{{url.privacy}}\">プライバシー声明</a>をご覧ください。",
-    "fine": "Chrome ウェブストアで公開されれば、このページはワンクリックのインストールになります。それまでは上記の手順が唯一の方法です。",
+    "fine": "上記のソースからのインストール手順は任意です。ストアからインストールした場合は自動更新されます。",
     "privacy": {
       "title": "プライバシーの要点",
       "points": [
@@ -691,7 +691,7 @@
       {
         "title": "切り替えは数分で終わります",
         "ordered": [
-          "拡張機能をインストールします。Chrome ウェブストアで公開されるまでは、<a href=\"{{url.install}}\">ソースからインストール</a>してください。",
+          "<a href=\"{{url.chromeStore}}\">Chrome ウェブストア</a>または <a href=\"{{url.edgeStore}}\">Microsoft Edge アドオン</a>から拡張機能をインストールします。",
           "Monid または treg で API キーを作成します。",
           "拡張機能の設定に貼り付け、Gmail でメールを開きます。"
         ],
@@ -753,7 +753,7 @@
       {
         "title": "はじめかた",
         "ordered": [
-          "拡張機能をインストールします。Chrome ウェブストアで公開されるまでは、<a href=\"{{url.install}}\">ソースからインストール</a>してください。",
+          "<a href=\"{{url.chromeStore}}\">Chrome ウェブストア</a>または <a href=\"{{url.edgeStore}}\">Microsoft Edge アドオン</a>から拡張機能をインストールします。",
           "Monid または treg で API キーを作成します。",
           "拡張機能の設定に貼り付け、Gmail でメールを開きます。"
         ],

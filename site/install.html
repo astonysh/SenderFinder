@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Install SenderFinder (2 minutes, from source) | SenderFinder</title>
-  <meta name="description" content="Step-by-step: download the extension, load it unpacked in Chrome, paste one provider key and open Gmail. Screenshots for every step, plus troubleshooting.">
+  <title>Install SenderFinder for Chrome or Edge | SenderFinder</title>
+  <meta name="description" content="Add SenderFinder from the Chrome Web Store or Microsoft Edge Add-ons, then add one provider key. Optional source installation steps and troubleshooting are below.">
   <link rel="canonical" href="https://senderfinder.com/install">
   <link rel="alternate" hreflang="en" href="https://senderfinder.com/install">
   <link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install">
@@ -17,21 +17,20 @@
   <link rel="alternate" hreflang="it" href="https://senderfinder.com/it/install">
   <link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/install">
   <link rel="alternate" hreflang="x-default" href="https://senderfinder.com/install">
-  <!-- CWS-BUTTON: install buttons carry data-store-url="CWS_PLACEHOLDER"; see site/README.md -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="SenderFinder">
   <meta property="og:title" content="Install SenderFinder">
-  <meta property="og:description" content="Two minutes, five steps, one API key. Install the open-source extension from source until the Chrome Web Store listing is live.">
+  <meta property="og:description" content="Install SenderFinder from the Chrome Web Store or Microsoft Edge Add-ons. Open source, with your own provider key.">
   <meta property="og:url" content="https://senderfinder.com/install">
   <meta property="og:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="800">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Install SenderFinder">
-  <meta name="twitter:description" content="Two minutes, five steps, one API key. Install the open-source extension from source until the Chrome Web Store listing is live.">
+  <meta name="twitter:description" content="Install SenderFinder from the Chrome Web Store or Microsoft Edge Add-ons. Open source, with your own provider key.">
   <meta name="twitter:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta name="color-scheme" content="light dark">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"en","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"],"contactPoint":{"@type":"ContactPoint","email":"tony@senderfinder.com","contactType":"sponsorship"}},{"@type":"BreadcrumbList","@id":"https://senderfinder.com/install#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://senderfinder.com/"},{"@type":"ListItem","position":2,"name":"Install","item":"https://senderfinder.com/install"}]},{"@type":"HowTo","@id":"https://senderfinder.com/install#howto","name":"Install SenderFinder","description":"Install directly from Microsoft Edge Add-ons. For Chrome, follow the source installation steps below; its store listing is not live yet.","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"Get the code","text":"Download the repository as a ZIP from GitHub (“Code” → “Download ZIP”) and unpack it, or clone it if you have git: git clone https://github.com/astonysh/SenderFinder.git"},{"@type":"HowToStep","position":2,"name":"Load it in Chrome","text":"Open chrome://extensions in a new tab. Switch on Developer mode (top right), click Load unpacked and pick the extension/ folder inside the repository — the folder that contains manifest.json, not the repository root."},{"@type":"HowToStep","position":3,"name":"Get one key and paste it","text":"The settings page opens by itself after installation. Create a key at Monid (Hunter, Apollo, ContactOut) or treg (BlitzAPI, QuickEnrich, Village); Firecrawl is optional. One key is enough. Paste it under “Provider keys”."},{"@type":"HowToStep","position":4,"name":"Press “Test keys (free)”","text":"The check is free: it verifies the key and reads the provider's price list. Nothing is looked up and nothing is spent. You want “valid” next to your key."},{"@type":"HowToStep","position":5,"name":"Open Gmail and click the toolbar icon once","text":"Open any message in Gmail, then click the SenderFinder icon in Chrome's toolbar. If you can't see it, click the puzzle-piece icon and pin SenderFinder first. The side panel opens and stays open in that tab; from then on it follows the email you read."}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"en","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"],"contactPoint":{"@type":"ContactPoint","email":"tony@senderfinder.com","contactType":"sponsorship"}},{"@type":"BreadcrumbList","@id":"https://senderfinder.com/install#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://senderfinder.com/"},{"@type":"ListItem","position":2,"name":"Install","item":"https://senderfinder.com/install"}]},{"@type":"HowTo","@id":"https://senderfinder.com/install#howto","name":"Install SenderFinder","description":"Install directly from the Chrome Web Store or Microsoft Edge Add-ons. Source installation is available below if you prefer it.","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"Get the code","text":"Download the repository as a ZIP from GitHub (“Code” → “Download ZIP”) and unpack it, or clone it if you have git: git clone https://github.com/astonysh/SenderFinder.git"},{"@type":"HowToStep","position":2,"name":"Load it in Chrome","text":"Open chrome://extensions in a new tab. Switch on Developer mode (top right), click Load unpacked and pick the extension/ folder inside the repository — the folder that contains manifest.json, not the repository root."},{"@type":"HowToStep","position":3,"name":"Get one key and paste it","text":"The settings page opens by itself after installation. Create a key at Monid (Hunter, Apollo, ContactOut) or treg (BlitzAPI, QuickEnrich, Village); Firecrawl is optional. One key is enough. Paste it under “Provider keys”."},{"@type":"HowToStep","position":4,"name":"Press “Test keys (free)”","text":"The check is free: it verifies the key and reads the provider's price list. Nothing is looked up and nothing is spent. You want “valid” next to your key."},{"@type":"HowToStep","position":5,"name":"Open Gmail and click the toolbar icon once","text":"Open any message in Gmail, then click the SenderFinder icon in Chrome's toolbar. If you can't see it, click the puzzle-piece icon and pin SenderFinder first. The side panel opens and stays open in that tab; from then on it follows the email you read."}]}]}</script>
   <script src="assets/theme-boot.js"></script>
   <link rel="stylesheet" href="assets/app.css">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -130,15 +129,16 @@
   <div class="v2-wrap">
     <header class="v2-page-head">
       <h1>Install SenderFinder</h1>
-      <p class="v2-lead">Install directly from Microsoft Edge Add-ons. For Chrome, follow the source installation steps below; its store listing is not live yet.</p>
+      <p class="v2-lead">Install directly from the Chrome Web Store or Microsoft Edge Add-ons. Source installation is available below if you prefer it.</p>
       <p class="v2-note">You need Chrome, Edge or another Chromium browser on a desktop; extensions can't be added to the mobile apps. The screenshots are in English, the extension itself follows your browser language.</p>
       <div class="v2-actions">
-        <a class="v2-btn v2-btn--default" href="https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki" target="_blank" rel="noopener noreferrer">
+        <a class="v2-btn v2-btn--default" href="https://chromewebstore.google.com/detail/senderfinder/dkjlkejkbapohkhneecbhnjifdjeihfp" target="_blank" rel="noopener noreferrer">
+          <svg class="i" aria-hidden="true"><use href="#i-chrome"/></svg> Add to Chrome
+        </a>
+        <a class="v2-btn v2-btn--outline" href="https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki" target="_blank" rel="noopener noreferrer">
           <svg class="i" aria-hidden="true"><use href="#i-edge"/></svg> Add to Microsoft Edge
         </a>
-
-        <!-- CWS-BUTTON: when the store listing is live, replace this block with the store button and drop the source steps. -->
-        <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder/archive/refs/heads/main.zip" data-store-url="CWS_PLACEHOLDER" target="_blank" rel="noopener noreferrer">
+        <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">
           Download the ZIP <svg class="i" aria-hidden="true"><use href="#i-download"/></svg>
         </a>
         <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder" target="_blank" rel="noopener noreferrer">
@@ -154,7 +154,7 @@
       </ul>
     </div>
 
-    <h2 class="v2-h2 v2-steps-title">Install from source in five steps</h2>
+    <h2 class="v2-h2 v2-steps-title">Optional: install from source in five steps</h2>
     <ol class="v2-steps">
       
       <li class="v2-step">
@@ -218,7 +218,7 @@
       </li>
       
     </ol>
-    <p class="v2-note">When the Chrome Web Store listing is live, this page becomes a one-click install; until then the steps above are the only way in.</p>
+    <p class="v2-note">The source steps above are optional. Chrome and Edge store installs update automatically.</p>
   </div>
 </div>
 
@@ -284,7 +284,7 @@
       
       <details>
         <summary>How do I update it later</summary>
-        <div class="v2-faq-body"><p>Put the new files in the same folder and click the reload arrow on the card in chrome://extensions. The extension id is pinned in the manifest, so keys, cache and history survive.</p></div>
+        <div class="v2-faq-body"><p>Store installs update automatically. If you installed from source, replace the files in the same folder and click reload in chrome://extensions.</p></div>
       </details>
       
     </div>

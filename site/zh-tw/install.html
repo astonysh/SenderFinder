@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>安裝 SenderFinder（2 分鐘，從原始碼開始）| SenderFinder</title>
-  <meta name="description" content="一步一步來：下載擴充功能、在 Chrome 載入未封裝的版本、貼上一組供應商 key，然後開啟 Gmail。每個步驟都有截圖，另外還有疑難排解。">
+  <title>安裝 SenderFinder Chrome / Edge 擴充功能 | SenderFinder</title>
+  <meta name="description" content="從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝 SenderFinder，再填入一組供應商 key。另有可選的原始碼安裝步驟。">
   <link rel="canonical" href="https://senderfinder.com/zh-tw/install">
   <link rel="alternate" hreflang="en" href="https://senderfinder.com/install">
   <link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install">
@@ -17,21 +17,20 @@
   <link rel="alternate" hreflang="it" href="https://senderfinder.com/it/install">
   <link rel="alternate" hreflang="pt-BR" href="https://senderfinder.com/pt-br/install">
   <link rel="alternate" hreflang="x-default" href="https://senderfinder.com/install">
-  <!-- CWS-BUTTON: install buttons carry data-store-url="CWS_PLACEHOLDER"; see site/README.md -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="SenderFinder">
   <meta property="og:title" content="安裝 SenderFinder">
-  <meta property="og:description" content="兩分鐘、五個步驟、一組 API key。在 Chrome Web Store 上架之前，先從原始碼安裝這個開放原始碼擴充功能。">
+  <meta property="og:description" content="從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝 SenderFinder。開放原始碼，使用你自己的供應商 key。">
   <meta property="og:url" content="https://senderfinder.com/zh-tw/install">
   <meta property="og:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="800">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="安裝 SenderFinder">
-  <meta name="twitter:description" content="兩分鐘、五個步驟、一組 API key。在 Chrome Web Store 上架之前，先從原始碼安裝這個開放原始碼擴充功能。">
+  <meta name="twitter:description" content="從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝 SenderFinder。開放原始碼，使用你自己的供應商 key。">
   <meta name="twitter:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta name="color-scheme" content="light dark">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"zh-TW","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"],"contactPoint":{"@type":"ContactPoint","email":"tony@senderfinder.com","contactType":"sponsorship"}},{"@type":"BreadcrumbList","@id":"https://senderfinder.com/zh-tw/install#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://senderfinder.com/zh-tw/"},{"@type":"ListItem","position":2,"name":"安裝","item":"https://senderfinder.com/zh-tw/install"}]},{"@type":"HowTo","@id":"https://senderfinder.com/zh-tw/install#howto","name":"安裝 SenderFinder","description":"Edge 使用者可直接從 Microsoft Edge 附加元件商店安裝。Chrome 商店尚未上架，請依下方步驟從原始碼安裝。","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"取得程式碼","text":"到 GitHub 把儲存庫下載成 ZIP（「Code」→「Download ZIP」）後解壓縮；如果你有 git，也可以直接 clone： git clone https://github.com/astonysh/SenderFinder.git"},{"@type":"HowToStep","position":2,"name":"在 Chrome 載入","text":"在新分頁開啟 chrome://extensions 。開啟 開發人員模式 （右上角），點 載入未封裝項目 ，然後選擇儲存庫裡的 extension/ 資料夾 —— 也就是包含 manifest.json 的那個資料夾，不是儲存庫根目錄。"},{"@type":"HowToStep","position":3,"name":"取得一組 key 並貼上","text":"安裝完成後設定頁面會自己開啟。到 Monid （Hunter、Apollo、ContactOut）或 treg （BlitzAPI、QuickEnrich、Village）建立 key； Firecrawl 是選填。一組 key 就夠。貼到「供應商 key」欄位。"},{"@type":"HowToStep","position":4,"name":"按下「測試 key（免費）」","text":"這項檢查免費：它會驗證 key 並讀取供應商的價目表。不會查詢任何資料，也不會花錢。你要看到 key 旁邊顯示「有效」。"},{"@type":"HowToStep","position":5,"name":"開啟 Gmail，點一下工具列圖示","text":"在 Gmail 開啟任何一封郵件，然後點 Chrome 工具列上的 SenderFinder 圖示。如果看不到，先點拼圖圖示把 SenderFinder 釘選起來。側邊面板會開啟，並在這個分頁保持開啟；之後它會跟著你正在讀的郵件。"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"zh-TW","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"],"contactPoint":{"@type":"ContactPoint","email":"tony@senderfinder.com","contactType":"sponsorship"}},{"@type":"BreadcrumbList","@id":"https://senderfinder.com/zh-tw/install#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://senderfinder.com/zh-tw/"},{"@type":"ListItem","position":2,"name":"安裝","item":"https://senderfinder.com/zh-tw/install"}]},{"@type":"HowTo","@id":"https://senderfinder.com/zh-tw/install#howto","name":"安裝 SenderFinder","description":"可直接從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝。下方也保留可選的原始碼安裝步驟。","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"取得程式碼","text":"到 GitHub 把儲存庫下載成 ZIP（「Code」→「Download ZIP」）後解壓縮；如果你有 git，也可以直接 clone： git clone https://github.com/astonysh/SenderFinder.git"},{"@type":"HowToStep","position":2,"name":"在 Chrome 載入","text":"在新分頁開啟 chrome://extensions 。開啟 開發人員模式 （右上角），點 載入未封裝項目 ，然後選擇儲存庫裡的 extension/ 資料夾 —— 也就是包含 manifest.json 的那個資料夾，不是儲存庫根目錄。"},{"@type":"HowToStep","position":3,"name":"取得一組 key 並貼上","text":"安裝完成後設定頁面會自己開啟。到 Monid （Hunter、Apollo、ContactOut）或 treg （BlitzAPI、QuickEnrich、Village）建立 key； Firecrawl 是選填。一組 key 就夠。貼到「供應商 key」欄位。"},{"@type":"HowToStep","position":4,"name":"按下「測試 key（免費）」","text":"這項檢查免費：它會驗證 key 並讀取供應商的價目表。不會查詢任何資料，也不會花錢。你要看到 key 旁邊顯示「有效」。"},{"@type":"HowToStep","position":5,"name":"開啟 Gmail，點一下工具列圖示","text":"在 Gmail 開啟任何一封郵件，然後點 Chrome 工具列上的 SenderFinder 圖示。如果看不到，先點拼圖圖示把 SenderFinder 釘選起來。側邊面板會開啟，並在這個分頁保持開啟；之後它會跟著你正在讀的郵件。"}]}]}</script>
   <script src="../assets/theme-boot.js"></script>
   <link rel="stylesheet" href="../assets/app.css">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -130,15 +129,16 @@
   <div class="v2-wrap">
     <header class="v2-page-head">
       <h1>安裝 SenderFinder</h1>
-      <p class="v2-lead">Edge 使用者可直接從 Microsoft Edge 附加元件商店安裝。Chrome 商店尚未上架，請依下方步驟從原始碼安裝。</p>
+      <p class="v2-lead">可直接從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝。下方也保留可選的原始碼安裝步驟。</p>
       <p class="v2-note">你需要在桌機上使用 Chrome、Edge 或其他 Chromium 瀏覽器；擴充功能無法加到行動版 App。截圖是英文版，擴充功能本身會跟隨你的瀏覽器語言。</p>
       <div class="v2-actions">
-        <a class="v2-btn v2-btn--default" href="https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki" target="_blank" rel="noopener noreferrer">
+        <a class="v2-btn v2-btn--default" href="https://chromewebstore.google.com/detail/senderfinder/dkjlkejkbapohkhneecbhnjifdjeihfp" target="_blank" rel="noopener noreferrer">
+          <svg class="i" aria-hidden="true"><use href="#i-chrome"/></svg> 加到 Chrome
+        </a>
+        <a class="v2-btn v2-btn--outline" href="https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki" target="_blank" rel="noopener noreferrer">
           <svg class="i" aria-hidden="true"><use href="#i-edge"/></svg> 新增至 Microsoft Edge
         </a>
-
-        <!-- CWS-BUTTON: when the store listing is live, replace this block with the store button and drop the source steps. -->
-        <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder/archive/refs/heads/main.zip" data-store-url="CWS_PLACEHOLDER" target="_blank" rel="noopener noreferrer">
+        <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">
           下載 ZIP <svg class="i" aria-hidden="true"><use href="#i-download"/></svg>
         </a>
         <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder" target="_blank" rel="noopener noreferrer">
@@ -154,7 +154,7 @@
       </ul>
     </div>
 
-    <h2 class="v2-h2 v2-steps-title">從原始碼安裝：五個步驟</h2>
+    <h2 class="v2-h2 v2-steps-title">可選：五步從原始碼安裝</h2>
     <ol class="v2-steps">
       
       <li class="v2-step">
@@ -218,7 +218,7 @@
       </li>
       
     </ol>
-    <p class="v2-note">等 Chrome Web Store 上架後，這個頁面就會變成按一下即安裝；在那之前，上面的步驟是唯一的安裝方式。</p>
+    <p class="v2-note">上面的原始碼安裝步驟是可選的。從商店安裝的版本會自動更新。</p>
   </div>
 </div>
 
@@ -284,7 +284,7 @@
       
       <details>
         <summary>之後要怎麼更新</summary>
-        <div class="v2-faq-body"><p>把新檔案放進同一個資料夾，然後在 chrome://extensions 的卡片上點重新載入的箭頭。擴充功能 ID 固定在 manifest 裡，所以 key、快取和歷史記錄都會保留。</p></div>
+        <div class="v2-faq-body"><p>從商店安裝的版本會自動更新。如果從原始碼安裝，請替換相同資料夾中的檔案，再到 chrome://extensions 點選重新載入。</p></div>
       </details>
       
     </div>

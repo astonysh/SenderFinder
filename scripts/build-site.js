@@ -198,6 +198,7 @@ export function scopeFor(lang, data) {
   const fmt = makeFormatters(lang.htmlLang);
   const url = Object.fromEntries(PAGES.filter(p => !p.noindex).map(p => [p.id, urlFor(lang, p.id)]));
   url.edgeStore = CONFIG.edgeStoreUrl;
+  url.chromeStore = CONFIG.chromeStoreUrl;
   const calc = {
     ...data.calc,
     fallbackIntro: fill(data.calc.fallbackIntro, { skip: fmt.percent(DEFAULTS.skipShare) }),
@@ -440,7 +441,6 @@ function head(lang, page, data, scope) {
     }
     lines.push(`  <link rel="alternate" hreflang="x-default" href="${SITE_URL}${pagePath(localeFor(locales[0]), page)}">`);
   }
-  lines.push('  <!-- CWS-BUTTON: install buttons carry data-store-url="CWS_PLACEHOLDER"; see site/README.md -->');
   lines.push(`  <meta property="og:type" content="${page.ogType}">`);
   lines.push('  <meta property="og:site_name" content="SenderFinder">');
   lines.push(`  <meta property="og:title" content="${esc(ogTitle)}">`);

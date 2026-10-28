@@ -21,11 +21,11 @@
       "rapportive": "Rapportive alternative",
       "changelog": "Changelog",
       "groups": {
-      "product": "Product",
-      "alternatives": "Alternatives",
-      "project": "Project"
-    },
-    "resources": "Resources",
+        "product": "Product",
+        "alternatives": "Alternatives",
+        "project": "Project"
+      },
+      "resources": "Resources",
       "resourcesLinks": {
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",
@@ -62,10 +62,10 @@
       "ogDescription": "Open an email in Gmail and see the sender's LinkedIn profile. Open source, your own API keys, no account."
     },
     "install": {
-      "title": "Install SenderFinder (2 minutes, from source) | SenderFinder",
-      "description": "Step-by-step: download the extension, load it unpacked in Chrome, paste one provider key and open Gmail. Screenshots for every step, plus troubleshooting.",
+      "title": "Install SenderFinder for Chrome or Edge | SenderFinder",
+      "description": "Add SenderFinder from the Chrome Web Store or Microsoft Edge Add-ons, then add one provider key. Optional source installation steps and troubleshooting are below.",
       "ogTitle": "Install SenderFinder",
-      "ogDescription": "Two minutes, five steps, one API key. Install the open-source extension from source until the Chrome Web Store listing is live."
+      "ogDescription": "Install SenderFinder from the Chrome Web Store or Microsoft Edge Add-ons. Open source, with your own provider key."
     },
     "privacy": {
       "title": "Privacy | SenderFinder",
@@ -99,9 +99,9 @@
   "index": {
     "hero": {
       "desc": "Open an email to find the sender’s LinkedIn profile. Connect with them and stay connected.",
-      "install": "Install in 2 minutes",
+      "install": "Add to Chrome",
       "github": "View on GitHub",
-      "fine": "Available on Microsoft Edge Add-ons. For Chrome, follow the two-minute source installation guide.",
+      "fine": "Available on the Chrome Web Store and Microsoft Edge Add-ons.",
       "alt": "SenderFinder side panel beside Gmail showing a sample sender profile and other people in the email thread.",
       "caption": "The side panel while reading an email. The people and company are fictional.",
       "privacyLine": "Lookups go directly from your browser to the provider you configure — no SenderFinder server in the lookup path.",
@@ -118,7 +118,7 @@
       "steps": [
         {
           "title": "Install the extension",
-          "body": "The Chrome Web Store listing isn't live yet, so you load it unpacked: download the repository, open <code>chrome://extensions</code>, switch on developer mode and pick the <code>extension/</code> folder. There is a <a href=\"{{url.install}}\">step-by-step guide with screenshots</a>."
+          "body": "Add SenderFinder from the <a href=\"{{url.chromeStore}}\">Chrome Web Store</a> or <a href=\"{{url.edgeStore}}\">Microsoft Edge Add-ons</a>. You can also <a href=\"{{url.install}}\">install it from source</a>."
         },
         {
           "title": "Get one API key",
@@ -406,7 +406,7 @@
       },
       "cta": {
         "title": "Two minutes, then it is done",
-        "description": "The Chrome Web Store listing is not live yet, so you load the extension unpacked. Five steps, a screenshot for each.",
+        "description": "Add it from the Chrome Web Store or Microsoft Edge Add-ons. The install guide also covers source installation.",
         "button": "Open the install guide"
       }
     }
@@ -452,11 +452,11 @@
   },
   "install": {
     "title": "Install SenderFinder",
-    "lead": "Install directly from Microsoft Edge Add-ons. For Chrome, follow the source installation steps below; its store listing is not live yet.",
+    "lead": "Install directly from the Chrome Web Store or Microsoft Edge Add-ons. Source installation is available below if you prefer it.",
     "note": "You need Chrome, Edge or another Chromium browser on a desktop; extensions can't be added to the mobile apps. The screenshots are in English, the extension itself follows your browser language.",
     "downloadLabel": "Download the ZIP",
     "githubLabel": "Open the repository",
-    "stepsTitle": "Install from source in five steps",
+    "stepsTitle": "Optional: install from source in five steps",
     "steps": [
       {
         "title": "Get the code",
@@ -552,12 +552,12 @@
       },
       {
         "q": "How do I update it later",
-        "a": "Put the new files in the same folder and click the reload arrow on the card in chrome://extensions. The extension id is pinned in the manifest, so keys, cache and history survive."
+        "a": "Store installs update automatically. If you installed from source, replace the files in the same folder and click reload in chrome://extensions."
       }
     ],
     "nextTitle": "What next",
     "next": "Read <a href=\"{{url.index}}#how\">how it works</a>, check <a href=\"{{url.index}}#cost\">what a lookup costs</a> or work out your own volume in the <a href=\"{{url.index}}#calculator\">cost calculator</a>. Data questions are answered in the <a href=\"{{url.privacy}}\">privacy statement</a>.",
-    "fine": "When the Chrome Web Store listing is live, this page becomes a one-click install; until then the steps above are the only way in.",
+    "fine": "The source steps above are optional. Chrome and Edge store installs update automatically.",
     "privacy": {
       "title": "Privacy at a glance",
       "points": [
@@ -691,7 +691,7 @@
       {
         "title": "Switching takes a few minutes",
         "ordered": [
-          "Install the extension. Until the Chrome Web Store listing is live, <a href=\"{{url.install}}\">install it from source</a>.",
+          "Install the extension from the <a href=\"{{url.chromeStore}}\">Chrome Web Store</a> or <a href=\"{{url.edgeStore}}\">Microsoft Edge Add-ons</a>.",
           "Create an API key at Monid or treg.",
           "Paste it into the extension's settings and open an email in Gmail."
         ],
@@ -753,7 +753,7 @@
       {
         "title": "Get started",
         "ordered": [
-          "Install the extension. Until the Chrome Web Store listing is live, <a href=\"{{url.install}}\">install it from source</a>.",
+          "Install the extension from the <a href=\"{{url.chromeStore}}\">Chrome Web Store</a> or <a href=\"{{url.edgeStore}}\">Microsoft Edge Add-ons</a>.",
           "Create an API key at Monid or treg.",
           "Paste it into the extension's settings and open an email in Gmail."
         ],

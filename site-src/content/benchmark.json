@@ -7,7 +7,7 @@
   },
   "page": {
     "title": "Email → LinkedIn enrichment providers compared: hit rate and price on 50 verified work emails (2026-10-25)",
-    "lead": "We ran the same 50 verified work addresses through the full SenderFinder waterfall with both provider keys, one day, no cache. This page shows what each step answered, what it charged, and what the result does — and does not — prove.",
+    "lead": "We ran the same 50 verified work addresses through the SenderFinder waterfall with both provider keys, one day, no cache. This page shows what each step answered, what it charged, and what the result does — and does not — prove.",
     "updated": "Benchmark run: 25 October 2026. Aggregates are generated from data/bench/wizleads-sample-50.results.json at build time.",
     "cta": {
       "install": "Install SenderFinder",
