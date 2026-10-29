@@ -27,6 +27,7 @@
       },
       "resources": "資源",
       "resourcesLinks": {
+        "tools": "Free tools",
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",
         "findByEmail": "Find a profile from an email",
@@ -430,6 +431,7 @@
     "usableLabel": "以這個速率，今天 $2 的上限大約可查 {n} 個地址。",
     "hitNote": "「找到」表示供應商回傳的個人檔案姓名相符。兩組 key 的差別，主要在於多常需要動用較貴的備援步驟。",
     "capNote": "上限仍然有效：預設每天 $2、每次查詢 $0.05，兩者都可以在設定裡調整。這項估算假設每月 30 天，且每個新地址查詢一次。",
+    "toolsNote": "需要按月估算或查看各供應商的明細？使用免費的<a href=\"{{url.enrichmentCalculator}}\" hreflang=\"en\">電子郵件資料補全成本計算器</a>（英文）。",
     "fallbackTitle": "範例用量",
     "fallbackIntro": "未啟用 JavaScript 時顯示。同樣的模型、同樣的價格：{skip} 的寄件者是個人或職務信箱，會被略過。",
     "fallbackNote": "開啟 JavaScript 就能看到你自己的數字。以上只是單純的表格，不是花費承諾。",

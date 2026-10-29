@@ -27,6 +27,7 @@
       },
       "resources": "リソース",
       "resourcesLinks": {
+        "tools": "Free tools",
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",
         "findByEmail": "Find a profile from an email",
@@ -430,6 +431,7 @@
     "usableLabel": "現在の $2 の上限では、この割合で約 {n} 件までカバーできます。",
     "hitNote": "「見つかった」は、名前が一致するプロフィールが返ってきたことを指します。2 つのキーの違いは、主に高価なフォールバックが必要になる頻度です。",
     "capNote": "上限は有効です：既定では 1 日 $2、1 回あたり $0.05 で、どちらも設定で変更できます。この試算は 30 日間、新しいアドレスごとに 1 回検索する前提です。",
+    "toolsNote": "月間件数やプロバイダー別の内訳が必要なら、無料の<a href=\"{{url.enrichmentCalculator}}\" hreflang=\"en\">メールエンリッチメント費用計算ツール</a>（英語）をご利用ください。",
     "fallbackTitle": "件数の例",
     "fallbackIntro": "JavaScript なしで表示しています。同じモデル、同じ価格です：送信者の {skip} が個人用または役割アドレスで、スキップされます。",
     "fallbackNote": "ご自身の数値は JavaScript を有効にすると表示されます。上記はすべて単なる表であり、支出を約束するものではありません。",

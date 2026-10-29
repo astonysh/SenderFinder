@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Email signature parser (free tool) | SenderFinder",
+    "description": "Paste an email signature and extract LinkedIn, X, website, email and phone details locally in your browser. Free, private and no mailbox connection.",
+    "ogTitle": "Free browser-based email signature parser",
+    "ogDescription": "Extract social links and contact details from an email signature without uploading the signature."
+  },
+  "page": {
+    "kicker": "Free email tool",
+    "title": "Email signature parser",
+    "lead": "Extract LinkedIn, X, website, email and phone details from a pasted signature. Parsing happens in this tab, with no mailbox connection, account or server upload.",
+    "updated": "Published 29 October 2026. Designed for one plain-text or HTML signature at a time.",
+    "tool": {
+      "title": "Parse an email signature",
+      "intro": "Paste only the signature block or its HTML source. The parser looks for explicit contact details and labels any inferred name, title or company as best-effort rather than verified.",
+      "inputLabel": "Email signature text or HTML",
+      "inputPlaceholder": "Jane Doe\nHead of Partnerships · Example Ltd\njane.doe@example.com\n+1 202 555 0142\nhttps://www.linkedin.com/in/jane-doe",
+      "inputHint": "Do not paste a confidential message thread. Images are not read, and a displayed icon with no URL in the copied text cannot be recovered.",
+      "submit": "Parse signature",
+      "sample": "Use an example",
+      "clear": "Clear",
+      "resultsTitle": "Extracted details",
+      "copyJson": "Copy JSON",
+      "privacy": "Input and results remain in browser memory until you clear or leave the page. SenderFinder receives neither the signature nor the extracted fields."
+    },
+    "sections": [
+      {
+        "id": "what-it-extracts",
+        "title": "What the email signature parser extracts",
+        "blocks": [
+          "The reliable fields are details written explicitly in the signature: email addresses, phone-like numbers and web URLs. URLs are grouped into LinkedIn profiles, X or Twitter links and other websites. Duplicate links are removed, common trailing punctuation is cleaned and raw HTML links are read from their <code>href</code> values when present.",
+          "The first few non-contact lines are also shown as possible identity lines. A conventional signature often starts with a name, followed by a job title and company, but plain text does not carry a universal label for those fields. Treat those lines as candidates to review, not a verified contact record."
+        ]
+      },
+      {
+        "id": "limitations",
+        "title": "What a local parser cannot recover",
+        "list": [
+          "A LinkedIn icon copied as an image without its underlying URL.",
+          "Text embedded inside a logo, screenshot or scanned signature.",
+          "A link hidden behind a redirect when the copied content contains only the visible label.",
+          "A reliable person identity from a shared address such as <code>sales@</code> or <code>support@</code>.",
+          "A guaranteed distinction between a job title, department and company in every language or layout."
+        ]
+      },
+      {
+        "id": "privacy",
+        "title": "Why the parser runs in your browser",
+        "blocks": [
+          "Email signatures can contain direct phone numbers, addresses and internal titles. Sending that block to a generic parser creates another copy of data that may not need to exist. This tool uses deterministic browser code and makes no network request, so it is useful for a quick, inspectable extraction.",
+          "Local processing does not make careless copying harmless. Paste only the minimum signature block, avoid confidential message content and clear the form on a shared computer. The result is not identity verification and should not be used for screening or high-stakes decisions."
+        ]
+      },
+      {
+        "id": "profile",
+        "title": "From a signature link to the right LinkedIn profile",
+        "blocks": [
+          "When a signature contains a <code>linkedin.com/in</code> URL, that explicit link is usually a better first answer than a paid enrichment call. SenderFinder therefore scans the current message locally before it tries a provider. If the signature has no link, use the <a href=\"{{url.findByEmail}}#search-builder\">LinkedIn profile search builder</a> with the sender's work email, name and company.",
+          "After confirming the profile, the <a href=\"{{url.connectionNote}}\">LinkedIn connection note generator</a> can turn the shared email topic into a short invitation. Browse all <a href=\"{{url.tools}}\">free SenderFinder tools</a> for the complete workflow."
+        ]
+      },
+      {
+        "id": "related",
+        "title": "Other free tools",
+        "list": [
+          "<a href=\"{{url.findByEmail}}#search-builder\">LinkedIn profile search builder</a> — turn a work email, name and company into focused Google, Bing and LinkedIn searches.",
+          "<a href=\"{{url.connectionNote}}\">LinkedIn connection note generator</a> — write a short, specific invitation once you have confirmed the profile.",
+          "<a href=\"{{url.enrichmentCalculator}}\">Email enrichment cost calculator</a> — model monthly spend, match rate and provider contribution before paying for lookups.",
+          "<a href=\"{{url.tools}}\">All free email and LinkedIn tools</a> — the full set, every one running in your browser with no account."
+        ]
+      }
+    ],
+    "faqTitle": "Email signature parser questions",
+    "faqIntro": "Supported input, privacy and the difference between extraction and verification.",
+    "bottomCta": {
+      "title": "Scan signatures while you read the email",
+      "body": "SenderFinder runs the LinkedIn signature scan locally inside Gmail or Outlook, before any optional paid provider step.",
+      "action": "Install SenderFinder"
+    }
+  },
+  "faq": [
+    {
+      "q": "Does the email signature parser upload what I paste?",
+      "a": "No. The parser runs in the browser and makes no network request. Input remains in the current tab until you clear it or leave the page."
+    },
+    {
+      "q": "Can it extract a LinkedIn link hidden behind an icon?",
+      "a": "Only when the pasted HTML includes the link URL or the copied text exposes it. A bitmap icon by itself contains no destination for the parser to recover."
+    },
+    {
+      "q": "Can I upload EML or MSG files?",
+      "a": "No. This first version accepts pasted plain text or HTML for one signature. It does not connect to a mailbox or parse full EML and MSG containers."
+    },
+    {
+      "q": "Are the inferred name, title and company verified?",
+      "a": "No. They are candidate lines based on position in a conventional signature. Review them against the actual email header and profile before using them."
+    }
+  ]
+}

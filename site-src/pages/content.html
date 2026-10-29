@@ -14,6 +14,43 @@
       </div>
     </header>
 
+    {{#if page.searchBuilder}}
+    <section class="tool-panel" id="search-builder" aria-labelledby="search-builder-title">
+      <div class="tool-panel-head">
+        <p class="tool-kicker">{{kicker}}</p>
+        <h2 id="search-builder-title">{{title}}</h2>
+        <p>{{intro}}</p>
+      </div>
+      <form class="tool-form" id="profile-search-form">
+        <div class="tool-fields tool-fields--3">
+          <div class="tool-field">
+            <label for="profile-search-email">{{emailLabel}}</label>
+            <input id="profile-search-email" name="email" type="email" inputmode="email" autocomplete="off" placeholder="{{emailPlaceholder}}" required>
+          </div>
+          <div class="tool-field">
+            <label for="profile-search-name">{{nameLabel}}</label>
+            <input id="profile-search-name" name="name" type="text" autocomplete="off" placeholder="{{namePlaceholder}}">
+          </div>
+          <div class="tool-field">
+            <label for="profile-search-company">{{companyLabel}}</label>
+            <input id="profile-search-company" name="company" type="text" autocomplete="off" placeholder="{{companyPlaceholder}}">
+          </div>
+        </div>
+        <div class="tool-actions">
+          <button class="v2-btn v2-btn--default" type="submit">{{submit}}</button>
+          <button class="v2-btn v2-btn--outline" type="button" id="profile-search-sample">{{sample}}</button>
+        </div>
+      </form>
+      <div class="tool-result" id="profile-search-result" aria-live="polite" hidden>
+        <h3>{{resultsTitle}}</h3>
+        <p class="tool-status" id="profile-search-status"></p>
+        <div class="tool-result-list" id="profile-search-links"></div>
+        <p class="tool-fine">{{privacy}}</p>
+      </div>
+      <noscript><p class="tool-note">{{noScript}}</p></noscript>
+    </section>
+    {{/if}}
+
     <article class="v2-prose">
       {{#each page.sections}}
       <h2{{#if id}} id="{{id}}"{{/if}}>{{title}}</h2>

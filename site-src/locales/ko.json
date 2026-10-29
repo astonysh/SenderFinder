@@ -27,6 +27,7 @@
       },
       "resources": "리소스",
       "resourcesLinks": {
+        "tools": "Free tools",
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",
         "findByEmail": "Find a profile from an email",
@@ -430,6 +431,7 @@
     "usableLabel": "현재 비율이면 오늘의 $2 상한으로 주소 {n}개까지 조회할 수 있습니다.",
     "hitNote": "찾음은 이름이 일치하는 프로필이 돌아온 경우입니다. 두 키의 차이는 주로 값비싼 대체 단계가 얼마나 자주 필요한지에 있습니다.",
     "capNote": "상한은 그대로 적용됩니다. 기본값은 하루 $2, 조회당 $0.05이며 둘 다 설정에서 조정할 수 있습니다. 이 추정은 30일과 새 주소당 조회 1회를 가정합니다.",
+    "toolsNote": "월간 건수나 공급자별 내역이 필요하다면 무료 <a href=\"{{url.enrichmentCalculator}}\" hreflang=\"en\">이메일 인리치먼트 비용 계산기</a>(영어)를 사용하세요.",
     "fallbackTitle": "사용량 예시",
     "fallbackIntro": "JavaScript 없이 표시됩니다. 같은 모델, 같은 가격이며, 발신자의 {skip}는 개인 또는 역할 주소여서 건너뜁니다.",
     "fallbackNote": "직접 숫자를 보려면 JavaScript를 켜세요. 위의 내용은 단순한 표이며 지출을 약속하는 값이 아닙니다.",

@@ -27,6 +27,7 @@
       },
       "resources": "Recursos",
       "resourcesLinks": {
+        "tools": "Free tools",
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",
         "findByEmail": "Find a profile from an email",
@@ -430,6 +431,7 @@
     "usableLabel": "Con el tope de $2 de hoy saldrían unas {n} direcciones a este ritmo.",
     "hitNote": "Encontrada significa que volvió un perfil con un nombre coincidente. Las dos claves se diferencian sobre todo en la frecuencia con que hace falta el respaldo caro.",
     "capNote": "Los topes siguen aplicándose: $2 al día y $0.05 por búsqueda de forma predeterminada, ambos ajustables en la configuración. La estimación supone 30 días y una búsqueda por dirección nueva.",
+    "toolsNote": "¿Necesitas volúmenes mensuales o el desglose por proveedor? Usa la <a href=\"{{url.enrichmentCalculator}}\" hreflang=\"en\">calculadora gratuita de costes de enriquecimiento de email</a> (en inglés).",
     "fallbackTitle": "Volúmenes de ejemplo",
     "fallbackIntro": "Se muestra sin JavaScript. Mismo modelo, mismos precios: el {skip} de los remitentes son direcciones personales o genéricas y se omiten.",
     "fallbackNote": "Activa JavaScript para ver tus propios números. Todo lo de arriba es una tabla simple, no una promesa de gasto.",

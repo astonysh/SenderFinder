@@ -27,6 +27,7 @@
       },
       "resources": "Risorse",
       "resourcesLinks": {
+        "tools": "Free tools",
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",
         "findByEmail": "Find a profile from an email",
@@ -430,6 +431,7 @@
     "usableLabel": "Il tetto di $2 di oggi coprirebbe circa {n} indirizzi a questo ritmo.",
     "hitNote": "Trovato significa che è tornato un profilo con un nome corrispondente. Le due chiavi differiscono soprattutto per quanto spesso serve il fallback costoso.",
     "capNote": "I tetti valgono comunque: $2 al giorno e $0.05 per ricerca per impostazione predefinita, entrambi modificabili nelle impostazioni. La stima assume 30 giorni e una ricerca per nuovo indirizzo.",
+    "toolsNote": "Ti servono i volumi mensili o il dettaglio per provider? Usa il <a href=\"{{url.enrichmentCalculator}}\" hreflang=\"en\">calcolatore gratuito dei costi di email enrichment</a> (in inglese).",
     "fallbackTitle": "Volumi di esempio",
     "fallbackIntro": "Mostrati senza JavaScript. Stesso modello, stessi prezzi: {skip} dei mittenti sono indirizzi personali o di servizio e vengono ignorati.",
     "fallbackNote": "Attiva JavaScript per i tuoi numeri. Tutto quello che vedi sopra è una semplice tabella, non una promessa di spesa.",

@@ -1,0 +1,50 @@
+<div class="v2-page">
+  <div class="v2-wrap">
+    <header class="v2-page-head">
+      <p class="tool-kicker">{{page.kicker}}</p>
+      <h1>{{page.title}}</h1>
+      <p class="v2-lead">{{page.lead}}</p>
+      <p class="v2-note">{{page.updated}}</p>
+    </header>
+
+    <section class="tool-panel" aria-labelledby="signature-tool-title">
+      <div class="tool-panel-head"><h2 id="signature-tool-title">{{page.tool.title}}</h2><p>{{page.tool.intro}}</p></div>
+      <form class="tool-form" id="signature-parser-form">
+        <div class="tool-field">
+          <label for="signature-input">{{page.tool.inputLabel}}</label>
+          <textarea id="signature-input" name="signature" rows="10" placeholder="{{page.tool.inputPlaceholder}}" required></textarea>
+          <p class="tool-hint">{{page.tool.inputHint}}</p>
+        </div>
+        <div class="tool-actions">
+          <button class="v2-btn v2-btn--default" type="submit">{{page.tool.submit}}</button>
+          <button class="v2-btn v2-btn--outline" type="button" id="signature-parser-sample">{{page.tool.sample}}</button>
+          <button class="v2-btn v2-btn--outline" type="reset" id="signature-parser-clear">{{page.tool.clear}}</button>
+        </div>
+      </form>
+      <div class="tool-result" id="signature-parser-result" aria-live="polite" hidden>
+        <div class="tool-result-head"><h3>{{page.tool.resultsTitle}}</h3><p id="signature-parser-summary"></p></div>
+        <div class="parser-results" id="signature-parser-fields"></div>
+        <div class="tool-actions"><button class="v2-btn v2-btn--outline v2-btn--sm" type="button" id="signature-copy-json">{{page.tool.copyJson}}</button></div>
+      </div>
+      <p class="tool-fine">{{page.tool.privacy}}</p>
+    </section>
+
+    <article class="v2-prose">
+      {{#each page.sections}}
+      <h2{{#if id}} id="{{id}}"{{/if}}>{{title}}</h2>
+      {{#if blocks}}{{#each blocks}}<p>{{this}}</p>{{/each}}{{/if}}
+      {{#if list}}<ul>{{#each list}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+      {{/each}}
+    </article>
+  </div>
+</div>
+
+<section class="v2-section v2-section--soft" id="faq"><div class="v2-wrap">
+  <header class="v2-head"><h2 class="v2-h2">{{page.faqTitle}}</h2><p>{{page.faqIntro}}</p></header>
+  <div class="v2-faq">{{#each faq}}<details><summary>{{q}}</summary><div class="v2-faq-body"><p>{{a}}</p></div></details>{{/each}}</div>
+</div></section>
+
+<section class="v2-section"><div class="v2-wrap"><div class="v2-cta">
+  <h2>{{page.bottomCta.title}}</h2><p>{{page.bottomCta.body}}</p>
+  <div class="v2-actions"><a class="v2-btn v2-btn--outline" href="{{url.install}}">{{page.bottomCta.action}} <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></div>
+</div></div></section>

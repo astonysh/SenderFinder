@@ -741,6 +741,71 @@ html[data-theme="dark"] .theme-icon-light { display: inline-block; }
 .v2-prose .updated { font-size: .85rem; color: var(--v2-muted-fg); }
 .v2-prose .note { border: 1px solid var(--v2-border); border-radius: var(--radius-lg); padding: .9rem 1rem; background: var(--v2-card); }
 .v2-prose figure { margin: 1.5rem 0; }
+
+/* Free tools -------------------------------------------------------------- */
+.tool-kicker { margin: 0 0 .55rem; color: var(--brand); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.tool-panel { max-width: 64rem; margin: 0 auto 2.75rem; padding: clamp(1rem, 3vw, 1.75rem); border: 1px solid var(--v2-border); border-radius: var(--radius-xl); background: var(--v2-card); box-shadow: var(--v2-shadow); }
+.tool-panel-head { max-width: 48rem; margin-bottom: 1.35rem; }
+.tool-panel-head h2 { margin: 0 0 .45rem; font-size: clamp(1.35rem, 3vw, 1.7rem); }
+.tool-panel-head p { margin: 0; color: var(--v2-muted-fg); }
+.tool-form { margin: 0; }
+.tool-fields { display: grid; gap: 1rem; }
+.tool-field { min-width: 0; }
+.tool-field label, .note-option label { display: block; margin-bottom: .4rem; font-size: .88rem; font-weight: 650; }
+.tool-field input:not([type="range"]), .tool-field select, .tool-field textarea, .note-option textarea {
+  width: 100%; box-sizing: border-box; border: 1px solid var(--v2-border); border-radius: var(--radius-md); padding: .7rem .78rem;
+  background: var(--v2-bg); color: var(--v2-fg); font: inherit;
+}
+.tool-field input:focus, .tool-field select:focus, .tool-field textarea:focus, .note-option textarea:focus { outline: 2px solid var(--brand); outline-offset: 2px; }
+.tool-field textarea, .note-option textarea { resize: vertical; line-height: 1.5; }
+.tool-field input[type="range"] { width: 100%; accent-color: var(--brand); }
+.tool-hint, .tool-fine { margin: .45rem 0 0; color: var(--v2-muted-fg); font-size: .8rem; line-height: 1.5; }
+.tool-actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1rem; }
+.tool-result { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--v2-border); }
+.tool-result-head h3, .tool-result > h3 { margin: 0; font-size: 1.1rem; }
+.tool-result-head p, .tool-status { margin: .35rem 0 0; color: var(--v2-muted-fg); }
+.tool-result-list { display: grid; gap: .75rem; margin-top: 1rem; }
+.tool-result-item { padding: .9rem; border: 1px solid var(--v2-border); border-radius: var(--radius-md); background: var(--v2-bg); }
+.tool-result-item h4, .tool-result-item p { margin: 0; }
+.tool-result-item p { margin-top: .3rem; color: var(--v2-muted-fg); font-size: .88rem; }
+.tool-note { padding: .8rem; border: 1px solid var(--v2-border); border-radius: var(--radius-md); color: var(--v2-muted-fg); }
+.tool-card-grid { display: grid; gap: 1rem; max-width: 64rem; margin: 0 auto 2.5rem; }
+.tool-card { display: flex; flex-direction: column; padding: 1.25rem; border: 1px solid var(--v2-border); border-radius: var(--radius-lg); background: var(--v2-card); }
+.tool-card h2 { margin: .2rem 0 .5rem; font-size: 1.2rem; }
+.tool-card > p { color: var(--v2-muted-fg); }
+.tool-card-label, .tool-card-meta { margin: 0; font-size: .8rem; }
+.tool-card-label { color: var(--brand) !important; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.tool-card-meta { margin-top: auto !important; padding: .65rem 0; }
+.tool-card .v2-btn { align-self: flex-start; }
+.note-results { display: grid; gap: .85rem; margin-top: 1rem; }
+.note-option { padding: .9rem; border: 1px solid var(--v2-border); border-radius: var(--radius-md); background: var(--v2-bg); }
+.note-option-foot { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-top: .55rem; color: var(--v2-muted-fg); font-size: .8rem; }
+.parser-results { margin-top: 1rem; border: 1px solid var(--v2-border); border-radius: var(--radius-md); overflow: hidden; }
+.parser-row { display: grid; gap: .25rem; padding: .75rem .85rem; background: var(--v2-bg); overflow-wrap: anywhere; }
+.parser-row + .parser-row { border-top: 1px solid var(--v2-border); }
+.parser-row > strong { font-size: .82rem; }
+.parser-row > div { color: var(--v2-muted-fg); }
+.tool-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; margin-top: 1.35rem; }
+.tool-metric { padding: .8rem; border: 1px solid var(--v2-border); border-radius: var(--radius-md); background: var(--v2-bg); }
+.tool-metric span { display: block; color: var(--v2-muted-fg); font-size: .75rem; line-height: 1.35; }
+.tool-metric strong { display: block; margin-top: .25rem; font-size: 1.1rem; overflow-wrap: anywhere; }
+.tool-table-wrap { margin-top: 1.25rem; overflow-x: auto; }
+.tool-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.tool-table caption { margin-bottom: .55rem; text-align: left; font-weight: 700; }
+.tool-table th, .tool-table td { padding: .65rem; border-bottom: 1px solid var(--v2-border); text-align: right; white-space: nowrap; }
+.tool-table th:first-child, .tool-table td:first-child { text-align: left; }
+
+@media (min-width: 42rem) {
+  .tool-fields--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tool-fields--2 .tool-field--wide { grid-column: 1 / -1; }
+  .tool-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .parser-row { grid-template-columns: minmax(8rem, .35fr) minmax(0, 1fr); gap: 1rem; }
+  .tool-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 54rem) {
+  .tool-fields--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 .v2-summary { margin: 1.75rem 0 2.5rem; padding: 1.25rem 1.35rem; border: 1px solid var(--v2-border); border-radius: var(--radius-xl); background: var(--v2-card); }
 .v2-summary h2 { display: flex; align-items: center; gap: .5rem; margin: 0 0 .75rem; font-size: 1.05rem; }
 .v2-summary ul { margin: 0; padding-left: 1.1rem; }

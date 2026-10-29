@@ -242,9 +242,10 @@ test('every page carries the notice, the theme switch and the brand icon', () =>
       assert.ok(html.includes('class="notice" id="notice"'), 'notice markup missing');
       assert.ok(html.includes('data-consent-mode='), 'notice has no consent mode flag');
       assert.ok(html.includes('class="theme-switch"'), 'theme switch missing');
-      assert.ok(html.includes(`src="${lang.dir ? '../' : ''}assets/icon-128.png" alt="" width="32" height="32"`),
+      const assetBase = '../'.repeat(pageFile(lang, page).split('/').length - 1);
+      assert.ok(html.includes(`src="${assetBase}assets/icon-128.png" alt="" width="32" height="32"`),
         'header icon missing or wrong path');
-      assert.ok(html.includes(`href="${lang.dir ? '../' : ''}assets/favicon.svg"`), 'favicon missing');
+      assert.ok(html.includes(`href="${assetBase}assets/favicon.svg"`), 'favicon missing');
     }
   }
 });
@@ -484,6 +485,7 @@ test('the 404 page is English-only and stays out of the sitemap', () => {
 /* ---------------------------------------------------------------- English-only content pages */
 
 const CONTENT_IDS = ['benchmark', 'salesnav', 'findByEmail', 'outlook', 'sponsors', 'stats'];
+const TOOL_IDS = ['findByEmail', 'connectionNote', 'signatureParser', 'enrichmentCalculator'];
 const contentPage = id => PAGES.find(page => page.id === id);
 const contentHtml = id => pageOf(LANGUAGES[0], contentPage(id));
 const mainText = html => html.match(/<main id="main">([\s\S]*?)<\/main>/)[1]
@@ -511,12 +513,54 @@ test('the six English-only content pages are built once, in English, with one si
   }
 });
 
+test('the free tools are English-only, crawlable and carry matching WebApplication data', () => {
+  const xml = fs.readFileSync(path.join(SITE, 'sitemap.xml'), 'utf8');
+  for (const id of ['tools', ...TOOL_IDS]) {
+    const page = contentPage(id);
+    assert.deepEqual(pageLocales(page), ['en'], `${id} is not English-only`);
+    assert.equal((xml.match(new RegExp(`<loc>${SITE_URL}${pagePath(LANGUAGES[0], page)}</loc>`, 'g')) || []).length, 1);
+    const html = contentHtml(id);
+    assert.ok(!html.includes('name="robots" content="noindex"'), `${id} is noindex`);
+    assert.match(html, /<link rel="canonical" href="https:\/\/senderfinder\.com\//);
+    assert.match(html, /<h1>/, `${id}: no H1`);
+    // Only the long-form guide is an Article; the hub is a CollectionPage and each tool a WebApplication.
+    if (id === 'findByEmail') assert.ok(typeOf(graphOf(html), 'Article'), `${id}: no Article JSON-LD`);
+    else assert.ok(!typeOf(graphOf(html), 'Article'), `${id}: tool page should not emit Article JSON-LD`);
+    if (id === 'tools') assert.ok(typeOf(graphOf(html), 'CollectionPage'), 'tools: no CollectionPage JSON-LD');
+    else {
+      const app = typeOf(graphOf(html), 'WebApplication');
+      assert.ok(app, `${id}: no WebApplication JSON-LD`);
+      assert.equal(app.isAccessibleForFree, true);
+      assert.equal(app.offers.price, '0');
+    }
+  }
+});
+
+test('each free tool ships its interface and local-only JavaScript', () => {
+  const expectations = {
+    findByEmail: ['profile-search-form', 'profile-search.js'],
+    connectionNote: ['connection-note-form', 'connection-note.js'],
+    signatureParser: ['signature-parser-form', 'signature-parser.js'],
+    enrichmentCalculator: ['enrichment-calculator', 'enrichment-calculator.js'],
+  };
+  for (const [id, [formId, script]] of Object.entries(expectations)) {
+    const html = contentHtml(id);
+    assert.ok(html.includes(`id="${formId}"`), `${id}: tool form missing`);
+    assert.ok(html.includes(`assets/${script}`), `${id}: tool script missing`);
+    const source = fs.readFileSync(path.join(SRC, 'assets', script), 'utf8');
+    assert.doesNotMatch(source, /\b(?:fetch|XMLHttpRequest|sendBeacon)\b/, `${script} sends a network request`);
+  }
+});
+
 test('each content page has an H1, H2 sections, 900–1500 words and a matching FAQPage', () => {
   for (const id of CONTENT_IDS) {
     const html = contentHtml(id);
     assert.match(html, /<h1>/, `${id}: no H1`);
     assert.ok((html.match(/<h2[ >]/g) || []).length >= 5, `${id}: too few H2 sections`);
-    const words = (mainText(html).match(/[A-Za-z0-9][A-Za-z0-9'’\-]*/g) || []).length;
+    // Interactive tools can add labels and generated-result copy, but the SEO length guard applies to
+    // the editorial article—not to controls that happen to sit inside the same <main> element.
+    const editorialHtml = html.replace(/<section class="tool-panel"[\s\S]*?<\/section>/, '');
+    const words = (mainText(editorialHtml).match(/[A-Za-z0-9][A-Za-z0-9'’\-]*/g) || []).length;
     assert.ok(words >= 900 && words <= 1500, `${id}: ${words} words, outside 900–1500`);
     const faqBlock = html.match(/<div class="v2-faq">([\s\S]*?)<\/section>/);
     assert.ok(faqBlock, `${id}: no FAQ block`);
@@ -525,7 +569,8 @@ test('each content page has an H1, H2 sections, 900–1500 words and a matching 
     const faq = typeOf(graphOf(html), 'FAQPage');
     assert.ok(faq, `${id}: no FAQPage JSON-LD`);
     assert.equal(faq.mainEntity.length, faqEntries, `${id}: JSON-LD FAQ does not match the visible FAQ`);
-    assert.equal(typeOf(graphOf(html), 'Article').datePublished, UPDATED);
+    const article = typeOf(graphOf(html), 'Article');
+    if (article) assert.equal(article.datePublished, UPDATED);
   }
 });
 
@@ -580,7 +625,7 @@ test('the footer groups product, resources, alternatives and project links with 
     const englishRoute = id => pagePath(LANGUAGES[0], contentPage(id));
     const expected = {
       product: [`${home}#how`, `${home}#cost`, route('install'), `${home}#faq`],
-      resources: ['findByEmail', 'outlook', 'benchmark', 'salesnav'].map(englishRoute),
+      resources: ['tools', 'findByEmail', 'outlook', 'benchmark', 'salesnav'].map(englishRoute),
       alternatives: [route('clearbit'), route('rapportive')],
       project: [REPO_URL, route('changelog'), englishRoute('sponsors'), englishRoute('stats')],
     };

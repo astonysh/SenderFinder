@@ -27,6 +27,7 @@
       },
       "resources": "资源",
       "resourcesLinks": {
+        "tools": "Free tools",
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",
         "findByEmail": "Find a profile from an email",
@@ -430,6 +431,7 @@
     "usableLabel": "按这个速度，今天 $2 的上限大约能覆盖 {n} 个地址。",
     "hitNote": "找到，指的是返回的资料姓名和邮件里的名字一致。两把 key 的主要差别在于多经常要用到那个贵的兜底。",
     "capNote": "上限依然生效：默认每天 $2、单次 $0.05，都可以在设置里改。估算按 30 天、每个新地址查一次计算。",
+    "toolsNote": "需要按月估算或查看各供应商的明细？使用免费的<a href=\"{{url.enrichmentCalculator}}\" hreflang=\"en\">邮箱数据补全成本计算器</a>（英文）。",
     "fallbackTitle": "几个示例量级",
     "fallbackIntro": "没有 JavaScript 时的显示。同一个模型、同样的价格：发件人里有 {skip} 是个人邮箱或职能邮箱，会被跳过。",
     "fallbackNote": "打开 JavaScript 看你自己的数字。上面这些都只是普通表格，不是花费承诺。",

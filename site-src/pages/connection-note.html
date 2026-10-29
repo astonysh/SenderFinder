@@ -1,0 +1,75 @@
+<div class="v2-page">
+  <div class="v2-wrap">
+    <header class="v2-page-head">
+      <p class="tool-kicker">{{page.kicker}}</p>
+      <h1>{{page.title}}</h1>
+      <p class="v2-lead">{{page.lead}}</p>
+      <p class="v2-note">{{page.updated}}</p>
+    </header>
+
+    <section class="tool-panel" aria-labelledby="connection-tool-title">
+      <div class="tool-panel-head">
+        <h2 id="connection-tool-title">{{page.tool.title}}</h2>
+        <p>{{page.tool.intro}}</p>
+      </div>
+      <form class="tool-form" id="connection-note-form">
+        <div class="tool-fields tool-fields--2">
+          <div class="tool-field">
+            <label for="connection-name">{{page.tool.nameLabel}}</label>
+            <input id="connection-name" name="name" type="text" autocomplete="off" placeholder="{{page.tool.namePlaceholder}}">
+          </div>
+          <div class="tool-field">
+            <label for="connection-context">{{page.tool.contextLabel}}</label>
+            <select id="connection-context" name="context">
+              {{#each page.tool.contexts}}<option value="{{value}}">{{label}}</option>{{/each}}
+            </select>
+          </div>
+          <div class="tool-field tool-field--wide">
+            <label for="connection-detail">{{page.tool.detailLabel}}</label>
+            <input id="connection-detail" name="detail" type="text" autocomplete="off" maxlength="120" placeholder="{{page.tool.detailPlaceholder}}" required>
+            <p class="tool-hint">{{page.tool.detailHint}}</p>
+          </div>
+          <div class="tool-field">
+            <label for="connection-goal">{{page.tool.goalLabel}}</label>
+            <select id="connection-goal" name="goal">
+              {{#each page.tool.goals}}<option value="{{value}}">{{label}}</option>{{/each}}
+            </select>
+          </div>
+          <div class="tool-field">
+            <label for="connection-tone">{{page.tool.toneLabel}}</label>
+            <select id="connection-tone" name="tone">
+              {{#each page.tool.tones}}<option value="{{value}}">{{label}}</option>{{/each}}
+            </select>
+          </div>
+        </div>
+        <div class="tool-actions">
+          <button class="v2-btn v2-btn--default" type="submit">{{page.tool.submit}}</button>
+          <button class="v2-btn v2-btn--outline" type="button" id="connection-note-sample">{{page.tool.sample}}</button>
+        </div>
+      </form>
+      <div class="tool-result" id="connection-note-result" aria-live="polite" hidden>
+        <div class="tool-result-head"><h3>{{page.tool.resultsTitle}}</h3><p>{{page.tool.resultsIntro}}</p></div>
+        <div class="note-results" id="connection-note-options"></div>
+      </div>
+      <p class="tool-fine">{{page.tool.privacy}}</p>
+    </section>
+
+    <article class="v2-prose">
+      {{#each page.sections}}
+      <h2{{#if id}} id="{{id}}"{{/if}}>{{title}}</h2>
+      {{#if blocks}}{{#each blocks}}<p>{{this}}</p>{{/each}}{{/if}}
+      {{#if list}}<ul>{{#each list}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+      {{/each}}
+    </article>
+  </div>
+</div>
+
+<section class="v2-section v2-section--soft" id="faq"><div class="v2-wrap">
+  <header class="v2-head"><h2 class="v2-h2">{{page.faqTitle}}</h2><p>{{page.faqIntro}}</p></header>
+  <div class="v2-faq">{{#each faq}}<details><summary>{{q}}</summary><div class="v2-faq-body"><p>{{a}}</p></div></details>{{/each}}</div>
+</div></section>
+
+<section class="v2-section"><div class="v2-wrap"><div class="v2-cta">
+  <h2>{{page.bottomCta.title}}</h2><p>{{page.bottomCta.body}}</p>
+  <div class="v2-actions"><a class="v2-btn v2-btn--outline" href="{{url.install}}">{{page.bottomCta.action}} <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></div>
+</div></div></section>

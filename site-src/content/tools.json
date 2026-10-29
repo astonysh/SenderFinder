@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "title": "Free LinkedIn and Email Tools | SenderFinder",
+    "description": "Free browser tools to find a LinkedIn profile from an email, write a connection note, parse an email signature and estimate enrichment costs.",
+    "ogTitle": "Free LinkedIn and email tools",
+    "ogDescription": "Small, private tools for the path from an email sender to a useful professional connection."
+  },
+  "page": {
+    "kicker": "Free tools",
+    "title": "Free tools for finding and connecting with email senders",
+    "lead": "Start with the information already in a work email. Build a transparent profile search, extract links from a signature, write a concise connection note or model the cost of an enrichment waterfall.",
+    "updated": "Published 29 October 2026. Every tool runs locally in your browser and needs no account.",
+    "gridLabel": "SenderFinder free tools",
+    "items": [
+      {
+        "label": "Find",
+        "title": "LinkedIn profile search builder",
+        "body": "Turn a work email, name and company into focused Google, Bing and LinkedIn searches without pretending a search query is a database match.",
+        "meta": "Best for one sender · Browser-only · No signup",
+        "action": "Build profile searches",
+        "href": "{{url.findByEmail}}#search-builder"
+      },
+      {
+        "label": "Connect",
+        "title": "LinkedIn connection note generator",
+        "body": "Draft three short connection notes from a real shared context. Each option stays within LinkedIn's 200-character limit.",
+        "meta": "Deterministic templates · No AI upload · Editable output",
+        "action": "Write a connection note",
+        "href": "{{url.connectionNote}}"
+      },
+      {
+        "label": "Extract",
+        "title": "Email signature parser",
+        "body": "Paste plain text or signature HTML and extract LinkedIn, X, website, email and phone details locally in the tab.",
+        "meta": "Local parsing · Copy JSON · No mailbox connection",
+        "action": "Parse a signature",
+        "href": "{{url.signatureParser}}"
+      },
+      {
+        "label": "Plan",
+        "title": "Email enrichment cost calculator",
+        "body": "Estimate monthly spend, expected matches and provider contribution from the same price and hit-rate model used on the SenderFinder homepage.",
+        "meta": "Benchmark-backed · Editable volume · Waterfall breakdown",
+        "action": "Estimate enrichment cost",
+        "href": "{{url.enrichmentCalculator}}"
+      }
+    ],
+    "sections": [
+      {
+        "id": "workflow",
+        "title": "One workflow, not a random tool directory",
+        "blocks": [
+          "These tools follow the same job SenderFinder handles inside Gmail and Outlook: identify the person behind a work email, confirm the likely profile, connect with a specific reason and keep the lookup cost visible. They are intentionally narrow. Generic email marketing, deliverability and profile-writing utilities would attract a different audience.",
+          "The search builder and signature parser are useful before a paid lookup. The connection note generator starts after you have confirmed the profile. The cost calculator is for deciding when manual work stops scaling and which provider-key combination fits the volume."
+        ]
+      },
+      {
+        "id": "privacy",
+        "title": "The input stays in the browser",
+        "blocks": [
+          "The tools do not send form input to SenderFinder and do not load an AI model, analytics script or third-party widget. A search term leaves the page only when you explicitly open a Google, Bing or LinkedIn search link. Do not paste confidential message content into any online tool; the signature parser is designed for the short signature block, not an entire sensitive thread.",
+          "The browser extension is separate. When you configure a provider key, professional lookup fields go directly from the extension to that provider. Read the <a href=\"{{url.privacy}}\">privacy statement</a> before enabling paid lookups."
+        ]
+      },
+      {
+        "id": "next",
+        "title": "When the free route is not enough",
+        "blocks": [
+          "A public-web search can miss a private profile, a signature may contain no social link and a shared address may not belong to one person. SenderFinder uses a cheapest-first enrichment waterfall for the cases that remain, compares the returned name with the mail header and marks a mismatch as uncertain instead of silently presenting it as fact.",
+          "See the <a href=\"{{url.benchmark}}\">50-address email-to-LinkedIn benchmark</a> for measured hit rates and spend, then use the <a href=\"{{url.install}}\">install guide</a> to try the same workflow on your own inbox."
+        ]
+      }
+    ],
+    "faqTitle": "Questions about the free tools",
+    "faqIntro": "What the tools do, where their input goes and what they cannot prove.",
+    "bottomCta": {
+      "title": "Bring the workflow into your inbox",
+      "body": "SenderFinder runs the signature scan and optional provider waterfall beside the email you are already reading.",
+      "action": "Install SenderFinder"
+    }
+  },
+  "faq": [
+    {
+      "q": "Are the SenderFinder tools free?",
+      "a": "Yes. They need no account and make no paid API call. The browser extension is also free; only optional lookups made with a provider key can cost money."
+    },
+    {
+      "q": "Do the tools upload email addresses or signatures?",
+      "a": "No. The forms are processed in the current browser tab. A generated search query goes to the named search service only after you choose to open its link."
+    },
+    {
+      "q": "Can the search builder guarantee the right LinkedIn profile?",
+      "a": "No. It creates useful public-web and LinkedIn searches from the clues you provide. You must compare company, title and location before treating a result as the same person."
+    },
+    {
+      "q": "Why is the enrichment calculator based on a benchmark?",
+      "a": "A provider price alone does not describe a waterfall. The model needs the chance each step answers after earlier steps miss, so SenderFinder uses conditional hit rates measured on its published 50-address run."
+    }
+  ]
+}

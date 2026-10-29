@@ -27,6 +27,7 @@
       },
       "resources": "Resources",
       "resourcesLinks": {
+        "tools": "Free tools",
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",
         "findByEmail": "Find a profile from an email",
@@ -430,6 +431,7 @@
     "usableLabel": "Today's $2 cap would cover about {n} addresses at this rate.",
     "hitNote": "Found means a profile came back with a matching name. The two keys differ mainly in how often the expensive fallback is needed.",
     "capNote": "Caps still apply: $2 per day and $0.05 per lookup by default, both adjustable in settings. The estimate assumes 30 days and one lookup per new address.",
+    "toolsNote": "Need monthly volumes or the provider-by-provider breakdown? Use the free <a href=\"{{url.enrichmentCalculator}}\" hreflang=\"en\">email enrichment cost calculator</a>.",
     "fallbackTitle": "Example volumes",
     "fallbackIntro": "Shown without JavaScript. Same model, same prices: {skip} of the senders are personal or role addresses and are skipped.",
     "fallbackNote": "Turn on JavaScript for your own numbers. Everything above is a plain table, not a promise of spend.",

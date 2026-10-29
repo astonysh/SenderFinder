@@ -1,0 +1,70 @@
+<div class="v2-page">
+  <div class="v2-wrap">
+    <header class="v2-page-head">
+      <p class="tool-kicker">{{page.kicker}}</p>
+      <h1>{{page.title}}</h1>
+      <p class="v2-lead">{{page.lead}}</p>
+      <p class="v2-note">{{page.updated}}</p>
+    </header>
+
+    <section class="tool-panel" aria-labelledby="enrichment-tool-title">
+      <div class="tool-panel-head"><h2 id="enrichment-tool-title">{{page.tool.title}}</h2><p>{{page.tool.intro}}</p></div>
+      <form class="tool-form" id="enrichment-calculator">
+        <div class="tool-fields tool-fields--3">
+          <div class="tool-field">
+            <label for="enrich-volume">{{page.tool.volumeLabel}}</label>
+            <input id="enrich-volume" name="volume" type="number" min="1" max="1000000" step="1" value="1000" inputmode="numeric">
+          </div>
+          <div class="tool-field">
+            <label for="enrich-mode">{{page.tool.modeLabel}}</label>
+            <select id="enrich-mode" name="mode">
+              {{#each page.tool.modes}}<option value="{{value}}">{{label}}</option>{{/each}}
+            </select>
+          </div>
+          <div class="tool-field">
+            <label for="enrich-skip">{{page.tool.skipLabel}} <output id="enrich-skip-output">20%</output></label>
+            <input id="enrich-skip" name="skip" type="range" min="0" max="95" step="5" value="20">
+            <p class="tool-hint">{{page.tool.skipHint}}</p>
+          </div>
+        </div>
+      </form>
+
+      <div class="tool-metrics" aria-live="polite">
+        <div class="tool-metric"><span>{{page.tool.monthlyLabel}}</span><strong id="enrich-monthly">{{page.tool.defaults.monthly}}</strong></div>
+        <div class="tool-metric"><span>{{page.tool.perThousandLabel}}</span><strong id="enrich-per-thousand">{{page.tool.defaults.perThousand}}</strong></div>
+        <div class="tool-metric"><span>{{page.tool.hitRateLabel}}</span><strong id="enrich-hit-rate">{{page.tool.defaults.hitRate}}</strong></div>
+        <div class="tool-metric"><span>{{page.tool.foundLabel}}</span><strong id="enrich-found">{{page.tool.defaults.found}}</strong></div>
+        <div class="tool-metric"><span>{{page.tool.costPerFoundLabel}}</span><strong id="enrich-cost-per-found">{{page.tool.defaults.costPerFound}}</strong></div>
+        <div class="tool-metric"><span>{{page.tool.unresolvedLabel}}</span><strong id="enrich-unresolved">{{page.tool.defaults.unresolved}}</strong></div>
+      </div>
+
+      <div class="tool-table-wrap">
+        <table class="tool-table">
+          <caption>{{page.tool.breakdownTitle}}</caption>
+          <thead><tr><th scope="col">{{page.tool.providerLabel}}</th><th scope="col">{{page.tool.reachedLabel}}</th><th scope="col">{{page.tool.matchesLabel}}</th><th scope="col">{{page.tool.spendLabel}}</th></tr></thead>
+          <tbody id="enrich-breakdown">{{#each page.tool.defaults.rows}}<tr><td>{{provider}}</td><td>{{reached}}</td><td>{{matches}}</td><td>{{spend}}</td></tr>{{/each}}</tbody>
+        </table>
+      </div>
+      <noscript><p class="tool-note">{{page.tool.defaults.noscript}}</p></noscript>
+      <p class="tool-fine">{{page.tool.disclaimer}}</p>
+    </section>
+
+    <article class="v2-prose">
+      {{#each page.sections}}
+      <h2{{#if id}} id="{{id}}"{{/if}}>{{title}}</h2>
+      {{#if blocks}}{{#each blocks}}<p>{{this}}</p>{{/each}}{{/if}}
+      {{#if list}}<ul>{{#each list}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+      {{/each}}
+    </article>
+  </div>
+</div>
+
+<section class="v2-section v2-section--soft" id="faq"><div class="v2-wrap">
+  <header class="v2-head"><h2 class="v2-h2">{{page.faqTitle}}</h2><p>{{page.faqIntro}}</p></header>
+  <div class="v2-faq">{{#each faq}}<details><summary>{{q}}</summary><div class="v2-faq-body"><p>{{a}}</p></div></details>{{/each}}</div>
+</div></section>
+
+<section class="v2-section"><div class="v2-wrap"><div class="v2-cta">
+  <h2>{{page.bottomCta.title}}</h2><p>{{page.bottomCta.body}}</p>
+  <div class="v2-actions"><a class="v2-btn v2-btn--outline" href="{{url.install}}">{{page.bottomCta.action}} <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></div>
+</div></div></section>

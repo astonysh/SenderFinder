@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "title": "Email enrichment cost calculator (free) | SenderFinder",
+    "description": "Model monthly email enrichment cost, expected match rate and provider spend for a waterfall. Free, in-browser, based on a published benchmark.",
+    "ogTitle": "Free email enrichment cost calculator",
+    "ogDescription": "Model waterfall enrichment cost, matches and unresolved contacts before choosing providers."
+  },
+  "page": {
+    "kicker": "Free enrichment planning tool",
+    "title": "Email enrichment cost calculator",
+    "lead": "Estimate what a waterfall of email enrichment APIs may cost each month, how many inputs may return a matching profile and where the spend occurs.",
+    "updated": "Model updated 29 October 2026. Estimates are planning scenarios, not vendor quotes or guaranteed results.",
+    "tool": {
+      "title": "Model your monthly enrichment volume",
+      "intro": "Change the volume, provider-key setup and share of already-known senders. Results update locally from the same model used by SenderFinder's public benchmark pages.",
+      "volumeLabel": "New email addresses per month",
+      "modeLabel": "Provider keys available",
+      "modes": [
+        {
+          "value": "both",
+          "label": "treg + Monid (full waterfall)"
+        },
+        {
+          "value": "treg",
+          "label": "treg only"
+        },
+        {
+          "value": "monid",
+          "label": "Monid only"
+        }
+      ],
+      "skipLabel": "Already known or cached:",
+      "skipHint": "These addresses skip paid enrichment. The default planning assumption is 20%.",
+      "monthlyLabel": "Estimated monthly spend",
+      "perThousandLabel": "Cost per 1,000 inputs",
+      "hitRateLabel": "Expected match rate",
+      "foundLabel": "Expected matches",
+      "costPerFoundLabel": "Cost per match",
+      "unresolvedLabel": "Expected unresolved",
+      "breakdownTitle": "Expected provider calls, matches and spend",
+      "providerLabel": "Provider step",
+      "reachedLabel": "Reached",
+      "matchesLabel": "Matches",
+      "spendLabel": "Spend",
+      "disclaimer": "The model uses conditional hit rates and catalogue prices documented in SenderFinder's 50-address benchmark. Your audience, account plan, credits, validation rules and provider pricing can produce different results. No data leaves this page.",
+      "noscript": "This calculator needs JavaScript to update. The figures shown are the default scenario: {volume} new addresses per month, both provider keys, {skip} of addresses skipped."
+    },
+    "sections": [
+      {
+        "id": "how-it-works",
+        "title": "How to calculate email enrichment waterfall cost",
+        "blocks": [
+          "A waterfall sends an address to the first provider, stops when a usable match is found and forwards only unresolved addresses to later steps. Cost therefore depends on both price and position: a more expensive provider near the end may receive only a small share of the original volume.",
+          "This calculator applies each step's conditional match rate to the contacts that reach it. Successful-match billing is charged on matches; call-based billing is charged on every address reaching that step. The provider table makes that arithmetic visible instead of hiding it behind a single total."
+        ]
+      },
+      {
+        "id": "assumptions",
+        "title": "What the estimates include",
+        "list": [
+          "The published provider order, catalogue prices and benchmark step hit rates used by SenderFinder's current cost model.",
+          "A configurable share of contacts that are already known or cached and therefore avoid a paid lookup.",
+          "Expected values for planning. Individual batches are discrete and can differ substantially, especially at low volume.",
+          "Matches with the expected name under the benchmark's validation rules; a returned profile is not automatically counted as a correct match."
+        ]
+      },
+      {
+        "id": "compare",
+        "title": "Compare cost per match, not only cost per API call",
+        "blocks": [
+          "A cheap call with a low match rate can be useful early in a waterfall because every successful answer prevents a later call. A higher-priced step can still improve total coverage when it runs only on the unresolved remainder. Compare expected cost per matching profile alongside the unresolved count before removing a provider.",
+          "Read the <a href=\"{{url.benchmark}}\">email enrichment API benchmark</a> for the sample, validation rules, limitations and source values behind this model. Re-run the calculation with your own measured rates before making a purchasing decision."
+        ]
+      },
+      {
+        "id": "senderfinder",
+        "title": "Use the same waterfall inside the inbox",
+        "blocks": [
+          "SenderFinder adds a sidebar to Gmail and Outlook. When an email address is not already known, the extension can try the configured enrichment steps in sequence, cache the outcome in the browser and show the LinkedIn profile beside the message.",
+          "The calculator does not call any provider or require an API key. It is a planning companion for deciding which keys to configure in the extension."
+        ]
+      },
+      {
+        "id": "related",
+        "title": "Other free tools",
+        "list": [
+          "<a href=\"{{url.findByEmail}}#search-builder\">LinkedIn profile search builder</a> — turn a work email, name and company into focused Google, Bing and LinkedIn searches.",
+          "<a href=\"{{url.signatureParser}}\">Email signature parser</a> — extract LinkedIn, X, website and phone details from a pasted signature, locally in your browser.",
+          "<a href=\"{{url.connectionNote}}\">LinkedIn connection note generator</a> — write a short, specific invitation once you have confirmed the profile.",
+          "<a href=\"{{url.tools}}\">All free email and LinkedIn tools</a> — the full set, every one running in your browser with no account."
+        ]
+      }
+    ],
+    "faqTitle": "Email enrichment cost calculator FAQ",
+    "faqIntro": "What the forecast means and where its limits are.",
+    "bottomCta": {
+      "title": "Put the planned waterfall in your inbox",
+      "body": "Install SenderFinder, add only the provider keys you choose and keep lookup history in your browser.",
+      "action": "Install SenderFinder"
+    }
+  },
+  "faq": [
+    {
+      "q": "Is this a vendor price quote?",
+      "a": "No. It is an independent planning estimate using catalogue prices and benchmark rates documented by SenderFinder. Confirm current prices, credit rules and limits with each provider."
+    },
+    {
+      "q": "What is a waterfall enrichment strategy?",
+      "a": "It tries providers in sequence and stops after a usable match. Later providers receive only the contacts that earlier steps could not resolve."
+    },
+    {
+      "q": "Why can my real hit rate differ?",
+      "a": "Match rates depend on geography, company type, email quality, provider coverage and validation rules. A 50-address benchmark cannot represent every audience."
+    },
+    {
+      "q": "Does the calculator upload my volume or provider choice?",
+      "a": "No. The calculations run in your browser and the page makes no enrichment API request."
+    }
+  ]
+}

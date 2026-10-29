@@ -27,6 +27,7 @@
       },
       "resources": "Ressourcen",
       "resourcesLinks": {
+        "tools": "Free tools",
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",
         "findByEmail": "Find a profile from an email",
@@ -430,6 +431,7 @@
     "usableLabel": "Das heutige Tagesbudget von $2 würde bei dieser Rate etwa {n} Adressen abdecken.",
     "hitNote": "„Gefunden“ heißt, dass ein Profil mit passendem Namen zurückkam. Die beiden Schlüssel unterscheiden sich vor allem darin, wie oft der teure Fallback gebraucht wird.",
     "capNote": "Die Obergrenzen gelten weiter: $2 pro Tag und $0.05 pro Abfrage als Standard, beides in den Einstellungen änderbar. Die Schätzung geht von 30 Tagen und einer Abfrage pro neuer Adresse aus.",
+    "toolsNote": "Monatliche Mengen oder die Aufschlüsselung pro Anbieter? Nutze den kostenlosen <a href=\"{{url.enrichmentCalculator}}\" hreflang=\"en\">E-Mail-Enrichment-Kostenrechner</a> (Englisch).",
     "fallbackTitle": "Beispielvolumen",
     "fallbackIntro": "Angezeigt ohne JavaScript. Gleiches Modell, gleiche Preise: {skip} der Absender sind private Adressen oder Funktionsadressen und werden übersprungen.",
     "fallbackNote": "Schalte JavaScript ein für deine eigenen Zahlen. Alles oben ist eine schlichte Tabelle, kein Versprechen über Ausgaben.",

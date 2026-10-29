@@ -936,4 +936,28 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/stats"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/stats"/>
   </url>
+  <url>
+    <loc>https://senderfinder.com/tools</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/tools"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/tools"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/tools/linkedin-connection-note-generator</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/tools/linkedin-connection-note-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/tools/linkedin-connection-note-generator"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/tools/email-signature-parser</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/tools/email-signature-parser"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/tools/email-signature-parser"/>
+  </url>
+  <url>
+    <loc>https://senderfinder.com/tools/email-enrichment-cost-calculator</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://senderfinder.com/tools/email-enrichment-cost-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://senderfinder.com/tools/email-enrichment-cost-calculator"/>
+  </url>
 </urlset>

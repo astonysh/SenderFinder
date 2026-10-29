@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinkedIn connection note generator | SenderFinder</title>
+  <meta name="description" content="Write three short LinkedIn connection notes from a real shared context. Free, editable, under 200 characters and processed entirely in your browser.">
+  <link rel="canonical" href="https://senderfinder.com/tools/linkedin-connection-note-generator">
+  <link rel="alternate" hreflang="en" href="https://senderfinder.com/tools/linkedin-connection-note-generator">
+  <link rel="alternate" hreflang="x-default" href="https://senderfinder.com/tools/linkedin-connection-note-generator">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SenderFinder">
+  <meta property="og:title" content="Free LinkedIn connection note generator">
+  <meta property="og:description" content="Turn a real reason for connecting into three concise, editable LinkedIn invitation notes.">
+  <meta property="og:url" content="https://senderfinder.com/tools/linkedin-connection-note-generator">
+  <meta property="og:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="800">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free LinkedIn connection note generator">
+  <meta name="twitter:description" content="Turn a real reason for connecting into three concise, editable LinkedIn invitation notes.">
+  <meta name="twitter:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
+  <meta name="color-scheme" content="light dark">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"en","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"],"contactPoint":{"@type":"ContactPoint","email":"tony@senderfinder.com","contactType":"sponsorship"}},{"@type":"BreadcrumbList","@id":"https://senderfinder.com/tools/linkedin-connection-note-generator#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://senderfinder.com/"},{"@type":"ListItem","position":2,"name":"LinkedIn connection note generator","item":"https://senderfinder.com/tools/linkedin-connection-note-generator"}]},{"@type":"WebApplication","@id":"https://senderfinder.com/tools/linkedin-connection-note-generator#tool","name":"LinkedIn connection note generator","description":"Write three short LinkedIn connection notes from a real shared context. Free, editable, under 200 characters and processed entirely in your browser.","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript in a modern web browser","url":"https://senderfinder.com/tools/linkedin-connection-note-generator","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"FAQPage","@id":"https://senderfinder.com/tools/linkedin-connection-note-generator#faq","mainEntity":[{"@type":"Question","name":"What is the LinkedIn connection note character limit?","acceptedAnswer":{"@type":"Answer","text":"LinkedIn's help page listed 200 characters when this tool was checked on 29 October 2026. The generator keeps every option at or below that limit, but the counter in your own invitation dialog is authoritative."}},{"@type":"Question","name":"Does this tool use AI or upload my context?","acceptedAnswer":{"@type":"Answer","text":"No. It combines inspected local templates in your browser. The recipient name, context and detail are not sent to SenderFinder or an AI provider."}},{"@type":"Question","name":"Will SenderFinder send a LinkedIn invitation automatically?","acceptedAnswer":{"@type":"Answer","text":"No. The extension can open the profile and fill an editable note after you choose Connect, but it never clicks Connect or Send. You remain responsible for reviewing and sending the invitation."}},{"@type":"Question","name":"Should a connection request include a sales pitch?","acceptedAnswer":{"@type":"Answer","text":"Usually not. Use the invitation to establish recognisable context. Save a detailed offer, request or proposal for a later conversation after the person chooses to connect."}}]}]}</script>
+  <script src="../assets/theme-boot.js"></script>
+  <link rel="stylesheet" href="../assets/app.css">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/icon-128.png" type="image/png" sizes="128x128">
+  <link rel="apple-touch-icon" href="../assets/icon-128.png">
+  <script type="module" src="../assets/theme.js"></script>
+  <script type="module" src="../assets/connection-note.js"></script>
+</head>
+<body class="v2">
+<svg class="icon-sprite" aria-hidden="true" focusable="false" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+<!-- One stroke style, 24×24, drawn for this site. Inlined into every page by scripts/build-site.js. -->
+<symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></symbol>
+<symbol id="i-puzzle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h2.2a1.8 1.8 0 1 1 3.6 0H17v3.2a1.8 1.8 0 1 0 0 3.6V14h-3.2a1.8 1.8 0 1 1-3.6 0H7v-3.2a1.8 1.8 0 1 0 0-3.6V4z"/><path d="M7 14v6h10v-6"/></symbol>
+<symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4"/><path d="m11 11 8 8"/><path d="m15.5 15.5 2 2"/><path d="m17.5 13.5 2 2"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.8 2.8L16 9.2"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+<symbol id="i-mail-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 5H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7"/><path d="m3.5 7 8.5 6 3-2.1"/><path d="M4 20 20 4"/></symbol>
+<symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M16 14.5h2"/><path d="M6 6V5a2 2 0 0 1 2.4-2l8.6 2"/></symbol>
+<symbol id="i-calculator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 7h8"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 19 6v6c0 4-2.9 7.2-7 9-4.1-1.8-7-5-7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/><path d="M12 14.5v2"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.2 12h17.6"/><path d="M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.2 8.2 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></symbol>
+<symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12.5" rx="2"/><path d="M9 20h6M12 16.5V20"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.6 2.3c-.7.3-1.2 1-1.2 1.8v.4"/><path d="M12 17h.01"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 3.5a5 5 0 0 0-4.3 7.5L3.6 18.6l1.8 1.8L13 12.8a5 5 0 0 0 7.5-4.3l-3 3-2.3-2.3z"/></symbol>
+<symbol id="i-cookie" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9.6" r="1.1" fill="currentColor" stroke="none"/><circle cx="14.4" cy="8.6" r="1.1" fill="currentColor" stroke="none"/><circle cx="15.2" cy="14" r="1.1" fill="currentColor" stroke="none"/><circle cx="10.2" cy="15.2" r="1.1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-browser" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M2.5 8.5h19"/><path d="M5.5 6.3h.01M8 6.3h.01"/></symbol>
+<symbol id="i-provider" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 18.5a4.2 4.2 0 0 1-.3-8.4 5.6 5.6 0 0 1 10.7 1.4 3.6 3.6 0 0 1-.9 7z"/><path d="M12 16v-4"/><path d="m10.2 13.3 1.8-1.8 1.8 1.8"/></symbol>
+<symbol id="i-server-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3.5" width="18" height="6.5" rx="2"/><rect x="3" y="14" width="18" height="6.5" rx="2"/><path d="M6 6.7h.01M6 17.2h.01"/><path d="M3.5 21 20.5 2.5"/></symbol>
+<symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7.5" ry="3"/><path d="M4.5 6v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6"/><path d="M4.5 12v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"/></symbol>
+<symbol id="i-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16"/><path d="M9.8 5.3A9.5 9.5 0 0 1 12 5c5 0 9 4.4 9 7a11 11 0 0 1-2.3 3.3"/><path d="M6.4 7.4A13.4 13.4 0 0 0 3 12c0 2.6 4 7 9 7a9.7 9.7 0 0 0 3.7-.7"/><path d="M10.4 10.5a2.2 2.2 0 0 0 3.1 3.1"/></symbol>
+<symbol id="i-cursor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5 18.5 12l-5.2 1.2 2.9 6.3-2 1-2.9-6.4-3.6 3.6z"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.6 14.4 14.4 9.6"/><path d="M10.8 6.9 12.4 5.2a3.8 3.8 0 0 1 5.4 5.4l-1.7 1.6"/><path d="M13.2 17.1l-1.6 1.7a3.8 3.8 0 0 1-5.4-5.4l1.7-1.6"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M8 20v-5"/><path d="M13 20V9"/><path d="M18 20v-8"/></symbol>
+<symbol id="i-github" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.1c-3.2.7-3.88-1.4-3.88-1.4-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .3.21.66.8.55C20.71 21.39 24 17.08 24 12 24 5.73 18.27.5 12 .5z"/></symbol>
+<symbol id="i-gmail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5 12 14l9-6.5"/><rect x="3" y="5" width="18" height="14" rx="2"/></symbol>
+<symbol id="i-outlook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/><circle cx="12" cy="13" r="2.6"/></symbol>
+<symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.6 10v7"/><path d="M7.6 7.2h.01"/><path d="M11.6 17v-4a2.5 2.5 0 0 1 5 0v4"/></symbol>
+<symbol id="i-chrome" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.6"/><path d="M12 3.1h7.7"/><path d="m4.5 7.7 3.9 6.7"/><path d="m19.5 7.7-3.9 6.7"/></symbol>
+<symbol id="i-arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v14"/><path d="m6 12.5 6 6 6-6"/></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h14"/><path d="m12.5 6 6 6-6 6"/></symbol>
+<symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18.5 14v4.5a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2H10"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.2 20c0-3.2 2.6-5.4 5.8-5.4s5.8 2.2 5.8 5.4"/><path d="M16.2 5.6a3.2 3.2 0 0 1 0 5.8"/><path d="M18.2 20c0-2.2-.8-3.9-2.2-4.9"/></symbol>
+
+<!-- Microsoft Edge: Font Awesome Free, CC BY 4.0; see THIRD_PARTY_NOTICES.md. -->
+<symbol id="i-edge" viewBox="0 0 512 512" fill="currentColor" stroke="none"><path d="M120.1 37.44C161.1 12.23 207.7-.7753 255 .0016C423 .0016 512 123.8 512 219.5C511.9 252.2 499 283.4 476.1 306.7C453.2 329.9 422.1 343.2 389.4 343.7C314.2 343.7 297.9 320.6 297.9 311.7C297.9 307.9 299.1 305.5 302.7 302.3L303.7 301.1L304.1 299.5C314.6 288 320 273.3 320 257.9C320 179.2 237.8 115.2 136 115.2C98.46 114.9 61.46 124.1 28.48 142.1C55.48 84.58 111.2 44.5 119.8 38.28C120.6 37.73 120.1 37.44 120.1 37.44V37.44zM135.7 355.5C134.3 385.5 140.3 415.5 152.1 442.7C165.7 469.1 184.8 493.7 208.6 512C149.1 500.5 97.11 468.1 59.2 422.7C21.12 376.3 0 318.4 0 257.9C0 206.7 62.4 163.5 136 163.5C172.6 162.9 208.4 174.4 237.8 196.2L234.2 197.4C182.7 215 135.7 288.1 135.7 355.5V355.5zM469.8 400L469.1 400.1C457.3 418.9 443.2 435.2 426.9 449.6C396.1 477.6 358.8 495.1 318.1 499.5C299.5 499.8 281.3 496.3 264.3 488.1C238.7 477.8 217.2 458.1 202.7 435.1C188.3 411.2 181.6 383.4 183.7 355.5C183.1 335.4 189.1 315.2 198.7 297.3C212.6 330.4 236.2 358.6 266.3 378.1C296.4 397.6 331.8 407.6 367.7 406.7C398.7 407 429.8 400 457.9 386.2L459.8 385.3C463.7 383 467.5 381.4 471.4 385.3C475.9 390.2 473.2 394.5 470.2 399.3C470 399.5 469.9 399.8 469.8 400V400z"/></symbol>
+</svg>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="v2-nav">
+    <div class="v2-wrap">
+      <div class="v2-nav-inner">
+        <a class="v2-brand" href="/">
+          <img src="../assets/icon-128.png" alt="" width="32" height="32">
+          <span>SenderFinder</span>
+        </a>
+
+        <nav class="v2-nav-links" aria-label="Main">
+          <ul>
+            <li><a href="/#how">How it works</a></li>
+            <li><a href="/#cost">Pricing</a></li>
+            <li><a href="/install">Install</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/senderfinder/dkjlkejkbapohkhneecbhnjifdjeihfp" class="v2-store-link" aria-label="Add to Chrome" title="Add to Chrome" target="_blank" rel="noopener noreferrer"><img src="../assets/icons/browser-chrome.svg" alt="" width="20" height="20"></a></li>
+            <li><a href="https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki" class="v2-store-link" aria-label="Add to Microsoft Edge" title="Add to Microsoft Edge" target="_blank" rel="noopener noreferrer"><img src="../assets/icons/browser-edge.svg" alt="" width="20" height="20"></a></li>
+          </ul>
+        </nav>
+
+        <div class="v2-nav-tools header-tools">
+          <button type="button" class="theme-switch" data-label-light="Appearance: Light" data-label-dark="Appearance: Dark" aria-label="Appearance"><svg class="i theme-icon theme-icon-light" aria-hidden="true"><use href="#i-sun"/></svg><svg class="i theme-icon theme-icon-dark" aria-hidden="true"><use href="#i-moon"/></svg></button>
+          <details class="lang-switch">
+            <summary aria-label="Language: English" title="Language: English"><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg></summary>
+            <div class="lang-menu">
+              <nav aria-label="Language">
+                <ul>
+                <li><a href="/tools/linkedin-connection-note-generator" hreflang="en" lang="en" aria-current="page">English</a></li>
+                <li><a href="/zh-cn/" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
+                <li><a href="/zh-tw/" hreflang="zh-TW" lang="zh-TW">繁體中文</a></li>
+                <li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li>
+                <li><a href="/ko/" hreflang="ko" lang="ko">한국어</a></li>
+                <li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li>
+                <li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li>
+                <li><a href="/es/" hreflang="es" lang="es">Español</a></li>
+                <li><a href="/it/" hreflang="it" lang="it">Italiano</a></li>
+                <li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+                </ul>
+              </nav>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<main id="main">
+<div class="v2-page">
+  <div class="v2-wrap">
+    <header class="v2-page-head">
+      <p class="tool-kicker">Free LinkedIn tool</p>
+      <h1>LinkedIn connection note generator</h1>
+      <p class="v2-lead">Write a short invitation for someone who emailed you, met you or shared something useful. The generator produces three editable options and keeps every draft within 200 characters.</p>
+      <p class="v2-note">Published 29 October 2026. No signup, AI call or automatic sending.</p>
+    </header>
+
+    <section class="tool-panel" aria-labelledby="connection-tool-title">
+      <div class="tool-panel-head">
+        <h2 id="connection-tool-title">Write the note</h2>
+        <p>Use one specific detail the recipient will recognise. The templates combine it with your context and goal; they never invent a compliment, event or relationship.</p>
+      </div>
+      <form class="tool-form" id="connection-note-form">
+        <div class="tool-fields tool-fields--2">
+          <div class="tool-field">
+            <label for="connection-name">Recipient's first name (optional)</label>
+            <input id="connection-name" name="name" type="text" autocomplete="off" placeholder="Jane">
+          </div>
+          <div class="tool-field">
+            <label for="connection-context">How you know them</label>
+            <select id="connection-context" name="context">
+              <option value="email">They emailed me</option><option value="meeting">We met or had a call</option><option value="event">We attended the same event</option><option value="content">I read their post or talk</option><option value="introduction">We were introduced</option><option value="work">We worked together</option>
+            </select>
+          </div>
+          <div class="tool-field tool-field--wide">
+            <label for="connection-detail">Specific detail</label>
+            <input id="connection-detail" name="detail" type="text" autocomplete="off" maxlength="120" placeholder="privacy-first email enrichment" required>
+            <p class="tool-hint">Name the topic only, for example the subject of the email, the meeting, the post or the project. The generator adds the wording around it.</p>
+          </div>
+          <div class="tool-field">
+            <label for="connection-goal">Why connect</label>
+            <select id="connection-goal" name="goal">
+              <option value="stay">Stay connected</option><option value="continue">Continue the conversation</option><option value="learn">Follow their work</option><option value="collaborate">Explore a collaboration</option>
+            </select>
+          </div>
+          <div class="tool-field">
+            <label for="connection-tone">Tone</label>
+            <select id="connection-tone" name="tone">
+              <option value="warm">Warm</option><option value="professional">Professional</option><option value="concise">Concise</option>
+            </select>
+          </div>
+        </div>
+        <div class="tool-actions">
+          <button class="v2-btn v2-btn--default" type="submit">Generate three notes</button>
+          <button class="v2-btn v2-btn--outline" type="button" id="connection-note-sample">Use an example</button>
+        </div>
+      </form>
+      <div class="tool-result" id="connection-note-result" aria-live="polite" hidden>
+        <div class="tool-result-head"><h3>Editable options</h3><p>Read each note aloud, replace anything that does not sound like you, then copy one manually.</p></div>
+        <div class="note-results" id="connection-note-options"></div>
+      </div>
+      <p class="tool-fine">Everything you type stays in this tab. SenderFinder does not save the input, contact LinkedIn or send a connection request.</p>
+    </section>
+
+    <article class="v2-prose">
+      
+      <h2 id="what-to-write">What to write in a LinkedIn connection request message</h2>
+      <p>A useful connection note answers two questions quickly: how does this person know you, and why does connecting make sense now? A reference to the email they just sent is stronger than a generic compliment because the recipient can verify it immediately.</p><p>LinkedIn's current help page says a personalised invitation can contain up to 200 characters and recommends explaining how you found the person or what you share, why you want to connect and using a clear, polite tone. Every option the generator produces fits within that 200-character limit. The same page notes that free members can send only a limited number of invitations with a note each month (three when checked), while Premium members are not limited, so each note you do send should carry a recognisable reason. <a href="https://www.linkedin.com/help/linkedin/answer/a563153" target="_blank" rel="noopener noreferrer">Check LinkedIn's current invitation guidance</a> before relying on a limit, because product rules can change.</p>
+      
+      
+      <h2 id="examples">Connection note examples by situation</h2>
+      
+      <ul><li><strong>After an email:</strong> mention the actual topic, not merely that they emailed you.</li><li><strong>After a meeting:</strong> name the conversation or decision you want to remember.</li><li><strong>After an event:</strong> use the session, roundtable or introduction rather than the event name alone.</li><li><strong>After reading a post:</strong> identify the idea that changed or sharpened your view; avoid empty praise.</li><li><strong>For collaboration:</strong> connect first and keep a detailed proposal for the follow-up conversation.</li></ul>
+      
+      <h2 id="avoid">What the generator deliberately avoids</h2>
+      <p>It does not scrape a profile, read a private message, invent shared interests or send anything automatically. It also avoids a full sales pitch inside the invitation. A connection request is a small piece of context, not a substitute for a proposal or a consent signal for future outreach.</p><p>The result is deterministic: the same inputs produce the same family of notes. That keeps the tool private and makes every phrase inspectable, but you still need to edit the output for your voice and relationship.</p>
+      
+      
+      <h2 id="senderfinder">From an email sender to a professional connection</h2>
+      <p>If you have the email but not the profile, start with the <a href="/find-linkedin-profile-from-email#search-builder">free LinkedIn profile search builder</a>. Once you confirm the right person, this page handles the note. SenderFinder brings those steps into Gmail and Outlook: the side panel shows the likely profile, and the Connect action can fill your editable note template. It never clicks Connect or Send for you.</p><p>For the full flow, read <a href="/find-linkedin-profile-from-email">how to find a LinkedIn profile from an email</a> or browse the other <a href="/tools">free email and LinkedIn tools</a>.</p>
+      
+      
+      <h2 id="related">Other free tools</h2>
+      
+      <ul><li><a href="/find-linkedin-profile-from-email#search-builder">LinkedIn profile search builder</a> — turn a work email, name and company into focused Google, Bing and LinkedIn searches.</li><li><a href="/tools/email-signature-parser">Email signature parser</a> — extract LinkedIn, X, website and phone details from a pasted signature, locally in your browser.</li><li><a href="/tools/email-enrichment-cost-calculator">Email enrichment cost calculator</a> — model monthly spend, match rate and provider contribution before paying for lookups.</li><li><a href="/tools">All free email and LinkedIn tools</a> — the full set, every one running in your browser with no account.</li></ul>
+      
+    </article>
+  </div>
+</div>
+
+<section class="v2-section v2-section--soft" id="faq"><div class="v2-wrap">
+  <header class="v2-head"><h2 class="v2-h2">LinkedIn connection note questions</h2><p>Limits, privacy and when a short invitation is the wrong format.</p></header>
+  <div class="v2-faq"><details><summary>What is the LinkedIn connection note character limit?</summary><div class="v2-faq-body"><p>LinkedIn's help page listed 200 characters when this tool was checked on 29 October 2026. The generator keeps every option at or below that limit, but the counter in your own invitation dialog is authoritative.</p></div></details><details><summary>Does this tool use AI or upload my context?</summary><div class="v2-faq-body"><p>No. It combines inspected local templates in your browser. The recipient name, context and detail are not sent to SenderFinder or an AI provider.</p></div></details><details><summary>Will SenderFinder send a LinkedIn invitation automatically?</summary><div class="v2-faq-body"><p>No. The extension can open the profile and fill an editable note after you choose Connect, but it never clicks Connect or Send. You remain responsible for reviewing and sending the invitation.</p></div></details><details><summary>Should a connection request include a sales pitch?</summary><div class="v2-faq-body"><p>Usually not. Use the invitation to establish recognisable context. Save a detailed offer, request or proposal for a later conversation after the person chooses to connect.</p></div></details></div>
+</div></section>
+
+<section class="v2-section"><div class="v2-wrap"><div class="v2-cta">
+  <h2>Find the sender before you write the note</h2><p>SenderFinder shows the likely LinkedIn profile beside Gmail or Outlook and lets you review the connection note before LinkedIn receives anything.</p>
+  <div class="v2-actions"><a class="v2-btn v2-btn--outline" href="/install">Install SenderFinder <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></div>
+</div></div></section>
+</main>
+
+  <footer class="v2-foot">
+    <div class="v2-wrap v2-foot-inner">
+      <div class="v2-foot-top">
+        <a class="v2-brand" href="/">
+          <img src="../assets/icon-128.png" alt="" width="32" height="32">
+          <span>SenderFinder</span>
+        </a>
+        <p class="v2-foot-privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg><span>No SenderFinder server in the lookup path. Your keys and history stay in your browser.</span></p>
+      </div>
+      <div class="v2-foot-grid">
+        <nav class="v2-foot-product" aria-label="Product">
+          <p class="v2-foot-head">Product</p>
+          <ul class="v2-foot-links">
+            <li><a href="/#how">How it works</a></li>
+            <li><a href="/#cost">Pricing</a></li>
+            <li><a href="/install">Install</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+          </ul>
+        </nav>
+        <nav class="v2-foot-resources" aria-label="Resources">
+          <p class="v2-foot-head">Resources</p>
+          <ul class="v2-foot-links">
+            <li lang="en"><a href="/tools" hreflang="en">Free tools</a></li>
+            <li lang="en"><a href="/find-linkedin-profile-from-email" hreflang="en">Find a profile from an email</a></li>
+            <li lang="en"><a href="/outlook-linkedin-sidebar" hreflang="en">Outlook sidebar</a></li>
+            <li lang="en"><a href="/email-enrichment-api-benchmark" hreflang="en">Email enrichment benchmark</a></li>
+            <li lang="en"><a href="/linkedin-sales-navigator-gmail-alternative" hreflang="en">Sales Navigator for Gmail</a></li>
+          </ul>
+        </nav>
+        <nav class="v2-foot-alternatives" aria-label="Alternatives">
+          <p class="v2-foot-head">Alternatives</p>
+          <ul class="v2-foot-links">
+            <li><a href="/clearbit-connect-alternative">Clearbit Connect alternative</a></li>
+            <li><a href="/rapportive-alternative">Rapportive alternative</a></li>
+          </ul>
+        </nav>
+        <nav class="v2-foot-project" aria-label="Project">
+          <p class="v2-foot-head">Project</p>
+          <ul class="v2-foot-links">
+            <li><a href="https://github.com/astonysh/SenderFinder" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="/changelog">Changelog</a></li>
+            <li lang="en"><a href="/sponsors" hreflang="en">Sponsors</a></li>
+            <li lang="en"><a href="/stats" hreflang="en">Usage statistics</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="v2-foot-bottom">
+        <p>SenderFinder is open-source software released under the AGPL-3.0 license.</p>
+        <ul class="v2-foot-legal">
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="https://github.com/astonysh/SenderFinder/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">AGPL-3.0 license</a></li>
+        </ul>
+      </div>
+      <p class="v2-foot-trademarks">Gmail, Outlook, LinkedIn and Chrome are trademarks of their owners.</p>
+    </div>
+  </footer>
+
+  <div class="notice" id="notice" role="region" aria-label="Cookie notice" data-consent-mode="false" hidden>
+    <div class="notice-inner">
+      <svg class="i i-lg" aria-hidden="true"><use href="#i-cookie"/></svg>
+      <p>This website may use privacy-friendly analytics to count visits. The SenderFinder extension is separate: it sends one anonymous daily usage summary unless you switch that off in its settings. <a href="/privacy#cookies">Privacy</a></p>
+      <div class="notice-actions">
+        <button type="button" class="notice-btn notice-close" data-consent="ack">OK</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

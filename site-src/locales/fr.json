@@ -27,6 +27,7 @@
       },
       "resources": "Ressources",
       "resourcesLinks": {
+        "tools": "Free tools",
         "benchmark": "Email enrichment benchmark",
         "salesnav": "Sales Navigator for Gmail",
         "findByEmail": "Find a profile from an email",
@@ -430,6 +431,7 @@
     "usableLabel": "Le plafond quotidien de $2 couvrirait environ {n} adresses à ce rythme.",
     "hitNote": "« Trouvée » signifie qu'un profil est revenu avec un nom concordant. Les deux clés diffèrent surtout par la fréquence à laquelle le recours coûteux est nécessaire.",
     "capNote": "Les plafonds s'appliquent toujours : $2 par jour et $0.05 par recherche par défaut, tous deux modifiables dans les paramètres. L'estimation suppose 30 jours et une recherche par nouvelle adresse.",
+    "toolsNote": "Besoin de volumes mensuels ou du détail par fournisseur ? Utilisez le <a href=\"{{url.enrichmentCalculator}}\" hreflang=\"en\">calculateur gratuit de coût d’enrichissement d’e-mails</a> (en anglais).",
     "fallbackTitle": "Volumes d'exemple",
     "fallbackIntro": "Affiché sans JavaScript. Même modèle, mêmes prix : {skip} des expéditeurs sont des adresses personnelles ou génériques et sont ignorés.",
     "fallbackNote": "Activez JavaScript pour vos propres chiffres. Tout ce qui précède est un simple tableau, pas une promesse de dépense.",

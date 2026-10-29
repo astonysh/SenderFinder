@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "title": "LinkedIn connection note generator | SenderFinder",
+    "description": "Write three short LinkedIn connection notes from a real shared context. Free, editable, under 200 characters and processed entirely in your browser.",
+    "ogTitle": "Free LinkedIn connection note generator",
+    "ogDescription": "Turn a real reason for connecting into three concise, editable LinkedIn invitation notes."
+  },
+  "page": {
+    "kicker": "Free LinkedIn tool",
+    "title": "LinkedIn connection note generator",
+    "lead": "Write a short invitation for someone who emailed you, met you or shared something useful. The generator produces three editable options and keeps every draft within 200 characters.",
+    "updated": "Published 29 October 2026. No signup, AI call or automatic sending.",
+    "tool": {
+      "title": "Write the note",
+      "intro": "Use one specific detail the recipient will recognise. The templates combine it with your context and goal; they never invent a compliment, event or relationship.",
+      "nameLabel": "Recipient's first name (optional)",
+      "namePlaceholder": "Jane",
+      "contextLabel": "How you know them",
+      "contexts": [
+        {
+          "value": "email",
+          "label": "They emailed me"
+        },
+        {
+          "value": "meeting",
+          "label": "We met or had a call"
+        },
+        {
+          "value": "event",
+          "label": "We attended the same event"
+        },
+        {
+          "value": "content",
+          "label": "I read their post or talk"
+        },
+        {
+          "value": "introduction",
+          "label": "We were introduced"
+        },
+        {
+          "value": "work",
+          "label": "We worked together"
+        }
+      ],
+      "detailLabel": "Specific detail",
+      "detailPlaceholder": "privacy-first email enrichment",
+      "detailHint": "Name the topic only, for example the subject of the email, the meeting, the post or the project. The generator adds the wording around it.",
+      "goalLabel": "Why connect",
+      "goals": [
+        {
+          "value": "stay",
+          "label": "Stay connected"
+        },
+        {
+          "value": "continue",
+          "label": "Continue the conversation"
+        },
+        {
+          "value": "learn",
+          "label": "Follow their work"
+        },
+        {
+          "value": "collaborate",
+          "label": "Explore a collaboration"
+        }
+      ],
+      "toneLabel": "Tone",
+      "tones": [
+        {
+          "value": "warm",
+          "label": "Warm"
+        },
+        {
+          "value": "professional",
+          "label": "Professional"
+        },
+        {
+          "value": "concise",
+          "label": "Concise"
+        }
+      ],
+      "submit": "Generate three notes",
+      "sample": "Use an example",
+      "resultsTitle": "Editable options",
+      "resultsIntro": "Read each note aloud, replace anything that does not sound like you, then copy one manually.",
+      "privacy": "Everything you type stays in this tab. SenderFinder does not save the input, contact LinkedIn or send a connection request."
+    },
+    "sections": [
+      {
+        "id": "what-to-write",
+        "title": "What to write in a LinkedIn connection request message",
+        "blocks": [
+          "A useful connection note answers two questions quickly: how does this person know you, and why does connecting make sense now? A reference to the email they just sent is stronger than a generic compliment because the recipient can verify it immediately.",
+          "LinkedIn's current help page says a personalised invitation can contain up to 200 characters and recommends explaining how you found the person or what you share, why you want to connect and using a clear, polite tone. Every option the generator produces fits within that 200-character limit. The same page notes that free members can send only a limited number of invitations with a note each month (three when checked), while Premium members are not limited, so each note you do send should carry a recognisable reason. <a href=\"https://www.linkedin.com/help/linkedin/answer/a563153\">Check LinkedIn's current invitation guidance</a> before relying on a limit, because product rules can change."
+        ]
+      },
+      {
+        "id": "examples",
+        "title": "Connection note examples by situation",
+        "list": [
+          "<strong>After an email:</strong> mention the actual topic, not merely that they emailed you.",
+          "<strong>After a meeting:</strong> name the conversation or decision you want to remember.",
+          "<strong>After an event:</strong> use the session, roundtable or introduction rather than the event name alone.",
+          "<strong>After reading a post:</strong> identify the idea that changed or sharpened your view; avoid empty praise.",
+          "<strong>For collaboration:</strong> connect first and keep a detailed proposal for the follow-up conversation."
+        ]
+      },
+      {
+        "id": "avoid",
+        "title": "What the generator deliberately avoids",
+        "blocks": [
+          "It does not scrape a profile, read a private message, invent shared interests or send anything automatically. It also avoids a full sales pitch inside the invitation. A connection request is a small piece of context, not a substitute for a proposal or a consent signal for future outreach.",
+          "The result is deterministic: the same inputs produce the same family of notes. That keeps the tool private and makes every phrase inspectable, but you still need to edit the output for your voice and relationship."
+        ]
+      },
+      {
+        "id": "senderfinder",
+        "title": "From an email sender to a professional connection",
+        "blocks": [
+          "If you have the email but not the profile, start with the <a href=\"{{url.findByEmail}}#search-builder\">free LinkedIn profile search builder</a>. Once you confirm the right person, this page handles the note. SenderFinder brings those steps into Gmail and Outlook: the side panel shows the likely profile, and the Connect action can fill your editable note template. It never clicks Connect or Send for you.",
+          "For the full flow, read <a href=\"{{url.findByEmail}}\">how to find a LinkedIn profile from an email</a> or browse the other <a href=\"{{url.tools}}\">free email and LinkedIn tools</a>."
+        ]
+      },
+      {
+        "id": "related",
+        "title": "Other free tools",
+        "list": [
+          "<a href=\"{{url.findByEmail}}#search-builder\">LinkedIn profile search builder</a> — turn a work email, name and company into focused Google, Bing and LinkedIn searches.",
+          "<a href=\"{{url.signatureParser}}\">Email signature parser</a> — extract LinkedIn, X, website and phone details from a pasted signature, locally in your browser.",
+          "<a href=\"{{url.enrichmentCalculator}}\">Email enrichment cost calculator</a> — model monthly spend, match rate and provider contribution before paying for lookups.",
+          "<a href=\"{{url.tools}}\">All free email and LinkedIn tools</a> — the full set, every one running in your browser with no account."
+        ]
+      }
+    ],
+    "faqTitle": "LinkedIn connection note questions",
+    "faqIntro": "Limits, privacy and when a short invitation is the wrong format.",
+    "bottomCta": {
+      "title": "Find the sender before you write the note",
+      "body": "SenderFinder shows the likely LinkedIn profile beside Gmail or Outlook and lets you review the connection note before LinkedIn receives anything.",
+      "action": "Install SenderFinder"
+    }
+  },
+  "faq": [
+    {
+      "q": "What is the LinkedIn connection note character limit?",
+      "a": "LinkedIn's help page listed 200 characters when this tool was checked on 29 October 2026. The generator keeps every option at or below that limit, but the counter in your own invitation dialog is authoritative."
+    },
+    {
+      "q": "Does this tool use AI or upload my context?",
+      "a": "No. It combines inspected local templates in your browser. The recipient name, context and detail are not sent to SenderFinder or an AI provider."
+    },
+    {
+      "q": "Will SenderFinder send a LinkedIn invitation automatically?",
+      "a": "No. The extension can open the profile and fill an editable note after you choose Connect, but it never clicks Connect or Send. You remain responsible for reviewing and sending the invitation."
+    },
+    {
+      "q": "Should a connection request include a sales pitch?",
+      "a": "Usually not. Use the invitation to establish recognisable context. Save a detailed offer, request or proposal for a later conversation after the person chooses to connect."
+    }
+  ]
+}

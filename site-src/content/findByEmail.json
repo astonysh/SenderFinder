@@ -1,17 +1,33 @@
 {
   "meta": {
-    "title": "How to find a LinkedIn profile from an email address (2026 guide) | SenderFinder",
-    "description": "Manual ways to turn an email address into a LinkedIn profile, why they fail, and how a cheapest-first enrichment waterfall answers the same question for about a cent per address.",
-    "ogTitle": "Find a LinkedIn profile from an email address",
-    "ogDescription": "Google, LinkedIn search and signature scans have limits. A waterfall of email-to-profile providers is the automated alternative."
+    "title": "Find a LinkedIn profile from an email address | SenderFinder",
+    "description": "Build free Google and LinkedIn searches from a work email, name and company. Learn what works, what fails and when reverse email enrichment helps.",
+    "ogTitle": "Find a LinkedIn profile by email — free search builder",
+    "ogDescription": "Turn a work email, name and company into focused profile searches. Nothing is uploaded; the builder runs in your browser."
   },
   "page": {
     "title": "How to find someone's LinkedIn profile from an email address",
-    "lead": "You have an address and a name. You want the profile. There are three manual ways to do it, each with a predictable failure mode, and one automated approach that turns the same question into a small, capped lookup.",
-    "updated": "Last checked: 25 October 2026.",
+    "lead": "You have an address and a name. You want the profile. Three manual routes have predictable failure modes; an automated route turns the same question into a capped lookup.",
+    "updated": "Search builder added and guide last checked: 29 October 2026.",
     "cta": {
       "install": "Install SenderFinder",
       "github": "View the source on GitHub"
+    },
+    "searchBuilder": {
+      "kicker": "Free LinkedIn profile search builder",
+      "title": "Turn an email into focused profile searches",
+      "intro": "Enter a work email and, when you know them, the sender's name and company. The tool builds transparent searches you run yourself; it does not query a people database or claim a match.",
+      "emailLabel": "Work email",
+      "emailPlaceholder": "jane.doe@example.com",
+      "nameLabel": "Full name (optional)",
+      "namePlaceholder": "Jane Doe",
+      "companyLabel": "Company (optional)",
+      "companyPlaceholder": "Example",
+      "submit": "Build searches",
+      "sample": "Use an example",
+      "resultsTitle": "Search routes",
+      "privacy": "The address stays in this tab. It is sent only if you choose to open a search link, to the search service named on that link.",
+      "noScript": "JavaScript is required to build the search links. The manual query patterns below still work without it."
     },
     "sections": [
       {
@@ -111,6 +127,8 @@
           "<a href=\"/email-enrichment-api-benchmark\">The 50-address benchmark</a> — measured hit rate and price per provider.",
           "<a href=\"/linkedin-sales-navigator-gmail-alternative\">Sales Navigator for Gmail is gone</a> — what still works for sender lookup.",
           "<a href=\"/outlook-linkedin-sidebar\">The Outlook sidebar</a> — what works on Outlook on the web and what does not.",
+          "<a href=\"/tools/email-signature-parser\">Email signature parser</a> — extract LinkedIn and other contact links locally in your browser.",
+          "<a href=\"/tools/linkedin-connection-note-generator\">LinkedIn connection note generator</a> — write the short note to send after you find the right profile.",
           "<a href=\"/clearbit-connect-alternative\">Clearbit Connect alternative</a> and <a href=\"/rapportive-alternative\">Rapportive alternative</a>.",
           "<a href=\"/install\">Install guide</a> — from the browser store to the first lookup in two minutes."
         ]

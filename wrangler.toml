@@ -6,7 +6,7 @@ compatibility_date = "2026-10-01"
 
 [assets]
 directory = "./site"
-html_handling = "auto-trailing-slash"   # /privacy serves privacy.html; /privacy.html redirects to /privacy
+html_handling = "drop-trailing-slash"   # /privacy serves privacy.html and /tools serves tools/index.html
 not_found_handling = "404-page"         # site/404.html
 
 # No request logs for the website either.

@@ -8,7 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { DEFAULTS, FALLBACK_VOLUMES, MODES, estimate, makeFormatters } from '../site-src/assets/calc.js';
+import { CHAINS, DEFAULTS, FALLBACK_VOLUMES, MODES, PRICES, estimate, makeFormatters } from '../site-src/assets/calc.js';
 import { benchStats } from './bench-stats.js';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -50,10 +50,15 @@ export const PAGES = [
   // keys the templates use ({{benchmark.title}} …) and the keys of the footer resource labels.
   { id: 'benchmark', template: 'content.html', out: 'email-enrichment-api-benchmark.html', path: '/email-enrichment-api-benchmark', meta: 'meta.benchmark', ogType: 'article', sitemap: true, locales: ['en'], content: true, resources: true, breadcrumb: 'benchmark.title' },
   { id: 'salesnav', template: 'content.html', out: 'linkedin-sales-navigator-gmail-alternative.html', path: '/linkedin-sales-navigator-gmail-alternative', meta: 'meta.salesnav', ogType: 'article', sitemap: true, locales: ['en'], content: true, resources: true, breadcrumb: 'salesnav.title' },
-  { id: 'findByEmail', template: 'content.html', out: 'find-linkedin-profile-from-email.html', path: '/find-linkedin-profile-from-email', meta: 'meta.findByEmail', ogType: 'article', sitemap: true, locales: ['en'], content: true, resources: true, breadcrumb: 'findByEmail.title' },
+  { id: 'findByEmail', template: 'content.html', out: 'find-linkedin-profile-from-email.html', path: '/find-linkedin-profile-from-email', meta: 'meta.findByEmail', ogType: 'article', sitemap: true, locales: ['en'], content: true, resources: true, tool: true, scripts: ['profile-search.js'], breadcrumb: 'findByEmail.title' },
   { id: 'outlook', template: 'content.html', out: 'outlook-linkedin-sidebar.html', path: '/outlook-linkedin-sidebar', meta: 'meta.outlook', ogType: 'article', sitemap: true, locales: ['en'], content: true, resources: true, breadcrumb: 'outlook.title' },
   { id: 'sponsors', template: 'content.html', out: 'sponsors.html', path: '/sponsors', meta: 'meta.sponsors', ogType: 'article', sitemap: true, locales: ['en'], content: true, resources: true, breadcrumb: 'sponsors.title' },
   { id: 'stats', template: 'content.html', out: 'stats.html', path: '/stats', meta: 'meta.stats', ogType: 'article', sitemap: true, locales: ['en'], content: true, resources: true, breadcrumb: 'stats.title' },
+  // Free tools are deliberately English-only until Search Console shows which pages earn demand.
+  { id: 'tools', template: 'tools.html', out: 'tools/index.html', path: '/tools', meta: 'meta.tools', ogType: 'website', sitemap: true, locales: ['en'], content: true, resources: true, collection: true, published: '2026-10-29', modified: '2026-10-29', breadcrumb: 'tools.title' },
+  { id: 'connectionNote', template: 'connection-note.html', out: 'tools/linkedin-connection-note-generator.html', path: '/tools/linkedin-connection-note-generator', meta: 'meta.connectionNote', ogType: 'website', sitemap: true, locales: ['en'], content: true, resources: true, tool: true, scripts: ['connection-note.js'], published: '2026-10-29', modified: '2026-10-29', breadcrumb: 'connectionNote.title' },
+  { id: 'signatureParser', template: 'signature-parser.html', out: 'tools/email-signature-parser.html', path: '/tools/email-signature-parser', meta: 'meta.signatureParser', ogType: 'website', sitemap: true, locales: ['en'], content: true, resources: true, tool: true, scripts: ['signature-parser.js'], published: '2026-10-29', modified: '2026-10-29', breadcrumb: 'signatureParser.title' },
+  { id: 'enrichmentCalculator', template: 'enrichment-calculator.html', out: 'tools/email-enrichment-cost-calculator.html', path: '/tools/email-enrichment-cost-calculator', meta: 'meta.enrichmentCalculator', ogType: 'website', sitemap: true, locales: ['en'], content: true, resources: true, tool: true, scripts: ['enrichment-calculator.js'], published: '2026-10-29', modified: '2026-10-29', breadcrumb: 'enrichmentCalculator.title' },
   // 404 is English only: Cloudflare Pages serves one file for every missing path.
   { id: '404', template: '404.html', out: '404.html', path: '/404', meta: 'meta.notFound', ogType: 'website', noindex: true, locales: ['en'], breadcrumb: 'notFound.title' },
 ];
@@ -194,7 +199,7 @@ const fill = (s, vars) => String(s).replace(/\{(\w+)\}/g, (m, k) => (k in vars ?
 
 /* Locale data + the variables the templates and the locale strings can use.
    `calc.fallbackGroups` is computed here, so the no-JS table can never drift from calc.js. */
-export function scopeFor(lang, data) {
+export function scopeFor(lang, data, page = PAGES[0]) {
   const fmt = makeFormatters(lang.htmlLang);
   const url = Object.fromEntries(PAGES.filter(p => !p.noindex).map(p => [p.id, urlFor(lang, p.id)]));
   url.edgeStore = CONFIG.edgeStoreUrl;
@@ -263,7 +268,8 @@ export function scopeFor(lang, data) {
     }),
   };
   const faq = Array.isArray(data.faq) ? data.faq : { items: data.index.faq.items.slice(0, 6) };
-  return { ...data, ...pages, url, base: lang.dir ? '../' : '', calc, install: installScope(data.install), ext, heroSlogan, pricing, faq };
+  const assetDepth = pageFile(lang, page).split('/').length - 1;
+  return { ...data, ...pages, url, base: '../'.repeat(assetDepth), calc, install: installScope(data.install), ext, heroSlogan, pricing, faq };
 }
 
 /* The key-comparison table: cells carry their column label so the phone layout can show it. */
@@ -384,6 +390,34 @@ function structuredData(lang, page, data, scope) {
     });
   }
 
+  if (page.tool) {
+    const meta = t(data, page.meta);
+    graph.push({
+      '@type': 'WebApplication',
+      '@id': `${url}#tool`,
+      name: plainText(data[page.id].title),
+      description: plainText(meta.description),
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Any',
+      browserRequirements: 'Requires JavaScript in a modern web browser',
+      url,
+      isAccessibleForFree: true,
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      publisher: { '@id': orgId },
+    });
+  }
+
+  if (page.collection) {
+    graph.push({
+      '@type': 'CollectionPage',
+      '@id': `${url}#collection`,
+      name: plainText(data[page.id].title),
+      description: plainText(t(data, page.meta).description),
+      url,
+      inLanguage: lang.htmlLang,
+    });
+  }
+
   if (page.content && Array.isArray(data.faq) && data.faq.length) {
     graph.push({
       '@type': 'FAQPage',
@@ -396,7 +430,7 @@ function structuredData(lang, page, data, scope) {
     });
   }
 
-  const article = page.content ? page.id : { clearbit: 'clearbit', rapportive: 'rapportive', changelog: 'changelog' }[page.id];
+  const article = page.content && !page.collection && !(page.tool && page.template !== 'content.html') ? page.id : { clearbit: 'clearbit', rapportive: 'rapportive', changelog: 'changelog' }[page.id];
   if (article) {
     const meta = t(data, page.meta);
     graph.push({
@@ -404,8 +438,8 @@ function structuredData(lang, page, data, scope) {
       '@id': `${url}#article`,
       headline: plainText(data[article].title),
       description: plainText(meta.description),
-      datePublished: UPDATED,
-      dateModified: UPDATED,
+      datePublished: page.published || UPDATED,
+      dateModified: page.modified || UPDATED,
       inLanguage: lang.htmlLang,
       mainEntityOfPage: { '@type': 'WebPage', '@id': url },
       author: { '@type': 'Organization', name: 'SenderFinder', url: `${SITE_URL}/` },
@@ -463,7 +497,8 @@ function head(lang, page, data, scope) {
   lines.push(`  <link rel="apple-touch-icon" href="${scope.base}assets/icon-128.png">`);
 
   lines.push(`  <script type="module" src="${scope.base}assets/theme.js"></script>`);
-  if (page.script) lines.push(`  <script type="module" src="${scope.base}assets/calc.js"></script>`);
+  const scripts = page.scripts || (page.script ? ['calc.js'] : []);
+  for (const script of scripts) lines.push(`  <script type="module" src="${scope.base}assets/${script}"></script>`);
   lines.push('</head>');
   return lines.join('\n');
 }
@@ -574,7 +609,7 @@ function footerV2(lang, page, data, scope) {
       { href: scope.url.install, label: data.ui.footer.install, id: 'install' },
       { href: `${scope.url.index}#faq`, label: data.ui.nav.faq },
     ] },
-    { id: 'resources', label: data.ui.footer.resources, items: ['findByEmail', 'outlook', 'benchmark', 'salesnav'].map(resource) },
+    { id: 'resources', label: data.ui.footer.resources, items: ['tools', 'findByEmail', 'outlook', 'benchmark', 'salesnav'].map(resource) },
     { id: 'alternatives', label: data.ui.footer.groups.alternatives, items: [
       { href: scope.url.clearbit, label: data.ui.footer.clearbit, id: 'clearbit' },
       { href: scope.url.rapportive, label: data.ui.footer.rapportive, id: 'rapportive' },
@@ -628,7 +663,7 @@ function sitemap() {
       const lang = localeFor(code);
       out.push('  <url>');
       out.push(`    <loc>${SITE_URL}${pagePath(lang, page)}</loc>`);
-      out.push(`    <lastmod>${UPDATED}</lastmod>`);
+      out.push(`    <lastmod>${page.modified || UPDATED}</lastmod>`);
       for (const otherCode of locales) {
         const other = localeFor(otherCode);
         out.push(`    <xhtml:link rel="alternate" hreflang="${other.hreflang}" href="${SITE_URL}${pagePath(other, page)}"/>`);
@@ -672,6 +707,38 @@ export function readContent(page) {
   return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
 
+/* The cost calculator page renders its default scenario (1,000 addresses a month, both keys, 20% skipped)
+   at build time with the same model enrichment-calculator.js uses, so crawlers and no-JS readers see
+   real figures instead of an empty table. The script overwrites them on load. */
+function calculatorDefaults(tool) {
+  const fmt = makeFormatters('en');
+  const volume = 1000;
+  const mode = 'both';
+  const skipShare = DEFAULTS.skipShare;
+  const processed = volume * (1 - skipShare);
+  const model = estimate({ perDay: volume / 30, mode, skipShare });
+  const expectedFound = processed * model.found;
+  const names = { blitzapi: 'BlitzAPI', hunter: 'Hunter', quickenrich: 'QuickEnrich', apollo: 'Apollo' };
+  let reach = 1;
+  const rows = CHAINS[mode].map(step => {
+    const calls = processed * reach;
+    const matches = calls * step.p;
+    const spend = (step.billed === 'call' ? calls : matches) * PRICES[step.step];
+    reach -= reach * step.p;
+    return { provider: names[step.step], reached: fmt.count(calls), matches: fmt.count(matches), spend: fmt.monthly(spend) };
+  });
+  return {
+    monthly: fmt.monthly(model.monthlyUsd),
+    perThousand: fmt.monthly(model.perAddress * (1 - skipShare) * 1000),
+    hitRate: fmt.percent(model.found),
+    found: fmt.count(expectedFound),
+    costPerFound: fmt.perAddress(expectedFound > 0 ? model.monthlyUsd / expectedFound : 0),
+    unresolved: fmt.count(processed - expectedFound),
+    rows,
+    noscript: fill(tool.noscript, { volume: fmt.count(volume), skip: fmt.percent(skipShare) }),
+  };
+}
+
 function dataForPage(base, page, locale) {
   if (!page.content || locale !== 'en') return base;
   const content = readContent(page);
@@ -681,6 +748,7 @@ function dataForPage(base, page, locale) {
     const results = content.page.sections.find(section => section.id === 'results');
     if (results) results.table = bench.table;
   }
+  if (page.id === 'enrichmentCalculator') content.page.tool.defaults = calculatorDefaults(content.page.tool);
   // Table cells carry their column label, so the phone layout (app.css) can show it as a data-label.
   for (const section of content.page.sections || []) {
     if (!section.table) continue;
@@ -776,7 +844,7 @@ export function buildSite(outDir, { locales = LANGUAGES.map(l => l.locale) } = {
     for (const page of PAGES.filter(p => hasPage(p, lang.locale))) {
       let data = dataForPage(base, page, lang.locale);
       if (page.id === 'changelog') data = { ...data, changelog: { ...data.changelog, body: changelogBody } };
-      const scope = scopeFor(lang, data);
+      const scope = scopeFor(lang, data, page);
       const main = render(template(page.template), [scope], `${lang.locale}/${page.template}`);
       const html = [
         head(lang, page, data, scope),
