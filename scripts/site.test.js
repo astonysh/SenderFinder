@@ -296,9 +296,9 @@ test('every page keeps primary links in the header and informational links in th
       const hrefs = markup => [...markup.matchAll(/<a href="([^"]+)"/g)].map(match => match[1]);
       assert.deepEqual(hrefs(header[1]), [`${home}#how`, `${home}#cost`, route('install'), REPO_URL, CONFIG.chromeStoreUrl, CONFIG.edgeStoreUrl],
         `${lang.locale}/${page.id}: unexpected primary navigation`);
-      assert.match(header[1], /class="v2-store-link"[^>]*aria-label="[^"]+"[^>]*><svg class="i" aria-hidden="true"><use href="#i-chrome"\/>/,
+      assert.match(header[1], /class="v2-store-link"[^>]*aria-label="[^"]+"[^>]*><img src="(?:\.\.\/)?assets\/icons\/browser-chrome\.svg" alt="" width="20" height="20">/,
         `${lang.locale}/${page.id}: Chrome install icon missing or unlabeled`);
-      assert.match(header[1], /class="v2-store-link"[^>]*aria-label="[^"]+"[^>]*><svg class="i" aria-hidden="true"><use href="#i-edge"\/>/,
+      assert.match(header[1], /class="v2-store-link"[^>]*aria-label="[^"]+"[^>]*><img src="(?:\.\.\/)?assets\/icons\/browser-edge\.svg" alt="" width="20" height="20">/,
         `${lang.locale}/${page.id}: Edge install icon missing or unlabeled`);
       for (const href of [route('privacy'), route('changelog'), `${home}#faq`]) {
         assert.ok(hrefs(footer[1]).includes(href), `${lang.locale}/${page.id}: footer missing ${href}`);

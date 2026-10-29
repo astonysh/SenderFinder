@@ -46,3 +46,11 @@ Source: https://github.com/FortAwesome/Font-Awesome/blob/6.x/svgs/brands/edge.sv
 Licensed under CC BY 4.0: https://creativecommons.org/licenses/by/4.0/.
 The website uses the icon in its SVG sprite; the standalone README asset uses a blue fill.
 Microsoft Edge is a trademark of Microsoft Corporation.
+
+## Browser icons in the navigation bar
+
+The full-color Google Chrome icon is from Google's Chrome website:
+https://www.google.com/chrome/static/images/chrome-logo.svg.
+The full-color Microsoft Edge icon is Microsoft's browser mark, sourced via Wikimedia Commons:
+https://commons.wikimedia.org/wiki/File:Microsoft_Edge_logo_(2019).svg.
+These icons identify the browser stores linked by the navigation buttons; they do not imply endorsement.

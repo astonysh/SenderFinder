@@ -517,7 +517,7 @@ function headerV2(lang, page, data, scope) {
   const items = nav.map(item => {
     const current = item.id && item.id === page.id ? ' aria-current="page"' : '';
     const icon = item.icon ? ` class="v2-store-link" aria-label="${esc(item.label)}" title="${esc(item.label)}"` : '';
-    const body = item.icon ? `<svg class="i" aria-hidden="true"><use href="#i-${item.icon}"/></svg>` : esc(item.label);
+    const body = item.icon ? `<img src="${scope.base}assets/icons/browser-${item.icon}.svg" alt="" width="20" height="20">` : esc(item.label);
     return `            <li><a href="${item.href}"${current}${icon}>${body}</a></li>`;
   }).join('\n');
   const languages = LANGUAGES.map(other => {

@@ -177,7 +177,8 @@ one sentence saying the English version prevails.
   already uses clears the key again. Without JavaScript the control stays hidden and the site follows the system.
 - **Icons.** One sprite (`site-src/partials/icons.svg`) with a single stroke style, inlined into every
   page and coloured with `currentColor`, so it follows the theme. Icons are picked by position in
-  `scripts/build-site.js` (`HOW_ICONS`, `FACT_ICONS`, …) — never stored in the locale files.
+  `scripts/build-site.js` (`HOW_ICONS`, `FACT_ICONS`, …) — never stored in the locale files. The
+  navigation's Chrome and Edge store links instead use local full-color SVGs in `site-src/assets/icons/`.
 - **Provider logos** are copied from `extension/icons/vendors/` at build time; the header avatar and the
   PNG favicon are `extension/icons/icon128.png`, also copied, so they stay in sync with the extension.
 - **The notice** at the bottom of every page starts `hidden` in the markup: with JavaScript off nothing
