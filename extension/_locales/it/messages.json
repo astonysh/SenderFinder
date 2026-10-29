@@ -612,7 +612,7 @@
   "message": "Controlla la nota e clicca tu “Send”. L’estensione non clicca mai Connect o Send e opera solo nella scheda LinkedIn che ha aperto."
  },
  "connect_limit_hint": {
-  "message": "LinkedIn limita le note a 300 caratteri e gli account gratuiti hanno solo pochi inviti con nota al mese. Puoi modificare il modello nelle impostazioni dell'estensione."
+  "message": "LinkedIn limita le note a 200 caratteri e gli account gratuiti hanno solo pochi inviti con nota al mese. Puoi modificare il modello nelle impostazioni dell'estensione."
  },
  "connect_note_preview": {
   "message": "Nota da precompilare"
@@ -651,7 +651,7 @@
   "message": "Anteprima (nome di esempio)"
  },
  "opt_connect_chars": {
-  "message": "$1 / 300 caratteri"
+  "message": "$1 / 200 caratteri"
  },
  "opt_connect_perm_granted": {
   "message": "Accesso a linkedin.com concesso"

@@ -612,7 +612,7 @@
   "message": "請檢查備註並自行點擊「Send」。擴充功能不會替你點擊 Connect 或 Send，只在它自行開啟的 LinkedIn 分頁中執行。"
  },
  "connect_limit_hint": {
-  "message": "LinkedIn 限制備註最多 300 個字元，免費帳號每月只有少量可附訊息的邀請。你可以在擴充功能設定裡修改範本。"
+  "message": "LinkedIn 限制備註最多 200 個字元，免費帳號每月只有少量可附訊息的邀請。你可以在擴充功能設定裡修改範本。"
  },
  "connect_note_preview": {
   "message": "將填入的備註"
@@ -651,7 +651,7 @@
   "message": "預覽（範例姓名）"
  },
  "opt_connect_chars": {
-  "message": "$1 / 300 個字元"
+  "message": "$1 / 200 個字元"
  },
  "opt_connect_perm_granted": {
   "message": "已授權存取 linkedin.com"

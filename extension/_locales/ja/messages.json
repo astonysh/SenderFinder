@@ -612,7 +612,7 @@
   "message": "メモを確認し、「Send」はご自身でクリックしてください。拡張機能は Connect や Send をクリックせず、自ら開いた LinkedIn タブ内でのみ動作します。"
  },
  "connect_limit_hint": {
-  "message": "LinkedIn ではメモは 300 文字までで、無料アカウントは月に数件しかメモ付きの招待を送れません。テンプレートは拡張機能の設定で編集できます。"
+  "message": "LinkedIn ではメモは 200 文字までで、無料アカウントは月に数件しかメモ付きの招待を送れません。テンプレートは拡張機能の設定で編集できます。"
  },
  "connect_note_preview": {
   "message": "自動入力されるメモ"
@@ -651,7 +651,7 @@
   "message": "プレビュー（サンプル名）"
  },
  "opt_connect_chars": {
-  "message": "$1 / 300 文字"
+  "message": "$1 / 200 文字"
  },
  "opt_connect_perm_granted": {
   "message": "linkedin.com へのアクセスを許可済み"

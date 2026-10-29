@@ -1,6 +1,6 @@
 // The LinkedIn invitation note: template + placeholders + optional signature, trimmed to LinkedIn's limit.
 // Pure functions; used by the service worker and tested in Node.
-export const NOTE_MAX = 300;  // LinkedIn's limit for a connection note
+export const NOTE_MAX = 200;  // LinkedIn's limit for a connection note (help article a563153, checked 2026-10-29)
 
 // First name for the greeting: first token of a Latin name, the whole name for CJK.
 export function firstNameOf(fullName) {

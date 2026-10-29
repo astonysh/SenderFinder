@@ -88,14 +88,14 @@
   const DIALOG_SEL = '[role="dialog"], [role="alertdialog"], [aria-modal="true"], dialog[open], .artdeco-modal, [data-test-modal], [data-test-modal-container], [class*="modal"], [class*="sheet"]';
   const DIALOG_TEXT = /connect|invit|note|邀请|备注|附言|einlad|notiz|inviter|invitar/i;
   const dialog = () => deepQueryAll(DIALOG_SEL).filter(visible).find(el => DIALOG_TEXT.test(el.innerText || '') || el.querySelector('textarea')) || null;
-  // The invitation note box, wherever LinkedIn puts it: a visible textarea with LinkedIn's 300-character limit, or one
+  // The invitation note box, wherever LinkedIn puts it: a visible textarea with LinkedIn's note limit (200 characters now, 300 before), or one
   // whose own labels / surrounding dialog talk about an invitation or note. (The profile page has no other textarea.)
   function noteBox() {
     for (const ta of deepQueryAll('textarea')) {
       if (!visible(ta) || ta.readOnly) continue;
       const own = [ta.id, ta.name, ta.placeholder, ta.getAttribute('aria-label'), ta.getAttribute('aria-describedby')].join(' ');
       const dlg = ta.closest(DIALOG_SEL);
-      if (Number(ta.getAttribute('maxlength')) === 300 || /note|message|custom|invit|备注|附言|邀请/i.test(own) || (dlg && DIALOG_TEXT.test(dlg.innerText || ''))) return ta;
+      if ([200, 300].includes(Number(ta.getAttribute('maxlength'))) || /note|message|custom|invit|备注|附言|邀请/i.test(own) || (dlg && DIALOG_TEXT.test(dlg.innerText || ''))) return ta;
     }
     return null;
   }
@@ -148,7 +148,7 @@
     }
     if (!ta) return;
     if (ta.value && ta.value.trim()) { banner('ok', t('li_filled'), { note: job.note }); return; }   // the user already typed something: leave it
-    const max = Number(ta.getAttribute('maxlength')) || 300;
+    const max = Number(ta.getAttribute('maxlength')) || 200;
     setNativeValue(ta, job.note.length > max ? job.note.slice(0, max) : job.note);
     ta.focus();
     banner('ok', t('li_filled'), { note: job.note });

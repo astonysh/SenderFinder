@@ -612,7 +612,7 @@
   "message": "Prüfe die Notiz und klicke selbst auf „Send“. Die Erweiterung klickt weder Connect noch Send und läuft nur im von ihr geöffneten LinkedIn-Tab."
  },
  "connect_limit_hint": {
-  "message": "LinkedIn begrenzt Notizen auf 300 Zeichen, und kostenlose Konten haben nur wenige Einladungen mit Notiz pro Monat. Die Vorlage können Sie in den Einstellungen der Erweiterung bearbeiten."
+  "message": "LinkedIn begrenzt Notizen auf 200 Zeichen, und kostenlose Konten haben nur wenige Einladungen mit Notiz pro Monat. Die Vorlage können Sie in den Einstellungen der Erweiterung bearbeiten."
  },
  "connect_note_preview": {
   "message": "Notiz, die eingefügt wird"
@@ -651,7 +651,7 @@
   "message": "Vorschau (Beispielname)"
  },
  "opt_connect_chars": {
-  "message": "$1 / 300 Zeichen"
+  "message": "$1 / 200 Zeichen"
  },
  "opt_connect_perm_granted": {
   "message": "Zugriff auf linkedin.com erteilt"

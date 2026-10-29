@@ -612,7 +612,7 @@
   "message": "请检查备注并自己点击「Send」。插件不会替你点击 Connect 或 Send，只在它自己打开的 LinkedIn 标签页中运行。"
  },
  "connect_limit_hint": {
-  "message": "LinkedIn 限制备注 300 字符，免费账号每月只有少量带备注的邀请。模板可以在插件设置里修改。"
+  "message": "LinkedIn 限制备注 200 字符，免费账号每月只有少量带备注的邀请。模板可以在插件设置里修改。"
  },
  "connect_note_preview": {
   "message": "将填入的备注"
@@ -651,7 +651,7 @@
   "message": "预览（示例人名）"
  },
  "opt_connect_chars": {
-  "message": "$1 / 300 字符"
+  "message": "$1 / 200 字符"
  },
  "opt_connect_perm_granted": {
   "message": "已授权访问 linkedin.com"

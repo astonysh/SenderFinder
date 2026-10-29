@@ -612,7 +612,7 @@
   "message": "메모를 확인하고 “Send”는 직접 클릭하세요. 확장 프로그램은 Connect나 Send를 클릭하지 않으며 직접 연 LinkedIn 탭에서만 동작합니다."
  },
  "connect_limit_hint": {
-  "message": "LinkedIn은 메모를 300자로 제한하며, 무료 계정은 메모 포함 초대를 매달 몇 건만 보낼 수 있습니다. 템플릿은 확장 프로그램 설정에서 수정할 수 있습니다."
+  "message": "LinkedIn은 메모를 200자로 제한하며, 무료 계정은 메모 포함 초대를 매달 몇 건만 보낼 수 있습니다. 템플릿은 확장 프로그램 설정에서 수정할 수 있습니다."
  },
  "connect_note_preview": {
   "message": "미리 채울 메모"
@@ -651,7 +651,7 @@
   "message": "미리보기(예시 이름)"
  },
  "opt_connect_chars": {
-  "message": "$1 / 300자"
+  "message": "$1 / 200자"
  },
  "opt_connect_perm_granted": {
   "message": "linkedin.com 접근 허용됨"

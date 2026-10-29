@@ -612,7 +612,7 @@
   "message": "Review the note and press “Send” yourself. The extension never clicks Connect or Send, and only runs in the LinkedIn tab it opened."
  },
  "connect_limit_hint": {
-  "message": "LinkedIn limits notes to 300 characters, and free accounts get only a few invitations with a note per month. You can edit the template in the extension settings."
+  "message": "LinkedIn limits notes to 200 characters, and free accounts get only a few invitations with a note per month. You can edit the template in the extension settings."
  },
  "connect_note_preview": {
   "message": "Note to prefill"
@@ -651,7 +651,7 @@
   "message": "Preview (sample name)"
  },
  "opt_connect_chars": {
-  "message": "$1 / 300 characters"
+  "message": "$1 / 200 characters"
  },
  "opt_connect_perm_granted": {
   "message": "linkedin.com access granted"
