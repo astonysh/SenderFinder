@@ -63,7 +63,7 @@
     },
     "install": {
       "title": "安裝 SenderFinder Chrome / Edge 擴充功能 | SenderFinder",
-      "description": "從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝 SenderFinder，再填入一組供應商 key。另有可選的原始碼安裝步驟。",
+      "description": "從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝 SenderFinder，填入一組供應商 key，再開啟 Gmail。下方提供設定與疑難排解說明。",
       "ogTitle": "安裝 SenderFinder",
       "ogDescription": "從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝 SenderFinder。開放原始碼，使用你自己的供應商 key。"
     },
@@ -118,7 +118,7 @@
       "steps": [
         {
           "title": "安裝擴充功能",
-          "body": "從 <a href=\"{{url.chromeStore}}\">Chrome 線上應用程式商店</a>或 <a href=\"{{url.edgeStore}}\">Microsoft Edge 附加元件商店</a>安裝 SenderFinder。也可以<a href=\"{{url.install}}\">從原始碼安裝</a>。"
+          "body": "從 <a href=\"{{url.chromeStore}}\">Chrome 線上應用程式商店</a>或 <a href=\"{{url.edgeStore}}\">Microsoft Edge 附加元件商店</a>安裝 SenderFinder。"
         },
         {
           "title": "取得一組 API key",
@@ -406,7 +406,7 @@
       },
       "cta": {
         "title": "兩分鐘，就完成了",
-        "description": "從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝。安裝指南也提供原始碼安裝步驟。",
+        "description": "從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝，再依設定指南完成設定。",
         "button": "開啟安裝指南"
       }
     }
@@ -452,23 +452,11 @@
   },
   "install": {
     "title": "安裝 SenderFinder",
-    "lead": "可直接從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝。下方也保留可選的原始碼安裝步驟。",
+    "lead": "從 Chrome 線上應用程式商店或 Microsoft Edge 附加元件商店安裝 SenderFinder，再依照下方步驟完成設定。",
     "note": "你需要在桌機上使用 Chrome、Edge 或其他 Chromium 瀏覽器；擴充功能無法加到行動版 App。截圖是英文版，擴充功能本身會跟隨你的瀏覽器語言。",
-    "downloadLabel": "下載 ZIP",
     "githubLabel": "開啟儲存庫",
-    "stepsTitle": "可選：五步從原始碼安裝",
+    "stepsTitle": "三步設定 SenderFinder",
     "steps": [
-      {
-        "title": "取得程式碼",
-        "body": "到 <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> 把儲存庫下載成 ZIP（「Code」→「Download ZIP」）後解壓縮；如果你有 git，也可以直接 clone：<br><code>git clone https://github.com/astonysh/SenderFinder.git</code>"
-      },
-      {
-        "title": "在 Chrome 載入",
-        "body": "在新分頁開啟 <code>chrome://extensions</code>。開啟<strong>開發人員模式</strong>（右上角），點<strong>載入未封裝項目</strong>，然後選擇儲存庫裡的 <code>extension/</code> 資料夾 —— 也就是包含 <code>manifest.json</code> 的那個資料夾，不是儲存庫根目錄。",
-        "image": "load-unpacked.png",
-        "alt": "Chrome 的擴充功能頁面，已開啟開發人員模式：SenderFinder 卡片上方有「載入未封裝項目」、「打包擴充功能」和「更新」按鈕。",
-        "caption": "開發人員模式已開啟，SenderFinder 卡片已載入。"
-      },
       {
         "title": "取得一組 key 並貼上",
         "body": "安裝完成後設定頁面會自己開啟。到 <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a>（Hunter、Apollo、ContactOut）或 <a href=\"https://treg.to/\">treg</a>（BlitzAPI、QuickEnrich、Village）建立 key；<a href=\"https://firecrawl.link/sf\">Firecrawl</a> 是選填。一組 key 就夠。貼到「供應商 key」欄位。",
@@ -552,12 +540,12 @@
       },
       {
         "q": "之後要怎麼更新",
-        "a": "從商店安裝的版本會自動更新。如果從原始碼安裝，請替換相同資料夾中的檔案，再到 chrome://extensions 點選重新載入。"
+        "a": "從商店安裝的版本會自動更新。"
       }
     ],
     "nextTitle": "接下來",
     "next": "閱讀<a href=\"{{url.index}}#how\">運作方式</a>、看看<a href=\"{{url.index}}#cost\">一次查詢要多少錢</a>，或用<a href=\"{{url.index}}#calculator\">費用試算</a>估算你自己的用量。資料相關的問題可以在<a href=\"{{url.privacy}}\">隱私權聲明</a>找到答案。",
-    "fine": "上面的原始碼安裝步驟是可選的。從商店安裝的版本會自動更新。",
+    "fine": "從商店安裝的版本會自動更新。",
     "privacy": {
       "title": "隱私權一眼看懂",
       "points": [

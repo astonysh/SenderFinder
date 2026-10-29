@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Instalar SenderFinder no Chrome ou Edge | SenderFinder</title>
-  <meta name="description" content="Instale o SenderFinder pela Chrome Web Store ou pelo Microsoft Edge Add-ons e adicione uma chave de provedor. Há também instruções opcionais para instalar pelo código-fonte.">
+  <meta name="description" content="Instale o SenderFinder pela Chrome Web Store ou pelo Microsoft Edge Add-ons, adicione uma chave de provedor e abra o Gmail. Veja as etapas de configuração e solução de problemas.">
   <link rel="canonical" href="https://senderfinder.com/pt-br/install">
   <link rel="alternate" hreflang="en" href="https://senderfinder.com/install">
   <link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install">
@@ -30,7 +30,7 @@
   <meta name="twitter:description" content="Instale o SenderFinder pela Chrome Web Store ou pelo Microsoft Edge Add-ons. Código aberto, com sua própria chave de provedor.">
   <meta name="twitter:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta name="color-scheme" content="light dark">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"pt-BR","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"],"contactPoint":{"@type":"ContactPoint","email":"tony@senderfinder.com","contactType":"sponsorship"}},{"@type":"BreadcrumbList","@id":"https://senderfinder.com/pt-br/install#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://senderfinder.com/pt-br/"},{"@type":"ListItem","position":2,"name":"Instalar","item":"https://senderfinder.com/pt-br/install"}]},{"@type":"HowTo","@id":"https://senderfinder.com/pt-br/install#howto","name":"Instalar o SenderFinder","description":"Instale o SenderFinder diretamente pela Chrome Web Store ou pelo Microsoft Edge Add-ons. A instalação opcional pelo código-fonte está abaixo.","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"Obtenha o código","text":"Baixe o repositório como ZIP no GitHub (“Code” → “Download ZIP”) e descompacte, ou clone, se você tiver git: git clone https://github.com/astonysh/SenderFinder.git"},{"@type":"HowToStep","position":2,"name":"Carregue no Chrome","text":"Abra o chrome://extensions em uma nova aba. Ative o Modo desenvolvedor (canto superior direito), clique em Carregar sem compactação e selecione a pasta extension/ dentro do repositório — a pasta que contém o manifest.json, não a raiz do repositório."},{"@type":"HowToStep","position":3,"name":"Obtenha uma chave e cole","text":"A página de configurações abre sozinha depois da instalação. Crie uma chave no Monid (Hunter, Apollo, ContactOut) ou no treg (BlitzAPI, QuickEnrich, Village); o Firecrawl é opcional. Uma chave basta. Cole em “Chaves de provedor”."},{"@type":"HowToStep","position":4,"name":"Clique em “Testar chaves (grátis)”","text":"A verificação é grátis: ela valida a chave e lê a lista de preços do provedor. Nada é buscado e nada é gasto. Você quer ver “válida” ao lado da sua chave."},{"@type":"HowToStep","position":5,"name":"Abra o Gmail e clique uma vez no ícone da barra de ferramentas","text":"Abra qualquer mensagem no Gmail e clique no ícone do SenderFinder na barra de ferramentas do Chrome. Se não conseguir vê-lo, clique no ícone de quebra-cabeça e fixe o SenderFinder primeiro. O painel lateral abre e continua aberto naquela aba; a partir daí ele acompanha o e-mail que você lê."}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"pt-BR","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"],"contactPoint":{"@type":"ContactPoint","email":"tony@senderfinder.com","contactType":"sponsorship"}},{"@type":"BreadcrumbList","@id":"https://senderfinder.com/pt-br/install#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://senderfinder.com/pt-br/"},{"@type":"ListItem","position":2,"name":"Instalar","item":"https://senderfinder.com/pt-br/install"}]},{"@type":"HowTo","@id":"https://senderfinder.com/pt-br/install#howto","name":"Instalar o SenderFinder","description":"Instale o SenderFinder pela Chrome Web Store ou pelo Microsoft Edge Add-ons e siga as etapas de configuração abaixo.","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"Obtenha uma chave e cole","text":"A página de configurações abre sozinha depois da instalação. Crie uma chave no Monid (Hunter, Apollo, ContactOut) ou no treg (BlitzAPI, QuickEnrich, Village); o Firecrawl é opcional. Uma chave basta. Cole em “Chaves de provedor”."},{"@type":"HowToStep","position":2,"name":"Clique em “Testar chaves (grátis)”","text":"A verificação é grátis: ela valida a chave e lê a lista de preços do provedor. Nada é buscado e nada é gasto. Você quer ver “válida” ao lado da sua chave."},{"@type":"HowToStep","position":3,"name":"Abra o Gmail e clique uma vez no ícone da barra de ferramentas","text":"Abra qualquer mensagem no Gmail e clique no ícone do SenderFinder na barra de ferramentas do Chrome. Se não conseguir vê-lo, clique no ícone de quebra-cabeça e fixe o SenderFinder primeiro. O painel lateral abre e continua aberto naquela aba; a partir daí ele acompanha o e-mail que você lê."}]}]}</script>
   <script src="../assets/theme-boot.js"></script>
   <link rel="stylesheet" href="../assets/app.css">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -95,6 +95,8 @@
             <li><a href="/pt-br/#cost">Preços</a></li>
             <li><a href="/pt-br/install" aria-current="page">Instalar</a></li>
             <li><a href="https://github.com/astonysh/SenderFinder" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/senderfinder/dkjlkejkbapohkhneecbhnjifdjeihfp" class="v2-store-link" aria-label="Adicionar ao Chrome" title="Adicionar ao Chrome" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="#i-chrome"/></svg></a></li>
+            <li><a href="https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki" class="v2-store-link" aria-label="Adicionar ao Microsoft Edge" title="Adicionar ao Microsoft Edge" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="#i-edge"/></svg></a></li>
           </ul>
         </nav>
 
@@ -129,7 +131,7 @@
   <div class="v2-wrap">
     <header class="v2-page-head">
       <h1>Instalar o SenderFinder</h1>
-      <p class="v2-lead">Instale o SenderFinder diretamente pela Chrome Web Store ou pelo Microsoft Edge Add-ons. A instalação opcional pelo código-fonte está abaixo.</p>
+      <p class="v2-lead">Instale o SenderFinder pela Chrome Web Store ou pelo Microsoft Edge Add-ons e siga as etapas de configuração abaixo.</p>
       <p class="v2-note">Você precisa do Chrome, do Edge ou de outro navegador Chromium em um computador; extensões não podem ser adicionadas aos aplicativos para celular. As capturas de tela estão em inglês, a extensão em si segue o idioma do seu navegador.</p>
       <div class="v2-actions">
         <a class="v2-btn v2-btn--default" href="https://chromewebstore.google.com/detail/senderfinder/dkjlkejkbapohkhneecbhnjifdjeihfp" target="_blank" rel="noopener noreferrer">
@@ -137,9 +139,6 @@
         </a>
         <a class="v2-btn v2-btn--outline" href="https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki" target="_blank" rel="noopener noreferrer">
           <svg class="i" aria-hidden="true"><use href="#i-edge"/></svg> Adicionar ao Microsoft Edge
-        </a>
-        <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">
-          Baixar o ZIP <svg class="i" aria-hidden="true"><use href="#i-download"/></svg>
         </a>
         <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder" target="_blank" rel="noopener noreferrer">
           <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> Abrir o repositório
@@ -154,35 +153,12 @@
       </ul>
     </div>
 
-    <h2 class="v2-h2 v2-steps-title">Opcional: instalar pelo código-fonte em cinco etapas</h2>
+    <h2 class="v2-h2 v2-steps-title">Configure o SenderFinder em três etapas</h2>
     <ol class="v2-steps">
       
-      <li class="v2-step">
+      <li class="v2-step v2-step--with-shot">
         <div class="v2-step-text">
           <span class="v2-step-num">1</span>
-          <h2>Obtenha o código</h2>
-          <p>Baixe o repositório como ZIP no <a href="https://github.com/astonysh/SenderFinder" target="_blank" rel="noopener noreferrer">GitHub</a> (“Code” → “Download ZIP”) e descompacte, ou clone, se você tiver git:<br><code>git clone https://github.com/astonysh/SenderFinder.git</code></p>
-        </div>
-        
-      </li>
-      
-      <li class="v2-step v2-step--with-shot">
-        <div class="v2-step-text">
-          <span class="v2-step-num">2</span>
-          <h2>Carregue no Chrome</h2>
-          <p>Abra o <code>chrome://extensions</code> em uma nova aba. Ative o <strong>Modo desenvolvedor</strong> (canto superior direito), clique em <strong>Carregar sem compactação</strong> e selecione a pasta <code>extension/</code> dentro do repositório — a pasta que contém o <code>manifest.json</code>, não a raiz do repositório.</p>
-        </div>
-        
-        <figure class="v2-step-shot">
-          <img src="../assets/screenshots/load-unpacked.png" alt="A página de extensões do Chrome com o modo desenvolvedor ativado: os botões Carregar sem compactação, Empacotar extensão e Atualizar acima do cartão do SenderFinder." width="1280" height="800" loading="lazy">
-          <figcaption>Modo desenvolvedor ativado, o cartão do SenderFinder carregado.</figcaption>
-        </figure>
-        
-      </li>
-      
-      <li class="v2-step v2-step--with-shot">
-        <div class="v2-step-text">
-          <span class="v2-step-num">3</span>
           <h2>Obtenha uma chave e cole</h2>
           <p>A página de configurações abre sozinha depois da instalação. Crie uma chave no <a href="https://monid.ai?fpr=sf" target="_blank" rel="sponsored noopener noreferrer">Monid</a> (Hunter, Apollo, ContactOut) ou no <a href="https://treg.to/" target="_blank" rel="noopener noreferrer">treg</a> (BlitzAPI, QuickEnrich, Village); o <a href="https://firecrawl.link/sf" target="_blank" rel="noopener noreferrer">Firecrawl</a> é opcional. Uma chave basta. Cole em “Chaves de provedor”.</p>
         </div>
@@ -196,7 +172,7 @@
       
       <li class="v2-step">
         <div class="v2-step-text">
-          <span class="v2-step-num">4</span>
+          <span class="v2-step-num">2</span>
           <h2>Clique em “Testar chaves (grátis)”</h2>
           <p>A verificação é grátis: ela valida a chave e lê a lista de preços do provedor. Nada é buscado e nada é gasto. Você quer ver “válida” ao lado da sua chave.</p>
         </div>
@@ -205,7 +181,7 @@
       
       <li class="v2-step v2-step--with-shot">
         <div class="v2-step-text">
-          <span class="v2-step-num">5</span>
+          <span class="v2-step-num">3</span>
           <h2>Abra o Gmail e clique uma vez no ícone da barra de ferramentas</h2>
           <p>Abra qualquer mensagem no Gmail e clique no ícone do SenderFinder na barra de ferramentas do Chrome. Se não conseguir vê-lo, clique no ícone de quebra-cabeça e fixe o SenderFinder primeiro. O painel lateral abre e continua aberto naquela aba; a partir daí ele acompanha o e-mail que você lê.</p>
         </div>
@@ -218,7 +194,7 @@
       </li>
       
     </ol>
-    <p class="v2-note">As etapas de instalação pelo código-fonte são opcionais. As instalações pelas lojas são atualizadas automaticamente.</p>
+    <p class="v2-note">As instalações pelas lojas são atualizadas automaticamente.</p>
   </div>
 </div>
 
@@ -284,7 +260,7 @@
       
       <details>
         <summary>Como atualizo depois</summary>
-        <div class="v2-faq-body"><p>As instalações pelas lojas são atualizadas automaticamente. Se você instalou pelo código-fonte, substitua os arquivos na mesma pasta e clique em recarregar em chrome://extensions.</p></div>
+        <div class="v2-faq-body"><p>As instalações pelas lojas são atualizadas automaticamente.</p></div>
       </details>
       
     </div>

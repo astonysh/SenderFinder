@@ -63,7 +63,7 @@
     },
     "install": {
       "title": "Instalar SenderFinder no Chrome ou Edge | SenderFinder",
-      "description": "Instale o SenderFinder pela Chrome Web Store ou pelo Microsoft Edge Add-ons e adicione uma chave de provedor. Há também instruções opcionais para instalar pelo código-fonte.",
+      "description": "Instale o SenderFinder pela Chrome Web Store ou pelo Microsoft Edge Add-ons, adicione uma chave de provedor e abra o Gmail. Veja as etapas de configuração e solução de problemas.",
       "ogTitle": "Instalar o SenderFinder",
       "ogDescription": "Instale o SenderFinder pela Chrome Web Store ou pelo Microsoft Edge Add-ons. Código aberto, com sua própria chave de provedor."
     },
@@ -118,7 +118,7 @@
       "steps": [
         {
           "title": "Instale a extensão",
-          "body": "Instale o SenderFinder pela <a href=\"{{url.chromeStore}}\">Chrome Web Store</a> ou pelo <a href=\"{{url.edgeStore}}\">Microsoft Edge Add-ons</a>. Você também pode <a href=\"{{url.install}}\">instalar pelo código-fonte</a>."
+          "body": "Instale o SenderFinder pela <a href=\"{{url.chromeStore}}\">Chrome Web Store</a> ou pelo <a href=\"{{url.edgeStore}}\">Microsoft Edge Add-ons</a>."
         },
         {
           "title": "Obtenha uma chave de API",
@@ -406,7 +406,7 @@
       },
       "cta": {
         "title": "Dois minutos e está pronto",
-        "description": "Instale pela Chrome Web Store ou pelo Microsoft Edge Add-ons. O guia também explica a instalação pelo código-fonte.",
+        "description": "Instale pela Chrome Web Store ou pelo Microsoft Edge Add-ons e siga o guia de configuração.",
         "button": "Abrir o guia de instalação"
       }
     }
@@ -452,23 +452,11 @@
   },
   "install": {
     "title": "Instalar o SenderFinder",
-    "lead": "Instale o SenderFinder diretamente pela Chrome Web Store ou pelo Microsoft Edge Add-ons. A instalação opcional pelo código-fonte está abaixo.",
+    "lead": "Instale o SenderFinder pela Chrome Web Store ou pelo Microsoft Edge Add-ons e siga as etapas de configuração abaixo.",
     "note": "Você precisa do Chrome, do Edge ou de outro navegador Chromium em um computador; extensões não podem ser adicionadas aos aplicativos para celular. As capturas de tela estão em inglês, a extensão em si segue o idioma do seu navegador.",
-    "downloadLabel": "Baixar o ZIP",
     "githubLabel": "Abrir o repositório",
-    "stepsTitle": "Opcional: instalar pelo código-fonte em cinco etapas",
+    "stepsTitle": "Configure o SenderFinder em três etapas",
     "steps": [
-      {
-        "title": "Obtenha o código",
-        "body": "Baixe o repositório como ZIP no <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> (“Code” → “Download ZIP”) e descompacte, ou clone, se você tiver git:<br><code>git clone https://github.com/astonysh/SenderFinder.git</code>"
-      },
-      {
-        "title": "Carregue no Chrome",
-        "body": "Abra o <code>chrome://extensions</code> em uma nova aba. Ative o <strong>Modo desenvolvedor</strong> (canto superior direito), clique em <strong>Carregar sem compactação</strong> e selecione a pasta <code>extension/</code> dentro do repositório — a pasta que contém o <code>manifest.json</code>, não a raiz do repositório.",
-        "image": "load-unpacked.png",
-        "alt": "A página de extensões do Chrome com o modo desenvolvedor ativado: os botões Carregar sem compactação, Empacotar extensão e Atualizar acima do cartão do SenderFinder.",
-        "caption": "Modo desenvolvedor ativado, o cartão do SenderFinder carregado."
-      },
       {
         "title": "Obtenha uma chave e cole",
         "body": "A página de configurações abre sozinha depois da instalação. Crie uma chave no <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> (Hunter, Apollo, ContactOut) ou no <a href=\"https://treg.to/\">treg</a> (BlitzAPI, QuickEnrich, Village); o <a href=\"https://firecrawl.link/sf\">Firecrawl</a> é opcional. Uma chave basta. Cole em “Chaves de provedor”.",
@@ -552,12 +540,12 @@
       },
       {
         "q": "Como atualizo depois",
-        "a": "As instalações pelas lojas são atualizadas automaticamente. Se você instalou pelo código-fonte, substitua os arquivos na mesma pasta e clique em recarregar em chrome://extensions."
+        "a": "As instalações pelas lojas são atualizadas automaticamente."
       }
     ],
     "nextTitle": "Próximos passos",
     "next": "Leia <a href=\"{{url.index}}#how\">como funciona</a>, veja <a href=\"{{url.index}}#cost\">quanto custa uma busca</a> ou calcule o seu próprio volume na <a href=\"{{url.index}}#calculator\">calculadora de custo</a>. Dúvidas sobre dados são respondidas na <a href=\"{{url.privacy}}\">declaração de privacidade</a>.",
-    "fine": "As etapas de instalação pelo código-fonte são opcionais. As instalações pelas lojas são atualizadas automaticamente.",
+    "fine": "As instalações pelas lojas são atualizadas automaticamente.",
     "privacy": {
       "title": "Privacidade em resumo",
       "points": [

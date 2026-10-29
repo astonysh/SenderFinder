@@ -63,7 +63,7 @@
     },
     "install": {
       "title": "Install SenderFinder for Chrome or Edge | SenderFinder",
-      "description": "Add SenderFinder from the Chrome Web Store or Microsoft Edge Add-ons, then add one provider key. Optional source installation steps and troubleshooting are below.",
+      "description": "Install SenderFinder from the Chrome Web Store or Microsoft Edge Add-ons, add one provider key, and open Gmail. Setup steps and troubleshooting are below.",
       "ogTitle": "Install SenderFinder",
       "ogDescription": "Install SenderFinder from the Chrome Web Store or Microsoft Edge Add-ons. Open source, with your own provider key."
     },
@@ -118,7 +118,7 @@
       "steps": [
         {
           "title": "Install the extension",
-          "body": "Add SenderFinder from the <a href=\"{{url.chromeStore}}\">Chrome Web Store</a> or <a href=\"{{url.edgeStore}}\">Microsoft Edge Add-ons</a>. You can also <a href=\"{{url.install}}\">install it from source</a>."
+          "body": "Add SenderFinder from the <a href=\"{{url.chromeStore}}\">Chrome Web Store</a> or <a href=\"{{url.edgeStore}}\">Microsoft Edge Add-ons</a>."
         },
         {
           "title": "Get one API key",
@@ -406,7 +406,7 @@
       },
       "cta": {
         "title": "Two minutes, then it is done",
-        "description": "Add it from the Chrome Web Store or Microsoft Edge Add-ons. The install guide also covers source installation.",
+        "description": "Add it from the Chrome Web Store or Microsoft Edge Add-ons, then follow the setup guide.",
         "button": "Open the install guide"
       }
     }
@@ -452,23 +452,11 @@
   },
   "install": {
     "title": "Install SenderFinder",
-    "lead": "Install directly from the Chrome Web Store or Microsoft Edge Add-ons. Source installation is available below if you prefer it.",
+    "lead": "Install SenderFinder from the Chrome Web Store or Microsoft Edge Add-ons, then follow the setup steps below.",
     "note": "You need Chrome, Edge or another Chromium browser on a desktop; extensions can't be added to the mobile apps. The screenshots are in English, the extension itself follows your browser language.",
-    "downloadLabel": "Download the ZIP",
     "githubLabel": "Open the repository",
-    "stepsTitle": "Optional: install from source in five steps",
+    "stepsTitle": "Set up SenderFinder in three steps",
     "steps": [
-      {
-        "title": "Get the code",
-        "body": "Download the repository as a ZIP from <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> (“Code” → “Download ZIP”) and unpack it, or clone it if you have git:<br><code>git clone https://github.com/astonysh/SenderFinder.git</code>"
-      },
-      {
-        "title": "Load it in Chrome",
-        "body": "Open <code>chrome://extensions</code> in a new tab. Switch on <strong>Developer mode</strong> (top right), click <strong>Load unpacked</strong> and pick the <code>extension/</code> folder inside the repository — the folder that contains <code>manifest.json</code>, not the repository root.",
-        "image": "load-unpacked.png",
-        "alt": "Chrome's extensions page with developer mode switched on: the Load unpacked, Pack extension and Update buttons above the SenderFinder card.",
-        "caption": "Developer mode on, the SenderFinder card loaded."
-      },
       {
         "title": "Get one key and paste it",
         "body": "The settings page opens by itself after installation. Create a key at <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> (Hunter, Apollo, ContactOut) or <a href=\"https://treg.to/\">treg</a> (BlitzAPI, QuickEnrich, Village); <a href=\"https://firecrawl.link/sf\">Firecrawl</a> is optional. One key is enough. Paste it under “Provider keys”.",
@@ -552,12 +540,12 @@
       },
       {
         "q": "How do I update it later",
-        "a": "Store installs update automatically. If you installed from source, replace the files in the same folder and click reload in chrome://extensions."
+        "a": "Store installs update automatically."
       }
     ],
     "nextTitle": "What next",
     "next": "Read <a href=\"{{url.index}}#how\">how it works</a>, check <a href=\"{{url.index}}#cost\">what a lookup costs</a> or work out your own volume in the <a href=\"{{url.index}}#calculator\">cost calculator</a>. Data questions are answered in the <a href=\"{{url.privacy}}\">privacy statement</a>.",
-    "fine": "The source steps above are optional. Chrome and Edge store installs update automatically.",
+    "fine": "Chrome and Edge store installs update automatically.",
     "privacy": {
       "title": "Privacy at a glance",
       "points": [

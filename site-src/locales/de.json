@@ -63,7 +63,7 @@
     },
     "install": {
       "title": "SenderFinder für Chrome oder Edge installieren | SenderFinder",
-      "description": "Installiere SenderFinder aus dem Chrome Web Store oder über Microsoft Edge-Add-Ons und füge einen Anbieter-Schlüssel hinzu. Optional gibt es eine Anleitung zur Installation aus dem Quellcode.",
+      "description": "Installiere SenderFinder aus dem Chrome Web Store oder über Microsoft Edge-Add-Ons, füge einen Anbieter-Schlüssel hinzu und öffne Gmail. Hier findest du die Einrichtung und Hilfe bei Problemen.",
       "ogTitle": "SenderFinder installieren",
       "ogDescription": "SenderFinder im Chrome Web Store oder bei Microsoft Edge-Add-Ons installieren. Open Source, mit deinem eigenen Anbieter-Schlüssel."
     },
@@ -118,7 +118,7 @@
       "steps": [
         {
           "title": "Erweiterung installieren",
-          "body": "Installiere SenderFinder aus dem <a href=\"{{url.chromeStore}}\">Chrome Web Store</a> oder über <a href=\"{{url.edgeStore}}\">Microsoft Edge-Add-Ons</a>. Alternativ kannst du es <a href=\"{{url.install}}\">aus dem Quellcode installieren</a>."
+          "body": "Installiere SenderFinder aus dem <a href=\"{{url.chromeStore}}\">Chrome Web Store</a> oder über <a href=\"{{url.edgeStore}}\">Microsoft Edge-Add-Ons</a>."
         },
         {
           "title": "Einen API-Schlüssel holen",
@@ -406,7 +406,7 @@
       },
       "cta": {
         "title": "Zwei Minuten, dann ist es geschafft",
-        "description": "Installiere es aus dem Chrome Web Store oder über Microsoft Edge-Add-Ons. Die Anleitung erklärt auch die Installation aus dem Quellcode.",
+        "description": "Installiere es aus dem Chrome Web Store oder über Microsoft Edge-Add-Ons und folge der Anleitung zur Einrichtung.",
         "button": "Zur Installationsanleitung"
       }
     }
@@ -452,23 +452,11 @@
   },
   "install": {
     "title": "SenderFinder installieren",
-    "lead": "Installiere SenderFinder direkt aus dem Chrome Web Store oder über Microsoft Edge-Add-Ons. Die Installation aus dem Quellcode ist unten optional beschrieben.",
+    "lead": "Installiere SenderFinder aus dem Chrome Web Store oder über Microsoft Edge-Add-Ons und folge dann den Schritten zur Einrichtung.",
     "note": "Du brauchst Chrome, Edge oder einen anderen Chromium-Browser auf einem Desktop-Rechner; in den mobilen Apps lassen sich keine Erweiterungen hinzufügen. Die Screenshots sind auf Englisch, die Erweiterung selbst folgt der Sprache deines Browsers.",
-    "downloadLabel": "ZIP herunterladen",
     "githubLabel": "Repository öffnen",
-    "stepsTitle": "Optional: in fünf Schritten aus dem Quellcode installieren",
+    "stepsTitle": "SenderFinder in drei Schritten einrichten",
     "steps": [
-      {
-        "title": "Code holen",
-        "body": "Lade das Repository als ZIP von <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> herunter („Code“ → „Download ZIP“) und entpacke es, oder klone es, wenn du git hast:<br><code>git clone https://github.com/astonysh/SenderFinder.git</code>"
-      },
-      {
-        "title": "In Chrome laden",
-        "body": "Öffne <code>chrome://extensions</code> in einem neuen Tab. Schalte den <strong>Entwicklermodus</strong> ein (oben rechts), klicke auf <strong>Entpackte Erweiterung laden</strong> und wähle den Ordner <code>extension/</code> im Repository – den Ordner, der <code>manifest.json</code> enthält, nicht das Stammverzeichnis des Repositories.",
-        "image": "load-unpacked.png",
-        "alt": "Die Erweiterungsseite von Chrome mit eingeschaltetem Entwicklermodus: die Schaltflächen Entpackte Erweiterung laden, Erweiterung packen und Aktualisieren über der SenderFinder-Karte.",
-        "caption": "Entwicklermodus an, die SenderFinder-Karte geladen."
-      },
       {
         "title": "Einen Schlüssel holen und einfügen",
         "body": "Die Einstellungsseite öffnet sich nach der Installation von selbst. Erstelle einen Schlüssel bei <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> (Hunter, Apollo, ContactOut) oder <a href=\"https://treg.to/\">treg</a> (BlitzAPI, QuickEnrich, Village); <a href=\"https://firecrawl.link/sf\">Firecrawl</a> ist optional. Ein Schlüssel reicht. Füge ihn unter „Anbieter-Keys“ ein.",
@@ -552,12 +540,12 @@
       },
       {
         "q": "Wie aktualisiere ich es später",
-        "a": "Installationen aus den Stores werden automatisch aktualisiert. Bei einer Installation aus dem Quellcode ersetze die Dateien im selben Ordner und klicke in chrome://extensions auf Neu laden."
+        "a": "Installationen aus den Stores werden automatisch aktualisiert."
       }
     ],
     "nextTitle": "Wie es weitergeht",
     "next": "Lies <a href=\"{{url.index}}#how\">wie es funktioniert</a>, sieh dir an, <a href=\"{{url.index}}#cost\">was eine Abfrage kostet</a>, oder berechne dein eigenes Volumen im <a href=\"{{url.index}}#calculator\">Kostenrechner</a>. Fragen zu Daten beantwortet die <a href=\"{{url.privacy}}\">Datenschutzerklärung</a>.",
-    "fine": "Die Schritte zur Installation aus dem Quellcode sind optional. Installationen aus den Stores werden automatisch aktualisiert.",
+    "fine": "Installationen aus den Stores werden automatisch aktualisiert.",
     "privacy": {
       "title": "Datenschutz auf einen Blick",
       "points": [

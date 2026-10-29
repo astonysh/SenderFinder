@@ -63,7 +63,7 @@
     },
     "install": {
       "title": "Installer SenderFinder pour Chrome ou Edge | SenderFinder",
-      "description": "Installez SenderFinder depuis le Chrome Web Store ou Microsoft Edge Add-ons, puis ajoutez une clé de fournisseur. Une installation facultative depuis les sources est aussi expliquée.",
+      "description": "Installez SenderFinder depuis le Chrome Web Store ou Microsoft Edge Add-ons, ajoutez une clé de fournisseur et ouvrez Gmail. Ce guide explique la configuration et le dépannage.",
       "ogTitle": "Installer SenderFinder",
       "ogDescription": "Installez SenderFinder depuis le Chrome Web Store ou Microsoft Edge Add-ons. Open source, avec votre propre clé de fournisseur."
     },
@@ -118,7 +118,7 @@
       "steps": [
         {
           "title": "Installer l'extension",
-          "body": "Installez SenderFinder depuis le <a href=\"{{url.chromeStore}}\">Chrome Web Store</a> ou <a href=\"{{url.edgeStore}}\">Microsoft Edge Add-ons</a>. Vous pouvez aussi <a href=\"{{url.install}}\">l’installer depuis les sources</a>."
+          "body": "Installez SenderFinder depuis le <a href=\"{{url.chromeStore}}\">Chrome Web Store</a> ou <a href=\"{{url.edgeStore}}\">Microsoft Edge Add-ons</a>."
         },
         {
           "title": "Obtenir une clé API",
@@ -406,7 +406,7 @@
       },
       "cta": {
         "title": "Deux minutes, et c'est fait",
-        "description": "Installez-le depuis le Chrome Web Store ou Microsoft Edge Add-ons. Le guide explique aussi l’installation depuis les sources.",
+        "description": "Installez-le depuis le Chrome Web Store ou Microsoft Edge Add-ons, puis suivez le guide de configuration.",
         "button": "Ouvrir le guide d'installation"
       }
     }
@@ -452,23 +452,11 @@
   },
   "install": {
     "title": "Installer SenderFinder",
-    "lead": "Installez SenderFinder directement depuis le Chrome Web Store ou Microsoft Edge Add-ons. L’installation depuis les sources reste possible ci-dessous.",
+    "lead": "Installez SenderFinder depuis le Chrome Web Store ou Microsoft Edge Add-ons, puis suivez les étapes de configuration.",
     "note": "Il faut Chrome, Edge ou un autre navigateur Chromium sur ordinateur ; les extensions ne peuvent pas être ajoutées aux applications mobiles. Les captures d'écran sont en anglais, l'extension elle-même suit la langue de votre navigateur.",
-    "downloadLabel": "Télécharger le ZIP",
     "githubLabel": "Ouvrir le dépôt",
-    "stepsTitle": "Facultatif : installer depuis les sources en cinq étapes",
+    "stepsTitle": "Configurer SenderFinder en trois étapes",
     "steps": [
-      {
-        "title": "Récupérer le code",
-        "body": "Téléchargez le dépôt au format ZIP depuis <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> (« Code » → « Download ZIP ») et décompressez-le, ou clonez-le si vous avez git :<br><code>git clone https://github.com/astonysh/SenderFinder.git</code>"
-      },
-      {
-        "title": "Le charger dans Chrome",
-        "body": "Ouvrez <code>chrome://extensions</code> dans un nouvel onglet. Activez le <strong>mode développeur</strong> (en haut à droite), cliquez sur <strong>Charger l'extension non empaquetée</strong> et choisissez le dossier <code>extension/</code> à l'intérieur du dépôt — le dossier qui contient <code>manifest.json</code>, pas la racine du dépôt.",
-        "image": "load-unpacked.png",
-        "alt": "La page des extensions de Chrome avec le mode développeur activé : les boutons Charger l'extension non empaquetée, Empaqueter l'extension et Mettre à jour au-dessus de la carte SenderFinder.",
-        "caption": "Mode développeur activé, la carte SenderFinder chargée."
-      },
       {
         "title": "Obtenir une clé et la coller",
         "body": "La page des paramètres s'ouvre d'elle-même après l'installation. Créez une clé chez <a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a> (Hunter, Apollo, ContactOut) ou chez <a href=\"https://treg.to/\">treg</a> (BlitzAPI, QuickEnrich, Village) ; <a href=\"https://firecrawl.link/sf\">Firecrawl</a> est facultatif. Une seule clé suffit. Collez-la sous « Clés des fournisseurs ».",
@@ -552,12 +540,12 @@
       },
       {
         "q": "Comment le mettre à jour plus tard",
-        "a": "Les installations depuis les stores se mettent à jour automatiquement. Si vous avez installé depuis les sources, remplacez les fichiers dans le même dossier et cliquez sur recharger dans chrome://extensions."
+        "a": "Les installations depuis les stores se mettent à jour automatiquement."
       }
     ],
     "nextTitle": "Et ensuite",
     "next": "Lisez le <a href=\"{{url.index}}#how\">fonctionnement</a>, vérifiez <a href=\"{{url.index}}#cost\">ce que coûte une recherche</a> ou calculez votre propre volume dans le <a href=\"{{url.index}}#calculator\">calculateur de coût</a>. Les questions sur les données sont traitées dans la <a href=\"{{url.privacy}}\">politique de confidentialité</a>.",
-    "fine": "Les étapes d’installation depuis les sources sont facultatives. Les installations depuis les stores se mettent à jour automatiquement.",
+    "fine": "Les installations depuis les stores se mettent à jour automatiquement.",
     "privacy": {
       "title": "La confidentialité en un coup d'œil",
       "points": [

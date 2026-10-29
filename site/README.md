@@ -250,8 +250,8 @@ No real addresses, names or mail content are used, and none may be added.
 
 The Chrome and Edge store URLs are defined in `site-src/site.config.json` and exposed to templates as
 `{{url.chromeStore}}` and `{{url.edgeStore}}`. The home, install, alternative and English-only content
-pages link directly to the stores. The install guide also retains the optional source installation
-steps, while navigation and other explanatory links still lead to the localized guide.
+pages and the navigation bar link directly to the stores. The install guide covers provider key
+setup and troubleshooting; it no longer offers a ZIP download or source installation steps.
 
 ## Deploy: Cloudflare Workers Static Assets
 

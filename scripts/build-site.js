@@ -17,7 +17,7 @@ export const SRC = path.join(ROOT, 'site-src');
 export const SITE_URL = 'https://senderfinder.com';
 export const CONFIG = JSON.parse(fs.readFileSync(path.join(SRC, 'site.config.json'), 'utf8'));
 export const PKG = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
-export const UPDATED = '2026-10-25'; // last content change, used in sitemap.xml and Article JSON-LD
+export const UPDATED = '2026-10-29'; // last content change, used in sitemap.xml and Article JSON-LD
 export const REPO_URL = 'https://github.com/astonysh/SenderFinder';
 
 /* The ten languages of the extension (_locales in manifest.json), in this order.
@@ -282,7 +282,7 @@ const HOW_ICONS = ['download', 'key', 'mail'];
 const COST_ICONS = ['users', 'mail-off'];
 const FACT_ICONS = ['eye-off', 'mail-off', 'github'];   // only facts that are not already in the two lists
 const PROVIDER_LOGOS = ['monid.svg', 'treg.svg', 'firecrawl.png', null];
-const INSTALL_STEP_ICONS = ['download', 'puzzle', 'key', 'check', 'mail'];
+const INSTALL_STEP_ICONS = ['key', 'check', 'mail'];
 const INSTALL_ROW_LOGOS = ['treg.svg', 'monid.svg', null, 'firecrawl.png'];
 
 const withIcons = (steps, icons) => steps.map((step, i) => ({ ...step, icon: icons[i] || 'check' }));
@@ -352,7 +352,7 @@ function structuredData(lang, page, data, scope) {
       description: plainText(meta.description),
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       license: 'https://www.gnu.org/licenses/agpl-3.0.html',
-      downloadUrl: REPO_URL,
+      downloadUrl: CONFIG.chromeStoreUrl,
       softwareVersion: PKG.version,
       isAccessibleForFree: true,
       publisher: { '@id': orgId },
@@ -511,10 +511,14 @@ function headerV2(lang, page, data, scope) {
     { href: `${scope.url.index}#cost`, label: data.ui.nav.cost },
     { href: scope.url.install, label: data.ui.nav.install, id: 'install' },
     { href: REPO_URL, label: 'GitHub' },
+    { href: scope.url.chromeStore, label: data.index.hero.install, icon: 'chrome' },
+    { href: scope.url.edgeStore, label: data.install.edgeLabel, icon: 'edge' },
   ];
   const items = nav.map(item => {
     const current = item.id && item.id === page.id ? ' aria-current="page"' : '';
-    return `            <li><a href="${item.href}"${current}>${esc(item.label)}</a></li>`;
+    const icon = item.icon ? ` class="v2-store-link" aria-label="${esc(item.label)}" title="${esc(item.label)}"` : '';
+    const body = item.icon ? `<svg class="i" aria-hidden="true"><use href="#i-${item.icon}"/></svg>` : esc(item.label);
+    return `            <li><a href="${item.href}"${current}${icon}>${body}</a></li>`;
   }).join('\n');
   const languages = LANGUAGES.map(other => {
     const href = pageUrl(other, hasPage(page, other.locale) ? page : PAGES[0]);

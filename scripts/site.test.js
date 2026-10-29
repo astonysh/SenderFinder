@@ -8,7 +8,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  CONTENT_PAGES, LANGUAGES, PAGES, PKG, REPO_URL, ROOT, SITE_URL, UPDATED, buildSite, hasPage, pageLocales, pagePath, readExtensionStrings, readLocale,
+  CONFIG, CONTENT_PAGES, LANGUAGES, PAGES, PKG, REPO_URL, ROOT, SITE_URL, UPDATED, buildSite, hasPage, pageLocales, pagePath, readExtensionStrings, readLocale,
 } from './build-site.js';
 import { benchStats } from './bench-stats.js';
 
@@ -294,8 +294,12 @@ test('every page keeps primary links in the header and informational links in th
       const footer = html.match(/<footer class="v2-foot">([\s\S]*?)<\/footer>/);
       assert.ok(header && footer, `${lang.locale}/${page.id}: shared navigation missing`);
       const hrefs = markup => [...markup.matchAll(/<a href="([^"]+)"/g)].map(match => match[1]);
-      assert.deepEqual(hrefs(header[1]), [`${home}#how`, `${home}#cost`, route('install'), REPO_URL],
+      assert.deepEqual(hrefs(header[1]), [`${home}#how`, `${home}#cost`, route('install'), REPO_URL, CONFIG.chromeStoreUrl, CONFIG.edgeStoreUrl],
         `${lang.locale}/${page.id}: unexpected primary navigation`);
+      assert.match(header[1], /class="v2-store-link"[^>]*aria-label="[^"]+"[^>]*><svg class="i" aria-hidden="true"><use href="#i-chrome"\/>/,
+        `${lang.locale}/${page.id}: Chrome install icon missing or unlabeled`);
+      assert.match(header[1], /class="v2-store-link"[^>]*aria-label="[^"]+"[^>]*><svg class="i" aria-hidden="true"><use href="#i-edge"\/>/,
+        `${lang.locale}/${page.id}: Edge install icon missing or unlabeled`);
       for (const href of [route('privacy'), route('changelog'), `${home}#faq`]) {
         assert.ok(hrefs(footer[1]).includes(href), `${lang.locale}/${page.id}: footer missing ${href}`);
       }
@@ -370,7 +374,7 @@ test('the home page describes the extension and its FAQ in JSON-LD', () => {
     assert.equal(app.offers.price, '0');
     assert.equal(app.offers.priceCurrency, 'USD');
     assert.match(app.license, /agpl-3\.0/i);
-    assert.equal(app.downloadUrl, 'https://github.com/astonysh/SenderFinder');
+    assert.equal(app.downloadUrl, CONFIG.chromeStoreUrl);
     assert.equal(app.softwareVersion, PKG.version);
     const faq = typeOf(graph, 'FAQPage');
     assert.ok(faq, `${lang.locale}: no FAQPage`);
@@ -388,6 +392,16 @@ test('the install page carries a HowTo with every install step', () => {
     assert.equal(howTo.step.length, data.install.steps.length);
     assert.deepEqual(howTo.step.map(step => step.position), data.install.steps.map((_, i) => i + 1));
     assert.equal(howTo.step[0].name, data.install.steps[0].title);
+  }
+});
+
+test('install pages offer store setup without a ZIP download', () => {
+  for (const lang of LANGUAGES) {
+    const html = pageOf(lang, PAGES.find(p => p.id === 'install'));
+    assert.ok(html.includes(CONFIG.chromeStoreUrl), `${lang.locale}: Chrome store link missing`);
+    assert.ok(html.includes(CONFIG.edgeStoreUrl), `${lang.locale}: Edge store link missing`);
+    assert.ok(!/ZIP|archive\/refs\/heads\/main\.zip|load-unpacked\.png/.test(html),
+      `${lang.locale}: old ZIP or source installation step remains`);
   }
 });
 

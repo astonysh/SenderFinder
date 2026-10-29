@@ -63,7 +63,7 @@
     },
     "install": {
       "title": "Chrome・Edge に SenderFinder をインストール | SenderFinder",
-      "description": "Chrome ウェブストアまたは Microsoft Edge アドオンから SenderFinder をインストールし、プロバイダーのキーを追加します。任意のソースからのインストール手順も掲載しています。",
+      "description": "Chrome ウェブストアまたは Microsoft Edge アドオンから SenderFinder をインストールし、プロバイダーのキーを追加して Gmail を開きます。設定手順とトラブルシューティングを掲載しています。",
       "ogTitle": "SenderFinder をインストール",
       "ogDescription": "Chrome ウェブストアまたは Microsoft Edge アドオンから SenderFinder をインストール。オープンソースで、自分のプロバイダーキーを使用します。"
     },
@@ -118,7 +118,7 @@
       "steps": [
         {
           "title": "拡張機能をインストールする",
-          "body": "<a href=\"{{url.chromeStore}}\">Chrome ウェブストア</a>または <a href=\"{{url.edgeStore}}\">Microsoft Edge アドオン</a>から SenderFinder を追加します。<a href=\"{{url.install}}\">ソースからインストール</a>することもできます。"
+          "body": "<a href=\"{{url.chromeStore}}\">Chrome ウェブストア</a>または <a href=\"{{url.edgeStore}}\">Microsoft Edge アドオン</a>から SenderFinder を追加します。"
         },
         {
           "title": "API キーを 1 つ取得する",
@@ -406,7 +406,7 @@
       },
       "cta": {
         "title": "2 分で終わります",
-        "description": "Chrome ウェブストアまたは Microsoft Edge アドオンから追加できます。ガイドにはソースからのインストール方法もあります。",
+        "description": "Chrome ウェブストアまたは Microsoft Edge アドオンから追加し、設定ガイドに従ってください。",
         "button": "インストールガイドを開く"
       }
     }
@@ -452,23 +452,11 @@
   },
   "install": {
     "title": "SenderFinder をインストール",
-    "lead": "Chrome ウェブストアまたは Microsoft Edge アドオンから直接インストールできます。下には任意のソースからのインストール手順もあります。",
+    "lead": "Chrome ウェブストアまたは Microsoft Edge アドオンから SenderFinder をインストールし、以下の手順で設定してください。",
     "note": "デスクトップ版の Chrome、Edge などの Chromium 系ブラウザが必要です。モバイルアプリには拡張機能を追加できません。スクリーンショットは英語ですが、拡張機能自体はブラウザの言語設定に従います。",
-    "downloadLabel": "ZIP をダウンロード",
     "githubLabel": "リポジトリを開く",
-    "stepsTitle": "任意：ソースからインストールする5つの手順",
+    "stepsTitle": "3つの手順で SenderFinder を設定",
     "steps": [
-      {
-        "title": "コードを取得する",
-        "body": "リポジトリを <a href=\"https://github.com/astonysh/SenderFinder\">GitHub</a> から ZIP でダウンロードし（「Code」→「Download ZIP」）、展開してください。git があればクローンでもかまいません：<br><code>git clone https://github.com/astonysh/SenderFinder.git</code>"
-      },
-      {
-        "title": "Chrome に読み込む",
-        "body": "新しいタブで <code>chrome://extensions</code> を開きます。右上の <strong>デベロッパーモード</strong> をオンにし、<strong>パッケージ化されていない拡張機能を読み込む</strong> をクリックして、リポジトリ内の <code>extension/</code> フォルダ（リポジトリのルートではなく、<code>manifest.json</code> が入っているフォルダ）を選びます。",
-        "image": "load-unpacked.png",
-        "alt": "Chrome の拡張機能ページ。デベロッパーモードがオンになっており、SenderFinder のカードの上に「パッケージ化されていない拡張機能を読み込む」「拡張機能をパッケージ化」「更新」のボタンが並んでいる。",
-        "caption": "デベロッパーモードをオンにして、SenderFinder のカードを読み込んだ状態。"
-      },
       {
         "title": "キーを 1 つ取得して貼り付ける",
         "body": "インストール後に設定ページが自動的に開きます。<a href=\"https://monid.ai?fpr=sf\" rel=\"sponsored\">Monid</a>（Hunter、Apollo、ContactOut）または <a href=\"https://treg.to/\">treg</a>（BlitzAPI、QuickEnrich、Village）でキーを作成してください。<a href=\"https://firecrawl.link/sf\">Firecrawl</a> は任意です。キーは 1 つで十分です。「プロバイダーのキー」に貼り付けてください。",
@@ -552,12 +540,12 @@
       },
       {
         "q": "後から更新するには",
-        "a": "ストアからのインストールは自動更新されます。ソースからインストールした場合は、同じフォルダーのファイルを置き換え、chrome://extensions で再読み込みをクリックしてください。"
+        "a": "ストアからインストールした場合は自動更新されます。"
       }
     ],
     "nextTitle": "次に読む",
     "next": "<a href=\"{{url.index}}#how\">仕組み</a>、<a href=\"{{url.index}}#cost\">検索にかかる費用</a>、<a href=\"{{url.index}}#calculator\">費用計算ツール</a>でご自身の件数を試算できます。データの扱いについては<a href=\"{{url.privacy}}\">プライバシー声明</a>をご覧ください。",
-    "fine": "上記のソースからのインストール手順は任意です。ストアからインストールした場合は自動更新されます。",
+    "fine": "ストアからインストールした場合は自動更新されます。",
     "privacy": {
       "title": "プライバシーの要点",
       "points": [

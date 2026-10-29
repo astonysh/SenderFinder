@@ -78,7 +78,7 @@
         "id": "try-it",
         "title": "How to try it",
         "ordered": [
-          "Install the extension from the <a href=\"https://chromewebstore.google.com/detail/senderfinder/dkjlkejkbapohkhneecbhnjifdjeihfp\">Chrome Web Store</a> or <a href=\"https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki\">Microsoft Edge Add-ons</a>. The <a href=\"/install\">install guide</a> also covers the optional source route.",
+          "Install the extension from the <a href=\"https://chromewebstore.google.com/detail/senderfinder/dkjlkejkbapohkhneecbhnjifdjeihfp\">Chrome Web Store</a> or <a href=\"https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki\">Microsoft Edge Add-ons</a>. The <a href=\"/install\">install guide</a> covers provider key setup.",
           "Create one provider key — Monid for the highest coverage, treg for the lowest price — and paste it into the settings page that opens on first install.",
           "Press “Test keys (free)” to check the key and read the provider's price list. Nothing is looked up and nothing is spent.",
           "Open an email in Gmail and click the SenderFinder toolbar icon once. The side panel stays open in that tab and follows the message you read.",

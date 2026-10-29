@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chrome 또는 Edge에 SenderFinder 설치 | SenderFinder</title>
-  <meta name="description" content="Chrome 웹 스토어 또는 Microsoft Edge 추가 기능에서 SenderFinder를 설치하고 제공업체 키를 추가하세요. 선택적인 소스 설치 방법도 안내합니다.">
+  <meta name="description" content="Chrome 웹 스토어 또는 Microsoft Edge 추가 기능에서 SenderFinder를 설치하고 제공업체 키를 추가한 다음 Gmail을 여세요. 설정과 문제 해결 방법을 안내합니다.">
   <link rel="canonical" href="https://senderfinder.com/ko/install">
   <link rel="alternate" hreflang="en" href="https://senderfinder.com/install">
   <link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install">
@@ -30,7 +30,7 @@
   <meta name="twitter:description" content="Chrome 웹 스토어 또는 Microsoft Edge 추가 기능에서 SenderFinder를 설치하세요. 오픈 소스이며 자신의 제공업체 키를 사용합니다.">
   <meta name="twitter:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta name="color-scheme" content="light dark">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"ko","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"],"contactPoint":{"@type":"ContactPoint","email":"tony@senderfinder.com","contactType":"sponsorship"}},{"@type":"BreadcrumbList","@id":"https://senderfinder.com/ko/install#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://senderfinder.com/ko/"},{"@type":"ListItem","position":2,"name":"설치","item":"https://senderfinder.com/ko/install"}]},{"@type":"HowTo","@id":"https://senderfinder.com/ko/install#howto","name":"SenderFinder 설치","description":"Chrome 웹 스토어 또는 Microsoft Edge 추가 기능에서 바로 설치할 수 있습니다. 아래에는 선택적인 소스 설치 방법도 있습니다.","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"코드 받기","text":"GitHub 에서 저장소를 ZIP으로 내려받아(“Code” → “Download ZIP”) 압축을 풉니다. git이 있으면 클론해도 됩니다: git clone https://github.com/astonysh/SenderFinder.git"},{"@type":"HowToStep","position":2,"name":"Chrome에 로드","text":"새 탭에서 chrome://extensions 를 엽니다. 오른쪽 위의 개발자 모드 를 켜고 압축해제된 확장 프로그램을 로드 를 눌러 저장소 안의 extension/ 폴더, 즉 manifest.json 이 들어 있는 폴더를 선택합니다. 저장소 최상위 폴더가 아닙니다."},{"@type":"HowToStep","position":3,"name":"키 하나를 받아 붙여 넣기","text":"설치 후 설정 페이지가 자동으로 열립니다. Monid (Hunter, Apollo, ContactOut) 또는 treg (BlitzAPI, QuickEnrich, Village)에서 키를 만들고, Firecrawl 은 선택 사항입니다. 키 하나면 충분합니다. “제공업체 키” 항목에 붙여 넣으세요."},{"@type":"HowToStep","position":4,"name":"“키 테스트(무료)” 누르기","text":"이 확인은 무료입니다. 키가 유효한지 확인하고 제공업체의 가격표를 읽어 옵니다. 조회도 결제도 일어나지 않습니다. 키 옆에 “유효함”이 표시되어야 합니다."},{"@type":"HowToStep","position":5,"name":"Gmail을 열고 도구 모음 아이콘을 한 번 클릭","text":"Gmail에서 아무 메일이나 연 다음 Chrome 도구 모음의 SenderFinder 아이콘을 클릭합니다. 아이콘이 보이지 않으면 퍼즐 조각 아이콘을 눌러 SenderFinder를 먼저 고정하세요. 사이드 패널이 열리고 그 탭에서 계속 열린 상태로 유지되며, 이후로는 읽는 메일을 따라갑니다."}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"ko","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"],"contactPoint":{"@type":"ContactPoint","email":"tony@senderfinder.com","contactType":"sponsorship"}},{"@type":"BreadcrumbList","@id":"https://senderfinder.com/ko/install#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://senderfinder.com/ko/"},{"@type":"ListItem","position":2,"name":"설치","item":"https://senderfinder.com/ko/install"}]},{"@type":"HowTo","@id":"https://senderfinder.com/ko/install#howto","name":"SenderFinder 설치","description":"Chrome 웹 스토어 또는 Microsoft Edge 추가 기능에서 SenderFinder를 설치한 뒤 아래 설정 단계를 따라 주세요.","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"키 하나를 받아 붙여 넣기","text":"설치 후 설정 페이지가 자동으로 열립니다. Monid (Hunter, Apollo, ContactOut) 또는 treg (BlitzAPI, QuickEnrich, Village)에서 키를 만들고, Firecrawl 은 선택 사항입니다. 키 하나면 충분합니다. “제공업체 키” 항목에 붙여 넣으세요."},{"@type":"HowToStep","position":2,"name":"“키 테스트(무료)” 누르기","text":"이 확인은 무료입니다. 키가 유효한지 확인하고 제공업체의 가격표를 읽어 옵니다. 조회도 결제도 일어나지 않습니다. 키 옆에 “유효함”이 표시되어야 합니다."},{"@type":"HowToStep","position":3,"name":"Gmail을 열고 도구 모음 아이콘을 한 번 클릭","text":"Gmail에서 아무 메일이나 연 다음 Chrome 도구 모음의 SenderFinder 아이콘을 클릭합니다. 아이콘이 보이지 않으면 퍼즐 조각 아이콘을 눌러 SenderFinder를 먼저 고정하세요. 사이드 패널이 열리고 그 탭에서 계속 열린 상태로 유지되며, 이후로는 읽는 메일을 따라갑니다."}]}]}</script>
   <script src="../assets/theme-boot.js"></script>
   <link rel="stylesheet" href="../assets/app.css">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -95,6 +95,8 @@
             <li><a href="/ko/#cost">가격</a></li>
             <li><a href="/ko/install" aria-current="page">설치</a></li>
             <li><a href="https://github.com/astonysh/SenderFinder" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/senderfinder/dkjlkejkbapohkhneecbhnjifdjeihfp" class="v2-store-link" aria-label="Chrome에 추가" title="Chrome에 추가" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="#i-chrome"/></svg></a></li>
+            <li><a href="https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki" class="v2-store-link" aria-label="Microsoft Edge에 추가" title="Microsoft Edge에 추가" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="#i-edge"/></svg></a></li>
           </ul>
         </nav>
 
@@ -129,7 +131,7 @@
   <div class="v2-wrap">
     <header class="v2-page-head">
       <h1>SenderFinder 설치</h1>
-      <p class="v2-lead">Chrome 웹 스토어 또는 Microsoft Edge 추가 기능에서 바로 설치할 수 있습니다. 아래에는 선택적인 소스 설치 방법도 있습니다.</p>
+      <p class="v2-lead">Chrome 웹 스토어 또는 Microsoft Edge 추가 기능에서 SenderFinder를 설치한 뒤 아래 설정 단계를 따라 주세요.</p>
       <p class="v2-note">데스크톱의 Chrome, Edge 또는 다른 Chromium 브라우저가 필요합니다. 모바일 앱에는 확장 프로그램을 추가할 수 없습니다. 스크린숏은 영어로 되어 있지만, 확장 프로그램 자체는 브라우저 언어를 따릅니다.</p>
       <div class="v2-actions">
         <a class="v2-btn v2-btn--default" href="https://chromewebstore.google.com/detail/senderfinder/dkjlkejkbapohkhneecbhnjifdjeihfp" target="_blank" rel="noopener noreferrer">
@@ -137,9 +139,6 @@
         </a>
         <a class="v2-btn v2-btn--outline" href="https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki" target="_blank" rel="noopener noreferrer">
           <svg class="i" aria-hidden="true"><use href="#i-edge"/></svg> Microsoft Edge에 추가
-        </a>
-        <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">
-          ZIP 내려받기 <svg class="i" aria-hidden="true"><use href="#i-download"/></svg>
         </a>
         <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder" target="_blank" rel="noopener noreferrer">
           <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> 저장소 열기
@@ -154,35 +153,12 @@
       </ul>
     </div>
 
-    <h2 class="v2-h2 v2-steps-title">선택 사항: 소스에서 설치하는 5단계</h2>
+    <h2 class="v2-h2 v2-steps-title">세 단계로 SenderFinder 설정하기</h2>
     <ol class="v2-steps">
       
-      <li class="v2-step">
+      <li class="v2-step v2-step--with-shot">
         <div class="v2-step-text">
           <span class="v2-step-num">1</span>
-          <h2>코드 받기</h2>
-          <p><a href="https://github.com/astonysh/SenderFinder" target="_blank" rel="noopener noreferrer">GitHub</a>에서 저장소를 ZIP으로 내려받아(“Code” → “Download ZIP”) 압축을 풉니다. git이 있으면 클론해도 됩니다:<br><code>git clone https://github.com/astonysh/SenderFinder.git</code></p>
-        </div>
-        
-      </li>
-      
-      <li class="v2-step v2-step--with-shot">
-        <div class="v2-step-text">
-          <span class="v2-step-num">2</span>
-          <h2>Chrome에 로드</h2>
-          <p>새 탭에서 <code>chrome://extensions</code>를 엽니다. 오른쪽 위의 <strong>개발자 모드</strong>를 켜고 <strong>압축해제된 확장 프로그램을 로드</strong>를 눌러 저장소 안의 <code>extension/</code> 폴더, 즉 <code>manifest.json</code>이 들어 있는 폴더를 선택합니다. 저장소 최상위 폴더가 아닙니다.</p>
-        </div>
-        
-        <figure class="v2-step-shot">
-          <img src="../assets/screenshots/load-unpacked.png" alt="개발자 모드가 켜진 Chrome 확장 프로그램 페이지. SenderFinder 카드 위에 압축해제된 확장 프로그램을 로드, 확장 프로그램 팩, 업데이트 버튼이 보입니다." width="1280" height="800" loading="lazy">
-          <figcaption>개발자 모드를 켜고 SenderFinder 카드를 로드한 상태.</figcaption>
-        </figure>
-        
-      </li>
-      
-      <li class="v2-step v2-step--with-shot">
-        <div class="v2-step-text">
-          <span class="v2-step-num">3</span>
           <h2>키 하나를 받아 붙여 넣기</h2>
           <p>설치 후 설정 페이지가 자동으로 열립니다. <a href="https://monid.ai?fpr=sf" target="_blank" rel="sponsored noopener noreferrer">Monid</a>(Hunter, Apollo, ContactOut) 또는 <a href="https://treg.to/" target="_blank" rel="noopener noreferrer">treg</a>(BlitzAPI, QuickEnrich, Village)에서 키를 만들고, <a href="https://firecrawl.link/sf" target="_blank" rel="noopener noreferrer">Firecrawl</a>은 선택 사항입니다. 키 하나면 충분합니다. “제공업체 키” 항목에 붙여 넣으세요.</p>
         </div>
@@ -196,7 +172,7 @@
       
       <li class="v2-step">
         <div class="v2-step-text">
-          <span class="v2-step-num">4</span>
+          <span class="v2-step-num">2</span>
           <h2>“키 테스트(무료)” 누르기</h2>
           <p>이 확인은 무료입니다. 키가 유효한지 확인하고 제공업체의 가격표를 읽어 옵니다. 조회도 결제도 일어나지 않습니다. 키 옆에 “유효함”이 표시되어야 합니다.</p>
         </div>
@@ -205,7 +181,7 @@
       
       <li class="v2-step v2-step--with-shot">
         <div class="v2-step-text">
-          <span class="v2-step-num">5</span>
+          <span class="v2-step-num">3</span>
           <h2>Gmail을 열고 도구 모음 아이콘을 한 번 클릭</h2>
           <p>Gmail에서 아무 메일이나 연 다음 Chrome 도구 모음의 SenderFinder 아이콘을 클릭합니다. 아이콘이 보이지 않으면 퍼즐 조각 아이콘을 눌러 SenderFinder를 먼저 고정하세요. 사이드 패널이 열리고 그 탭에서 계속 열린 상태로 유지되며, 이후로는 읽는 메일을 따라갑니다.</p>
         </div>
@@ -218,7 +194,7 @@
       </li>
       
     </ol>
-    <p class="v2-note">위의 소스 설치 단계는 선택 사항입니다. 스토어에서 설치하면 자동으로 업데이트됩니다.</p>
+    <p class="v2-note">스토어에서 설치하면 자동으로 업데이트됩니다.</p>
   </div>
 </div>
 
@@ -284,7 +260,7 @@
       
       <details>
         <summary>나중에 업데이트하려면</summary>
-        <div class="v2-faq-body"><p>스토어에서 설치하면 자동으로 업데이트됩니다. 소스에서 설치했다면 같은 폴더의 파일을 교체하고 chrome://extensions 에서 새로고침을 클릭하세요.</p></div>
+        <div class="v2-faq-body"><p>스토어에서 설치하면 자동으로 업데이트됩니다.</p></div>
       </details>
       
     </div>

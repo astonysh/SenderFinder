@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chrome・Edge に SenderFinder をインストール | SenderFinder</title>
-  <meta name="description" content="Chrome ウェブストアまたは Microsoft Edge アドオンから SenderFinder をインストールし、プロバイダーのキーを追加します。任意のソースからのインストール手順も掲載しています。">
+  <meta name="description" content="Chrome ウェブストアまたは Microsoft Edge アドオンから SenderFinder をインストールし、プロバイダーのキーを追加して Gmail を開きます。設定手順とトラブルシューティングを掲載しています。">
   <link rel="canonical" href="https://senderfinder.com/ja/install">
   <link rel="alternate" hreflang="en" href="https://senderfinder.com/install">
   <link rel="alternate" hreflang="zh-CN" href="https://senderfinder.com/zh-cn/install">
@@ -30,7 +30,7 @@
   <meta name="twitter:description" content="Chrome ウェブストアまたは Microsoft Edge アドオンから SenderFinder をインストール。オープンソースで、自分のプロバイダーキーを使用します。">
   <meta name="twitter:image" content="https://senderfinder.com/assets/screenshots/sender-in-gmail.png">
   <meta name="color-scheme" content="light dark">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"ja","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"],"contactPoint":{"@type":"ContactPoint","email":"tony@senderfinder.com","contactType":"sponsorship"}},{"@type":"BreadcrumbList","@id":"https://senderfinder.com/ja/install#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://senderfinder.com/ja/"},{"@type":"ListItem","position":2,"name":"インストール","item":"https://senderfinder.com/ja/install"}]},{"@type":"HowTo","@id":"https://senderfinder.com/ja/install#howto","name":"SenderFinder をインストール","description":"Chrome ウェブストアまたは Microsoft Edge アドオンから直接インストールできます。下には任意のソースからのインストール手順もあります。","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"コードを取得する","text":"リポジトリを GitHub から ZIP でダウンロードし（「Code」→「Download ZIP」）、展開してください。git があればクローンでもかまいません： git clone https://github.com/astonysh/SenderFinder.git"},{"@type":"HowToStep","position":2,"name":"Chrome に読み込む","text":"新しいタブで chrome://extensions を開きます。右上の デベロッパーモード をオンにし、 パッケージ化されていない拡張機能を読み込む をクリックして、リポジトリ内の extension/ フォルダ（リポジトリのルートではなく、 manifest.json が入っているフォルダ）を選びます。"},{"@type":"HowToStep","position":3,"name":"キーを 1 つ取得して貼り付ける","text":"インストール後に設定ページが自動的に開きます。 Monid （Hunter、Apollo、ContactOut）または treg （BlitzAPI、QuickEnrich、Village）でキーを作成してください。 Firecrawl は任意です。キーは 1 つで十分です。「プロバイダーのキー」に貼り付けてください。"},{"@type":"HowToStep","position":4,"name":"「キーをテスト（無料）」を押す","text":"確認は無料です。キーを検証し、プロバイダーの価格表を読み取ります。検索も課金も行われません。キーの横に「有効」と表示されれば成功です。"},{"@type":"HowToStep","position":5,"name":"Gmail を開き、ツールバーのアイコンを 1 回クリックする","text":"Gmail で任意のメールを開き、Chrome ツールバーの SenderFinder アイコンをクリックします。表示されない場合は、パズルピースのアイコンをクリックして SenderFinder をピン留めしてください。サイドパネルが開き、そのタブでは開いたままになります。以降は、読んでいるメールに追従します。"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://senderfinder.com/#website","url":"https://senderfinder.com/","name":"SenderFinder","inLanguage":"ja","publisher":{"@id":"https://senderfinder.com/#organization"}},{"@type":"Organization","@id":"https://senderfinder.com/#organization","name":"SenderFinder","url":"https://senderfinder.com/","logo":{"@type":"ImageObject","url":"https://senderfinder.com/assets/icon-128.png","width":128,"height":128},"sameAs":["https://github.com/astonysh/SenderFinder"],"contactPoint":{"@type":"ContactPoint","email":"tony@senderfinder.com","contactType":"sponsorship"}},{"@type":"BreadcrumbList","@id":"https://senderfinder.com/ja/install#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://senderfinder.com/ja/"},{"@type":"ListItem","position":2,"name":"インストール","item":"https://senderfinder.com/ja/install"}]},{"@type":"HowTo","@id":"https://senderfinder.com/ja/install#howto","name":"SenderFinder をインストール","description":"Chrome ウェブストアまたは Microsoft Edge アドオンから SenderFinder をインストールし、以下の手順で設定してください。","totalTime":"PT2M","step":[{"@type":"HowToStep","position":1,"name":"キーを 1 つ取得して貼り付ける","text":"インストール後に設定ページが自動的に開きます。 Monid （Hunter、Apollo、ContactOut）または treg （BlitzAPI、QuickEnrich、Village）でキーを作成してください。 Firecrawl は任意です。キーは 1 つで十分です。「プロバイダーのキー」に貼り付けてください。"},{"@type":"HowToStep","position":2,"name":"「キーをテスト（無料）」を押す","text":"確認は無料です。キーを検証し、プロバイダーの価格表を読み取ります。検索も課金も行われません。キーの横に「有効」と表示されれば成功です。"},{"@type":"HowToStep","position":3,"name":"Gmail を開き、ツールバーのアイコンを 1 回クリックする","text":"Gmail で任意のメールを開き、Chrome ツールバーの SenderFinder アイコンをクリックします。表示されない場合は、パズルピースのアイコンをクリックして SenderFinder をピン留めしてください。サイドパネルが開き、そのタブでは開いたままになります。以降は、読んでいるメールに追従します。"}]}]}</script>
   <script src="../assets/theme-boot.js"></script>
   <link rel="stylesheet" href="../assets/app.css">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -95,6 +95,8 @@
             <li><a href="/ja/#cost">料金</a></li>
             <li><a href="/ja/install" aria-current="page">インストール</a></li>
             <li><a href="https://github.com/astonysh/SenderFinder" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/senderfinder/dkjlkejkbapohkhneecbhnjifdjeihfp" class="v2-store-link" aria-label="Chrome に追加" title="Chrome に追加" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="#i-chrome"/></svg></a></li>
+            <li><a href="https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki" class="v2-store-link" aria-label="Microsoft Edge に追加" title="Microsoft Edge に追加" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="#i-edge"/></svg></a></li>
           </ul>
         </nav>
 
@@ -129,7 +131,7 @@
   <div class="v2-wrap">
     <header class="v2-page-head">
       <h1>SenderFinder をインストール</h1>
-      <p class="v2-lead">Chrome ウェブストアまたは Microsoft Edge アドオンから直接インストールできます。下には任意のソースからのインストール手順もあります。</p>
+      <p class="v2-lead">Chrome ウェブストアまたは Microsoft Edge アドオンから SenderFinder をインストールし、以下の手順で設定してください。</p>
       <p class="v2-note">デスクトップ版の Chrome、Edge などの Chromium 系ブラウザが必要です。モバイルアプリには拡張機能を追加できません。スクリーンショットは英語ですが、拡張機能自体はブラウザの言語設定に従います。</p>
       <div class="v2-actions">
         <a class="v2-btn v2-btn--default" href="https://chromewebstore.google.com/detail/senderfinder/dkjlkejkbapohkhneecbhnjifdjeihfp" target="_blank" rel="noopener noreferrer">
@@ -137,9 +139,6 @@
         </a>
         <a class="v2-btn v2-btn--outline" href="https://microsoftedge.microsoft.com/addons/detail/senderfinder/pfgdkmjokjkalbpeapkdfopomdapnmki" target="_blank" rel="noopener noreferrer">
           <svg class="i" aria-hidden="true"><use href="#i-edge"/></svg> Microsoft Edge に追加
-        </a>
-        <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">
-          ZIP をダウンロード <svg class="i" aria-hidden="true"><use href="#i-download"/></svg>
         </a>
         <a class="v2-btn v2-btn--outline" href="https://github.com/astonysh/SenderFinder" target="_blank" rel="noopener noreferrer">
           <svg class="i" aria-hidden="true"><use href="#i-github"/></svg> リポジトリを開く
@@ -154,35 +153,12 @@
       </ul>
     </div>
 
-    <h2 class="v2-h2 v2-steps-title">任意：ソースからインストールする5つの手順</h2>
+    <h2 class="v2-h2 v2-steps-title">3つの手順で SenderFinder を設定</h2>
     <ol class="v2-steps">
       
-      <li class="v2-step">
+      <li class="v2-step v2-step--with-shot">
         <div class="v2-step-text">
           <span class="v2-step-num">1</span>
-          <h2>コードを取得する</h2>
-          <p>リポジトリを <a href="https://github.com/astonysh/SenderFinder" target="_blank" rel="noopener noreferrer">GitHub</a> から ZIP でダウンロードし（「Code」→「Download ZIP」）、展開してください。git があればクローンでもかまいません：<br><code>git clone https://github.com/astonysh/SenderFinder.git</code></p>
-        </div>
-        
-      </li>
-      
-      <li class="v2-step v2-step--with-shot">
-        <div class="v2-step-text">
-          <span class="v2-step-num">2</span>
-          <h2>Chrome に読み込む</h2>
-          <p>新しいタブで <code>chrome://extensions</code> を開きます。右上の <strong>デベロッパーモード</strong> をオンにし、<strong>パッケージ化されていない拡張機能を読み込む</strong> をクリックして、リポジトリ内の <code>extension/</code> フォルダ（リポジトリのルートではなく、<code>manifest.json</code> が入っているフォルダ）を選びます。</p>
-        </div>
-        
-        <figure class="v2-step-shot">
-          <img src="../assets/screenshots/load-unpacked.png" alt="Chrome の拡張機能ページ。デベロッパーモードがオンになっており、SenderFinder のカードの上に「パッケージ化されていない拡張機能を読み込む」「拡張機能をパッケージ化」「更新」のボタンが並んでいる。" width="1280" height="800" loading="lazy">
-          <figcaption>デベロッパーモードをオンにして、SenderFinder のカードを読み込んだ状態。</figcaption>
-        </figure>
-        
-      </li>
-      
-      <li class="v2-step v2-step--with-shot">
-        <div class="v2-step-text">
-          <span class="v2-step-num">3</span>
           <h2>キーを 1 つ取得して貼り付ける</h2>
           <p>インストール後に設定ページが自動的に開きます。<a href="https://monid.ai?fpr=sf" target="_blank" rel="sponsored noopener noreferrer">Monid</a>（Hunter、Apollo、ContactOut）または <a href="https://treg.to/" target="_blank" rel="noopener noreferrer">treg</a>（BlitzAPI、QuickEnrich、Village）でキーを作成してください。<a href="https://firecrawl.link/sf" target="_blank" rel="noopener noreferrer">Firecrawl</a> は任意です。キーは 1 つで十分です。「プロバイダーのキー」に貼り付けてください。</p>
         </div>
@@ -196,7 +172,7 @@
       
       <li class="v2-step">
         <div class="v2-step-text">
-          <span class="v2-step-num">4</span>
+          <span class="v2-step-num">2</span>
           <h2>「キーをテスト（無料）」を押す</h2>
           <p>確認は無料です。キーを検証し、プロバイダーの価格表を読み取ります。検索も課金も行われません。キーの横に「有効」と表示されれば成功です。</p>
         </div>
@@ -205,7 +181,7 @@
       
       <li class="v2-step v2-step--with-shot">
         <div class="v2-step-text">
-          <span class="v2-step-num">5</span>
+          <span class="v2-step-num">3</span>
           <h2>Gmail を開き、ツールバーのアイコンを 1 回クリックする</h2>
           <p>Gmail で任意のメールを開き、Chrome ツールバーの SenderFinder アイコンをクリックします。表示されない場合は、パズルピースのアイコンをクリックして SenderFinder をピン留めしてください。サイドパネルが開き、そのタブでは開いたままになります。以降は、読んでいるメールに追従します。</p>
         </div>
@@ -218,7 +194,7 @@
       </li>
       
     </ol>
-    <p class="v2-note">上記のソースからのインストール手順は任意です。ストアからインストールした場合は自動更新されます。</p>
+    <p class="v2-note">ストアからインストールした場合は自動更新されます。</p>
   </div>
 </div>
 
@@ -284,7 +260,7 @@
       
       <details>
         <summary>後から更新するには</summary>
-        <div class="v2-faq-body"><p>ストアからのインストールは自動更新されます。ソースからインストールした場合は、同じフォルダーのファイルを置き換え、chrome://extensions で再読み込みをクリックしてください。</p></div>
+        <div class="v2-faq-body"><p>ストアからインストールした場合は自動更新されます。</p></div>
       </details>
       
     </div>
