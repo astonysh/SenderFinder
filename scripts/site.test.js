@@ -284,6 +284,7 @@ test('every page keeps primary links in the header and informational links in th
   for (const lang of LANGUAGES) {
     const home = pagePath(lang, PAGES[0]);
     const homeHtml = pageOf(lang, PAGES[0]);
+    assert.match(homeHtml, /<span class="v2-badge">/, `${lang.locale}: hero badge should be informational`);
     for (const anchor of ['how', 'cost', 'faq']) {
       assert.ok(homeHtml.includes(`id="${anchor}"`), `${lang.locale}: navigation target #${anchor} is missing`);
     }
@@ -294,8 +295,11 @@ test('every page keeps primary links in the header and informational links in th
       const footer = html.match(/<footer class="v2-foot">([\s\S]*?)<\/footer>/);
       assert.ok(header && footer, `${lang.locale}/${page.id}: shared navigation missing`);
       const hrefs = markup => [...markup.matchAll(/<a href="([^"]+)"/g)].map(match => match[1]);
-      assert.deepEqual(hrefs(header[1]), [`${home}#how`, `${home}#cost`, route('install'), REPO_URL, CONFIG.chromeStoreUrl, CONFIG.edgeStoreUrl],
+      assert.deepEqual(hrefs(header[1]), [`${home}#how`, `${home}#cost`, route('install'), CONFIG.chromeStoreUrl, CONFIG.edgeStoreUrl],
         `${lang.locale}/${page.id}: unexpected primary navigation`);
+      assert.ok(hrefs(footer[1]).includes(REPO_URL), `${lang.locale}/${page.id}: footer missing GitHub`);
+      assert.ok(!html.includes(`<a class="v2-btn v2-btn--outline" href="${REPO_URL}"`),
+        `${lang.locale}/${page.id}: GitHub project button remains outside the footer`);
       assert.match(header[1], /class="v2-store-link"[^>]*aria-label="[^"]+"[^>]*><img src="(?:\.\.\/)?assets\/icons\/browser-chrome\.svg" alt="" width="20" height="20">/,
         `${lang.locale}/${page.id}: Chrome install icon missing or unlabeled`);
       assert.match(header[1], /class="v2-store-link"[^>]*aria-label="[^"]+"[^>]*><img src="(?:\.\.\/)?assets\/icons\/browser-edge\.svg" alt="" width="20" height="20">/,

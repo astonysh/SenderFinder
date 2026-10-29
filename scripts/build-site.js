@@ -510,7 +510,6 @@ function headerV2(lang, page, data, scope) {
     { href: `${scope.url.index}#how`, label: data.ui.nav.how },
     { href: `${scope.url.index}#cost`, label: data.ui.nav.cost },
     { href: scope.url.install, label: data.ui.nav.install, id: 'install' },
-    { href: REPO_URL, label: 'GitHub' },
     { href: scope.url.chromeStore, label: data.index.hero.install, icon: 'chrome' },
     { href: scope.url.edgeStore, label: data.install.edgeLabel, icon: 'edge' },
   ];
